@@ -2,7 +2,7 @@
 ---------------------------------------------
 ## Install
 
-    go get github.com/Rusco/JQuery (to test)
+    go get github.com/rusco/jquery
 
 ### Links
 - GopherJS (https://github.com/neelance/gopherjs)
