@@ -6,32 +6,25 @@ type JQuery struct {
 	o js.Object
 }
 
-type Event struct {
+type EventContext struct {
 	js.Object
-	KeyCode    int `js:"keyCode"`
-	Target     int `js:"target"`
-	SrcElement int `js:"SrcElement"`
-	Which      int `js:"which"`
-}
-
-func (e Event) NewJquery() *JQuery {
-	o := e.Object.Get("target")
-	jQ := js.Global("jQuery").New(o)
-	return &JQuery{jQ}
+	This    js.Object
+	KeyCode int         `js:"keyCode"`
+	Target  int         `js:"target"`
+	Data    interface{} `js:"data"`
 }
 
 //constructors
-func NewJQuery(selector string) *JQuery {
-	jQ := js.Global("jQuery").New(selector)
+func NewJQuery(args ...string) *JQuery {
+	if len(args) == 2 {
+		jQ := js.Global("jQuery").New(args[0], args[1])
+		return &JQuery{jQ}
+	}
+	jQ := js.Global("jQuery").New(args[0])
 	return &JQuery{jQ}
 }
 
-func NewJQueryCtx(selector string, context string) *JQuery {
-	jQ := js.Global("jQuery").New(selector, context)
-	return &JQuery{jQ}
-}
-
-func NewJQueryObj(o js.Object) *JQuery {
+func NewJQueryFromObject(o js.Object) *JQuery {
 	jQ := js.Global("jQuery").New(o)
 	return &JQuery{jQ}
 }
@@ -109,45 +102,23 @@ func (j *JQuery) Blur() *JQuery {
 	return j
 }
 
-func (j *JQuery) On(event string, handler func()) *JQuery {
-	j.o.Call("on", event, func() {
-		handler()
-	})
-	return j
-}
-
-func (j *JQuery) OnFn(event string, handler func(*Event)) *JQuery {
+func (j *JQuery) On(event string, handler func(*EventContext)) *JQuery {
 	j.o.Call("on", event, func(e js.Object) {
-		handler(&Event{Object: e})
+		handler(&EventContext{Object: e, This: js.This()})
 	})
 	return j
 }
 
-func (j *JQuery) OnFn2(event string, selector string, fn func(*Event)) *JQuery {
+func (j *JQuery) OnSelector(event string, selector string, handler func(*EventContext)) *JQuery {
 	j.o.Call("on", event, selector, func(e js.Object) {
-		fn(&Event{Object: e})
-
+		handler(&EventContext{Object: e, This: js.This()})
 	})
 	return j
 }
 
-func (j *JQuery) On2(event string, selector string, handler func()) *JQuery {
-	j.o.Call("on", event, selector, func() {
-		handler()
-	})
-	return j
-}
-
-func (j *JQuery) On3(event string, selector string, data interface{}, handler func()) *JQuery {
-	j.o.Call("on", event, selector, data, func() {
-		handler()
-	})
-	return j
-}
-
-func (j *JQuery) One(event string, handler func()) *JQuery {
-	j.o.Call("one", event, func() {
-		handler()
+func (j *JQuery) One(event string, handler func(*EventContext)) *JQuery {
+	j.o.Call("one", event, func(e js.Object) {
+		handler(&EventContext{Object: e, This: js.This()})
 	})
 	return j
 }
