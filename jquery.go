@@ -6,7 +6,7 @@ type JQuery struct {
 	o js.Object
 }
 
-type EventContext struct {
+type Event struct {
 	js.Object
 	This    js.Object
 	KeyCode int         `js "keyCode"`
@@ -138,26 +138,26 @@ func (j *JQuery) Blur() *JQuery {
 	return j
 }
 
-func (j *JQuery) On(event string, handler func(*EventContext)) *JQuery {
+func (j *JQuery) On(event string, handler func(*Event)) *JQuery {
 	j.o.Call("on", event, func(e js.Object) {
-		evCtx := EventContext{Object: e, This: js.This(), KeyCode: 0, Target: 0, Data: nil}
-		handler(&evCtx)
+		handler(&Event{Object: e, This: js.This()})
+
 	})
 	return j
 }
 
-func (j *JQuery) OnSelector(event string, selector string, handler func(*EventContext)) *JQuery {
+func (j *JQuery) OnSelector(event string, selector string, handler func(*Event)) *JQuery {
 	j.o.Call("on", event, selector, func(e js.Object) {
-		evCtx := EventContext{Object: e, This: js.This(), KeyCode: 0, Target: 0, Data: nil}
-		handler(&evCtx)
+		handler(&Event{Object: e, This: js.This()})
+
 	})
 	return j
 }
 
-func (j *JQuery) One(event string, handler func(*EventContext)) *JQuery {
+func (j *JQuery) One(event string, handler func(*Event)) *JQuery {
 	j.o.Call("one", event, func(e js.Object) {
-		evCtx := EventContext{Object: e, This: js.This(), KeyCode: 0, Target: 0, Data: nil}
-		handler(&evCtx)
+		handler(&Event{Object: e, This: js.This()})
+
 	})
 	return j
 }
@@ -239,9 +239,8 @@ func (j *JQuery) AddContext(selector string, context interface{}) *JQuery {
 	return j
 }
 
-
 func (j *JQuery) AddElems(elements ...interface{}) *JQuery {
-	j.o  = j.o.Call("add", elements...)
+	j.o = j.o.Call("add", elements...)
 	return j
 }
 func (j *JQuery) AddHtml(html string) *JQuery {
