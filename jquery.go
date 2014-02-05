@@ -9,27 +9,31 @@ type JQuery struct {
 type EventContext struct {
 	js.Object
 	This    js.Object
-	KeyCode int         `js:"keyCode"`
-	Target  int         `js:"target"`
-	Data    interface{} `js:"data"`
+	KeyCode int         `js "keyCode"`
+	Target  int         `js "target"`
+	Data    interface{} `js "data"`
 }
 
-//constructors
+//JQuery constructor via optional selector and context
 func NewJQuery(args ...string) *JQuery {
-	if len(args) == 2 {
+	if len(args) == 1 {
+		jQ := js.Global("jQuery").New(args[0])
+		return &JQuery{jQ}
+	} else if len(args) == 2 {
 		jQ := js.Global("jQuery").New(args[0], args[1])
 		return &JQuery{jQ}
+	} else {
+		return &JQuery{js.Global("jQuery").New()}
 	}
-	jQ := js.Global("jQuery").New(args[0])
-	return &JQuery{jQ}
 }
 
+//JQuery constructor via js.Object
 func NewJQueryFromObject(o js.Object) *JQuery {
 	jQ := js.Global("jQuery").New(o)
 	return &JQuery{jQ}
 }
 
-//statics
+//static method
 func Trim(text string) string {
 	return js.Global("jQuery").Call("trim", text).String()
 }
@@ -38,8 +42,30 @@ func (j *JQuery) Jquery() string {
 	return j.o.Get("jquery").String()
 }
 
+func (j *JQuery) Length() int {
+	return j.o.Get("length").Int()
+}
+
+func (j *JQuery) Size() int {
+	return j.o.Get("size").Int()
+}
+
 func (j *JQuery) Selector() string {
 	return j.o.Get("selector").String()
+}
+
+func (j *JQuery) serialize() string {
+	return j.o.Call("serialize").String()
+}
+
+func (j *JQuery) addBack() *JQuery {
+	j.o = j.o.Call("addBack")
+	return j
+}
+
+func (j *JQuery) addBackSelector(selector string) *JQuery {
+	j.o = j.o.Call("addBack", selector)
+	return j
 }
 
 func (j *JQuery) Css(name string) string {
@@ -92,6 +118,16 @@ func (j *JQuery) RemoveClass(property string) *JQuery {
 	return j
 }
 
+func (j *JQuery) ToggleClassName(className string, swtch bool) *JQuery {
+	j.o.Call("toggleClass", className, swtch)
+	return j
+}
+
+func (j *JQuery) ToggleClass(swtch bool) *JQuery {
+	j.o.Call("toggleClass", swtch)
+	return j
+}
+
 func (j *JQuery) Focus() *JQuery {
 	j.o.Call("focus")
 	return j
@@ -104,21 +140,24 @@ func (j *JQuery) Blur() *JQuery {
 
 func (j *JQuery) On(event string, handler func(*EventContext)) *JQuery {
 	j.o.Call("on", event, func(e js.Object) {
-		handler(&EventContext{Object: e, This: js.This()})
+		evCtx := EventContext{Object: e, This: js.This(), KeyCode: 0, Target: 0, Data: nil}
+		handler(&evCtx)
 	})
 	return j
 }
 
 func (j *JQuery) OnSelector(event string, selector string, handler func(*EventContext)) *JQuery {
 	j.o.Call("on", event, selector, func(e js.Object) {
-		handler(&EventContext{Object: e, This: js.This()})
+		evCtx := EventContext{Object: e, This: js.This(), KeyCode: 0, Target: 0, Data: nil}
+		handler(&evCtx)
 	})
 	return j
 }
 
 func (j *JQuery) One(event string, handler func(*EventContext)) *JQuery {
 	j.o.Call("one", event, func(e js.Object) {
-		handler(&EventContext{Object: e, This: js.This()})
+		evCtx := EventContext{Object: e, This: js.This(), KeyCode: 0, Target: 0, Data: nil}
+		handler(&evCtx)
 	})
 	return j
 }
@@ -189,6 +228,54 @@ func (j *JQuery) End() *JQuery {
 
 func (j *JQuery) Data(key string) string {
 	return j.o.Call("data", key).String()
+}
+
+func (j *JQuery) Add(selector string) *JQuery {
+	j.o = j.o.Call("add", selector)
+	return j
+}
+func (j *JQuery) AddContext(selector string, context interface{}) *JQuery {
+	j.o = j.o.Call("add", selector, context)
+	return j
+}
+
+
+func (j *JQuery) AddElems(elements ...interface{}) *JQuery {
+	j.o  = j.o.Call("add", elements...)
+	return j
+}
+func (j *JQuery) AddHtml(html string) *JQuery {
+	j.o = j.o.Call("add", html)
+	return j
+}
+func (j *JQuery) AddJquery(obj JQuery) *JQuery {
+	j.o = j.o.Call("add", obj)
+	return j
+}
+
+func (j *JQuery) Clone() *JQuery {
+	j.o = j.o.Call("clone")
+	return j
+}
+
+func (j *JQuery) CloneWithDataAndEvents(withDataAndEvents bool) *JQuery {
+	j.o = j.o.Call("clone", withDataAndEvents)
+	return j
+}
+
+func (j *JQuery) CloneDeep(withDataAndEvents bool, deepWithDataAndEvents bool) *JQuery {
+	j.o = j.o.Call("clone", withDataAndEvents, deepWithDataAndEvents)
+	return j
+}
+
+func (j *JQuery) Next() *JQuery {
+	j.o = j.o.Call("next")
+	return j
+}
+
+func (j *JQuery) NextSelector(selector string) *JQuery {
+	j.o = j.o.Call("next", selector)
+	return j
 }
 
 const (
