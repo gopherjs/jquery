@@ -226,10 +226,6 @@ func (j *JQuery) End() *JQuery {
 	return j
 }
 
-func (j *JQuery) Data(key string) string {
-	return j.o.Call("data", key).String()
-}
-
 func (j *JQuery) Add(selector string) *JQuery {
 	j.o = j.o.Call("add", selector)
 	return j
@@ -274,6 +270,74 @@ func (j *JQuery) Next() *JQuery {
 
 func (j *JQuery) NextSelector(selector string) *JQuery {
 	j.o = j.o.Call("next", selector)
+	return j
+}
+
+func (j *JQuery) Height() int {
+	return j.o.Call("height").Int()
+}
+func (j *JQuery) SetHeight(value string) *JQuery {
+	j.o = j.o.Call("height", value)
+	return j
+}
+func (j *JQuery) ScrollLeft() int {
+	return j.o.Call("scrollLeft").Int()
+}
+
+func (j *JQuery) SetScrollLeft(value int) *JQuery {
+	j.o = j.o.Call("scrollLeft", value)
+	return j
+}
+
+func (j *JQuery) ScrollTop() int {
+	return j.o.Call("scrollTop").Int()
+}
+
+func (j *JQuery) SetScrollTop(value int) *JQuery {
+	j.o = j.o.Call("scrollTop", value)
+	return j
+}
+
+func (j *JQuery) Width() int {
+	return j.o.Call("scrollTop").Int()
+}
+
+func (j *JQuery) SetWidth(value string) *JQuery {
+	j.o = j.o.Call("scrollTop", value)
+	return j
+}
+
+func (j *JQuery) WidthFn(fn func(index int, width string) string) *JQuery {
+	j.o.Call("width", func(index int, width string) string {
+		return fn(index, width)
+	})
+	return j
+}
+
+func (j *JQuery) ClearQueue(queueName string) *JQuery {
+	j.o = j.o.Call("clearQueue", queueName)
+	return j
+}
+
+func (j *JQuery) SetData(key string, value interface{}) *JQuery {
+	j.o = j.o.Call("data", key, value)
+	return j
+}
+func (j *JQuery) DataByKey(key string) interface{} {
+	return j.o.Call("data", key).Interface()
+}
+
+func (j *JQuery) Data(key string) string {
+	return j.o.Call("data", key).String()
+}
+
+func (j *JQuery) Dequeue(queueName string) *JQuery {
+	j.o = j.o.Call("dequeue", queueName)
+	return j
+}
+
+func (j *JQuery) RemoveData(name string) *JQuery {
+	j.o = j.o.Call("removeData", name)
 	return j
 }
 
