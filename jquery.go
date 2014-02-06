@@ -8,10 +8,9 @@ type JQuery struct {
 
 type Event struct {
 	js.Object
-	This    js.Object
-	KeyCode int         `js "keyCode"`
-	Target  int         `js "target"`
-	Data    interface{} `js "data"`
+	KeyCode int         `js:"keyCode"`
+	Target  int         `js:"target"`
+	Data    interface{} `js:"data"`
 }
 
 //JQuery constructor via optional selector and context
@@ -28,7 +27,7 @@ func NewJQuery(args ...string) *JQuery {
 }
 
 //JQuery constructor via js.Object
-func NewJQueryFromObject(o js.Object) *JQuery {
+func NewJQueryByObject(o js.Object) *JQuery {
 	jQ := js.Global("jQuery").New(o)
 	return &JQuery{jQ}
 }
@@ -63,7 +62,7 @@ func (j *JQuery) addBack() *JQuery {
 	return j
 }
 
-func (j *JQuery) addBackSelector(selector string) *JQuery {
+func (j *JQuery) addBackBySelector(selector string) *JQuery {
 	j.o = j.o.Call("addBack", selector)
 	return j
 }
@@ -118,7 +117,7 @@ func (j *JQuery) RemoveClass(property string) *JQuery {
 	return j
 }
 
-func (j *JQuery) ToggleClassName(className string, swtch bool) *JQuery {
+func (j *JQuery) ToggleClassByName(className string, swtch bool) *JQuery {
 	j.o.Call("toggleClass", className, swtch)
 	return j
 }
@@ -138,26 +137,25 @@ func (j *JQuery) Blur() *JQuery {
 	return j
 }
 
-func (j *JQuery) On(event string, handler func(*Event)) *JQuery {
+func (j *JQuery) On(event string, handler func(js.Object, *Event)) *JQuery {
 	j.o.Call("on", event, func(e js.Object) {
-		handler(&Event{Object: e, This: js.This()})
+		handler(js.This(), &Event{Object: e})
 
 	})
 	return j
 }
 
-func (j *JQuery) OnSelector(event string, selector string, handler func(*Event)) *JQuery {
+func (j *JQuery) OnSelector(event string, selector string, handler func(js.Object, *Event)) *JQuery {
 	j.o.Call("on", event, selector, func(e js.Object) {
-		handler(&Event{Object: e, This: js.This()})
+		handler(js.This(), &Event{Object: e})
 
 	})
 	return j
 }
 
-func (j *JQuery) One(event string, handler func(*Event)) *JQuery {
+func (j *JQuery) One(event string, handler func(js.Object, *Event)) *JQuery {
 	j.o.Call("one", event, func(e js.Object) {
-		handler(&Event{Object: e, This: js.This()})
-
+		handler(js.This(), &Event{Object: e})
 	})
 	return j
 }
@@ -198,14 +196,14 @@ func (j *JQuery) SetHtml(html string) *JQuery {
 	return j
 }
 
-func (j *JQuery) HtmlFn(fn func(idx int, txt string) string) *JQuery {
+func (j *JQuery) HtmlByFunc(fn func(idx int, txt string) string) *JQuery {
 	j.o.Call("html", func(idx int, txt string) string {
 		return fn(idx, txt)
 	})
 	return j
 }
 
-func (j *JQuery) TextFn(fn func(idx int, txt string) string) *JQuery {
+func (j *JQuery) TextByFunc(fn func(idx int, txt string) string) *JQuery {
 	j.o.Call("text", func(idx int, txt string) string {
 		return fn(idx, txt)
 	})
@@ -230,7 +228,7 @@ func (j *JQuery) Add(selector string) *JQuery {
 	j.o = j.o.Call("add", selector)
 	return j
 }
-func (j *JQuery) AddContext(selector string, context interface{}) *JQuery {
+func (j *JQuery) AddByContext(selector string, context interface{}) *JQuery {
 	j.o = j.o.Call("add", selector, context)
 	return j
 }
@@ -243,7 +241,7 @@ func (j *JQuery) AddHtml(html string) *JQuery {
 	j.o = j.o.Call("add", html)
 	return j
 }
-func (j *JQuery) AddJquery(obj JQuery) *JQuery {
+func (j *JQuery) AddJQuery(obj JQuery) *JQuery {
 	j.o = j.o.Call("add", obj)
 	return j
 }
@@ -307,7 +305,7 @@ func (j *JQuery) SetWidth(value string) *JQuery {
 	return j
 }
 
-func (j *JQuery) WidthFn(fn func(index int, width string) string) *JQuery {
+func (j *JQuery) WidthByFunc(fn func(index int, width string) string) *JQuery {
 	j.o.Call("width", func(index int, width string) string {
 		return fn(index, width)
 	})
@@ -340,6 +338,75 @@ func (j *JQuery) RemoveData(name string) *JQuery {
 	j.o = j.o.Call("removeData", name)
 	return j
 }
+
+func (j *JQuery) OffsetParent() *JQuery {
+	j.o = j.o.Call("offsetParent")
+	return j
+}
+
+func (j *JQuery) Parent() *JQuery {
+	j.o = j.o.Call("parent")
+	return j
+}
+
+func (j *JQuery) ParentBySelector(selector string) *JQuery {
+	j.o = j.o.Call("parent", selector)
+	return j
+}
+func (j *JQuery) Parents() *JQuery {
+	j.o = j.o.Call("parents")
+	return j
+}
+
+func (j *JQuery) ParentsBySelector(selector string) *JQuery {
+	j.o = j.o.Call("parents", selector)
+	return j
+}
+
+
+func (j *JQuery) ParentsUntil(selector string) *JQuery {
+	j.o = j.o.Call("parentsUntil", selector)
+	return j
+}
+
+func (j *JQuery) ParentsUntilByFilter(selector string, filter string) *JQuery {
+	j.o = j.o.Call("parentsUntil", selector, filter)
+	return j
+}
+
+func (j *JQuery) ParentsUntilByJQuery(obj *jQuery) *JQuery {
+	j.o = j.o.Call("parentsUntil", obj)
+	return j
+}
+
+func (j *JQuery) ParentsUntilByJQueryAndFilter(obj *jQuery, filter string) *JQuery {
+	j.o = j.o.Call("parentsUntil", obj, filter)
+	return j
+}
+
+func (j *JQuery) Prev() *JQuery {
+	j.o = j.o.Call("prev")
+	return j
+}
+
+func (j *JQuery) PrevBySelector(selector string) *JQuery {
+	j.o = j.o.Call("parentsUntil", selector)
+	return j
+}
+
+    prev(selector?: string): JQuery;
+
+    prevAll(selector?: string): JQuery;
+
+    prevUntil(selector?: string, filter?: string): JQuery;
+    prevUntil(element?: Element, filter?: string): JQuery;
+    prevUntil(obj?: JQuery, filter?: string): JQuery;
+
+    siblings(selector?: string): JQuery;
+
+    slice_(start: number, end?: number): JQuery;
+
+
 
 const (
 	EvtCLICK    = "click"
