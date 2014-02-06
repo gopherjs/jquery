@@ -363,7 +363,6 @@ func (j *JQuery) ParentsBySelector(selector string) *JQuery {
 	return j
 }
 
-
 func (j *JQuery) ParentsUntil(selector string) *JQuery {
 	j.o = j.o.Call("parentsUntil", selector)
 	return j
@@ -374,12 +373,12 @@ func (j *JQuery) ParentsUntilByFilter(selector string, filter string) *JQuery {
 	return j
 }
 
-func (j *JQuery) ParentsUntilByJQuery(obj *jQuery) *JQuery {
+func (j *JQuery) ParentsUntilByJQuery(obj *JQuery) *JQuery {
 	j.o = j.o.Call("parentsUntil", obj)
 	return j
 }
 
-func (j *JQuery) ParentsUntilByJQueryAndFilter(obj *jQuery, filter string) *JQuery {
+func (j *JQuery) ParentsUntilByJQueryAndFilter(obj *JQuery, filter string) *JQuery {
 	j.o = j.o.Call("parentsUntil", obj, filter)
 	return j
 }
@@ -390,23 +389,59 @@ func (j *JQuery) Prev() *JQuery {
 }
 
 func (j *JQuery) PrevBySelector(selector string) *JQuery {
-	j.o = j.o.Call("parentsUntil", selector)
+	j.o = j.o.Call("prev", selector)
 	return j
 }
 
-    prev(selector?: string): JQuery;
+func (j *JQuery) PrevAll() *JQuery {
+	j.o = j.o.Call("prevAll")
+	return j
+}
 
-    prevAll(selector?: string): JQuery;
+func (j *JQuery) PrevAllBySelector(selector string) *JQuery {
+	j.o = j.o.Call("prevAll", selector)
+	return j
+}
 
-    prevUntil(selector?: string, filter?: string): JQuery;
-    prevUntil(element?: Element, filter?: string): JQuery;
-    prevUntil(obj?: JQuery, filter?: string): JQuery;
+func (j *JQuery) PrevUntil(selector string) *JQuery {
+	j.o = j.o.Call("prevUntil", selector)
+	return j
+}
 
-    siblings(selector?: string): JQuery;
+func (j *JQuery) PrevUntilByFilter(selector string, filter string) *JQuery {
+	j.o = j.o.Call("prevUntil", selector, filter)
+	return j
+}
 
-    slice_(start: number, end?: number): JQuery;
+func (j *JQuery) PrevUntilByJQuery(obj *JQuery) *JQuery {
+	j.o = j.o.Call("prevUntil", obj)
+	return j
+}
 
+func (j *JQuery) PrevUntilByJQueryAndFilter(obj *JQuery, filter string) *JQuery {
+	j.o = j.o.Call("prevUntil", obj, filter)
+	return j
+}
 
+func (j *JQuery) Siblings() *JQuery {
+	j.o = j.o.Call("siblings")
+	return j
+}
+
+func (j *JQuery) SiblingsBySelector(selector string) *JQuery {
+	j.o = j.o.Call("siblings", selector)
+	return j
+}
+
+func (j *JQuery) Slice(start int) *JQuery {
+	j.o = j.o.Call("slice", start)
+	return j
+}
+
+func (j *JQuery) SliceByEnd(start int, end int) *JQuery {
+	j.o = j.o.Call("slice", start, end)
+	return j
+}
 
 const (
 	EvtCLICK    = "click"
