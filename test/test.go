@@ -23,7 +23,7 @@ func main() {
 	QUnit.Test("add", func(assert QUnit.QUnitAssert) {
 
 		NewJQuery("p").AddClass("wow").Clone().Add("<span>Again</span>").AppendTo("body")
-		txt := NewJQuery("p#qunit-testresult").NextSelector("span").Text()
+		txt := NewJQuery("p#qunit-testresult").NextBySelector("span").Text()
 		print("txt = ", txt)
 		assert.Equal(txt, "Again", `Clone, Add, AppendTo, Find, Text Functions`)
 

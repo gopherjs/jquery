@@ -210,11 +210,6 @@ func (j *JQuery) TextByFunc(fn func(idx int, txt string) string) *JQuery {
 	return j
 }
 
-func (j *JQuery) Find(selector string) *JQuery {
-	found := j.o.Call("find", selector)
-	return &JQuery{found}
-}
-
 func (j *JQuery) Closest(selector string) *JQuery {
 	closest := j.o.Call("closest", selector)
 	return &JQuery{closest}
@@ -258,16 +253,6 @@ func (j *JQuery) CloneWithDataAndEvents(withDataAndEvents bool) *JQuery {
 
 func (j *JQuery) CloneDeep(withDataAndEvents bool, deepWithDataAndEvents bool) *JQuery {
 	j.o = j.o.Call("clone", withDataAndEvents, deepWithDataAndEvents)
-	return j
-}
-
-func (j *JQuery) Next() *JQuery {
-	j.o = j.o.Call("next")
-	return j
-}
-
-func (j *JQuery) NextSelector(selector string) *JQuery {
-	j.o = j.o.Call("next", selector)
 	return j
 }
 
@@ -443,11 +428,138 @@ func (j *JQuery) SliceByEnd(start int, end int) *JQuery {
 	return j
 }
 
+func (j *JQuery) Next() *JQuery {
+	j.o = j.o.Call("next")
+	return j
+}
+
+func (j *JQuery) NextBySelector(selector string) *JQuery {
+	j.o = j.o.Call("next", selector)
+	return j
+}
+
+func (j *JQuery) NextAll() *JQuery {
+	j.o = j.o.Call("nextAll")
+	return j
+}
+
+func (j *JQuery) NextAllBySelector(selector string) *JQuery {
+	j.o = j.o.Call("nextAll", selector)
+	return j
+}
+
+func (j *JQuery) NextUntil(selector string) *JQuery {
+	j.o = j.o.Call("nextUntil", selector)
+	return j
+}
+
+func (j *JQuery) NextUntilByFilter(selector string, filter string) *JQuery {
+	j.o = j.o.Call("nextUntil", selector, filter)
+	return j
+}
+
+func (j *JQuery) NextUntilByJQuery(obj *JQuery) *JQuery {
+	j.o = j.o.Call("nextUntil", obj)
+	return j
+}
+
+func (j *JQuery) NextUntilByJQueryAndFilter(obj *JQuery, filter string) *JQuery {
+	j.o = j.o.Call("nextUntil", obj, filter)
+	return j
+}
+
+func (j *JQuery) Not(selector string) *JQuery {
+	j.o = j.o.Call("not", selector)
+	return j
+}
+
+func (j *JQuery) NotByJQuery(obj *JQuery) *JQuery {
+	j.o = j.o.Call("not", obj)
+	return j
+}
+
+func (j *JQuery) Filter(selector string) *JQuery {
+	j.o = j.o.Call("filter", selector)
+	return j
+}
+
+func (j *JQuery) FilterByFunc(fn func(index int) int) *JQuery {
+	j.o.Call("filter", func(index int) int {
+		return fn(index)
+	})
+	return j
+}
+
+func (j *JQuery) FilterByJQuery(obj *JQuery) *JQuery {
+	j.o = j.o.Call("filter", obj)
+	return j
+}
+
+/*
+func (j *JQuery) Find(selector string) *JQuery {
+	j.o = j.o.Call("filter", selector)
+	return j
+}*/
+
+//2do: check
+func (j *JQuery) Find(selector string) *JQuery {
+	found := j.o.Call("find", selector)
+	return &JQuery{found}
+}
+
+func (j *JQuery) FindByJQuery(obj *JQuery) *JQuery {
+	j.o = j.o.Call("find", obj)
+	return j
+}
+
+func (j *JQuery) First() *JQuery {
+	j.o = j.o.Call("first")
+	return j
+}
+
+func (j *JQuery) Has(selector string) *JQuery {
+	j.o = j.o.Call("has", selector)
+	return j
+}
+
+func (j *JQuery) Is(selector string) bool {
+	return j.o.Call("Is", selector).Bool()
+}
+
+func (j *JQuery) IsByFunc(fn func(index int) bool) *JQuery {
+	j.o.Call("width", func(index int) bool {
+		return fn(index)
+	})
+	return j
+}
+
+func (j *JQuery) IsByJQuery(obj *JQuery) bool {
+	return j.o.Call("is", obj).Bool()
+}
+
+func (j *JQuery) Last() *JQuery {
+	j.o = j.o.Call("Last")
+	return j
+}
+
 const (
-	EvtCLICK    = "click"
-	EvtKEYUP    = "keyup"
-	EvtCHANGE   = "change"
-	EvtDBLCLICK = "dblclick"
-	EvtKEYPRESS = "keypress"
-	EvtBLUR     = "blur"
+	EvtBLUR       = "blur"
+	EvtCHANGE     = "change"
+	EvtCLICK      = "click"
+	EvtDBLCLICK   = "dblclick"
+	EvtFOCUS      = "focus"
+	EvtFOCUSIN    = "focusin"
+	EvtFOCUSOUT   = "focusout"
+	EvtHOVER      = "hover"
+	EvtKEYDOWN    = "keydown"
+	EvtKEYPRESS   = "keypress"
+	EvtKEYUP      = "keyup"
+	EvtLOAD       = "load"
+	EvtMOUSEDOWN  = "mousedown"
+	EvtMOUSEENTER = "mouseenter"
+	EvtMOUSELEAVE = "mouseleave"
+	EvtMOUSEMOVE  = "mousemove"
+	EvtMOUSEOUT   = "mouseout"
+	EvtMOUSEOVER  = "mouseover"
+	EvtMOUSEUP    = "mouseup"
 )
