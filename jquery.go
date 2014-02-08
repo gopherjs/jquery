@@ -21,15 +21,13 @@ func NewJQuery(args ...string) *JQuery {
 	} else if len(args) == 2 {
 		jQ := js.Global("jQuery").New(args[0], args[1])
 		return &JQuery{jQ}
-	} else {
-		return &JQuery{js.Global("jQuery").New()}
 	}
+	return &JQuery{js.Global("jQuery").New()}
 }
 
 //JQuery constructor via js.Object
 func NewJQueryByObject(o js.Object) *JQuery {
-	jQ := js.Global("jQuery").New(o)
-	return &JQuery{jQ}
+	return &JQuery{js.Global("jQuery").New(o)}
 }
 
 //static method
@@ -72,7 +70,7 @@ func (j *JQuery) Css(name string) string {
 }
 
 func (j *JQuery) SetCss(name, value interface{}) *JQuery {
-	j.o.Call("css", name, value)
+	j.o = j.o.Call("css", name, value)
 	return j
 }
 
@@ -81,7 +79,7 @@ func (j *JQuery) Text() string {
 }
 
 func (j *JQuery) SetText(name string) *JQuery {
-	j.o.Call("text", name)
+	j.o = j.o.Call("text", name)
 	return j
 }
 
@@ -99,7 +97,7 @@ func (j *JQuery) Prop(property string) bool {
 }
 
 func (j *JQuery) SetProp(name string, value bool) *JQuery {
-	j.o.Call("prop", name, value)
+	j.o = j.o.Call("prop", name, value)
 	return j
 }
 
@@ -108,17 +106,30 @@ func (j *JQuery) Attr(property string) string {
 }
 
 func (j *JQuery) AddClass(property string) *JQuery {
-	j.o.Call("addClass", property)
+	j.o = j.o.Call("addClass", property)
+	return j
+}
+
+func (j *JQuery) AddClassFn(fn func(idx int) string) *JQuery {
+	j.o.Call("html", func(idx int) string {
+		return fn(idx)
+	})
+	return j
+}
+func (j *JQuery) AddClassFnClass(fn func(idx int, class string) string) *JQuery {
+	j.o.Call("html", func(idx int, class string) string {
+		return fn(idx, class)
+	})
 	return j
 }
 
 func (j *JQuery) RemoveClass(property string) *JQuery {
-	j.o.Call("removeClass", property)
+	j.o = j.o.Call("removeClass", property)
 	return j
 }
 
 func (j *JQuery) ToggleClassByName(className string, swtch bool) *JQuery {
-	j.o.Call("toggleClass", className, swtch)
+	j.o = j.o.Call("toggleClass", className, swtch)
 	return j
 }
 
@@ -128,12 +139,12 @@ func (j *JQuery) ToggleClass(swtch bool) *JQuery {
 }
 
 func (j *JQuery) Focus() *JQuery {
-	j.o.Call("focus")
+	j.o = j.o.Call("focus")
 	return j
 }
 
 func (j *JQuery) Blur() *JQuery {
-	j.o.Call("blur")
+	j.o = j.o.Call("blur")
 	return j
 }
 
@@ -168,17 +179,22 @@ func (j *JQuery) Off(event string, handler func()) *JQuery {
 }
 
 func (j *JQuery) AppendTo(destination string) *JQuery {
-	j.o.Call("appendTo", destination)
+	j.o = j.o.Call("appendTo", destination)
+	return j
+}
+
+func (j *JQuery) AppendToJQuery(obj *JQuery) *JQuery {
+	j.o = j.o.Call("appendTo", obj.o)
 	return j
 }
 
 func (j *JQuery) Toggle(showOrHide bool) *JQuery {
-	j.o.Call("toggle", showOrHide)
+	j.o = j.o.Call("toggle", showOrHide)
 	return j
 }
 
 func (j *JQuery) Show() *JQuery {
-	j.o.Call("show")
+	j.o = j.o.Call("show")
 	return j
 }
 
@@ -192,7 +208,7 @@ func (j *JQuery) Html() string {
 }
 
 func (j *JQuery) SetHtml(html string) *JQuery {
-	j.o.Call("html", html)
+	j.o = j.o.Call("html", html)
 	return j
 }
 
@@ -211,8 +227,8 @@ func (j *JQuery) TextByFunc(fn func(idx int, txt string) string) *JQuery {
 }
 
 func (j *JQuery) Closest(selector string) *JQuery {
-	closest := j.o.Call("closest", selector)
-	return &JQuery{closest}
+	j.o = j.o.Call("closest", selector)
+	return j
 }
 func (j *JQuery) End() *JQuery {
 	j.o = j.o.Call("end")
@@ -228,16 +244,15 @@ func (j *JQuery) AddByContext(selector string, context interface{}) *JQuery {
 	return j
 }
 
-func (j *JQuery) AddElems(elements ...interface{}) *JQuery {
-	j.o = j.o.Call("add", elements...)
-	return j
-}
 func (j *JQuery) AddHtml(html string) *JQuery {
 	j.o = j.o.Call("add", html)
 	return j
 }
-func (j *JQuery) AddJQuery(obj JQuery) *JQuery {
-	j.o = j.o.Call("add", obj)
+func (j *JQuery) AddJQuery(obj *JQuery) *JQuery {
+
+	//print("j.sel= ", j.Selector(), " obj.Sel == ", obj.Selector(), " obj.o = ", obj.o)
+
+	j.o = j.o.Call("add", obj.o)
 	return j
 }
 
@@ -259,6 +274,7 @@ func (j *JQuery) CloneDeep(withDataAndEvents bool, deepWithDataAndEvents bool) *
 func (j *JQuery) Height() int {
 	return j.o.Call("height").Int()
 }
+
 func (j *JQuery) SetHeight(value string) *JQuery {
 	j.o = j.o.Call("height", value)
 	return j
@@ -359,12 +375,12 @@ func (j *JQuery) ParentsUntilByFilter(selector string, filter string) *JQuery {
 }
 
 func (j *JQuery) ParentsUntilByJQuery(obj *JQuery) *JQuery {
-	j.o = j.o.Call("parentsUntil", obj)
+	j.o = j.o.Call("parentsUntil", obj.o)
 	return j
 }
 
 func (j *JQuery) ParentsUntilByJQueryAndFilter(obj *JQuery, filter string) *JQuery {
-	j.o = j.o.Call("parentsUntil", obj, filter)
+	j.o = j.o.Call("parentsUntil", obj.o, filter)
 	return j
 }
 
@@ -399,12 +415,12 @@ func (j *JQuery) PrevUntilByFilter(selector string, filter string) *JQuery {
 }
 
 func (j *JQuery) PrevUntilByJQuery(obj *JQuery) *JQuery {
-	j.o = j.o.Call("prevUntil", obj)
+	j.o = j.o.Call("prevUntil", obj.o)
 	return j
 }
 
 func (j *JQuery) PrevUntilByJQueryAndFilter(obj *JQuery, filter string) *JQuery {
-	j.o = j.o.Call("prevUntil", obj, filter)
+	j.o = j.o.Call("prevUntil", obj.o, filter)
 	return j
 }
 
@@ -459,12 +475,12 @@ func (j *JQuery) NextUntilByFilter(selector string, filter string) *JQuery {
 }
 
 func (j *JQuery) NextUntilByJQuery(obj *JQuery) *JQuery {
-	j.o = j.o.Call("nextUntil", obj)
+	j.o = j.o.Call("nextUntil", obj.o)
 	return j
 }
 
 func (j *JQuery) NextUntilByJQueryAndFilter(obj *JQuery, filter string) *JQuery {
-	j.o = j.o.Call("nextUntil", obj, filter)
+	j.o = j.o.Call("nextUntil", obj.o, filter)
 	return j
 }
 
@@ -474,7 +490,7 @@ func (j *JQuery) Not(selector string) *JQuery {
 }
 
 func (j *JQuery) NotByJQuery(obj *JQuery) *JQuery {
-	j.o = j.o.Call("not", obj)
+	j.o = j.o.Call("not", obj.o)
 	return j
 }
 
@@ -491,24 +507,17 @@ func (j *JQuery) FilterByFunc(fn func(index int) int) *JQuery {
 }
 
 func (j *JQuery) FilterByJQuery(obj *JQuery) *JQuery {
-	j.o = j.o.Call("filter", obj)
+	j.o = j.o.Call("filter", obj.o)
 	return j
 }
 
-/*
 func (j *JQuery) Find(selector string) *JQuery {
-	j.o = j.o.Call("filter", selector)
+	j.o = j.o.Call("find", selector)
 	return j
-}*/
-
-//2do: check
-func (j *JQuery) Find(selector string) *JQuery {
-	found := j.o.Call("find", selector)
-	return &JQuery{found}
 }
 
 func (j *JQuery) FindByJQuery(obj *JQuery) *JQuery {
-	j.o = j.o.Call("find", obj)
+	j.o = j.o.Call("find", obj.o)
 	return j
 }
 
@@ -534,7 +543,7 @@ func (j *JQuery) IsByFunc(fn func(index int) bool) *JQuery {
 }
 
 func (j *JQuery) IsByJQuery(obj *JQuery) bool {
-	return j.o.Call("is", obj).Bool()
+	return j.o.Call("is", obj.o).Bool()
 }
 
 func (j *JQuery) Last() *JQuery {

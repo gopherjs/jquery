@@ -3211,7 +3211,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	Event.Ptr.prototype.String = function() { return this.Object.String(); };
 	go$pkg.Event = Event;
 	JQuery.init([["o", "github.com/rusco/jquery", js.Object, ""]]);
-	(go$ptrType(JQuery)).methods = [["Add", "", [Go$String], [(go$ptrType(JQuery))], false], ["AddByContext", "", [Go$String, go$emptyInterface], [(go$ptrType(JQuery))], false], ["AddClass", "", [Go$String], [(go$ptrType(JQuery))], false], ["AddElems", "", [(go$sliceType(go$emptyInterface))], [(go$ptrType(JQuery))], true], ["AddHtml", "", [Go$String], [(go$ptrType(JQuery))], false], ["AddJQuery", "", [JQuery], [(go$ptrType(JQuery))], false], ["AppendTo", "", [Go$String], [(go$ptrType(JQuery))], false], ["Attr", "", [Go$String], [Go$String], false], ["Blur", "", [], [(go$ptrType(JQuery))], false], ["ClearQueue", "", [Go$String], [(go$ptrType(JQuery))], false], ["Clone", "", [], [(go$ptrType(JQuery))], false], ["CloneDeep", "", [Go$Bool, Go$Bool], [(go$ptrType(JQuery))], false], ["CloneWithDataAndEvents", "", [Go$Bool], [(go$ptrType(JQuery))], false], ["Closest", "", [Go$String], [(go$ptrType(JQuery))], false], ["Css", "", [Go$String], [Go$String], false], ["Data", "", [Go$String], [Go$String], false], ["DataByKey", "", [Go$String], [go$emptyInterface], false], ["Dequeue", "", [Go$String], [(go$ptrType(JQuery))], false], ["End", "", [], [(go$ptrType(JQuery))], false], ["Filter", "", [Go$String], [(go$ptrType(JQuery))], false], ["FilterByFunc", "", [(go$funcType([Go$Int], [Go$Int], false))], [(go$ptrType(JQuery))], false], ["FilterByJQuery", "", [(go$ptrType(JQuery))], [(go$ptrType(JQuery))], false], ["Find", "", [Go$String], [(go$ptrType(JQuery))], false], ["FindByJQuery", "", [(go$ptrType(JQuery))], [(go$ptrType(JQuery))], false], ["First", "", [], [(go$ptrType(JQuery))], false], ["Focus", "", [], [(go$ptrType(JQuery))], false], ["Has", "", [Go$String], [(go$ptrType(JQuery))], false], ["Height", "", [], [Go$Int], false], ["Hide", "", [], [(go$ptrType(JQuery))], false], ["Html", "", [], [Go$String], false], ["HtmlByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [(go$ptrType(JQuery))], false], ["Is", "", [Go$String], [Go$Bool], false], ["IsByFunc", "", [(go$funcType([Go$Int], [Go$Bool], false))], [(go$ptrType(JQuery))], false], ["IsByJQuery", "", [(go$ptrType(JQuery))], [Go$Bool], false], ["Jquery", "", [], [Go$String], false], ["Last", "", [], [(go$ptrType(JQuery))], false], ["Length", "", [], [Go$Int], false], ["Next", "", [], [(go$ptrType(JQuery))], false], ["NextAll", "", [], [(go$ptrType(JQuery))], false], ["NextAllBySelector", "", [Go$String], [(go$ptrType(JQuery))], false], ["NextBySelector", "", [Go$String], [(go$ptrType(JQuery))], false], ["NextUntil", "", [Go$String], [(go$ptrType(JQuery))], false], ["NextUntilByFilter", "", [Go$String, Go$String], [(go$ptrType(JQuery))], false], ["NextUntilByJQuery", "", [(go$ptrType(JQuery))], [(go$ptrType(JQuery))], false], ["NextUntilByJQueryAndFilter", "", [(go$ptrType(JQuery)), Go$String], [(go$ptrType(JQuery))], false], ["Not", "", [Go$String], [(go$ptrType(JQuery))], false], ["NotByJQuery", "", [(go$ptrType(JQuery))], [(go$ptrType(JQuery))], false], ["Off", "", [Go$String, (go$funcType([], [], false))], [(go$ptrType(JQuery))], false], ["OffsetParent", "", [], [(go$ptrType(JQuery))], false], ["On", "", [Go$String, (go$funcType([js.Object, (go$ptrType(Event))], [], false))], [(go$ptrType(JQuery))], false], ["OnSelector", "", [Go$String, Go$String, (go$funcType([js.Object, (go$ptrType(Event))], [], false))], [(go$ptrType(JQuery))], false], ["One", "", [Go$String, (go$funcType([js.Object, (go$ptrType(Event))], [], false))], [(go$ptrType(JQuery))], false], ["Parent", "", [], [(go$ptrType(JQuery))], false], ["ParentBySelector", "", [Go$String], [(go$ptrType(JQuery))], false], ["Parents", "", [], [(go$ptrType(JQuery))], false], ["ParentsBySelector", "", [Go$String], [(go$ptrType(JQuery))], false], ["ParentsUntil", "", [Go$String], [(go$ptrType(JQuery))], false], ["ParentsUntilByFilter", "", [Go$String, Go$String], [(go$ptrType(JQuery))], false], ["ParentsUntilByJQuery", "", [(go$ptrType(JQuery))], [(go$ptrType(JQuery))], false], ["ParentsUntilByJQueryAndFilter", "", [(go$ptrType(JQuery)), Go$String], [(go$ptrType(JQuery))], false], ["Prev", "", [], [(go$ptrType(JQuery))], false], ["PrevAll", "", [], [(go$ptrType(JQuery))], false], ["PrevAllBySelector", "", [Go$String], [(go$ptrType(JQuery))], false], ["PrevBySelector", "", [Go$String], [(go$ptrType(JQuery))], false], ["PrevUntil", "", [Go$String], [(go$ptrType(JQuery))], false], ["PrevUntilByFilter", "", [Go$String, Go$String], [(go$ptrType(JQuery))], false], ["PrevUntilByJQuery", "", [(go$ptrType(JQuery))], [(go$ptrType(JQuery))], false], ["PrevUntilByJQueryAndFilter", "", [(go$ptrType(JQuery)), Go$String], [(go$ptrType(JQuery))], false], ["Prop", "", [Go$String], [Go$Bool], false], ["RemoveClass", "", [Go$String], [(go$ptrType(JQuery))], false], ["RemoveData", "", [Go$String], [(go$ptrType(JQuery))], false], ["ScrollLeft", "", [], [Go$Int], false], ["ScrollTop", "", [], [Go$Int], false], ["Selector", "", [], [Go$String], false], ["SetCss", "", [go$emptyInterface, go$emptyInterface], [(go$ptrType(JQuery))], false], ["SetData", "", [Go$String, go$emptyInterface], [(go$ptrType(JQuery))], false], ["SetHeight", "", [Go$String], [(go$ptrType(JQuery))], false], ["SetHtml", "", [Go$String], [(go$ptrType(JQuery))], false], ["SetProp", "", [Go$String, Go$Bool], [(go$ptrType(JQuery))], false], ["SetScrollLeft", "", [Go$Int], [(go$ptrType(JQuery))], false], ["SetScrollTop", "", [Go$Int], [(go$ptrType(JQuery))], false], ["SetText", "", [Go$String], [(go$ptrType(JQuery))], false], ["SetVal", "", [Go$String], [(go$ptrType(JQuery))], false], ["SetWidth", "", [Go$String], [(go$ptrType(JQuery))], false], ["Show", "", [], [(go$ptrType(JQuery))], false], ["Siblings", "", [], [(go$ptrType(JQuery))], false], ["SiblingsBySelector", "", [Go$String], [(go$ptrType(JQuery))], false], ["Size", "", [], [Go$Int], false], ["Slice", "", [Go$Int], [(go$ptrType(JQuery))], false], ["SliceByEnd", "", [Go$Int, Go$Int], [(go$ptrType(JQuery))], false], ["Text", "", [], [Go$String], false], ["TextByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [(go$ptrType(JQuery))], false], ["Toggle", "", [Go$Bool], [(go$ptrType(JQuery))], false], ["ToggleClass", "", [Go$Bool], [(go$ptrType(JQuery))], false], ["ToggleClassByName", "", [Go$String, Go$Bool], [(go$ptrType(JQuery))], false], ["Val", "", [], [Go$String], false], ["Width", "", [], [Go$Int], false], ["WidthByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [(go$ptrType(JQuery))], false], ["addBack", "github.com/rusco/jquery", [], [(go$ptrType(JQuery))], false], ["addBackBySelector", "github.com/rusco/jquery", [Go$String], [(go$ptrType(JQuery))], false], ["serialize", "github.com/rusco/jquery", [], [Go$String], false]];
+	(go$ptrType(JQuery)).methods = [["Add", "", [Go$String], [(go$ptrType(JQuery))], false], ["AddByContext", "", [Go$String, go$emptyInterface], [(go$ptrType(JQuery))], false], ["AddClass", "", [Go$String], [(go$ptrType(JQuery))], false], ["AddClassFn", "", [(go$funcType([Go$Int], [Go$String], false))], [(go$ptrType(JQuery))], false], ["AddClassFnClass", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [(go$ptrType(JQuery))], false], ["AddHtml", "", [Go$String], [(go$ptrType(JQuery))], false], ["AddJQuery", "", [(go$ptrType(JQuery))], [(go$ptrType(JQuery))], false], ["AppendTo", "", [Go$String], [(go$ptrType(JQuery))], false], ["AppendToJQuery", "", [(go$ptrType(JQuery))], [(go$ptrType(JQuery))], false], ["Attr", "", [Go$String], [Go$String], false], ["Blur", "", [], [(go$ptrType(JQuery))], false], ["ClearQueue", "", [Go$String], [(go$ptrType(JQuery))], false], ["Clone", "", [], [(go$ptrType(JQuery))], false], ["CloneDeep", "", [Go$Bool, Go$Bool], [(go$ptrType(JQuery))], false], ["CloneWithDataAndEvents", "", [Go$Bool], [(go$ptrType(JQuery))], false], ["Closest", "", [Go$String], [(go$ptrType(JQuery))], false], ["Css", "", [Go$String], [Go$String], false], ["Data", "", [Go$String], [Go$String], false], ["DataByKey", "", [Go$String], [go$emptyInterface], false], ["Dequeue", "", [Go$String], [(go$ptrType(JQuery))], false], ["End", "", [], [(go$ptrType(JQuery))], false], ["Filter", "", [Go$String], [(go$ptrType(JQuery))], false], ["FilterByFunc", "", [(go$funcType([Go$Int], [Go$Int], false))], [(go$ptrType(JQuery))], false], ["FilterByJQuery", "", [(go$ptrType(JQuery))], [(go$ptrType(JQuery))], false], ["Find", "", [Go$String], [(go$ptrType(JQuery))], false], ["FindByJQuery", "", [(go$ptrType(JQuery))], [(go$ptrType(JQuery))], false], ["First", "", [], [(go$ptrType(JQuery))], false], ["Focus", "", [], [(go$ptrType(JQuery))], false], ["Has", "", [Go$String], [(go$ptrType(JQuery))], false], ["Height", "", [], [Go$Int], false], ["Hide", "", [], [(go$ptrType(JQuery))], false], ["Html", "", [], [Go$String], false], ["HtmlByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [(go$ptrType(JQuery))], false], ["Is", "", [Go$String], [Go$Bool], false], ["IsByFunc", "", [(go$funcType([Go$Int], [Go$Bool], false))], [(go$ptrType(JQuery))], false], ["IsByJQuery", "", [(go$ptrType(JQuery))], [Go$Bool], false], ["Jquery", "", [], [Go$String], false], ["Last", "", [], [(go$ptrType(JQuery))], false], ["Length", "", [], [Go$Int], false], ["Next", "", [], [(go$ptrType(JQuery))], false], ["NextAll", "", [], [(go$ptrType(JQuery))], false], ["NextAllBySelector", "", [Go$String], [(go$ptrType(JQuery))], false], ["NextBySelector", "", [Go$String], [(go$ptrType(JQuery))], false], ["NextUntil", "", [Go$String], [(go$ptrType(JQuery))], false], ["NextUntilByFilter", "", [Go$String, Go$String], [(go$ptrType(JQuery))], false], ["NextUntilByJQuery", "", [(go$ptrType(JQuery))], [(go$ptrType(JQuery))], false], ["NextUntilByJQueryAndFilter", "", [(go$ptrType(JQuery)), Go$String], [(go$ptrType(JQuery))], false], ["Not", "", [Go$String], [(go$ptrType(JQuery))], false], ["NotByJQuery", "", [(go$ptrType(JQuery))], [(go$ptrType(JQuery))], false], ["Off", "", [Go$String, (go$funcType([], [], false))], [(go$ptrType(JQuery))], false], ["OffsetParent", "", [], [(go$ptrType(JQuery))], false], ["On", "", [Go$String, (go$funcType([js.Object, (go$ptrType(Event))], [], false))], [(go$ptrType(JQuery))], false], ["OnSelector", "", [Go$String, Go$String, (go$funcType([js.Object, (go$ptrType(Event))], [], false))], [(go$ptrType(JQuery))], false], ["One", "", [Go$String, (go$funcType([js.Object, (go$ptrType(Event))], [], false))], [(go$ptrType(JQuery))], false], ["Parent", "", [], [(go$ptrType(JQuery))], false], ["ParentBySelector", "", [Go$String], [(go$ptrType(JQuery))], false], ["Parents", "", [], [(go$ptrType(JQuery))], false], ["ParentsBySelector", "", [Go$String], [(go$ptrType(JQuery))], false], ["ParentsUntil", "", [Go$String], [(go$ptrType(JQuery))], false], ["ParentsUntilByFilter", "", [Go$String, Go$String], [(go$ptrType(JQuery))], false], ["ParentsUntilByJQuery", "", [(go$ptrType(JQuery))], [(go$ptrType(JQuery))], false], ["ParentsUntilByJQueryAndFilter", "", [(go$ptrType(JQuery)), Go$String], [(go$ptrType(JQuery))], false], ["Prev", "", [], [(go$ptrType(JQuery))], false], ["PrevAll", "", [], [(go$ptrType(JQuery))], false], ["PrevAllBySelector", "", [Go$String], [(go$ptrType(JQuery))], false], ["PrevBySelector", "", [Go$String], [(go$ptrType(JQuery))], false], ["PrevUntil", "", [Go$String], [(go$ptrType(JQuery))], false], ["PrevUntilByFilter", "", [Go$String, Go$String], [(go$ptrType(JQuery))], false], ["PrevUntilByJQuery", "", [(go$ptrType(JQuery))], [(go$ptrType(JQuery))], false], ["PrevUntilByJQueryAndFilter", "", [(go$ptrType(JQuery)), Go$String], [(go$ptrType(JQuery))], false], ["Prop", "", [Go$String], [Go$Bool], false], ["RemoveClass", "", [Go$String], [(go$ptrType(JQuery))], false], ["RemoveData", "", [Go$String], [(go$ptrType(JQuery))], false], ["ScrollLeft", "", [], [Go$Int], false], ["ScrollTop", "", [], [Go$Int], false], ["Selector", "", [], [Go$String], false], ["SetCss", "", [go$emptyInterface, go$emptyInterface], [(go$ptrType(JQuery))], false], ["SetData", "", [Go$String, go$emptyInterface], [(go$ptrType(JQuery))], false], ["SetHeight", "", [Go$String], [(go$ptrType(JQuery))], false], ["SetHtml", "", [Go$String], [(go$ptrType(JQuery))], false], ["SetProp", "", [Go$String, Go$Bool], [(go$ptrType(JQuery))], false], ["SetScrollLeft", "", [Go$Int], [(go$ptrType(JQuery))], false], ["SetScrollTop", "", [Go$Int], [(go$ptrType(JQuery))], false], ["SetText", "", [Go$String], [(go$ptrType(JQuery))], false], ["SetVal", "", [Go$String], [(go$ptrType(JQuery))], false], ["SetWidth", "", [Go$String], [(go$ptrType(JQuery))], false], ["Show", "", [], [(go$ptrType(JQuery))], false], ["Siblings", "", [], [(go$ptrType(JQuery))], false], ["SiblingsBySelector", "", [Go$String], [(go$ptrType(JQuery))], false], ["Size", "", [], [Go$Int], false], ["Slice", "", [Go$Int], [(go$ptrType(JQuery))], false], ["SliceByEnd", "", [Go$Int, Go$Int], [(go$ptrType(JQuery))], false], ["Text", "", [], [Go$String], false], ["TextByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [(go$ptrType(JQuery))], false], ["Toggle", "", [Go$Bool], [(go$ptrType(JQuery))], false], ["ToggleClass", "", [Go$Bool], [(go$ptrType(JQuery))], false], ["ToggleClassByName", "", [Go$String, Go$Bool], [(go$ptrType(JQuery))], false], ["Val", "", [], [Go$String], false], ["Width", "", [], [Go$Int], false], ["WidthByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [(go$ptrType(JQuery))], false], ["addBack", "github.com/rusco/jquery", [], [(go$ptrType(JQuery))], false], ["addBackBySelector", "github.com/rusco/jquery", [Go$String], [(go$ptrType(JQuery))], false], ["serialize", "github.com/rusco/jquery", [], [Go$String], false]];
 	Event.init([["", "", js.Object, ""], ["KeyCode", "", Go$Int, "js:\"keyCode\""], ["Target", "", Go$Int, "js:\"target\""], ["Data", "", go$emptyInterface, "js:\"data\""]]);
 	Event.methods = [["Bool", "", [], [Go$Bool], false], ["Call", "", [Go$String, (go$sliceType(go$emptyInterface))], [js.Object], true], ["Float", "", [], [Go$Float64], false], ["Get", "", [Go$String], [js.Object], false], ["Index", "", [Go$Int], [js.Object], false], ["Int", "", [], [Go$Int], false], ["Interface", "", [], [go$emptyInterface], false], ["Invoke", "", [(go$sliceType(go$emptyInterface))], [js.Object], true], ["IsNull", "", [], [Go$Bool], false], ["IsUndefined", "", [], [Go$Bool], false], ["Length", "", [], [Go$Int], false], ["New", "", [(go$sliceType(go$emptyInterface))], [js.Object], true], ["Set", "", [Go$String, go$emptyInterface], [], false], ["SetIndex", "", [Go$Int, go$emptyInterface], [], false], ["String", "", [], [Go$String], false]];
 	(go$ptrType(Event)).methods = [["Bool", "", [], [Go$Bool], false], ["Call", "", [Go$String, (go$sliceType(go$emptyInterface))], [js.Object], true], ["Float", "", [], [Go$Float64], false], ["Get", "", [Go$String], [js.Object], false], ["Index", "", [Go$Int], [js.Object], false], ["Int", "", [], [Go$Int], false], ["Interface", "", [], [go$emptyInterface], false], ["Invoke", "", [(go$sliceType(go$emptyInterface))], [js.Object], true], ["IsNull", "", [], [Go$Bool], false], ["IsUndefined", "", [], [Go$Bool], false], ["Length", "", [], [Go$Int], false], ["New", "", [(go$sliceType(go$emptyInterface))], [js.Object], true], ["Set", "", [Go$String, go$emptyInterface], [], false], ["SetIndex", "", [Go$Int, go$emptyInterface], [], false], ["String", "", [], [Go$String], false]];
@@ -3223,14 +3223,11 @@ go$packages["github.com/rusco/jquery"] = (function() {
 		} else if (args.length === 2) {
 			jQ$1 = new go$global.jQuery(go$externalize((_slice$1 = args, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")), Go$String), go$externalize((_slice$2 = args, _index$2 = 1, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")), Go$String));
 			return new JQuery.Ptr(jQ$1);
-		} else {
-			return new JQuery.Ptr(new go$global.jQuery());
 		}
+		return new JQuery.Ptr(new go$global.jQuery());
 	};
 	var NewJQueryByObject = go$pkg.NewJQueryByObject = function(o) {
-		var jQ;
-		jQ = new go$global.jQuery(o);
-		return new JQuery.Ptr(jQ);
+		return new JQuery.Ptr(new go$global.jQuery(o));
 	};
 	var Trim = go$pkg.Trim = function(text) {
 		return go$internalize(go$global.jQuery.trim(go$externalize(text, Go$String)), Go$String);
@@ -3288,7 +3285,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.SetCss = function(name, value) {
 		var j;
 		j = this;
-		j.o.css(go$externalize(name, go$emptyInterface), go$externalize(value, go$emptyInterface));
+		j.o = j.o.css(go$externalize(name, go$emptyInterface), go$externalize(value, go$emptyInterface));
 		return j;
 	};
 	JQuery.prototype.SetCss = function(name, value) { return this.go$val.SetCss(name, value); };
@@ -3301,7 +3298,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.SetText = function(name) {
 		var j;
 		j = this;
-		j.o.text(go$externalize(name, Go$String));
+		j.o = j.o.text(go$externalize(name, Go$String));
 		return j;
 	};
 	JQuery.prototype.SetText = function(name) { return this.go$val.SetText(name); };
@@ -3327,7 +3324,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.SetProp = function(name, value) {
 		var j;
 		j = this;
-		j.o.prop(go$externalize(name, Go$String), go$externalize(value, Go$Bool));
+		j.o = j.o.prop(go$externalize(name, Go$String), go$externalize(value, Go$Bool));
 		return j;
 	};
 	JQuery.prototype.SetProp = function(name, value) { return this.go$val.SetProp(name, value); };
@@ -3340,21 +3337,39 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.AddClass = function(property) {
 		var j;
 		j = this;
-		j.o.addClass(go$externalize(property, Go$String));
+		j.o = j.o.addClass(go$externalize(property, Go$String));
 		return j;
 	};
 	JQuery.prototype.AddClass = function(property) { return this.go$val.AddClass(property); };
+	JQuery.Ptr.prototype.AddClassFn = function(fn) {
+		var j;
+		j = this;
+		j.o.html(go$externalize((function(idx) {
+			return fn(idx);
+		}), (go$funcType([Go$Int], [Go$String], false))));
+		return j;
+	};
+	JQuery.prototype.AddClassFn = function(fn) { return this.go$val.AddClassFn(fn); };
+	JQuery.Ptr.prototype.AddClassFnClass = function(fn) {
+		var j;
+		j = this;
+		j.o.html(go$externalize((function(idx, class$1) {
+			return fn(idx, class$1);
+		}), (go$funcType([Go$Int, Go$String], [Go$String], false))));
+		return j;
+	};
+	JQuery.prototype.AddClassFnClass = function(fn) { return this.go$val.AddClassFnClass(fn); };
 	JQuery.Ptr.prototype.RemoveClass = function(property) {
 		var j;
 		j = this;
-		j.o.removeClass(go$externalize(property, Go$String));
+		j.o = j.o.removeClass(go$externalize(property, Go$String));
 		return j;
 	};
 	JQuery.prototype.RemoveClass = function(property) { return this.go$val.RemoveClass(property); };
 	JQuery.Ptr.prototype.ToggleClassByName = function(className, swtch) {
 		var j;
 		j = this;
-		j.o.toggleClass(go$externalize(className, Go$String), go$externalize(swtch, Go$Bool));
+		j.o = j.o.toggleClass(go$externalize(className, Go$String), go$externalize(swtch, Go$Bool));
 		return j;
 	};
 	JQuery.prototype.ToggleClassByName = function(className, swtch) { return this.go$val.ToggleClassByName(className, swtch); };
@@ -3368,14 +3383,14 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.Focus = function() {
 		var j;
 		j = this;
-		j.o.focus();
+		j.o = j.o.focus();
 		return j;
 	};
 	JQuery.prototype.Focus = function() { return this.go$val.Focus(); };
 	JQuery.Ptr.prototype.Blur = function() {
 		var j;
 		j = this;
-		j.o.blur();
+		j.o = j.o.blur();
 		return j;
 	};
 	JQuery.prototype.Blur = function() { return this.go$val.Blur(); };
@@ -3418,21 +3433,28 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.AppendTo = function(destination) {
 		var j;
 		j = this;
-		j.o.appendTo(go$externalize(destination, Go$String));
+		j.o = j.o.appendTo(go$externalize(destination, Go$String));
 		return j;
 	};
 	JQuery.prototype.AppendTo = function(destination) { return this.go$val.AppendTo(destination); };
+	JQuery.Ptr.prototype.AppendToJQuery = function(obj) {
+		var j;
+		j = this;
+		j.o = j.o.appendTo(obj.o);
+		return j;
+	};
+	JQuery.prototype.AppendToJQuery = function(obj) { return this.go$val.AppendToJQuery(obj); };
 	JQuery.Ptr.prototype.Toggle = function(showOrHide) {
 		var j;
 		j = this;
-		j.o.toggle(go$externalize(showOrHide, Go$Bool));
+		j.o = j.o.toggle(go$externalize(showOrHide, Go$Bool));
 		return j;
 	};
 	JQuery.prototype.Toggle = function(showOrHide) { return this.go$val.Toggle(showOrHide); };
 	JQuery.Ptr.prototype.Show = function() {
 		var j;
 		j = this;
-		j.o.show();
+		j.o = j.o.show();
 		return j;
 	};
 	JQuery.prototype.Show = function() { return this.go$val.Show(); };
@@ -3452,7 +3474,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.SetHtml = function(html) {
 		var j;
 		j = this;
-		j.o.html(go$externalize(html, Go$String));
+		j.o = j.o.html(go$externalize(html, Go$String));
 		return j;
 	};
 	JQuery.prototype.SetHtml = function(html) { return this.go$val.SetHtml(html); };
@@ -3475,10 +3497,10 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	};
 	JQuery.prototype.TextByFunc = function(fn) { return this.go$val.TextByFunc(fn); };
 	JQuery.Ptr.prototype.Closest = function(selector) {
-		var j, closest;
+		var j;
 		j = this;
-		closest = j.o.closest(go$externalize(selector, Go$String));
-		return new JQuery.Ptr(closest);
+		j.o = j.o.closest(go$externalize(selector, Go$String));
+		return j;
 	};
 	JQuery.prototype.Closest = function(selector) { return this.go$val.Closest(selector); };
 	JQuery.Ptr.prototype.End = function() {
@@ -3502,13 +3524,6 @@ go$packages["github.com/rusco/jquery"] = (function() {
 		return j;
 	};
 	JQuery.prototype.AddByContext = function(selector, context) { return this.go$val.AddByContext(selector, context); };
-	JQuery.Ptr.prototype.AddElems = function(elements) {
-		var j, obj;
-		j = this;
-		j.o = (obj = j.o, obj.add.apply(obj, go$externalize(elements, (go$sliceType(go$emptyInterface)))));
-		return j;
-	};
-	JQuery.prototype.AddElems = function(elements) { return this.go$val.AddElems(elements); };
 	JQuery.Ptr.prototype.AddHtml = function(html) {
 		var j;
 		j = this;
@@ -3519,7 +3534,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.AddJQuery = function(obj) {
 		var j;
 		j = this;
-		j.o = j.o.add(go$externalize(obj, JQuery));
+		j.o = j.o.add(obj.o);
 		return j;
 	};
 	JQuery.prototype.AddJQuery = function(obj) { return this.go$val.AddJQuery(obj); };
@@ -3697,14 +3712,14 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.ParentsUntilByJQuery = function(obj) {
 		var j;
 		j = this;
-		j.o = j.o.parentsUntil(go$externalize(obj, (go$ptrType(JQuery))));
+		j.o = j.o.parentsUntil(obj.o);
 		return j;
 	};
 	JQuery.prototype.ParentsUntilByJQuery = function(obj) { return this.go$val.ParentsUntilByJQuery(obj); };
 	JQuery.Ptr.prototype.ParentsUntilByJQueryAndFilter = function(obj, filter) {
 		var j;
 		j = this;
-		j.o = j.o.parentsUntil(go$externalize(obj, (go$ptrType(JQuery))), go$externalize(filter, Go$String));
+		j.o = j.o.parentsUntil(obj.o, go$externalize(filter, Go$String));
 		return j;
 	};
 	JQuery.prototype.ParentsUntilByJQueryAndFilter = function(obj, filter) { return this.go$val.ParentsUntilByJQueryAndFilter(obj, filter); };
@@ -3753,14 +3768,14 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.PrevUntilByJQuery = function(obj) {
 		var j;
 		j = this;
-		j.o = j.o.prevUntil(go$externalize(obj, (go$ptrType(JQuery))));
+		j.o = j.o.prevUntil(obj.o);
 		return j;
 	};
 	JQuery.prototype.PrevUntilByJQuery = function(obj) { return this.go$val.PrevUntilByJQuery(obj); };
 	JQuery.Ptr.prototype.PrevUntilByJQueryAndFilter = function(obj, filter) {
 		var j;
 		j = this;
-		j.o = j.o.prevUntil(go$externalize(obj, (go$ptrType(JQuery))), go$externalize(filter, Go$String));
+		j.o = j.o.prevUntil(obj.o, go$externalize(filter, Go$String));
 		return j;
 	};
 	JQuery.prototype.PrevUntilByJQueryAndFilter = function(obj, filter) { return this.go$val.PrevUntilByJQueryAndFilter(obj, filter); };
@@ -3837,14 +3852,14 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.NextUntilByJQuery = function(obj) {
 		var j;
 		j = this;
-		j.o = j.o.nextUntil(go$externalize(obj, (go$ptrType(JQuery))));
+		j.o = j.o.nextUntil(obj.o);
 		return j;
 	};
 	JQuery.prototype.NextUntilByJQuery = function(obj) { return this.go$val.NextUntilByJQuery(obj); };
 	JQuery.Ptr.prototype.NextUntilByJQueryAndFilter = function(obj, filter) {
 		var j;
 		j = this;
-		j.o = j.o.nextUntil(go$externalize(obj, (go$ptrType(JQuery))), go$externalize(filter, Go$String));
+		j.o = j.o.nextUntil(obj.o, go$externalize(filter, Go$String));
 		return j;
 	};
 	JQuery.prototype.NextUntilByJQueryAndFilter = function(obj, filter) { return this.go$val.NextUntilByJQueryAndFilter(obj, filter); };
@@ -3858,7 +3873,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.NotByJQuery = function(obj) {
 		var j;
 		j = this;
-		j.o = j.o.not(go$externalize(obj, (go$ptrType(JQuery))));
+		j.o = j.o.not(obj.o);
 		return j;
 	};
 	JQuery.prototype.NotByJQuery = function(obj) { return this.go$val.NotByJQuery(obj); };
@@ -3881,21 +3896,21 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.FilterByJQuery = function(obj) {
 		var j;
 		j = this;
-		j.o = j.o.filter(go$externalize(obj, (go$ptrType(JQuery))));
+		j.o = j.o.filter(obj.o);
 		return j;
 	};
 	JQuery.prototype.FilterByJQuery = function(obj) { return this.go$val.FilterByJQuery(obj); };
 	JQuery.Ptr.prototype.Find = function(selector) {
-		var j, found;
+		var j;
 		j = this;
-		found = j.o.find(go$externalize(selector, Go$String));
-		return new JQuery.Ptr(found);
+		j.o = j.o.find(go$externalize(selector, Go$String));
+		return j;
 	};
 	JQuery.prototype.Find = function(selector) { return this.go$val.Find(selector); };
 	JQuery.Ptr.prototype.FindByJQuery = function(obj) {
 		var j;
 		j = this;
-		j.o = j.o.find(go$externalize(obj, (go$ptrType(JQuery))));
+		j.o = j.o.find(obj.o);
 		return j;
 	};
 	JQuery.prototype.FindByJQuery = function(obj) { return this.go$val.FindByJQuery(obj); };
@@ -3931,7 +3946,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.IsByJQuery = function(obj) {
 		var j;
 		j = this;
-		return !!(j.o.is(go$externalize(obj, (go$ptrType(JQuery)))));
+		return !!(j.o.is(obj.o));
 	};
 	JQuery.prototype.IsByJQuery = function(obj) { return this.go$val.IsByJQuery(obj); };
 	JQuery.Ptr.prototype.Last = function() {
@@ -4455,13 +4470,4683 @@ go$packages["github.com/rusco/qunit"] = (function() {
 	};
 	return go$pkg;
 })();
+go$packages["errors"] = (function() {
+	var go$pkg = {};
+	var errorString;
+	errorString = go$newType(0, "Struct", "errors.errorString", "errorString", "errors", function(s_) {
+		this.go$val = this;
+		this.s = s_ !== undefined ? s_ : "";
+	});
+	go$pkg.errorString = errorString;
+	errorString.init([["s", "errors", Go$String, ""]]);
+	(go$ptrType(errorString)).methods = [["Error", "", [], [Go$String], false]];
+	var New = go$pkg.New = function(text) {
+		return new errorString.Ptr(text);
+	};
+	errorString.Ptr.prototype.Error = function() {
+		var e;
+		e = this;
+		return e.s;
+	};
+	errorString.prototype.Error = function() { return this.go$val.Error(); };
+	go$pkg.init = function() {
+	};
+	return go$pkg;
+})();
+go$packages["math"] = (function() {
+	var go$pkg = {};
+	var _gamP, _gamQ, _gamS, p0R8, p0S8, p0R5, p0S5, p0R3, p0S3, p0R2, p0S2, q0R8, q0S8, q0R5, q0S5, q0R3, q0S3, q0R2, q0S2, p1R8, p1S8, p1R5, p1S5, p1R3, p1S3, p1R2, p1S2, q1R8, q1S8, q1R5, q1S5, q1R3, q1S3, q1R2, q1S2, _lgamA, _lgamR, _lgamS, _lgamT, _lgamU, _lgamV, _lgamW, pow10tab, _sin, _cos, _tanP, _tanQ, tanhP, tanhQ;
+	var Abs = go$pkg.Abs = Math.abs;
+	var abs = function(x) {
+		if (x < 0) {
+			return -x;
+		} else if (x === 0) {
+			return 0;
+		}
+		return x;
+	};
+	var Acosh = go$pkg.Acosh = function(x) {
+		var t;
+		if (x < 1 || IsNaN(x)) {
+			return NaN();
+		} else if (x === 1) {
+			return 0;
+		} else if (x >= 2.68435456e+08) {
+			return Log(x) + 0.6931471805599453;
+		} else if (x > 2) {
+			return Log(2 * x - 1 / (x + Sqrt(x * x - 1)));
+		}
+		t = x - 1;
+		return Log1p(t + Sqrt(2 * t + t * t));
+	};
+	var Asin = go$pkg.Asin = Math.asin;
+	var asin = function(x) {
+		var sign, temp;
+		if (x === 0) {
+			return x;
+		}
+		sign = false;
+		if (x < 0) {
+			x = -x;
+			sign = true;
+		}
+		if (x > 1) {
+			return NaN();
+		}
+		temp = Sqrt(1 - x * x);
+		if (x > 0.7) {
+			temp = 1.5707963267948966 - satan(temp / x);
+		} else {
+			temp = satan(x / temp);
+		}
+		if (sign) {
+			temp = -temp;
+		}
+		return temp;
+	};
+	var Acos = go$pkg.Acos = Math.acos;
+	var acos = function(x) {
+		return 1.5707963267948966 - Asin(x);
+	};
+	var Asinh = go$pkg.Asinh = function(x) {
+		var sign, temp;
+		if (IsNaN(x) || IsInf(x, 0)) {
+			return x;
+		}
+		sign = false;
+		if (x < 0) {
+			x = -x;
+			sign = true;
+		}
+		temp = 0;
+		if (x > 2.68435456e+08) {
+			temp = Log(x) + 0.6931471805599453;
+		} else if (x > 2) {
+			temp = Log(2 * x + 1 / (Sqrt(x * x + 1) + x));
+		} else if (x < 3.725290298461914e-09) {
+			temp = x;
+		} else {
+			temp = Log1p(x + x * x / (1 + Sqrt(1 + x * x)));
+		}
+		if (sign) {
+			temp = -temp;
+		}
+		return temp;
+	};
+	var xatan = function(x) {
+		var z;
+		z = x * x;
+		z = z * ((((-0.8750608600031904 * z + -16.157537187333652) * z + -75.00855792314705) * z + -122.88666844901361) * z + -64.85021904942025) / (((((z + 24.858464901423062) * z + 165.02700983169885) * z + 432.88106049129027) * z + 485.3903996359137) * z + 194.5506571482614);
+		z = x * z + x;
+		return z;
+	};
+	var satan = function(x) {
+		if (x <= 0.66) {
+			return xatan(x);
+		}
+		if (x > 2.414213562373095) {
+			return 1.5707963267948966 - xatan(1 / x) + 6.123233995736766e-17;
+		}
+		return 0.7853981633974483 + xatan((x - 1) / (x + 1)) + 3.061616997868383e-17;
+	};
+	var Atan = go$pkg.Atan = Math.atan;
+	var atan = function(x) {
+		if (x === 0) {
+			return x;
+		}
+		if (x > 0) {
+			return satan(x);
+		}
+		return -satan(-x);
+	};
+	var Atan2 = go$pkg.Atan2 = Math.atan2;
+	var atan2 = function(y, x) {
+		var q;
+		if (IsNaN(y) || IsNaN(x)) {
+			return NaN();
+		} else if (y === 0) {
+			if (x >= 0 && !Signbit(x)) {
+				return Copysign(0, y);
+			}
+			return Copysign(3.141592653589793, y);
+		} else if (x === 0) {
+			return Copysign(1.5707963267948966, y);
+		} else if (IsInf(x, 0)) {
+			if (IsInf(x, 1)) {
+				if (IsInf(y, 0)) {
+					return Copysign(0.7853981633974483, y);
+				} else {
+					return Copysign(0, y);
+				}
+			}
+			if (IsInf(y, 0)) {
+				return Copysign(2.356194490192345, y);
+			} else {
+				return Copysign(3.141592653589793, y);
+			}
+		} else if (IsInf(y, 0)) {
+			return Copysign(1.5707963267948966, y);
+		}
+		q = Atan(y / x);
+		if (x < 0) {
+			if (q <= 0) {
+				return q + 3.141592653589793;
+			}
+			return q - 3.141592653589793;
+		}
+		return q;
+	};
+	var Atanh = go$pkg.Atanh = function(x) {
+		var sign, temp;
+		if (x < -1 || x > 1 || IsNaN(x)) {
+			return NaN();
+		} else if (x === 1) {
+			return Inf(1);
+		} else if (x === -1) {
+			return Inf(-1);
+		}
+		sign = false;
+		if (x < 0) {
+			x = -x;
+			sign = true;
+		}
+		temp = 0;
+		if (x < 3.725290298461914e-09) {
+			temp = x;
+		} else if (x < 0.5) {
+			temp = x + x;
+			temp = 0.5 * Log1p(temp + temp * x / (1 - x));
+		} else {
+			temp = 0.5 * Log1p((x + x) / (1 - x));
+		}
+		if (sign) {
+			temp = -temp;
+		}
+		return temp;
+	};
+	var Inf = go$pkg.Inf = function(sign) { return sign >= 0 ? 1/0 : -1/0; };
+	var NaN = go$pkg.NaN = function() { return 0/0; };
+	var IsNaN = go$pkg.IsNaN = function(f) { return f !== f; };
+	var IsInf = go$pkg.IsInf = function(f, sign) { if (f === -1/0) { return sign <= 0; } if (f === 1/0) { return sign >= 0; } return false; };
+	var normalize = function(x) {
+		var y, exp$1, _tuple, _tuple$1;
+		y = 0;
+		exp$1 = 0;
+		if (Abs(x) < 2.2250738585072014e-308) {
+			_tuple = [x * 4.503599627370496e+15, -52], y = _tuple[0], exp$1 = _tuple[1];
+			return [y, exp$1];
+		}
+		_tuple$1 = [x, 0], y = _tuple$1[0], exp$1 = _tuple$1[1];
+		return [y, exp$1];
+	};
+	var Cbrt = go$pkg.Cbrt = function(x) {
+		var sign, _tuple, f, e, _r, m, _ref, _q, y, s, t;
+		if ((x === 0) || IsNaN(x) || IsInf(x, 0)) {
+			return x;
+		}
+		sign = false;
+		if (x < 0) {
+			x = -x;
+			sign = true;
+		}
+		_tuple = Frexp(x), f = _tuple[0], e = _tuple[1];
+		m = (_r = e % 3, _r === _r ? _r : go$throwRuntimeError("integer divide by zero"));
+		if (m > 0) {
+			m = m - 3 >> 0;
+			e = e - (m) >> 0;
+		}
+		_ref = m;
+		if (_ref === 0) {
+			f = 0.1662848358 * f + 1.096040958 - 0.4105032829 / (0.5649335816 + f);
+		} else if (_ref === -1) {
+			f = f * 0.5;
+			f = 0.2639607233 * f + 0.8699282849 - 0.1629083358 / (0.2824667908 + f);
+		} else {
+			f = f * 0.25;
+			f = 0.4190115298 * f + 0.6904625373 - 0.0646502159 / (0.1412333954 + f);
+		}
+		y = Ldexp(f, (_q = e / 3, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero")));
+		s = y * y * y;
+		t = s + x;
+		y = y * ((t + x) / (s + t));
+		s = (y * y * y - x) / x;
+		y = y - (y * ((0.1728395061728395 * s - 0.2222222222222222) * s + 0.3333333333333333) * s);
+		if (sign) {
+			y = -y;
+		}
+		return y;
+	};
+	var Copysign = go$pkg.Copysign = function(x, y) { return (x < 0 || 1/x === 1/-0) !== (y < 0 || 1/y === 1/-0) ? -x : x; };
+	var Dim = go$pkg.Dim = function(x, y) { return Math.max(x - y, 0); };
+	var dim = function(x, y) {
+		return max(x - y, 0);
+	};
+	var Max = go$pkg.Max = function(x, y) { return (x === 1/0 || y === 1/0) ? 1/0 : Math.max(x, y); };
+	var max = function(x, y) {
+		if (IsInf(x, 1) || IsInf(y, 1)) {
+			return Inf(1);
+		} else if (IsNaN(x) || IsNaN(y)) {
+			return NaN();
+		} else if ((x === 0) && (x === y)) {
+			if (Signbit(x)) {
+				return y;
+			}
+			return x;
+		}
+		if (x > y) {
+			return x;
+		}
+		return y;
+	};
+	var Min = go$pkg.Min = function(x, y) { return (x === -1/0 || y === -1/0) ? -1/0 : Math.min(x, y); };
+	var min = function(x, y) {
+		if (IsInf(x, -1) || IsInf(y, -1)) {
+			return Inf(-1);
+		} else if (IsNaN(x) || IsNaN(y)) {
+			return NaN();
+		} else if ((x === 0) && (x === y)) {
+			if (Signbit(x)) {
+				return x;
+			}
+			return y;
+		}
+		if (x < y) {
+			return x;
+		}
+		return y;
+	};
+	var Erf = go$pkg.Erf = function(x) {
+		var sign, temp, z, r, s, y, s$1, P, Q, s$2, _tuple, R, S, x$1, z$1, r$1;
+		if (IsNaN(x)) {
+			return NaN();
+		} else if (IsInf(x, 1)) {
+			return 1;
+		} else if (IsInf(x, -1)) {
+			return -1;
+		}
+		sign = false;
+		if (x < 0) {
+			x = -x;
+			sign = true;
+		}
+		if (x < 0.84375) {
+			temp = 0;
+			if (x < 3.725290298461914e-09) {
+				if (x < 2.848094538889218e-306) {
+					temp = 0.125 * (8 * x + 1.0270333367641007 * x);
+				} else {
+					temp = x + 0.1283791670955126 * x;
+				}
+			} else {
+				z = x * x;
+				r = 0.12837916709551256 + z * (-0.3250421072470015 + z * (-0.02848174957559851 + z * (-0.005770270296489442 + z * -2.3763016656650163e-05)));
+				s = 1 + z * (0.39791722395915535 + z * (0.0650222499887673 + z * (0.005081306281875766 + z * (0.00013249473800432164 + z * -3.960228278775368e-06))));
+				y = r / s;
+				temp = x + x * y;
+			}
+			if (sign) {
+				return -temp;
+			}
+			return temp;
+		}
+		if (x < 1.25) {
+			s$1 = x - 1;
+			P = -0.0023621185607526594 + s$1 * (0.41485611868374833 + s$1 * (-0.3722078760357013 + s$1 * (0.31834661990116175 + s$1 * (-0.11089469428239668 + s$1 * (0.035478304325618236 + s$1 * -0.002166375594868791)))));
+			Q = 1 + s$1 * (0.10642088040084423 + s$1 * (0.540397917702171 + s$1 * (0.07182865441419627 + s$1 * (0.12617121980876164 + s$1 * (0.01363708391202905 + s$1 * 0.011984499846799107)))));
+			if (sign) {
+				return -0.8450629115104675 - P / Q;
+			}
+			return 0.8450629115104675 + P / Q;
+		}
+		if (x >= 6) {
+			if (sign) {
+				return -1;
+			}
+			return 1;
+		}
+		s$2 = 1 / (x * x);
+		_tuple = [0, 0], R = _tuple[0], S = _tuple[1];
+		if (x < 2.857142857142857) {
+			R = -0.009864944034847148 + s$2 * (-0.6938585727071818 + s$2 * (-10.558626225323291 + s$2 * (-62.375332450326006 + s$2 * (-162.39666946257347 + s$2 * (-184.60509290671104 + s$2 * (-81.2874355063066 + s$2 * -9.814329344169145))))));
+			S = 1 + s$2 * (19.651271667439257 + s$2 * (137.65775414351904 + s$2 * (434.56587747522923 + s$2 * (645.3872717332679 + s$2 * (429.00814002756783 + s$2 * (108.63500554177944 + s$2 * (6.570249770319282 + s$2 * -0.0604244152148581)))))));
+		} else {
+			R = -0.0098649429247001 + s$2 * (-0.799283237680523 + s$2 * (-17.757954917754752 + s$2 * (-160.63638485582192 + s$2 * (-637.5664433683896 + s$2 * (-1025.0951316110772 + s$2 * -483.5191916086514)))));
+			S = 1 + s$2 * (30.33806074348246 + s$2 * (325.7925129965739 + s$2 * (1536.729586084437 + s$2 * (3199.8582195085955 + s$2 * (2553.0504064331644 + s$2 * (474.52854120695537 + s$2 * -22.44095244658582))))));
+		}
+		z$1 = Float64frombits((x$1 = Float64bits(x), new Go$Uint64(x$1.high & 4294967295, (x$1.low & 0) >>> 0)));
+		r$1 = Exp(-z$1 * z$1 - 0.5625) * Exp((z$1 - x) * (z$1 + x) + R / S);
+		if (sign) {
+			return r$1 / x - 1;
+		}
+		return 1 - r$1 / x;
+	};
+	var Erfc = go$pkg.Erfc = function(x) {
+		var sign, temp, z, r, s, y, s$1, P, Q, s$2, _tuple, R, S, x$1, z$1, r$1;
+		if (IsNaN(x)) {
+			return NaN();
+		} else if (IsInf(x, 1)) {
+			return 0;
+		} else if (IsInf(x, -1)) {
+			return 2;
+		}
+		sign = false;
+		if (x < 0) {
+			x = -x;
+			sign = true;
+		}
+		if (x < 0.84375) {
+			temp = 0;
+			if (x < 1.3877787807814457e-17) {
+				temp = x;
+			} else {
+				z = x * x;
+				r = 0.12837916709551256 + z * (-0.3250421072470015 + z * (-0.02848174957559851 + z * (-0.005770270296489442 + z * -2.3763016656650163e-05)));
+				s = 1 + z * (0.39791722395915535 + z * (0.0650222499887673 + z * (0.005081306281875766 + z * (0.00013249473800432164 + z * -3.960228278775368e-06))));
+				y = r / s;
+				if (x < 0.25) {
+					temp = x + x * y;
+				} else {
+					temp = 0.5 + (x * y + (x - 0.5));
+				}
+			}
+			if (sign) {
+				return 1 + temp;
+			}
+			return 1 - temp;
+		}
+		if (x < 1.25) {
+			s$1 = x - 1;
+			P = -0.0023621185607526594 + s$1 * (0.41485611868374833 + s$1 * (-0.3722078760357013 + s$1 * (0.31834661990116175 + s$1 * (-0.11089469428239668 + s$1 * (0.035478304325618236 + s$1 * -0.002166375594868791)))));
+			Q = 1 + s$1 * (0.10642088040084423 + s$1 * (0.540397917702171 + s$1 * (0.07182865441419627 + s$1 * (0.12617121980876164 + s$1 * (0.01363708391202905 + s$1 * 0.011984499846799107)))));
+			if (sign) {
+				return 1.8450629115104675 + P / Q;
+			}
+			return 0.15493708848953247 - P / Q;
+		}
+		if (x < 28) {
+			s$2 = 1 / (x * x);
+			_tuple = [0, 0], R = _tuple[0], S = _tuple[1];
+			if (x < 2.857142857142857) {
+				R = -0.009864944034847148 + s$2 * (-0.6938585727071818 + s$2 * (-10.558626225323291 + s$2 * (-62.375332450326006 + s$2 * (-162.39666946257347 + s$2 * (-184.60509290671104 + s$2 * (-81.2874355063066 + s$2 * -9.814329344169145))))));
+				S = 1 + s$2 * (19.651271667439257 + s$2 * (137.65775414351904 + s$2 * (434.56587747522923 + s$2 * (645.3872717332679 + s$2 * (429.00814002756783 + s$2 * (108.63500554177944 + s$2 * (6.570249770319282 + s$2 * -0.0604244152148581)))))));
+			} else {
+				if (sign && x > 6) {
+					return 2;
+				}
+				R = -0.0098649429247001 + s$2 * (-0.799283237680523 + s$2 * (-17.757954917754752 + s$2 * (-160.63638485582192 + s$2 * (-637.5664433683896 + s$2 * (-1025.0951316110772 + s$2 * -483.5191916086514)))));
+				S = 1 + s$2 * (30.33806074348246 + s$2 * (325.7925129965739 + s$2 * (1536.729586084437 + s$2 * (3199.8582195085955 + s$2 * (2553.0504064331644 + s$2 * (474.52854120695537 + s$2 * -22.44095244658582))))));
+			}
+			z$1 = Float64frombits((x$1 = Float64bits(x), new Go$Uint64(x$1.high & 4294967295, (x$1.low & 0) >>> 0)));
+			r$1 = Exp(-z$1 * z$1 - 0.5625) * Exp((z$1 - x) * (z$1 + x) + R / S);
+			if (sign) {
+				return 2 - r$1 / x;
+			}
+			return r$1 / x;
+		}
+		if (sign) {
+			return 2;
+		}
+		return 0;
+	};
+	var Exp = go$pkg.Exp = Math.exp;
+	var exp = function(x) {
+		var k, hi, lo;
+		if (IsNaN(x) || IsInf(x, 1)) {
+			return x;
+		} else if (IsInf(x, -1)) {
+			return 0;
+		} else if (x > 709.782712893384) {
+			return Inf(1);
+		} else if (x < -745.1332191019411) {
+			return 0;
+		} else if (-3.725290298461914e-09 < x && x < 3.725290298461914e-09) {
+			return 1 + x;
+		}
+		k = 0;
+		if (x < 0) {
+			k = (1.4426950408889634 * x - 0.5 >> 0);
+		} else if (x > 0) {
+			k = (1.4426950408889634 * x + 0.5 >> 0);
+		}
+		hi = x - k * 0.6931471803691238;
+		lo = k * 1.9082149292705877e-10;
+		return expmulti(hi, lo, k);
+	};
+	var Exp2 = go$pkg.Exp2 = function(x) { return Math.pow(2, x); };
+	var exp2 = function(x) {
+		var k, t, hi, lo;
+		if (IsNaN(x) || IsInf(x, 1)) {
+			return x;
+		} else if (IsInf(x, -1)) {
+			return 0;
+		} else if (x > 1023.9999999999999) {
+			return Inf(1);
+		} else if (x < -1074) {
+			return 0;
+		}
+		k = 0;
+		if (x > 0) {
+			k = (x + 0.5 >> 0);
+		} else if (x < 0) {
+			k = (x - 0.5 >> 0);
+		}
+		t = x - k;
+		hi = t * 0.6931471803691238;
+		lo = -t * 1.9082149292705877e-10;
+		return expmulti(hi, lo, k);
+	};
+	var expmulti = function(hi, lo, k) {
+		var r, t, c, y;
+		r = hi - lo;
+		t = r * r;
+		c = r - t * (0.16666666666666602 + t * (-0.0027777777777015593 + t * (6.613756321437934e-05 + t * (-1.6533902205465252e-06 + t * 4.1381367970572385e-08))));
+		y = 1 - ((lo - (r * c) / (2 - c)) - hi);
+		return Ldexp(y, k);
+	};
+	var Expm1 = go$pkg.Expm1 = function(x) { return expm1(x); };
+	var expm1 = function(x) {
+		var absx, sign, c, k, _tuple, hi, lo, t, hfx, hxs, r1, t$1, e, y, x$1, x$2, x$3, t$2, y$1, x$4, x$5, t$3, y$2, x$6, x$7;
+		if (IsInf(x, 1) || IsNaN(x)) {
+			return x;
+		} else if (IsInf(x, -1)) {
+			return -1;
+		}
+		absx = x;
+		sign = false;
+		if (x < 0) {
+			absx = -absx;
+			sign = true;
+		}
+		if (absx >= 38.816242111356935) {
+			if (absx >= 709.782712893384) {
+				return Inf(1);
+			}
+			if (sign) {
+				return -1;
+			}
+		}
+		c = 0;
+		k = 0;
+		if (absx > 0.34657359027997264) {
+			_tuple = [0, 0], hi = _tuple[0], lo = _tuple[1];
+			if (absx < 1.0397207708399179) {
+				if (!sign) {
+					hi = x - 0.6931471803691238;
+					lo = 1.9082149292705877e-10;
+					k = 1;
+				} else {
+					hi = x + 0.6931471803691238;
+					lo = -1.9082149292705877e-10;
+					k = -1;
+				}
+			} else {
+				if (!sign) {
+					k = (1.4426950408889634 * x + 0.5 >> 0);
+				} else {
+					k = (1.4426950408889634 * x - 0.5 >> 0);
+				}
+				t = k;
+				hi = x - t * 0.6931471803691238;
+				lo = t * 1.9082149292705877e-10;
+			}
+			x = hi - lo;
+			c = (hi - x) - lo;
+		} else if (absx < 5.551115123125783e-17) {
+			return x;
+		} else {
+			k = 0;
+		}
+		hfx = 0.5 * x;
+		hxs = x * hfx;
+		r1 = 1 + hxs * (-0.03333333333333313 + hxs * (0.0015873015872548146 + hxs * (-7.93650757867488e-05 + hxs * (4.008217827329362e-06 + hxs * -2.0109921818362437e-07))));
+		t$1 = 3 - r1 * hfx;
+		e = hxs * ((r1 - t$1) / (6 - x * t$1));
+		if (!((k === 0))) {
+			e = x * (e - c) - c;
+			e = e - (hxs);
+			if (k === -1) {
+				return 0.5 * (x - e) - 0.5;
+			} else if (k === 1) {
+				if (x < -0.25) {
+					return -2 * (e - (x + 0.5));
+				}
+				return 1 + 2 * (x - e);
+			} else if (k <= -2 || k > 56) {
+				y = 1 - (e - x);
+				y = Float64frombits((x$1 = Float64bits(y), x$2 = go$shiftLeft64(new Go$Uint64(0, k), 52), new Go$Uint64(x$1.high + x$2.high, x$1.low + x$2.low)));
+				return y - 1;
+			}
+			if (k < 20) {
+				t$2 = Float64frombits((x$3 = go$shiftRightUint64(new Go$Uint64(2097152, 0), (k >>> 0)), new Go$Uint64(1072693248 - x$3.high, 0 - x$3.low)));
+				y$1 = t$2 - (e - x);
+				y$1 = Float64frombits((x$4 = Float64bits(y$1), x$5 = go$shiftLeft64(new Go$Uint64(0, k), 52), new Go$Uint64(x$4.high + x$5.high, x$4.low + x$5.low)));
+				return y$1;
+			}
+			t$3 = Float64frombits(new Go$Uint64(0, (((1023 - k >> 0)) << 52 >> 0)));
+			y$2 = x - (e + t$3);
+			y$2 = y$2 + 1;
+			y$2 = Float64frombits((x$6 = Float64bits(y$2), x$7 = go$shiftLeft64(new Go$Uint64(0, k), 52), new Go$Uint64(x$6.high + x$7.high, x$6.low + x$7.low)));
+			return y$2;
+		}
+		return x - (x * e - hxs);
+	};
+	var Floor = go$pkg.Floor = Math.floor;
+	var floor = function(x) {
+		var _tuple, d, fract, _tuple$1, d$1;
+		if ((x === 0) || IsNaN(x) || IsInf(x, 0)) {
+			return x;
+		}
+		if (x < 0) {
+			_tuple = Modf(-x), d = _tuple[0], fract = _tuple[1];
+			if (!((fract === 0))) {
+				d = d + 1;
+			}
+			return -d;
+		}
+		_tuple$1 = Modf(x), d$1 = _tuple$1[0];
+		return d$1;
+	};
+	var Ceil = go$pkg.Ceil = Math.ceil;
+	var ceil = function(x) {
+		return -Floor(-x);
+	};
+	var Trunc = go$pkg.Trunc = function(x) { return (x === 1/0 || x === -1/0 || x !== x || 1/x === 1/-0) ? x : x >> 0; };
+	var trunc = function(x) {
+		var _tuple, d;
+		if ((x === 0) || IsNaN(x) || IsInf(x, 0)) {
+			return x;
+		}
+		_tuple = Modf(x), d = _tuple[0];
+		return d;
+	};
+	var Frexp = go$pkg.Frexp = function(f) { return frexp(f); };
+	var frexp = function(f) {
+		var frac, exp$1, _tuple, _tuple$1, _tuple$2, x, x$1;
+		frac = 0;
+		exp$1 = 0;
+		if (f === 0) {
+			_tuple = [f, 0], frac = _tuple[0], exp$1 = _tuple[1];
+			return [frac, exp$1];
+		} else if (IsInf(f, 0) || IsNaN(f)) {
+			_tuple$1 = [f, 0], frac = _tuple$1[0], exp$1 = _tuple$1[1];
+			return [frac, exp$1];
+		}
+		_tuple$2 = normalize(f), f = _tuple$2[0], exp$1 = _tuple$2[1];
+		x = Float64bits(f);
+		exp$1 = exp$1 + (((((x$1 = go$shiftRightUint64(x, 52), new Go$Uint64(x$1.high & 0, (x$1.low & 2047) >>> 0)).low >> 0) - 1023 >> 0) + 1 >> 0)) >> 0;
+		x = new Go$Uint64(x.high &~ 2146435072, (x.low &~ 0) >>> 0);
+		x = new Go$Uint64(x.high | 1071644672, (x.low | 0) >>> 0);
+		frac = Float64frombits(x);
+		return [frac, exp$1];
+	};
+	var stirling = function(x) {
+		var w, y, v;
+		w = 1 / x;
+		w = 1 + w * ((((_gamS[0] * w + _gamS[1]) * w + _gamS[2]) * w + _gamS[3]) * w + _gamS[4]);
+		y = Exp(x);
+		if (x > 143.01608) {
+			v = Pow(x, 0.5 * x - 0.25);
+			y = v * (v / y);
+		} else {
+			y = Pow(x, x - 0.5) / y;
+		}
+		y = 2.5066282746310007 * y * w;
+		return y;
+	};
+	var Gamma = go$pkg.Gamma = function(x) {
+		var go$this = this, q, p, signgam, ip, z, z$1;
+		/* */ var go$s = 0, go$f = function() { while (true) { switch (go$s) { case 0:
+		if (isNegInt(x) || IsInf(x, -1) || IsNaN(x)) {
+			return NaN();
+		} else if (x === 0) {
+			if (Signbit(x)) {
+				return Inf(-1);
+			}
+			return Inf(1);
+		} else if (x < -170.5674972726612 || x > 171.61447887182297) {
+			return Inf(1);
+		}
+		q = Abs(x);
+		p = Floor(q);
+		if (q > 33) {
+			if (x >= 0) {
+				return stirling(x);
+			}
+			signgam = 1;
+			if (ip = (p >> 0), (ip & 1) === 0) {
+				signgam = -1;
+			}
+			z = q - p;
+			if (z > 0.5) {
+				p = p + 1;
+				z = q - p;
+			}
+			z = q * Sin(3.141592653589793 * z);
+			if (z === 0) {
+				return Inf(signgam);
+			}
+			z = 3.141592653589793 / (Abs(z) * stirling(q));
+			return signgam * z;
+		}
+		z$1 = 1;
+		while (x >= 3) {
+			x = x - 1;
+			z$1 = z$1 * x;
+		}
+		/* while (x < 0) { */ case 2: if(!(x < 0)) { go$s = 3; continue; }
+			/* if (x > -1e-09) { */ if (x > -1e-09) {} else { go$s = 4; continue; }
+				/* goto small */ go$s = 1; continue;
+			/* } */ case 4:
+			z$1 = z$1 / x;
+			x = x + 1;
+		/* } */ go$s = 2; continue; case 3:
+		/* while (x < 2) { */ case 5: if(!(x < 2)) { go$s = 6; continue; }
+			/* if (x < 1e-09) { */ if (x < 1e-09) {} else { go$s = 7; continue; }
+				/* goto small */ go$s = 1; continue;
+			/* } */ case 7:
+			z$1 = z$1 / x;
+			x = x + 1;
+		/* } */ go$s = 5; continue; case 6:
+		if (x === 2) {
+			return z$1;
+		}
+		x = x - 2;
+		p = (((((x * _gamP[0] + _gamP[1]) * x + _gamP[2]) * x + _gamP[3]) * x + _gamP[4]) * x + _gamP[5]) * x + _gamP[6];
+		q = ((((((x * _gamQ[0] + _gamQ[1]) * x + _gamQ[2]) * x + _gamQ[3]) * x + _gamQ[4]) * x + _gamQ[5]) * x + _gamQ[6]) * x + _gamQ[7];
+		return z$1 * p / q;
+		/* small: */ case 1:
+		/* if (x === 0) { */ if (x === 0) {} else { go$s = 8; continue; }
+			return Inf(1);
+		/* } */ case 8:
+		return z$1 / ((1 + 0.5772156649015329 * x) * x);
+		/* */ } break; } }; return go$f();
+	};
+	var isNegInt = function(x) {
+		var _tuple, xf;
+		if (x < 0) {
+			_tuple = Modf(x), xf = _tuple[1];
+			return xf === 0;
+		}
+		return false;
+	};
+	var Hypot = go$pkg.Hypot = function(p, q) { return hypot(p, q); };
+	var hypot = function(p, q) {
+		var _tuple;
+		if (IsInf(p, 0) || IsInf(q, 0)) {
+			return Inf(1);
+		} else if (IsNaN(p) || IsNaN(q)) {
+			return NaN();
+		}
+		if (p < 0) {
+			p = -p;
+		}
+		if (q < 0) {
+			q = -q;
+		}
+		if (p < q) {
+			_tuple = [q, p], p = _tuple[0], q = _tuple[1];
+		}
+		if (p === 0) {
+			return 0;
+		}
+		q = q / p;
+		return p * Sqrt(1 + q * q);
+	};
+	var J0 = go$pkg.J0 = function(x) {
+		var _tuple, s, c, ss, cc, z, z$1, u, v, z$2, r, s$1, u$1;
+		if (IsNaN(x)) {
+			return x;
+		} else if (IsInf(x, 0)) {
+			return 0;
+		} else if (x === 0) {
+			return 1;
+		}
+		if (x < 0) {
+			x = -x;
+		}
+		if (x >= 2) {
+			_tuple = Sincos(x), s = _tuple[0], c = _tuple[1];
+			ss = s - c;
+			cc = s + c;
+			if (x < 8.988465674311579e+307) {
+				z = -Cos(x + x);
+				if (s * c < 0) {
+					cc = z / ss;
+				} else {
+					ss = z / cc;
+				}
+			}
+			z$1 = 0;
+			if (x > 6.80564733841877e+38) {
+				z$1 = 0.5641895835477563 * cc / Sqrt(x);
+			} else {
+				u = pzero(x);
+				v = qzero(x);
+				z$1 = 0.5641895835477563 * (u * cc - v * ss) / Sqrt(x);
+			}
+			return z$1;
+		}
+		if (x < 0.0001220703125) {
+			if (x < 7.450580596923828e-09) {
+				return 1;
+			}
+			return 1 - 0.25 * x * x;
+		}
+		z$2 = x * x;
+		r = z$2 * (0.015624999999999995 + z$2 * (-0.00018997929423885472 + z$2 * (1.8295404953270067e-06 + z$2 * -4.618326885321032e-09)));
+		s$1 = 1 + z$2 * (0.015619102946489001 + z$2 * (0.00011692678466333745 + z$2 * (5.135465502073181e-07 + z$2 * 1.1661400333379e-09)));
+		if (x < 1) {
+			return 1 + z$2 * (-0.25 + (r / s$1));
+		}
+		u$1 = 0.5 * x;
+		return (1 + u$1) * (1 - u$1) + z$2 * (r / s$1);
+	};
+	var Y0 = go$pkg.Y0 = function(x) {
+		var _tuple, s, c, ss, cc, z, z$1, u, v, z$2, u$1, v$1;
+		if (x < 0 || IsNaN(x)) {
+			return NaN();
+		} else if (IsInf(x, 1)) {
+			return 0;
+		} else if (x === 0) {
+			return Inf(-1);
+		}
+		if (x >= 2) {
+			_tuple = Sincos(x), s = _tuple[0], c = _tuple[1];
+			ss = s - c;
+			cc = s + c;
+			if (x < 8.988465674311579e+307) {
+				z = -Cos(x + x);
+				if (s * c < 0) {
+					cc = z / ss;
+				} else {
+					ss = z / cc;
+				}
+			}
+			z$1 = 0;
+			if (x > 6.80564733841877e+38) {
+				z$1 = 0.5641895835477563 * ss / Sqrt(x);
+			} else {
+				u = pzero(x);
+				v = qzero(x);
+				z$1 = 0.5641895835477563 * (u * ss + v * cc) / Sqrt(x);
+			}
+			return z$1;
+		}
+		if (x <= 7.450580596923828e-09) {
+			return -0.07380429510868723 + 0.6366197723675814 * Log(x);
+		}
+		z$2 = x * x;
+		u$1 = -0.07380429510868723 + z$2 * (0.17666645250918112 + z$2 * (-0.01381856719455969 + z$2 * (0.00034745343209368365 + z$2 * (-3.8140705372436416e-06 + z$2 * (1.9559013703502292e-08 + z$2 * -3.982051941321034e-11)))));
+		v$1 = 1 + z$2 * (0.01273048348341237 + z$2 * (7.600686273503533e-05 + z$2 * (2.591508518404578e-07 + z$2 * 4.4111031133267547e-10)));
+		return u$1 / v$1 + 0.6366197723675814 * J0(x) * Log(x);
+	};
+	var pzero = function(x) {
+		var p, q, z, r, s;
+		p = go$makeNativeArray("Float64", 6, function() { return 0; });
+		q = go$makeNativeArray("Float64", 5, function() { return 0; });
+		if (x >= 8) {
+			p = go$mapArray(p0R8, function(entry) { return entry; });
+			q = go$mapArray(p0S8, function(entry) { return entry; });
+		} else if (x >= 4.5454) {
+			p = go$mapArray(p0R5, function(entry) { return entry; });
+			q = go$mapArray(p0S5, function(entry) { return entry; });
+		} else if (x >= 2.8571) {
+			p = go$mapArray(p0R3, function(entry) { return entry; });
+			q = go$mapArray(p0S3, function(entry) { return entry; });
+		} else if (x >= 2) {
+			p = go$mapArray(p0R2, function(entry) { return entry; });
+			q = go$mapArray(p0S2, function(entry) { return entry; });
+		}
+		z = 1 / (x * x);
+		r = p[0] + z * (p[1] + z * (p[2] + z * (p[3] + z * (p[4] + z * p[5]))));
+		s = 1 + z * (q[0] + z * (q[1] + z * (q[2] + z * (q[3] + z * q[4]))));
+		return 1 + r / s;
+	};
+	var qzero = function(x) {
+		var _tuple, p, q, z, r, s;
+		_tuple = [go$makeNativeArray("Float64", 6, function() { return 0; }), go$makeNativeArray("Float64", 6, function() { return 0; })], p = _tuple[0], q = _tuple[1];
+		if (x >= 8) {
+			p = go$mapArray(q0R8, function(entry) { return entry; });
+			q = go$mapArray(q0S8, function(entry) { return entry; });
+		} else if (x >= 4.5454) {
+			p = go$mapArray(q0R5, function(entry) { return entry; });
+			q = go$mapArray(q0S5, function(entry) { return entry; });
+		} else if (x >= 2.8571) {
+			p = go$mapArray(q0R3, function(entry) { return entry; });
+			q = go$mapArray(q0S3, function(entry) { return entry; });
+		} else if (x >= 2) {
+			p = go$mapArray(q0R2, function(entry) { return entry; });
+			q = go$mapArray(q0S2, function(entry) { return entry; });
+		}
+		z = 1 / (x * x);
+		r = p[0] + z * (p[1] + z * (p[2] + z * (p[3] + z * (p[4] + z * p[5]))));
+		s = 1 + z * (q[0] + z * (q[1] + z * (q[2] + z * (q[3] + z * (q[4] + z * q[5])))));
+		return (-0.125 + r / s) / x;
+	};
+	var J1 = go$pkg.J1 = function(x) {
+		var sign, _tuple, s, c, ss, cc, z, z$1, u, v, z$2, r, s$1;
+		if (IsNaN(x)) {
+			return x;
+		} else if (IsInf(x, 0) || (x === 0)) {
+			return 0;
+		}
+		sign = false;
+		if (x < 0) {
+			x = -x;
+			sign = true;
+		}
+		if (x >= 2) {
+			_tuple = Sincos(x), s = _tuple[0], c = _tuple[1];
+			ss = -s - c;
+			cc = s - c;
+			if (x < 8.988465674311579e+307) {
+				z = Cos(x + x);
+				if (s * c > 0) {
+					cc = z / ss;
+				} else {
+					ss = z / cc;
+				}
+			}
+			z$1 = 0;
+			if (x > 6.80564733841877e+38) {
+				z$1 = 0.5641895835477563 * cc / Sqrt(x);
+			} else {
+				u = pone(x);
+				v = qone(x);
+				z$1 = 0.5641895835477563 * (u * cc - v * ss) / Sqrt(x);
+			}
+			if (sign) {
+				return -z$1;
+			}
+			return z$1;
+		}
+		if (x < 7.450580596923828e-09) {
+			return 0.5 * x;
+		}
+		z$2 = x * x;
+		r = z$2 * (-0.0625 + z$2 * (0.001407056669551897 + z$2 * (-1.599556310840356e-05 + z$2 * 4.9672799960958445e-08)));
+		s$1 = 1 + z$2 * (0.019153759953836346 + z$2 * (0.00018594678558863092 + z$2 * (1.1771846404262368e-06 + z$2 * (5.0463625707621704e-09 + z$2 * 1.2354227442613791e-11))));
+		r = r * (x);
+		z$2 = 0.5 * x + r / s$1;
+		if (sign) {
+			return -z$2;
+		}
+		return z$2;
+	};
+	var Y1 = go$pkg.Y1 = function(x) {
+		var _tuple, s, c, ss, cc, z, z$1, u, v, z$2, u$1, v$1;
+		if (x < 0 || IsNaN(x)) {
+			return NaN();
+		} else if (IsInf(x, 1)) {
+			return 0;
+		} else if (x === 0) {
+			return Inf(-1);
+		}
+		if (x >= 2) {
+			_tuple = Sincos(x), s = _tuple[0], c = _tuple[1];
+			ss = -s - c;
+			cc = s - c;
+			if (x < 8.988465674311579e+307) {
+				z = Cos(x + x);
+				if (s * c > 0) {
+					cc = z / ss;
+				} else {
+					ss = z / cc;
+				}
+			}
+			z$1 = 0;
+			if (x > 6.80564733841877e+38) {
+				z$1 = 0.5641895835477563 * ss / Sqrt(x);
+			} else {
+				u = pone(x);
+				v = qone(x);
+				z$1 = 0.5641895835477563 * (u * ss + v * cc) / Sqrt(x);
+			}
+			return z$1;
+		}
+		if (x <= 5.551115123125783e-17) {
+			return -0.6366197723675814 / x;
+		}
+		z$2 = x * x;
+		u$1 = -0.19605709064623894 + z$2 * (0.05044387166398113 + z$2 * (-0.0019125689587576355 + z$2 * (2.352526005616105e-05 + z$2 * -9.190991580398789e-08)));
+		v$1 = 1 + z$2 * (0.01991673182366499 + z$2 * (0.00020255258102513517 + z$2 * (1.3560880109751623e-06 + z$2 * (6.227414523646215e-09 + z$2 * 1.6655924620799208e-11))));
+		return x * (u$1 / v$1) + 0.6366197723675814 * (J1(x) * Log(x) - 1 / x);
+	};
+	var pone = function(x) {
+		var p, q, z, r, s;
+		p = go$makeNativeArray("Float64", 6, function() { return 0; });
+		q = go$makeNativeArray("Float64", 5, function() { return 0; });
+		if (x >= 8) {
+			p = go$mapArray(p1R8, function(entry) { return entry; });
+			q = go$mapArray(p1S8, function(entry) { return entry; });
+		} else if (x >= 4.5454) {
+			p = go$mapArray(p1R5, function(entry) { return entry; });
+			q = go$mapArray(p1S5, function(entry) { return entry; });
+		} else if (x >= 2.8571) {
+			p = go$mapArray(p1R3, function(entry) { return entry; });
+			q = go$mapArray(p1S3, function(entry) { return entry; });
+		} else if (x >= 2) {
+			p = go$mapArray(p1R2, function(entry) { return entry; });
+			q = go$mapArray(p1S2, function(entry) { return entry; });
+		}
+		z = 1 / (x * x);
+		r = p[0] + z * (p[1] + z * (p[2] + z * (p[3] + z * (p[4] + z * p[5]))));
+		s = 1 + z * (q[0] + z * (q[1] + z * (q[2] + z * (q[3] + z * q[4]))));
+		return 1 + r / s;
+	};
+	var qone = function(x) {
+		var _tuple, p, q, z, r, s;
+		_tuple = [go$makeNativeArray("Float64", 6, function() { return 0; }), go$makeNativeArray("Float64", 6, function() { return 0; })], p = _tuple[0], q = _tuple[1];
+		if (x >= 8) {
+			p = go$mapArray(q1R8, function(entry) { return entry; });
+			q = go$mapArray(q1S8, function(entry) { return entry; });
+		} else if (x >= 4.5454) {
+			p = go$mapArray(q1R5, function(entry) { return entry; });
+			q = go$mapArray(q1S5, function(entry) { return entry; });
+		} else if (x >= 2.8571) {
+			p = go$mapArray(q1R3, function(entry) { return entry; });
+			q = go$mapArray(q1S3, function(entry) { return entry; });
+		} else if (x >= 2) {
+			p = go$mapArray(q1R2, function(entry) { return entry; });
+			q = go$mapArray(q1S2, function(entry) { return entry; });
+		}
+		z = 1 / (x * x);
+		r = p[0] + z * (p[1] + z * (p[2] + z * (p[3] + z * (p[4] + z * p[5]))));
+		s = 1 + z * (q[0] + z * (q[1] + z * (q[2] + z * (q[3] + z * (q[4] + z * q[5])))));
+		return (0.375 + r / s) / x;
+	};
+	var Jn = go$pkg.Jn = function(n, x) {
+		var _tuple, sign, b, temp, _ref, _tuple$1, i, a, _tuple$2, temp$1, a$1, i$1, w, h, q0, z, q1, k, _tuple$3, m, t, x$1, x$2, i$2, a$2, tmp, v, i$3, di, _tuple$4, i$4, di$1, _tuple$5;
+		if (IsNaN(x)) {
+			return x;
+		} else if (IsInf(x, 0)) {
+			return 0;
+		}
+		if (n === 0) {
+			return J0(x);
+		}
+		if (x === 0) {
+			return 0;
+		}
+		if (n < 0) {
+			_tuple = [-n, -x], n = _tuple[0], x = _tuple[1];
+		}
+		if (n === 1) {
+			return J1(x);
+		}
+		sign = false;
+		if (x < 0) {
+			x = -x;
+			if ((n & 1) === 1) {
+				sign = true;
+			}
+		}
+		b = 0;
+		if (n <= x) {
+			if (x >= 8.148143905337944e+90) {
+				temp = 0;
+				_ref = n & 3;
+				if (_ref === 0) {
+					temp = Cos(x) + Sin(x);
+				} else if (_ref === 1) {
+					temp = -Cos(x) + Sin(x);
+				} else if (_ref === 2) {
+					temp = -Cos(x) - Sin(x);
+				} else if (_ref === 3) {
+					temp = Cos(x) - Sin(x);
+				}
+				b = 0.5641895835477563 * temp / Sqrt(x);
+			} else {
+				b = J1(x);
+				_tuple$1 = [1, J0(x)], i = _tuple$1[0], a = _tuple$1[1];
+				while (i < n) {
+					_tuple$2 = [b, b * ((i + i >> 0) / x) - a], a = _tuple$2[0], b = _tuple$2[1];
+					i = i + 1 >> 0;
+				}
+			}
+		} else {
+			if (x < 1.862645149230957e-09) {
+				if (n > 33) {
+					b = 0;
+				} else {
+					temp$1 = x * 0.5;
+					b = temp$1;
+					a$1 = 1;
+					i$1 = 2;
+					while (i$1 <= n) {
+						a$1 = a$1 * (i$1);
+						b = b * (temp$1);
+						i$1 = i$1 + 1 >> 0;
+					}
+					b = b / (a$1);
+				}
+			} else {
+				w = (n + n >> 0) / x;
+				h = 2 / x;
+				q0 = w;
+				z = w + h;
+				q1 = w * z - 1;
+				k = 1;
+				while (q1 < 1e+09) {
+					k = k + 1 >> 0;
+					z = z + (h);
+					_tuple$3 = [q1, z * q1 - q0], q0 = _tuple$3[0], q1 = _tuple$3[1];
+				}
+				m = n + n >> 0;
+				t = 0;
+				i$2 = (x$1 = 2, x$2 = (n + k >> 0), (((x$1 >>> 16 << 16) * x$2 >> 0) + (x$1 << 16 >>> 16) * x$2) >> 0);
+				while (i$2 >= m) {
+					t = 1 / (i$2 / x - t);
+					i$2 = i$2 - 2 >> 0;
+				}
+				a$2 = t;
+				b = 1;
+				tmp = n;
+				v = 2 / x;
+				tmp = tmp * Log(Abs(v * tmp));
+				if (tmp < 709.782712893384) {
+					i$3 = n - 1 >> 0;
+					while (i$3 > 0) {
+						di = (i$3 + i$3 >> 0);
+						_tuple$4 = [b, b * di / x - a$2], a$2 = _tuple$4[0], b = _tuple$4[1];
+						di = di - 2;
+						i$3 = i$3 - 1 >> 0;
+					}
+				} else {
+					i$4 = n - 1 >> 0;
+					while (i$4 > 0) {
+						di$1 = (i$4 + i$4 >> 0);
+						_tuple$5 = [b, b * di$1 / x - a$2], a$2 = _tuple$5[0], b = _tuple$5[1];
+						di$1 = di$1 - 2;
+						if (b > 1e+100) {
+							a$2 = a$2 / (b);
+							t = t / (b);
+							b = 1;
+						}
+						i$4 = i$4 - 1 >> 0;
+					}
+				}
+				b = t * J0(x) / b;
+			}
+		}
+		if (sign) {
+			return -b;
+		}
+		return b;
+	};
+	var Yn = go$pkg.Yn = function(n, x) {
+		var sign, b, temp, _ref, a, i, _tuple;
+		if (x < 0 || IsNaN(x)) {
+			return NaN();
+		} else if (IsInf(x, 1)) {
+			return 0;
+		}
+		if (n === 0) {
+			return Y0(x);
+		}
+		if (x === 0) {
+			if (n < 0 && ((n & 1) === 1)) {
+				return Inf(1);
+			}
+			return Inf(-1);
+		}
+		sign = false;
+		if (n < 0) {
+			n = -n;
+			if ((n & 1) === 1) {
+				sign = true;
+			}
+		}
+		if (n === 1) {
+			if (sign) {
+				return -Y1(x);
+			}
+			return Y1(x);
+		}
+		b = 0;
+		if (x >= 8.148143905337944e+90) {
+			temp = 0;
+			_ref = n & 3;
+			if (_ref === 0) {
+				temp = Sin(x) - Cos(x);
+			} else if (_ref === 1) {
+				temp = -Sin(x) - Cos(x);
+			} else if (_ref === 2) {
+				temp = -Sin(x) + Cos(x);
+			} else if (_ref === 3) {
+				temp = Sin(x) + Cos(x);
+			}
+			b = 0.5641895835477563 * temp / Sqrt(x);
+		} else {
+			a = Y0(x);
+			b = Y1(x);
+			i = 1;
+			while (i < n && !IsInf(b, -1)) {
+				_tuple = [b, ((i + i >> 0) / x) * b - a], a = _tuple[0], b = _tuple[1];
+				i = i + 1 >> 0;
+			}
+		}
+		if (sign) {
+			return -b;
+		}
+		return b;
+	};
+	var Ldexp = go$pkg.Ldexp = function(frac, exp) {
+			if (frac === 0) { return frac; }
+			if (exp >= 1024) { return frac * Math.pow(2, 1023) * Math.pow(2, exp - 1023); }
+			if (exp <= -1024) { return frac * Math.pow(2, -1023) * Math.pow(2, exp + 1023); }
+			return frac * Math.pow(2, exp);
+		};
+	var ldexp = function(frac, exp$1) {
+		var _tuple, e, x, m, x$1;
+		if (frac === 0) {
+			return frac;
+		} else if (IsInf(frac, 0) || IsNaN(frac)) {
+			return frac;
+		}
+		_tuple = normalize(frac), frac = _tuple[0], e = _tuple[1];
+		exp$1 = exp$1 + (e) >> 0;
+		x = Float64bits(frac);
+		exp$1 = exp$1 + ((((go$shiftRightUint64(x, 52).low >> 0) & 2047) - 1023 >> 0)) >> 0;
+		if (exp$1 < -1074) {
+			return Copysign(0, frac);
+		}
+		if (exp$1 > 1023) {
+			if (frac < 0) {
+				return Inf(-1);
+			}
+			return Inf(1);
+		}
+		m = 1;
+		if (exp$1 < -1022) {
+			exp$1 = exp$1 + 52 >> 0;
+			m = 2.220446049250313e-16;
+		}
+		x = new Go$Uint64(x.high &~ 2146435072, (x.low &~ 0) >>> 0);
+		x = (x$1 = go$shiftLeft64(new Go$Uint64(0, (exp$1 + 1023 >> 0)), 52), new Go$Uint64(x.high | x$1.high, (x.low | x$1.low) >>> 0));
+		return m * Float64frombits(x);
+	};
+	var Lgamma = go$pkg.Lgamma = function(x) {
+		var lgamma, sign, neg, nadj, t, y, i, _ref, z, p1, p2, p, z$1, w, p1$1, p2$1, p3, p$1, p1$2, p2$2, i$1, y$1, p$2, q, z$2, _ref$1, t$1, z$3, y$2, w$1;
+		lgamma = 0;
+		sign = 0;
+		sign = 1;
+		if (IsNaN(x)) {
+			lgamma = x;
+			return [lgamma, sign];
+		} else if (IsInf(x, 0)) {
+			lgamma = x;
+			return [lgamma, sign];
+		} else if (x === 0) {
+			lgamma = Inf(1);
+			return [lgamma, sign];
+		}
+		neg = false;
+		if (x < 0) {
+			x = -x;
+			neg = true;
+		}
+		if (x < 8.470329472543003e-22) {
+			if (neg) {
+				sign = -1;
+			}
+			lgamma = -Log(x);
+			return [lgamma, sign];
+		}
+		nadj = 0;
+		if (neg) {
+			if (x >= 4.503599627370496e+15) {
+				lgamma = Inf(1);
+				return [lgamma, sign];
+			}
+			t = sinPi(x);
+			if (t === 0) {
+				lgamma = Inf(1);
+				return [lgamma, sign];
+			}
+			nadj = Log(3.141592653589793 / Abs(t * x));
+			if (t < 0) {
+				sign = -1;
+			}
+		}
+		if ((x === 1) || (x === 2)) {
+			lgamma = 0;
+			return [lgamma, sign];
+		} else if (x < 2) {
+			y = 0;
+			i = 0;
+			if (x <= 0.9) {
+				lgamma = -Log(x);
+				if (x >= 0.7316321449683623) {
+					y = 1 - x;
+					i = 0;
+				} else if (x >= 0.19163214496836226) {
+					y = x - 0.46163214496836225;
+					i = 1;
+				} else {
+					y = x;
+					i = 2;
+				}
+			} else {
+				lgamma = 0;
+				if (x >= 1.7316321449683623) {
+					y = 2 - x;
+					i = 0;
+				} else if (x >= 1.1916321449683622) {
+					y = x - 1.4616321449683622;
+					i = 1;
+				} else {
+					y = x - 1;
+					i = 2;
+				}
+			}
+			_ref = i;
+			if (_ref === 0) {
+				z = y * y;
+				p1 = _lgamA[0] + z * (_lgamA[2] + z * (_lgamA[4] + z * (_lgamA[6] + z * (_lgamA[8] + z * _lgamA[10]))));
+				p2 = z * (_lgamA[1] + z * (_lgamA[3] + z * (_lgamA[5] + z * (_lgamA[7] + z * (_lgamA[9] + z * _lgamA[11])))));
+				p = y * p1 + p2;
+				lgamma = lgamma + ((p - 0.5 * y));
+			} else if (_ref === 1) {
+				z$1 = y * y;
+				w = z$1 * y;
+				p1$1 = _lgamT[0] + w * (_lgamT[3] + w * (_lgamT[6] + w * (_lgamT[9] + w * _lgamT[12])));
+				p2$1 = _lgamT[1] + w * (_lgamT[4] + w * (_lgamT[7] + w * (_lgamT[10] + w * _lgamT[13])));
+				p3 = _lgamT[2] + w * (_lgamT[5] + w * (_lgamT[8] + w * (_lgamT[11] + w * _lgamT[14])));
+				p$1 = z$1 * p1$1 - (-3.638676997039505e-18 - w * (p2$1 + y * p3));
+				lgamma = lgamma + ((-0.12148629053584961 + p$1));
+			} else if (_ref === 2) {
+				p1$2 = y * (_lgamU[0] + y * (_lgamU[1] + y * (_lgamU[2] + y * (_lgamU[3] + y * (_lgamU[4] + y * _lgamU[5])))));
+				p2$2 = 1 + y * (_lgamV[1] + y * (_lgamV[2] + y * (_lgamV[3] + y * (_lgamV[4] + y * _lgamV[5]))));
+				lgamma = lgamma + ((-0.5 * y + p1$2 / p2$2));
+			}
+		} else if (x < 8) {
+			i$1 = (x >> 0);
+			y$1 = x - i$1;
+			p$2 = y$1 * (_lgamS[0] + y$1 * (_lgamS[1] + y$1 * (_lgamS[2] + y$1 * (_lgamS[3] + y$1 * (_lgamS[4] + y$1 * (_lgamS[5] + y$1 * _lgamS[6]))))));
+			q = 1 + y$1 * (_lgamR[1] + y$1 * (_lgamR[2] + y$1 * (_lgamR[3] + y$1 * (_lgamR[4] + y$1 * (_lgamR[5] + y$1 * _lgamR[6])))));
+			lgamma = 0.5 * y$1 + p$2 / q;
+			z$2 = 1;
+			_ref$1 = i$1;
+			if (_ref$1 === 7) {
+				z$2 = z$2 * ((y$1 + 6));
+				z$2 = z$2 * ((y$1 + 5));
+				z$2 = z$2 * ((y$1 + 4));
+				z$2 = z$2 * ((y$1 + 3));
+				z$2 = z$2 * ((y$1 + 2));
+				lgamma = lgamma + (Log(z$2));
+			} else if (_ref$1 === 6) {
+				z$2 = z$2 * ((y$1 + 5));
+				z$2 = z$2 * ((y$1 + 4));
+				z$2 = z$2 * ((y$1 + 3));
+				z$2 = z$2 * ((y$1 + 2));
+				lgamma = lgamma + (Log(z$2));
+			} else if (_ref$1 === 5) {
+				z$2 = z$2 * ((y$1 + 4));
+				z$2 = z$2 * ((y$1 + 3));
+				z$2 = z$2 * ((y$1 + 2));
+				lgamma = lgamma + (Log(z$2));
+			} else if (_ref$1 === 4) {
+				z$2 = z$2 * ((y$1 + 3));
+				z$2 = z$2 * ((y$1 + 2));
+				lgamma = lgamma + (Log(z$2));
+			} else if (_ref$1 === 3) {
+				z$2 = z$2 * ((y$1 + 2));
+				lgamma = lgamma + (Log(z$2));
+			}
+		} else if (x < 2.8823037615171174e+17) {
+			t$1 = Log(x);
+			z$3 = 1 / x;
+			y$2 = z$3 * z$3;
+			w$1 = _lgamW[0] + z$3 * (_lgamW[1] + y$2 * (_lgamW[2] + y$2 * (_lgamW[3] + y$2 * (_lgamW[4] + y$2 * (_lgamW[5] + y$2 * _lgamW[6])))));
+			lgamma = (x - 0.5) * (t$1 - 1) + w$1;
+		} else {
+			lgamma = x * (Log(x) - 1);
+		}
+		if (neg) {
+			lgamma = nadj - lgamma;
+		}
+		return [lgamma, sign];
+	};
+	var sinPi = function(x) {
+		var z, n, x$1, _ref;
+		if (x < 0.25) {
+			return -Sin(3.141592653589793 * x);
+		}
+		z = Floor(x);
+		n = 0;
+		if (!((z === x))) {
+			x = Mod(x, 2);
+			n = (x * 4 >> 0);
+		} else {
+			if (x >= 9.007199254740992e+15) {
+				x = 0;
+				n = 0;
+			} else {
+				if (x < 4.503599627370496e+15) {
+					z = x + 4.503599627370496e+15;
+				}
+				n = ((x$1 = Float64bits(z), new Go$Uint64(0 & x$1.high, (1 & x$1.low) >>> 0)).low >> 0);
+				x = n;
+				n = n << 2 >> 0;
+			}
+		}
+		_ref = n;
+		if (_ref === 0) {
+			x = Sin(3.141592653589793 * x);
+		} else if (_ref === 1 || _ref === 2) {
+			x = Cos(3.141592653589793 * (0.5 - x));
+		} else if (_ref === 3 || _ref === 4) {
+			x = Sin(3.141592653589793 * (1 - x));
+		} else if (_ref === 5 || _ref === 6) {
+			x = -Cos(3.141592653589793 * (x - 1.5));
+		} else {
+			x = Sin(3.141592653589793 * (x - 2));
+		}
+		return -x;
+	};
+	var Log = go$pkg.Log = Math.log;
+	var log = function(x) {
+		var _tuple, f1, ki, f, k, s, s2, s4, t1, t2, R, hfsq;
+		if (IsNaN(x) || IsInf(x, 1)) {
+			return x;
+		} else if (x < 0) {
+			return NaN();
+		} else if (x === 0) {
+			return Inf(-1);
+		}
+		_tuple = Frexp(x), f1 = _tuple[0], ki = _tuple[1];
+		if (f1 < 0.7071067811865476) {
+			f1 = f1 * 2;
+			ki = ki - 1 >> 0;
+		}
+		f = f1 - 1;
+		k = ki;
+		s = f / (2 + f);
+		s2 = s * s;
+		s4 = s2 * s2;
+		t1 = s2 * (0.6666666666666735 + s4 * (0.2857142874366239 + s4 * (0.1818357216161805 + s4 * 0.14798198605116586)));
+		t2 = s4 * (0.3999999999940942 + s4 * (0.22222198432149784 + s4 * 0.15313837699209373));
+		R = t1 + t2;
+		hfsq = 0.5 * f * f;
+		return k * 0.6931471803691238 - ((hfsq - (s * (hfsq + R) + k * 1.9082149292705877e-10)) - f);
+	};
+	var Log10 = go$pkg.Log10 = function(x) { return log10(x); };
+	var log10 = function(x) {
+		return Log(x) * 0.4342944819032518;
+	};
+	var Log2 = go$pkg.Log2 = function(x) { return log2(x); };
+	var log2 = function(x) {
+		var _tuple, frac, exp$1;
+		_tuple = Frexp(x), frac = _tuple[0], exp$1 = _tuple[1];
+		return Log(frac) * 1.4426950408889634 + exp$1;
+	};
+	var Log1p = go$pkg.Log1p = function(x) { return log1p(x); };
+	var log1p = function(x) {
+		var absx, f, iu, k, c, u, x$1, x$2, hfsq, _tuple, s, R, z;
+		if (x < -1 || IsNaN(x)) {
+			return NaN();
+		} else if (x === -1) {
+			return Inf(-1);
+		} else if (IsInf(x, 1)) {
+			return Inf(1);
+		}
+		absx = x;
+		if (absx < 0) {
+			absx = -absx;
+		}
+		f = 0;
+		iu = new Go$Uint64(0, 0);
+		k = 1;
+		if (absx < 0.41421356237309503) {
+			if (absx < 1.862645149230957e-09) {
+				if (absx < 5.551115123125783e-17) {
+					return x;
+				}
+				return x - x * x * 0.5;
+			}
+			if (x > -0.2928932188134525) {
+				k = 0;
+				f = x;
+				iu = new Go$Uint64(0, 1);
+			}
+		}
+		c = 0;
+		if (!((k === 0))) {
+			u = 0;
+			if (absx < 9.007199254740992e+15) {
+				u = 1 + x;
+				iu = Float64bits(u);
+				k = ((x$1 = go$shiftRightUint64(iu, 52), new Go$Uint64(x$1.high - 0, x$1.low - 1023)).low >> 0);
+				if (k > 0) {
+					c = 1 - (u - x);
+				} else {
+					c = x - (u - 1);
+					c = c / (u);
+				}
+			} else {
+				u = x;
+				iu = Float64bits(u);
+				k = ((x$2 = go$shiftRightUint64(iu, 52), new Go$Uint64(x$2.high - 0, x$2.low - 1023)).low >> 0);
+				c = 0;
+			}
+			iu = new Go$Uint64(iu.high & 1048575, (iu.low & 4294967295) >>> 0);
+			if ((iu.high < 434334 || (iu.high === 434334 && iu.low < 1719614413))) {
+				u = Float64frombits(new Go$Uint64(iu.high | 1072693248, (iu.low | 0) >>> 0));
+			} else {
+				k = k + 1 >> 0;
+				u = Float64frombits(new Go$Uint64(iu.high | 1071644672, (iu.low | 0) >>> 0));
+				iu = go$shiftRightUint64((new Go$Uint64(1048576 - iu.high, 0 - iu.low)), 2);
+			}
+			f = u - 1;
+		}
+		hfsq = 0.5 * f * f;
+		_tuple = [0, 0, 0], s = _tuple[0], R = _tuple[1], z = _tuple[2];
+		if ((iu.high === 0 && iu.low === 0)) {
+			if (f === 0) {
+				if (k === 0) {
+					return 0;
+				} else {
+					c = c + (k * 1.9082149292705877e-10);
+					return k * 0.6931471803691238 + c;
+				}
+			}
+			R = hfsq * (1 - 0.6666666666666666 * f);
+			if (k === 0) {
+				return f - R;
+			}
+			return k * 0.6931471803691238 - ((R - (k * 1.9082149292705877e-10 + c)) - f);
+		}
+		s = f / (2 + f);
+		z = s * s;
+		R = z * (0.6666666666666735 + z * (0.3999999999940942 + z * (0.2857142874366239 + z * (0.22222198432149784 + z * (0.1818357216161805 + z * (0.15313837699209373 + z * 0.14798198605116586))))));
+		if (k === 0) {
+			return f - (hfsq - s * (hfsq + R));
+		}
+		return k * 0.6931471803691238 - ((hfsq - (s * (hfsq + R) + (k * 1.9082149292705877e-10 + c))) - f);
+	};
+	var Logb = go$pkg.Logb = function(x) {
+		if (x === 0) {
+			return Inf(-1);
+		} else if (IsInf(x, 0)) {
+			return Inf(1);
+		} else if (IsNaN(x)) {
+			return x;
+		}
+		return ilogb(x);
+	};
+	var Ilogb = go$pkg.Ilogb = function(x) {
+		if (x === 0) {
+			return -2147483648;
+		} else if (IsNaN(x)) {
+			return 2147483647;
+		} else if (IsInf(x, 0)) {
+			return 2147483647;
+		}
+		return ilogb(x);
+	};
+	var ilogb = function(x) {
+		var _tuple, exp$1, x$1;
+		_tuple = normalize(x), x = _tuple[0], exp$1 = _tuple[1];
+		return (((x$1 = go$shiftRightUint64(Float64bits(x), 52), new Go$Uint64(x$1.high & 0, (x$1.low & 2047) >>> 0)).low >> 0) - 1023 >> 0) + exp$1 >> 0;
+	};
+	var Mod = go$pkg.Mod = function(x, y) { return x % y; };
+	var mod = function(x, y) {
+		var _tuple, yfr, yexp, sign, r, _tuple$1, rfr, rexp;
+		if ((y === 0) || IsInf(x, 0) || IsNaN(x) || IsNaN(y)) {
+			return NaN();
+		}
+		if (y < 0) {
+			y = -y;
+		}
+		_tuple = Frexp(y), yfr = _tuple[0], yexp = _tuple[1];
+		sign = false;
+		r = x;
+		if (x < 0) {
+			r = -x;
+			sign = true;
+		}
+		while (r >= y) {
+			_tuple$1 = Frexp(r), rfr = _tuple$1[0], rexp = _tuple$1[1];
+			if (rfr < yfr) {
+				rexp = rexp - 1 >> 0;
+			}
+			r = r - Ldexp(y, rexp - yexp >> 0);
+		}
+		if (sign) {
+			r = -r;
+		}
+		return r;
+	};
+	var Modf = go$pkg.Modf = function(f) { if (f === -1/0 || f === 1/0) { return [f, 0/0]; } var frac = f % 1; return [f - frac, frac]; };
+	var modf = function(f) {
+		var int$1, frac, _tuple, _tuple$1, _tuple$2, x, e, x$1, x$2;
+		int$1 = 0;
+		frac = 0;
+		if (f < 1) {
+			if (f < 0) {
+				_tuple = Modf(-f), int$1 = _tuple[0], frac = _tuple[1];
+				_tuple$1 = [-int$1, -frac], int$1 = _tuple$1[0], frac = _tuple$1[1];
+				return [int$1, frac];
+			}
+			_tuple$2 = [0, f], int$1 = _tuple$2[0], frac = _tuple$2[1];
+			return [int$1, frac];
+		}
+		x = Float64bits(f);
+		e = (((go$shiftRightUint64(x, 52).low >>> 0) & 2047) >>> 0) - 1023 >>> 0;
+		if (e < 52) {
+			x = (x$1 = (x$2 = go$shiftLeft64(new Go$Uint64(0, 1), ((52 - e >>> 0))), new Go$Uint64(x$2.high - 0, x$2.low - 1)), new Go$Uint64(x.high &~ x$1.high, (x.low &~ x$1.low) >>> 0));
+		}
+		int$1 = Float64frombits(x);
+		frac = f - int$1;
+		return [int$1, frac];
+	};
+	var Nextafter = go$pkg.Nextafter = function(x, y) {
+		var r, x$1, x$2;
+		r = 0;
+		if (IsNaN(x) || IsNaN(y)) {
+			r = NaN();
+		} else if (x === y) {
+			r = x;
+		} else if (x === 0) {
+			r = Copysign(Float64frombits(new Go$Uint64(0, 1)), y);
+		} else if ((y > x) === (x > 0)) {
+			r = Float64frombits((x$1 = Float64bits(x), new Go$Uint64(x$1.high + 0, x$1.low + 1)));
+		} else {
+			r = Float64frombits((x$2 = Float64bits(x), new Go$Uint64(x$2.high - 0, x$2.low - 1)));
+		}
+		return r;
+	};
+	var isOddInt = function(x) {
+		var _tuple, xi, xf, x$1, x$2;
+		_tuple = Modf(x), xi = _tuple[0], xf = _tuple[1];
+		return (xf === 0) && (x$1 = (x$2 = new Go$Int64(0, xi), new Go$Int64(x$2.high & 0, (x$2.low & 1) >>> 0)), (x$1.high === 0 && x$1.low === 1));
+	};
+	var Pow = go$pkg.Pow = function(x, y) { return ((x === 1) || (x === -1 && (y === -1/0 || y === 1/0))) ? 1 : Math.pow(x, y); };
+	var Pow10 = go$pkg.Pow10 = function(e) {
+		var _q, m;
+		if (e <= -325) {
+			return 0;
+		} else if (e > 309) {
+			return Inf(1);
+		}
+		if (e < 0) {
+			return 1 / Pow10(-e);
+		}
+		if (e < 70) {
+			return pow10tab[e];
+		}
+		m = (_q = e / 2, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero"));
+		return Pow10(m) * Pow10(e - m >> 0);
+	};
+	var Remainder = go$pkg.Remainder = function(x, y) { return remainder(x, y); };
+	var remainder = function(x, y) {
+		var sign, yHalf;
+		if (IsNaN(x) || IsNaN(y) || IsInf(x, 0) || (y === 0)) {
+			return NaN();
+		} else if (IsInf(y, 0)) {
+			return x;
+		}
+		sign = false;
+		if (x < 0) {
+			x = -x;
+			sign = true;
+		}
+		if (y < 0) {
+			y = -y;
+		}
+		if (x === y) {
+			return 0;
+		}
+		if (y <= 8.988465674311579e+307) {
+			x = Mod(x, y + y);
+		}
+		if (y < 4.450147717014403e-308) {
+			if (x + x > y) {
+				x = x - (y);
+				if (x + x >= y) {
+					x = x - (y);
+				}
+			}
+		} else {
+			yHalf = 0.5 * y;
+			if (x > yHalf) {
+				x = x - (y);
+				if (x >= yHalf) {
+					x = x - (y);
+				}
+			}
+		}
+		if (sign) {
+			x = -x;
+		}
+		return x;
+	};
+	var Signbit = go$pkg.Signbit = function(x) { return x < 0 || 1/x === 1/-0; };
+	var Cos = go$pkg.Cos = Math.cos;
+	var cos = function(x) {
+		var sign, j, y, x$1, z, zz;
+		if (IsNaN(x) || IsInf(x, 0)) {
+			return NaN();
+		}
+		sign = false;
+		if (x < 0) {
+			x = -x;
+		}
+		j = new Go$Int64(0, x * 1.2732395447351625);
+		y = go$flatten64(j);
+		if ((x$1 = new Go$Int64(j.high & 0, (j.low & 1) >>> 0), (x$1.high === 0 && x$1.low === 1))) {
+			j = new Go$Int64(j.high + 0, j.low + 1);
+			y = y + 1;
+		}
+		j = new Go$Int64(j.high & 0, (j.low & 7) >>> 0);
+		if ((j.high > 0 || (j.high === 0 && j.low > 3))) {
+			j = new Go$Int64(j.high - 0, j.low - 4);
+			sign = !sign;
+		}
+		if ((j.high > 0 || (j.high === 0 && j.low > 1))) {
+			sign = !sign;
+		}
+		z = ((x - y * 0.7853981256484985) - y * 3.774894707930798e-08) - y * 2.6951514290790595e-15;
+		zz = z * z;
+		if ((j.high === 0 && j.low === 1) || (j.high === 0 && j.low === 2)) {
+			y = z + z * zz * ((((((_sin[0] * zz) + _sin[1]) * zz + _sin[2]) * zz + _sin[3]) * zz + _sin[4]) * zz + _sin[5]);
+		} else {
+			y = 1 - 0.5 * zz + zz * zz * ((((((_cos[0] * zz) + _cos[1]) * zz + _cos[2]) * zz + _cos[3]) * zz + _cos[4]) * zz + _cos[5]);
+		}
+		if (sign) {
+			y = -y;
+		}
+		return y;
+	};
+	var Sin = go$pkg.Sin = Math.sin;
+	var sin = function(x) {
+		var sign, j, y, x$1, z, zz;
+		if ((x === 0) || IsNaN(x)) {
+			return x;
+		} else if (IsInf(x, 0)) {
+			return NaN();
+		}
+		sign = false;
+		if (x < 0) {
+			x = -x;
+			sign = true;
+		}
+		j = new Go$Int64(0, x * 1.2732395447351625);
+		y = go$flatten64(j);
+		if ((x$1 = new Go$Int64(j.high & 0, (j.low & 1) >>> 0), (x$1.high === 0 && x$1.low === 1))) {
+			j = new Go$Int64(j.high + 0, j.low + 1);
+			y = y + 1;
+		}
+		j = new Go$Int64(j.high & 0, (j.low & 7) >>> 0);
+		if ((j.high > 0 || (j.high === 0 && j.low > 3))) {
+			sign = !sign;
+			j = new Go$Int64(j.high - 0, j.low - 4);
+		}
+		z = ((x - y * 0.7853981256484985) - y * 3.774894707930798e-08) - y * 2.6951514290790595e-15;
+		zz = z * z;
+		if ((j.high === 0 && j.low === 1) || (j.high === 0 && j.low === 2)) {
+			y = 1 - 0.5 * zz + zz * zz * ((((((_cos[0] * zz) + _cos[1]) * zz + _cos[2]) * zz + _cos[3]) * zz + _cos[4]) * zz + _cos[5]);
+		} else {
+			y = z + z * zz * ((((((_sin[0] * zz) + _sin[1]) * zz + _sin[2]) * zz + _sin[3]) * zz + _sin[4]) * zz + _sin[5]);
+		}
+		if (sign) {
+			y = -y;
+		}
+		return y;
+	};
+	var Sincos = go$pkg.Sincos = function(x) { return [Math.sin(x), Math.cos(x)]; };
+	var sincos = function(x) {
+		var sin$1, cos$1, _tuple, _tuple$1, _tuple$2, sinSign, cosSign, j, y, x$1, _tuple$3, z, zz, _tuple$4;
+		sin$1 = 0;
+		cos$1 = 0;
+		if (x === 0) {
+			_tuple = [x, 1], sin$1 = _tuple[0], cos$1 = _tuple[1];
+			return [sin$1, cos$1];
+		} else if (IsNaN(x) || IsInf(x, 0)) {
+			_tuple$1 = [NaN(), NaN()], sin$1 = _tuple$1[0], cos$1 = _tuple$1[1];
+			return [sin$1, cos$1];
+		}
+		_tuple$2 = [false, false], sinSign = _tuple$2[0], cosSign = _tuple$2[1];
+		if (x < 0) {
+			x = -x;
+			sinSign = true;
+		}
+		j = new Go$Int64(0, x * 1.2732395447351625);
+		y = go$flatten64(j);
+		if ((x$1 = new Go$Int64(j.high & 0, (j.low & 1) >>> 0), (x$1.high === 0 && x$1.low === 1))) {
+			j = new Go$Int64(j.high + 0, j.low + 1);
+			y = y + 1;
+		}
+		j = new Go$Int64(j.high & 0, (j.low & 7) >>> 0);
+		if ((j.high > 0 || (j.high === 0 && j.low > 3))) {
+			j = new Go$Int64(j.high - 0, j.low - 4);
+			_tuple$3 = [!sinSign, !cosSign], sinSign = _tuple$3[0], cosSign = _tuple$3[1];
+		}
+		if ((j.high > 0 || (j.high === 0 && j.low > 1))) {
+			cosSign = !cosSign;
+		}
+		z = ((x - y * 0.7853981256484985) - y * 3.774894707930798e-08) - y * 2.6951514290790595e-15;
+		zz = z * z;
+		cos$1 = 1 - 0.5 * zz + zz * zz * ((((((_cos[0] * zz) + _cos[1]) * zz + _cos[2]) * zz + _cos[3]) * zz + _cos[4]) * zz + _cos[5]);
+		sin$1 = z + z * zz * ((((((_sin[0] * zz) + _sin[1]) * zz + _sin[2]) * zz + _sin[3]) * zz + _sin[4]) * zz + _sin[5]);
+		if ((j.high === 0 && j.low === 1) || (j.high === 0 && j.low === 2)) {
+			_tuple$4 = [cos$1, sin$1], sin$1 = _tuple$4[0], cos$1 = _tuple$4[1];
+		}
+		if (cosSign) {
+			cos$1 = -cos$1;
+		}
+		if (sinSign) {
+			sin$1 = -sin$1;
+		}
+		return [sin$1, cos$1];
+	};
+	var Sinh = go$pkg.Sinh = function(x) {
+		var sign, temp, _ref, sq;
+		sign = false;
+		if (x < 0) {
+			x = -x;
+			sign = true;
+		}
+		temp = 0;
+		_ref = true;
+		if (_ref === x > 21) {
+			temp = Exp(x) / 2;
+		} else if (_ref === x > 0.5) {
+			temp = (Exp(x) - Exp(-x)) / 2;
+		} else {
+			sq = x * x;
+			temp = (((-26.30563213397497 * sq + -2894.211355989564) * sq + -89912.72022039509) * sq + -630767.3640497717) * x;
+			temp = temp / (((sq + -173.6789535582337) * sq + 15215.17378790019) * sq + -630767.3640497717);
+		}
+		if (sign) {
+			temp = -temp;
+		}
+		return temp;
+	};
+	var Cosh = go$pkg.Cosh = function(x) {
+		if (x < 0) {
+			x = -x;
+		}
+		if (x > 21) {
+			return Exp(x) / 2;
+		}
+		return (Exp(x) + Exp(-x)) / 2;
+	};
+	var Sqrt = go$pkg.Sqrt = Math.sqrt;
+	var sqrt = function(x) {
+		var ix, x$1, exp$1, x$2, _tuple, q, s, r, t, x$3, x$4, x$5, x$6, x$7;
+		if ((x === 0) || IsNaN(x) || IsInf(x, 1)) {
+			return x;
+		} else if (x < 0) {
+			return NaN();
+		}
+		ix = Float64bits(x);
+		exp$1 = ((x$1 = go$shiftRightUint64(ix, 52), new Go$Uint64(x$1.high & 0, (x$1.low & 2047) >>> 0)).low >> 0);
+		if (exp$1 === 0) {
+			while ((x$2 = go$shiftLeft64(new Go$Uint64(ix.high & 0, (ix.low & 1) >>> 0), 52), (x$2.high === 0 && x$2.low === 0))) {
+				ix = go$shiftLeft64(ix, 1);
+				exp$1 = exp$1 - 1 >> 0;
+			}
+			exp$1 = exp$1 + 1 >> 0;
+		}
+		exp$1 = exp$1 - 1023 >> 0;
+		ix = new Go$Uint64(ix.high &~ 2146435072, (ix.low &~ 0) >>> 0);
+		ix = new Go$Uint64(ix.high | 1048576, (ix.low | 0) >>> 0);
+		if ((exp$1 & 1) === 1) {
+			ix = go$shiftLeft64(ix, 1);
+		}
+		exp$1 = exp$1 >> 1 >> 0;
+		ix = go$shiftLeft64(ix, 1);
+		_tuple = [new Go$Uint64(0, 0), new Go$Uint64(0, 0)], q = _tuple[0], s = _tuple[1];
+		r = new Go$Uint64(2097152, 0);
+		while (!((r.high === 0 && r.low === 0))) {
+			t = new Go$Uint64(s.high + r.high, s.low + r.low);
+			if ((t.high < ix.high || (t.high === ix.high && t.low <= ix.low))) {
+				s = new Go$Uint64(t.high + r.high, t.low + r.low);
+				ix = (x$3 = t, new Go$Uint64(ix.high - x$3.high, ix.low - x$3.low));
+				q = (x$4 = r, new Go$Uint64(q.high + x$4.high, q.low + x$4.low));
+			}
+			ix = go$shiftLeft64(ix, 1);
+			r = go$shiftRightUint64(r, 1);
+		}
+		if (!((ix.high === 0 && ix.low === 0))) {
+			q = (x$5 = new Go$Uint64(q.high & 0, (q.low & 1) >>> 0), new Go$Uint64(q.high + x$5.high, q.low + x$5.low));
+		}
+		ix = (x$6 = go$shiftRightUint64(q, 1), x$7 = go$shiftLeft64(new Go$Uint64(0, ((exp$1 - 1 >> 0) + 1023 >> 0)), 52), new Go$Uint64(x$6.high + x$7.high, x$6.low + x$7.low));
+		return Float64frombits(ix);
+	};
+	var sqrtC = function(f, r) {
+		r.go$set(sqrt(f));
+	};
+	var Tan = go$pkg.Tan = Math.tan;
+	var tan = function(x) {
+		var sign, j, y, x$1, z, zz, x$2;
+		if ((x === 0) || IsNaN(x)) {
+			return x;
+		} else if (IsInf(x, 0)) {
+			return NaN();
+		}
+		sign = false;
+		if (x < 0) {
+			x = -x;
+			sign = true;
+		}
+		j = new Go$Int64(0, x * 1.2732395447351625);
+		y = go$flatten64(j);
+		if ((x$1 = new Go$Int64(j.high & 0, (j.low & 1) >>> 0), (x$1.high === 0 && x$1.low === 1))) {
+			j = new Go$Int64(j.high + 0, j.low + 1);
+			y = y + 1;
+		}
+		z = ((x - y * 0.7853981256484985) - y * 3.774894707930798e-08) - y * 2.6951514290790595e-15;
+		zz = z * z;
+		if (zz > 1e-14) {
+			y = z + z * (zz * (((_tanP[0] * zz) + _tanP[1]) * zz + _tanP[2]) / ((((zz + _tanQ[1]) * zz + _tanQ[2]) * zz + _tanQ[3]) * zz + _tanQ[4]));
+		} else {
+			y = z;
+		}
+		if ((x$2 = new Go$Int64(j.high & 0, (j.low & 2) >>> 0), (x$2.high === 0 && x$2.low === 2))) {
+			y = -1 / y;
+		}
+		if (sign) {
+			y = -y;
+		}
+		return y;
+	};
+	var Tanh = go$pkg.Tanh = function(x) {
+		var z, s, s$1;
+		z = Abs(x);
+		if (z > 44.014845965556525) {
+			if (x < 0) {
+				return -1;
+			}
+			return 1;
+		} else if (z >= 0.625) {
+			s = Exp(2 * z);
+			z = 1 - 2 / (s + 1);
+			if (x < 0) {
+				z = -z;
+			}
+		} else {
+			if (x === 0) {
+				return x;
+			}
+			s$1 = x * x;
+			z = x + x * s$1 * ((tanhP[0] * s$1 + tanhP[1]) * s$1 + tanhP[2]) / (((s$1 + tanhQ[0]) * s$1 + tanhQ[1]) * s$1 + tanhQ[2]);
+		}
+		return z;
+	};
+	var Float32bits = go$pkg.Float32bits = go$float32bits;
+	var Float32frombits = go$pkg.Float32frombits = function(b) {
+			var s, e, m;
+			s = 1;
+			if (!(((b & 2147483648) >>> 0) === 0)) {
+				s = -1;
+			}
+			e = (((((b >>> 23) >>> 0)) & 255) >>> 0);
+			m = ((b & 8388607) >>> 0);
+			if (e === 255) {
+				if (m === 0) {
+					return s / 0;
+				}
+				return 0/0;
+			}
+			if (!(e === 0)) {
+				m = (m + (8388608) >>> 0);
+			}
+			if (e === 0) {
+				e = 1;
+			}
+			return Ldexp(m, e - 127 - 23) * s;
+		};
+	var Float64bits = go$pkg.Float64bits = function(f) {
+			var s, e, x, y, x$1, y$1, x$2, y$2;
+			if (f === 0) {
+				if (f === 0 && 1 / f === 1 / -0) {
+					return new Go$Uint64(2147483648, 0);
+				}
+				return new Go$Uint64(0, 0);
+			}
+			if (!(f === f)) {
+				return new Go$Uint64(2146959360, 1);
+			}
+			s = new Go$Uint64(0, 0);
+			if (f < 0) {
+				s = new Go$Uint64(2147483648, 0);
+				f = -f;
+			}
+			e = 1075;
+			while (f >= 9.007199254740992e+15) {
+				f = f / (2);
+				if (e === 2047) {
+					break;
+				}
+				e = (e + (1) >>> 0);
+			}
+			while (f < 4.503599627370496e+15) {
+				e = (e - (1) >>> 0);
+				if (e === 0) {
+					break;
+				}
+				f = f * (2);
+			}
+			return (x$2 = (x = s, y = go$shiftLeft64(new Go$Uint64(0, e), 52), new Go$Uint64(x.high | y.high, (x.low | y.low) >>> 0)), y$2 = ((x$1 = new Go$Uint64(0, f), y$1 = new Go$Uint64(1048576, 0), new Go$Uint64(x$1.high &~ y$1.high, (x$1.low &~ y$1.low) >>> 0))), new Go$Uint64(x$2.high | y$2.high, (x$2.low | y$2.low) >>> 0));
+		};
+	var Float64frombits = go$pkg.Float64frombits = function(b) {
+			var s, x, y, x$1, y$1, x$2, y$2, e, x$3, y$3, m, x$4, y$4, x$5, y$5, x$6, y$6, x$7, y$7, x$8, y$8;
+			s = 1;
+			if (!((x$1 = (x = b, y = new Go$Uint64(2147483648, 0), new Go$Uint64(x.high & y.high, (x.low & y.low) >>> 0)), y$1 = new Go$Uint64(0, 0), x$1.high === y$1.high && x$1.low === y$1.low))) {
+				s = -1;
+			}
+			e = (x$2 = (go$shiftRightUint64(b, 52)), y$2 = new Go$Uint64(0, 2047), new Go$Uint64(x$2.high & y$2.high, (x$2.low & y$2.low) >>> 0));
+			m = (x$3 = b, y$3 = new Go$Uint64(1048575, 4294967295), new Go$Uint64(x$3.high & y$3.high, (x$3.low & y$3.low) >>> 0));
+			if ((x$4 = e, y$4 = new Go$Uint64(0, 2047), x$4.high === y$4.high && x$4.low === y$4.low)) {
+				if ((x$5 = m, y$5 = new Go$Uint64(0, 0), x$5.high === y$5.high && x$5.low === y$5.low)) {
+					return s / 0;
+				}
+				return 0/0;
+			}
+			if (!((x$6 = e, y$6 = new Go$Uint64(0, 0), x$6.high === y$6.high && x$6.low === y$6.low))) {
+				m = (x$7 = m, y$7 = (new Go$Uint64(1048576, 0)), new Go$Uint64(x$7.high + y$7.high, x$7.low + y$7.low));
+			}
+			if ((x$8 = e, y$8 = new Go$Uint64(0, 0), x$8.high === y$8.high && x$8.low === y$8.low)) {
+				e = new Go$Uint64(0, 1);
+			}
+			return Ldexp((m.high * 4294967296 + m.low), e.low - 1023 - 52) * s;
+		};
+	go$pkg.init = function() {
+		pow10tab = go$makeNativeArray("Float64", 70, function() { return 0; });
+		var i, _q, m;
+		_gamP = go$toNativeArray("Float64", [0.00016011952247675185, 0.0011913514700658638, 0.010421379756176158, 0.04763678004571372, 0.20744822764843598, 0.4942148268014971, 1]);
+		_gamQ = go$toNativeArray("Float64", [-2.3158187332412014e-05, 0.0005396055804933034, -0.004456419138517973, 0.011813978522206043, 0.035823639860549865, -0.23459179571824335, 0.0714304917030273, 1]);
+		_gamS = go$toNativeArray("Float64", [0.0007873113957930937, -0.00022954996161337813, -0.0026813261780578124, 0.0034722222160545866, 0.08333333333334822]);
+		p0R8 = go$toNativeArray("Float64", [0, -0.07031249999999004, -8.081670412753498, -257.06310567970485, -2485.216410094288, -5253.043804907295]);
+		p0S8 = go$toNativeArray("Float64", [116.53436461966818, 3833.7447536412183, 40597.857264847255, 116752.97256437592, 47627.728414673096]);
+		p0R5 = go$toNativeArray("Float64", [-1.141254646918945e-11, -0.07031249408735993, -4.159610644705878, -67.67476522651673, -331.23129964917297, -346.4333883656049]);
+		p0S5 = go$toNativeArray("Float64", [60.753938269230034, 1051.2523059570458, 5978.970943338558, 9625.445143577745, 2406.058159229391]);
+		p0R3 = go$toNativeArray("Float64", [-2.547046017719519e-09, -0.07031196163814817, -2.409032215495296, -21.96597747348831, -58.07917047017376, -31.44794705948885]);
+		p0S3 = go$toNativeArray("Float64", [35.85603380552097, 361.51398305030386, 1193.6078379211153, 1127.9967985690741, 173.58093081333575]);
+		p0R2 = go$toNativeArray("Float64", [-8.875343330325264e-08, -0.07030309954836247, -1.4507384678095299, -7.635696138235278, -11.193166886035675, -3.2336457935133534]);
+		p0S2 = go$toNativeArray("Float64", [22.22029975320888, 136.2067942182152, 270.4702786580835, 153.87539420832033, 14.65761769482562]);
+		q0R8 = go$toNativeArray("Float64", [0, 0.0732421874999935, 11.76820646822527, 557.6733802564019, 8859.197207564686, 37014.62677768878]);
+		q0S8 = go$toNativeArray("Float64", [163.77602689568982, 8098.344946564498, 142538.29141912048, 803309.2571195144, 840501.5798190605, -343899.2935378666]);
+		q0R5 = go$toNativeArray("Float64", [1.8408596359451553e-11, 0.07324217666126848, 5.8356350896205695, 135.11157728644983, 1027.243765961641, 1989.9778586460538]);
+		q0S5 = go$toNativeArray("Float64", [82.77661022365378, 2077.81416421393, 18847.28877857181, 56751.11228949473, 35976.75384251145, -5354.342756019448]);
+		q0R3 = go$toNativeArray("Float64", [4.377410140897386e-09, 0.07324111800429114, 3.344231375161707, 42.621844074541265, 170.8080913405656, 166.73394869665117]);
+		q0S3 = go$toNativeArray("Float64", [48.75887297245872, 709.689221056606, 3704.1482262011136, 6460.425167525689, 2516.3336892036896, -149.2474518361564]);
+		q0R2 = go$toNativeArray("Float64", [1.5044444488698327e-07, 0.07322342659630793, 1.99819174093816, 14.495602934788574, 31.666231750478154, 16.252707571092927]);
+		q0S2 = go$toNativeArray("Float64", [30.36558483552192, 269.34811860804984, 844.7837575953201, 882.9358451124886, 212.66638851179883, -5.3109549388266695]);
+		p1R8 = go$toNativeArray("Float64", [0, 0.11718749999998865, 13.239480659307358, 412.05185430737856, 3874.7453891396053, 7914.479540318917]);
+		p1S8 = go$toNativeArray("Float64", [114.20737037567841, 3650.9308342085346, 36956.206026903346, 97602.79359349508, 30804.27206278888]);
+		p1R5 = go$toNativeArray("Float64", [1.3199051955624352e-11, 0.1171874931906141, 6.802751278684329, 108.30818299018911, 517.6361395331998, 528.7152013633375]);
+		p1S5 = go$toNativeArray("Float64", [59.28059872211313, 991.4014187336144, 5353.26695291488, 7844.690317495512, 1504.0468881036106]);
+		p1R3 = go$toNativeArray("Float64", [3.025039161373736e-09, 0.11718686556725359, 3.9329775003331564, 35.11940355916369, 91.05501107507813, 48.55906851973649]);
+		p1S3 = go$toNativeArray("Float64", [34.79130950012515, 336.76245874782575, 1046.8713997577513, 890.8113463982564, 103.78793243963928]);
+		p1R2 = go$toNativeArray("Float64", [1.0771083010687374e-07, 0.11717621946268335, 2.368514966676088, 12.242610914826123, 17.693971127168773, 5.073523125888185]);
+		p1S2 = go$toNativeArray("Float64", [21.43648593638214, 125.29022716840275, 232.2764690571628, 117.6793732871471, 8.364638933716183]);
+		q1R8 = go$toNativeArray("Float64", [0, -0.10253906249999271, -16.271753454459, -759.6017225139501, -11849.806670242959, -48438.512428575035]);
+		q1S8 = go$toNativeArray("Float64", [161.3953697007229, 7825.385999233485, 133875.33628724958, 719657.7236832409, 666601.2326177764, -294490.26430383464]);
+		q1R5 = go$toNativeArray("Float64", [-2.089799311417641e-11, -0.10253905024137543, -8.05644828123936, -183.66960747488838, -1373.1937606550816, -2612.4444045321566]);
+		q1S5 = go$toNativeArray("Float64", [81.27655013843358, 1991.7987346048596, 17468.48519249089, 49851.42709103523, 27948.075163891812, -4719.183547951285]);
+		q1R3 = go$toNativeArray("Float64", [-5.078312264617666e-09, -0.10253782982083709, -4.610115811394734, -57.847221656278364, -228.2445407376317, -219.21012847890933]);
+		q1S3 = go$toNativeArray("Float64", [47.66515503237295, 673.8651126766997, 3380.1528667952634, 5547.729097207228, 1903.119193388108, -135.20119144430734]);
+		q1R2 = go$toNativeArray("Float64", [-1.7838172751095887e-07, -0.10251704260798555, -2.7522056827818746, -19.663616264370372, -42.32531333728305, -21.371921170370406]);
+		q1S2 = go$toNativeArray("Float64", [29.533362906052385, 252.98154998219053, 757.5028348686454, 739.3932053204672, 155.94900333666612, -4.959498988226282]);
+		_lgamA = go$toNativeArray("Float64", [0.07721566490153287, 0.3224670334241136, 0.06735230105312927, 0.020580808432516733, 0.007385550860814029, 0.0028905138367341563, 0.0011927076318336207, 0.0005100697921535113, 0.00022086279071390839, 0.00010801156724758394, 2.5214456545125733e-05, 4.4864094961891516e-05]);
+		_lgamR = go$toNativeArray("Float64", [1, 1.3920053346762105, 0.7219355475671381, 0.17193386563280308, 0.01864591917156529, 0.0007779424963818936, 7.326684307446256e-06]);
+		_lgamS = go$toNativeArray("Float64", [-0.07721566490153287, 0.21498241596060885, 0.325778796408931, 0.14635047265246445, 0.02664227030336386, 0.0018402845140733772, 3.194753265841009e-05]);
+		_lgamT = go$toNativeArray("Float64", [0.48383612272381005, -0.1475877229945939, 0.06462494023913339, -0.032788541075985965, 0.01797067508118204, -0.010314224129834144, 0.006100538702462913, -0.0036845201678113826, 0.0022596478090061247, -0.0014034646998923284, 0.000881081882437654, -0.0005385953053567405, 0.00031563207090362595, -0.00031275416837512086, 0.0003355291926355191]);
+		_lgamU = go$toNativeArray("Float64", [-0.07721566490153287, 0.6328270640250934, 1.4549225013723477, 0.9777175279633727, 0.22896372806469245, 0.013381091853678766]);
+		_lgamV = go$toNativeArray("Float64", [1, 2.4559779371304113, 2.128489763798934, 0.7692851504566728, 0.10422264559336913, 0.003217092422824239]);
+		_lgamW = go$toNativeArray("Float64", [0.4189385332046727, 0.08333333333333297, -0.0027777777772877554, 0.0007936505586430196, -0.00059518755745034, 0.0008363399189962821, -0.0016309293409657527]);
+		_sin = go$toNativeArray("Float64", [1.5896230157654656e-10, -2.5050747762857807e-08, 2.7557313621385722e-06, -0.0001984126982958954, 0.008333333333322118, -0.1666666666666663]);
+		_cos = go$toNativeArray("Float64", [-1.1358536521387682e-11, 2.087570084197473e-09, -2.755731417929674e-07, 2.4801587288851704e-05, -0.0013888888888873056, 0.041666666666666595]);
+		_tanP = go$toNativeArray("Float64", [-13093.693918138379, 1.1535166483858742e+06, -1.7956525197648488e+07]);
+		_tanQ = go$toNativeArray("Float64", [1, 13681.296347069296, -1.3208923444021097e+06, 2.500838018233579e+07, -5.3869575592945464e+07]);
+		tanhP = go$toNativeArray("Float64", [-0.9643991794250523, -99.28772310019185, -1614.6876844170845]);
+		tanhQ = go$toNativeArray("Float64", [112.81167849163293, 2235.4883906010045, 4844.063053251255]);
+		pow10tab[0] = 1;
+		pow10tab[1] = 10;
+		i = 2;
+		while (i < 70) {
+			m = (_q = i / 2, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero"));
+			pow10tab[i] = pow10tab[m] * pow10tab[(i - m >> 0)];
+			i = i + 1 >> 0;
+		}
+	};
+	return go$pkg;
+})();
+go$packages["unicode/utf8"] = (function() {
+	var go$pkg = {};
+	var decodeRuneInternal = function(p) {
+		var r, size, short$1, n, _tuple, _slice, _index, c0, _tuple$1, _tuple$2, _tuple$3, _slice$1, _index$1, c1, _tuple$4, _tuple$5, _tuple$6, _tuple$7, _slice$2, _index$2, c2, _tuple$8, _tuple$9, _tuple$10, _tuple$11, _tuple$12, _slice$3, _index$3, c3, _tuple$13, _tuple$14, _tuple$15, _tuple$16;
+		r = 0;
+		size = 0;
+		short$1 = false;
+		n = p.length;
+		if (n < 1) {
+			_tuple = [65533, 0, true], r = _tuple[0], size = _tuple[1], short$1 = _tuple[2];
+			return [r, size, short$1];
+		}
+		c0 = (_slice = p, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
+		if (c0 < 128) {
+			_tuple$1 = [(c0 >> 0), 1, false], r = _tuple$1[0], size = _tuple$1[1], short$1 = _tuple$1[2];
+			return [r, size, short$1];
+		}
+		if (c0 < 192) {
+			_tuple$2 = [65533, 1, false], r = _tuple$2[0], size = _tuple$2[1], short$1 = _tuple$2[2];
+			return [r, size, short$1];
+		}
+		if (n < 2) {
+			_tuple$3 = [65533, 1, true], r = _tuple$3[0], size = _tuple$3[1], short$1 = _tuple$3[2];
+			return [r, size, short$1];
+		}
+		c1 = (_slice$1 = p, _index$1 = 1, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range"));
+		if (c1 < 128 || 192 <= c1) {
+			_tuple$4 = [65533, 1, false], r = _tuple$4[0], size = _tuple$4[1], short$1 = _tuple$4[2];
+			return [r, size, short$1];
+		}
+		if (c0 < 224) {
+			r = ((((c0 & 31) >>> 0) >> 0) << 6 >> 0) | (((c1 & 63) >>> 0) >> 0);
+			if (r <= 127) {
+				_tuple$5 = [65533, 1, false], r = _tuple$5[0], size = _tuple$5[1], short$1 = _tuple$5[2];
+				return [r, size, short$1];
+			}
+			_tuple$6 = [r, 2, false], r = _tuple$6[0], size = _tuple$6[1], short$1 = _tuple$6[2];
+			return [r, size, short$1];
+		}
+		if (n < 3) {
+			_tuple$7 = [65533, 1, true], r = _tuple$7[0], size = _tuple$7[1], short$1 = _tuple$7[2];
+			return [r, size, short$1];
+		}
+		c2 = (_slice$2 = p, _index$2 = 2, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range"));
+		if (c2 < 128 || 192 <= c2) {
+			_tuple$8 = [65533, 1, false], r = _tuple$8[0], size = _tuple$8[1], short$1 = _tuple$8[2];
+			return [r, size, short$1];
+		}
+		if (c0 < 240) {
+			r = (((((c0 & 15) >>> 0) >> 0) << 12 >> 0) | ((((c1 & 63) >>> 0) >> 0) << 6 >> 0)) | (((c2 & 63) >>> 0) >> 0);
+			if (r <= 2047) {
+				_tuple$9 = [65533, 1, false], r = _tuple$9[0], size = _tuple$9[1], short$1 = _tuple$9[2];
+				return [r, size, short$1];
+			}
+			if (55296 <= r && r <= 57343) {
+				_tuple$10 = [65533, 1, false], r = _tuple$10[0], size = _tuple$10[1], short$1 = _tuple$10[2];
+				return [r, size, short$1];
+			}
+			_tuple$11 = [r, 3, false], r = _tuple$11[0], size = _tuple$11[1], short$1 = _tuple$11[2];
+			return [r, size, short$1];
+		}
+		if (n < 4) {
+			_tuple$12 = [65533, 1, true], r = _tuple$12[0], size = _tuple$12[1], short$1 = _tuple$12[2];
+			return [r, size, short$1];
+		}
+		c3 = (_slice$3 = p, _index$3 = 3, (_index$3 >= 0 && _index$3 < _slice$3.length) ? _slice$3.array[_slice$3.offset + _index$3] : go$throwRuntimeError("index out of range"));
+		if (c3 < 128 || 192 <= c3) {
+			_tuple$13 = [65533, 1, false], r = _tuple$13[0], size = _tuple$13[1], short$1 = _tuple$13[2];
+			return [r, size, short$1];
+		}
+		if (c0 < 248) {
+			r = ((((((c0 & 7) >>> 0) >> 0) << 18 >> 0) | ((((c1 & 63) >>> 0) >> 0) << 12 >> 0)) | ((((c2 & 63) >>> 0) >> 0) << 6 >> 0)) | (((c3 & 63) >>> 0) >> 0);
+			if (r <= 65535 || 1114111 < r) {
+				_tuple$14 = [65533, 1, false], r = _tuple$14[0], size = _tuple$14[1], short$1 = _tuple$14[2];
+				return [r, size, short$1];
+			}
+			_tuple$15 = [r, 4, false], r = _tuple$15[0], size = _tuple$15[1], short$1 = _tuple$15[2];
+			return [r, size, short$1];
+		}
+		_tuple$16 = [65533, 1, false], r = _tuple$16[0], size = _tuple$16[1], short$1 = _tuple$16[2];
+		return [r, size, short$1];
+	};
+	var decodeRuneInStringInternal = function(s) {
+		var r, size, short$1, n, _tuple, c0, _tuple$1, _tuple$2, _tuple$3, c1, _tuple$4, _tuple$5, _tuple$6, _tuple$7, c2, _tuple$8, _tuple$9, _tuple$10, _tuple$11, _tuple$12, c3, _tuple$13, _tuple$14, _tuple$15, _tuple$16;
+		r = 0;
+		size = 0;
+		short$1 = false;
+		n = s.length;
+		if (n < 1) {
+			_tuple = [65533, 0, true], r = _tuple[0], size = _tuple[1], short$1 = _tuple[2];
+			return [r, size, short$1];
+		}
+		c0 = s.charCodeAt(0);
+		if (c0 < 128) {
+			_tuple$1 = [(c0 >> 0), 1, false], r = _tuple$1[0], size = _tuple$1[1], short$1 = _tuple$1[2];
+			return [r, size, short$1];
+		}
+		if (c0 < 192) {
+			_tuple$2 = [65533, 1, false], r = _tuple$2[0], size = _tuple$2[1], short$1 = _tuple$2[2];
+			return [r, size, short$1];
+		}
+		if (n < 2) {
+			_tuple$3 = [65533, 1, true], r = _tuple$3[0], size = _tuple$3[1], short$1 = _tuple$3[2];
+			return [r, size, short$1];
+		}
+		c1 = s.charCodeAt(1);
+		if (c1 < 128 || 192 <= c1) {
+			_tuple$4 = [65533, 1, false], r = _tuple$4[0], size = _tuple$4[1], short$1 = _tuple$4[2];
+			return [r, size, short$1];
+		}
+		if (c0 < 224) {
+			r = ((((c0 & 31) >>> 0) >> 0) << 6 >> 0) | (((c1 & 63) >>> 0) >> 0);
+			if (r <= 127) {
+				_tuple$5 = [65533, 1, false], r = _tuple$5[0], size = _tuple$5[1], short$1 = _tuple$5[2];
+				return [r, size, short$1];
+			}
+			_tuple$6 = [r, 2, false], r = _tuple$6[0], size = _tuple$6[1], short$1 = _tuple$6[2];
+			return [r, size, short$1];
+		}
+		if (n < 3) {
+			_tuple$7 = [65533, 1, true], r = _tuple$7[0], size = _tuple$7[1], short$1 = _tuple$7[2];
+			return [r, size, short$1];
+		}
+		c2 = s.charCodeAt(2);
+		if (c2 < 128 || 192 <= c2) {
+			_tuple$8 = [65533, 1, false], r = _tuple$8[0], size = _tuple$8[1], short$1 = _tuple$8[2];
+			return [r, size, short$1];
+		}
+		if (c0 < 240) {
+			r = (((((c0 & 15) >>> 0) >> 0) << 12 >> 0) | ((((c1 & 63) >>> 0) >> 0) << 6 >> 0)) | (((c2 & 63) >>> 0) >> 0);
+			if (r <= 2047) {
+				_tuple$9 = [65533, 1, false], r = _tuple$9[0], size = _tuple$9[1], short$1 = _tuple$9[2];
+				return [r, size, short$1];
+			}
+			if (55296 <= r && r <= 57343) {
+				_tuple$10 = [65533, 1, false], r = _tuple$10[0], size = _tuple$10[1], short$1 = _tuple$10[2];
+				return [r, size, short$1];
+			}
+			_tuple$11 = [r, 3, false], r = _tuple$11[0], size = _tuple$11[1], short$1 = _tuple$11[2];
+			return [r, size, short$1];
+		}
+		if (n < 4) {
+			_tuple$12 = [65533, 1, true], r = _tuple$12[0], size = _tuple$12[1], short$1 = _tuple$12[2];
+			return [r, size, short$1];
+		}
+		c3 = s.charCodeAt(3);
+		if (c3 < 128 || 192 <= c3) {
+			_tuple$13 = [65533, 1, false], r = _tuple$13[0], size = _tuple$13[1], short$1 = _tuple$13[2];
+			return [r, size, short$1];
+		}
+		if (c0 < 248) {
+			r = ((((((c0 & 7) >>> 0) >> 0) << 18 >> 0) | ((((c1 & 63) >>> 0) >> 0) << 12 >> 0)) | ((((c2 & 63) >>> 0) >> 0) << 6 >> 0)) | (((c3 & 63) >>> 0) >> 0);
+			if (r <= 65535 || 1114111 < r) {
+				_tuple$14 = [65533, 1, false], r = _tuple$14[0], size = _tuple$14[1], short$1 = _tuple$14[2];
+				return [r, size, short$1];
+			}
+			_tuple$15 = [r, 4, false], r = _tuple$15[0], size = _tuple$15[1], short$1 = _tuple$15[2];
+			return [r, size, short$1];
+		}
+		_tuple$16 = [65533, 1, false], r = _tuple$16[0], size = _tuple$16[1], short$1 = _tuple$16[2];
+		return [r, size, short$1];
+	};
+	var FullRune = go$pkg.FullRune = function(p) {
+		var _tuple, short$1;
+		_tuple = decodeRuneInternal(p), short$1 = _tuple[2];
+		return !short$1;
+	};
+	var FullRuneInString = go$pkg.FullRuneInString = function(s) {
+		var _tuple, short$1;
+		_tuple = decodeRuneInStringInternal(s), short$1 = _tuple[2];
+		return !short$1;
+	};
+	var DecodeRune = go$pkg.DecodeRune = function(p) {
+		var r, size, _tuple;
+		r = 0;
+		size = 0;
+		_tuple = decodeRuneInternal(p), r = _tuple[0], size = _tuple[1];
+		return [r, size];
+	};
+	var DecodeRuneInString = go$pkg.DecodeRuneInString = function(s) {
+		var r, size, _tuple;
+		r = 0;
+		size = 0;
+		_tuple = decodeRuneInStringInternal(s), r = _tuple[0], size = _tuple[1];
+		return [r, size];
+	};
+	var DecodeLastRune = go$pkg.DecodeLastRune = function(p) {
+		var r, size, end, _tuple, start, _slice, _index, _tuple$1, lim, _slice$1, _index$1, _tuple$2, _tuple$3, _tuple$4;
+		r = 0;
+		size = 0;
+		end = p.length;
+		if (end === 0) {
+			_tuple = [65533, 0], r = _tuple[0], size = _tuple[1];
+			return [r, size];
+		}
+		start = end - 1 >> 0;
+		r = ((_slice = p, _index = start, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")) >> 0);
+		if (r < 128) {
+			_tuple$1 = [r, 1], r = _tuple$1[0], size = _tuple$1[1];
+			return [r, size];
+		}
+		lim = end - 4 >> 0;
+		if (lim < 0) {
+			lim = 0;
+		}
+		start = start - 1 >> 0;
+		while (start >= lim) {
+			if (RuneStart((_slice$1 = p, _index$1 = start, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")))) {
+				break;
+			}
+			start = start - 1 >> 0;
+		}
+		if (start < 0) {
+			start = 0;
+		}
+		_tuple$2 = DecodeRune(go$subslice(p, start, end)), r = _tuple$2[0], size = _tuple$2[1];
+		if (!(((start + size >> 0) === end))) {
+			_tuple$3 = [65533, 1], r = _tuple$3[0], size = _tuple$3[1];
+			return [r, size];
+		}
+		_tuple$4 = [r, size], r = _tuple$4[0], size = _tuple$4[1];
+		return [r, size];
+	};
+	var DecodeLastRuneInString = go$pkg.DecodeLastRuneInString = function(s) {
+		var r, size, end, _tuple, start, _tuple$1, lim, _tuple$2, _tuple$3, _tuple$4;
+		r = 0;
+		size = 0;
+		end = s.length;
+		if (end === 0) {
+			_tuple = [65533, 0], r = _tuple[0], size = _tuple[1];
+			return [r, size];
+		}
+		start = end - 1 >> 0;
+		r = (s.charCodeAt(start) >> 0);
+		if (r < 128) {
+			_tuple$1 = [r, 1], r = _tuple$1[0], size = _tuple$1[1];
+			return [r, size];
+		}
+		lim = end - 4 >> 0;
+		if (lim < 0) {
+			lim = 0;
+		}
+		start = start - 1 >> 0;
+		while (start >= lim) {
+			if (RuneStart(s.charCodeAt(start))) {
+				break;
+			}
+			start = start - 1 >> 0;
+		}
+		if (start < 0) {
+			start = 0;
+		}
+		_tuple$2 = DecodeRuneInString(s.substring(start, end)), r = _tuple$2[0], size = _tuple$2[1];
+		if (!(((start + size >> 0) === end))) {
+			_tuple$3 = [65533, 1], r = _tuple$3[0], size = _tuple$3[1];
+			return [r, size];
+		}
+		_tuple$4 = [r, size], r = _tuple$4[0], size = _tuple$4[1];
+		return [r, size];
+	};
+	var RuneLen = go$pkg.RuneLen = function(r) {
+		if (r < 0) {
+			return -1;
+		} else if (r <= 127) {
+			return 1;
+		} else if (r <= 2047) {
+			return 2;
+		} else if (55296 <= r && r <= 57343) {
+			return -1;
+		} else if (r <= 65535) {
+			return 3;
+		} else if (r <= 1114111) {
+			return 4;
+		}
+		return -1;
+	};
+	var EncodeRune = go$pkg.EncodeRune = function(p, r) {
+		var _slice, _index, _slice$1, _index$1, _slice$2, _index$2, _slice$3, _index$3, _slice$4, _index$4, _slice$5, _index$5, _slice$6, _index$6, _slice$7, _index$7, _slice$8, _index$8, _slice$9, _index$9;
+		if ((r >>> 0) <= 127) {
+			_slice = p, _index = 0, (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = (r << 24 >>> 24)) : go$throwRuntimeError("index out of range");
+			return 1;
+		}
+		if ((r >>> 0) <= 2047) {
+			_slice$1 = p, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = (192 | ((r >> 6 >> 0) << 24 >>> 24)) >>> 0) : go$throwRuntimeError("index out of range");
+			_slice$2 = p, _index$2 = 1, (_index$2 >= 0 && _index$2 < _slice$2.length) ? (_slice$2.array[_slice$2.offset + _index$2] = (128 | (((r << 24 >>> 24) & 63) >>> 0)) >>> 0) : go$throwRuntimeError("index out of range");
+			return 2;
+		}
+		if ((r >>> 0) > 1114111) {
+			r = 65533;
+		}
+		if (55296 <= r && r <= 57343) {
+			r = 65533;
+		}
+		if ((r >>> 0) <= 65535) {
+			_slice$3 = p, _index$3 = 0, (_index$3 >= 0 && _index$3 < _slice$3.length) ? (_slice$3.array[_slice$3.offset + _index$3] = (224 | ((r >> 12 >> 0) << 24 >>> 24)) >>> 0) : go$throwRuntimeError("index out of range");
+			_slice$4 = p, _index$4 = 1, (_index$4 >= 0 && _index$4 < _slice$4.length) ? (_slice$4.array[_slice$4.offset + _index$4] = (128 | ((((r >> 6 >> 0) << 24 >>> 24) & 63) >>> 0)) >>> 0) : go$throwRuntimeError("index out of range");
+			_slice$5 = p, _index$5 = 2, (_index$5 >= 0 && _index$5 < _slice$5.length) ? (_slice$5.array[_slice$5.offset + _index$5] = (128 | (((r << 24 >>> 24) & 63) >>> 0)) >>> 0) : go$throwRuntimeError("index out of range");
+			return 3;
+		}
+		_slice$6 = p, _index$6 = 0, (_index$6 >= 0 && _index$6 < _slice$6.length) ? (_slice$6.array[_slice$6.offset + _index$6] = (240 | ((r >> 18 >> 0) << 24 >>> 24)) >>> 0) : go$throwRuntimeError("index out of range");
+		_slice$7 = p, _index$7 = 1, (_index$7 >= 0 && _index$7 < _slice$7.length) ? (_slice$7.array[_slice$7.offset + _index$7] = (128 | ((((r >> 12 >> 0) << 24 >>> 24) & 63) >>> 0)) >>> 0) : go$throwRuntimeError("index out of range");
+		_slice$8 = p, _index$8 = 2, (_index$8 >= 0 && _index$8 < _slice$8.length) ? (_slice$8.array[_slice$8.offset + _index$8] = (128 | ((((r >> 6 >> 0) << 24 >>> 24) & 63) >>> 0)) >>> 0) : go$throwRuntimeError("index out of range");
+		_slice$9 = p, _index$9 = 3, (_index$9 >= 0 && _index$9 < _slice$9.length) ? (_slice$9.array[_slice$9.offset + _index$9] = (128 | (((r << 24 >>> 24) & 63) >>> 0)) >>> 0) : go$throwRuntimeError("index out of range");
+		return 4;
+	};
+	var RuneCount = go$pkg.RuneCount = function(p) {
+		var i, n, _slice, _index, _tuple, size;
+		i = 0;
+		n = 0;
+		n = 0;
+		while (i < p.length) {
+			if ((_slice = p, _index = i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")) < 128) {
+				i = i + 1 >> 0;
+			} else {
+				_tuple = DecodeRune(go$subslice(p, i)), size = _tuple[1];
+				i = i + (size) >> 0;
+			}
+			n = n + 1 >> 0;
+		}
+		return n;
+	};
+	var RuneCountInString = go$pkg.RuneCountInString = function(s) {
+		var n, _ref, _i, _rune;
+		n = 0;
+		_ref = s;
+		_i = 0;
+		while (_i < _ref.length) {
+			_rune = go$decodeRune(_ref, _i);
+			n = n + 1 >> 0;
+			_i += _rune[1];
+		}
+		return n;
+	};
+	var RuneStart = go$pkg.RuneStart = function(b) {
+		return !((((b & 192) >>> 0) === 128));
+	};
+	var Valid = go$pkg.Valid = function(p) {
+		var i, _slice, _index, _tuple, size;
+		i = 0;
+		while (i < p.length) {
+			if ((_slice = p, _index = i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")) < 128) {
+				i = i + 1 >> 0;
+			} else {
+				_tuple = DecodeRune(go$subslice(p, i)), size = _tuple[1];
+				if (size === 1) {
+					return false;
+				}
+				i = i + (size) >> 0;
+			}
+		}
+		return true;
+	};
+	var ValidString = go$pkg.ValidString = function(s) {
+		var _ref, _i, _rune, r, i, _tuple, size;
+		_ref = s;
+		_i = 0;
+		while (_i < _ref.length) {
+			_rune = go$decodeRune(_ref, _i);
+			r = _rune[0];
+			i = _i;
+			if (r === 65533) {
+				_tuple = DecodeRuneInString(s.substring(i)), size = _tuple[1];
+				if (size === 1) {
+					return false;
+				}
+			}
+			_i += _rune[1];
+		}
+		return true;
+	};
+	var ValidRune = go$pkg.ValidRune = function(r) {
+		if (r < 0) {
+			return false;
+		} else if (55296 <= r && r <= 57343) {
+			return false;
+		} else if (r > 1114111) {
+			return false;
+		}
+		return true;
+	};
+	go$pkg.init = function() {
+	};
+	return go$pkg;
+})();
+go$packages["strconv"] = (function() {
+	var go$pkg = {};
+	var math = go$packages["math"];
+	var errors = go$packages["errors"];
+	var utf8 = go$packages["unicode/utf8"];
+	var NumError;
+	NumError = go$newType(0, "Struct", "strconv.NumError", "NumError", "strconv", function(Func_, Num_, Err_) {
+		this.go$val = this;
+		this.Func = Func_ !== undefined ? Func_ : "";
+		this.Num = Num_ !== undefined ? Num_ : "";
+		this.Err = Err_ !== undefined ? Err_ : null;
+	});
+	go$pkg.NumError = NumError;
+	var decimal;
+	decimal = go$newType(0, "Struct", "strconv.decimal", "decimal", "strconv", function(d_, nd_, dp_, neg_, trunc_) {
+		this.go$val = this;
+		this.d = d_ !== undefined ? d_ : go$makeNativeArray("Uint8", 800, function() { return 0; });
+		this.nd = nd_ !== undefined ? nd_ : 0;
+		this.dp = dp_ !== undefined ? dp_ : 0;
+		this.neg = neg_ !== undefined ? neg_ : false;
+		this.trunc = trunc_ !== undefined ? trunc_ : false;
+	});
+	go$pkg.decimal = decimal;
+	var leftCheat;
+	leftCheat = go$newType(0, "Struct", "strconv.leftCheat", "leftCheat", "strconv", function(delta_, cutoff_) {
+		this.go$val = this;
+		this.delta = delta_ !== undefined ? delta_ : 0;
+		this.cutoff = cutoff_ !== undefined ? cutoff_ : "";
+	});
+	go$pkg.leftCheat = leftCheat;
+	var extFloat;
+	extFloat = go$newType(0, "Struct", "strconv.extFloat", "extFloat", "strconv", function(mant_, exp_, neg_) {
+		this.go$val = this;
+		this.mant = mant_ !== undefined ? mant_ : new Go$Uint64(0, 0);
+		this.exp = exp_ !== undefined ? exp_ : 0;
+		this.neg = neg_ !== undefined ? neg_ : false;
+	});
+	go$pkg.extFloat = extFloat;
+	var floatInfo;
+	floatInfo = go$newType(0, "Struct", "strconv.floatInfo", "floatInfo", "strconv", function(mantbits_, expbits_, bias_) {
+		this.go$val = this;
+		this.mantbits = mantbits_ !== undefined ? mantbits_ : 0;
+		this.expbits = expbits_ !== undefined ? expbits_ : 0;
+		this.bias = bias_ !== undefined ? bias_ : 0;
+	});
+	go$pkg.floatInfo = floatInfo;
+	var decimalSlice;
+	decimalSlice = go$newType(0, "Struct", "strconv.decimalSlice", "decimalSlice", "strconv", function(d_, nd_, dp_, neg_) {
+		this.go$val = this;
+		this.d = d_ !== undefined ? d_ : (go$sliceType(Go$Uint8)).nil;
+		this.nd = nd_ !== undefined ? nd_ : 0;
+		this.dp = dp_ !== undefined ? dp_ : 0;
+		this.neg = neg_ !== undefined ? neg_ : false;
+	});
+	go$pkg.decimalSlice = decimalSlice;
+	NumError.init([["Func", "", Go$String, ""], ["Num", "", Go$String, ""], ["Err", "", go$error, ""]]);
+	(go$ptrType(NumError)).methods = [["Error", "", [], [Go$String], false]];
+	decimal.init([["d", "strconv", (go$arrayType(Go$Uint8, 800)), ""], ["nd", "strconv", Go$Int, ""], ["dp", "strconv", Go$Int, ""], ["neg", "strconv", Go$Bool, ""], ["trunc", "strconv", Go$Bool, ""]]);
+	(go$ptrType(decimal)).methods = [["Assign", "", [Go$Uint64], [], false], ["Round", "", [Go$Int], [], false], ["RoundDown", "", [Go$Int], [], false], ["RoundUp", "", [Go$Int], [], false], ["RoundedInteger", "", [], [Go$Uint64], false], ["Shift", "", [Go$Int], [], false], ["String", "", [], [Go$String], false], ["atof32int", "strconv", [], [Go$Float32], false], ["floatBits", "strconv", [(go$ptrType(floatInfo))], [Go$Uint64, Go$Bool], false], ["set", "strconv", [Go$String], [Go$Bool], false]];
+	leftCheat.init([["delta", "strconv", Go$Int, ""], ["cutoff", "strconv", Go$String, ""]]);
+	extFloat.init([["mant", "strconv", Go$Uint64, ""], ["exp", "strconv", Go$Int, ""], ["neg", "strconv", Go$Bool, ""]]);
+	(go$ptrType(extFloat)).methods = [["AssignComputeBounds", "", [Go$Uint64, Go$Int, Go$Bool, (go$ptrType(floatInfo))], [extFloat, extFloat], false], ["AssignDecimal", "", [Go$Uint64, Go$Int, Go$Bool, Go$Bool, (go$ptrType(floatInfo))], [Go$Bool], false], ["FixedDecimal", "", [(go$ptrType(decimalSlice)), Go$Int], [Go$Bool], false], ["Multiply", "", [extFloat], [], false], ["Normalize", "", [], [Go$Uint], false], ["ShortestDecimal", "", [(go$ptrType(decimalSlice)), (go$ptrType(extFloat)), (go$ptrType(extFloat))], [Go$Bool], false], ["floatBits", "strconv", [(go$ptrType(floatInfo))], [Go$Uint64, Go$Bool], false], ["frexp10", "strconv", [], [Go$Int, Go$Int], false]];
+	floatInfo.init([["mantbits", "strconv", Go$Uint, ""], ["expbits", "strconv", Go$Uint, ""], ["bias", "strconv", Go$Int, ""]]);
+	decimalSlice.init([["d", "strconv", (go$sliceType(Go$Uint8)), ""], ["nd", "strconv", Go$Int, ""], ["dp", "strconv", Go$Int, ""], ["neg", "strconv", Go$Bool, ""]]);
+	var optimize, powtab, float64pow10, float32pow10, leftcheats, smallPowersOfTen, powersOfTen, uint64pow10, float32info, float64info, isPrint16, isNotPrint16, isPrint32, isNotPrint32, shifts;
+	var ParseBool = go$pkg.ParseBool = function(str) {
+		var value, err, _ref, _tuple, _tuple$1, _tuple$2;
+		value = false;
+		err = null;
+		_ref = str;
+		if (_ref === "1" || _ref === "t" || _ref === "T" || _ref === "true" || _ref === "TRUE" || _ref === "True") {
+			_tuple = [true, null], value = _tuple[0], err = _tuple[1];
+			return [value, err];
+		} else if (_ref === "0" || _ref === "f" || _ref === "F" || _ref === "false" || _ref === "FALSE" || _ref === "False") {
+			_tuple$1 = [false, null], value = _tuple$1[0], err = _tuple$1[1];
+			return [value, err];
+		}
+		_tuple$2 = [false, syntaxError("ParseBool", str)], value = _tuple$2[0], err = _tuple$2[1];
+		return [value, err];
+	};
+	var FormatBool = go$pkg.FormatBool = function(b) {
+		if (b) {
+			return "true";
+		}
+		return "false";
+	};
+	var AppendBool = go$pkg.AppendBool = function(dst, b) {
+		if (b) {
+			return go$appendSlice(dst, new (go$sliceType(Go$Uint8))(go$stringToBytes("true")));
+		}
+		return go$appendSlice(dst, new (go$sliceType(Go$Uint8))(go$stringToBytes("false")));
+	};
+	var equalIgnoreCase = function(s1, s2) {
+		var i, c1, c2;
+		if (!((s1.length === s2.length))) {
+			return false;
+		}
+		i = 0;
+		while (i < s1.length) {
+			c1 = s1.charCodeAt(i);
+			if (65 <= c1 && c1 <= 90) {
+				c1 = c1 + 32 << 24 >>> 24;
+			}
+			c2 = s2.charCodeAt(i);
+			if (65 <= c2 && c2 <= 90) {
+				c2 = c2 + 32 << 24 >>> 24;
+			}
+			if (!((c1 === c2))) {
+				return false;
+			}
+			i = i + 1 >> 0;
+		}
+		return true;
+	};
+	var special = function(s) {
+		var f, ok, _ref, _tuple, _tuple$1, _tuple$2, _tuple$3;
+		f = 0;
+		ok = false;
+		if (s.length === 0) {
+			return [f, ok];
+		}
+		_ref = s.charCodeAt(0);
+		if (_ref === 43) {
+			if (equalIgnoreCase(s, "+inf") || equalIgnoreCase(s, "+infinity")) {
+				_tuple = [math.Inf(1), true], f = _tuple[0], ok = _tuple[1];
+				return [f, ok];
+			}
+		} else if (_ref === 45) {
+			if (equalIgnoreCase(s, "-inf") || equalIgnoreCase(s, "-infinity")) {
+				_tuple$1 = [math.Inf(-1), true], f = _tuple$1[0], ok = _tuple$1[1];
+				return [f, ok];
+			}
+		} else if (_ref === 110 || _ref === 78) {
+			if (equalIgnoreCase(s, "nan")) {
+				_tuple$2 = [math.NaN(), true], f = _tuple$2[0], ok = _tuple$2[1];
+				return [f, ok];
+			}
+		} else if (_ref === 105 || _ref === 73) {
+			if (equalIgnoreCase(s, "inf") || equalIgnoreCase(s, "infinity")) {
+				_tuple$3 = [math.Inf(1), true], f = _tuple$3[0], ok = _tuple$3[1];
+				return [f, ok];
+			}
+		} else {
+			return [f, ok];
+		}
+		return [f, ok];
+	};
+	decimal.Ptr.prototype.set = function(s) {
+		var ok, b, i, sawdot, sawdigits, esign, e, x;
+		ok = false;
+		b = this;
+		i = 0;
+		b.neg = false;
+		b.trunc = false;
+		if (i >= s.length) {
+			return ok;
+		}
+		if (s.charCodeAt(i) === 43) {
+			i = i + 1 >> 0;
+		} else if (s.charCodeAt(i) === 45) {
+			b.neg = true;
+			i = i + 1 >> 0;
+		}
+		sawdot = false;
+		sawdigits = false;
+		while (i < s.length) {
+			if (s.charCodeAt(i) === 46) {
+				if (sawdot) {
+					return ok;
+				}
+				sawdot = true;
+				b.dp = b.nd;
+				i = i + 1 >> 0;
+				continue;
+			} else if (48 <= s.charCodeAt(i) && s.charCodeAt(i) <= 57) {
+				sawdigits = true;
+				if ((s.charCodeAt(i) === 48) && (b.nd === 0)) {
+					b.dp = b.dp - 1 >> 0;
+					i = i + 1 >> 0;
+					continue;
+				}
+				if (b.nd < 800) {
+					b.d[b.nd] = s.charCodeAt(i);
+					b.nd = b.nd + 1 >> 0;
+				} else if (!((s.charCodeAt(i) === 48))) {
+					b.trunc = true;
+				}
+				i = i + 1 >> 0;
+				continue;
+			}
+			break;
+		}
+		if (!sawdigits) {
+			return ok;
+		}
+		if (!sawdot) {
+			b.dp = b.nd;
+		}
+		if (i < s.length && ((s.charCodeAt(i) === 101) || (s.charCodeAt(i) === 69))) {
+			i = i + 1 >> 0;
+			if (i >= s.length) {
+				return ok;
+			}
+			esign = 1;
+			if (s.charCodeAt(i) === 43) {
+				i = i + 1 >> 0;
+			} else if (s.charCodeAt(i) === 45) {
+				i = i + 1 >> 0;
+				esign = -1;
+			}
+			if (i >= s.length || s.charCodeAt(i) < 48 || s.charCodeAt(i) > 57) {
+				return ok;
+			}
+			e = 0;
+			while (i < s.length && 48 <= s.charCodeAt(i) && s.charCodeAt(i) <= 57) {
+				if (e < 10000) {
+					e = ((x = 10, (((e >>> 16 << 16) * x >> 0) + (e << 16 >>> 16) * x) >> 0) + (s.charCodeAt(i) >> 0) >> 0) - 48 >> 0;
+				}
+				i = i + 1 >> 0;
+			}
+			b.dp = b.dp + (((((e >>> 16 << 16) * esign >> 0) + (e << 16 >>> 16) * esign) >> 0)) >> 0;
+		}
+		if (!((i === s.length))) {
+			return ok;
+		}
+		ok = true;
+		return ok;
+	};
+	decimal.prototype.set = function(s) { return this.go$val.set(s); };
+	var readFloat = function(s) {
+		var mantissa, exp, neg, trunc, ok, i, sawdot, sawdigits, nd, ndMant, dp, c, _ref, x, esign, e, x$1;
+		mantissa = new Go$Uint64(0, 0);
+		exp = 0;
+		neg = false;
+		trunc = false;
+		ok = false;
+		i = 0;
+		if (i >= s.length) {
+			return [mantissa, exp, neg, trunc, ok];
+		}
+		if (s.charCodeAt(i) === 43) {
+			i = i + 1 >> 0;
+		} else if (s.charCodeAt(i) === 45) {
+			neg = true;
+			i = i + 1 >> 0;
+		}
+		sawdot = false;
+		sawdigits = false;
+		nd = 0;
+		ndMant = 0;
+		dp = 0;
+		while (i < s.length) {
+			c = s.charCodeAt(i);
+			_ref = true;
+			if (_ref === (c === 46)) {
+				if (sawdot) {
+					return [mantissa, exp, neg, trunc, ok];
+				}
+				sawdot = true;
+				dp = nd;
+				i = i + 1 >> 0;
+				continue;
+			} else if (_ref === 48 <= c && c <= 57) {
+				sawdigits = true;
+				if ((c === 48) && (nd === 0)) {
+					dp = dp - 1 >> 0;
+					i = i + 1 >> 0;
+					continue;
+				}
+				nd = nd + 1 >> 0;
+				if (ndMant < 19) {
+					mantissa = go$mul64(mantissa, new Go$Uint64(0, 10));
+					mantissa = (x = new Go$Uint64(0, (c - 48 << 24 >>> 24)), new Go$Uint64(mantissa.high + x.high, mantissa.low + x.low));
+					ndMant = ndMant + 1 >> 0;
+				} else if (!((s.charCodeAt(i) === 48))) {
+					trunc = true;
+				}
+				i = i + 1 >> 0;
+				continue;
+			}
+			break;
+		}
+		if (!sawdigits) {
+			return [mantissa, exp, neg, trunc, ok];
+		}
+		if (!sawdot) {
+			dp = nd;
+		}
+		if (i < s.length && ((s.charCodeAt(i) === 101) || (s.charCodeAt(i) === 69))) {
+			i = i + 1 >> 0;
+			if (i >= s.length) {
+				return [mantissa, exp, neg, trunc, ok];
+			}
+			esign = 1;
+			if (s.charCodeAt(i) === 43) {
+				i = i + 1 >> 0;
+			} else if (s.charCodeAt(i) === 45) {
+				i = i + 1 >> 0;
+				esign = -1;
+			}
+			if (i >= s.length || s.charCodeAt(i) < 48 || s.charCodeAt(i) > 57) {
+				return [mantissa, exp, neg, trunc, ok];
+			}
+			e = 0;
+			while (i < s.length && 48 <= s.charCodeAt(i) && s.charCodeAt(i) <= 57) {
+				if (e < 10000) {
+					e = ((x$1 = 10, (((e >>> 16 << 16) * x$1 >> 0) + (e << 16 >>> 16) * x$1) >> 0) + (s.charCodeAt(i) >> 0) >> 0) - 48 >> 0;
+				}
+				i = i + 1 >> 0;
+			}
+			dp = dp + (((((e >>> 16 << 16) * esign >> 0) + (e << 16 >>> 16) * esign) >> 0)) >> 0;
+		}
+		if (!((i === s.length))) {
+			return [mantissa, exp, neg, trunc, ok];
+		}
+		exp = dp - ndMant >> 0;
+		ok = true;
+		return [mantissa, exp, neg, trunc, ok];
+	};
+	decimal.Ptr.prototype.floatBits = function(flt) {
+		var go$this = this, b, overflow, d, exp, mant, n, _slice, _index, n$1, _slice$1, _index$1, n$2, y, x, y$1, x$1, x$2, y$2, x$3, x$4, bits, x$5, y$3, x$6, _tuple;
+		b = new Go$Uint64(0, 0);
+		overflow = false;
+		/* */ var go$s = 0, go$f = function() { while (true) { switch (go$s) { case 0:
+		d = go$this;
+		exp = 0;
+		mant = new Go$Uint64(0, 0);
+		/* if (d.nd === 0) { */ if (d.nd === 0) {} else { go$s = 3; continue; }
+			mant = new Go$Uint64(0, 0);
+			exp = flt.bias;
+			/* goto out */ go$s = 1; continue;
+		/* } */ case 3:
+		/* if (d.dp > 310) { */ if (d.dp > 310) {} else { go$s = 4; continue; }
+			/* goto overflow */ go$s = 2; continue;
+		/* } */ case 4:
+		/* if (d.dp < -330) { */ if (d.dp < -330) {} else { go$s = 5; continue; }
+			mant = new Go$Uint64(0, 0);
+			exp = flt.bias;
+			/* goto out */ go$s = 1; continue;
+		/* } */ case 5:
+		exp = 0;
+		while (d.dp > 0) {
+			n = 0;
+			if (d.dp >= powtab.length) {
+				n = 27;
+			} else {
+				n = (_slice = powtab, _index = d.dp, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
+			}
+			d.Shift(-n);
+			exp = exp + (n) >> 0;
+		}
+		while (d.dp < 0 || (d.dp === 0) && d.d[0] < 53) {
+			n$1 = 0;
+			if (-d.dp >= powtab.length) {
+				n$1 = 27;
+			} else {
+				n$1 = (_slice$1 = powtab, _index$1 = -d.dp, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range"));
+			}
+			d.Shift(n$1);
+			exp = exp - (n$1) >> 0;
+		}
+		exp = exp - 1 >> 0;
+		if (exp < (flt.bias + 1 >> 0)) {
+			n$2 = (flt.bias + 1 >> 0) - exp >> 0;
+			d.Shift(-n$2);
+			exp = exp + (n$2) >> 0;
+		}
+		/* if ((exp - flt.bias >> 0) >= (((y = flt.expbits, y < 32 ? (1 << y) : 0) >> 0) - 1 >> 0)) { */ if ((exp - flt.bias >> 0) >= (((y = flt.expbits, y < 32 ? (1 << y) : 0) >> 0) - 1 >> 0)) {} else { go$s = 6; continue; }
+			/* goto overflow */ go$s = 2; continue;
+		/* } */ case 6:
+		d.Shift(((1 + flt.mantbits >>> 0) >> 0));
+		mant = d.RoundedInteger();
+		/* if ((x = go$shiftLeft64(new Go$Uint64(0, 2), flt.mantbits), (mant.high === x.high && mant.low === x.low))) { */ if ((x = go$shiftLeft64(new Go$Uint64(0, 2), flt.mantbits), (mant.high === x.high && mant.low === x.low))) {} else { go$s = 7; continue; }
+			mant = go$shiftRightUint64(mant, 1);
+			exp = exp + 1 >> 0;
+			/* if ((exp - flt.bias >> 0) >= (((y$1 = flt.expbits, y$1 < 32 ? (1 << y$1) : 0) >> 0) - 1 >> 0)) { */ if ((exp - flt.bias >> 0) >= (((y$1 = flt.expbits, y$1 < 32 ? (1 << y$1) : 0) >> 0) - 1 >> 0)) {} else { go$s = 8; continue; }
+				/* goto overflow */ go$s = 2; continue;
+			/* } */ case 8:
+		/* } */ case 7:
+		if ((x$1 = (x$2 = go$shiftLeft64(new Go$Uint64(0, 1), flt.mantbits), new Go$Uint64(mant.high & x$2.high, (mant.low & x$2.low) >>> 0)), (x$1.high === 0 && x$1.low === 0))) {
+			exp = flt.bias;
+		}
+		/* goto out */ go$s = 1; continue;
+		/* overflow: */ case 2:
+		mant = new Go$Uint64(0, 0);
+		exp = (((y$2 = flt.expbits, y$2 < 32 ? (1 << y$2) : 0) >> 0) - 1 >> 0) + flt.bias >> 0;
+		overflow = true;
+		/* out: */ case 1:
+		bits = (x$3 = (x$4 = go$shiftLeft64(new Go$Uint64(0, 1), flt.mantbits), new Go$Uint64(x$4.high - 0, x$4.low - 1)), new Go$Uint64(mant.high & x$3.high, (mant.low & x$3.low) >>> 0));
+		bits = (x$5 = go$shiftLeft64(new Go$Uint64(0, (((exp - flt.bias >> 0)) & ((((y$3 = flt.expbits, y$3 < 32 ? (1 << y$3) : 0) >> 0) - 1 >> 0)))), flt.mantbits), new Go$Uint64(bits.high | x$5.high, (bits.low | x$5.low) >>> 0));
+		if (d.neg) {
+			bits = (x$6 = go$shiftLeft64(go$shiftLeft64(new Go$Uint64(0, 1), flt.mantbits), flt.expbits), new Go$Uint64(bits.high | x$6.high, (bits.low | x$6.low) >>> 0));
+		}
+		_tuple = [bits, overflow], b = _tuple[0], overflow = _tuple[1];
+		return [b, overflow];
+		/* */ } break; } }; return go$f();
+	};
+	decimal.prototype.floatBits = function(flt) { return this.go$val.floatBits(flt); };
+	decimal.Ptr.prototype.atof32int = function() {
+		var d, f, i;
+		d = this;
+		f = 0;
+		i = 0;
+		while (i < d.nd) {
+			f = f * 10 + (d.d[i] - 48 << 24 >>> 24);
+			i = i + 1 >> 0;
+		}
+		if (d.neg) {
+			f = -f;
+		}
+		return f;
+	};
+	decimal.prototype.atof32int = function() { return this.go$val.atof32int(); };
+	var atof64exact = function(mantissa, exp, neg) {
+		var f, ok, x, _tuple, _slice, _index, _slice$1, _index$1, _tuple$1, _slice$2, _index$2, _tuple$2;
+		f = 0;
+		ok = false;
+		if (!((x = go$shiftRightUint64(mantissa, float64info.mantbits), (x.high === 0 && x.low === 0)))) {
+			return [f, ok];
+		}
+		f = go$flatten64(mantissa);
+		if (neg) {
+			f = -f;
+		}
+		if (exp === 0) {
+			_tuple = [f, true], f = _tuple[0], ok = _tuple[1];
+			return [f, ok];
+		} else if (exp > 0 && exp <= 37) {
+			if (exp > 22) {
+				f = f * ((_slice = float64pow10, _index = (exp - 22 >> 0), (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")));
+				exp = 22;
+			}
+			if (f > 1e+15 || f < -1e+15) {
+				return [f, ok];
+			}
+			_tuple$1 = [f * (_slice$1 = float64pow10, _index$1 = exp, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")), true], f = _tuple$1[0], ok = _tuple$1[1];
+			return [f, ok];
+		} else if (exp < 0 && exp >= -22) {
+			_tuple$2 = [f / (_slice$2 = float64pow10, _index$2 = -exp, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")), true], f = _tuple$2[0], ok = _tuple$2[1];
+			return [f, ok];
+		}
+		return [f, ok];
+	};
+	var atof32exact = function(mantissa, exp, neg) {
+		var f, ok, x, _tuple, _slice, _index, _slice$1, _index$1, _tuple$1, _slice$2, _index$2, _tuple$2;
+		f = 0;
+		ok = false;
+		if (!((x = go$shiftRightUint64(mantissa, float32info.mantbits), (x.high === 0 && x.low === 0)))) {
+			return [f, ok];
+		}
+		f = go$flatten64(mantissa);
+		if (neg) {
+			f = -f;
+		}
+		if (exp === 0) {
+			_tuple = [f, true], f = _tuple[0], ok = _tuple[1];
+			return [f, ok];
+		} else if (exp > 0 && exp <= 17) {
+			if (exp > 10) {
+				f = f * ((_slice = float32pow10, _index = (exp - 10 >> 0), (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")));
+				exp = 10;
+			}
+			if (f > 1e+07 || f < -1e+07) {
+				return [f, ok];
+			}
+			_tuple$1 = [f * (_slice$1 = float32pow10, _index$1 = exp, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")), true], f = _tuple$1[0], ok = _tuple$1[1];
+			return [f, ok];
+		} else if (exp < 0 && exp >= -10) {
+			_tuple$2 = [f / (_slice$2 = float32pow10, _index$2 = -exp, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")), true], f = _tuple$2[0], ok = _tuple$2[1];
+			return [f, ok];
+		}
+		return [f, ok];
+	};
+	var atof32 = function(s) {
+		var f, err, ok, _tuple, val, _tuple$1, _tuple$2, mantissa, exp, neg, trunc, ok$1, ok$2, _tuple$3, f$1, _tuple$4, ext, ok$3, _tuple$5, b, ovf, _tuple$6, d, _tuple$7, _tuple$8, b$1, ovf$1, _tuple$9;
+		f = 0;
+		err = null;
+		if (_tuple = special(s), val = _tuple[0], ok = _tuple[1], ok) {
+			_tuple$1 = [val, null], f = _tuple$1[0], err = _tuple$1[1];
+			return [f, err];
+		}
+		if (optimize) {
+			_tuple$2 = readFloat(s), mantissa = _tuple$2[0], exp = _tuple$2[1], neg = _tuple$2[2], trunc = _tuple$2[3], ok$1 = _tuple$2[4];
+			if (ok$1) {
+				if (!trunc) {
+					if (_tuple$3 = atof32exact(mantissa, exp, neg), f$1 = _tuple$3[0], ok$2 = _tuple$3[1], ok$2) {
+						_tuple$4 = [f$1, null], f = _tuple$4[0], err = _tuple$4[1];
+						return [f, err];
+					}
+				}
+				ext = new extFloat.Ptr();
+				if (ok$3 = ext.AssignDecimal(mantissa, exp, neg, trunc, float32info), ok$3) {
+					_tuple$5 = ext.floatBits(float32info), b = _tuple$5[0], ovf = _tuple$5[1];
+					f = math.Float32frombits((b.low >>> 0));
+					if (ovf) {
+						err = rangeError("ParseFloat", s);
+					}
+					_tuple$6 = [f, err], f = _tuple$6[0], err = _tuple$6[1];
+					return [f, err];
+				}
+			}
+		}
+		d = new decimal.Ptr();
+		if (!d.set(s)) {
+			_tuple$7 = [0, syntaxError("ParseFloat", s)], f = _tuple$7[0], err = _tuple$7[1];
+			return [f, err];
+		}
+		_tuple$8 = d.floatBits(float32info), b$1 = _tuple$8[0], ovf$1 = _tuple$8[1];
+		f = math.Float32frombits((b$1.low >>> 0));
+		if (ovf$1) {
+			err = rangeError("ParseFloat", s);
+		}
+		_tuple$9 = [f, err], f = _tuple$9[0], err = _tuple$9[1];
+		return [f, err];
+	};
+	var atof64 = function(s) {
+		var f, err, ok, _tuple, val, _tuple$1, _tuple$2, mantissa, exp, neg, trunc, ok$1, ok$2, _tuple$3, f$1, _tuple$4, ext, ok$3, _tuple$5, b, ovf, _tuple$6, d, _tuple$7, _tuple$8, b$1, ovf$1, _tuple$9;
+		f = 0;
+		err = null;
+		if (_tuple = special(s), val = _tuple[0], ok = _tuple[1], ok) {
+			_tuple$1 = [val, null], f = _tuple$1[0], err = _tuple$1[1];
+			return [f, err];
+		}
+		if (optimize) {
+			_tuple$2 = readFloat(s), mantissa = _tuple$2[0], exp = _tuple$2[1], neg = _tuple$2[2], trunc = _tuple$2[3], ok$1 = _tuple$2[4];
+			if (ok$1) {
+				if (!trunc) {
+					if (_tuple$3 = atof64exact(mantissa, exp, neg), f$1 = _tuple$3[0], ok$2 = _tuple$3[1], ok$2) {
+						_tuple$4 = [f$1, null], f = _tuple$4[0], err = _tuple$4[1];
+						return [f, err];
+					}
+				}
+				ext = new extFloat.Ptr();
+				if (ok$3 = ext.AssignDecimal(mantissa, exp, neg, trunc, float64info), ok$3) {
+					_tuple$5 = ext.floatBits(float64info), b = _tuple$5[0], ovf = _tuple$5[1];
+					f = math.Float64frombits(b);
+					if (ovf) {
+						err = rangeError("ParseFloat", s);
+					}
+					_tuple$6 = [f, err], f = _tuple$6[0], err = _tuple$6[1];
+					return [f, err];
+				}
+			}
+		}
+		d = new decimal.Ptr();
+		if (!d.set(s)) {
+			_tuple$7 = [0, syntaxError("ParseFloat", s)], f = _tuple$7[0], err = _tuple$7[1];
+			return [f, err];
+		}
+		_tuple$8 = d.floatBits(float64info), b$1 = _tuple$8[0], ovf$1 = _tuple$8[1];
+		f = math.Float64frombits(b$1);
+		if (ovf$1) {
+			err = rangeError("ParseFloat", s);
+		}
+		_tuple$9 = [f, err], f = _tuple$9[0], err = _tuple$9[1];
+		return [f, err];
+	};
+	var ParseFloat = go$pkg.ParseFloat = function(s, bitSize) {
+		var f, err, _tuple, f1, err1, _tuple$1, _tuple$2, f1$1, err1$1, _tuple$3;
+		f = 0;
+		err = null;
+		if (bitSize === 32) {
+			_tuple = atof32(s), f1 = _tuple[0], err1 = _tuple[1];
+			_tuple$1 = [f1, err1], f = _tuple$1[0], err = _tuple$1[1];
+			return [f, err];
+		}
+		_tuple$2 = atof64(s), f1$1 = _tuple$2[0], err1$1 = _tuple$2[1];
+		_tuple$3 = [f1$1, err1$1], f = _tuple$3[0], err = _tuple$3[1];
+		return [f, err];
+	};
+	NumError.Ptr.prototype.Error = function() {
+		var e;
+		e = this;
+		return "strconv." + e.Func + ": " + "parsing " + Quote(e.Num) + ": " + e.Err.Error();
+	};
+	NumError.prototype.Error = function() { return this.go$val.Error(); };
+	var syntaxError = function(fn, str) {
+		return new NumError.Ptr(fn, str, go$pkg.ErrSyntax);
+	};
+	var rangeError = function(fn, str) {
+		return new NumError.Ptr(fn, str, go$pkg.ErrRange);
+	};
+	var cutoff64 = function(base) {
+		var x;
+		if (base < 2) {
+			return new Go$Uint64(0, 0);
+		}
+		return (x = go$div64(new Go$Uint64(4294967295, 4294967295), new Go$Uint64(0, base), false), new Go$Uint64(x.high + 0, x.low + 1));
+	};
+	var ParseUint = go$pkg.ParseUint = function(s, base, bitSize) {
+		var go$this = this, n, err, _tuple, cutoff, maxVal, s0, x, i, v, d, x$1, n1, _tuple$1, _tuple$2;
+		n = new Go$Uint64(0, 0);
+		err = null;
+		/* */ var go$s = 0, go$f = function() { while (true) { switch (go$s) { case 0:
+		_tuple = [new Go$Uint64(0, 0), new Go$Uint64(0, 0)], cutoff = _tuple[0], maxVal = _tuple[1];
+		if (bitSize === 0) {
+			bitSize = 32;
+		}
+		s0 = s;
+		/* if (s.length < 1) { */ if (s.length < 1) {} else if (2 <= base && base <= 36) { go$s = 2; continue; } else if (base === 0) { go$s = 3; continue; } else { go$s = 4; continue; }
+			err = go$pkg.ErrSyntax;
+			/* goto Error */ go$s = 1; continue;
+		/* } else if (2 <= base && base <= 36) { */ go$s = 5; continue; case 2: 
+		/* } else if (base === 0) { */ go$s = 5; continue; case 3: 
+			/* if ((s.charCodeAt(0) === 48) && s.length > 1 && ((s.charCodeAt(1) === 120) || (s.charCodeAt(1) === 88))) { */ if ((s.charCodeAt(0) === 48) && s.length > 1 && ((s.charCodeAt(1) === 120) || (s.charCodeAt(1) === 88))) {} else if (s.charCodeAt(0) === 48) { go$s = 6; continue; } else { go$s = 7; continue; }
+				base = 16;
+				s = s.substring(2);
+				/* if (s.length < 1) { */ if (s.length < 1) {} else { go$s = 9; continue; }
+					err = go$pkg.ErrSyntax;
+					/* goto Error */ go$s = 1; continue;
+				/* } */ case 9:
+			/* } else if (s.charCodeAt(0) === 48) { */ go$s = 8; continue; case 6: 
+				base = 8;
+			/* } else { */ go$s = 8; continue; case 7: 
+				base = 10;
+			/* } */ case 8:
+		/* } else { */ go$s = 5; continue; case 4: 
+			err = errors.New("invalid base " + Itoa(base));
+			/* goto Error */ go$s = 1; continue;
+		/* } */ case 5:
+		n = new Go$Uint64(0, 0);
+		cutoff = cutoff64(base);
+		maxVal = (x = go$shiftLeft64(new Go$Uint64(0, 1), (bitSize >>> 0)), new Go$Uint64(x.high - 0, x.low - 1));
+		i = 0;
+		/* while (i < s.length) { */ case 10: if(!(i < s.length)) { go$s = 11; continue; }
+			v = 0;
+			d = s.charCodeAt(i);
+			/* if (48 <= d && d <= 57) { */ if (48 <= d && d <= 57) {} else if (97 <= d && d <= 122) { go$s = 12; continue; } else if (65 <= d && d <= 90) { go$s = 13; continue; } else { go$s = 14; continue; }
+				v = d - 48 << 24 >>> 24;
+			/* } else if (97 <= d && d <= 122) { */ go$s = 15; continue; case 12: 
+				v = (d - 97 << 24 >>> 24) + 10 << 24 >>> 24;
+			/* } else if (65 <= d && d <= 90) { */ go$s = 15; continue; case 13: 
+				v = (d - 65 << 24 >>> 24) + 10 << 24 >>> 24;
+			/* } else { */ go$s = 15; continue; case 14: 
+				n = new Go$Uint64(0, 0);
+				err = go$pkg.ErrSyntax;
+				/* goto Error */ go$s = 1; continue;
+			/* } */ case 15:
+			/* if ((v >> 0) >= base) { */ if ((v >> 0) >= base) {} else { go$s = 16; continue; }
+				n = new Go$Uint64(0, 0);
+				err = go$pkg.ErrSyntax;
+				/* goto Error */ go$s = 1; continue;
+			/* } */ case 16:
+			/* if ((n.high > cutoff.high || (n.high === cutoff.high && n.low >= cutoff.low))) { */ if ((n.high > cutoff.high || (n.high === cutoff.high && n.low >= cutoff.low))) {} else { go$s = 17; continue; }
+				n = new Go$Uint64(4294967295, 4294967295);
+				err = go$pkg.ErrRange;
+				/* goto Error */ go$s = 1; continue;
+			/* } */ case 17:
+			n = go$mul64(n, (new Go$Uint64(0, base)));
+			n1 = (x$1 = new Go$Uint64(0, v), new Go$Uint64(n.high + x$1.high, n.low + x$1.low));
+			/* if ((n1.high < n.high || (n1.high === n.high && n1.low < n.low)) || (n1.high > maxVal.high || (n1.high === maxVal.high && n1.low > maxVal.low))) { */ if ((n1.high < n.high || (n1.high === n.high && n1.low < n.low)) || (n1.high > maxVal.high || (n1.high === maxVal.high && n1.low > maxVal.low))) {} else { go$s = 18; continue; }
+				n = new Go$Uint64(4294967295, 4294967295);
+				err = go$pkg.ErrRange;
+				/* goto Error */ go$s = 1; continue;
+			/* } */ case 18:
+			n = n1;
+			i = i + 1 >> 0;
+		/* } */ go$s = 10; continue; case 11:
+		_tuple$1 = [n, null], n = _tuple$1[0], err = _tuple$1[1];
+		return [n, err];
+		/* Error: */ case 1:
+		_tuple$2 = [n, new NumError.Ptr("ParseUint", s0, err)], n = _tuple$2[0], err = _tuple$2[1];
+		return [n, err];
+		/* */ } break; } }; return go$f();
+	};
+	var ParseInt = go$pkg.ParseInt = function(s, base, bitSize) {
+		var i, err, _tuple, s0, neg, un, _tuple$1, _tuple$2, cutoff, x, _tuple$3, x$1, _tuple$4, n, _tuple$5;
+		i = new Go$Int64(0, 0);
+		err = null;
+		if (bitSize === 0) {
+			bitSize = 32;
+		}
+		if (s.length === 0) {
+			_tuple = [new Go$Int64(0, 0), syntaxError("ParseInt", s)], i = _tuple[0], err = _tuple[1];
+			return [i, err];
+		}
+		s0 = s;
+		neg = false;
+		if (s.charCodeAt(0) === 43) {
+			s = s.substring(1);
+		} else if (s.charCodeAt(0) === 45) {
+			neg = true;
+			s = s.substring(1);
+		}
+		un = new Go$Uint64(0, 0);
+		_tuple$1 = ParseUint(s, base, bitSize), un = _tuple$1[0], err = _tuple$1[1];
+		if (!(go$interfaceIsEqual(err, null)) && !(go$interfaceIsEqual((err !== null && err.constructor === (go$ptrType(NumError)) ? err.go$val : go$typeAssertionFailed(err, (go$ptrType(NumError)))).Err, go$pkg.ErrRange))) {
+			(err !== null && err.constructor === (go$ptrType(NumError)) ? err.go$val : go$typeAssertionFailed(err, (go$ptrType(NumError)))).Func = "ParseInt";
+			(err !== null && err.constructor === (go$ptrType(NumError)) ? err.go$val : go$typeAssertionFailed(err, (go$ptrType(NumError)))).Num = s0;
+			_tuple$2 = [new Go$Int64(0, 0), err], i = _tuple$2[0], err = _tuple$2[1];
+			return [i, err];
+		}
+		cutoff = go$shiftLeft64(new Go$Uint64(0, 1), ((bitSize - 1 >> 0) >>> 0));
+		if (!neg && (un.high > cutoff.high || (un.high === cutoff.high && un.low >= cutoff.low))) {
+			_tuple$3 = [(x = new Go$Uint64(cutoff.high - 0, cutoff.low - 1), new Go$Int64(x.high, x.low)), rangeError("ParseInt", s0)], i = _tuple$3[0], err = _tuple$3[1];
+			return [i, err];
+		}
+		if (neg && (un.high > cutoff.high || (un.high === cutoff.high && un.low > cutoff.low))) {
+			_tuple$4 = [(x$1 = new Go$Int64(cutoff.high, cutoff.low), new Go$Int64(-x$1.high, -x$1.low)), rangeError("ParseInt", s0)], i = _tuple$4[0], err = _tuple$4[1];
+			return [i, err];
+		}
+		n = new Go$Int64(un.high, un.low);
+		if (neg) {
+			n = new Go$Int64(-n.high, -n.low);
+		}
+		_tuple$5 = [n, null], i = _tuple$5[0], err = _tuple$5[1];
+		return [i, err];
+	};
+	var Atoi = go$pkg.Atoi = function(s) {
+		var i, err, _tuple, i64, _tuple$1;
+		i = 0;
+		err = null;
+		_tuple = ParseInt(s, 10, 0), i64 = _tuple[0], err = _tuple[1];
+		_tuple$1 = [((i64.low + ((i64.high >> 31) * 4294967296)) >> 0), err], i = _tuple$1[0], err = _tuple$1[1];
+		return [i, err];
+	};
+	decimal.Ptr.prototype.String = function() {
+		var a, n, buf, w, _slice, _index, _slice$1, _index$1, _slice$2, _index$2;
+		a = this;
+		n = 10 + a.nd >> 0;
+		if (a.dp > 0) {
+			n = n + (a.dp) >> 0;
+		}
+		if (a.dp < 0) {
+			n = n + (-a.dp) >> 0;
+		}
+		buf = (go$sliceType(Go$Uint8)).make(n, 0, function() { return 0; });
+		w = 0;
+		if (a.nd === 0) {
+			return "0";
+		} else if (a.dp <= 0) {
+			_slice = buf, _index = w, (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = 48) : go$throwRuntimeError("index out of range");
+			w = w + 1 >> 0;
+			_slice$1 = buf, _index$1 = w, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = 46) : go$throwRuntimeError("index out of range");
+			w = w + 1 >> 0;
+			w = w + (digitZero(go$subslice(buf, w, (w + -a.dp >> 0)))) >> 0;
+			w = w + (go$copySlice(go$subslice(buf, w), go$subslice(new (go$sliceType(Go$Uint8))(a.d), 0, a.nd))) >> 0;
+		} else if (a.dp < a.nd) {
+			w = w + (go$copySlice(go$subslice(buf, w), go$subslice(new (go$sliceType(Go$Uint8))(a.d), 0, a.dp))) >> 0;
+			_slice$2 = buf, _index$2 = w, (_index$2 >= 0 && _index$2 < _slice$2.length) ? (_slice$2.array[_slice$2.offset + _index$2] = 46) : go$throwRuntimeError("index out of range");
+			w = w + 1 >> 0;
+			w = w + (go$copySlice(go$subslice(buf, w), go$subslice(new (go$sliceType(Go$Uint8))(a.d), a.dp, a.nd))) >> 0;
+		} else {
+			w = w + (go$copySlice(go$subslice(buf, w), go$subslice(new (go$sliceType(Go$Uint8))(a.d), 0, a.nd))) >> 0;
+			w = w + (digitZero(go$subslice(buf, w, ((w + a.dp >> 0) - a.nd >> 0)))) >> 0;
+		}
+		return go$bytesToString(go$subslice(buf, 0, w));
+	};
+	decimal.prototype.String = function() { return this.go$val.String(); };
+	var digitZero = function(dst) {
+		var _ref, _i, i, _slice, _index;
+		_ref = dst;
+		_i = 0;
+		while (_i < _ref.length) {
+			i = _i;
+			_slice = dst, _index = i, (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = 48) : go$throwRuntimeError("index out of range");
+			_i++;
+		}
+		return dst.length;
+	};
+	var trim = function(a) {
+		while (a.nd > 0 && (a.d[(a.nd - 1 >> 0)] === 48)) {
+			a.nd = a.nd - 1 >> 0;
+		}
+		if (a.nd === 0) {
+			a.dp = 0;
+		}
+	};
+	decimal.Ptr.prototype.Assign = function(v) {
+		var a, buf, n, v1, x;
+		a = this;
+		buf = go$makeNativeArray("Uint8", 24, function() { return 0; });
+		n = 0;
+		while ((v.high > 0 || (v.high === 0 && v.low > 0))) {
+			v1 = go$div64(v, new Go$Uint64(0, 10), false);
+			v = (x = go$mul64(new Go$Uint64(0, 10), v1), new Go$Uint64(v.high - x.high, v.low - x.low));
+			buf[n] = (new Go$Uint64(v.high + 0, v.low + 48).low << 24 >>> 24);
+			n = n + 1 >> 0;
+			v = v1;
+		}
+		a.nd = 0;
+		n = n - 1 >> 0;
+		while (n >= 0) {
+			a.d[a.nd] = buf[n];
+			a.nd = a.nd + 1 >> 0;
+			n = n - 1 >> 0;
+		}
+		a.dp = a.nd;
+		trim(a);
+	};
+	decimal.prototype.Assign = function(v) { return this.go$val.Assign(v); };
+	var rightShift = function(a, k) {
+		var r, w, n, x, c, x$1, c$1, dig, y, x$2, dig$1, y$1, x$3;
+		r = 0;
+		w = 0;
+		n = 0;
+		while (((n >> go$min(k, 31)) >> 0) === 0) {
+			if (r >= a.nd) {
+				if (n === 0) {
+					a.nd = 0;
+					return;
+				}
+				while (((n >> go$min(k, 31)) >> 0) === 0) {
+					n = (x = 10, (((n >>> 16 << 16) * x >> 0) + (n << 16 >>> 16) * x) >> 0);
+					r = r + 1 >> 0;
+				}
+				break;
+			}
+			c = (a.d[r] >> 0);
+			n = ((x$1 = 10, (((n >>> 16 << 16) * x$1 >> 0) + (n << 16 >>> 16) * x$1) >> 0) + c >> 0) - 48 >> 0;
+			r = r + 1 >> 0;
+		}
+		a.dp = a.dp - ((r - 1 >> 0)) >> 0;
+		while (r < a.nd) {
+			c$1 = (a.d[r] >> 0);
+			dig = (n >> go$min(k, 31)) >> 0;
+			n = n - (((y = k, y < 32 ? (dig << y) : 0) >> 0)) >> 0;
+			a.d[w] = ((dig + 48 >> 0) << 24 >>> 24);
+			w = w + 1 >> 0;
+			n = ((x$2 = 10, (((n >>> 16 << 16) * x$2 >> 0) + (n << 16 >>> 16) * x$2) >> 0) + c$1 >> 0) - 48 >> 0;
+			r = r + 1 >> 0;
+		}
+		while (n > 0) {
+			dig$1 = (n >> go$min(k, 31)) >> 0;
+			n = n - (((y$1 = k, y$1 < 32 ? (dig$1 << y$1) : 0) >> 0)) >> 0;
+			if (w < 800) {
+				a.d[w] = ((dig$1 + 48 >> 0) << 24 >>> 24);
+				w = w + 1 >> 0;
+			} else if (dig$1 > 0) {
+				a.trunc = true;
+			}
+			n = (x$3 = 10, (((n >>> 16 << 16) * x$3 >> 0) + (n << 16 >>> 16) * x$3) >> 0);
+		}
+		a.nd = w;
+		trim(a);
+	};
+	var prefixIsLessThan = function(b, s) {
+		var i, _slice, _index, _slice$1, _index$1;
+		i = 0;
+		while (i < s.length) {
+			if (i >= b.length) {
+				return true;
+			}
+			if (!(((_slice = b, _index = i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")) === s.charCodeAt(i)))) {
+				return (_slice$1 = b, _index$1 = i, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")) < s.charCodeAt(i);
+			}
+			i = i + 1 >> 0;
+		}
+		return false;
+	};
+	var leftShift = function(a, k) {
+		var _slice, _index, delta, _slice$1, _index$1, r, w, n, y, _q, quo, x, rem, _q$1, quo$1, x$1, rem$1;
+		delta = (_slice = leftcheats, _index = k, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")).delta;
+		if (prefixIsLessThan(go$subslice(new (go$sliceType(Go$Uint8))(a.d), 0, a.nd), (_slice$1 = leftcheats, _index$1 = k, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")).cutoff)) {
+			delta = delta - 1 >> 0;
+		}
+		r = a.nd;
+		w = a.nd + delta >> 0;
+		n = 0;
+		r = r - 1 >> 0;
+		while (r >= 0) {
+			n = n + (((y = k, y < 32 ? ((((a.d[r] >> 0) - 48 >> 0)) << y) : 0) >> 0)) >> 0;
+			quo = (_q = n / 10, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero"));
+			rem = n - (x = 10, (((x >>> 16 << 16) * quo >> 0) + (x << 16 >>> 16) * quo) >> 0) >> 0;
+			w = w - 1 >> 0;
+			if (w < 800) {
+				a.d[w] = ((rem + 48 >> 0) << 24 >>> 24);
+			} else if (!((rem === 0))) {
+				a.trunc = true;
+			}
+			n = quo;
+			r = r - 1 >> 0;
+		}
+		while (n > 0) {
+			quo$1 = (_q$1 = n / 10, (_q$1 === _q$1 && _q$1 !== 1/0 && _q$1 !== -1/0) ? _q$1 >> 0 : go$throwRuntimeError("integer divide by zero"));
+			rem$1 = n - (x$1 = 10, (((x$1 >>> 16 << 16) * quo$1 >> 0) + (x$1 << 16 >>> 16) * quo$1) >> 0) >> 0;
+			w = w - 1 >> 0;
+			if (w < 800) {
+				a.d[w] = ((rem$1 + 48 >> 0) << 24 >>> 24);
+			} else if (!((rem$1 === 0))) {
+				a.trunc = true;
+			}
+			n = quo$1;
+		}
+		a.nd = a.nd + (delta) >> 0;
+		if (a.nd >= 800) {
+			a.nd = 800;
+		}
+		a.dp = a.dp + (delta) >> 0;
+		trim(a);
+	};
+	decimal.Ptr.prototype.Shift = function(k) {
+		var a;
+		a = this;
+		if (a.nd === 0) {
+		} else if (k > 0) {
+			while (k > 27) {
+				leftShift(a, 27);
+				k = k - 27 >> 0;
+			}
+			leftShift(a, (k >>> 0));
+		} else if (k < 0) {
+			while (k < -27) {
+				rightShift(a, 27);
+				k = k + 27 >> 0;
+			}
+			rightShift(a, (-k >>> 0));
+		}
+	};
+	decimal.prototype.Shift = function(k) { return this.go$val.Shift(k); };
+	var shouldRoundUp = function(a, nd) {
+		var _r;
+		if (nd < 0 || nd >= a.nd) {
+			return false;
+		}
+		if ((a.d[nd] === 53) && ((nd + 1 >> 0) === a.nd)) {
+			if (a.trunc) {
+				return true;
+			}
+			return nd > 0 && !(((_r = ((a.d[(nd - 1 >> 0)] - 48 << 24 >>> 24)) % 2, _r === _r ? _r : go$throwRuntimeError("integer divide by zero")) === 0));
+		}
+		return a.d[nd] >= 53;
+	};
+	decimal.Ptr.prototype.Round = function(nd) {
+		var a;
+		a = this;
+		if (nd < 0 || nd >= a.nd) {
+			return;
+		}
+		if (shouldRoundUp(a, nd)) {
+			a.RoundUp(nd);
+		} else {
+			a.RoundDown(nd);
+		}
+	};
+	decimal.prototype.Round = function(nd) { return this.go$val.Round(nd); };
+	decimal.Ptr.prototype.RoundDown = function(nd) {
+		var a;
+		a = this;
+		if (nd < 0 || nd >= a.nd) {
+			return;
+		}
+		a.nd = nd;
+		trim(a);
+	};
+	decimal.prototype.RoundDown = function(nd) { return this.go$val.RoundDown(nd); };
+	decimal.Ptr.prototype.RoundUp = function(nd) {
+		var a, i, c, _lhs, _index;
+		a = this;
+		if (nd < 0 || nd >= a.nd) {
+			return;
+		}
+		i = nd - 1 >> 0;
+		while (i >= 0) {
+			c = a.d[i];
+			if (c < 57) {
+				_lhs = a.d, _index = i, _lhs[_index] = _lhs[_index] + 1 << 24 >>> 24;
+				a.nd = i + 1 >> 0;
+				return;
+			}
+			i = i - 1 >> 0;
+		}
+		a.d[0] = 49;
+		a.nd = 1;
+		a.dp = a.dp + 1 >> 0;
+	};
+	decimal.prototype.RoundUp = function(nd) { return this.go$val.RoundUp(nd); };
+	decimal.Ptr.prototype.RoundedInteger = function() {
+		var a, i, n, x, x$1;
+		a = this;
+		if (a.dp > 20) {
+			return new Go$Uint64(4294967295, 4294967295);
+		}
+		i = 0;
+		n = new Go$Uint64(0, 0);
+		i = 0;
+		while (i < a.dp && i < a.nd) {
+			n = (x = go$mul64(n, new Go$Uint64(0, 10)), x$1 = new Go$Uint64(0, (a.d[i] - 48 << 24 >>> 24)), new Go$Uint64(x.high + x$1.high, x.low + x$1.low));
+			i = i + 1 >> 0;
+		}
+		while (i < a.dp) {
+			n = go$mul64(n, new Go$Uint64(0, 10));
+			i = i + 1 >> 0;
+		}
+		if (shouldRoundUp(a, a.dp)) {
+			n = new Go$Uint64(n.high + 0, n.low + 1);
+		}
+		return n;
+	};
+	decimal.prototype.RoundedInteger = function() { return this.go$val.RoundedInteger(); };
+	extFloat.Ptr.prototype.floatBits = function(flt) {
+		var bits, overflow, f, exp, n, mant, x, x$1, x$2, x$3, y, x$4, x$5, y$1, x$6, x$7, x$8, y$2, x$9;
+		bits = new Go$Uint64(0, 0);
+		overflow = false;
+		f = this;
+		f.Normalize();
+		exp = f.exp + 63 >> 0;
+		if (exp < (flt.bias + 1 >> 0)) {
+			n = (flt.bias + 1 >> 0) - exp >> 0;
+			f.mant = go$shiftRightUint64(f.mant, ((n >>> 0)));
+			exp = exp + (n) >> 0;
+		}
+		mant = go$shiftRightUint64(f.mant, ((63 - flt.mantbits >>> 0)));
+		if (!((x = (x$1 = f.mant, x$2 = go$shiftLeft64(new Go$Uint64(0, 1), ((62 - flt.mantbits >>> 0))), new Go$Uint64(x$1.high & x$2.high, (x$1.low & x$2.low) >>> 0)), (x.high === 0 && x.low === 0)))) {
+			mant = new Go$Uint64(mant.high + 0, mant.low + 1);
+		}
+		if ((x$3 = go$shiftLeft64(new Go$Uint64(0, 2), flt.mantbits), (mant.high === x$3.high && mant.low === x$3.low))) {
+			mant = go$shiftRightUint64(mant, 1);
+			exp = exp + 1 >> 0;
+		}
+		if ((exp - flt.bias >> 0) >= (((y = flt.expbits, y < 32 ? (1 << y) : 0) >> 0) - 1 >> 0)) {
+			mant = new Go$Uint64(0, 0);
+			exp = (((y$1 = flt.expbits, y$1 < 32 ? (1 << y$1) : 0) >> 0) - 1 >> 0) + flt.bias >> 0;
+			overflow = true;
+		} else if ((x$4 = (x$5 = go$shiftLeft64(new Go$Uint64(0, 1), flt.mantbits), new Go$Uint64(mant.high & x$5.high, (mant.low & x$5.low) >>> 0)), (x$4.high === 0 && x$4.low === 0))) {
+			exp = flt.bias;
+		}
+		bits = (x$6 = (x$7 = go$shiftLeft64(new Go$Uint64(0, 1), flt.mantbits), new Go$Uint64(x$7.high - 0, x$7.low - 1)), new Go$Uint64(mant.high & x$6.high, (mant.low & x$6.low) >>> 0));
+		bits = (x$8 = go$shiftLeft64(new Go$Uint64(0, (((exp - flt.bias >> 0)) & ((((y$2 = flt.expbits, y$2 < 32 ? (1 << y$2) : 0) >> 0) - 1 >> 0)))), flt.mantbits), new Go$Uint64(bits.high | x$8.high, (bits.low | x$8.low) >>> 0));
+		if (f.neg) {
+			bits = (x$9 = go$shiftLeft64(new Go$Uint64(0, 1), ((flt.mantbits + flt.expbits >>> 0))), new Go$Uint64(bits.high | x$9.high, (bits.low | x$9.low) >>> 0));
+		}
+		return [bits, overflow];
+	};
+	extFloat.prototype.floatBits = function(flt) { return this.go$val.floatBits(flt); };
+	extFloat.Ptr.prototype.AssignComputeBounds = function(mant, exp, neg, flt) {
+		var lower, upper, f, x, _struct, _struct$1, _tuple, _struct$2, _struct$3, expBiased, x$1, x$2, x$3, x$4, _struct$4, _struct$5;
+		lower = new extFloat.Ptr();
+		upper = new extFloat.Ptr();
+		f = this;
+		f.mant = mant;
+		f.exp = exp - (flt.mantbits >> 0) >> 0;
+		f.neg = neg;
+		if (f.exp <= 0 && (x = go$shiftLeft64((go$shiftRightUint64(mant, (-f.exp >>> 0))), (-f.exp >>> 0)), (mant.high === x.high && mant.low === x.low))) {
+			f.mant = go$shiftRightUint64(f.mant, ((-f.exp >>> 0)));
+			f.exp = 0;
+			_tuple = [(_struct = f, new extFloat.Ptr(_struct.mant, _struct.exp, _struct.neg)), (_struct$1 = f, new extFloat.Ptr(_struct$1.mant, _struct$1.exp, _struct$1.neg))], lower = _tuple[0], upper = _tuple[1];
+			return [(_struct$2 = lower, new extFloat.Ptr(_struct$2.mant, _struct$2.exp, _struct$2.neg)), (_struct$3 = upper, new extFloat.Ptr(_struct$3.mant, _struct$3.exp, _struct$3.neg))];
+		}
+		expBiased = exp - flt.bias >> 0;
+		upper = new extFloat.Ptr((x$1 = go$mul64(new Go$Uint64(0, 2), f.mant), new Go$Uint64(x$1.high + 0, x$1.low + 1)), f.exp - 1 >> 0, f.neg);
+		if (!((x$2 = go$shiftLeft64(new Go$Uint64(0, 1), flt.mantbits), (mant.high === x$2.high && mant.low === x$2.low))) || (expBiased === 1)) {
+			lower = new extFloat.Ptr((x$3 = go$mul64(new Go$Uint64(0, 2), f.mant), new Go$Uint64(x$3.high - 0, x$3.low - 1)), f.exp - 1 >> 0, f.neg);
+		} else {
+			lower = new extFloat.Ptr((x$4 = go$mul64(new Go$Uint64(0, 4), f.mant), new Go$Uint64(x$4.high - 0, x$4.low - 1)), f.exp - 2 >> 0, f.neg);
+		}
+		return [(_struct$4 = lower, new extFloat.Ptr(_struct$4.mant, _struct$4.exp, _struct$4.neg)), (_struct$5 = upper, new extFloat.Ptr(_struct$5.mant, _struct$5.exp, _struct$5.neg))];
+	};
+	extFloat.prototype.AssignComputeBounds = function(mant, exp, neg, flt) { return this.go$val.AssignComputeBounds(mant, exp, neg, flt); };
+	extFloat.Ptr.prototype.Normalize = function() {
+		var shift, f, _tuple, mant, exp, x, x$1, x$2, x$3, x$4, x$5, _tuple$1;
+		shift = 0;
+		f = this;
+		_tuple = [f.mant, f.exp], mant = _tuple[0], exp = _tuple[1];
+		if ((mant.high === 0 && mant.low === 0)) {
+			shift = 0;
+			return shift;
+		}
+		if ((x = go$shiftRightUint64(mant, 32), (x.high === 0 && x.low === 0))) {
+			mant = go$shiftLeft64(mant, 32);
+			exp = exp - 32 >> 0;
+		}
+		if ((x$1 = go$shiftRightUint64(mant, 48), (x$1.high === 0 && x$1.low === 0))) {
+			mant = go$shiftLeft64(mant, 16);
+			exp = exp - 16 >> 0;
+		}
+		if ((x$2 = go$shiftRightUint64(mant, 56), (x$2.high === 0 && x$2.low === 0))) {
+			mant = go$shiftLeft64(mant, 8);
+			exp = exp - 8 >> 0;
+		}
+		if ((x$3 = go$shiftRightUint64(mant, 60), (x$3.high === 0 && x$3.low === 0))) {
+			mant = go$shiftLeft64(mant, 4);
+			exp = exp - 4 >> 0;
+		}
+		if ((x$4 = go$shiftRightUint64(mant, 62), (x$4.high === 0 && x$4.low === 0))) {
+			mant = go$shiftLeft64(mant, 2);
+			exp = exp - 2 >> 0;
+		}
+		if ((x$5 = go$shiftRightUint64(mant, 63), (x$5.high === 0 && x$5.low === 0))) {
+			mant = go$shiftLeft64(mant, 1);
+			exp = exp - 1 >> 0;
+		}
+		shift = ((f.exp - exp >> 0) >>> 0);
+		_tuple$1 = [mant, exp], f.mant = _tuple$1[0], f.exp = _tuple$1[1];
+		return shift;
+	};
+	extFloat.prototype.Normalize = function() { return this.go$val.Normalize(); };
+	extFloat.Ptr.prototype.Multiply = function(g) {
+		var f, _tuple, fhi, flo, _tuple$1, ghi, glo, cross1, cross2, x, x$1, x$2, x$3, x$4, x$5, x$6, x$7, rem, x$8, x$9;
+		f = this;
+		_tuple = [go$shiftRightUint64(f.mant, 32), new Go$Uint64(0, (f.mant.low >>> 0))], fhi = _tuple[0], flo = _tuple[1];
+		_tuple$1 = [go$shiftRightUint64(g.mant, 32), new Go$Uint64(0, (g.mant.low >>> 0))], ghi = _tuple$1[0], glo = _tuple$1[1];
+		cross1 = go$mul64(fhi, glo);
+		cross2 = go$mul64(flo, ghi);
+		f.mant = (x = (x$1 = go$mul64(fhi, ghi), x$2 = go$shiftRightUint64(cross1, 32), new Go$Uint64(x$1.high + x$2.high, x$1.low + x$2.low)), x$3 = go$shiftRightUint64(cross2, 32), new Go$Uint64(x.high + x$3.high, x.low + x$3.low));
+		rem = (x$4 = (x$5 = new Go$Uint64(0, (cross1.low >>> 0)), x$6 = new Go$Uint64(0, (cross2.low >>> 0)), new Go$Uint64(x$5.high + x$6.high, x$5.low + x$6.low)), x$7 = go$shiftRightUint64((go$mul64(flo, glo)), 32), new Go$Uint64(x$4.high + x$7.high, x$4.low + x$7.low));
+		rem = new Go$Uint64(rem.high + 0, rem.low + 2147483648);
+		f.mant = (x$8 = f.mant, x$9 = (go$shiftRightUint64(rem, 32)), new Go$Uint64(x$8.high + x$9.high, x$8.low + x$9.low));
+		f.exp = (f.exp + g.exp >> 0) + 64 >> 0;
+	};
+	extFloat.prototype.Multiply = function(g) { return this.go$val.Multiply(g); };
+	extFloat.Ptr.prototype.AssignDecimal = function(mantissa, exp10, neg, trunc, flt) {
+		var ok, f, errors$1, _q, i, _r, adjExp, x, _struct, _struct$1, shift, y, denormalExp, extrabits, halfway, x$1, x$2, x$3, mant_extra, x$4, x$5, x$6, x$7, x$8, x$9, x$10, x$11;
+		ok = false;
+		f = this;
+		errors$1 = 0;
+		if (trunc) {
+			errors$1 = errors$1 + 4 >> 0;
+		}
+		f.mant = mantissa;
+		f.exp = 0;
+		f.neg = neg;
+		i = (_q = ((exp10 - -348 >> 0)) / 8, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero"));
+		if (exp10 < -348 || i >= 87) {
+			ok = false;
+			return ok;
+		}
+		adjExp = (_r = ((exp10 - -348 >> 0)) % 8, _r === _r ? _r : go$throwRuntimeError("integer divide by zero"));
+		if (adjExp < 19 && (x = uint64pow10[(19 - adjExp >> 0)], (mantissa.high < x.high || (mantissa.high === x.high && mantissa.low < x.low)))) {
+			f.mant = go$mul64(f.mant, (uint64pow10[adjExp]));
+			f.Normalize();
+		} else {
+			f.Normalize();
+			f.Multiply((_struct = smallPowersOfTen[adjExp], new extFloat.Ptr(_struct.mant, _struct.exp, _struct.neg)));
+			errors$1 = errors$1 + 4 >> 0;
+		}
+		f.Multiply((_struct$1 = powersOfTen[i], new extFloat.Ptr(_struct$1.mant, _struct$1.exp, _struct$1.neg)));
+		if (errors$1 > 0) {
+			errors$1 = errors$1 + 1 >> 0;
+		}
+		errors$1 = errors$1 + 4 >> 0;
+		shift = f.Normalize();
+		errors$1 = (y = (shift), y < 32 ? (errors$1 << y) : 0) >> 0;
+		denormalExp = flt.bias - 63 >> 0;
+		extrabits = 0;
+		if (f.exp <= denormalExp) {
+			extrabits = (((63 - flt.mantbits >>> 0) + 1 >>> 0) + ((denormalExp - f.exp >> 0) >>> 0) >>> 0);
+		} else {
+			extrabits = (63 - flt.mantbits >>> 0);
+		}
+		halfway = go$shiftLeft64(new Go$Uint64(0, 1), ((extrabits - 1 >>> 0)));
+		mant_extra = (x$1 = f.mant, x$2 = (x$3 = go$shiftLeft64(new Go$Uint64(0, 1), extrabits), new Go$Uint64(x$3.high - 0, x$3.low - 1)), new Go$Uint64(x$1.high & x$2.high, (x$1.low & x$2.low) >>> 0));
+		if ((x$4 = (x$5 = new Go$Int64(halfway.high, halfway.low), x$6 = new Go$Int64(0, errors$1), new Go$Int64(x$5.high - x$6.high, x$5.low - x$6.low)), x$7 = new Go$Int64(mant_extra.high, mant_extra.low), (x$4.high < x$7.high || (x$4.high === x$7.high && x$4.low < x$7.low))) && (x$8 = new Go$Int64(mant_extra.high, mant_extra.low), x$9 = (x$10 = new Go$Int64(halfway.high, halfway.low), x$11 = new Go$Int64(0, errors$1), new Go$Int64(x$10.high + x$11.high, x$10.low + x$11.low)), (x$8.high < x$9.high || (x$8.high === x$9.high && x$8.low < x$9.low)))) {
+			ok = false;
+			return ok;
+		}
+		ok = true;
+		return ok;
+	};
+	extFloat.prototype.AssignDecimal = function(mantissa, exp10, neg, trunc, flt) { return this.go$val.AssignDecimal(mantissa, exp10, neg, trunc, flt); };
+	extFloat.Ptr.prototype.frexp10 = function() {
+		var exp10, index, f, _q, x, x$1, approxExp10, _q$1, i, exp, _struct, _tuple;
+		exp10 = 0;
+		index = 0;
+		f = this;
+		approxExp10 = (_q = (x = (-46 - f.exp >> 0), x$1 = 28, (((x >>> 16 << 16) * x$1 >> 0) + (x << 16 >>> 16) * x$1) >> 0) / 93, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero"));
+		i = (_q$1 = ((approxExp10 - -348 >> 0)) / 8, (_q$1 === _q$1 && _q$1 !== 1/0 && _q$1 !== -1/0) ? _q$1 >> 0 : go$throwRuntimeError("integer divide by zero"));
+		Loop:
+		while (true) {
+			exp = (f.exp + powersOfTen[i].exp >> 0) + 64 >> 0;
+			if (exp < -60) {
+				i = i + 1 >> 0;
+			} else if (exp > -32) {
+				i = i - 1 >> 0;
+			} else {
+				break Loop;
+			}
+		}
+		f.Multiply((_struct = powersOfTen[i], new extFloat.Ptr(_struct.mant, _struct.exp, _struct.neg)));
+		_tuple = [-((-348 + ((((i >>> 16 << 16) * 8 >> 0) + (i << 16 >>> 16) * 8) >> 0) >> 0)), i], exp10 = _tuple[0], index = _tuple[1];
+		return [exp10, index];
+	};
+	extFloat.prototype.frexp10 = function() { return this.go$val.frexp10(); };
+	var frexp10Many = function(a, b, c) {
+		var exp10, _tuple, i, _struct, _struct$1;
+		exp10 = 0;
+		_tuple = c.frexp10(), exp10 = _tuple[0], i = _tuple[1];
+		a.Multiply((_struct = powersOfTen[i], new extFloat.Ptr(_struct.mant, _struct.exp, _struct.neg)));
+		b.Multiply((_struct$1 = powersOfTen[i], new extFloat.Ptr(_struct$1.mant, _struct$1.exp, _struct$1.neg)));
+		return exp10;
+	};
+	extFloat.Ptr.prototype.FixedDecimal = function(d, n) {
+		var f, x, _tuple, exp10, shift, integer, x$1, x$2, fraction, nonAsciiName, needed, integerDigits, pow10, _tuple$1, i, pow, x$3, rest, _q, x$4, buf, pos, v, _q$1, v1, x$5, i$1, _slice, _index, nd, x$6, x$7, digit, _slice$1, _index$1, x$8, x$9, ok, i$2, _slice$2, _index$2;
+		f = this;
+		if ((x = f.mant, (x.high === 0 && x.low === 0))) {
+			d.nd = 0;
+			d.dp = 0;
+			d.neg = f.neg;
+			return true;
+		}
+		if (n === 0) {
+			throw go$panic(new Go$String("strconv: internal error: extFloat.FixedDecimal called with n == 0"));
+		}
+		f.Normalize();
+		_tuple = f.frexp10(), exp10 = _tuple[0];
+		shift = (-f.exp >>> 0);
+		integer = (go$shiftRightUint64(f.mant, shift).low >>> 0);
+		fraction = (x$1 = f.mant, x$2 = go$shiftLeft64(new Go$Uint64(0, integer), shift), new Go$Uint64(x$1.high - x$2.high, x$1.low - x$2.low));
+		nonAsciiName = new Go$Uint64(0, 1);
+		needed = n;
+		integerDigits = 0;
+		pow10 = new Go$Uint64(0, 1);
+		_tuple$1 = [0, new Go$Uint64(0, 1)], i = _tuple$1[0], pow = _tuple$1[1];
+		while (i < 20) {
+			if ((x$3 = new Go$Uint64(0, integer), (pow.high > x$3.high || (pow.high === x$3.high && pow.low > x$3.low)))) {
+				integerDigits = i;
+				break;
+			}
+			pow = go$mul64(pow, new Go$Uint64(0, 10));
+			i = i + 1 >> 0;
+		}
+		rest = integer;
+		if (integerDigits > needed) {
+			pow10 = uint64pow10[(integerDigits - needed >> 0)];
+			integer = (_q = integer / ((pow10.low >>> 0)), (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >>> 0 : go$throwRuntimeError("integer divide by zero"));
+			rest = rest - ((x$4 = (pow10.low >>> 0), (((integer >>> 16 << 16) * x$4 >>> 0) + (integer << 16 >>> 16) * x$4) >>> 0)) >>> 0;
+		} else {
+			rest = 0;
+		}
+		buf = go$makeNativeArray("Uint8", 32, function() { return 0; });
+		pos = 32;
+		v = integer;
+		while (v > 0) {
+			v1 = (_q$1 = v / 10, (_q$1 === _q$1 && _q$1 !== 1/0 && _q$1 !== -1/0) ? _q$1 >>> 0 : go$throwRuntimeError("integer divide by zero"));
+			v = v - ((x$5 = 10, (((x$5 >>> 16 << 16) * v1 >>> 0) + (x$5 << 16 >>> 16) * v1) >>> 0)) >>> 0;
+			pos = pos - 1 >> 0;
+			buf[pos] = ((v + 48 >>> 0) << 24 >>> 24);
+			v = v1;
+		}
+		i$1 = pos;
+		while (i$1 < 32) {
+			_slice = d.d, _index = i$1 - pos >> 0, (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = buf[i$1]) : go$throwRuntimeError("index out of range");
+			i$1 = i$1 + 1 >> 0;
+		}
+		nd = 32 - pos >> 0;
+		d.nd = nd;
+		d.dp = integerDigits + exp10 >> 0;
+		needed = needed - (nd) >> 0;
+		if (needed > 0) {
+			if (!((rest === 0)) || !((pow10.high === 0 && pow10.low === 1))) {
+				throw go$panic(new Go$String("strconv: internal error, rest != 0 but needed > 0"));
+			}
+			while (needed > 0) {
+				fraction = go$mul64(fraction, new Go$Uint64(0, 10));
+				nonAsciiName = go$mul64(nonAsciiName, new Go$Uint64(0, 10));
+				if ((x$6 = go$mul64(new Go$Uint64(0, 2), nonAsciiName), x$7 = go$shiftLeft64(new Go$Uint64(0, 1), shift), (x$6.high > x$7.high || (x$6.high === x$7.high && x$6.low > x$7.low)))) {
+					return false;
+				}
+				digit = go$shiftRightUint64(fraction, shift);
+				_slice$1 = d.d, _index$1 = nd, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = (new Go$Uint64(digit.high + 0, digit.low + 48).low << 24 >>> 24)) : go$throwRuntimeError("index out of range");
+				fraction = (x$8 = go$shiftLeft64(digit, shift), new Go$Uint64(fraction.high - x$8.high, fraction.low - x$8.low));
+				nd = nd + 1 >> 0;
+				needed = needed - 1 >> 0;
+			}
+			d.nd = nd;
+		}
+		ok = adjustLastDigitFixed(d, (x$9 = go$shiftLeft64(new Go$Uint64(0, rest), shift), new Go$Uint64(x$9.high | fraction.high, (x$9.low | fraction.low) >>> 0)), pow10, shift, nonAsciiName);
+		if (!ok) {
+			return false;
+		}
+		i$2 = d.nd - 1 >> 0;
+		while (i$2 >= 0) {
+			if (!(((_slice$2 = d.d, _index$2 = i$2, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")) === 48))) {
+				d.nd = i$2 + 1 >> 0;
+				break;
+			}
+			i$2 = i$2 - 1 >> 0;
+		}
+		return true;
+	};
+	extFloat.prototype.FixedDecimal = function(d, n) { return this.go$val.FixedDecimal(d, n); };
+	var adjustLastDigitFixed = function(d, num, den, shift, nonAsciiName) {
+		var x, x$1, x$2, x$3, x$4, x$5, x$6, i, _slice, _index, _slice$1, _index$1, _lhs, _index$2, _slice$2, _index$3, _slice$3, _index$4;
+		if ((x = go$shiftLeft64(den, shift), (num.high > x.high || (num.high === x.high && num.low > x.low)))) {
+			throw go$panic(new Go$String("strconv: num > den<<shift in adjustLastDigitFixed"));
+		}
+		if ((x$1 = go$mul64(new Go$Uint64(0, 2), nonAsciiName), x$2 = go$shiftLeft64(den, shift), (x$1.high > x$2.high || (x$1.high === x$2.high && x$1.low > x$2.low)))) {
+			throw go$panic(new Go$String("strconv: \xCE\xB5 > (den<<shift)/2"));
+		}
+		if ((x$3 = go$mul64(new Go$Uint64(0, 2), (new Go$Uint64(num.high + nonAsciiName.high, num.low + nonAsciiName.low))), x$4 = go$shiftLeft64(den, shift), (x$3.high < x$4.high || (x$3.high === x$4.high && x$3.low < x$4.low)))) {
+			return true;
+		}
+		if ((x$5 = go$mul64(new Go$Uint64(0, 2), (new Go$Uint64(num.high - nonAsciiName.high, num.low - nonAsciiName.low))), x$6 = go$shiftLeft64(den, shift), (x$5.high > x$6.high || (x$5.high === x$6.high && x$5.low > x$6.low)))) {
+			i = d.nd - 1 >> 0;
+			while (i >= 0) {
+				if ((_slice = d.d, _index = i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")) === 57) {
+					d.nd = d.nd - 1 >> 0;
+				} else {
+					break;
+				}
+				i = i - 1 >> 0;
+			}
+			if (i < 0) {
+				_slice$1 = d.d, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = 49) : go$throwRuntimeError("index out of range");
+				d.nd = 1;
+				d.dp = d.dp + 1 >> 0;
+			} else {
+				_lhs = d.d, _index$2 = i, _slice$3 = _lhs, _index$4 = _index$2, (_index$4 >= 0 && _index$4 < _slice$3.length) ? (_slice$3.array[_slice$3.offset + _index$4] = (_slice$2 = _lhs, _index$3 = _index$2, (_index$3 >= 0 && _index$3 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$3] : go$throwRuntimeError("index out of range")) + 1 << 24 >>> 24) : go$throwRuntimeError("index out of range");
+			}
+			return true;
+		}
+		return false;
+	};
+	extFloat.Ptr.prototype.ShortestDecimal = function(d, lower, upper) {
+		var f, x, x$1, y, x$2, y$1, buf, n, v, v1, x$3, nd, i, _slice, _index, _tuple, _slice$1, _index$1, exp10, x$4, x$5, shift, integer, x$6, x$7, fraction, x$8, x$9, allowance, x$10, x$11, targetDiff, integerDigits, _tuple$1, i$1, pow, x$12, i$2, pow$1, _q, digit, _slice$2, _index$2, x$13, currentDiff, x$14, digit$1, multiplier, _slice$3, _index$3, x$15, x$16;
+		f = this;
+		if ((x = f.mant, (x.high === 0 && x.low === 0))) {
+			d.nd = 0;
+			d.dp = 0;
+			d.neg = f.neg;
+			return true;
+		}
+		if ((f.exp === 0) && (x$1 = lower, y = f, (x$1.mant.high === y.mant.high && x$1.mant.low === y.mant.low) && x$1.exp === y.exp && x$1.neg === y.neg) && (x$2 = lower, y$1 = upper, (x$2.mant.high === y$1.mant.high && x$2.mant.low === y$1.mant.low) && x$2.exp === y$1.exp && x$2.neg === y$1.neg)) {
+			buf = go$makeNativeArray("Uint8", 24, function() { return 0; });
+			n = 23;
+			v = f.mant;
+			while ((v.high > 0 || (v.high === 0 && v.low > 0))) {
+				v1 = go$div64(v, new Go$Uint64(0, 10), false);
+				v = (x$3 = go$mul64(new Go$Uint64(0, 10), v1), new Go$Uint64(v.high - x$3.high, v.low - x$3.low));
+				buf[n] = (new Go$Uint64(v.high + 0, v.low + 48).low << 24 >>> 24);
+				n = n - 1 >> 0;
+				v = v1;
+			}
+			nd = (24 - n >> 0) - 1 >> 0;
+			i = 0;
+			while (i < nd) {
+				_slice = d.d, _index = i, (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = buf[((n + 1 >> 0) + i >> 0)]) : go$throwRuntimeError("index out of range");
+				i = i + 1 >> 0;
+			}
+			_tuple = [nd, nd], d.nd = _tuple[0], d.dp = _tuple[1];
+			while (d.nd > 0 && ((_slice$1 = d.d, _index$1 = (d.nd - 1 >> 0), (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")) === 48)) {
+				d.nd = d.nd - 1 >> 0;
+			}
+			if (d.nd === 0) {
+				d.dp = 0;
+			}
+			d.neg = f.neg;
+			return true;
+		}
+		upper.Normalize();
+		if (f.exp > upper.exp) {
+			f.mant = go$shiftLeft64(f.mant, (((f.exp - upper.exp >> 0) >>> 0)));
+			f.exp = upper.exp;
+		}
+		if (lower.exp > upper.exp) {
+			lower.mant = go$shiftLeft64(lower.mant, (((lower.exp - upper.exp >> 0) >>> 0)));
+			lower.exp = upper.exp;
+		}
+		exp10 = frexp10Many(lower, f, upper);
+		upper.mant = (x$4 = upper.mant, new Go$Uint64(x$4.high + 0, x$4.low + 1));
+		lower.mant = (x$5 = lower.mant, new Go$Uint64(x$5.high - 0, x$5.low - 1));
+		shift = (-upper.exp >>> 0);
+		integer = (go$shiftRightUint64(upper.mant, shift).low >>> 0);
+		fraction = (x$6 = upper.mant, x$7 = go$shiftLeft64(new Go$Uint64(0, integer), shift), new Go$Uint64(x$6.high - x$7.high, x$6.low - x$7.low));
+		allowance = (x$8 = upper.mant, x$9 = lower.mant, new Go$Uint64(x$8.high - x$9.high, x$8.low - x$9.low));
+		targetDiff = (x$10 = upper.mant, x$11 = f.mant, new Go$Uint64(x$10.high - x$11.high, x$10.low - x$11.low));
+		integerDigits = 0;
+		_tuple$1 = [0, new Go$Uint64(0, 1)], i$1 = _tuple$1[0], pow = _tuple$1[1];
+		while (i$1 < 20) {
+			if ((x$12 = new Go$Uint64(0, integer), (pow.high > x$12.high || (pow.high === x$12.high && pow.low > x$12.low)))) {
+				integerDigits = i$1;
+				break;
+			}
+			pow = go$mul64(pow, new Go$Uint64(0, 10));
+			i$1 = i$1 + 1 >> 0;
+		}
+		i$2 = 0;
+		while (i$2 < integerDigits) {
+			pow$1 = uint64pow10[((integerDigits - i$2 >> 0) - 1 >> 0)];
+			digit = (_q = integer / (pow$1.low >>> 0), (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >>> 0 : go$throwRuntimeError("integer divide by zero"));
+			_slice$2 = d.d, _index$2 = i$2, (_index$2 >= 0 && _index$2 < _slice$2.length) ? (_slice$2.array[_slice$2.offset + _index$2] = ((digit + 48 >>> 0) << 24 >>> 24)) : go$throwRuntimeError("index out of range");
+			integer = integer - ((x$13 = (pow$1.low >>> 0), (((digit >>> 16 << 16) * x$13 >>> 0) + (digit << 16 >>> 16) * x$13) >>> 0)) >>> 0;
+			if (currentDiff = (x$14 = go$shiftLeft64(new Go$Uint64(0, integer), shift), new Go$Uint64(x$14.high + fraction.high, x$14.low + fraction.low)), (currentDiff.high < allowance.high || (currentDiff.high === allowance.high && currentDiff.low < allowance.low))) {
+				d.nd = i$2 + 1 >> 0;
+				d.dp = integerDigits + exp10 >> 0;
+				d.neg = f.neg;
+				return adjustLastDigit(d, currentDiff, targetDiff, allowance, go$shiftLeft64(pow$1, shift), new Go$Uint64(0, 2));
+			}
+			i$2 = i$2 + 1 >> 0;
+		}
+		d.nd = integerDigits;
+		d.dp = d.nd + exp10 >> 0;
+		d.neg = f.neg;
+		digit$1 = 0;
+		multiplier = new Go$Uint64(0, 1);
+		while (true) {
+			fraction = go$mul64(fraction, new Go$Uint64(0, 10));
+			multiplier = go$mul64(multiplier, new Go$Uint64(0, 10));
+			digit$1 = (go$shiftRightUint64(fraction, shift).low >> 0);
+			_slice$3 = d.d, _index$3 = d.nd, (_index$3 >= 0 && _index$3 < _slice$3.length) ? (_slice$3.array[_slice$3.offset + _index$3] = ((digit$1 + 48 >> 0) << 24 >>> 24)) : go$throwRuntimeError("index out of range");
+			d.nd = d.nd + 1 >> 0;
+			fraction = (x$15 = go$shiftLeft64(new Go$Uint64(0, digit$1), shift), new Go$Uint64(fraction.high - x$15.high, fraction.low - x$15.low));
+			if ((x$16 = go$mul64(allowance, multiplier), (fraction.high < x$16.high || (fraction.high === x$16.high && fraction.low < x$16.low)))) {
+				return adjustLastDigit(d, fraction, go$mul64(targetDiff, multiplier), go$mul64(allowance, multiplier), go$shiftLeft64(new Go$Uint64(0, 1), shift), go$mul64(multiplier, new Go$Uint64(0, 2)));
+			}
+		}
+	};
+	extFloat.prototype.ShortestDecimal = function(d, lower, upper) { return this.go$val.ShortestDecimal(d, lower, upper); };
+	var adjustLastDigit = function(d, currentDiff, targetDiff, maxDiff, ulpDecimal, ulpBinary) {
+		var x, x$1, x$2, x$3, _lhs, _index, _slice, _index$1, _slice$1, _index$2, x$4, x$5, x$6, x$7, x$8, x$9, _slice$2, _index$3;
+		if ((x = go$mul64(new Go$Uint64(0, 2), ulpBinary), (ulpDecimal.high < x.high || (ulpDecimal.high === x.high && ulpDecimal.low < x.low)))) {
+			return false;
+		}
+		while ((x$1 = (x$2 = (x$3 = go$div64(ulpDecimal, new Go$Uint64(0, 2), false), new Go$Uint64(currentDiff.high + x$3.high, currentDiff.low + x$3.low)), new Go$Uint64(x$2.high + ulpBinary.high, x$2.low + ulpBinary.low)), (x$1.high < targetDiff.high || (x$1.high === targetDiff.high && x$1.low < targetDiff.low)))) {
+			_lhs = d.d, _index = d.nd - 1 >> 0, _slice$1 = _lhs, _index$2 = _index, (_index$2 >= 0 && _index$2 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$2] = (_slice = _lhs, _index$1 = _index, (_index$1 >= 0 && _index$1 < _slice.length) ? _slice.array[_slice.offset + _index$1] : go$throwRuntimeError("index out of range")) - 1 << 24 >>> 24) : go$throwRuntimeError("index out of range");
+			currentDiff = (x$4 = ulpDecimal, new Go$Uint64(currentDiff.high + x$4.high, currentDiff.low + x$4.low));
+		}
+		if ((x$5 = new Go$Uint64(currentDiff.high + ulpDecimal.high, currentDiff.low + ulpDecimal.low), x$6 = (x$7 = (x$8 = go$div64(ulpDecimal, new Go$Uint64(0, 2), false), new Go$Uint64(targetDiff.high + x$8.high, targetDiff.low + x$8.low)), new Go$Uint64(x$7.high + ulpBinary.high, x$7.low + ulpBinary.low)), (x$5.high < x$6.high || (x$5.high === x$6.high && x$5.low <= x$6.low)))) {
+			return false;
+		}
+		if ((currentDiff.high < ulpBinary.high || (currentDiff.high === ulpBinary.high && currentDiff.low < ulpBinary.low)) || (x$9 = new Go$Uint64(maxDiff.high - ulpBinary.high, maxDiff.low - ulpBinary.low), (currentDiff.high > x$9.high || (currentDiff.high === x$9.high && currentDiff.low > x$9.low)))) {
+			return false;
+		}
+		if ((d.nd === 1) && ((_slice$2 = d.d, _index$3 = 0, (_index$3 >= 0 && _index$3 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$3] : go$throwRuntimeError("index out of range")) === 48)) {
+			d.nd = 0;
+			d.dp = 0;
+		}
+		return true;
+	};
+	var FormatFloat = go$pkg.FormatFloat = function(f, fmt, prec, bitSize) {
+		return go$bytesToString(genericFtoa((go$sliceType(Go$Uint8)).make(0, max(prec + 4 >> 0, 24), function() { return 0; }), f, fmt, prec, bitSize));
+	};
+	var AppendFloat = go$pkg.AppendFloat = function(dst, f, fmt, prec, bitSize) {
+		return genericFtoa(dst, f, fmt, prec, bitSize);
+	};
+	var genericFtoa = function(dst, val, fmt, prec, bitSize) {
+		var bits, flt, _ref, x, neg, y, exp, x$1, x$2, mant, _ref$1, y$1, s, x$3, digs, ok, shortest, f, _tuple, _struct, lower, _struct$1, upper, buf, _ref$2, digits, _ref$3, buf$1, f$1, _struct$2;
+		bits = new Go$Uint64(0, 0);
+		flt = (go$ptrType(floatInfo)).nil;
+		_ref = bitSize;
+		if (_ref === 32) {
+			bits = new Go$Uint64(0, math.Float32bits(val));
+			flt = float32info;
+		} else if (_ref === 64) {
+			bits = math.Float64bits(val);
+			flt = float64info;
+		} else {
+			throw go$panic(new Go$String("strconv: illegal AppendFloat/FormatFloat bitSize"));
+		}
+		neg = !((x = go$shiftRightUint64(bits, ((flt.expbits + flt.mantbits >>> 0))), (x.high === 0 && x.low === 0)));
+		exp = (go$shiftRightUint64(bits, flt.mantbits).low >> 0) & ((((y = flt.expbits, y < 32 ? (1 << y) : 0) >> 0) - 1 >> 0));
+		mant = (x$1 = (x$2 = go$shiftLeft64(new Go$Uint64(0, 1), flt.mantbits), new Go$Uint64(x$2.high - 0, x$2.low - 1)), new Go$Uint64(bits.high & x$1.high, (bits.low & x$1.low) >>> 0));
+		_ref$1 = exp;
+		if (_ref$1 === (((y$1 = flt.expbits, y$1 < 32 ? (1 << y$1) : 0) >> 0) - 1 >> 0)) {
+			s = "";
+			if (!((mant.high === 0 && mant.low === 0))) {
+				s = "NaN";
+			} else if (neg) {
+				s = "-Inf";
+			} else {
+				s = "+Inf";
+			}
+			return go$appendSlice(dst, new (go$sliceType(Go$Uint8))(go$stringToBytes(s)));
+		} else if (_ref$1 === 0) {
+			exp = exp + 1 >> 0;
+		} else {
+			mant = (x$3 = go$shiftLeft64(new Go$Uint64(0, 1), flt.mantbits), new Go$Uint64(mant.high | x$3.high, (mant.low | x$3.low) >>> 0));
+		}
+		exp = exp + (flt.bias) >> 0;
+		if (fmt === 98) {
+			return fmtB(dst, neg, mant, exp, flt);
+		}
+		if (!optimize) {
+			return bigFtoa(dst, prec, fmt, neg, mant, exp, flt);
+		}
+		digs = new decimalSlice.Ptr();
+		ok = false;
+		shortest = prec < 0;
+		if (shortest) {
+			f = new extFloat.Ptr();
+			_tuple = f.AssignComputeBounds(mant, exp, neg, flt), lower = (_struct = _tuple[0], new extFloat.Ptr(_struct.mant, _struct.exp, _struct.neg)), upper = (_struct$1 = _tuple[1], new extFloat.Ptr(_struct$1.mant, _struct$1.exp, _struct$1.neg));
+			buf = go$makeNativeArray("Uint8", 32, function() { return 0; });
+			digs.d = new (go$sliceType(Go$Uint8))(buf);
+			ok = f.ShortestDecimal(digs, lower, upper);
+			if (!ok) {
+				return bigFtoa(dst, prec, fmt, neg, mant, exp, flt);
+			}
+			_ref$2 = fmt;
+			if (_ref$2 === 101 || _ref$2 === 69) {
+				prec = digs.nd - 1 >> 0;
+			} else if (_ref$2 === 102) {
+				prec = max(digs.nd - digs.dp >> 0, 0);
+			} else if (_ref$2 === 103 || _ref$2 === 71) {
+				prec = digs.nd;
+			}
+		} else if (!((fmt === 102))) {
+			digits = prec;
+			_ref$3 = fmt;
+			if (_ref$3 === 101 || _ref$3 === 69) {
+				digits = digits + 1 >> 0;
+			} else if (_ref$3 === 103 || _ref$3 === 71) {
+				if (prec === 0) {
+					prec = 1;
+				}
+				digits = prec;
+			}
+			if (digits <= 15) {
+				buf$1 = go$makeNativeArray("Uint8", 24, function() { return 0; });
+				digs.d = new (go$sliceType(Go$Uint8))(buf$1);
+				f$1 = new extFloat.Ptr(mant, exp - (flt.mantbits >> 0) >> 0, neg);
+				ok = f$1.FixedDecimal(digs, digits);
+			}
+		}
+		if (!ok) {
+			return bigFtoa(dst, prec, fmt, neg, mant, exp, flt);
+		}
+		return formatDigits(dst, shortest, neg, (_struct$2 = digs, new decimalSlice.Ptr(_struct$2.d, _struct$2.nd, _struct$2.dp, _struct$2.neg)), prec, fmt);
+	};
+	var bigFtoa = function(dst, prec, fmt, neg, mant, exp, flt) {
+		var d, digs, shortest, _ref, _ref$1, _struct;
+		d = new decimal.Ptr();
+		d.Assign(mant);
+		d.Shift(exp - (flt.mantbits >> 0) >> 0);
+		digs = new decimalSlice.Ptr();
+		shortest = prec < 0;
+		if (shortest) {
+			roundShortest(d, mant, exp, flt);
+			digs = new decimalSlice.Ptr(new (go$sliceType(Go$Uint8))(d.d), d.nd, d.dp, false);
+			_ref = fmt;
+			if (_ref === 101 || _ref === 69) {
+				prec = digs.nd - 1 >> 0;
+			} else if (_ref === 102) {
+				prec = max(digs.nd - digs.dp >> 0, 0);
+			} else if (_ref === 103 || _ref === 71) {
+				prec = digs.nd;
+			}
+		} else {
+			_ref$1 = fmt;
+			if (_ref$1 === 101 || _ref$1 === 69) {
+				d.Round(prec + 1 >> 0);
+			} else if (_ref$1 === 102) {
+				d.Round(d.dp + prec >> 0);
+			} else if (_ref$1 === 103 || _ref$1 === 71) {
+				if (prec === 0) {
+					prec = 1;
+				}
+				d.Round(prec);
+			}
+			digs = new decimalSlice.Ptr(new (go$sliceType(Go$Uint8))(d.d), d.nd, d.dp, false);
+		}
+		return formatDigits(dst, shortest, neg, (_struct = digs, new decimalSlice.Ptr(_struct.d, _struct.nd, _struct.dp, _struct.neg)), prec, fmt);
+	};
+	var formatDigits = function(dst, shortest, neg, digs, prec, fmt) {
+		var _ref, _struct, _struct$1, eprec, exp, _struct$2, _struct$3;
+		_ref = fmt;
+		if (_ref === 101 || _ref === 69) {
+			return fmtE(dst, neg, (_struct = digs, new decimalSlice.Ptr(_struct.d, _struct.nd, _struct.dp, _struct.neg)), prec, fmt);
+		} else if (_ref === 102) {
+			return fmtF(dst, neg, (_struct$1 = digs, new decimalSlice.Ptr(_struct$1.d, _struct$1.nd, _struct$1.dp, _struct$1.neg)), prec);
+		} else if (_ref === 103 || _ref === 71) {
+			eprec = prec;
+			if (eprec > digs.nd && digs.nd >= digs.dp) {
+				eprec = digs.nd;
+			}
+			if (shortest) {
+				eprec = 6;
+			}
+			exp = digs.dp - 1 >> 0;
+			if (exp < -4 || exp >= eprec) {
+				if (prec > digs.nd) {
+					prec = digs.nd;
+				}
+				return fmtE(dst, neg, (_struct$2 = digs, new decimalSlice.Ptr(_struct$2.d, _struct$2.nd, _struct$2.dp, _struct$2.neg)), prec - 1 >> 0, (fmt + 101 << 24 >>> 24) - 103 << 24 >>> 24);
+			}
+			if (prec > digs.dp) {
+				prec = digs.nd;
+			}
+			return fmtF(dst, neg, (_struct$3 = digs, new decimalSlice.Ptr(_struct$3.d, _struct$3.nd, _struct$3.dp, _struct$3.neg)), max(prec - digs.dp >> 0, 0));
+		}
+		return go$append(dst, 37, fmt);
+	};
+	var roundShortest = function(d, mant, exp, flt) {
+		var minexp, x, x$1, x$2, x$3, upper, x$4, mantlo, explo, x$5, x$6, lower, x$7, x$8, inclusive, i, _tuple, l, m, u, okdown, okup;
+		if ((mant.high === 0 && mant.low === 0)) {
+			d.nd = 0;
+			return;
+		}
+		minexp = flt.bias + 1 >> 0;
+		if (exp > minexp && (x = 332, x$1 = (d.dp - d.nd >> 0), (((x >>> 16 << 16) * x$1 >> 0) + (x << 16 >>> 16) * x$1) >> 0) >= (x$2 = 100, x$3 = (exp - (flt.mantbits >> 0) >> 0), (((x$2 >>> 16 << 16) * x$3 >> 0) + (x$2 << 16 >>> 16) * x$3) >> 0)) {
+			return;
+		}
+		upper = new decimal.Ptr();
+		upper.Assign((x$4 = go$mul64(mant, new Go$Uint64(0, 2)), new Go$Uint64(x$4.high + 0, x$4.low + 1)));
+		upper.Shift((exp - (flt.mantbits >> 0) >> 0) - 1 >> 0);
+		mantlo = new Go$Uint64(0, 0);
+		explo = 0;
+		if ((x$5 = go$shiftLeft64(new Go$Uint64(0, 1), flt.mantbits), (mant.high > x$5.high || (mant.high === x$5.high && mant.low > x$5.low))) || (exp === minexp)) {
+			mantlo = new Go$Uint64(mant.high - 0, mant.low - 1);
+			explo = exp;
+		} else {
+			mantlo = (x$6 = go$mul64(mant, new Go$Uint64(0, 2)), new Go$Uint64(x$6.high - 0, x$6.low - 1));
+			explo = exp - 1 >> 0;
+		}
+		lower = new decimal.Ptr();
+		lower.Assign((x$7 = go$mul64(mantlo, new Go$Uint64(0, 2)), new Go$Uint64(x$7.high + 0, x$7.low + 1)));
+		lower.Shift((explo - (flt.mantbits >> 0) >> 0) - 1 >> 0);
+		inclusive = (x$8 = go$div64(mant, new Go$Uint64(0, 2), true), (x$8.high === 0 && x$8.low === 0));
+		i = 0;
+		while (i < d.nd) {
+			_tuple = [0, 0, 0], l = _tuple[0], m = _tuple[1], u = _tuple[2];
+			if (i < lower.nd) {
+				l = lower.d[i];
+			} else {
+				l = 48;
+			}
+			m = d.d[i];
+			if (i < upper.nd) {
+				u = upper.d[i];
+			} else {
+				u = 48;
+			}
+			okdown = !((l === m)) || (inclusive && (l === m) && ((i + 1 >> 0) === lower.nd));
+			okup = !((m === u)) && (inclusive || (m + 1 << 24 >>> 24) < u || (i + 1 >> 0) < upper.nd);
+			if (okdown && okup) {
+				d.Round(i + 1 >> 0);
+				return;
+			} else if (okdown) {
+				d.RoundDown(i + 1 >> 0);
+				return;
+			} else if (okup) {
+				d.RoundUp(i + 1 >> 0);
+				return;
+			}
+			i = i + 1 >> 0;
+		}
+	};
+	var fmtE = function(dst, neg, d, prec, fmt) {
+		var ch, _slice, _index, i, m, _slice$1, _index$1, exp, buf, i$1, _r, _q, _ref;
+		if (neg) {
+			dst = go$append(dst, 45);
+		}
+		ch = 48;
+		if (!((d.nd === 0))) {
+			ch = (_slice = d.d, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
+		}
+		dst = go$append(dst, ch);
+		if (prec > 0) {
+			dst = go$append(dst, 46);
+			i = 1;
+			m = ((d.nd + prec >> 0) + 1 >> 0) - max(d.nd, prec + 1 >> 0) >> 0;
+			while (i < m) {
+				dst = go$append(dst, (_slice$1 = d.d, _index$1 = i, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")));
+				i = i + 1 >> 0;
+			}
+			while (i <= prec) {
+				dst = go$append(dst, 48);
+				i = i + 1 >> 0;
+			}
+		}
+		dst = go$append(dst, fmt);
+		exp = d.dp - 1 >> 0;
+		if (d.nd === 0) {
+			exp = 0;
+		}
+		if (exp < 0) {
+			ch = 45;
+			exp = -exp;
+		} else {
+			ch = 43;
+		}
+		dst = go$append(dst, ch);
+		buf = go$makeNativeArray("Uint8", 3, function() { return 0; });
+		i$1 = 3;
+		while (exp >= 10) {
+			i$1 = i$1 - 1 >> 0;
+			buf[i$1] = (((_r = exp % 10, _r === _r ? _r : go$throwRuntimeError("integer divide by zero")) + 48 >> 0) << 24 >>> 24);
+			exp = (_q = exp / 10, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero"));
+		}
+		i$1 = i$1 - 1 >> 0;
+		buf[i$1] = ((exp + 48 >> 0) << 24 >>> 24);
+		_ref = i$1;
+		if (_ref === 0) {
+			dst = go$append(dst, buf[0], buf[1], buf[2]);
+		} else if (_ref === 1) {
+			dst = go$append(dst, buf[1], buf[2]);
+		} else if (_ref === 2) {
+			dst = go$append(dst, 48, buf[2]);
+		}
+		return dst;
+	};
+	var fmtF = function(dst, neg, d, prec) {
+		var i, _slice, _index, i$1, ch, j, _slice$1, _index$1;
+		if (neg) {
+			dst = go$append(dst, 45);
+		}
+		if (d.dp > 0) {
+			i = 0;
+			i = 0;
+			while (i < d.dp && i < d.nd) {
+				dst = go$append(dst, (_slice = d.d, _index = i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")));
+				i = i + 1 >> 0;
+			}
+			while (i < d.dp) {
+				dst = go$append(dst, 48);
+				i = i + 1 >> 0;
+			}
+		} else {
+			dst = go$append(dst, 48);
+		}
+		if (prec > 0) {
+			dst = go$append(dst, 46);
+			i$1 = 0;
+			while (i$1 < prec) {
+				ch = 48;
+				if (j = d.dp + i$1 >> 0, 0 <= j && j < d.nd) {
+					ch = (_slice$1 = d.d, _index$1 = j, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range"));
+				}
+				dst = go$append(dst, ch);
+				i$1 = i$1 + 1 >> 0;
+			}
+		}
+		return dst;
+	};
+	var fmtB = function(dst, neg, mant, exp, flt) {
+		var buf, w, esign, n, _r, _q, x;
+		buf = go$makeNativeArray("Uint8", 50, function() { return 0; });
+		w = 50;
+		exp = exp - ((flt.mantbits >> 0)) >> 0;
+		esign = 43;
+		if (exp < 0) {
+			esign = 45;
+			exp = -exp;
+		}
+		n = 0;
+		while (exp > 0 || n < 1) {
+			n = n + 1 >> 0;
+			w = w - 1 >> 0;
+			buf[w] = (((_r = exp % 10, _r === _r ? _r : go$throwRuntimeError("integer divide by zero")) + 48 >> 0) << 24 >>> 24);
+			exp = (_q = exp / 10, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero"));
+		}
+		w = w - 1 >> 0;
+		buf[w] = esign;
+		w = w - 1 >> 0;
+		buf[w] = 112;
+		n = 0;
+		while ((mant.high > 0 || (mant.high === 0 && mant.low > 0)) || n < 1) {
+			n = n + 1 >> 0;
+			w = w - 1 >> 0;
+			buf[w] = ((x = go$div64(mant, new Go$Uint64(0, 10), true), new Go$Uint64(x.high + 0, x.low + 48)).low << 24 >>> 24);
+			mant = go$div64(mant, new Go$Uint64(0, 10), false);
+		}
+		if (neg) {
+			w = w - 1 >> 0;
+			buf[w] = 45;
+		}
+		return go$appendSlice(dst, go$subslice(new (go$sliceType(Go$Uint8))(buf), w));
+	};
+	var max = function(a, b) {
+		if (a > b) {
+			return a;
+		}
+		return b;
+	};
+	var FormatUint = go$pkg.FormatUint = function(i, base) {
+		var _tuple, s;
+		_tuple = formatBits((go$sliceType(Go$Uint8)).nil, i, base, false, false), s = _tuple[1];
+		return s;
+	};
+	var FormatInt = go$pkg.FormatInt = function(i, base) {
+		var _tuple, s;
+		_tuple = formatBits((go$sliceType(Go$Uint8)).nil, new Go$Uint64(i.high, i.low), base, (i.high < 0 || (i.high === 0 && i.low < 0)), false), s = _tuple[1];
+		return s;
+	};
+	var Itoa = go$pkg.Itoa = function(i) {
+		return FormatInt(new Go$Int64(0, i), 10);
+	};
+	var AppendInt = go$pkg.AppendInt = function(dst, i, base) {
+		var _tuple;
+		_tuple = formatBits(dst, new Go$Uint64(i.high, i.low), base, (i.high < 0 || (i.high === 0 && i.low < 0)), true), dst = _tuple[0];
+		return dst;
+	};
+	var AppendUint = go$pkg.AppendUint = function(dst, i, base) {
+		var _tuple;
+		_tuple = formatBits(dst, i, base, false, true), dst = _tuple[0];
+		return dst;
+	};
+	var formatBits = function(dst, u, base, neg, append_) {
+		var d, s, a, i, s$1, q, x, j, q$1, x$1, b, m, b$1;
+		d = (go$sliceType(Go$Uint8)).nil;
+		s = "";
+		if (base < 2 || base > 36) {
+			throw go$panic(new Go$String("strconv: illegal AppendInt/FormatInt base"));
+		}
+		a = go$makeNativeArray("Uint8", 65, function() { return 0; });
+		i = 65;
+		if (neg) {
+			u = new Go$Uint64(-u.high, -u.low);
+		}
+		if (base === 10) {
+			while ((u.high > 0 || (u.high === 0 && u.low >= 100))) {
+				i = i - 2 >> 0;
+				q = go$div64(u, new Go$Uint64(0, 100), false);
+				j = ((x = go$mul64(q, new Go$Uint64(0, 100)), new Go$Uint64(u.high - x.high, u.low - x.low)).low >>> 0);
+				a[i + 1 >> 0] = "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789".charCodeAt(j);
+				a[i + 0 >> 0] = "0000000000111111111122222222223333333333444444444455555555556666666666777777777788888888889999999999".charCodeAt(j);
+				u = q;
+			}
+			if ((u.high > 0 || (u.high === 0 && u.low >= 10))) {
+				i = i - 1 >> 0;
+				q$1 = go$div64(u, new Go$Uint64(0, 10), false);
+				a[i] = "0123456789abcdefghijklmnopqrstuvwxyz".charCodeAt(((x$1 = go$mul64(q$1, new Go$Uint64(0, 10)), new Go$Uint64(u.high - x$1.high, u.low - x$1.low)).low >>> 0));
+				u = q$1;
+			}
+		} else if (s$1 = shifts[base], s$1 > 0) {
+			b = new Go$Uint64(0, base);
+			m = (b.low >>> 0) - 1 >>> 0;
+			while ((u.high > b.high || (u.high === b.high && u.low >= b.low))) {
+				i = i - 1 >> 0;
+				a[i] = "0123456789abcdefghijklmnopqrstuvwxyz".charCodeAt((((u.low >>> 0) & m) >>> 0));
+				u = go$shiftRightUint64(u, (s$1));
+			}
+		} else {
+			b$1 = new Go$Uint64(0, base);
+			while ((u.high > b$1.high || (u.high === b$1.high && u.low >= b$1.low))) {
+				i = i - 1 >> 0;
+				a[i] = "0123456789abcdefghijklmnopqrstuvwxyz".charCodeAt((go$div64(u, b$1, true).low >>> 0));
+				u = go$div64(u, (b$1), false);
+			}
+		}
+		i = i - 1 >> 0;
+		a[i] = "0123456789abcdefghijklmnopqrstuvwxyz".charCodeAt((u.low >>> 0));
+		if (neg) {
+			i = i - 1 >> 0;
+			a[i] = 45;
+		}
+		if (append_) {
+			d = go$appendSlice(dst, go$subslice(new (go$sliceType(Go$Uint8))(a), i));
+			return [d, s];
+		}
+		s = go$bytesToString(go$subslice(new (go$sliceType(Go$Uint8))(a), i));
+		return [d, s];
+	};
+	var quoteWith = function(s, quote, ASCIIonly) {
+		var runeTmp, _q, x, x$1, buf, width, r, _tuple, n, _ref, s$1, s$2;
+		runeTmp = go$makeNativeArray("Uint8", 4, function() { return 0; });
+		buf = (go$sliceType(Go$Uint8)).make(0, (_q = (x = 3, x$1 = s.length, (((x >>> 16 << 16) * x$1 >> 0) + (x << 16 >>> 16) * x$1) >> 0) / 2, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero")), function() { return 0; });
+		buf = go$append(buf, quote);
+		width = 0;
+		while (s.length > 0) {
+			r = (s.charCodeAt(0) >> 0);
+			width = 1;
+			if (r >= 128) {
+				_tuple = utf8.DecodeRuneInString(s), r = _tuple[0], width = _tuple[1];
+			}
+			if ((width === 1) && (r === 65533)) {
+				buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes("\\x")));
+				buf = go$append(buf, "0123456789abcdef".charCodeAt((s.charCodeAt(0) >>> 4 << 24 >>> 24)));
+				buf = go$append(buf, "0123456789abcdef".charCodeAt(((s.charCodeAt(0) & 15) >>> 0)));
+				s = s.substring(width);
+				continue;
+			}
+			if ((r === (quote >> 0)) || (r === 92)) {
+				buf = go$append(buf, 92);
+				buf = go$append(buf, (r << 24 >>> 24));
+				s = s.substring(width);
+				continue;
+			}
+			if (ASCIIonly) {
+				if (r < 128 && IsPrint(r)) {
+					buf = go$append(buf, (r << 24 >>> 24));
+					s = s.substring(width);
+					continue;
+				}
+			} else if (IsPrint(r)) {
+				n = utf8.EncodeRune(new (go$sliceType(Go$Uint8))(runeTmp), r);
+				buf = go$appendSlice(buf, go$subslice(new (go$sliceType(Go$Uint8))(runeTmp), 0, n));
+				s = s.substring(width);
+				continue;
+			}
+			_ref = r;
+			if (_ref === 7) {
+				buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes("\\a")));
+			} else if (_ref === 8) {
+				buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes("\\b")));
+			} else if (_ref === 12) {
+				buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes("\\f")));
+			} else if (_ref === 10) {
+				buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes("\\n")));
+			} else if (_ref === 13) {
+				buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes("\\r")));
+			} else if (_ref === 9) {
+				buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes("\\t")));
+			} else if (_ref === 11) {
+				buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes("\\v")));
+			} else {
+				if (r < 32) {
+					buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes("\\x")));
+					buf = go$append(buf, "0123456789abcdef".charCodeAt((s.charCodeAt(0) >>> 4 << 24 >>> 24)));
+					buf = go$append(buf, "0123456789abcdef".charCodeAt(((s.charCodeAt(0) & 15) >>> 0)));
+				} else if (r > 1114111) {
+					r = 65533;
+					buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes("\\u")));
+					s$1 = 12;
+					while (s$1 >= 0) {
+						buf = go$append(buf, "0123456789abcdef".charCodeAt((((r >> go$min((s$1 >>> 0), 31)) >> 0) & 15)));
+						s$1 = s$1 - 4 >> 0;
+					}
+				} else if (r < 65536) {
+					buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes("\\u")));
+					s$1 = 12;
+					while (s$1 >= 0) {
+						buf = go$append(buf, "0123456789abcdef".charCodeAt((((r >> go$min((s$1 >>> 0), 31)) >> 0) & 15)));
+						s$1 = s$1 - 4 >> 0;
+					}
+				} else {
+					buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes("\\U")));
+					s$2 = 28;
+					while (s$2 >= 0) {
+						buf = go$append(buf, "0123456789abcdef".charCodeAt((((r >> go$min((s$2 >>> 0), 31)) >> 0) & 15)));
+						s$2 = s$2 - 4 >> 0;
+					}
+				}
+			}
+			s = s.substring(width);
+		}
+		buf = go$append(buf, quote);
+		return go$bytesToString(buf);
+	};
+	var Quote = go$pkg.Quote = function(s) {
+		return quoteWith(s, 34, false);
+	};
+	var AppendQuote = go$pkg.AppendQuote = function(dst, s) {
+		return go$appendSlice(dst, new (go$sliceType(Go$Uint8))(go$stringToBytes(Quote(s))));
+	};
+	var QuoteToASCII = go$pkg.QuoteToASCII = function(s) {
+		return quoteWith(s, 34, true);
+	};
+	var AppendQuoteToASCII = go$pkg.AppendQuoteToASCII = function(dst, s) {
+		return go$appendSlice(dst, new (go$sliceType(Go$Uint8))(go$stringToBytes(QuoteToASCII(s))));
+	};
+	var QuoteRune = go$pkg.QuoteRune = function(r) {
+		return quoteWith(go$encodeRune(r), 39, false);
+	};
+	var AppendQuoteRune = go$pkg.AppendQuoteRune = function(dst, r) {
+		return go$appendSlice(dst, new (go$sliceType(Go$Uint8))(go$stringToBytes(QuoteRune(r))));
+	};
+	var QuoteRuneToASCII = go$pkg.QuoteRuneToASCII = function(r) {
+		return quoteWith(go$encodeRune(r), 39, true);
+	};
+	var AppendQuoteRuneToASCII = go$pkg.AppendQuoteRuneToASCII = function(dst, r) {
+		return go$appendSlice(dst, new (go$sliceType(Go$Uint8))(go$stringToBytes(QuoteRuneToASCII(r))));
+	};
+	var CanBackquote = go$pkg.CanBackquote = function(s) {
+		var i;
+		i = 0;
+		while (i < s.length) {
+			if ((s.charCodeAt(i) < 32 && !((s.charCodeAt(i) === 9))) || (s.charCodeAt(i) === 96)) {
+				return false;
+			}
+			i = i + 1 >> 0;
+		}
+		return true;
+	};
+	var unhex = function(b) {
+		var v, ok, c, _tuple, _tuple$1, _tuple$2;
+		v = 0;
+		ok = false;
+		c = (b >> 0);
+		if (48 <= c && c <= 57) {
+			_tuple = [c - 48 >> 0, true], v = _tuple[0], ok = _tuple[1];
+			return [v, ok];
+		} else if (97 <= c && c <= 102) {
+			_tuple$1 = [(c - 97 >> 0) + 10 >> 0, true], v = _tuple$1[0], ok = _tuple$1[1];
+			return [v, ok];
+		} else if (65 <= c && c <= 70) {
+			_tuple$2 = [(c - 65 >> 0) + 10 >> 0, true], v = _tuple$2[0], ok = _tuple$2[1];
+			return [v, ok];
+		}
+		return [v, ok];
+	};
+	var UnquoteChar = go$pkg.UnquoteChar = function(s, quote) {
+		var value, multibyte, tail, err, c, _tuple, r, size, _tuple$1, _tuple$2, c$1, _ref, n, _ref$1, v, j, _tuple$3, x, ok, v$1, j$1, x$1;
+		value = 0;
+		multibyte = false;
+		tail = "";
+		err = null;
+		c = s.charCodeAt(0);
+		if ((c === quote) && ((quote === 39) || (quote === 34))) {
+			err = go$pkg.ErrSyntax;
+			return [value, multibyte, tail, err];
+		} else if (c >= 128) {
+			_tuple = utf8.DecodeRuneInString(s), r = _tuple[0], size = _tuple[1];
+			_tuple$1 = [r, true, s.substring(size), null], value = _tuple$1[0], multibyte = _tuple$1[1], tail = _tuple$1[2], err = _tuple$1[3];
+			return [value, multibyte, tail, err];
+		} else if (!((c === 92))) {
+			_tuple$2 = [(s.charCodeAt(0) >> 0), false, s.substring(1), null], value = _tuple$2[0], multibyte = _tuple$2[1], tail = _tuple$2[2], err = _tuple$2[3];
+			return [value, multibyte, tail, err];
+		}
+		if (s.length <= 1) {
+			err = go$pkg.ErrSyntax;
+			return [value, multibyte, tail, err];
+		}
+		c$1 = s.charCodeAt(1);
+		s = s.substring(2);
+		_ref = c$1;
+		switch (0) { default: if (_ref === 97) {
+			value = 7;
+		} else if (_ref === 98) {
+			value = 8;
+		} else if (_ref === 102) {
+			value = 12;
+		} else if (_ref === 110) {
+			value = 10;
+		} else if (_ref === 114) {
+			value = 13;
+		} else if (_ref === 116) {
+			value = 9;
+		} else if (_ref === 118) {
+			value = 11;
+		} else if (_ref === 120 || _ref === 117 || _ref === 85) {
+			n = 0;
+			_ref$1 = c$1;
+			if (_ref$1 === 120) {
+				n = 2;
+			} else if (_ref$1 === 117) {
+				n = 4;
+			} else if (_ref$1 === 85) {
+				n = 8;
+			}
+			v = 0;
+			if (s.length < n) {
+				err = go$pkg.ErrSyntax;
+				return [value, multibyte, tail, err];
+			}
+			j = 0;
+			while (j < n) {
+				_tuple$3 = unhex(s.charCodeAt(j)), x = _tuple$3[0], ok = _tuple$3[1];
+				if (!ok) {
+					err = go$pkg.ErrSyntax;
+					return [value, multibyte, tail, err];
+				}
+				v = (v << 4 >> 0) | x;
+				j = j + 1 >> 0;
+			}
+			s = s.substring(n);
+			if (c$1 === 120) {
+				value = v;
+				break;
+			}
+			if (v > 1114111) {
+				err = go$pkg.ErrSyntax;
+				return [value, multibyte, tail, err];
+			}
+			value = v;
+			multibyte = true;
+		} else if (_ref === 48 || _ref === 49 || _ref === 50 || _ref === 51 || _ref === 52 || _ref === 53 || _ref === 54 || _ref === 55) {
+			v$1 = (c$1 >> 0) - 48 >> 0;
+			if (s.length < 2) {
+				err = go$pkg.ErrSyntax;
+				return [value, multibyte, tail, err];
+			}
+			j$1 = 0;
+			while (j$1 < 2) {
+				x$1 = (s.charCodeAt(j$1) >> 0) - 48 >> 0;
+				if (x$1 < 0 || x$1 > 7) {
+					err = go$pkg.ErrSyntax;
+					return [value, multibyte, tail, err];
+				}
+				v$1 = ((v$1 << 3 >> 0)) | x$1;
+				j$1 = j$1 + 1 >> 0;
+			}
+			s = s.substring(2);
+			if (v$1 > 255) {
+				err = go$pkg.ErrSyntax;
+				return [value, multibyte, tail, err];
+			}
+			value = v$1;
+		} else if (_ref === 92) {
+			value = 92;
+		} else if (_ref === 39 || _ref === 34) {
+			if (!((c$1 === quote))) {
+				err = go$pkg.ErrSyntax;
+				return [value, multibyte, tail, err];
+			}
+			value = (c$1 >> 0);
+		} else {
+			err = go$pkg.ErrSyntax;
+			return [value, multibyte, tail, err];
+		} }
+		tail = s;
+		return [value, multibyte, tail, err];
+	};
+	var Unquote = go$pkg.Unquote = function(s) {
+		var t, err, n, _tuple, quote, _tuple$1, _tuple$2, _tuple$3, _tuple$4, _tuple$5, _ref, _tuple$6, _tuple$7, r, size, _tuple$8, runeTmp, _q, x, x$1, buf, _tuple$9, c, multibyte, ss, err$1, _tuple$10, n$1, _tuple$11, _tuple$12;
+		t = "";
+		err = null;
+		n = s.length;
+		if (n < 2) {
+			_tuple = ["", go$pkg.ErrSyntax], t = _tuple[0], err = _tuple[1];
+			return [t, err];
+		}
+		quote = s.charCodeAt(0);
+		if (!((quote === s.charCodeAt((n - 1 >> 0))))) {
+			_tuple$1 = ["", go$pkg.ErrSyntax], t = _tuple$1[0], err = _tuple$1[1];
+			return [t, err];
+		}
+		s = s.substring(1, (n - 1 >> 0));
+		if (quote === 96) {
+			if (contains(s, 96)) {
+				_tuple$2 = ["", go$pkg.ErrSyntax], t = _tuple$2[0], err = _tuple$2[1];
+				return [t, err];
+			}
+			_tuple$3 = [s, null], t = _tuple$3[0], err = _tuple$3[1];
+			return [t, err];
+		}
+		if (!((quote === 34)) && !((quote === 39))) {
+			_tuple$4 = ["", go$pkg.ErrSyntax], t = _tuple$4[0], err = _tuple$4[1];
+			return [t, err];
+		}
+		if (contains(s, 10)) {
+			_tuple$5 = ["", go$pkg.ErrSyntax], t = _tuple$5[0], err = _tuple$5[1];
+			return [t, err];
+		}
+		if (!contains(s, 92) && !contains(s, quote)) {
+			_ref = quote;
+			if (_ref === 34) {
+				_tuple$6 = [s, null], t = _tuple$6[0], err = _tuple$6[1];
+				return [t, err];
+			} else if (_ref === 39) {
+				_tuple$7 = utf8.DecodeRuneInString(s), r = _tuple$7[0], size = _tuple$7[1];
+				if ((size === s.length) && (!((r === 65533)) || !((size === 1)))) {
+					_tuple$8 = [s, null], t = _tuple$8[0], err = _tuple$8[1];
+					return [t, err];
+				}
+			}
+		}
+		runeTmp = go$makeNativeArray("Uint8", 4, function() { return 0; });
+		buf = (go$sliceType(Go$Uint8)).make(0, (_q = (x = 3, x$1 = s.length, (((x >>> 16 << 16) * x$1 >> 0) + (x << 16 >>> 16) * x$1) >> 0) / 2, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero")), function() { return 0; });
+		while (s.length > 0) {
+			_tuple$9 = UnquoteChar(s, quote), c = _tuple$9[0], multibyte = _tuple$9[1], ss = _tuple$9[2], err$1 = _tuple$9[3];
+			if (!(go$interfaceIsEqual(err$1, null))) {
+				_tuple$10 = ["", err$1], t = _tuple$10[0], err = _tuple$10[1];
+				return [t, err];
+			}
+			s = ss;
+			if (c < 128 || !multibyte) {
+				buf = go$append(buf, (c << 24 >>> 24));
+			} else {
+				n$1 = utf8.EncodeRune(new (go$sliceType(Go$Uint8))(runeTmp), c);
+				buf = go$appendSlice(buf, go$subslice(new (go$sliceType(Go$Uint8))(runeTmp), 0, n$1));
+			}
+			if ((quote === 39) && !((s.length === 0))) {
+				_tuple$11 = ["", go$pkg.ErrSyntax], t = _tuple$11[0], err = _tuple$11[1];
+				return [t, err];
+			}
+		}
+		_tuple$12 = [go$bytesToString(buf), null], t = _tuple$12[0], err = _tuple$12[1];
+		return [t, err];
+	};
+	var contains = function(s, c) {
+		var i;
+		i = 0;
+		while (i < s.length) {
+			if (s.charCodeAt(i) === c) {
+				return true;
+			}
+			i = i + 1 >> 0;
+		}
+		return false;
+	};
+	var bsearch16 = function(a, x) {
+		var _tuple, i, j, _q, h, _slice, _index;
+		_tuple = [0, a.length], i = _tuple[0], j = _tuple[1];
+		while (i < j) {
+			h = i + (_q = ((j - i >> 0)) / 2, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero")) >> 0;
+			if ((_slice = a, _index = h, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")) < x) {
+				i = h + 1 >> 0;
+			} else {
+				j = h;
+			}
+		}
+		return i;
+	};
+	var bsearch32 = function(a, x) {
+		var _tuple, i, j, _q, h, _slice, _index;
+		_tuple = [0, a.length], i = _tuple[0], j = _tuple[1];
+		while (i < j) {
+			h = i + (_q = ((j - i >> 0)) / 2, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero")) >> 0;
+			if ((_slice = a, _index = h, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")) < x) {
+				i = h + 1 >> 0;
+			} else {
+				j = h;
+			}
+		}
+		return i;
+	};
+	var IsPrint = go$pkg.IsPrint = function(r) {
+		var _tuple, rr, isPrint, isNotPrint, i, _slice, _index, _slice$1, _index$1, j, _slice$2, _index$2, _tuple$1, rr$1, isPrint$1, isNotPrint$1, i$1, _slice$3, _index$3, _slice$4, _index$4, j$1, _slice$5, _index$5;
+		if (r <= 255) {
+			if (32 <= r && r <= 126) {
+				return true;
+			}
+			if (161 <= r && r <= 255) {
+				return !((r === 173));
+			}
+			return false;
+		}
+		if (0 <= r && r < 65536) {
+			_tuple = [(r << 16 >>> 16), isPrint16, isNotPrint16], rr = _tuple[0], isPrint = _tuple[1], isNotPrint = _tuple[2];
+			i = bsearch16(isPrint, rr);
+			if (i >= isPrint.length || rr < (_slice = isPrint, _index = (i & ~1), (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")) || (_slice$1 = isPrint, _index$1 = (i | 1), (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")) < rr) {
+				return false;
+			}
+			j = bsearch16(isNotPrint, rr);
+			return j >= isNotPrint.length || !(((_slice$2 = isNotPrint, _index$2 = j, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")) === rr));
+		}
+		_tuple$1 = [(r >>> 0), isPrint32, isNotPrint32], rr$1 = _tuple$1[0], isPrint$1 = _tuple$1[1], isNotPrint$1 = _tuple$1[2];
+		i$1 = bsearch32(isPrint$1, rr$1);
+		if (i$1 >= isPrint$1.length || rr$1 < (_slice$3 = isPrint$1, _index$3 = (i$1 & ~1), (_index$3 >= 0 && _index$3 < _slice$3.length) ? _slice$3.array[_slice$3.offset + _index$3] : go$throwRuntimeError("index out of range")) || (_slice$4 = isPrint$1, _index$4 = (i$1 | 1), (_index$4 >= 0 && _index$4 < _slice$4.length) ? _slice$4.array[_slice$4.offset + _index$4] : go$throwRuntimeError("index out of range")) < rr$1) {
+			return false;
+		}
+		if (r >= 131072) {
+			return true;
+		}
+		r = r - 65536 >> 0;
+		j$1 = bsearch16(isNotPrint$1, (r << 16 >>> 16));
+		return j$1 >= isNotPrint$1.length || !(((_slice$5 = isNotPrint$1, _index$5 = j$1, (_index$5 >= 0 && _index$5 < _slice$5.length) ? _slice$5.array[_slice$5.offset + _index$5] : go$throwRuntimeError("index out of range")) === (r << 16 >>> 16)));
+	};
+	go$pkg.init = function() {
+		optimize = true;
+		powtab = new (go$sliceType(Go$Int))([1, 3, 6, 9, 13, 16, 19, 23, 26]);
+		float64pow10 = new (go$sliceType(Go$Float64))([1, 10, 100, 1000, 10000, 100000, 1e+06, 1e+07, 1e+08, 1e+09, 1e+10, 1e+11, 1e+12, 1e+13, 1e+14, 1e+15, 1e+16, 1e+17, 1e+18, 1e+19, 1e+20, 1e+21, 1e+22]);
+		float32pow10 = new (go$sliceType(Go$Float32))([1, 10, 100, 1000, 10000, 100000, 1e+06, 1e+07, 1e+08, 1e+09, 1e+10]);
+		go$pkg.ErrRange = errors.New("value out of range");
+		go$pkg.ErrSyntax = errors.New("invalid syntax");
+		leftcheats = new (go$sliceType(leftCheat))([new leftCheat.Ptr(0, ""), new leftCheat.Ptr(1, "5"), new leftCheat.Ptr(1, "25"), new leftCheat.Ptr(1, "125"), new leftCheat.Ptr(2, "625"), new leftCheat.Ptr(2, "3125"), new leftCheat.Ptr(2, "15625"), new leftCheat.Ptr(3, "78125"), new leftCheat.Ptr(3, "390625"), new leftCheat.Ptr(3, "1953125"), new leftCheat.Ptr(4, "9765625"), new leftCheat.Ptr(4, "48828125"), new leftCheat.Ptr(4, "244140625"), new leftCheat.Ptr(4, "1220703125"), new leftCheat.Ptr(5, "6103515625"), new leftCheat.Ptr(5, "30517578125"), new leftCheat.Ptr(5, "152587890625"), new leftCheat.Ptr(6, "762939453125"), new leftCheat.Ptr(6, "3814697265625"), new leftCheat.Ptr(6, "19073486328125"), new leftCheat.Ptr(7, "95367431640625"), new leftCheat.Ptr(7, "476837158203125"), new leftCheat.Ptr(7, "2384185791015625"), new leftCheat.Ptr(7, "11920928955078125"), new leftCheat.Ptr(8, "59604644775390625"), new leftCheat.Ptr(8, "298023223876953125"), new leftCheat.Ptr(8, "1490116119384765625"), new leftCheat.Ptr(9, "7450580596923828125")]);
+		smallPowersOfTen = go$toNativeArray("Struct", [new extFloat.Ptr(new Go$Uint64(2147483648, 0), -63, false), new extFloat.Ptr(new Go$Uint64(2684354560, 0), -60, false), new extFloat.Ptr(new Go$Uint64(3355443200, 0), -57, false), new extFloat.Ptr(new Go$Uint64(4194304000, 0), -54, false), new extFloat.Ptr(new Go$Uint64(2621440000, 0), -50, false), new extFloat.Ptr(new Go$Uint64(3276800000, 0), -47, false), new extFloat.Ptr(new Go$Uint64(4096000000, 0), -44, false), new extFloat.Ptr(new Go$Uint64(2560000000, 0), -40, false)]);
+		powersOfTen = go$toNativeArray("Struct", [new extFloat.Ptr(new Go$Uint64(4203730336, 136053384), -1220, false), new extFloat.Ptr(new Go$Uint64(3132023167, 2722021238), -1193, false), new extFloat.Ptr(new Go$Uint64(2333539104, 810921078), -1166, false), new extFloat.Ptr(new Go$Uint64(3477244234, 1573795306), -1140, false), new extFloat.Ptr(new Go$Uint64(2590748842, 1432697645), -1113, false), new extFloat.Ptr(new Go$Uint64(3860516611, 1025131999), -1087, false), new extFloat.Ptr(new Go$Uint64(2876309015, 3348809418), -1060, false), new extFloat.Ptr(new Go$Uint64(4286034428, 3200048207), -1034, false), new extFloat.Ptr(new Go$Uint64(3193344495, 1097586188), -1007, false), new extFloat.Ptr(new Go$Uint64(2379227053, 2424306748), -980, false), new extFloat.Ptr(new Go$Uint64(3545324584, 827693699), -954, false), new extFloat.Ptr(new Go$Uint64(2641472655, 2913388981), -927, false), new extFloat.Ptr(new Go$Uint64(3936100983, 602835915), -901, false), new extFloat.Ptr(new Go$Uint64(2932623761, 1081627501), -874, false), new extFloat.Ptr(new Go$Uint64(2184974969, 1572261463), -847, false), new extFloat.Ptr(new Go$Uint64(3255866422, 1308317239), -821, false), new extFloat.Ptr(new Go$Uint64(2425809519, 944281679), -794, false), new extFloat.Ptr(new Go$Uint64(3614737867, 629291719), -768, false), new extFloat.Ptr(new Go$Uint64(2693189581, 2545915892), -741, false), new extFloat.Ptr(new Go$Uint64(4013165208, 388672741), -715, false), new extFloat.Ptr(new Go$Uint64(2990041083, 708162190), -688, false), new extFloat.Ptr(new Go$Uint64(2227754207, 3536207675), -661, false), new extFloat.Ptr(new Go$Uint64(3319612455, 450088378), -635, false), new extFloat.Ptr(new Go$Uint64(2473304014, 3139815830), -608, false), new extFloat.Ptr(new Go$Uint64(3685510180, 2103616900), -582, false), new extFloat.Ptr(new Go$Uint64(2745919064, 224385782), -555, false), new extFloat.Ptr(new Go$Uint64(4091738259, 3737383206), -529, false), new extFloat.Ptr(new Go$Uint64(3048582568, 2868871352), -502, false), new extFloat.Ptr(new Go$Uint64(2271371013, 1820084875), -475, false), new extFloat.Ptr(new Go$Uint64(3384606560, 885076051), -449, false), new extFloat.Ptr(new Go$Uint64(2521728396, 2444895829), -422, false), new extFloat.Ptr(new Go$Uint64(3757668132, 1881767613), -396, false), new extFloat.Ptr(new Go$Uint64(2799680927, 3102062735), -369, false), new extFloat.Ptr(new Go$Uint64(4171849679, 2289335700), -343, false), new extFloat.Ptr(new Go$Uint64(3108270227, 2410191823), -316, false), new extFloat.Ptr(new Go$Uint64(2315841784, 3205436779), -289, false), new extFloat.Ptr(new Go$Uint64(3450873173, 1697722806), -263, false), new extFloat.Ptr(new Go$Uint64(2571100870, 3497754540), -236, false), new extFloat.Ptr(new Go$Uint64(3831238852, 707476230), -210, false), new extFloat.Ptr(new Go$Uint64(2854495385, 1769181907), -183, false), new extFloat.Ptr(new Go$Uint64(4253529586, 2197867022), -157, false), new extFloat.Ptr(new Go$Uint64(3169126500, 2450594539), -130, false), new extFloat.Ptr(new Go$Uint64(2361183241, 1867548876), -103, false), new extFloat.Ptr(new Go$Uint64(3518437208, 3793315116), -77, false), new extFloat.Ptr(new Go$Uint64(2621440000, 0), -50, false), new extFloat.Ptr(new Go$Uint64(3906250000, 0), -24, false), new extFloat.Ptr(new Go$Uint64(2910383045, 2892103680), 3, false), new extFloat.Ptr(new Go$Uint64(2168404344, 4170451332), 30, false), new extFloat.Ptr(new Go$Uint64(3231174267, 3372684723), 56, false), new extFloat.Ptr(new Go$Uint64(2407412430, 2078956656), 83, false), new extFloat.Ptr(new Go$Uint64(3587324068, 2884206696), 109, false), new extFloat.Ptr(new Go$Uint64(2672764710, 395977285), 136, false), new extFloat.Ptr(new Go$Uint64(3982729777, 3569679143), 162, false), new extFloat.Ptr(new Go$Uint64(2967364920, 2361961896), 189, false), new extFloat.Ptr(new Go$Uint64(2210859150, 447440347), 216, false), new extFloat.Ptr(new Go$Uint64(3294436857, 1114709402), 242, false), new extFloat.Ptr(new Go$Uint64(2454546732, 2786846552), 269, false), new extFloat.Ptr(new Go$Uint64(3657559652, 443583978), 295, false), new extFloat.Ptr(new Go$Uint64(2725094297, 2599384906), 322, false), new extFloat.Ptr(new Go$Uint64(4060706939, 3028118405), 348, false), new extFloat.Ptr(new Go$Uint64(3025462433, 2044532855), 375, false), new extFloat.Ptr(new Go$Uint64(2254145170, 1536935362), 402, false), new extFloat.Ptr(new Go$Uint64(3358938053, 3365297469), 428, false), new extFloat.Ptr(new Go$Uint64(2502603868, 4204241075), 455, false), new extFloat.Ptr(new Go$Uint64(3729170365, 2577424355), 481, false), new extFloat.Ptr(new Go$Uint64(2778448436, 3677981733), 508, false), new extFloat.Ptr(new Go$Uint64(4140210802, 2744688476), 534, false), new extFloat.Ptr(new Go$Uint64(3084697427, 1424604878), 561, false), new extFloat.Ptr(new Go$Uint64(2298278679, 4062331362), 588, false), new extFloat.Ptr(new Go$Uint64(3424702107, 3546052773), 614, false), new extFloat.Ptr(new Go$Uint64(2551601907, 2065781727), 641, false), new extFloat.Ptr(new Go$Uint64(3802183132, 2535403578), 667, false), new extFloat.Ptr(new Go$Uint64(2832847187, 1558426518), 694, false), new extFloat.Ptr(new Go$Uint64(4221271257, 2762425404), 720, false), new extFloat.Ptr(new Go$Uint64(3145092172, 2812560400), 747, false), new extFloat.Ptr(new Go$Uint64(2343276271, 3057687578), 774, false), new extFloat.Ptr(new Go$Uint64(3491753744, 2790753324), 800, false), new extFloat.Ptr(new Go$Uint64(2601559269, 3918606633), 827, false), new extFloat.Ptr(new Go$Uint64(3876625403, 2711358621), 853, false), new extFloat.Ptr(new Go$Uint64(2888311001, 1648096297), 880, false), new extFloat.Ptr(new Go$Uint64(2151959390, 2057817989), 907, false), new extFloat.Ptr(new Go$Uint64(3206669376, 61660461), 933, false), new extFloat.Ptr(new Go$Uint64(2389154863, 1581580175), 960, false), new extFloat.Ptr(new Go$Uint64(3560118173, 2626467905), 986, false), new extFloat.Ptr(new Go$Uint64(2652494738, 3034782633), 1013, false), new extFloat.Ptr(new Go$Uint64(3952525166, 3135207385), 1039, false), new extFloat.Ptr(new Go$Uint64(2944860731, 2616258155), 1066, false)]);
+		uint64pow10 = go$toNativeArray("Uint64", [new Go$Uint64(0, 1), new Go$Uint64(0, 10), new Go$Uint64(0, 100), new Go$Uint64(0, 1000), new Go$Uint64(0, 10000), new Go$Uint64(0, 100000), new Go$Uint64(0, 1000000), new Go$Uint64(0, 10000000), new Go$Uint64(0, 100000000), new Go$Uint64(0, 1000000000), new Go$Uint64(2, 1410065408), new Go$Uint64(23, 1215752192), new Go$Uint64(232, 3567587328), new Go$Uint64(2328, 1316134912), new Go$Uint64(23283, 276447232), new Go$Uint64(232830, 2764472320), new Go$Uint64(2328306, 1874919424), new Go$Uint64(23283064, 1569325056), new Go$Uint64(232830643, 2808348672), new Go$Uint64(2328306436, 2313682944)]);
+		float32info = new floatInfo.Ptr(23, 8, -127);
+		float64info = new floatInfo.Ptr(52, 11, -1023);
+		isPrint16 = new (go$sliceType(Go$Uint16))([32, 126, 161, 887, 890, 894, 900, 1319, 1329, 1366, 1369, 1418, 1423, 1479, 1488, 1514, 1520, 1524, 1542, 1563, 1566, 1805, 1808, 1866, 1869, 1969, 1984, 2042, 2048, 2093, 2096, 2139, 2142, 2142, 2208, 2220, 2276, 2444, 2447, 2448, 2451, 2482, 2486, 2489, 2492, 2500, 2503, 2504, 2507, 2510, 2519, 2519, 2524, 2531, 2534, 2555, 2561, 2570, 2575, 2576, 2579, 2617, 2620, 2626, 2631, 2632, 2635, 2637, 2641, 2641, 2649, 2654, 2662, 2677, 2689, 2745, 2748, 2765, 2768, 2768, 2784, 2787, 2790, 2801, 2817, 2828, 2831, 2832, 2835, 2873, 2876, 2884, 2887, 2888, 2891, 2893, 2902, 2903, 2908, 2915, 2918, 2935, 2946, 2954, 2958, 2965, 2969, 2975, 2979, 2980, 2984, 2986, 2990, 3001, 3006, 3010, 3014, 3021, 3024, 3024, 3031, 3031, 3046, 3066, 3073, 3129, 3133, 3149, 3157, 3161, 3168, 3171, 3174, 3183, 3192, 3199, 3202, 3257, 3260, 3277, 3285, 3286, 3294, 3299, 3302, 3314, 3330, 3386, 3389, 3406, 3415, 3415, 3424, 3427, 3430, 3445, 3449, 3455, 3458, 3478, 3482, 3517, 3520, 3526, 3530, 3530, 3535, 3551, 3570, 3572, 3585, 3642, 3647, 3675, 3713, 3716, 3719, 3722, 3725, 3725, 3732, 3751, 3754, 3773, 3776, 3789, 3792, 3801, 3804, 3807, 3840, 3948, 3953, 4058, 4096, 4295, 4301, 4301, 4304, 4685, 4688, 4701, 4704, 4749, 4752, 4789, 4792, 4805, 4808, 4885, 4888, 4954, 4957, 4988, 4992, 5017, 5024, 5108, 5120, 5788, 5792, 5872, 5888, 5908, 5920, 5942, 5952, 5971, 5984, 6003, 6016, 6109, 6112, 6121, 6128, 6137, 6144, 6157, 6160, 6169, 6176, 6263, 6272, 6314, 6320, 6389, 6400, 6428, 6432, 6443, 6448, 6459, 6464, 6464, 6468, 6509, 6512, 6516, 6528, 6571, 6576, 6601, 6608, 6618, 6622, 6683, 6686, 6780, 6783, 6793, 6800, 6809, 6816, 6829, 6912, 6987, 6992, 7036, 7040, 7155, 7164, 7223, 7227, 7241, 7245, 7295, 7360, 7367, 7376, 7414, 7424, 7654, 7676, 7957, 7960, 7965, 7968, 8005, 8008, 8013, 8016, 8061, 8064, 8147, 8150, 8175, 8178, 8190, 8208, 8231, 8240, 8286, 8304, 8305, 8308, 8348, 8352, 8378, 8400, 8432, 8448, 8585, 8592, 9203, 9216, 9254, 9280, 9290, 9312, 11084, 11088, 11097, 11264, 11507, 11513, 11559, 11565, 11565, 11568, 11623, 11631, 11632, 11647, 11670, 11680, 11835, 11904, 12019, 12032, 12245, 12272, 12283, 12289, 12438, 12441, 12543, 12549, 12589, 12593, 12730, 12736, 12771, 12784, 19893, 19904, 40908, 40960, 42124, 42128, 42182, 42192, 42539, 42560, 42647, 42655, 42743, 42752, 42899, 42912, 42922, 43000, 43051, 43056, 43065, 43072, 43127, 43136, 43204, 43214, 43225, 43232, 43259, 43264, 43347, 43359, 43388, 43392, 43481, 43486, 43487, 43520, 43574, 43584, 43597, 43600, 43609, 43612, 43643, 43648, 43714, 43739, 43766, 43777, 43782, 43785, 43790, 43793, 43798, 43808, 43822, 43968, 44013, 44016, 44025, 44032, 55203, 55216, 55238, 55243, 55291, 63744, 64109, 64112, 64217, 64256, 64262, 64275, 64279, 64285, 64449, 64467, 64831, 64848, 64911, 64914, 64967, 65008, 65021, 65024, 65049, 65056, 65062, 65072, 65131, 65136, 65276, 65281, 65470, 65474, 65479, 65482, 65487, 65490, 65495, 65498, 65500, 65504, 65518, 65532, 65533]);
+		isNotPrint16 = new (go$sliceType(Go$Uint16))([173, 907, 909, 930, 1376, 1416, 1424, 1757, 2111, 2209, 2303, 2424, 2432, 2436, 2473, 2481, 2526, 2564, 2601, 2609, 2612, 2615, 2621, 2653, 2692, 2702, 2706, 2729, 2737, 2740, 2758, 2762, 2820, 2857, 2865, 2868, 2910, 2948, 2961, 2971, 2973, 3017, 3076, 3085, 3089, 3113, 3124, 3141, 3145, 3159, 3204, 3213, 3217, 3241, 3252, 3269, 3273, 3295, 3312, 3332, 3341, 3345, 3397, 3401, 3460, 3506, 3516, 3541, 3543, 3715, 3721, 3736, 3744, 3748, 3750, 3756, 3770, 3781, 3783, 3912, 3992, 4029, 4045, 4294, 4681, 4695, 4697, 4745, 4785, 4799, 4801, 4823, 4881, 5760, 5901, 5997, 6001, 6751, 8024, 8026, 8028, 8030, 8117, 8133, 8156, 8181, 8335, 9984, 11311, 11359, 11558, 11687, 11695, 11703, 11711, 11719, 11727, 11735, 11743, 11930, 12352, 12687, 12831, 13055, 42895, 43470, 43815, 64311, 64317, 64319, 64322, 64325, 65107, 65127, 65141, 65511]);
+		isPrint32 = new (go$sliceType(Go$Uint32))([65536, 65613, 65616, 65629, 65664, 65786, 65792, 65794, 65799, 65843, 65847, 65930, 65936, 65947, 66000, 66045, 66176, 66204, 66208, 66256, 66304, 66339, 66352, 66378, 66432, 66499, 66504, 66517, 66560, 66717, 66720, 66729, 67584, 67589, 67592, 67640, 67644, 67644, 67647, 67679, 67840, 67867, 67871, 67897, 67903, 67903, 67968, 68023, 68030, 68031, 68096, 68102, 68108, 68147, 68152, 68154, 68159, 68167, 68176, 68184, 68192, 68223, 68352, 68405, 68409, 68437, 68440, 68466, 68472, 68479, 68608, 68680, 69216, 69246, 69632, 69709, 69714, 69743, 69760, 69825, 69840, 69864, 69872, 69881, 69888, 69955, 70016, 70088, 70096, 70105, 71296, 71351, 71360, 71369, 73728, 74606, 74752, 74850, 74864, 74867, 77824, 78894, 92160, 92728, 93952, 94020, 94032, 94078, 94095, 94111, 110592, 110593, 118784, 119029, 119040, 119078, 119081, 119154, 119163, 119261, 119296, 119365, 119552, 119638, 119648, 119665, 119808, 119967, 119970, 119970, 119973, 119974, 119977, 120074, 120077, 120134, 120138, 120485, 120488, 120779, 120782, 120831, 126464, 126500, 126503, 126523, 126530, 126530, 126535, 126548, 126551, 126564, 126567, 126619, 126625, 126651, 126704, 126705, 126976, 127019, 127024, 127123, 127136, 127150, 127153, 127166, 127169, 127199, 127232, 127242, 127248, 127339, 127344, 127386, 127462, 127490, 127504, 127546, 127552, 127560, 127568, 127569, 127744, 127776, 127792, 127868, 127872, 127891, 127904, 127946, 127968, 127984, 128000, 128252, 128256, 128317, 128320, 128323, 128336, 128359, 128507, 128576, 128581, 128591, 128640, 128709, 128768, 128883, 131072, 173782, 173824, 177972, 177984, 178205, 194560, 195101, 917760, 917999]);
+		isNotPrint32 = new (go$sliceType(Go$Uint16))([12, 39, 59, 62, 799, 926, 2057, 2102, 2134, 2564, 2580, 2584, 4285, 4405, 54357, 54429, 54445, 54458, 54460, 54468, 54534, 54549, 54557, 54586, 54591, 54597, 54609, 60932, 60960, 60963, 60968, 60979, 60984, 60986, 61000, 61002, 61004, 61008, 61011, 61016, 61018, 61020, 61022, 61024, 61027, 61035, 61043, 61048, 61053, 61055, 61066, 61092, 61098, 61648, 61743, 62262, 62405, 62527, 62529, 62712]);
+		shifts = go$toNativeArray("Uint", [0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0]);
+	};
+	return go$pkg;
+})();
 go$packages["main"] = (function() {
 	var go$pkg = {};
 	var jquery = go$packages["github.com/rusco/jquery"];
 	var qunit = go$packages["github.com/rusco/qunit"];
+	var strconv = go$packages["strconv"];
 	var main = go$pkg.main = function() {
 		qunit.Module("core");
-		qunit.Test("jQuery() Object", (function(assert) {
+		qunit.Test("jQuery Properties", (function(assert) {
 			var jQ, jQ2;
 			jQ = jquery.NewJQuery(new (go$sliceType(Go$String))([]));
 			assert.Equal(new Go$String(jQ.Jquery()), new Go$String("2.1.0"), "JQuery Version");
@@ -4471,25 +9156,79 @@ go$packages["main"] = (function() {
 			assert.Equal(new Go$String(jQ2.Selector()), new Go$String("body"), "jQuery(\"body\").Selector()");
 		}));
 		qunit.Module("dom");
-		qunit.Test("add", (function(assert) {
+		qunit.Test("basic dom manipulations", (function(assert) {
 			var txt;
-			jquery.NewJQuery(new (go$sliceType(Go$String))(["p"])).AddClass("wow").Clone().Add("<span>Again</span>").AppendTo("body");
-			txt = jquery.NewJQuery(new (go$sliceType(Go$String))(["p#qunit-testresult"])).NextBySelector("span").Text();
-			console.log("txt = ", txt);
-			assert.Equal(new Go$String(txt), new Go$String("Again"), "Clone, Add, AppendTo, Find, Text Functions");
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["p"])).AddClass("wow").Clone().Add("<span id='dom02'>WhatADay</span>").AppendTo("#div02");
+			txt = jquery.NewJQuery(new (go$sliceType(Go$String))(["#div02"])).Find("span#dom02").Text();
+			assert.Equal(new Go$String(txt), new Go$String("WhatADay"), "Test of Clone, Add, AppendTo, Find, Text Functions");
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["#div01 ul.first"])).Find(".foo").SetCss(new Go$String("width"), new Go$String("200px")).End().Find(".bar").SetCss(new Go$String("width"), new Go$String("300px"));
+			assert.Equal(new Go$String(jquery.NewJQuery(new (go$sliceType(Go$String))(["#div01 #div01a"])).Css("width")), new Go$String("200px"), "Width should be 200px");
+			assert.NotEqual(new Go$String(jquery.NewJQuery(new (go$sliceType(Go$String))(["#div01 #div01b"])).Css("width")), new Go$String("200px"), "Strange: Width is 200px ?");
+			assert.Equal(new Go$String(jquery.NewJQuery(new (go$sliceType(Go$String))(["#div01 #div01c"])).Css("width")), new Go$String("300px"), "Width should be 300px");
+			assert.NotEqual(new Go$String(jquery.NewJQuery(new (go$sliceType(Go$String))(["#div01 #div01d"])).Css("width")), new Go$String("200px"), "Strange: Width is 200px ?");
+			assert.NotEqual(new Go$String(jquery.NewJQuery(new (go$sliceType(Go$String))(["#div01 #div01d"])).Css("width")), new Go$String("300px"), "Strange: Width is 300px ?");
+			assert.NotEqual(new Go$String(jquery.NewJQuery(new (go$sliceType(Go$String))(["#div01 #div01e"])).Css("width")), new Go$String("200px"), "Strange: Width is 200px ?");
+			assert.NotEqual(new Go$String(jquery.NewJQuery(new (go$sliceType(Go$String))(["#div01 #div01e"])).Css("width")), new Go$String("300px"), "Strange: Width is 300px ?");
+			assert.NotEqual(new Go$String(jquery.NewJQuery(new (go$sliceType(Go$String))(["#div01 #div01f"])).Css("width")), new Go$String("200px"), "Strange: Width is 200px ?");
+			assert.NotEqual(new Go$String(jquery.NewJQuery(new (go$sliceType(Go$String))(["#div01 #div01f"])).Css("width")), new Go$String("300px"), "Strange: Width is 300px ?");
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["li.third-item"])).Next().SetText("ok");
+			assert.Equal(new Go$String(jquery.NewJQuery(new (go$sliceType(Go$String))(["#div02a"])).Text()), new Go$String("ok"), "Text should be 'ok' ");
+		}));
+		qunit.Module("api only");
+		qunit.Test("add function", (function(assert) {
+			var p, pdiv, elem, color, collection;
+			qunit.Expect(0);
+			p = jquery.NewJQuery(new (go$sliceType(Go$String))(["p"])).Add("div").AddClass("dummy");
+			pdiv = jquery.NewJQuery(new (go$sliceType(Go$String))(["p"])).Add("div");
+			elem = jquery.NewJQuery(new (go$sliceType(Go$String))(["#div01"])).Add("p");
+			color = elem.Css("background-color");
+			elem.SetCss(new Go$String("background-color"), new Go$String(color));
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["li#doesnotexist"])).Clone().AddJQuery(jquery.NewJQuery(new (go$sliceType(Go$String))(["dt"]))).SetCss(new Go$String("background-color"), new Go$String("red")).AppendTo("#div01");
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["li#doesalsonotexist"])).SetCss(new Go$String("background-color"), new Go$String("red")).AppendTo("#div01");
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["li#andthis"])).Add("<p id='new'>new paragraph</p>").SetCss(new Go$String("background-color"), new Go$String("red")).AppendTo("#div01");
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["div#new01"])).SetCss(new Go$String("border"), new Go$String("2px solid red")).Add("h3").SetCss(new Go$String("background"), new Go$String("silver")).AppendTo("#div01");
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["p#xnew02"])).Add("dl").SetCss(new Go$String("background"), new Go$String("blue"));
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["p#new03"])).Clone().AddHtml("<span>Again</span>").AppendToJQuery(jquery.NewJQuery(new (go$sliceType(Go$String))(["body #div01"])));
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["p#new04"])).AddJQuery(jquery.NewJQuery(new (go$sliceType(Go$String))(["a#sth"]))).SetCss(new Go$String("background"), new Go$String("red"));
+			collection = jquery.NewJQuery(new (go$sliceType(Go$String))(["p#elsewhere"]));
+			collection = collection.AddJQuery(jquery.NewJQuery(new (go$sliceType(Go$String))(["a#notehere"])));
+			collection.SetCss(new Go$String("background"), new Go$String("green"));
+		}));
+		qunit.Test("addClass function", (function(assert) {
+			qunit.Expect(0);
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["p#someidx01"])).AddClass("myClass yourClass");
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["p#someidx02"])).RemoveClass("myClass noClass").AddClass("yourClass");
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["ul#someidx03 li"])).AddClassFn((function(index) {
+				return "item-" + strconv.Itoa(index);
+			}));
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["p#someide04"])).AddClass("selected");
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["p#someidx05"])).AddClass("selected highlight");
+			jquery.NewJQuery(new (go$sliceType(Go$String))(["div#someidx06"])).AddClassFnClass((function(index, currentClass) {
+				var addedClass;
+				addedClass = "";
+				if (currentClass === "red") {
+					addedClass = "green";
+					jquery.NewJQuery(new (go$sliceType(Go$String))(["p"])).SetText("There is one green div");
+				}
+				return addedClass;
+			}));
 		}));
 	};
 	go$pkg.init = function() {
 	};
 	return go$pkg;
 })();
-go$error.implementedBy = [go$packages["github.com/neelance/gopherjs/js"].Error.Ptr, go$packages["runtime"].TypeAssertionError.Ptr, go$packages["runtime"].errorCString, go$packages["runtime"].errorString, go$ptrType(go$packages["runtime"].errorCString), go$ptrType(go$packages["runtime"].errorString)];
+go$error.implementedBy = [go$packages["errors"].errorString.Ptr, go$packages["github.com/neelance/gopherjs/js"].Error.Ptr, go$packages["runtime"].TypeAssertionError.Ptr, go$packages["runtime"].errorCString, go$packages["runtime"].errorString, go$packages["strconv"].NumError.Ptr, go$ptrType(go$packages["runtime"].errorCString), go$ptrType(go$packages["runtime"].errorString)];
 go$packages["runtime"].Error.implementedBy = [go$packages["runtime"].TypeAssertionError.Ptr, go$packages["runtime"].errorCString, go$packages["runtime"].errorString, go$ptrType(go$packages["runtime"].errorCString), go$ptrType(go$packages["runtime"].errorString)];
-go$packages["runtime"].stringer.implementedBy = [go$packages["github.com/neelance/gopherjs/js"].Error, go$packages["github.com/neelance/gopherjs/js"].Error.Ptr, go$packages["github.com/rusco/jquery"].Event, go$packages["github.com/rusco/jquery"].Event.Ptr, go$packages["github.com/rusco/qunit"].DoneCallbackObject, go$packages["github.com/rusco/qunit"].DoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].LogCallbackObject, go$packages["github.com/rusco/qunit"].LogCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].ModuleDoneCallbackObject, go$packages["github.com/rusco/qunit"].ModuleDoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].ModuleStartCallbackObject, go$packages["github.com/rusco/qunit"].ModuleStartCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].QUnitAssert, go$packages["github.com/rusco/qunit"].QUnitAssert.Ptr, go$packages["github.com/rusco/qunit"].Raises, go$packages["github.com/rusco/qunit"].Raises.Ptr, go$packages["github.com/rusco/qunit"].TestDoneCallbackObject, go$packages["github.com/rusco/qunit"].TestDoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].TestStartCallbackObject, go$packages["github.com/rusco/qunit"].TestStartCallbackObject.Ptr];
+go$packages["runtime"].stringer.implementedBy = [go$packages["github.com/neelance/gopherjs/js"].Error, go$packages["github.com/neelance/gopherjs/js"].Error.Ptr, go$packages["github.com/rusco/jquery"].Event, go$packages["github.com/rusco/jquery"].Event.Ptr, go$packages["github.com/rusco/qunit"].DoneCallbackObject, go$packages["github.com/rusco/qunit"].DoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].LogCallbackObject, go$packages["github.com/rusco/qunit"].LogCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].ModuleDoneCallbackObject, go$packages["github.com/rusco/qunit"].ModuleDoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].ModuleStartCallbackObject, go$packages["github.com/rusco/qunit"].ModuleStartCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].QUnitAssert, go$packages["github.com/rusco/qunit"].QUnitAssert.Ptr, go$packages["github.com/rusco/qunit"].Raises, go$packages["github.com/rusco/qunit"].Raises.Ptr, go$packages["github.com/rusco/qunit"].TestDoneCallbackObject, go$packages["github.com/rusco/qunit"].TestDoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].TestStartCallbackObject, go$packages["github.com/rusco/qunit"].TestStartCallbackObject.Ptr, go$packages["strconv"].decimal.Ptr];
 go$packages["github.com/neelance/gopherjs/js"].Object.implementedBy = [go$packages["github.com/neelance/gopherjs/js"].Error, go$packages["github.com/neelance/gopherjs/js"].Error.Ptr, go$packages["github.com/rusco/jquery"].Event, go$packages["github.com/rusco/jquery"].Event.Ptr, go$packages["github.com/rusco/qunit"].DoneCallbackObject, go$packages["github.com/rusco/qunit"].DoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].LogCallbackObject, go$packages["github.com/rusco/qunit"].LogCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].ModuleDoneCallbackObject, go$packages["github.com/rusco/qunit"].ModuleDoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].ModuleStartCallbackObject, go$packages["github.com/rusco/qunit"].ModuleStartCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].QUnitAssert, go$packages["github.com/rusco/qunit"].QUnitAssert.Ptr, go$packages["github.com/rusco/qunit"].Raises, go$packages["github.com/rusco/qunit"].Raises.Ptr, go$packages["github.com/rusco/qunit"].TestDoneCallbackObject, go$packages["github.com/rusco/qunit"].TestDoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].TestStartCallbackObject, go$packages["github.com/rusco/qunit"].TestStartCallbackObject.Ptr];
 go$packages["runtime"].init();
 go$packages["github.com/neelance/gopherjs/js"].init();
 go$packages["github.com/rusco/jquery"].init();
 go$packages["github.com/rusco/qunit"].init();
+go$packages["errors"].init();
+go$packages["math"].init();
+go$packages["unicode/utf8"].init();
+go$packages["strconv"].init();
 go$packages["main"].init();
 go$packages["main"].main();
