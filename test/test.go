@@ -12,12 +12,11 @@ func main() {
 	QUnit.Module("core")
 	QUnit.Test("jQuery Properties", func(assert QUnit.QUnitAssert) {
 		jQ := NewJQuery()
-		assert.Equal(jQ.Jquery(), "2.1.0", "JQuery Version")
-		assert.Equal(jQ.Length(), 0, "jQuery().Length()")
-		assert.Equal(jQ.Size(), 0, "jQuery().Size()")
+		assert.Equal(jQ.Jquery, "2.1.0", "JQuery Version")
+		assert.Equal(jQ.Length, 0, "jQuery().Length")
 
 		jQ2 := NewJQuery("body")
-		assert.Equal(jQ2.Selector(), "body", `jQuery("body").Selector()`)
+		assert.Equal(jQ2.Selector, "body", `jQuery("body").Selector`)
 	})
 
 	QUnit.Module("dom")
