@@ -12,12 +12,17 @@ type JQuery struct {
 type Event struct {
 	js.Object
 	KeyCode int         `js:"keyCode"`
-	Target  int         `js:"target"`
+	Target  js.Object   `js:"target"`
 	Data    interface{} `js:"data"`
+	Which   int         `js:"which"`
 }
 
-//JQuery constructor via optional selector and context
-func NewJQuery(args ...string) JQuery {
+func (event *Event) PreventDefault() {
+	event.Call("preventDefault")
+}
+
+//JQuery constructor
+func NewJQuery(args ...interface{}) JQuery {
 	if len(args) == 1 {
 		jQ := js.Global("jQuery").New(args[0])
 		return JQuery{o: jQ}
@@ -28,26 +33,21 @@ func NewJQuery(args ...string) JQuery {
 	return JQuery{o: js.Global("jQuery").New()}
 }
 
-//JQuery constructor via js.Object
-func NewJQueryByObject(o js.Object) JQuery {
-	return JQuery{o: js.Global("jQuery").New(o)}
-}
-
 //static method
 func Trim(text string) string {
 	return js.Global("jQuery").Call("trim", text).String()
 }
 
-func (j JQuery) serialize() string {
+func (j JQuery) Serialize() string {
 	return j.o.Call("serialize").String()
 }
 
-func (j JQuery) addBack() JQuery {
+func (j JQuery) AddBack() JQuery {
 	j.o = j.o.Call("addBack")
 	return j
 }
 
-func (j JQuery) addBackBySelector(selector string) JQuery {
+func (j JQuery) AddBackBySelector(selector string) JQuery {
 	j.o = j.o.Call("addBack", selector)
 	return j
 }
@@ -135,32 +135,36 @@ func (j JQuery) Blur() JQuery {
 	return j
 }
 
-func (j JQuery) On(event string, handler func(js.Object, *Event)) JQuery {
-
+func (j JQuery) On(event string, handler func(Event)) JQuery {
 	j.o.Call("on", event, func(e js.Object) {
-		handler(js.This(), &Event{Object: e})
+		handler(Event{Object: e})
 	})
 	return j
 }
 
-func (j JQuery) OnSelector(event string, selector string, handler func(js.Object, *Event)) JQuery {
+func (j JQuery) OnParam(event string, param interface{}) JQuery {
+	j.o.Call("on", event, param)
+	return j
+}
+
+func (j JQuery) OnSelector(event string, selector string, handler func(Event)) JQuery {
 	j.o.Call("on", event, selector, func(e js.Object) {
-		handler(js.This(), &Event{Object: e})
+		handler(Event{Object: e})
 
 	})
 	return j
 }
 
-func (j JQuery) One(event string, handler func(js.Object, *Event)) JQuery {
+func (j JQuery) One(event string, handler func(Event)) JQuery {
 	j.o.Call("one", event, func(e js.Object) {
-		handler(js.This(), &Event{Object: e})
+		handler(Event{Object: e})
 	})
 	return j
 }
 
-func (j JQuery) Off(event string, handler func()) JQuery {
-	j.o.Call("off", event, func() {
-		handler()
+func (j JQuery) Off(event string, handler func(Event)) JQuery {
+	j.o.Call("off", event, func(e js.Object) {
+		handler(Event{Object: e})
 	})
 	return j
 }
@@ -302,12 +306,9 @@ func (j JQuery) ClearQueue(queueName string) JQuery {
 	return j
 }
 
-func (j JQuery) SetData(key string, value interface{}) JQuery {
+func (j JQuery) SetData(key string, value string) JQuery {
 	j.o = j.o.Call("data", key, value)
 	return j
-}
-func (j JQuery) DataByKey(key string) interface{} {
-	return j.o.Call("data", key).Interface()
 }
 
 func (j JQuery) Data(key string) string {
@@ -532,6 +533,170 @@ func (j JQuery) IsByJQuery(obj JQuery) bool {
 
 func (j JQuery) Last() JQuery {
 	j.o = j.o.Call("Last")
+	return j
+}
+
+func (j JQuery) Ready(handler func()) JQuery {
+	j.o = j.o.Call("ready", handler)
+	return j
+}
+
+func (j JQuery) Resize() JQuery {
+	j.o = j.o.Call("resize")
+	return j
+}
+
+func (j JQuery) ResizeFn(handler func(js.Object) js.Object) JQuery {
+
+	j.o.Call("resize", func(ev js.Object) js.Object {
+		return handler(ev)
+	})
+	return j
+}
+
+func (j JQuery) ResizeDataFn(eventData js.Object, handler func(js.Object) js.Object) JQuery {
+
+	j.o.Call("resize", eventData, func(ev js.Object) js.Object {
+		return handler(ev)
+	})
+	return j
+}
+
+func (j JQuery) Scroll() JQuery {
+	j.o = j.o.Call("scroll")
+	return j
+}
+
+func (j JQuery) ScrollFn(handler func()) JQuery {
+
+	j.o.Call("scroll", func() {
+		handler()
+	})
+	return j
+}
+
+func (j JQuery) ScrollDataFn(eventData js.Object, handler func(js.Object) js.Object) JQuery {
+
+	j.o.Call("scroll", eventData, func(ev js.Object) js.Object {
+		return handler(ev)
+	})
+	return j
+}
+
+func (j JQuery) FadeOut(duration string) JQuery {
+	j.o = j.o.Call("fadeOut", duration)
+	return j
+}
+
+func (j JQuery) Select() JQuery {
+	j.o = j.o.Call("select")
+	return j
+}
+
+func (j JQuery) SelectFn(handler func()) JQuery {
+
+	j.o.Call("select", func() {
+		handler()
+	})
+	return j
+}
+
+func (j JQuery) SelectDataFn(eventData js.Object, handler func(js.Object) js.Object) JQuery {
+
+	j.o.Call("select", eventData, func(ev js.Object) js.Object {
+		return handler(ev)
+	})
+	return j
+}
+
+func (j JQuery) Submit() JQuery {
+	j.o = j.o.Call("submit")
+	return j
+}
+
+func (j JQuery) SubmitFn(handler func()) JQuery {
+
+	j.o.Call("submit", func() {
+		handler()
+	})
+	return j
+}
+
+func (j JQuery) SubmitDataFn(eventData js.Object, handler func(Event)) JQuery {
+
+	j.o.Call("submit", eventData, func(e js.Object) {
+		handler(Event{Object: e})
+	})
+	return j
+}
+
+func (j JQuery) Trigger(event string) JQuery {
+	j.o = j.o.Call("trigger", event)
+	return j
+}
+func (j JQuery) TriggerParam(eventType string, extraParam interface{}) JQuery {
+	j.o = j.o.Call("trigger", eventType, extraParam)
+	return j
+}
+
+func (j JQuery) TriggerHandler(eventType string, extraParam interface{}) JQuery {
+	j.o = j.o.Call("triggerHandler", eventType, extraParam)
+	return j
+}
+
+func (j JQuery) Unbind() JQuery {
+	j.o.Call("unbind")
+	return j
+}
+
+func (j JQuery) UnbindEvent(eventType js.Object) JQuery {
+	j.o.Call("unbind", eventType)
+	return j
+}
+
+func (j JQuery) UnbindFn(eventType js.Object, handler func(js.Object) js.Object) JQuery {
+
+	j.o.Call("unbind", eventType, func(ev js.Object) js.Object {
+		return handler(ev)
+	})
+	return j
+}
+
+func (j JQuery) Undelegate() JQuery {
+	j.o.Call("undelegate")
+	return j
+}
+
+func (j JQuery) UndelegateEvent(eventType js.Object) JQuery {
+	j.o.Call("undelegate", eventType)
+	return j
+}
+
+func (j JQuery) UndelegateNamespace(ns string) JQuery {
+	j.o.Call("undelegate", ns)
+	return j
+}
+
+func (j JQuery) UndelegateFn(eventType js.Object, handler func(js.Object) js.Object) JQuery {
+
+	j.o.Call("undelegate", eventType, func(ev js.Object) js.Object {
+		return handler(ev)
+	})
+	return j
+}
+
+func (j JQuery) Unload(handler func(Event) js.Object) JQuery {
+
+	j.o.Call("unload", func(ev js.Object) js.Object {
+		return handler(Event{Object: ev})
+	})
+	return j
+}
+func (j JQuery) UnloadEventdata(eventData js.Object, handler func(Event) js.Object) JQuery {
+
+	j.o.Call("unload", eventData, func(ev js.Object) js.Object {
+		return handler(Event{Object: ev})
+	})
 	return j
 }
 
