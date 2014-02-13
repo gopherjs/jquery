@@ -1,6 +1,6 @@
 package jquery
 
-import "github.com/neelance/gopherjs/js"
+import "github.com/gopherjs/gopherjs/js"
 
 type JQuery struct {
 	o        js.Object

@@ -7,7 +7,7 @@
 ### Links
 
 - TodoMVC  (https://github.com/rusco/todomvc)
-- GopherJS (https://github.com/neelance/gopherjs)
+- GopherJS (https://github.com/gopherjs/gopherjs)
 
 ### Beware: 
 
