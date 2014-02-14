@@ -12,10 +12,13 @@ type JQuery struct {
 
 type Event struct {
 	js.Object
-	KeyCode int         `js:"keyCode"`
-	Target  js.Object   `js:"target"`
-	Data    interface{} `js:"data"`
-	Which   int         `js:"which"`
+	KeyCode        int         `js:"keyCode"`
+	Target         js.Object   `js:"target"`
+	CurrentTarget  js.Object   `js:"currentTarget"`
+	DelegateTarget js.Object   `js:"delegateTarget"`
+	RelatedTarget  js.Object   `js:"relatedTarget"`
+	Data           interface{} `js:"data"`
+	Which          int         `js:"which"`
 }
 
 func (event *Event) PreventDefault() {
@@ -24,14 +27,7 @@ func (event *Event) PreventDefault() {
 
 //JQuery constructor
 func NewJQuery(args ...interface{}) JQuery {
-	if len(args) == 1 {
-		jQ := js.Global("jQuery").New(args[0])
-		return JQuery{o: jQ}
-	} else if len(args) == 2 {
-		jQ := js.Global("jQuery").New(args[0], args[1])
-		return JQuery{o: jQ}
-	}
-	return JQuery{o: js.Global("jQuery").New()}
+	return JQuery{o: js.Global("jQuery").New(args...)}
 }
 
 //static function
@@ -56,6 +52,11 @@ func IsPlainObject(sth interface{}) bool {
 }
 
 //static function
+func IsEmptyObject(sth interface{}) bool {
+	return js.Global("jQuery").Call("isEmptyObject", sth).Bool()
+}
+
+//static function
 func IsFunction(sth interface{}) bool {
 	return js.Global("jQuery").Call("isFunction", sth).Bool()
 }
@@ -75,6 +76,51 @@ func IsWindow(sth interface{}) bool {
 	return js.Global("jQuery").Call("isWindow", sth).Bool()
 }
 
+//static function
+func InArray(val interface{}, arr []interface{}) int {
+	return js.Global("jQuery").Call("inArray", val, arr).Int()
+}
+
+//static function
+func ParseHTML(text string) []interface{} {
+	return js.Global("jQuery").Call("parseHTML", text).Interface().([]interface{})
+}
+
+//static function
+func ParseXML(text string) interface{} {
+	return js.Global("jQuery").Call("parseXML", text).Interface()
+}
+
+//static function
+func ParseJSON(text string) interface{} {
+	return js.Global("jQuery").Call("parseJSON", text).Interface()
+}
+
+//static function
+func Grep(arr []interface{}, fn func(interface{}, int) bool) []interface{} {
+	return js.Global("jQuery").Call("grep", arr, fn).Interface().([]interface{})
+}
+
+//static function
+func EachOverArray(arr []interface{}, fn func(int, interface{}) bool) []interface{} {
+	return js.Global("jQuery").Call("each", arr, fn).Interface().([]interface{})
+}
+
+//static function
+func EachOverMap(arr map[string]interface{}, fn func(string, interface{}) bool) map[string]interface{} {
+	return js.Global("jQuery").Call("each", arr, fn).Interface().(map[string]interface{})
+}
+
+//static function
+func MapOverArray(arr []interface{}, fn func(interface{}, int) interface{}) []interface{} {
+	return js.Global("jQuery").Call("map", arr, fn).Interface().([]interface{})
+}
+
+//static function
+func MapOverMap(arr map[string]interface{}, fn func(interface{}, string) interface{}) []interface{} {
+	return js.Global("jQuery").Call("map", arr, fn).Interface().([]interface{})
+}
+
 //methods
 func (j JQuery) Serialize() string {
 	return j.o.Call("serialize").String()
@@ -83,6 +129,16 @@ func (j JQuery) Serialize() string {
 func (j JQuery) AddBack() JQuery {
 	j.o = j.o.Call("addBack")
 	return j
+}
+
+func (j JQuery) Eq(idx int) JQuery {
+	j.o = j.o.Call("eq", idx)
+	return j
+}
+
+//to "range" over selection:
+func (j JQuery) ToArray() []interface{} {
+	return j.o.Call("toArray").Interface().([]interface{})
 }
 
 func (j JQuery) AddBackBySelector(selector string) JQuery {
@@ -128,6 +184,10 @@ func (j JQuery) SetProp(name string, value bool) JQuery {
 
 func (j JQuery) Attr(property string) string {
 	return j.o.Call("attr", property).String()
+}
+
+func (j JQuery) HasClass(class string) bool {
+	return j.o.Call("hasClass", class).Bool()
 }
 
 func (j JQuery) AddClass(property string) JQuery {
@@ -555,7 +615,7 @@ func (j JQuery) Has(selector string) JQuery {
 }
 
 func (j JQuery) Is(selector string) bool {
-	return j.o.Call("Is", selector).Bool()
+	return j.o.Call("is", selector).Bool()
 }
 
 func (j JQuery) IsByFunc(fn func(index int) bool) JQuery {
@@ -570,7 +630,7 @@ func (j JQuery) IsByJQuery(obj JQuery) bool {
 }
 
 func (j JQuery) Last() JQuery {
-	j.o = j.o.Call("Last")
+	j.o = j.o.Call("last")
 	return j
 }
 

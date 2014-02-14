@@ -3176,11 +3176,14 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	});
 	go$pkg.JQuery = JQuery;
 	var Event;
-	Event = go$newType(0, "Struct", "jquery.Event", "Event", "github.com/rusco/jquery", function(Object_, KeyCode_, Target_, Data_, Which_) {
+	Event = go$newType(0, "Struct", "jquery.Event", "Event", "github.com/rusco/jquery", function(Object_, KeyCode_, Target_, CurrentTarget_, DelegateTarget_, RelatedTarget_, Data_, Which_) {
 		this.go$val = this;
 		this.Object = Object_ !== undefined ? Object_ : null;
 		this.KeyCode = KeyCode_ !== undefined ? KeyCode_ : 0;
 		this.Target = Target_ !== undefined ? Target_ : null;
+		this.CurrentTarget = CurrentTarget_ !== undefined ? CurrentTarget_ : null;
+		this.DelegateTarget = DelegateTarget_ !== undefined ? DelegateTarget_ : null;
+		this.RelatedTarget = RelatedTarget_ !== undefined ? RelatedTarget_ : null;
 		this.Data = Data_ !== undefined ? Data_ : null;
 		this.Which = Which_ !== undefined ? Which_ : 0;
 	});
@@ -3216,9 +3219,9 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	Event.Ptr.prototype.String = function() { return this.Object.String(); };
 	go$pkg.Event = Event;
 	JQuery.init([["o", "github.com/rusco/jquery", js.Object, ""], ["Jquery", "", Go$String, "js:\"jquery\""], ["Selector", "", Go$String, "js:\"selector\""], ["Length", "", Go$String, "js:\"length\""], ["Context", "", Go$String, "js:\"context\""]]);
-	JQuery.methods = [["Add", "", [Go$String], [JQuery], false], ["AddBack", "", [], [JQuery], false], ["AddBackBySelector", "", [Go$String], [JQuery], false], ["AddByContext", "", [Go$String, go$emptyInterface], [JQuery], false], ["AddClass", "", [Go$String], [JQuery], false], ["AddClassFn", "", [(go$funcType([Go$Int], [Go$String], false))], [JQuery], false], ["AddClassFnClass", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false], ["AddHtml", "", [Go$String], [JQuery], false], ["AddJQuery", "", [JQuery], [JQuery], false], ["AppendTo", "", [Go$String], [JQuery], false], ["AppendToJQuery", "", [JQuery], [JQuery], false], ["Attr", "", [Go$String], [Go$String], false], ["Blur", "", [], [JQuery], false], ["ClearQueue", "", [Go$String], [JQuery], false], ["Clone", "", [], [JQuery], false], ["CloneDeep", "", [Go$Bool, Go$Bool], [JQuery], false], ["CloneWithDataAndEvents", "", [Go$Bool], [JQuery], false], ["Closest", "", [Go$String], [JQuery], false], ["Css", "", [Go$String], [Go$String], false], ["Data", "", [Go$String], [Go$String], false], ["Dequeue", "", [Go$String], [JQuery], false], ["End", "", [], [JQuery], false], ["FadeOut", "", [Go$String], [JQuery], false], ["Filter", "", [Go$String], [JQuery], false], ["FilterByFunc", "", [(go$funcType([Go$Int], [Go$Int], false))], [JQuery], false], ["FilterByJQuery", "", [JQuery], [JQuery], false], ["Find", "", [Go$String], [JQuery], false], ["FindByJQuery", "", [JQuery], [JQuery], false], ["First", "", [], [JQuery], false], ["Focus", "", [], [JQuery], false], ["Has", "", [Go$String], [JQuery], false], ["Height", "", [], [Go$Int], false], ["Hide", "", [], [JQuery], false], ["Html", "", [], [Go$String], false], ["HtmlByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false], ["Is", "", [Go$String], [Go$Bool], false], ["IsByFunc", "", [(go$funcType([Go$Int], [Go$Bool], false))], [JQuery], false], ["IsByJQuery", "", [JQuery], [Go$Bool], false], ["Last", "", [], [JQuery], false], ["Next", "", [], [JQuery], false], ["NextAll", "", [], [JQuery], false], ["NextAllBySelector", "", [Go$String], [JQuery], false], ["NextBySelector", "", [Go$String], [JQuery], false], ["NextUntil", "", [Go$String], [JQuery], false], ["NextUntilByFilter", "", [Go$String, Go$String], [JQuery], false], ["NextUntilByJQuery", "", [JQuery], [JQuery], false], ["NextUntilByJQueryAndFilter", "", [JQuery, Go$String], [JQuery], false], ["Not", "", [Go$String], [JQuery], false], ["NotByJQuery", "", [JQuery], [JQuery], false], ["Off", "", [Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["OffsetParent", "", [], [JQuery], false], ["On", "", [Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["OnParam", "", [Go$String, go$emptyInterface], [JQuery], false], ["OnSelector", "", [Go$String, Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["One", "", [Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["Parent", "", [], [JQuery], false], ["ParentBySelector", "", [Go$String], [JQuery], false], ["Parents", "", [], [JQuery], false], ["ParentsBySelector", "", [Go$String], [JQuery], false], ["ParentsUntil", "", [Go$String], [JQuery], false], ["ParentsUntilByFilter", "", [Go$String, Go$String], [JQuery], false], ["ParentsUntilByJQuery", "", [JQuery], [JQuery], false], ["ParentsUntilByJQueryAndFilter", "", [JQuery, Go$String], [JQuery], false], ["Prev", "", [], [JQuery], false], ["PrevAll", "", [], [JQuery], false], ["PrevAllBySelector", "", [Go$String], [JQuery], false], ["PrevBySelector", "", [Go$String], [JQuery], false], ["PrevUntil", "", [Go$String], [JQuery], false], ["PrevUntilByFilter", "", [Go$String, Go$String], [JQuery], false], ["PrevUntilByJQuery", "", [JQuery], [JQuery], false], ["PrevUntilByJQueryAndFilter", "", [JQuery, Go$String], [JQuery], false], ["Prop", "", [Go$String], [Go$Bool], false], ["Ready", "", [(go$funcType([], [], false))], [JQuery], false], ["RemoveClass", "", [Go$String], [JQuery], false], ["RemoveData", "", [Go$String], [JQuery], false], ["Resize", "", [], [JQuery], false], ["ResizeDataFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["ResizeFn", "", [(go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["Scroll", "", [], [JQuery], false], ["ScrollDataFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["ScrollFn", "", [(go$funcType([], [], false))], [JQuery], false], ["ScrollLeft", "", [], [Go$Int], false], ["ScrollTop", "", [], [Go$Int], false], ["Select", "", [], [JQuery], false], ["SelectDataFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["SelectFn", "", [(go$funcType([], [], false))], [JQuery], false], ["Serialize", "", [], [Go$String], false], ["SetCss", "", [go$emptyInterface, go$emptyInterface], [JQuery], false], ["SetData", "", [Go$String, Go$String], [JQuery], false], ["SetHeight", "", [Go$String], [JQuery], false], ["SetHtml", "", [Go$String], [JQuery], false], ["SetProp", "", [Go$String, Go$Bool], [JQuery], false], ["SetScrollLeft", "", [Go$Int], [JQuery], false], ["SetScrollTop", "", [Go$Int], [JQuery], false], ["SetText", "", [Go$String], [JQuery], false], ["SetVal", "", [Go$String], [JQuery], false], ["SetWidth", "", [Go$String], [JQuery], false], ["Show", "", [], [JQuery], false], ["Siblings", "", [], [JQuery], false], ["SiblingsBySelector", "", [Go$String], [JQuery], false], ["Slice", "", [Go$Int], [JQuery], false], ["SliceByEnd", "", [Go$Int, Go$Int], [JQuery], false], ["Submit", "", [], [JQuery], false], ["SubmitDataFn", "", [js.Object, (go$funcType([Event], [], false))], [JQuery], false], ["SubmitFn", "", [(go$funcType([], [], false))], [JQuery], false], ["Text", "", [], [Go$String], false], ["TextByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false], ["Toggle", "", [Go$Bool], [JQuery], false], ["ToggleClass", "", [Go$Bool], [JQuery], false], ["ToggleClassByName", "", [Go$String, Go$Bool], [JQuery], false], ["Trigger", "", [Go$String], [JQuery], false], ["TriggerHandler", "", [Go$String, go$emptyInterface], [JQuery], false], ["TriggerParam", "", [Go$String, go$emptyInterface], [JQuery], false], ["Unbind", "", [], [JQuery], false], ["UnbindEvent", "", [js.Object], [JQuery], false], ["UnbindFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["Undelegate", "", [], [JQuery], false], ["UndelegateEvent", "", [js.Object], [JQuery], false], ["UndelegateFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["UndelegateNamespace", "", [Go$String], [JQuery], false], ["Unload", "", [(go$funcType([Event], [js.Object], false))], [JQuery], false], ["UnloadEventdata", "", [js.Object, (go$funcType([Event], [js.Object], false))], [JQuery], false], ["Val", "", [], [Go$String], false], ["Width", "", [], [Go$Int], false], ["WidthByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false]];
-	(go$ptrType(JQuery)).methods = [["Add", "", [Go$String], [JQuery], false], ["AddBack", "", [], [JQuery], false], ["AddBackBySelector", "", [Go$String], [JQuery], false], ["AddByContext", "", [Go$String, go$emptyInterface], [JQuery], false], ["AddClass", "", [Go$String], [JQuery], false], ["AddClassFn", "", [(go$funcType([Go$Int], [Go$String], false))], [JQuery], false], ["AddClassFnClass", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false], ["AddHtml", "", [Go$String], [JQuery], false], ["AddJQuery", "", [JQuery], [JQuery], false], ["AppendTo", "", [Go$String], [JQuery], false], ["AppendToJQuery", "", [JQuery], [JQuery], false], ["Attr", "", [Go$String], [Go$String], false], ["Blur", "", [], [JQuery], false], ["ClearQueue", "", [Go$String], [JQuery], false], ["Clone", "", [], [JQuery], false], ["CloneDeep", "", [Go$Bool, Go$Bool], [JQuery], false], ["CloneWithDataAndEvents", "", [Go$Bool], [JQuery], false], ["Closest", "", [Go$String], [JQuery], false], ["Css", "", [Go$String], [Go$String], false], ["Data", "", [Go$String], [Go$String], false], ["Dequeue", "", [Go$String], [JQuery], false], ["End", "", [], [JQuery], false], ["FadeOut", "", [Go$String], [JQuery], false], ["Filter", "", [Go$String], [JQuery], false], ["FilterByFunc", "", [(go$funcType([Go$Int], [Go$Int], false))], [JQuery], false], ["FilterByJQuery", "", [JQuery], [JQuery], false], ["Find", "", [Go$String], [JQuery], false], ["FindByJQuery", "", [JQuery], [JQuery], false], ["First", "", [], [JQuery], false], ["Focus", "", [], [JQuery], false], ["Has", "", [Go$String], [JQuery], false], ["Height", "", [], [Go$Int], false], ["Hide", "", [], [JQuery], false], ["Html", "", [], [Go$String], false], ["HtmlByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false], ["Is", "", [Go$String], [Go$Bool], false], ["IsByFunc", "", [(go$funcType([Go$Int], [Go$Bool], false))], [JQuery], false], ["IsByJQuery", "", [JQuery], [Go$Bool], false], ["Last", "", [], [JQuery], false], ["Next", "", [], [JQuery], false], ["NextAll", "", [], [JQuery], false], ["NextAllBySelector", "", [Go$String], [JQuery], false], ["NextBySelector", "", [Go$String], [JQuery], false], ["NextUntil", "", [Go$String], [JQuery], false], ["NextUntilByFilter", "", [Go$String, Go$String], [JQuery], false], ["NextUntilByJQuery", "", [JQuery], [JQuery], false], ["NextUntilByJQueryAndFilter", "", [JQuery, Go$String], [JQuery], false], ["Not", "", [Go$String], [JQuery], false], ["NotByJQuery", "", [JQuery], [JQuery], false], ["Off", "", [Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["OffsetParent", "", [], [JQuery], false], ["On", "", [Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["OnParam", "", [Go$String, go$emptyInterface], [JQuery], false], ["OnSelector", "", [Go$String, Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["One", "", [Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["Parent", "", [], [JQuery], false], ["ParentBySelector", "", [Go$String], [JQuery], false], ["Parents", "", [], [JQuery], false], ["ParentsBySelector", "", [Go$String], [JQuery], false], ["ParentsUntil", "", [Go$String], [JQuery], false], ["ParentsUntilByFilter", "", [Go$String, Go$String], [JQuery], false], ["ParentsUntilByJQuery", "", [JQuery], [JQuery], false], ["ParentsUntilByJQueryAndFilter", "", [JQuery, Go$String], [JQuery], false], ["Prev", "", [], [JQuery], false], ["PrevAll", "", [], [JQuery], false], ["PrevAllBySelector", "", [Go$String], [JQuery], false], ["PrevBySelector", "", [Go$String], [JQuery], false], ["PrevUntil", "", [Go$String], [JQuery], false], ["PrevUntilByFilter", "", [Go$String, Go$String], [JQuery], false], ["PrevUntilByJQuery", "", [JQuery], [JQuery], false], ["PrevUntilByJQueryAndFilter", "", [JQuery, Go$String], [JQuery], false], ["Prop", "", [Go$String], [Go$Bool], false], ["Ready", "", [(go$funcType([], [], false))], [JQuery], false], ["RemoveClass", "", [Go$String], [JQuery], false], ["RemoveData", "", [Go$String], [JQuery], false], ["Resize", "", [], [JQuery], false], ["ResizeDataFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["ResizeFn", "", [(go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["Scroll", "", [], [JQuery], false], ["ScrollDataFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["ScrollFn", "", [(go$funcType([], [], false))], [JQuery], false], ["ScrollLeft", "", [], [Go$Int], false], ["ScrollTop", "", [], [Go$Int], false], ["Select", "", [], [JQuery], false], ["SelectDataFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["SelectFn", "", [(go$funcType([], [], false))], [JQuery], false], ["Serialize", "", [], [Go$String], false], ["SetCss", "", [go$emptyInterface, go$emptyInterface], [JQuery], false], ["SetData", "", [Go$String, Go$String], [JQuery], false], ["SetHeight", "", [Go$String], [JQuery], false], ["SetHtml", "", [Go$String], [JQuery], false], ["SetProp", "", [Go$String, Go$Bool], [JQuery], false], ["SetScrollLeft", "", [Go$Int], [JQuery], false], ["SetScrollTop", "", [Go$Int], [JQuery], false], ["SetText", "", [Go$String], [JQuery], false], ["SetVal", "", [Go$String], [JQuery], false], ["SetWidth", "", [Go$String], [JQuery], false], ["Show", "", [], [JQuery], false], ["Siblings", "", [], [JQuery], false], ["SiblingsBySelector", "", [Go$String], [JQuery], false], ["Slice", "", [Go$Int], [JQuery], false], ["SliceByEnd", "", [Go$Int, Go$Int], [JQuery], false], ["Submit", "", [], [JQuery], false], ["SubmitDataFn", "", [js.Object, (go$funcType([Event], [], false))], [JQuery], false], ["SubmitFn", "", [(go$funcType([], [], false))], [JQuery], false], ["Text", "", [], [Go$String], false], ["TextByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false], ["Toggle", "", [Go$Bool], [JQuery], false], ["ToggleClass", "", [Go$Bool], [JQuery], false], ["ToggleClassByName", "", [Go$String, Go$Bool], [JQuery], false], ["Trigger", "", [Go$String], [JQuery], false], ["TriggerHandler", "", [Go$String, go$emptyInterface], [JQuery], false], ["TriggerParam", "", [Go$String, go$emptyInterface], [JQuery], false], ["Unbind", "", [], [JQuery], false], ["UnbindEvent", "", [js.Object], [JQuery], false], ["UnbindFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["Undelegate", "", [], [JQuery], false], ["UndelegateEvent", "", [js.Object], [JQuery], false], ["UndelegateFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["UndelegateNamespace", "", [Go$String], [JQuery], false], ["Unload", "", [(go$funcType([Event], [js.Object], false))], [JQuery], false], ["UnloadEventdata", "", [js.Object, (go$funcType([Event], [js.Object], false))], [JQuery], false], ["Val", "", [], [Go$String], false], ["Width", "", [], [Go$Int], false], ["WidthByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false]];
-	Event.init([["", "", js.Object, ""], ["KeyCode", "", Go$Int, "js:\"keyCode\""], ["Target", "", js.Object, "js:\"target\""], ["Data", "", go$emptyInterface, "js:\"data\""], ["Which", "", Go$Int, "js:\"which\""]]);
+	JQuery.methods = [["Add", "", [Go$String], [JQuery], false], ["AddBack", "", [], [JQuery], false], ["AddBackBySelector", "", [Go$String], [JQuery], false], ["AddByContext", "", [Go$String, go$emptyInterface], [JQuery], false], ["AddClass", "", [Go$String], [JQuery], false], ["AddClassFn", "", [(go$funcType([Go$Int], [Go$String], false))], [JQuery], false], ["AddClassFnClass", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false], ["AddHtml", "", [Go$String], [JQuery], false], ["AddJQuery", "", [JQuery], [JQuery], false], ["AppendTo", "", [Go$String], [JQuery], false], ["AppendToJQuery", "", [JQuery], [JQuery], false], ["Attr", "", [Go$String], [Go$String], false], ["Blur", "", [], [JQuery], false], ["ClearQueue", "", [Go$String], [JQuery], false], ["Clone", "", [], [JQuery], false], ["CloneDeep", "", [Go$Bool, Go$Bool], [JQuery], false], ["CloneWithDataAndEvents", "", [Go$Bool], [JQuery], false], ["Closest", "", [Go$String], [JQuery], false], ["Css", "", [Go$String], [Go$String], false], ["Data", "", [Go$String], [Go$String], false], ["Dequeue", "", [Go$String], [JQuery], false], ["End", "", [], [JQuery], false], ["Eq", "", [Go$Int], [JQuery], false], ["FadeOut", "", [Go$String], [JQuery], false], ["Filter", "", [Go$String], [JQuery], false], ["FilterByFunc", "", [(go$funcType([Go$Int], [Go$Int], false))], [JQuery], false], ["FilterByJQuery", "", [JQuery], [JQuery], false], ["Find", "", [Go$String], [JQuery], false], ["FindByJQuery", "", [JQuery], [JQuery], false], ["First", "", [], [JQuery], false], ["Focus", "", [], [JQuery], false], ["Has", "", [Go$String], [JQuery], false], ["HasClass", "", [Go$String], [Go$Bool], false], ["Height", "", [], [Go$Int], false], ["Hide", "", [], [JQuery], false], ["Html", "", [], [Go$String], false], ["HtmlByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false], ["Is", "", [Go$String], [Go$Bool], false], ["IsByFunc", "", [(go$funcType([Go$Int], [Go$Bool], false))], [JQuery], false], ["IsByJQuery", "", [JQuery], [Go$Bool], false], ["Last", "", [], [JQuery], false], ["Next", "", [], [JQuery], false], ["NextAll", "", [], [JQuery], false], ["NextAllBySelector", "", [Go$String], [JQuery], false], ["NextBySelector", "", [Go$String], [JQuery], false], ["NextUntil", "", [Go$String], [JQuery], false], ["NextUntilByFilter", "", [Go$String, Go$String], [JQuery], false], ["NextUntilByJQuery", "", [JQuery], [JQuery], false], ["NextUntilByJQueryAndFilter", "", [JQuery, Go$String], [JQuery], false], ["Not", "", [Go$String], [JQuery], false], ["NotByJQuery", "", [JQuery], [JQuery], false], ["Off", "", [Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["OffsetParent", "", [], [JQuery], false], ["On", "", [Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["OnParam", "", [Go$String, go$emptyInterface], [JQuery], false], ["OnSelector", "", [Go$String, Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["One", "", [Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["Parent", "", [], [JQuery], false], ["ParentBySelector", "", [Go$String], [JQuery], false], ["Parents", "", [], [JQuery], false], ["ParentsBySelector", "", [Go$String], [JQuery], false], ["ParentsUntil", "", [Go$String], [JQuery], false], ["ParentsUntilByFilter", "", [Go$String, Go$String], [JQuery], false], ["ParentsUntilByJQuery", "", [JQuery], [JQuery], false], ["ParentsUntilByJQueryAndFilter", "", [JQuery, Go$String], [JQuery], false], ["Prev", "", [], [JQuery], false], ["PrevAll", "", [], [JQuery], false], ["PrevAllBySelector", "", [Go$String], [JQuery], false], ["PrevBySelector", "", [Go$String], [JQuery], false], ["PrevUntil", "", [Go$String], [JQuery], false], ["PrevUntilByFilter", "", [Go$String, Go$String], [JQuery], false], ["PrevUntilByJQuery", "", [JQuery], [JQuery], false], ["PrevUntilByJQueryAndFilter", "", [JQuery, Go$String], [JQuery], false], ["Prop", "", [Go$String], [Go$Bool], false], ["Ready", "", [(go$funcType([], [], false))], [JQuery], false], ["RemoveClass", "", [Go$String], [JQuery], false], ["RemoveData", "", [Go$String], [JQuery], false], ["Resize", "", [], [JQuery], false], ["ResizeDataFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["ResizeFn", "", [(go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["Scroll", "", [], [JQuery], false], ["ScrollDataFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["ScrollFn", "", [(go$funcType([], [], false))], [JQuery], false], ["ScrollLeft", "", [], [Go$Int], false], ["ScrollTop", "", [], [Go$Int], false], ["Select", "", [], [JQuery], false], ["SelectDataFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["SelectFn", "", [(go$funcType([], [], false))], [JQuery], false], ["Serialize", "", [], [Go$String], false], ["SetCss", "", [go$emptyInterface, go$emptyInterface], [JQuery], false], ["SetData", "", [Go$String, Go$String], [JQuery], false], ["SetHeight", "", [Go$String], [JQuery], false], ["SetHtml", "", [Go$String], [JQuery], false], ["SetProp", "", [Go$String, Go$Bool], [JQuery], false], ["SetScrollLeft", "", [Go$Int], [JQuery], false], ["SetScrollTop", "", [Go$Int], [JQuery], false], ["SetText", "", [Go$String], [JQuery], false], ["SetVal", "", [Go$String], [JQuery], false], ["SetWidth", "", [Go$String], [JQuery], false], ["Show", "", [], [JQuery], false], ["Siblings", "", [], [JQuery], false], ["SiblingsBySelector", "", [Go$String], [JQuery], false], ["Slice", "", [Go$Int], [JQuery], false], ["SliceByEnd", "", [Go$Int, Go$Int], [JQuery], false], ["Submit", "", [], [JQuery], false], ["SubmitDataFn", "", [js.Object, (go$funcType([Event], [], false))], [JQuery], false], ["SubmitFn", "", [(go$funcType([], [], false))], [JQuery], false], ["Text", "", [], [Go$String], false], ["TextByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false], ["ToArray", "", [], [(go$sliceType(go$emptyInterface))], false], ["Toggle", "", [Go$Bool], [JQuery], false], ["ToggleClass", "", [Go$Bool], [JQuery], false], ["ToggleClassByName", "", [Go$String, Go$Bool], [JQuery], false], ["Trigger", "", [Go$String], [JQuery], false], ["TriggerHandler", "", [Go$String, go$emptyInterface], [JQuery], false], ["TriggerParam", "", [Go$String, go$emptyInterface], [JQuery], false], ["Unbind", "", [], [JQuery], false], ["UnbindEvent", "", [js.Object], [JQuery], false], ["UnbindFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["Undelegate", "", [], [JQuery], false], ["UndelegateEvent", "", [js.Object], [JQuery], false], ["UndelegateFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["UndelegateNamespace", "", [Go$String], [JQuery], false], ["Unload", "", [(go$funcType([Event], [js.Object], false))], [JQuery], false], ["UnloadEventdata", "", [js.Object, (go$funcType([Event], [js.Object], false))], [JQuery], false], ["Val", "", [], [Go$String], false], ["Width", "", [], [Go$Int], false], ["WidthByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false]];
+	(go$ptrType(JQuery)).methods = [["Add", "", [Go$String], [JQuery], false], ["AddBack", "", [], [JQuery], false], ["AddBackBySelector", "", [Go$String], [JQuery], false], ["AddByContext", "", [Go$String, go$emptyInterface], [JQuery], false], ["AddClass", "", [Go$String], [JQuery], false], ["AddClassFn", "", [(go$funcType([Go$Int], [Go$String], false))], [JQuery], false], ["AddClassFnClass", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false], ["AddHtml", "", [Go$String], [JQuery], false], ["AddJQuery", "", [JQuery], [JQuery], false], ["AppendTo", "", [Go$String], [JQuery], false], ["AppendToJQuery", "", [JQuery], [JQuery], false], ["Attr", "", [Go$String], [Go$String], false], ["Blur", "", [], [JQuery], false], ["ClearQueue", "", [Go$String], [JQuery], false], ["Clone", "", [], [JQuery], false], ["CloneDeep", "", [Go$Bool, Go$Bool], [JQuery], false], ["CloneWithDataAndEvents", "", [Go$Bool], [JQuery], false], ["Closest", "", [Go$String], [JQuery], false], ["Css", "", [Go$String], [Go$String], false], ["Data", "", [Go$String], [Go$String], false], ["Dequeue", "", [Go$String], [JQuery], false], ["End", "", [], [JQuery], false], ["Eq", "", [Go$Int], [JQuery], false], ["FadeOut", "", [Go$String], [JQuery], false], ["Filter", "", [Go$String], [JQuery], false], ["FilterByFunc", "", [(go$funcType([Go$Int], [Go$Int], false))], [JQuery], false], ["FilterByJQuery", "", [JQuery], [JQuery], false], ["Find", "", [Go$String], [JQuery], false], ["FindByJQuery", "", [JQuery], [JQuery], false], ["First", "", [], [JQuery], false], ["Focus", "", [], [JQuery], false], ["Has", "", [Go$String], [JQuery], false], ["HasClass", "", [Go$String], [Go$Bool], false], ["Height", "", [], [Go$Int], false], ["Hide", "", [], [JQuery], false], ["Html", "", [], [Go$String], false], ["HtmlByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false], ["Is", "", [Go$String], [Go$Bool], false], ["IsByFunc", "", [(go$funcType([Go$Int], [Go$Bool], false))], [JQuery], false], ["IsByJQuery", "", [JQuery], [Go$Bool], false], ["Last", "", [], [JQuery], false], ["Next", "", [], [JQuery], false], ["NextAll", "", [], [JQuery], false], ["NextAllBySelector", "", [Go$String], [JQuery], false], ["NextBySelector", "", [Go$String], [JQuery], false], ["NextUntil", "", [Go$String], [JQuery], false], ["NextUntilByFilter", "", [Go$String, Go$String], [JQuery], false], ["NextUntilByJQuery", "", [JQuery], [JQuery], false], ["NextUntilByJQueryAndFilter", "", [JQuery, Go$String], [JQuery], false], ["Not", "", [Go$String], [JQuery], false], ["NotByJQuery", "", [JQuery], [JQuery], false], ["Off", "", [Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["OffsetParent", "", [], [JQuery], false], ["On", "", [Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["OnParam", "", [Go$String, go$emptyInterface], [JQuery], false], ["OnSelector", "", [Go$String, Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["One", "", [Go$String, (go$funcType([Event], [], false))], [JQuery], false], ["Parent", "", [], [JQuery], false], ["ParentBySelector", "", [Go$String], [JQuery], false], ["Parents", "", [], [JQuery], false], ["ParentsBySelector", "", [Go$String], [JQuery], false], ["ParentsUntil", "", [Go$String], [JQuery], false], ["ParentsUntilByFilter", "", [Go$String, Go$String], [JQuery], false], ["ParentsUntilByJQuery", "", [JQuery], [JQuery], false], ["ParentsUntilByJQueryAndFilter", "", [JQuery, Go$String], [JQuery], false], ["Prev", "", [], [JQuery], false], ["PrevAll", "", [], [JQuery], false], ["PrevAllBySelector", "", [Go$String], [JQuery], false], ["PrevBySelector", "", [Go$String], [JQuery], false], ["PrevUntil", "", [Go$String], [JQuery], false], ["PrevUntilByFilter", "", [Go$String, Go$String], [JQuery], false], ["PrevUntilByJQuery", "", [JQuery], [JQuery], false], ["PrevUntilByJQueryAndFilter", "", [JQuery, Go$String], [JQuery], false], ["Prop", "", [Go$String], [Go$Bool], false], ["Ready", "", [(go$funcType([], [], false))], [JQuery], false], ["RemoveClass", "", [Go$String], [JQuery], false], ["RemoveData", "", [Go$String], [JQuery], false], ["Resize", "", [], [JQuery], false], ["ResizeDataFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["ResizeFn", "", [(go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["Scroll", "", [], [JQuery], false], ["ScrollDataFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["ScrollFn", "", [(go$funcType([], [], false))], [JQuery], false], ["ScrollLeft", "", [], [Go$Int], false], ["ScrollTop", "", [], [Go$Int], false], ["Select", "", [], [JQuery], false], ["SelectDataFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["SelectFn", "", [(go$funcType([], [], false))], [JQuery], false], ["Serialize", "", [], [Go$String], false], ["SetCss", "", [go$emptyInterface, go$emptyInterface], [JQuery], false], ["SetData", "", [Go$String, Go$String], [JQuery], false], ["SetHeight", "", [Go$String], [JQuery], false], ["SetHtml", "", [Go$String], [JQuery], false], ["SetProp", "", [Go$String, Go$Bool], [JQuery], false], ["SetScrollLeft", "", [Go$Int], [JQuery], false], ["SetScrollTop", "", [Go$Int], [JQuery], false], ["SetText", "", [Go$String], [JQuery], false], ["SetVal", "", [Go$String], [JQuery], false], ["SetWidth", "", [Go$String], [JQuery], false], ["Show", "", [], [JQuery], false], ["Siblings", "", [], [JQuery], false], ["SiblingsBySelector", "", [Go$String], [JQuery], false], ["Slice", "", [Go$Int], [JQuery], false], ["SliceByEnd", "", [Go$Int, Go$Int], [JQuery], false], ["Submit", "", [], [JQuery], false], ["SubmitDataFn", "", [js.Object, (go$funcType([Event], [], false))], [JQuery], false], ["SubmitFn", "", [(go$funcType([], [], false))], [JQuery], false], ["Text", "", [], [Go$String], false], ["TextByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false], ["ToArray", "", [], [(go$sliceType(go$emptyInterface))], false], ["Toggle", "", [Go$Bool], [JQuery], false], ["ToggleClass", "", [Go$Bool], [JQuery], false], ["ToggleClassByName", "", [Go$String, Go$Bool], [JQuery], false], ["Trigger", "", [Go$String], [JQuery], false], ["TriggerHandler", "", [Go$String, go$emptyInterface], [JQuery], false], ["TriggerParam", "", [Go$String, go$emptyInterface], [JQuery], false], ["Unbind", "", [], [JQuery], false], ["UnbindEvent", "", [js.Object], [JQuery], false], ["UnbindFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["Undelegate", "", [], [JQuery], false], ["UndelegateEvent", "", [js.Object], [JQuery], false], ["UndelegateFn", "", [js.Object, (go$funcType([js.Object], [js.Object], false))], [JQuery], false], ["UndelegateNamespace", "", [Go$String], [JQuery], false], ["Unload", "", [(go$funcType([Event], [js.Object], false))], [JQuery], false], ["UnloadEventdata", "", [js.Object, (go$funcType([Event], [js.Object], false))], [JQuery], false], ["Val", "", [], [Go$String], false], ["Width", "", [], [Go$Int], false], ["WidthByFunc", "", [(go$funcType([Go$Int, Go$String], [Go$String], false))], [JQuery], false]];
+	Event.init([["", "", js.Object, ""], ["KeyCode", "", Go$Int, "js:\"keyCode\""], ["Target", "", js.Object, "js:\"target\""], ["CurrentTarget", "", js.Object, "js:\"currentTarget\""], ["DelegateTarget", "", js.Object, "js:\"delegateTarget\""], ["RelatedTarget", "", js.Object, "js:\"relatedTarget\""], ["Data", "", go$emptyInterface, "js:\"data\""], ["Which", "", Go$Int, "js:\"which\""]]);
 	Event.methods = [["Bool", "", [], [Go$Bool], false], ["Call", "", [Go$String, (go$sliceType(go$emptyInterface))], [js.Object], true], ["Float", "", [], [Go$Float64], false], ["Get", "", [Go$String], [js.Object], false], ["Index", "", [Go$Int], [js.Object], false], ["Int", "", [], [Go$Int], false], ["Interface", "", [], [go$emptyInterface], false], ["Invoke", "", [(go$sliceType(go$emptyInterface))], [js.Object], true], ["IsNull", "", [], [Go$Bool], false], ["IsUndefined", "", [], [Go$Bool], false], ["Length", "", [], [Go$Int], false], ["New", "", [(go$sliceType(go$emptyInterface))], [js.Object], true], ["Set", "", [Go$String, go$emptyInterface], [], false], ["SetIndex", "", [Go$Int, go$emptyInterface], [], false], ["String", "", [], [Go$String], false]];
 	(go$ptrType(Event)).methods = [["Bool", "", [], [Go$Bool], false], ["Call", "", [Go$String, (go$sliceType(go$emptyInterface))], [js.Object], true], ["Float", "", [], [Go$Float64], false], ["Get", "", [Go$String], [js.Object], false], ["Index", "", [Go$Int], [js.Object], false], ["Int", "", [], [Go$Int], false], ["Interface", "", [], [go$emptyInterface], false], ["Invoke", "", [(go$sliceType(go$emptyInterface))], [js.Object], true], ["IsNull", "", [], [Go$Bool], false], ["IsUndefined", "", [], [Go$Bool], false], ["Length", "", [], [Go$Int], false], ["New", "", [(go$sliceType(go$emptyInterface))], [js.Object], true], ["PreventDefault", "", [], [], false], ["Set", "", [Go$String, go$emptyInterface], [], false], ["SetIndex", "", [Go$Int, go$emptyInterface], [], false], ["String", "", [], [Go$String], false]];
 	Event.Ptr.prototype.PreventDefault = function() {
@@ -3228,15 +3231,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	};
 	Event.prototype.PreventDefault = function() { return this.go$val.PreventDefault(); };
 	var NewJQuery = go$pkg.NewJQuery = function(args) {
-		var _slice, _index, jQ, _slice$1, _index$1, _slice$2, _index$2, jQ$1;
-		if (args.length === 1) {
-			jQ = new go$global.jQuery(go$externalize((_slice = args, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")), go$emptyInterface));
-			return new JQuery.Ptr(jQ, "", "", "", "");
-		} else if (args.length === 2) {
-			jQ$1 = new go$global.jQuery(go$externalize((_slice$1 = args, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")), go$emptyInterface), go$externalize((_slice$2 = args, _index$2 = 1, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")), go$emptyInterface));
-			return new JQuery.Ptr(jQ$1, "", "", "", "");
-		}
-		return new JQuery.Ptr(new go$global.jQuery(), "", "", "", "");
+		return new JQuery.Ptr(new (go$global.Function.prototype.bind.apply(go$global.jQuery, [undefined].concat(go$externalize(args, (go$sliceType(go$emptyInterface)))))), "", "", "", "");
 	};
 	var Trim = go$pkg.Trim = function(text) {
 		return go$internalize(go$global.jQuery.trim(go$externalize(text, Go$String)), Go$String);
@@ -3250,6 +3245,9 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	var IsPlainObject = go$pkg.IsPlainObject = function(sth) {
 		return !!(go$global.jQuery.isPlainObject(go$externalize(sth, go$emptyInterface)));
 	};
+	var IsEmptyObject = go$pkg.IsEmptyObject = function(sth) {
+		return !!(go$global.jQuery.isEmptyObject(go$externalize(sth, go$emptyInterface)));
+	};
 	var IsFunction = go$pkg.IsFunction = function(sth) {
 		return !!(go$global.jQuery.isFunction(go$externalize(sth, go$emptyInterface)));
 	};
@@ -3261,6 +3259,39 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	};
 	var IsWindow = go$pkg.IsWindow = function(sth) {
 		return !!(go$global.jQuery.isWindow(go$externalize(sth, go$emptyInterface)));
+	};
+	var InArray = go$pkg.InArray = function(val, arr) {
+		return go$parseInt(go$global.jQuery.inArray(go$externalize(val, go$emptyInterface), go$externalize(arr, (go$sliceType(go$emptyInterface))))) >> 0;
+	};
+	var ParseHTML = go$pkg.ParseHTML = function(text) {
+		var x;
+		return (x = go$internalize(go$global.jQuery.parseHTML(go$externalize(text, Go$String)), go$emptyInterface), (x !== null && x.constructor === (go$sliceType(go$emptyInterface)) ? x.go$val : go$typeAssertionFailed(x, (go$sliceType(go$emptyInterface)))));
+	};
+	var ParseXML = go$pkg.ParseXML = function(text) {
+		return go$internalize(go$global.jQuery.parseXML(go$externalize(text, Go$String)), go$emptyInterface);
+	};
+	var ParseJSON = go$pkg.ParseJSON = function(text) {
+		return go$internalize(go$global.jQuery.parseJSON(go$externalize(text, Go$String)), go$emptyInterface);
+	};
+	var Grep = go$pkg.Grep = function(arr, fn) {
+		var x;
+		return (x = go$internalize(go$global.jQuery.grep(go$externalize(arr, (go$sliceType(go$emptyInterface))), go$externalize(fn, (go$funcType([go$emptyInterface, Go$Int], [Go$Bool], false)))), go$emptyInterface), (x !== null && x.constructor === (go$sliceType(go$emptyInterface)) ? x.go$val : go$typeAssertionFailed(x, (go$sliceType(go$emptyInterface)))));
+	};
+	var EachOverArray = go$pkg.EachOverArray = function(arr, fn) {
+		var x;
+		return (x = go$internalize(go$global.jQuery.each(go$externalize(arr, (go$sliceType(go$emptyInterface))), go$externalize(fn, (go$funcType([Go$Int, go$emptyInterface], [Go$Bool], false)))), go$emptyInterface), (x !== null && x.constructor === (go$sliceType(go$emptyInterface)) ? x.go$val : go$typeAssertionFailed(x, (go$sliceType(go$emptyInterface)))));
+	};
+	var EachOverMap = go$pkg.EachOverMap = function(arr, fn) {
+		var x;
+		return (x = go$internalize(go$global.jQuery.each(go$externalize(arr, (go$mapType(Go$String, go$emptyInterface))), go$externalize(fn, (go$funcType([Go$String, go$emptyInterface], [Go$Bool], false)))), go$emptyInterface), (x !== null && x.constructor === (go$mapType(Go$String, go$emptyInterface)) ? x.go$val : go$typeAssertionFailed(x, (go$mapType(Go$String, go$emptyInterface)))));
+	};
+	var MapOverArray = go$pkg.MapOverArray = function(arr, fn) {
+		var x;
+		return (x = go$internalize(go$global.jQuery.map(go$externalize(arr, (go$sliceType(go$emptyInterface))), go$externalize(fn, (go$funcType([go$emptyInterface, Go$Int], [go$emptyInterface], false)))), go$emptyInterface), (x !== null && x.constructor === (go$sliceType(go$emptyInterface)) ? x.go$val : go$typeAssertionFailed(x, (go$sliceType(go$emptyInterface)))));
+	};
+	var MapOverMap = go$pkg.MapOverMap = function(arr, fn) {
+		var x;
+		return (x = go$internalize(go$global.jQuery.map(go$externalize(arr, (go$mapType(Go$String, go$emptyInterface))), go$externalize(fn, (go$funcType([go$emptyInterface, Go$String], [go$emptyInterface], false)))), go$emptyInterface), (x !== null && x.constructor === (go$sliceType(go$emptyInterface)) ? x.go$val : go$typeAssertionFailed(x, (go$sliceType(go$emptyInterface)))));
 	};
 	JQuery.Ptr.prototype.Serialize = function() {
 		var _struct, j;
@@ -3275,6 +3306,19 @@ go$packages["github.com/rusco/jquery"] = (function() {
 		return (_struct$1 = j, new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context));
 	};
 	JQuery.prototype.AddBack = function() { return this.go$val.AddBack(); };
+	JQuery.Ptr.prototype.Eq = function(idx) {
+		var _struct, j, _struct$1;
+		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
+		j.o = j.o.eq(idx);
+		return (_struct$1 = j, new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context));
+	};
+	JQuery.prototype.Eq = function(idx) { return this.go$val.Eq(idx); };
+	JQuery.Ptr.prototype.ToArray = function() {
+		var _struct, j, x;
+		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
+		return (x = go$internalize(j.o.toArray(), go$emptyInterface), (x !== null && x.constructor === (go$sliceType(go$emptyInterface)) ? x.go$val : go$typeAssertionFailed(x, (go$sliceType(go$emptyInterface)))));
+	};
+	JQuery.prototype.ToArray = function() { return this.go$val.ToArray(); };
 	JQuery.Ptr.prototype.AddBackBySelector = function(selector) {
 		var _struct, j, _struct$1;
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
@@ -3340,6 +3384,12 @@ go$packages["github.com/rusco/jquery"] = (function() {
 		return go$internalize(j.o.attr(go$externalize(property, Go$String)), Go$String);
 	};
 	JQuery.prototype.Attr = function(property) { return this.go$val.Attr(property); };
+	JQuery.Ptr.prototype.HasClass = function(class$1) {
+		var _struct, j;
+		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
+		return !!(j.o.hasClass(go$externalize(class$1, Go$String)));
+	};
+	JQuery.prototype.HasClass = function(class$1) { return this.go$val.HasClass(class$1); };
 	JQuery.Ptr.prototype.AddClass = function(property) {
 		var _struct, j, _struct$1;
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
@@ -3404,7 +3454,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 		var _struct, j, _struct$1;
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
 		j.o.on(go$externalize(event, Go$String), go$externalize((function(e) {
-			handler(new Event.Ptr(e, 0, null, null, 0));
+			handler(new Event.Ptr(e, 0, null, null, null, null, null, 0));
 		}), (go$funcType([js.Object], [], false))));
 		return (_struct$1 = j, new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context));
 	};
@@ -3420,7 +3470,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 		var _struct, j, _struct$1;
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
 		j.o.on(go$externalize(event, Go$String), go$externalize(selector, Go$String), go$externalize((function(e) {
-			handler(new Event.Ptr(e, 0, null, null, 0));
+			handler(new Event.Ptr(e, 0, null, null, null, null, null, 0));
 		}), (go$funcType([js.Object], [], false))));
 		return (_struct$1 = j, new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context));
 	};
@@ -3429,7 +3479,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 		var _struct, j, _struct$1;
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
 		j.o.one(go$externalize(event, Go$String), go$externalize((function(e) {
-			handler(new Event.Ptr(e, 0, null, null, 0));
+			handler(new Event.Ptr(e, 0, null, null, null, null, null, 0));
 		}), (go$funcType([js.Object], [], false))));
 		return (_struct$1 = j, new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context));
 	};
@@ -3438,7 +3488,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 		var _struct, j, _struct$1;
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
 		j.o.off(go$externalize(event, Go$String), go$externalize((function(e) {
-			handler(new Event.Ptr(e, 0, null, null, 0));
+			handler(new Event.Ptr(e, 0, null, null, null, null, null, 0));
 		}), (go$funcType([js.Object], [], false))));
 		return (_struct$1 = j, new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context));
 	};
@@ -3938,7 +3988,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.Is = function(selector) {
 		var _struct, j;
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
-		return !!(j.o.Is(go$externalize(selector, Go$String)));
+		return !!(j.o.is(go$externalize(selector, Go$String)));
 	};
 	JQuery.prototype.Is = function(selector) { return this.go$val.Is(selector); };
 	JQuery.Ptr.prototype.IsByFunc = function(fn) {
@@ -3959,7 +4009,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	JQuery.Ptr.prototype.Last = function() {
 		var _struct, j, _struct$1;
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
-		j.o = j.o.Last();
+		j.o = j.o.last();
 		return (_struct$1 = j, new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context));
 	};
 	JQuery.prototype.Last = function() { return this.go$val.Last(); };
@@ -4072,7 +4122,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 		var _struct, j, _struct$1;
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
 		j.o.submit(eventData, go$externalize((function(e) {
-			handler(new Event.Ptr(e, 0, null, null, 0));
+			handler(new Event.Ptr(e, 0, null, null, null, null, null, 0));
 		}), (go$funcType([js.Object], [], false))));
 		return (_struct$1 = j, new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context));
 	};
@@ -4155,7 +4205,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 		var _struct, j, _struct$1;
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
 		j.o.unload(go$externalize((function(ev) {
-			return handler(new Event.Ptr(ev, 0, null, null, 0));
+			return handler(new Event.Ptr(ev, 0, null, null, null, null, null, 0));
 		}), (go$funcType([js.Object], [js.Object], false))));
 		return (_struct$1 = j, new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context));
 	};
@@ -4164,7 +4214,7 @@ go$packages["github.com/rusco/jquery"] = (function() {
 		var _struct, j, _struct$1;
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
 		j.o.unload(eventData, go$externalize((function(ev) {
-			return handler(new Event.Ptr(ev, 0, null, null, 0));
+			return handler(new Event.Ptr(ev, 0, null, null, null, null, null, 0));
 		}), (go$funcType([js.Object], [js.Object], false))));
 		return (_struct$1 = j, new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context));
 	};
@@ -9834,6 +9884,2790 @@ go$packages["sync"] = (function() {
 		var s;
 		s = go$makeNativeArray("Uintptr", 3, function() { return 0; });
 		runtime_Syncsemcheck(12);
+	};
+	return go$pkg;
+})();
+go$packages["io"] = (function() {
+	var go$pkg = {};
+	var errors = go$packages["errors"];
+	var sync = go$packages["sync"];
+	var Reader;
+	Reader = go$newType(0, "Interface", "io.Reader", "Reader", "io", null);
+	go$pkg.Reader = Reader;
+	var Writer;
+	Writer = go$newType(0, "Interface", "io.Writer", "Writer", "io", null);
+	go$pkg.Writer = Writer;
+	var Closer;
+	Closer = go$newType(0, "Interface", "io.Closer", "Closer", "io", null);
+	go$pkg.Closer = Closer;
+	var Seeker;
+	Seeker = go$newType(0, "Interface", "io.Seeker", "Seeker", "io", null);
+	go$pkg.Seeker = Seeker;
+	var ReadWriter;
+	ReadWriter = go$newType(0, "Interface", "io.ReadWriter", "ReadWriter", "io", null);
+	go$pkg.ReadWriter = ReadWriter;
+	var ReadCloser;
+	ReadCloser = go$newType(0, "Interface", "io.ReadCloser", "ReadCloser", "io", null);
+	go$pkg.ReadCloser = ReadCloser;
+	var WriteCloser;
+	WriteCloser = go$newType(0, "Interface", "io.WriteCloser", "WriteCloser", "io", null);
+	go$pkg.WriteCloser = WriteCloser;
+	var ReadWriteCloser;
+	ReadWriteCloser = go$newType(0, "Interface", "io.ReadWriteCloser", "ReadWriteCloser", "io", null);
+	go$pkg.ReadWriteCloser = ReadWriteCloser;
+	var ReadSeeker;
+	ReadSeeker = go$newType(0, "Interface", "io.ReadSeeker", "ReadSeeker", "io", null);
+	go$pkg.ReadSeeker = ReadSeeker;
+	var WriteSeeker;
+	WriteSeeker = go$newType(0, "Interface", "io.WriteSeeker", "WriteSeeker", "io", null);
+	go$pkg.WriteSeeker = WriteSeeker;
+	var ReadWriteSeeker;
+	ReadWriteSeeker = go$newType(0, "Interface", "io.ReadWriteSeeker", "ReadWriteSeeker", "io", null);
+	go$pkg.ReadWriteSeeker = ReadWriteSeeker;
+	var ReaderFrom;
+	ReaderFrom = go$newType(0, "Interface", "io.ReaderFrom", "ReaderFrom", "io", null);
+	go$pkg.ReaderFrom = ReaderFrom;
+	var WriterTo;
+	WriterTo = go$newType(0, "Interface", "io.WriterTo", "WriterTo", "io", null);
+	go$pkg.WriterTo = WriterTo;
+	var ReaderAt;
+	ReaderAt = go$newType(0, "Interface", "io.ReaderAt", "ReaderAt", "io", null);
+	go$pkg.ReaderAt = ReaderAt;
+	var WriterAt;
+	WriterAt = go$newType(0, "Interface", "io.WriterAt", "WriterAt", "io", null);
+	go$pkg.WriterAt = WriterAt;
+	var ByteReader;
+	ByteReader = go$newType(0, "Interface", "io.ByteReader", "ByteReader", "io", null);
+	go$pkg.ByteReader = ByteReader;
+	var ByteScanner;
+	ByteScanner = go$newType(0, "Interface", "io.ByteScanner", "ByteScanner", "io", null);
+	go$pkg.ByteScanner = ByteScanner;
+	var ByteWriter;
+	ByteWriter = go$newType(0, "Interface", "io.ByteWriter", "ByteWriter", "io", null);
+	go$pkg.ByteWriter = ByteWriter;
+	var RuneReader;
+	RuneReader = go$newType(0, "Interface", "io.RuneReader", "RuneReader", "io", null);
+	go$pkg.RuneReader = RuneReader;
+	var RuneScanner;
+	RuneScanner = go$newType(0, "Interface", "io.RuneScanner", "RuneScanner", "io", null);
+	go$pkg.RuneScanner = RuneScanner;
+	var stringWriter;
+	stringWriter = go$newType(0, "Interface", "io.stringWriter", "stringWriter", "io", null);
+	go$pkg.stringWriter = stringWriter;
+	var LimitedReader;
+	LimitedReader = go$newType(0, "Struct", "io.LimitedReader", "LimitedReader", "io", function(R_, N_) {
+		this.go$val = this;
+		this.R = R_ !== undefined ? R_ : null;
+		this.N = N_ !== undefined ? N_ : new Go$Int64(0, 0);
+	});
+	go$pkg.LimitedReader = LimitedReader;
+	var SectionReader;
+	SectionReader = go$newType(0, "Struct", "io.SectionReader", "SectionReader", "io", function(r_, base_, off_, limit_) {
+		this.go$val = this;
+		this.r = r_ !== undefined ? r_ : null;
+		this.base = base_ !== undefined ? base_ : new Go$Int64(0, 0);
+		this.off = off_ !== undefined ? off_ : new Go$Int64(0, 0);
+		this.limit = limit_ !== undefined ? limit_ : new Go$Int64(0, 0);
+	});
+	go$pkg.SectionReader = SectionReader;
+	var teeReader;
+	teeReader = go$newType(0, "Struct", "io.teeReader", "teeReader", "io", function(r_, w_) {
+		this.go$val = this;
+		this.r = r_ !== undefined ? r_ : null;
+		this.w = w_ !== undefined ? w_ : null;
+	});
+	go$pkg.teeReader = teeReader;
+	var multiReader;
+	multiReader = go$newType(0, "Struct", "io.multiReader", "multiReader", "io", function(readers_) {
+		this.go$val = this;
+		this.readers = readers_ !== undefined ? readers_ : (go$sliceType(Reader)).nil;
+	});
+	go$pkg.multiReader = multiReader;
+	var multiWriter;
+	multiWriter = go$newType(0, "Struct", "io.multiWriter", "multiWriter", "io", function(writers_) {
+		this.go$val = this;
+		this.writers = writers_ !== undefined ? writers_ : (go$sliceType(Writer)).nil;
+	});
+	go$pkg.multiWriter = multiWriter;
+	var pipeResult;
+	pipeResult = go$newType(0, "Struct", "io.pipeResult", "pipeResult", "io", function(n_, err_) {
+		this.go$val = this;
+		this.n = n_ !== undefined ? n_ : 0;
+		this.err = err_ !== undefined ? err_ : null;
+	});
+	go$pkg.pipeResult = pipeResult;
+	var pipe;
+	pipe = go$newType(0, "Struct", "io.pipe", "pipe", "io", function(rl_, wl_, l_, data_, rwait_, wwait_, rerr_, werr_) {
+		this.go$val = this;
+		this.rl = rl_ !== undefined ? rl_ : new sync.Mutex.Ptr();
+		this.wl = wl_ !== undefined ? wl_ : new sync.Mutex.Ptr();
+		this.l = l_ !== undefined ? l_ : new sync.Mutex.Ptr();
+		this.data = data_ !== undefined ? data_ : (go$sliceType(Go$Uint8)).nil;
+		this.rwait = rwait_ !== undefined ? rwait_ : new sync.Cond.Ptr();
+		this.wwait = wwait_ !== undefined ? wwait_ : new sync.Cond.Ptr();
+		this.rerr = rerr_ !== undefined ? rerr_ : null;
+		this.werr = werr_ !== undefined ? werr_ : null;
+	});
+	go$pkg.pipe = pipe;
+	var PipeReader;
+	PipeReader = go$newType(0, "Struct", "io.PipeReader", "PipeReader", "io", function(p_) {
+		this.go$val = this;
+		this.p = p_ !== undefined ? p_ : (go$ptrType(pipe)).nil;
+	});
+	go$pkg.PipeReader = PipeReader;
+	var PipeWriter;
+	PipeWriter = go$newType(0, "Struct", "io.PipeWriter", "PipeWriter", "io", function(p_) {
+		this.go$val = this;
+		this.p = p_ !== undefined ? p_ : (go$ptrType(pipe)).nil;
+	});
+	go$pkg.PipeWriter = PipeWriter;
+	Reader.init([["Read", "", (go$funcType([(go$sliceType(Go$Uint8))], [Go$Int, go$error], false))]]);
+	Writer.init([["Write", "", (go$funcType([(go$sliceType(Go$Uint8))], [Go$Int, go$error], false))]]);
+	Closer.init([["Close", "", (go$funcType([], [go$error], false))]]);
+	Seeker.init([["Seek", "", (go$funcType([Go$Int64, Go$Int], [Go$Int64, go$error], false))]]);
+	ReadWriter.init([["Read", "", (go$funcType([(go$sliceType(Go$Uint8))], [Go$Int, go$error], false))], ["Write", "", (go$funcType([(go$sliceType(Go$Uint8))], [Go$Int, go$error], false))]]);
+	ReadCloser.init([["Close", "", (go$funcType([], [go$error], false))], ["Read", "", (go$funcType([(go$sliceType(Go$Uint8))], [Go$Int, go$error], false))]]);
+	WriteCloser.init([["Close", "", (go$funcType([], [go$error], false))], ["Write", "", (go$funcType([(go$sliceType(Go$Uint8))], [Go$Int, go$error], false))]]);
+	ReadWriteCloser.init([["Close", "", (go$funcType([], [go$error], false))], ["Read", "", (go$funcType([(go$sliceType(Go$Uint8))], [Go$Int, go$error], false))], ["Write", "", (go$funcType([(go$sliceType(Go$Uint8))], [Go$Int, go$error], false))]]);
+	ReadSeeker.init([["Read", "", (go$funcType([(go$sliceType(Go$Uint8))], [Go$Int, go$error], false))], ["Seek", "", (go$funcType([Go$Int64, Go$Int], [Go$Int64, go$error], false))]]);
+	WriteSeeker.init([["Seek", "", (go$funcType([Go$Int64, Go$Int], [Go$Int64, go$error], false))], ["Write", "", (go$funcType([(go$sliceType(Go$Uint8))], [Go$Int, go$error], false))]]);
+	ReadWriteSeeker.init([["Read", "", (go$funcType([(go$sliceType(Go$Uint8))], [Go$Int, go$error], false))], ["Seek", "", (go$funcType([Go$Int64, Go$Int], [Go$Int64, go$error], false))], ["Write", "", (go$funcType([(go$sliceType(Go$Uint8))], [Go$Int, go$error], false))]]);
+	ReaderFrom.init([["ReadFrom", "", (go$funcType([Reader], [Go$Int64, go$error], false))]]);
+	WriterTo.init([["WriteTo", "", (go$funcType([Writer], [Go$Int64, go$error], false))]]);
+	ReaderAt.init([["ReadAt", "", (go$funcType([(go$sliceType(Go$Uint8)), Go$Int64], [Go$Int, go$error], false))]]);
+	WriterAt.init([["WriteAt", "", (go$funcType([(go$sliceType(Go$Uint8)), Go$Int64], [Go$Int, go$error], false))]]);
+	ByteReader.init([["ReadByte", "", (go$funcType([], [Go$Uint8, go$error], false))]]);
+	ByteScanner.init([["ReadByte", "", (go$funcType([], [Go$Uint8, go$error], false))], ["UnreadByte", "", (go$funcType([], [go$error], false))]]);
+	ByteWriter.init([["WriteByte", "", (go$funcType([Go$Uint8], [go$error], false))]]);
+	RuneReader.init([["ReadRune", "", (go$funcType([], [Go$Int32, Go$Int, go$error], false))]]);
+	RuneScanner.init([["ReadRune", "", (go$funcType([], [Go$Int32, Go$Int, go$error], false))], ["UnreadRune", "", (go$funcType([], [go$error], false))]]);
+	stringWriter.init([["WriteString", "", (go$funcType([Go$String], [Go$Int, go$error], false))]]);
+	LimitedReader.init([["R", "", Reader, ""], ["N", "", Go$Int64, ""]]);
+	(go$ptrType(LimitedReader)).methods = [["Read", "", [(go$sliceType(Go$Uint8))], [Go$Int, go$error], false]];
+	SectionReader.init([["r", "io", ReaderAt, ""], ["base", "io", Go$Int64, ""], ["off", "io", Go$Int64, ""], ["limit", "io", Go$Int64, ""]]);
+	(go$ptrType(SectionReader)).methods = [["Read", "", [(go$sliceType(Go$Uint8))], [Go$Int, go$error], false], ["ReadAt", "", [(go$sliceType(Go$Uint8)), Go$Int64], [Go$Int, go$error], false], ["Seek", "", [Go$Int64, Go$Int], [Go$Int64, go$error], false], ["Size", "", [], [Go$Int64], false]];
+	teeReader.init([["r", "io", Reader, ""], ["w", "io", Writer, ""]]);
+	(go$ptrType(teeReader)).methods = [["Read", "", [(go$sliceType(Go$Uint8))], [Go$Int, go$error], false]];
+	multiReader.init([["readers", "io", (go$sliceType(Reader)), ""]]);
+	(go$ptrType(multiReader)).methods = [["Read", "", [(go$sliceType(Go$Uint8))], [Go$Int, go$error], false]];
+	multiWriter.init([["writers", "io", (go$sliceType(Writer)), ""]]);
+	(go$ptrType(multiWriter)).methods = [["Write", "", [(go$sliceType(Go$Uint8))], [Go$Int, go$error], false]];
+	pipeResult.init([["n", "io", Go$Int, ""], ["err", "io", go$error, ""]]);
+	pipe.init([["rl", "io", sync.Mutex, ""], ["wl", "io", sync.Mutex, ""], ["l", "io", sync.Mutex, ""], ["data", "io", (go$sliceType(Go$Uint8)), ""], ["rwait", "io", sync.Cond, ""], ["wwait", "io", sync.Cond, ""], ["rerr", "io", go$error, ""], ["werr", "io", go$error, ""]]);
+	(go$ptrType(pipe)).methods = [["rclose", "io", [go$error], [], false], ["read", "io", [(go$sliceType(Go$Uint8))], [Go$Int, go$error], false], ["wclose", "io", [go$error], [], false], ["write", "io", [(go$sliceType(Go$Uint8))], [Go$Int, go$error], false]];
+	PipeReader.init([["p", "io", (go$ptrType(pipe)), ""]]);
+	(go$ptrType(PipeReader)).methods = [["Close", "", [], [go$error], false], ["CloseWithError", "", [go$error], [go$error], false], ["Read", "", [(go$sliceType(Go$Uint8))], [Go$Int, go$error], false]];
+	PipeWriter.init([["p", "io", (go$ptrType(pipe)), ""]]);
+	(go$ptrType(PipeWriter)).methods = [["Close", "", [], [go$error], false], ["CloseWithError", "", [go$error], [go$error], false], ["Write", "", [(go$sliceType(Go$Uint8))], [Go$Int, go$error], false]];
+	var errWhence, errOffset, zero;
+	var WriteString = go$pkg.WriteString = function(w, s) {
+		var n, err, ok, _tuple, sw, _tuple$1, _tuple$2;
+		n = 0;
+		err = null;
+		if (_tuple = (w !== null && stringWriter.implementedBy.indexOf(w.constructor) !== -1 ? [w, true] : [null, false]), sw = _tuple[0], ok = _tuple[1], ok) {
+			_tuple$1 = sw.WriteString(s), n = _tuple$1[0], err = _tuple$1[1];
+			return [n, err];
+		}
+		_tuple$2 = w.Write(new (go$sliceType(Go$Uint8))(go$stringToBytes(s))), n = _tuple$2[0], err = _tuple$2[1];
+		return [n, err];
+	};
+	var ReadAtLeast = go$pkg.ReadAtLeast = function(r, buf, min) {
+		var n, err, _tuple, nn, _tuple$1;
+		n = 0;
+		err = null;
+		if (buf.length < min) {
+			_tuple = [0, go$pkg.ErrShortBuffer], n = _tuple[0], err = _tuple[1];
+			return [n, err];
+		}
+		while (n < min && go$interfaceIsEqual(err, null)) {
+			nn = 0;
+			_tuple$1 = r.Read(go$subslice(buf, n)), nn = _tuple$1[0], err = _tuple$1[1];
+			n = n + (nn) >> 0;
+		}
+		if (n >= min) {
+			err = null;
+		} else if (n > 0 && go$interfaceIsEqual(err, go$pkg.EOF)) {
+			err = go$pkg.ErrUnexpectedEOF;
+		}
+		return [n, err];
+	};
+	var ReadFull = go$pkg.ReadFull = function(r, buf) {
+		var n, err, _tuple;
+		n = 0;
+		err = null;
+		_tuple = ReadAtLeast(r, buf, buf.length), n = _tuple[0], err = _tuple[1];
+		return [n, err];
+	};
+	var CopyN = go$pkg.CopyN = function(dst, src, n) {
+		var written, err, _tuple, _tuple$1;
+		written = new Go$Int64(0, 0);
+		err = null;
+		_tuple = Copy(dst, LimitReader(src, n)), written = _tuple[0], err = _tuple[1];
+		if ((written.high === n.high && written.low === n.low)) {
+			_tuple$1 = [n, null], written = _tuple$1[0], err = _tuple$1[1];
+			return [written, err];
+		}
+		if ((written.high < n.high || (written.high === n.high && written.low < n.low)) && go$interfaceIsEqual(err, null)) {
+			err = go$pkg.EOF;
+		}
+		return [written, err];
+	};
+	var Copy = go$pkg.Copy = function(dst, src) {
+		var written, err, ok, _tuple, wt, _tuple$1, ok$1, _tuple$2, rt, _tuple$3, buf, _tuple$4, nr, er, _tuple$5, nw, ew, x, _tuple$6;
+		written = new Go$Int64(0, 0);
+		err = null;
+		if (_tuple = (src !== null && WriterTo.implementedBy.indexOf(src.constructor) !== -1 ? [src, true] : [null, false]), wt = _tuple[0], ok = _tuple[1], ok) {
+			_tuple$1 = wt.WriteTo(dst), written = _tuple$1[0], err = _tuple$1[1];
+			return [written, err];
+		}
+		if (_tuple$2 = (dst !== null && ReaderFrom.implementedBy.indexOf(dst.constructor) !== -1 ? [dst, true] : [null, false]), rt = _tuple$2[0], ok$1 = _tuple$2[1], ok$1) {
+			_tuple$3 = rt.ReadFrom(src), written = _tuple$3[0], err = _tuple$3[1];
+			return [written, err];
+		}
+		buf = (go$sliceType(Go$Uint8)).make(32768, 0, function() { return 0; });
+		while (true) {
+			_tuple$4 = src.Read(buf), nr = _tuple$4[0], er = _tuple$4[1];
+			if (nr > 0) {
+				_tuple$5 = dst.Write(go$subslice(buf, 0, nr)), nw = _tuple$5[0], ew = _tuple$5[1];
+				if (nw > 0) {
+					written = (x = new Go$Int64(0, nw), new Go$Int64(written.high + x.high, written.low + x.low));
+				}
+				if (!(go$interfaceIsEqual(ew, null))) {
+					err = ew;
+					break;
+				}
+				if (!((nr === nw))) {
+					err = go$pkg.ErrShortWrite;
+					break;
+				}
+			}
+			if (go$interfaceIsEqual(er, go$pkg.EOF)) {
+				break;
+			}
+			if (!(go$interfaceIsEqual(er, null))) {
+				err = er;
+				break;
+			}
+		}
+		_tuple$6 = [written, err], written = _tuple$6[0], err = _tuple$6[1];
+		return [written, err];
+	};
+	var LimitReader = go$pkg.LimitReader = function(r, n) {
+		return new LimitedReader.Ptr(r, n);
+	};
+	LimitedReader.Ptr.prototype.Read = function(p) {
+		var n, err, l, x, _tuple, x$1, x$2, _tuple$1, x$3, x$4;
+		n = 0;
+		err = null;
+		l = this;
+		if ((x = l.N, (x.high < 0 || (x.high === 0 && x.low <= 0)))) {
+			_tuple = [0, go$pkg.EOF], n = _tuple[0], err = _tuple[1];
+			return [n, err];
+		}
+		if ((x$1 = new Go$Int64(0, p.length), x$2 = l.N, (x$1.high > x$2.high || (x$1.high === x$2.high && x$1.low > x$2.low)))) {
+			p = go$subslice(p, 0, go$flatten64(l.N));
+		}
+		_tuple$1 = l.R.Read(p), n = _tuple$1[0], err = _tuple$1[1];
+		l.N = (x$3 = l.N, x$4 = new Go$Int64(0, n), new Go$Int64(x$3.high - x$4.high, x$3.low - x$4.low));
+		return [n, err];
+	};
+	LimitedReader.prototype.Read = function(p) { return this.go$val.Read(p); };
+	var NewSectionReader = go$pkg.NewSectionReader = function(r, off, n) {
+		return new SectionReader.Ptr(r, off, off, new Go$Int64(off.high + n.high, off.low + n.low));
+	};
+	SectionReader.Ptr.prototype.Read = function(p) {
+		var n, err, s, x, x$1, _tuple, x$2, max, x$3, x$4, _tuple$1, x$5, x$6;
+		n = 0;
+		err = null;
+		s = this;
+		if ((x = s.off, x$1 = s.limit, (x.high > x$1.high || (x.high === x$1.high && x.low >= x$1.low)))) {
+			_tuple = [0, go$pkg.EOF], n = _tuple[0], err = _tuple[1];
+			return [n, err];
+		}
+		if (max = (x$3 = s.limit, x$4 = s.off, new Go$Int64(x$3.high - x$4.high, x$3.low - x$4.low)), (x$2 = new Go$Int64(0, p.length), (x$2.high > max.high || (x$2.high === max.high && x$2.low > max.low)))) {
+			p = go$subslice(p, 0, go$flatten64(max));
+		}
+		_tuple$1 = s.r.ReadAt(p, s.off), n = _tuple$1[0], err = _tuple$1[1];
+		s.off = (x$5 = s.off, x$6 = new Go$Int64(0, n), new Go$Int64(x$5.high + x$6.high, x$5.low + x$6.low));
+		return [n, err];
+	};
+	SectionReader.prototype.Read = function(p) { return this.go$val.Read(p); };
+	SectionReader.Ptr.prototype.Seek = function(offset, whence) {
+		var s, _ref, x, x$1, x$2, x$3, x$4;
+		s = this;
+		_ref = whence;
+		if (_ref === 0) {
+			offset = (x = s.base, new Go$Int64(offset.high + x.high, offset.low + x.low));
+		} else if (_ref === 1) {
+			offset = (x$1 = s.off, new Go$Int64(offset.high + x$1.high, offset.low + x$1.low));
+		} else if (_ref === 2) {
+			offset = (x$2 = s.limit, new Go$Int64(offset.high + x$2.high, offset.low + x$2.low));
+		} else {
+			return [new Go$Int64(0, 0), errWhence];
+		}
+		if ((x$3 = s.base, (offset.high < x$3.high || (offset.high === x$3.high && offset.low < x$3.low)))) {
+			return [new Go$Int64(0, 0), errOffset];
+		}
+		s.off = offset;
+		return [(x$4 = s.base, new Go$Int64(offset.high - x$4.high, offset.low - x$4.low)), null];
+	};
+	SectionReader.prototype.Seek = function(offset, whence) { return this.go$val.Seek(offset, whence); };
+	SectionReader.Ptr.prototype.ReadAt = function(p, off) {
+		var n, err, s, x, x$1, x$2, _tuple, x$3, x$4, max, x$5, _tuple$1, _tuple$2, _tuple$3;
+		n = 0;
+		err = null;
+		s = this;
+		if ((off.high < 0 || (off.high === 0 && off.low < 0)) || (x = (x$1 = s.limit, x$2 = s.base, new Go$Int64(x$1.high - x$2.high, x$1.low - x$2.low)), (off.high > x.high || (off.high === x.high && off.low >= x.low)))) {
+			_tuple = [0, go$pkg.EOF], n = _tuple[0], err = _tuple[1];
+			return [n, err];
+		}
+		off = (x$3 = s.base, new Go$Int64(off.high + x$3.high, off.low + x$3.low));
+		if (max = (x$5 = s.limit, new Go$Int64(x$5.high - off.high, x$5.low - off.low)), (x$4 = new Go$Int64(0, p.length), (x$4.high > max.high || (x$4.high === max.high && x$4.low > max.low)))) {
+			p = go$subslice(p, 0, go$flatten64(max));
+			_tuple$1 = s.r.ReadAt(p, off), n = _tuple$1[0], err = _tuple$1[1];
+			if (go$interfaceIsEqual(err, null)) {
+				err = go$pkg.EOF;
+			}
+			_tuple$2 = [n, err], n = _tuple$2[0], err = _tuple$2[1];
+			return [n, err];
+		}
+		_tuple$3 = s.r.ReadAt(p, off), n = _tuple$3[0], err = _tuple$3[1];
+		return [n, err];
+	};
+	SectionReader.prototype.ReadAt = function(p, off) { return this.go$val.ReadAt(p, off); };
+	SectionReader.Ptr.prototype.Size = function() {
+		var s, x, x$1;
+		s = this;
+		return (x = s.limit, x$1 = s.base, new Go$Int64(x.high - x$1.high, x.low - x$1.low));
+	};
+	SectionReader.prototype.Size = function() { return this.go$val.Size(); };
+	var TeeReader = go$pkg.TeeReader = function(r, w) {
+		return new teeReader.Ptr(r, w);
+	};
+	teeReader.Ptr.prototype.Read = function(p) {
+		var n, err, t, _tuple, err$1, _tuple$1, n$1, _tuple$2;
+		n = 0;
+		err = null;
+		t = this;
+		_tuple = t.r.Read(p), n = _tuple[0], err = _tuple[1];
+		if (n > 0) {
+			if (_tuple$1 = t.w.Write(go$subslice(p, 0, n)), n$1 = _tuple$1[0], err$1 = _tuple$1[1], !(go$interfaceIsEqual(err$1, null))) {
+				_tuple$2 = [n$1, err$1], n = _tuple$2[0], err = _tuple$2[1];
+				return [n, err];
+			}
+		}
+		return [n, err];
+	};
+	teeReader.prototype.Read = function(p) { return this.go$val.Read(p); };
+	multiReader.Ptr.prototype.Read = function(p) {
+		var n, err, mr, _tuple, _slice, _index, _tuple$1;
+		n = 0;
+		err = null;
+		mr = this;
+		while (mr.readers.length > 0) {
+			_tuple = (_slice = mr.readers, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")).Read(p), n = _tuple[0], err = _tuple[1];
+			if (n > 0 || !(go$interfaceIsEqual(err, go$pkg.EOF))) {
+				if (go$interfaceIsEqual(err, go$pkg.EOF)) {
+					err = null;
+				}
+				return [n, err];
+			}
+			mr.readers = go$subslice(mr.readers, 1);
+		}
+		_tuple$1 = [0, go$pkg.EOF], n = _tuple$1[0], err = _tuple$1[1];
+		return [n, err];
+	};
+	multiReader.prototype.Read = function(p) { return this.go$val.Read(p); };
+	var MultiReader = go$pkg.MultiReader = function(readers) {
+		return new multiReader.Ptr(readers);
+	};
+	multiWriter.Ptr.prototype.Write = function(p) {
+		var n, err, t, _ref, _i, _slice, _index, w, _tuple, _tuple$1;
+		n = 0;
+		err = null;
+		t = this;
+		_ref = t.writers;
+		_i = 0;
+		while (_i < _ref.length) {
+			w = (_slice = _ref, _index = _i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
+			_tuple = w.Write(p), n = _tuple[0], err = _tuple[1];
+			if (!(go$interfaceIsEqual(err, null))) {
+				return [n, err];
+			}
+			if (!((n === p.length))) {
+				err = go$pkg.ErrShortWrite;
+				return [n, err];
+			}
+			_i++;
+		}
+		_tuple$1 = [p.length, null], n = _tuple$1[0], err = _tuple$1[1];
+		return [n, err];
+	};
+	multiWriter.prototype.Write = function(p) { return this.go$val.Write(p); };
+	var MultiWriter = go$pkg.MultiWriter = function(writers) {
+		return new multiWriter.Ptr(writers);
+	};
+	pipe.Ptr.prototype.read = function(b) {
+		var n, err, p, _tuple, _tuple$1;
+		n = 0;
+		err = null;
+		var go$deferred = [];
+		try {
+			p = this;
+			p.rl.Lock();
+			go$deferred.push({ recv: p.rl, method: "Unlock", args: [] });
+			p.l.Lock();
+			go$deferred.push({ recv: p.l, method: "Unlock", args: [] });
+			while (true) {
+				if (!(go$interfaceIsEqual(p.rerr, null))) {
+					_tuple = [0, go$pkg.ErrClosedPipe], n = _tuple[0], err = _tuple[1];
+					return [n, err];
+				}
+				if (!(p.data === (go$sliceType(Go$Uint8)).nil)) {
+					break;
+				}
+				if (!(go$interfaceIsEqual(p.werr, null))) {
+					_tuple$1 = [0, p.werr], n = _tuple$1[0], err = _tuple$1[1];
+					return [n, err];
+				}
+				p.rwait.Wait();
+			}
+			n = go$copySlice(b, p.data);
+			p.data = go$subslice(p.data, n);
+			if (p.data.length === 0) {
+				p.data = (go$sliceType(Go$Uint8)).nil;
+				p.wwait.Signal();
+			}
+			return [n, err];
+		} catch(go$err) {
+			go$pushErr(go$err);
+		} finally {
+			go$callDeferred(go$deferred);
+			return [n, err];
+		}
+	};
+	pipe.prototype.read = function(b) { return this.go$val.read(b); };
+	pipe.Ptr.prototype.write = function(b) {
+		var n, err, p;
+		n = 0;
+		err = null;
+		var go$deferred = [];
+		try {
+			p = this;
+			if (b === (go$sliceType(Go$Uint8)).nil) {
+				b = new (go$sliceType(Go$Uint8))(zero);
+			}
+			p.wl.Lock();
+			go$deferred.push({ recv: p.wl, method: "Unlock", args: [] });
+			p.l.Lock();
+			go$deferred.push({ recv: p.l, method: "Unlock", args: [] });
+			if (!(go$interfaceIsEqual(p.werr, null))) {
+				err = go$pkg.ErrClosedPipe;
+				return [n, err];
+			}
+			p.data = b;
+			p.rwait.Signal();
+			while (true) {
+				if (p.data === (go$sliceType(Go$Uint8)).nil) {
+					break;
+				}
+				if (!(go$interfaceIsEqual(p.rerr, null))) {
+					err = p.rerr;
+					break;
+				}
+				if (!(go$interfaceIsEqual(p.werr, null))) {
+					err = go$pkg.ErrClosedPipe;
+				}
+				p.wwait.Wait();
+			}
+			n = b.length - p.data.length >> 0;
+			p.data = (go$sliceType(Go$Uint8)).nil;
+			return [n, err];
+		} catch(go$err) {
+			go$pushErr(go$err);
+		} finally {
+			go$callDeferred(go$deferred);
+			return [n, err];
+		}
+	};
+	pipe.prototype.write = function(b) { return this.go$val.write(b); };
+	pipe.Ptr.prototype.rclose = function(err) {
+		var p;
+		var go$deferred = [];
+		try {
+			p = this;
+			if (go$interfaceIsEqual(err, null)) {
+				err = go$pkg.ErrClosedPipe;
+			}
+			p.l.Lock();
+			go$deferred.push({ recv: p.l, method: "Unlock", args: [] });
+			p.rerr = err;
+			p.rwait.Signal();
+			p.wwait.Signal();
+		} catch(go$err) {
+			go$pushErr(go$err);
+		} finally {
+			go$callDeferred(go$deferred);
+		}
+	};
+	pipe.prototype.rclose = function(err) { return this.go$val.rclose(err); };
+	pipe.Ptr.prototype.wclose = function(err) {
+		var p;
+		var go$deferred = [];
+		try {
+			p = this;
+			if (go$interfaceIsEqual(err, null)) {
+				err = go$pkg.EOF;
+			}
+			p.l.Lock();
+			go$deferred.push({ recv: p.l, method: "Unlock", args: [] });
+			p.werr = err;
+			p.rwait.Signal();
+			p.wwait.Signal();
+		} catch(go$err) {
+			go$pushErr(go$err);
+		} finally {
+			go$callDeferred(go$deferred);
+		}
+	};
+	pipe.prototype.wclose = function(err) { return this.go$val.wclose(err); };
+	PipeReader.Ptr.prototype.Read = function(data) {
+		var n, err, r, _tuple;
+		n = 0;
+		err = null;
+		r = this;
+		_tuple = r.p.read(data), n = _tuple[0], err = _tuple[1];
+		return [n, err];
+	};
+	PipeReader.prototype.Read = function(data) { return this.go$val.Read(data); };
+	PipeReader.Ptr.prototype.Close = function() {
+		var r;
+		r = this;
+		return r.CloseWithError(null);
+	};
+	PipeReader.prototype.Close = function() { return this.go$val.Close(); };
+	PipeReader.Ptr.prototype.CloseWithError = function(err) {
+		var r;
+		r = this;
+		r.p.rclose(err);
+		return null;
+	};
+	PipeReader.prototype.CloseWithError = function(err) { return this.go$val.CloseWithError(err); };
+	PipeWriter.Ptr.prototype.Write = function(data) {
+		var n, err, w, _tuple;
+		n = 0;
+		err = null;
+		w = this;
+		_tuple = w.p.write(data), n = _tuple[0], err = _tuple[1];
+		return [n, err];
+	};
+	PipeWriter.prototype.Write = function(data) { return this.go$val.Write(data); };
+	PipeWriter.Ptr.prototype.Close = function() {
+		var w;
+		w = this;
+		return w.CloseWithError(null);
+	};
+	PipeWriter.prototype.Close = function() { return this.go$val.Close(); };
+	PipeWriter.Ptr.prototype.CloseWithError = function(err) {
+		var w;
+		w = this;
+		w.p.wclose(err);
+		return null;
+	};
+	PipeWriter.prototype.CloseWithError = function(err) { return this.go$val.CloseWithError(err); };
+	var Pipe = go$pkg.Pipe = function() {
+		var p, r, w;
+		p = new pipe.Ptr();
+		p.rwait.L = p.l;
+		p.wwait.L = p.l;
+		r = new PipeReader.Ptr(p);
+		w = new PipeWriter.Ptr(p);
+		return [r, w];
+	};
+	go$pkg.init = function() {
+		zero = go$makeNativeArray("Uint8", 0, function() { return 0; });
+		go$pkg.ErrShortWrite = errors.New("short write");
+		go$pkg.ErrShortBuffer = errors.New("short buffer");
+		go$pkg.EOF = errors.New("EOF");
+		go$pkg.ErrUnexpectedEOF = errors.New("unexpected EOF");
+		go$pkg.ErrNoProgress = errors.New("multiple Read calls return no data or error");
+		errWhence = errors.New("Seek: invalid whence");
+		errOffset = errors.New("Seek: invalid offset");
+		go$pkg.ErrClosedPipe = errors.New("io: read/write on closed pipe");
+	};
+	return go$pkg;
+})();
+go$packages["unicode"] = (function() {
+	var go$pkg = {};
+	var RangeTable;
+	RangeTable = go$newType(0, "Struct", "unicode.RangeTable", "RangeTable", "unicode", function(R16_, R32_, LatinOffset_) {
+		this.go$val = this;
+		this.R16 = R16_ !== undefined ? R16_ : (go$sliceType(Range16)).nil;
+		this.R32 = R32_ !== undefined ? R32_ : (go$sliceType(Range32)).nil;
+		this.LatinOffset = LatinOffset_ !== undefined ? LatinOffset_ : 0;
+	});
+	go$pkg.RangeTable = RangeTable;
+	var Range16;
+	Range16 = go$newType(0, "Struct", "unicode.Range16", "Range16", "unicode", function(Lo_, Hi_, Stride_) {
+		this.go$val = this;
+		this.Lo = Lo_ !== undefined ? Lo_ : 0;
+		this.Hi = Hi_ !== undefined ? Hi_ : 0;
+		this.Stride = Stride_ !== undefined ? Stride_ : 0;
+	});
+	go$pkg.Range16 = Range16;
+	var Range32;
+	Range32 = go$newType(0, "Struct", "unicode.Range32", "Range32", "unicode", function(Lo_, Hi_, Stride_) {
+		this.go$val = this;
+		this.Lo = Lo_ !== undefined ? Lo_ : 0;
+		this.Hi = Hi_ !== undefined ? Hi_ : 0;
+		this.Stride = Stride_ !== undefined ? Stride_ : 0;
+	});
+	go$pkg.Range32 = Range32;
+	var CaseRange;
+	CaseRange = go$newType(0, "Struct", "unicode.CaseRange", "CaseRange", "unicode", function(Lo_, Hi_, Delta_) {
+		this.go$val = this;
+		this.Lo = Lo_ !== undefined ? Lo_ : 0;
+		this.Hi = Hi_ !== undefined ? Hi_ : 0;
+		this.Delta = Delta_ !== undefined ? Delta_ : go$makeNativeArray("Int32", 3, function() { return 0; });
+	});
+	go$pkg.CaseRange = CaseRange;
+	var SpecialCase;
+	SpecialCase = go$newType(0, "Slice", "unicode.SpecialCase", "SpecialCase", "unicode", null);
+	go$pkg.SpecialCase = SpecialCase;
+	var d;
+	d = go$newType(0, "Array", "unicode.d", "d", "unicode", null);
+	go$pkg.d = d;
+	var foldPair;
+	foldPair = go$newType(0, "Struct", "unicode.foldPair", "foldPair", "unicode", function(From_, To_) {
+		this.go$val = this;
+		this.From = From_ !== undefined ? From_ : 0;
+		this.To = To_ !== undefined ? To_ : 0;
+	});
+	go$pkg.foldPair = foldPair;
+	RangeTable.init([["R16", "", (go$sliceType(Range16)), ""], ["R32", "", (go$sliceType(Range32)), ""], ["LatinOffset", "", Go$Int, ""]]);
+	Range16.init([["Lo", "", Go$Uint16, ""], ["Hi", "", Go$Uint16, ""], ["Stride", "", Go$Uint16, ""]]);
+	Range32.init([["Lo", "", Go$Uint32, ""], ["Hi", "", Go$Uint32, ""], ["Stride", "", Go$Uint32, ""]]);
+	CaseRange.init([["Lo", "", Go$Uint32, ""], ["Hi", "", Go$Uint32, ""], ["Delta", "", d, ""]]);
+	SpecialCase.init(CaseRange);
+	SpecialCase.methods = [["ToLower", "", [Go$Int32], [Go$Int32], false], ["ToTitle", "", [Go$Int32], [Go$Int32], false], ["ToUpper", "", [Go$Int32], [Go$Int32], false]];
+	(go$ptrType(SpecialCase)).methods = [["ToLower", "", [Go$Int32], [Go$Int32], false], ["ToTitle", "", [Go$Int32], [Go$Int32], false], ["ToUpper", "", [Go$Int32], [Go$Int32], false]];
+	d.init(Go$Int32, 3);
+	foldPair.init([["From", "", Go$Uint16, ""], ["To", "", Go$Uint16, ""]]);
+	var _TurkishCase, _C, _Cc, _Cf, _Co, _Cs, _L, _Ll, _Lm, _Lo, _Lt, _Lu, _M, _Mc, _Me, _Mn, _N, _Nd, _Nl, _No, _P, _Pc, _Pd, _Pe, _Pf, _Pi, _Po, _Ps, _S, _Sc, _Sk, _Sm, _So, _Z, _Zl, _Zp, _Zs, _Arabic, _Armenian, _Avestan, _Balinese, _Bamum, _Batak, _Bengali, _Bopomofo, _Brahmi, _Braille, _Buginese, _Buhid, _Canadian_Aboriginal, _Carian, _Chakma, _Cham, _Cherokee, _Common, _Coptic, _Cuneiform, _Cypriot, _Cyrillic, _Deseret, _Devanagari, _Egyptian_Hieroglyphs, _Ethiopic, _Georgian, _Glagolitic, _Gothic, _Greek, _Gujarati, _Gurmukhi, _Han, _Hangul, _Hanunoo, _Hebrew, _Hiragana, _Imperial_Aramaic, _Inherited, _Inscriptional_Pahlavi, _Inscriptional_Parthian, _Javanese, _Kaithi, _Kannada, _Katakana, _Kayah_Li, _Kharoshthi, _Khmer, _Lao, _Latin, _Lepcha, _Limbu, _Linear_B, _Lisu, _Lycian, _Lydian, _Malayalam, _Mandaic, _Meetei_Mayek, _Meroitic_Cursive, _Meroitic_Hieroglyphs, _Miao, _Mongolian, _Myanmar, _New_Tai_Lue, _Nko, _Ogham, _Ol_Chiki, _Old_Italic, _Old_Persian, _Old_South_Arabian, _Old_Turkic, _Oriya, _Osmanya, _Phags_Pa, _Phoenician, _Rejang, _Runic, _Samaritan, _Saurashtra, _Sharada, _Shavian, _Sinhala, _Sora_Sompeng, _Sundanese, _Syloti_Nagri, _Syriac, _Tagalog, _Tagbanwa, _Tai_Le, _Tai_Tham, _Tai_Viet, _Takri, _Tamil, _Telugu, _Thaana, _Thai, _Tibetan, _Tifinagh, _Ugaritic, _Vai, _Yi, _ASCII_Hex_Digit, _Bidi_Control, _Dash, _Deprecated, _Diacritic, _Extender, _Hex_Digit, _Hyphen, _IDS_Binary_Operator, _IDS_Trinary_Operator, _Ideographic, _Join_Control, _Logical_Order_Exception, _Noncharacter_Code_Point, _Other_Alphabetic, _Other_Default_Ignorable_Code_Point, _Other_Grapheme_Extend, _Other_ID_Continue, _Other_ID_Start, _Other_Lowercase, _Other_Math, _Other_Uppercase, _Pattern_Syntax, _Pattern_White_Space, _Quotation_Mark, _Radical, _STerm, _Soft_Dotted, _Terminal_Punctuation, _Unified_Ideograph, _Variation_Selector, _White_Space, _CaseRanges, properties, caseOrbit, foldCommon, foldGreek, foldInherited, foldL, foldLl, foldLt, foldLu, foldM, foldMn;
+	var IsDigit = go$pkg.IsDigit = function(r) {
+		if (r <= 255) {
+			return 48 <= r && r <= 57;
+		}
+		return isExcludingLatin(go$pkg.Digit, r);
+	};
+	var IsGraphic = go$pkg.IsGraphic = function(r) {
+		if ((r >>> 0) <= 255) {
+			return !((((properties[(r << 24 >>> 24)] & 144) >>> 0) === 0));
+		}
+		return In(r, go$pkg.GraphicRanges);
+	};
+	var IsPrint = go$pkg.IsPrint = function(r) {
+		if ((r >>> 0) <= 255) {
+			return !((((properties[(r << 24 >>> 24)] & 128) >>> 0) === 0));
+		}
+		return In(r, go$pkg.PrintRanges);
+	};
+	var IsOneOf = go$pkg.IsOneOf = function(ranges, r) {
+		var _ref, _i, _slice, _index, inside;
+		_ref = ranges;
+		_i = 0;
+		while (_i < _ref.length) {
+			inside = (_slice = _ref, _index = _i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
+			if (Is(inside, r)) {
+				return true;
+			}
+			_i++;
+		}
+		return false;
+	};
+	var In = go$pkg.In = function(r, ranges) {
+		var _ref, _i, _slice, _index, inside;
+		_ref = ranges;
+		_i = 0;
+		while (_i < _ref.length) {
+			inside = (_slice = _ref, _index = _i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
+			if (Is(inside, r)) {
+				return true;
+			}
+			_i++;
+		}
+		return false;
+	};
+	var IsControl = go$pkg.IsControl = function(r) {
+		if ((r >>> 0) <= 255) {
+			return !((((properties[(r << 24 >>> 24)] & 1) >>> 0) === 0));
+		}
+		return false;
+	};
+	var IsLetter = go$pkg.IsLetter = function(r) {
+		if ((r >>> 0) <= 255) {
+			return !((((properties[(r << 24 >>> 24)] & 96) >>> 0) === 0));
+		}
+		return isExcludingLatin(go$pkg.Letter, r);
+	};
+	var IsMark = go$pkg.IsMark = function(r) {
+		return isExcludingLatin(go$pkg.Mark, r);
+	};
+	var IsNumber = go$pkg.IsNumber = function(r) {
+		if ((r >>> 0) <= 255) {
+			return !((((properties[(r << 24 >>> 24)] & 4) >>> 0) === 0));
+		}
+		return isExcludingLatin(go$pkg.Number, r);
+	};
+	var IsPunct = go$pkg.IsPunct = function(r) {
+		if ((r >>> 0) <= 255) {
+			return !((((properties[(r << 24 >>> 24)] & 2) >>> 0) === 0));
+		}
+		return Is(go$pkg.Punct, r);
+	};
+	var IsSpace = go$pkg.IsSpace = function(r) {
+		var _ref;
+		if ((r >>> 0) <= 255) {
+			_ref = r;
+			if (_ref === 9 || _ref === 10 || _ref === 11 || _ref === 12 || _ref === 13 || _ref === 32 || _ref === 133 || _ref === 160) {
+				return true;
+			}
+			return false;
+		}
+		return isExcludingLatin(go$pkg.White_Space, r);
+	};
+	var IsSymbol = go$pkg.IsSymbol = function(r) {
+		if ((r >>> 0) <= 255) {
+			return !((((properties[(r << 24 >>> 24)] & 8) >>> 0) === 0));
+		}
+		return isExcludingLatin(go$pkg.Symbol, r);
+	};
+	var is16 = function(ranges, r) {
+		var _ref, _i, i, _slice, _index, range_, _r, lo, hi, _q, m, _slice$1, _index$1, range_$1, _r$1;
+		if (ranges.length <= 18 || r <= 255) {
+			_ref = ranges;
+			_i = 0;
+			while (_i < _ref.length) {
+				i = _i;
+				range_ = (_slice = ranges, _index = i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
+				if (r < range_.Lo) {
+					return false;
+				}
+				if (r <= range_.Hi) {
+					return (_r = ((r - range_.Lo << 16 >>> 16)) % range_.Stride, _r === _r ? _r : go$throwRuntimeError("integer divide by zero")) === 0;
+				}
+				_i++;
+			}
+			return false;
+		}
+		lo = 0;
+		hi = ranges.length;
+		while (lo < hi) {
+			m = lo + (_q = ((hi - lo >> 0)) / 2, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero")) >> 0;
+			range_$1 = (_slice$1 = ranges, _index$1 = m, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range"));
+			if (range_$1.Lo <= r && r <= range_$1.Hi) {
+				return (_r$1 = ((r - range_$1.Lo << 16 >>> 16)) % range_$1.Stride, _r$1 === _r$1 ? _r$1 : go$throwRuntimeError("integer divide by zero")) === 0;
+			}
+			if (r < range_$1.Lo) {
+				hi = m;
+			} else {
+				lo = m + 1 >> 0;
+			}
+		}
+		return false;
+	};
+	var is32 = function(ranges, r) {
+		var _ref, _i, i, _slice, _index, range_, _r, lo, hi, _q, m, _slice$1, _index$1, _struct, range_$1, _r$1;
+		if (ranges.length <= 18) {
+			_ref = ranges;
+			_i = 0;
+			while (_i < _ref.length) {
+				i = _i;
+				range_ = (_slice = ranges, _index = i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
+				if (r < range_.Lo) {
+					return false;
+				}
+				if (r <= range_.Hi) {
+					return (_r = ((r - range_.Lo >>> 0)) % range_.Stride, _r === _r ? _r : go$throwRuntimeError("integer divide by zero")) === 0;
+				}
+				_i++;
+			}
+			return false;
+		}
+		lo = 0;
+		hi = ranges.length;
+		while (lo < hi) {
+			m = lo + (_q = ((hi - lo >> 0)) / 2, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero")) >> 0;
+			range_$1 = (_struct = (_slice$1 = ranges, _index$1 = m, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")), new Range32.Ptr(_struct.Lo, _struct.Hi, _struct.Stride));
+			if (range_$1.Lo <= r && r <= range_$1.Hi) {
+				return (_r$1 = ((r - range_$1.Lo >>> 0)) % range_$1.Stride, _r$1 === _r$1 ? _r$1 : go$throwRuntimeError("integer divide by zero")) === 0;
+			}
+			if (r < range_$1.Lo) {
+				hi = m;
+			} else {
+				lo = m + 1 >> 0;
+			}
+		}
+		return false;
+	};
+	var Is = go$pkg.Is = function(rangeTab, r) {
+		var r16, _slice, _index, r32, _slice$1, _index$1;
+		r16 = rangeTab.R16;
+		if (r16.length > 0 && r <= ((_slice = r16, _index = (r16.length - 1 >> 0), (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")).Hi >> 0)) {
+			return is16(r16, (r << 16 >>> 16));
+		}
+		r32 = rangeTab.R32;
+		if (r32.length > 0 && r >= ((_slice$1 = r32, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")).Lo >> 0)) {
+			return is32(r32, (r >>> 0));
+		}
+		return false;
+	};
+	var isExcludingLatin = function(rangeTab, r) {
+		var r16, off, _slice, _index, r32, _slice$1, _index$1;
+		r16 = rangeTab.R16;
+		if (off = rangeTab.LatinOffset, r16.length > off && r <= ((_slice = r16, _index = (r16.length - 1 >> 0), (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")).Hi >> 0)) {
+			return is16(go$subslice(r16, off), (r << 16 >>> 16));
+		}
+		r32 = rangeTab.R32;
+		if (r32.length > 0 && r >= ((_slice$1 = r32, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")).Lo >> 0)) {
+			return is32(r32, (r >>> 0));
+		}
+		return false;
+	};
+	var IsUpper = go$pkg.IsUpper = function(r) {
+		if ((r >>> 0) <= 255) {
+			return ((properties[(r << 24 >>> 24)] & 96) >>> 0) === 32;
+		}
+		return isExcludingLatin(go$pkg.Upper, r);
+	};
+	var IsLower = go$pkg.IsLower = function(r) {
+		if ((r >>> 0) <= 255) {
+			return ((properties[(r << 24 >>> 24)] & 96) >>> 0) === 64;
+		}
+		return isExcludingLatin(go$pkg.Lower, r);
+	};
+	var IsTitle = go$pkg.IsTitle = function(r) {
+		if (r <= 255) {
+			return false;
+		}
+		return isExcludingLatin(go$pkg.Title, r);
+	};
+	var to = function(_case, r, caseRange) {
+		var lo, hi, _q, m, _slice, _index, _struct, cr, delta;
+		if (_case < 0 || 3 <= _case) {
+			return 65533;
+		}
+		lo = 0;
+		hi = caseRange.length;
+		while (lo < hi) {
+			m = lo + (_q = ((hi - lo >> 0)) / 2, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero")) >> 0;
+			cr = (_struct = (_slice = caseRange, _index = m, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")), new CaseRange.Ptr(_struct.Lo, _struct.Hi, go$mapArray(_struct.Delta, function(entry) { return entry; })));
+			if ((cr.Lo >> 0) <= r && r <= (cr.Hi >> 0)) {
+				delta = cr.Delta[_case];
+				if (delta > 1114111) {
+					return (cr.Lo >> 0) + (((((r - (cr.Lo >> 0) >> 0)) & ~1) | ((_case & 1) >> 0))) >> 0;
+				}
+				return r + delta >> 0;
+			}
+			if (r < (cr.Lo >> 0)) {
+				hi = m;
+			} else {
+				lo = m + 1 >> 0;
+			}
+		}
+		return r;
+	};
+	var To = go$pkg.To = function(_case, r) {
+		return to(_case, r, go$pkg.CaseRanges);
+	};
+	var ToUpper = go$pkg.ToUpper = function(r) {
+		if (r <= 127) {
+			if (97 <= r && r <= 122) {
+				r = r - 32 >> 0;
+			}
+			return r;
+		}
+		return To(0, r);
+	};
+	var ToLower = go$pkg.ToLower = function(r) {
+		if (r <= 127) {
+			if (65 <= r && r <= 90) {
+				r = r + 32 >> 0;
+			}
+			return r;
+		}
+		return To(1, r);
+	};
+	var ToTitle = go$pkg.ToTitle = function(r) {
+		if (r <= 127) {
+			if (97 <= r && r <= 122) {
+				r = r - 32 >> 0;
+			}
+			return r;
+		}
+		return To(2, r);
+	};
+	SpecialCase.prototype.ToUpper = function(r) {
+		var special, r1;
+		special = this;
+		r1 = to(0, r, go$subslice(new (go$sliceType(CaseRange))(special.array), special.offset, special.offset + special.length));
+		if (r1 === r) {
+			r1 = ToUpper(r);
+		}
+		return r1;
+	};
+	go$ptrType(SpecialCase).prototype.ToUpper = function(r) { return this.go$get().ToUpper(r); };
+	SpecialCase.prototype.ToTitle = function(r) {
+		var special, r1;
+		special = this;
+		r1 = to(2, r, go$subslice(new (go$sliceType(CaseRange))(special.array), special.offset, special.offset + special.length));
+		if (r1 === r) {
+			r1 = ToTitle(r);
+		}
+		return r1;
+	};
+	go$ptrType(SpecialCase).prototype.ToTitle = function(r) { return this.go$get().ToTitle(r); };
+	SpecialCase.prototype.ToLower = function(r) {
+		var special, r1;
+		special = this;
+		r1 = to(1, r, go$subslice(new (go$sliceType(CaseRange))(special.array), special.offset, special.offset + special.length));
+		if (r1 === r) {
+			r1 = ToLower(r);
+		}
+		return r1;
+	};
+	go$ptrType(SpecialCase).prototype.ToLower = function(r) { return this.go$get().ToLower(r); };
+	var SimpleFold = go$pkg.SimpleFold = function(r) {
+		var lo, hi, _q, m, _slice, _index, _slice$1, _index$1, _slice$2, _index$2, l;
+		lo = 0;
+		hi = caseOrbit.length;
+		while (lo < hi) {
+			m = lo + (_q = ((hi - lo >> 0)) / 2, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero")) >> 0;
+			if (((_slice = caseOrbit, _index = m, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")).From >> 0) < r) {
+				lo = m + 1 >> 0;
+			} else {
+				hi = m;
+			}
+		}
+		if (lo < caseOrbit.length && (((_slice$1 = caseOrbit, _index$1 = lo, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")).From >> 0) === r)) {
+			return ((_slice$2 = caseOrbit, _index$2 = lo, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")).To >> 0);
+		}
+		if (l = ToLower(r), !((l === r))) {
+			return l;
+		}
+		return ToUpper(r);
+	};
+	go$pkg.init = function() {
+		var _map, _key, _map$1, _key$1, _map$2, _key$2, _map$3, _key$3, _map$4, _key$4;
+		_TurkishCase = new SpecialCase([new CaseRange.Ptr(73, 73, go$toNativeArray("Int32", [0, 232, 0])), new CaseRange.Ptr(105, 105, go$toNativeArray("Int32", [199, 0, 199])), new CaseRange.Ptr(304, 304, go$toNativeArray("Int32", [0, -199, 0])), new CaseRange.Ptr(305, 305, go$toNativeArray("Int32", [-232, 0, -232]))]);
+		go$pkg.TurkishCase = _TurkishCase;
+		go$pkg.AzeriCase = _TurkishCase;
+		_L = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(65, 90, 1), new Range16.Ptr(97, 122, 1), new Range16.Ptr(170, 181, 11), new Range16.Ptr(186, 192, 6), new Range16.Ptr(193, 214, 1), new Range16.Ptr(216, 246, 1), new Range16.Ptr(248, 705, 1), new Range16.Ptr(710, 721, 1), new Range16.Ptr(736, 740, 1), new Range16.Ptr(748, 750, 2), new Range16.Ptr(880, 884, 1), new Range16.Ptr(886, 887, 1), new Range16.Ptr(890, 893, 1), new Range16.Ptr(902, 904, 2), new Range16.Ptr(905, 906, 1), new Range16.Ptr(908, 910, 2), new Range16.Ptr(911, 929, 1), new Range16.Ptr(931, 1013, 1), new Range16.Ptr(1015, 1153, 1), new Range16.Ptr(1162, 1319, 1), new Range16.Ptr(1329, 1366, 1), new Range16.Ptr(1369, 1377, 8), new Range16.Ptr(1378, 1415, 1), new Range16.Ptr(1488, 1514, 1), new Range16.Ptr(1520, 1522, 1), new Range16.Ptr(1568, 1610, 1), new Range16.Ptr(1646, 1647, 1), new Range16.Ptr(1649, 1747, 1), new Range16.Ptr(1749, 1765, 16), new Range16.Ptr(1766, 1774, 8), new Range16.Ptr(1775, 1786, 11), new Range16.Ptr(1787, 1788, 1), new Range16.Ptr(1791, 1808, 17), new Range16.Ptr(1810, 1839, 1), new Range16.Ptr(1869, 1957, 1), new Range16.Ptr(1969, 1994, 25), new Range16.Ptr(1995, 2026, 1), new Range16.Ptr(2036, 2037, 1), new Range16.Ptr(2042, 2048, 6), new Range16.Ptr(2049, 2069, 1), new Range16.Ptr(2074, 2084, 10), new Range16.Ptr(2088, 2112, 24), new Range16.Ptr(2113, 2136, 1), new Range16.Ptr(2208, 2210, 2), new Range16.Ptr(2211, 2220, 1), new Range16.Ptr(2308, 2361, 1), new Range16.Ptr(2365, 2384, 19), new Range16.Ptr(2392, 2401, 1), new Range16.Ptr(2417, 2423, 1), new Range16.Ptr(2425, 2431, 1), new Range16.Ptr(2437, 2444, 1), new Range16.Ptr(2447, 2448, 1), new Range16.Ptr(2451, 2472, 1), new Range16.Ptr(2474, 2480, 1), new Range16.Ptr(2482, 2486, 4), new Range16.Ptr(2487, 2489, 1), new Range16.Ptr(2493, 2510, 17), new Range16.Ptr(2524, 2525, 1), new Range16.Ptr(2527, 2529, 1), new Range16.Ptr(2544, 2545, 1), new Range16.Ptr(2565, 2570, 1), new Range16.Ptr(2575, 2576, 1), new Range16.Ptr(2579, 2600, 1), new Range16.Ptr(2602, 2608, 1), new Range16.Ptr(2610, 2611, 1), new Range16.Ptr(2613, 2614, 1), new Range16.Ptr(2616, 2617, 1), new Range16.Ptr(2649, 2652, 1), new Range16.Ptr(2654, 2674, 20), new Range16.Ptr(2675, 2676, 1), new Range16.Ptr(2693, 2701, 1), new Range16.Ptr(2703, 2705, 1), new Range16.Ptr(2707, 2728, 1), new Range16.Ptr(2730, 2736, 1), new Range16.Ptr(2738, 2739, 1), new Range16.Ptr(2741, 2745, 1), new Range16.Ptr(2749, 2768, 19), new Range16.Ptr(2784, 2785, 1), new Range16.Ptr(2821, 2828, 1), new Range16.Ptr(2831, 2832, 1), new Range16.Ptr(2835, 2856, 1), new Range16.Ptr(2858, 2864, 1), new Range16.Ptr(2866, 2867, 1), new Range16.Ptr(2869, 2873, 1), new Range16.Ptr(2877, 2908, 31), new Range16.Ptr(2909, 2911, 2), new Range16.Ptr(2912, 2913, 1), new Range16.Ptr(2929, 2947, 18), new Range16.Ptr(2949, 2954, 1), new Range16.Ptr(2958, 2960, 1), new Range16.Ptr(2962, 2965, 1), new Range16.Ptr(2969, 2970, 1), new Range16.Ptr(2972, 2974, 2), new Range16.Ptr(2975, 2979, 4), new Range16.Ptr(2980, 2984, 4), new Range16.Ptr(2985, 2986, 1), new Range16.Ptr(2990, 3001, 1), new Range16.Ptr(3024, 3077, 53), new Range16.Ptr(3078, 3084, 1), new Range16.Ptr(3086, 3088, 1), new Range16.Ptr(3090, 3112, 1), new Range16.Ptr(3114, 3123, 1), new Range16.Ptr(3125, 3129, 1), new Range16.Ptr(3133, 3160, 27), new Range16.Ptr(3161, 3168, 7), new Range16.Ptr(3169, 3205, 36), new Range16.Ptr(3206, 3212, 1), new Range16.Ptr(3214, 3216, 1), new Range16.Ptr(3218, 3240, 1), new Range16.Ptr(3242, 3251, 1), new Range16.Ptr(3253, 3257, 1), new Range16.Ptr(3261, 3294, 33), new Range16.Ptr(3296, 3297, 1), new Range16.Ptr(3313, 3314, 1), new Range16.Ptr(3333, 3340, 1), new Range16.Ptr(3342, 3344, 1), new Range16.Ptr(3346, 3386, 1), new Range16.Ptr(3389, 3406, 17), new Range16.Ptr(3424, 3425, 1), new Range16.Ptr(3450, 3455, 1), new Range16.Ptr(3461, 3478, 1), new Range16.Ptr(3482, 3505, 1), new Range16.Ptr(3507, 3515, 1), new Range16.Ptr(3517, 3520, 3), new Range16.Ptr(3521, 3526, 1), new Range16.Ptr(3585, 3632, 1), new Range16.Ptr(3634, 3635, 1), new Range16.Ptr(3648, 3654, 1), new Range16.Ptr(3713, 3714, 1), new Range16.Ptr(3716, 3719, 3), new Range16.Ptr(3720, 3722, 2), new Range16.Ptr(3725, 3732, 7), new Range16.Ptr(3733, 3735, 1), new Range16.Ptr(3737, 3743, 1), new Range16.Ptr(3745, 3747, 1), new Range16.Ptr(3749, 3751, 2), new Range16.Ptr(3754, 3755, 1), new Range16.Ptr(3757, 3760, 1), new Range16.Ptr(3762, 3763, 1), new Range16.Ptr(3773, 3776, 3), new Range16.Ptr(3777, 3780, 1), new Range16.Ptr(3782, 3804, 22), new Range16.Ptr(3805, 3807, 1), new Range16.Ptr(3840, 3904, 64), new Range16.Ptr(3905, 3911, 1), new Range16.Ptr(3913, 3948, 1), new Range16.Ptr(3976, 3980, 1), new Range16.Ptr(4096, 4138, 1), new Range16.Ptr(4159, 4176, 17), new Range16.Ptr(4177, 4181, 1), new Range16.Ptr(4186, 4189, 1), new Range16.Ptr(4193, 4197, 4), new Range16.Ptr(4198, 4206, 8), new Range16.Ptr(4207, 4208, 1), new Range16.Ptr(4213, 4225, 1), new Range16.Ptr(4238, 4256, 18), new Range16.Ptr(4257, 4293, 1), new Range16.Ptr(4295, 4301, 6), new Range16.Ptr(4304, 4346, 1), new Range16.Ptr(4348, 4680, 1), new Range16.Ptr(4682, 4685, 1), new Range16.Ptr(4688, 4694, 1), new Range16.Ptr(4696, 4698, 2), new Range16.Ptr(4699, 4701, 1), new Range16.Ptr(4704, 4744, 1), new Range16.Ptr(4746, 4749, 1), new Range16.Ptr(4752, 4784, 1), new Range16.Ptr(4786, 4789, 1), new Range16.Ptr(4792, 4798, 1), new Range16.Ptr(4800, 4802, 2), new Range16.Ptr(4803, 4805, 1), new Range16.Ptr(4808, 4822, 1), new Range16.Ptr(4824, 4880, 1), new Range16.Ptr(4882, 4885, 1), new Range16.Ptr(4888, 4954, 1), new Range16.Ptr(4992, 5007, 1), new Range16.Ptr(5024, 5108, 1), new Range16.Ptr(5121, 5740, 1), new Range16.Ptr(5743, 5759, 1), new Range16.Ptr(5761, 5786, 1), new Range16.Ptr(5792, 5866, 1), new Range16.Ptr(5888, 5900, 1), new Range16.Ptr(5902, 5905, 1), new Range16.Ptr(5920, 5937, 1), new Range16.Ptr(5952, 5969, 1), new Range16.Ptr(5984, 5996, 1), new Range16.Ptr(5998, 6000, 1), new Range16.Ptr(6016, 6067, 1), new Range16.Ptr(6103, 6108, 5), new Range16.Ptr(6176, 6263, 1), new Range16.Ptr(6272, 6312, 1), new Range16.Ptr(6314, 6320, 6), new Range16.Ptr(6321, 6389, 1), new Range16.Ptr(6400, 6428, 1), new Range16.Ptr(6480, 6509, 1), new Range16.Ptr(6512, 6516, 1), new Range16.Ptr(6528, 6571, 1), new Range16.Ptr(6593, 6599, 1), new Range16.Ptr(6656, 6678, 1), new Range16.Ptr(6688, 6740, 1), new Range16.Ptr(6823, 6917, 94), new Range16.Ptr(6918, 6963, 1), new Range16.Ptr(6981, 6987, 1), new Range16.Ptr(7043, 7072, 1), new Range16.Ptr(7086, 7087, 1), new Range16.Ptr(7098, 7141, 1), new Range16.Ptr(7168, 7203, 1), new Range16.Ptr(7245, 7247, 1), new Range16.Ptr(7258, 7293, 1), new Range16.Ptr(7401, 7404, 1), new Range16.Ptr(7406, 7409, 1), new Range16.Ptr(7413, 7414, 1), new Range16.Ptr(7424, 7615, 1), new Range16.Ptr(7680, 7957, 1), new Range16.Ptr(7960, 7965, 1), new Range16.Ptr(7968, 8005, 1), new Range16.Ptr(8008, 8013, 1), new Range16.Ptr(8016, 8023, 1), new Range16.Ptr(8025, 8031, 2), new Range16.Ptr(8032, 8061, 1), new Range16.Ptr(8064, 8116, 1), new Range16.Ptr(8118, 8124, 1), new Range16.Ptr(8126, 8130, 4), new Range16.Ptr(8131, 8132, 1), new Range16.Ptr(8134, 8140, 1), new Range16.Ptr(8144, 8147, 1), new Range16.Ptr(8150, 8155, 1), new Range16.Ptr(8160, 8172, 1), new Range16.Ptr(8178, 8180, 1), new Range16.Ptr(8182, 8188, 1), new Range16.Ptr(8305, 8319, 14), new Range16.Ptr(8336, 8348, 1), new Range16.Ptr(8450, 8455, 5), new Range16.Ptr(8458, 8467, 1), new Range16.Ptr(8469, 8473, 4), new Range16.Ptr(8474, 8477, 1), new Range16.Ptr(8484, 8490, 2), new Range16.Ptr(8491, 8493, 1), new Range16.Ptr(8495, 8505, 1), new Range16.Ptr(8508, 8511, 1), new Range16.Ptr(8517, 8521, 1), new Range16.Ptr(8526, 8579, 53), new Range16.Ptr(8580, 11264, 2684), new Range16.Ptr(11265, 11310, 1), new Range16.Ptr(11312, 11358, 1), new Range16.Ptr(11360, 11492, 1), new Range16.Ptr(11499, 11502, 1), new Range16.Ptr(11506, 11507, 1), new Range16.Ptr(11520, 11557, 1), new Range16.Ptr(11559, 11565, 6), new Range16.Ptr(11568, 11623, 1), new Range16.Ptr(11631, 11648, 17), new Range16.Ptr(11649, 11670, 1), new Range16.Ptr(11680, 11686, 1), new Range16.Ptr(11688, 11694, 1), new Range16.Ptr(11696, 11702, 1), new Range16.Ptr(11704, 11710, 1), new Range16.Ptr(11712, 11718, 1), new Range16.Ptr(11720, 11726, 1), new Range16.Ptr(11728, 11734, 1), new Range16.Ptr(11736, 11742, 1), new Range16.Ptr(11823, 12293, 470), new Range16.Ptr(12294, 12337, 43), new Range16.Ptr(12338, 12341, 1), new Range16.Ptr(12347, 12348, 1), new Range16.Ptr(12353, 12438, 1), new Range16.Ptr(12445, 12447, 1), new Range16.Ptr(12449, 12538, 1), new Range16.Ptr(12540, 12543, 1), new Range16.Ptr(12549, 12589, 1), new Range16.Ptr(12593, 12686, 1), new Range16.Ptr(12704, 12730, 1), new Range16.Ptr(12784, 12799, 1), new Range16.Ptr(13312, 19893, 1), new Range16.Ptr(19968, 40908, 1), new Range16.Ptr(40960, 42124, 1), new Range16.Ptr(42192, 42237, 1), new Range16.Ptr(42240, 42508, 1), new Range16.Ptr(42512, 42527, 1), new Range16.Ptr(42538, 42539, 1), new Range16.Ptr(42560, 42606, 1), new Range16.Ptr(42623, 42647, 1), new Range16.Ptr(42656, 42725, 1), new Range16.Ptr(42775, 42783, 1), new Range16.Ptr(42786, 42888, 1), new Range16.Ptr(42891, 42894, 1), new Range16.Ptr(42896, 42899, 1), new Range16.Ptr(42912, 42922, 1), new Range16.Ptr(43000, 43009, 1), new Range16.Ptr(43011, 43013, 1), new Range16.Ptr(43015, 43018, 1), new Range16.Ptr(43020, 43042, 1), new Range16.Ptr(43072, 43123, 1), new Range16.Ptr(43138, 43187, 1), new Range16.Ptr(43250, 43255, 1), new Range16.Ptr(43259, 43274, 15), new Range16.Ptr(43275, 43301, 1), new Range16.Ptr(43312, 43334, 1), new Range16.Ptr(43360, 43388, 1), new Range16.Ptr(43396, 43442, 1), new Range16.Ptr(43471, 43520, 49), new Range16.Ptr(43521, 43560, 1), new Range16.Ptr(43584, 43586, 1), new Range16.Ptr(43588, 43595, 1), new Range16.Ptr(43616, 43638, 1), new Range16.Ptr(43642, 43648, 6), new Range16.Ptr(43649, 43695, 1), new Range16.Ptr(43697, 43701, 4), new Range16.Ptr(43702, 43705, 3), new Range16.Ptr(43706, 43709, 1), new Range16.Ptr(43712, 43714, 2), new Range16.Ptr(43739, 43741, 1), new Range16.Ptr(43744, 43754, 1), new Range16.Ptr(43762, 43764, 1), new Range16.Ptr(43777, 43782, 1), new Range16.Ptr(43785, 43790, 1), new Range16.Ptr(43793, 43798, 1), new Range16.Ptr(43808, 43814, 1), new Range16.Ptr(43816, 43822, 1), new Range16.Ptr(43968, 44002, 1), new Range16.Ptr(44032, 55203, 1), new Range16.Ptr(55216, 55238, 1), new Range16.Ptr(55243, 55291, 1), new Range16.Ptr(63744, 64109, 1), new Range16.Ptr(64112, 64217, 1), new Range16.Ptr(64256, 64262, 1), new Range16.Ptr(64275, 64279, 1), new Range16.Ptr(64285, 64287, 2), new Range16.Ptr(64288, 64296, 1), new Range16.Ptr(64298, 64310, 1), new Range16.Ptr(64312, 64316, 1), new Range16.Ptr(64318, 64320, 2), new Range16.Ptr(64321, 64323, 2), new Range16.Ptr(64324, 64326, 2), new Range16.Ptr(64327, 64433, 1), new Range16.Ptr(64467, 64829, 1), new Range16.Ptr(64848, 64911, 1), new Range16.Ptr(64914, 64967, 1), new Range16.Ptr(65008, 65019, 1), new Range16.Ptr(65136, 65140, 1), new Range16.Ptr(65142, 65276, 1), new Range16.Ptr(65313, 65338, 1), new Range16.Ptr(65345, 65370, 1), new Range16.Ptr(65382, 65470, 1), new Range16.Ptr(65474, 65479, 1), new Range16.Ptr(65482, 65487, 1), new Range16.Ptr(65490, 65495, 1), new Range16.Ptr(65498, 65500, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(65536, 65547, 1), new Range32.Ptr(65549, 65574, 1), new Range32.Ptr(65576, 65594, 1), new Range32.Ptr(65596, 65597, 1), new Range32.Ptr(65599, 65613, 1), new Range32.Ptr(65616, 65629, 1), new Range32.Ptr(65664, 65786, 1), new Range32.Ptr(66176, 66204, 1), new Range32.Ptr(66208, 66256, 1), new Range32.Ptr(66304, 66334, 1), new Range32.Ptr(66352, 66368, 1), new Range32.Ptr(66370, 66377, 1), new Range32.Ptr(66432, 66461, 1), new Range32.Ptr(66464, 66499, 1), new Range32.Ptr(66504, 66511, 1), new Range32.Ptr(66560, 66717, 1), new Range32.Ptr(67584, 67589, 1), new Range32.Ptr(67592, 67594, 2), new Range32.Ptr(67595, 67637, 1), new Range32.Ptr(67639, 67640, 1), new Range32.Ptr(67644, 67647, 3), new Range32.Ptr(67648, 67669, 1), new Range32.Ptr(67840, 67861, 1), new Range32.Ptr(67872, 67897, 1), new Range32.Ptr(67968, 68023, 1), new Range32.Ptr(68030, 68031, 1), new Range32.Ptr(68096, 68112, 16), new Range32.Ptr(68113, 68115, 1), new Range32.Ptr(68117, 68119, 1), new Range32.Ptr(68121, 68147, 1), new Range32.Ptr(68192, 68220, 1), new Range32.Ptr(68352, 68405, 1), new Range32.Ptr(68416, 68437, 1), new Range32.Ptr(68448, 68466, 1), new Range32.Ptr(68608, 68680, 1), new Range32.Ptr(69635, 69687, 1), new Range32.Ptr(69763, 69807, 1), new Range32.Ptr(69840, 69864, 1), new Range32.Ptr(69891, 69926, 1), new Range32.Ptr(70019, 70066, 1), new Range32.Ptr(70081, 70084, 1), new Range32.Ptr(71296, 71338, 1), new Range32.Ptr(73728, 74606, 1), new Range32.Ptr(77824, 78894, 1), new Range32.Ptr(92160, 92728, 1), new Range32.Ptr(93952, 94020, 1), new Range32.Ptr(94032, 94099, 67), new Range32.Ptr(94100, 94111, 1), new Range32.Ptr(110592, 110593, 1), new Range32.Ptr(119808, 119892, 1), new Range32.Ptr(119894, 119964, 1), new Range32.Ptr(119966, 119967, 1), new Range32.Ptr(119970, 119973, 3), new Range32.Ptr(119974, 119977, 3), new Range32.Ptr(119978, 119980, 1), new Range32.Ptr(119982, 119993, 1), new Range32.Ptr(119995, 119997, 2), new Range32.Ptr(119998, 120003, 1), new Range32.Ptr(120005, 120069, 1), new Range32.Ptr(120071, 120074, 1), new Range32.Ptr(120077, 120084, 1), new Range32.Ptr(120086, 120092, 1), new Range32.Ptr(120094, 120121, 1), new Range32.Ptr(120123, 120126, 1), new Range32.Ptr(120128, 120132, 1), new Range32.Ptr(120134, 120138, 4), new Range32.Ptr(120139, 120144, 1), new Range32.Ptr(120146, 120485, 1), new Range32.Ptr(120488, 120512, 1), new Range32.Ptr(120514, 120538, 1), new Range32.Ptr(120540, 120570, 1), new Range32.Ptr(120572, 120596, 1), new Range32.Ptr(120598, 120628, 1), new Range32.Ptr(120630, 120654, 1), new Range32.Ptr(120656, 120686, 1), new Range32.Ptr(120688, 120712, 1), new Range32.Ptr(120714, 120744, 1), new Range32.Ptr(120746, 120770, 1), new Range32.Ptr(120772, 120779, 1), new Range32.Ptr(126464, 126467, 1), new Range32.Ptr(126469, 126495, 1), new Range32.Ptr(126497, 126498, 1), new Range32.Ptr(126500, 126503, 3), new Range32.Ptr(126505, 126514, 1), new Range32.Ptr(126516, 126519, 1), new Range32.Ptr(126521, 126523, 2), new Range32.Ptr(126530, 126535, 5), new Range32.Ptr(126537, 126541, 2), new Range32.Ptr(126542, 126543, 1), new Range32.Ptr(126545, 126546, 1), new Range32.Ptr(126548, 126551, 3), new Range32.Ptr(126553, 126561, 2), new Range32.Ptr(126562, 126564, 2), new Range32.Ptr(126567, 126570, 1), new Range32.Ptr(126572, 126578, 1), new Range32.Ptr(126580, 126583, 1), new Range32.Ptr(126585, 126588, 1), new Range32.Ptr(126590, 126592, 2), new Range32.Ptr(126593, 126601, 1), new Range32.Ptr(126603, 126619, 1), new Range32.Ptr(126625, 126627, 1), new Range32.Ptr(126629, 126633, 1), new Range32.Ptr(126635, 126651, 1), new Range32.Ptr(131072, 173782, 1), new Range32.Ptr(173824, 177972, 1), new Range32.Ptr(177984, 178205, 1), new Range32.Ptr(194560, 195101, 1)]), 6);
+		go$pkg.L = _L;
+		_M = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(768, 879, 1), new Range16.Ptr(1155, 1161, 1), new Range16.Ptr(1425, 1469, 1), new Range16.Ptr(1471, 1473, 2), new Range16.Ptr(1474, 1476, 2), new Range16.Ptr(1477, 1479, 2), new Range16.Ptr(1552, 1562, 1), new Range16.Ptr(1611, 1631, 1), new Range16.Ptr(1648, 1750, 102), new Range16.Ptr(1751, 1756, 1), new Range16.Ptr(1759, 1764, 1), new Range16.Ptr(1767, 1768, 1), new Range16.Ptr(1770, 1773, 1), new Range16.Ptr(1809, 1840, 31), new Range16.Ptr(1841, 1866, 1), new Range16.Ptr(1958, 1968, 1), new Range16.Ptr(2027, 2035, 1), new Range16.Ptr(2070, 2073, 1), new Range16.Ptr(2075, 2083, 1), new Range16.Ptr(2085, 2087, 1), new Range16.Ptr(2089, 2093, 1), new Range16.Ptr(2137, 2139, 1), new Range16.Ptr(2276, 2302, 1), new Range16.Ptr(2304, 2307, 1), new Range16.Ptr(2362, 2364, 1), new Range16.Ptr(2366, 2383, 1), new Range16.Ptr(2385, 2391, 1), new Range16.Ptr(2402, 2403, 1), new Range16.Ptr(2433, 2435, 1), new Range16.Ptr(2492, 2494, 2), new Range16.Ptr(2495, 2500, 1), new Range16.Ptr(2503, 2504, 1), new Range16.Ptr(2507, 2509, 1), new Range16.Ptr(2519, 2530, 11), new Range16.Ptr(2531, 2561, 30), new Range16.Ptr(2562, 2563, 1), new Range16.Ptr(2620, 2622, 2), new Range16.Ptr(2623, 2626, 1), new Range16.Ptr(2631, 2632, 1), new Range16.Ptr(2635, 2637, 1), new Range16.Ptr(2641, 2672, 31), new Range16.Ptr(2673, 2677, 4), new Range16.Ptr(2689, 2691, 1), new Range16.Ptr(2748, 2750, 2), new Range16.Ptr(2751, 2757, 1), new Range16.Ptr(2759, 2761, 1), new Range16.Ptr(2763, 2765, 1), new Range16.Ptr(2786, 2787, 1), new Range16.Ptr(2817, 2819, 1), new Range16.Ptr(2876, 2878, 2), new Range16.Ptr(2879, 2884, 1), new Range16.Ptr(2887, 2888, 1), new Range16.Ptr(2891, 2893, 1), new Range16.Ptr(2902, 2903, 1), new Range16.Ptr(2914, 2915, 1), new Range16.Ptr(2946, 3006, 60), new Range16.Ptr(3007, 3010, 1), new Range16.Ptr(3014, 3016, 1), new Range16.Ptr(3018, 3021, 1), new Range16.Ptr(3031, 3073, 42), new Range16.Ptr(3074, 3075, 1), new Range16.Ptr(3134, 3140, 1), new Range16.Ptr(3142, 3144, 1), new Range16.Ptr(3146, 3149, 1), new Range16.Ptr(3157, 3158, 1), new Range16.Ptr(3170, 3171, 1), new Range16.Ptr(3202, 3203, 1), new Range16.Ptr(3260, 3262, 2), new Range16.Ptr(3263, 3268, 1), new Range16.Ptr(3270, 3272, 1), new Range16.Ptr(3274, 3277, 1), new Range16.Ptr(3285, 3286, 1), new Range16.Ptr(3298, 3299, 1), new Range16.Ptr(3330, 3331, 1), new Range16.Ptr(3390, 3396, 1), new Range16.Ptr(3398, 3400, 1), new Range16.Ptr(3402, 3405, 1), new Range16.Ptr(3415, 3426, 11), new Range16.Ptr(3427, 3458, 31), new Range16.Ptr(3459, 3530, 71), new Range16.Ptr(3535, 3540, 1), new Range16.Ptr(3542, 3544, 2), new Range16.Ptr(3545, 3551, 1), new Range16.Ptr(3570, 3571, 1), new Range16.Ptr(3633, 3636, 3), new Range16.Ptr(3637, 3642, 1), new Range16.Ptr(3655, 3662, 1), new Range16.Ptr(3761, 3764, 3), new Range16.Ptr(3765, 3769, 1), new Range16.Ptr(3771, 3772, 1), new Range16.Ptr(3784, 3789, 1), new Range16.Ptr(3864, 3865, 1), new Range16.Ptr(3893, 3897, 2), new Range16.Ptr(3902, 3903, 1), new Range16.Ptr(3953, 3972, 1), new Range16.Ptr(3974, 3975, 1), new Range16.Ptr(3981, 3991, 1), new Range16.Ptr(3993, 4028, 1), new Range16.Ptr(4038, 4139, 101), new Range16.Ptr(4140, 4158, 1), new Range16.Ptr(4182, 4185, 1), new Range16.Ptr(4190, 4192, 1), new Range16.Ptr(4194, 4196, 1), new Range16.Ptr(4199, 4205, 1), new Range16.Ptr(4209, 4212, 1), new Range16.Ptr(4226, 4237, 1), new Range16.Ptr(4239, 4250, 11), new Range16.Ptr(4251, 4253, 1), new Range16.Ptr(4957, 4959, 1), new Range16.Ptr(5906, 5908, 1), new Range16.Ptr(5938, 5940, 1), new Range16.Ptr(5970, 5971, 1), new Range16.Ptr(6002, 6003, 1), new Range16.Ptr(6068, 6099, 1), new Range16.Ptr(6109, 6155, 46), new Range16.Ptr(6156, 6157, 1), new Range16.Ptr(6313, 6432, 119), new Range16.Ptr(6433, 6443, 1), new Range16.Ptr(6448, 6459, 1), new Range16.Ptr(6576, 6592, 1), new Range16.Ptr(6600, 6601, 1), new Range16.Ptr(6679, 6683, 1), new Range16.Ptr(6741, 6750, 1), new Range16.Ptr(6752, 6780, 1), new Range16.Ptr(6783, 6912, 129), new Range16.Ptr(6913, 6916, 1), new Range16.Ptr(6964, 6980, 1), new Range16.Ptr(7019, 7027, 1), new Range16.Ptr(7040, 7042, 1), new Range16.Ptr(7073, 7085, 1), new Range16.Ptr(7142, 7155, 1), new Range16.Ptr(7204, 7223, 1), new Range16.Ptr(7376, 7378, 1), new Range16.Ptr(7380, 7400, 1), new Range16.Ptr(7405, 7410, 5), new Range16.Ptr(7411, 7412, 1), new Range16.Ptr(7616, 7654, 1), new Range16.Ptr(7676, 7679, 1), new Range16.Ptr(8400, 8432, 1), new Range16.Ptr(11503, 11505, 1), new Range16.Ptr(11647, 11744, 97), new Range16.Ptr(11745, 11775, 1), new Range16.Ptr(12330, 12335, 1), new Range16.Ptr(12441, 12442, 1), new Range16.Ptr(42607, 42610, 1), new Range16.Ptr(42612, 42621, 1), new Range16.Ptr(42655, 42736, 81), new Range16.Ptr(42737, 43010, 273), new Range16.Ptr(43014, 43019, 5), new Range16.Ptr(43043, 43047, 1), new Range16.Ptr(43136, 43137, 1), new Range16.Ptr(43188, 43204, 1), new Range16.Ptr(43232, 43249, 1), new Range16.Ptr(43302, 43309, 1), new Range16.Ptr(43335, 43347, 1), new Range16.Ptr(43392, 43395, 1), new Range16.Ptr(43443, 43456, 1), new Range16.Ptr(43561, 43574, 1), new Range16.Ptr(43587, 43596, 9), new Range16.Ptr(43597, 43643, 46), new Range16.Ptr(43696, 43698, 2), new Range16.Ptr(43699, 43700, 1), new Range16.Ptr(43703, 43704, 1), new Range16.Ptr(43710, 43711, 1), new Range16.Ptr(43713, 43755, 42), new Range16.Ptr(43756, 43759, 1), new Range16.Ptr(43765, 43766, 1), new Range16.Ptr(44003, 44010, 1), new Range16.Ptr(44012, 44013, 1), new Range16.Ptr(64286, 65024, 738), new Range16.Ptr(65025, 65039, 1), new Range16.Ptr(65056, 65062, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(66045, 68097, 2052), new Range32.Ptr(68098, 68099, 1), new Range32.Ptr(68101, 68102, 1), new Range32.Ptr(68108, 68111, 1), new Range32.Ptr(68152, 68154, 1), new Range32.Ptr(68159, 69632, 1473), new Range32.Ptr(69633, 69634, 1), new Range32.Ptr(69688, 69702, 1), new Range32.Ptr(69760, 69762, 1), new Range32.Ptr(69808, 69818, 1), new Range32.Ptr(69888, 69890, 1), new Range32.Ptr(69927, 69940, 1), new Range32.Ptr(70016, 70018, 1), new Range32.Ptr(70067, 70080, 1), new Range32.Ptr(71339, 71351, 1), new Range32.Ptr(94033, 94078, 1), new Range32.Ptr(94095, 94098, 1), new Range32.Ptr(119141, 119145, 1), new Range32.Ptr(119149, 119154, 1), new Range32.Ptr(119163, 119170, 1), new Range32.Ptr(119173, 119179, 1), new Range32.Ptr(119210, 119213, 1), new Range32.Ptr(119362, 119364, 1), new Range32.Ptr(917760, 917999, 1)]), 0);
+		go$pkg.M = _M;
+		_N = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(48, 57, 1), new Range16.Ptr(178, 179, 1), new Range16.Ptr(185, 188, 3), new Range16.Ptr(189, 190, 1), new Range16.Ptr(1632, 1641, 1), new Range16.Ptr(1776, 1785, 1), new Range16.Ptr(1984, 1993, 1), new Range16.Ptr(2406, 2415, 1), new Range16.Ptr(2534, 2543, 1), new Range16.Ptr(2548, 2553, 1), new Range16.Ptr(2662, 2671, 1), new Range16.Ptr(2790, 2799, 1), new Range16.Ptr(2918, 2927, 1), new Range16.Ptr(2930, 2935, 1), new Range16.Ptr(3046, 3058, 1), new Range16.Ptr(3174, 3183, 1), new Range16.Ptr(3192, 3198, 1), new Range16.Ptr(3302, 3311, 1), new Range16.Ptr(3430, 3445, 1), new Range16.Ptr(3664, 3673, 1), new Range16.Ptr(3792, 3801, 1), new Range16.Ptr(3872, 3891, 1), new Range16.Ptr(4160, 4169, 1), new Range16.Ptr(4240, 4249, 1), new Range16.Ptr(4969, 4988, 1), new Range16.Ptr(5870, 5872, 1), new Range16.Ptr(6112, 6121, 1), new Range16.Ptr(6128, 6137, 1), new Range16.Ptr(6160, 6169, 1), new Range16.Ptr(6470, 6479, 1), new Range16.Ptr(6608, 6618, 1), new Range16.Ptr(6784, 6793, 1), new Range16.Ptr(6800, 6809, 1), new Range16.Ptr(6992, 7001, 1), new Range16.Ptr(7088, 7097, 1), new Range16.Ptr(7232, 7241, 1), new Range16.Ptr(7248, 7257, 1), new Range16.Ptr(8304, 8308, 4), new Range16.Ptr(8309, 8313, 1), new Range16.Ptr(8320, 8329, 1), new Range16.Ptr(8528, 8578, 1), new Range16.Ptr(8581, 8585, 1), new Range16.Ptr(9312, 9371, 1), new Range16.Ptr(9450, 9471, 1), new Range16.Ptr(10102, 10131, 1), new Range16.Ptr(11517, 12295, 778), new Range16.Ptr(12321, 12329, 1), new Range16.Ptr(12344, 12346, 1), new Range16.Ptr(12690, 12693, 1), new Range16.Ptr(12832, 12841, 1), new Range16.Ptr(12872, 12879, 1), new Range16.Ptr(12881, 12895, 1), new Range16.Ptr(12928, 12937, 1), new Range16.Ptr(12977, 12991, 1), new Range16.Ptr(42528, 42537, 1), new Range16.Ptr(42726, 42735, 1), new Range16.Ptr(43056, 43061, 1), new Range16.Ptr(43216, 43225, 1), new Range16.Ptr(43264, 43273, 1), new Range16.Ptr(43472, 43481, 1), new Range16.Ptr(43600, 43609, 1), new Range16.Ptr(44016, 44025, 1), new Range16.Ptr(65296, 65305, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(65799, 65843, 1), new Range32.Ptr(65856, 65912, 1), new Range32.Ptr(65930, 66336, 406), new Range32.Ptr(66337, 66339, 1), new Range32.Ptr(66369, 66378, 9), new Range32.Ptr(66513, 66517, 1), new Range32.Ptr(66720, 66729, 1), new Range32.Ptr(67672, 67679, 1), new Range32.Ptr(67862, 67867, 1), new Range32.Ptr(68160, 68167, 1), new Range32.Ptr(68221, 68222, 1), new Range32.Ptr(68440, 68447, 1), new Range32.Ptr(68472, 68479, 1), new Range32.Ptr(69216, 69246, 1), new Range32.Ptr(69714, 69743, 1), new Range32.Ptr(69872, 69881, 1), new Range32.Ptr(69942, 69951, 1), new Range32.Ptr(70096, 70105, 1), new Range32.Ptr(71360, 71369, 1), new Range32.Ptr(74752, 74850, 1), new Range32.Ptr(119648, 119665, 1), new Range32.Ptr(120782, 120831, 1), new Range32.Ptr(127232, 127242, 1)]), 4);
+		go$pkg.N = _N;
+		_P = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(33, 35, 1), new Range16.Ptr(37, 42, 1), new Range16.Ptr(44, 47, 1), new Range16.Ptr(58, 59, 1), new Range16.Ptr(63, 64, 1), new Range16.Ptr(91, 93, 1), new Range16.Ptr(95, 123, 28), new Range16.Ptr(125, 161, 36), new Range16.Ptr(167, 171, 4), new Range16.Ptr(182, 183, 1), new Range16.Ptr(187, 191, 4), new Range16.Ptr(894, 903, 9), new Range16.Ptr(1370, 1375, 1), new Range16.Ptr(1417, 1418, 1), new Range16.Ptr(1470, 1472, 2), new Range16.Ptr(1475, 1478, 3), new Range16.Ptr(1523, 1524, 1), new Range16.Ptr(1545, 1546, 1), new Range16.Ptr(1548, 1549, 1), new Range16.Ptr(1563, 1566, 3), new Range16.Ptr(1567, 1642, 75), new Range16.Ptr(1643, 1645, 1), new Range16.Ptr(1748, 1792, 44), new Range16.Ptr(1793, 1805, 1), new Range16.Ptr(2039, 2041, 1), new Range16.Ptr(2096, 2110, 1), new Range16.Ptr(2142, 2404, 262), new Range16.Ptr(2405, 2416, 11), new Range16.Ptr(2800, 3572, 772), new Range16.Ptr(3663, 3674, 11), new Range16.Ptr(3675, 3844, 169), new Range16.Ptr(3845, 3858, 1), new Range16.Ptr(3860, 3898, 38), new Range16.Ptr(3899, 3901, 1), new Range16.Ptr(3973, 4048, 75), new Range16.Ptr(4049, 4052, 1), new Range16.Ptr(4057, 4058, 1), new Range16.Ptr(4170, 4175, 1), new Range16.Ptr(4347, 4960, 613), new Range16.Ptr(4961, 4968, 1), new Range16.Ptr(5120, 5741, 621), new Range16.Ptr(5742, 5787, 45), new Range16.Ptr(5788, 5867, 79), new Range16.Ptr(5868, 5869, 1), new Range16.Ptr(5941, 5942, 1), new Range16.Ptr(6100, 6102, 1), new Range16.Ptr(6104, 6106, 1), new Range16.Ptr(6144, 6154, 1), new Range16.Ptr(6468, 6469, 1), new Range16.Ptr(6686, 6687, 1), new Range16.Ptr(6816, 6822, 1), new Range16.Ptr(6824, 6829, 1), new Range16.Ptr(7002, 7008, 1), new Range16.Ptr(7164, 7167, 1), new Range16.Ptr(7227, 7231, 1), new Range16.Ptr(7294, 7295, 1), new Range16.Ptr(7360, 7367, 1), new Range16.Ptr(7379, 8208, 829), new Range16.Ptr(8209, 8231, 1), new Range16.Ptr(8240, 8259, 1), new Range16.Ptr(8261, 8273, 1), new Range16.Ptr(8275, 8286, 1), new Range16.Ptr(8317, 8318, 1), new Range16.Ptr(8333, 8334, 1), new Range16.Ptr(9001, 9002, 1), new Range16.Ptr(10088, 10101, 1), new Range16.Ptr(10181, 10182, 1), new Range16.Ptr(10214, 10223, 1), new Range16.Ptr(10627, 10648, 1), new Range16.Ptr(10712, 10715, 1), new Range16.Ptr(10748, 10749, 1), new Range16.Ptr(11513, 11516, 1), new Range16.Ptr(11518, 11519, 1), new Range16.Ptr(11632, 11776, 144), new Range16.Ptr(11777, 11822, 1), new Range16.Ptr(11824, 11835, 1), new Range16.Ptr(12289, 12291, 1), new Range16.Ptr(12296, 12305, 1), new Range16.Ptr(12308, 12319, 1), new Range16.Ptr(12336, 12349, 13), new Range16.Ptr(12448, 12539, 91), new Range16.Ptr(42238, 42239, 1), new Range16.Ptr(42509, 42511, 1), new Range16.Ptr(42611, 42622, 11), new Range16.Ptr(42738, 42743, 1), new Range16.Ptr(43124, 43127, 1), new Range16.Ptr(43214, 43215, 1), new Range16.Ptr(43256, 43258, 1), new Range16.Ptr(43310, 43311, 1), new Range16.Ptr(43359, 43457, 98), new Range16.Ptr(43458, 43469, 1), new Range16.Ptr(43486, 43487, 1), new Range16.Ptr(43612, 43615, 1), new Range16.Ptr(43742, 43743, 1), new Range16.Ptr(43760, 43761, 1), new Range16.Ptr(44011, 64830, 20819), new Range16.Ptr(64831, 65040, 209), new Range16.Ptr(65041, 65049, 1), new Range16.Ptr(65072, 65106, 1), new Range16.Ptr(65108, 65121, 1), new Range16.Ptr(65123, 65128, 5), new Range16.Ptr(65130, 65131, 1), new Range16.Ptr(65281, 65283, 1), new Range16.Ptr(65285, 65290, 1), new Range16.Ptr(65292, 65295, 1), new Range16.Ptr(65306, 65307, 1), new Range16.Ptr(65311, 65312, 1), new Range16.Ptr(65339, 65341, 1), new Range16.Ptr(65343, 65371, 28), new Range16.Ptr(65373, 65375, 2), new Range16.Ptr(65376, 65381, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(65792, 65794, 1), new Range32.Ptr(66463, 66512, 49), new Range32.Ptr(67671, 67871, 200), new Range32.Ptr(67903, 68176, 273), new Range32.Ptr(68177, 68184, 1), new Range32.Ptr(68223, 68409, 186), new Range32.Ptr(68410, 68415, 1), new Range32.Ptr(69703, 69709, 1), new Range32.Ptr(69819, 69820, 1), new Range32.Ptr(69822, 69825, 1), new Range32.Ptr(69952, 69955, 1), new Range32.Ptr(70085, 70088, 1), new Range32.Ptr(74864, 74867, 1)]), 11);
+		go$pkg.P = _P;
+		_S = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(36, 43, 7), new Range16.Ptr(60, 62, 1), new Range16.Ptr(94, 96, 2), new Range16.Ptr(124, 126, 2), new Range16.Ptr(162, 166, 1), new Range16.Ptr(168, 169, 1), new Range16.Ptr(172, 174, 2), new Range16.Ptr(175, 177, 1), new Range16.Ptr(180, 184, 4), new Range16.Ptr(215, 247, 32), new Range16.Ptr(706, 709, 1), new Range16.Ptr(722, 735, 1), new Range16.Ptr(741, 747, 1), new Range16.Ptr(749, 751, 2), new Range16.Ptr(752, 767, 1), new Range16.Ptr(885, 900, 15), new Range16.Ptr(901, 1014, 113), new Range16.Ptr(1154, 1423, 269), new Range16.Ptr(1542, 1544, 1), new Range16.Ptr(1547, 1550, 3), new Range16.Ptr(1551, 1758, 207), new Range16.Ptr(1769, 1789, 20), new Range16.Ptr(1790, 2038, 248), new Range16.Ptr(2546, 2547, 1), new Range16.Ptr(2554, 2555, 1), new Range16.Ptr(2801, 2928, 127), new Range16.Ptr(3059, 3066, 1), new Range16.Ptr(3199, 3449, 250), new Range16.Ptr(3647, 3841, 194), new Range16.Ptr(3842, 3843, 1), new Range16.Ptr(3859, 3861, 2), new Range16.Ptr(3862, 3863, 1), new Range16.Ptr(3866, 3871, 1), new Range16.Ptr(3892, 3896, 2), new Range16.Ptr(4030, 4037, 1), new Range16.Ptr(4039, 4044, 1), new Range16.Ptr(4046, 4047, 1), new Range16.Ptr(4053, 4056, 1), new Range16.Ptr(4254, 4255, 1), new Range16.Ptr(5008, 5017, 1), new Range16.Ptr(6107, 6464, 357), new Range16.Ptr(6622, 6655, 1), new Range16.Ptr(7009, 7018, 1), new Range16.Ptr(7028, 7036, 1), new Range16.Ptr(8125, 8127, 2), new Range16.Ptr(8128, 8129, 1), new Range16.Ptr(8141, 8143, 1), new Range16.Ptr(8157, 8159, 1), new Range16.Ptr(8173, 8175, 1), new Range16.Ptr(8189, 8190, 1), new Range16.Ptr(8260, 8274, 14), new Range16.Ptr(8314, 8316, 1), new Range16.Ptr(8330, 8332, 1), new Range16.Ptr(8352, 8378, 1), new Range16.Ptr(8448, 8449, 1), new Range16.Ptr(8451, 8454, 1), new Range16.Ptr(8456, 8457, 1), new Range16.Ptr(8468, 8470, 2), new Range16.Ptr(8471, 8472, 1), new Range16.Ptr(8478, 8483, 1), new Range16.Ptr(8485, 8489, 2), new Range16.Ptr(8494, 8506, 12), new Range16.Ptr(8507, 8512, 5), new Range16.Ptr(8513, 8516, 1), new Range16.Ptr(8522, 8525, 1), new Range16.Ptr(8527, 8592, 65), new Range16.Ptr(8593, 9000, 1), new Range16.Ptr(9003, 9203, 1), new Range16.Ptr(9216, 9254, 1), new Range16.Ptr(9280, 9290, 1), new Range16.Ptr(9372, 9449, 1), new Range16.Ptr(9472, 9983, 1), new Range16.Ptr(9985, 10087, 1), new Range16.Ptr(10132, 10180, 1), new Range16.Ptr(10183, 10213, 1), new Range16.Ptr(10224, 10626, 1), new Range16.Ptr(10649, 10711, 1), new Range16.Ptr(10716, 10747, 1), new Range16.Ptr(10750, 11084, 1), new Range16.Ptr(11088, 11097, 1), new Range16.Ptr(11493, 11498, 1), new Range16.Ptr(11904, 11929, 1), new Range16.Ptr(11931, 12019, 1), new Range16.Ptr(12032, 12245, 1), new Range16.Ptr(12272, 12283, 1), new Range16.Ptr(12292, 12306, 14), new Range16.Ptr(12307, 12320, 13), new Range16.Ptr(12342, 12343, 1), new Range16.Ptr(12350, 12351, 1), new Range16.Ptr(12443, 12444, 1), new Range16.Ptr(12688, 12689, 1), new Range16.Ptr(12694, 12703, 1), new Range16.Ptr(12736, 12771, 1), new Range16.Ptr(12800, 12830, 1), new Range16.Ptr(12842, 12871, 1), new Range16.Ptr(12880, 12896, 16), new Range16.Ptr(12897, 12927, 1), new Range16.Ptr(12938, 12976, 1), new Range16.Ptr(12992, 13054, 1), new Range16.Ptr(13056, 13311, 1), new Range16.Ptr(19904, 19967, 1), new Range16.Ptr(42128, 42182, 1), new Range16.Ptr(42752, 42774, 1), new Range16.Ptr(42784, 42785, 1), new Range16.Ptr(42889, 42890, 1), new Range16.Ptr(43048, 43051, 1), new Range16.Ptr(43062, 43065, 1), new Range16.Ptr(43639, 43641, 1), new Range16.Ptr(64297, 64434, 137), new Range16.Ptr(64435, 64449, 1), new Range16.Ptr(65020, 65021, 1), new Range16.Ptr(65122, 65124, 2), new Range16.Ptr(65125, 65126, 1), new Range16.Ptr(65129, 65284, 155), new Range16.Ptr(65291, 65308, 17), new Range16.Ptr(65309, 65310, 1), new Range16.Ptr(65342, 65344, 2), new Range16.Ptr(65372, 65374, 2), new Range16.Ptr(65504, 65510, 1), new Range16.Ptr(65512, 65518, 1), new Range16.Ptr(65532, 65533, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(65847, 65855, 1), new Range32.Ptr(65913, 65929, 1), new Range32.Ptr(65936, 65947, 1), new Range32.Ptr(66000, 66044, 1), new Range32.Ptr(118784, 119029, 1), new Range32.Ptr(119040, 119078, 1), new Range32.Ptr(119081, 119140, 1), new Range32.Ptr(119146, 119148, 1), new Range32.Ptr(119171, 119172, 1), new Range32.Ptr(119180, 119209, 1), new Range32.Ptr(119214, 119261, 1), new Range32.Ptr(119296, 119361, 1), new Range32.Ptr(119365, 119552, 187), new Range32.Ptr(119553, 119638, 1), new Range32.Ptr(120513, 120539, 26), new Range32.Ptr(120571, 120597, 26), new Range32.Ptr(120629, 120655, 26), new Range32.Ptr(120687, 120713, 26), new Range32.Ptr(120745, 120771, 26), new Range32.Ptr(126704, 126705, 1), new Range32.Ptr(126976, 127019, 1), new Range32.Ptr(127024, 127123, 1), new Range32.Ptr(127136, 127150, 1), new Range32.Ptr(127153, 127166, 1), new Range32.Ptr(127169, 127183, 1), new Range32.Ptr(127185, 127199, 1), new Range32.Ptr(127248, 127278, 1), new Range32.Ptr(127280, 127339, 1), new Range32.Ptr(127344, 127386, 1), new Range32.Ptr(127462, 127490, 1), new Range32.Ptr(127504, 127546, 1), new Range32.Ptr(127552, 127560, 1), new Range32.Ptr(127568, 127569, 1), new Range32.Ptr(127744, 127776, 1), new Range32.Ptr(127792, 127797, 1), new Range32.Ptr(127799, 127868, 1), new Range32.Ptr(127872, 127891, 1), new Range32.Ptr(127904, 127940, 1), new Range32.Ptr(127942, 127946, 1), new Range32.Ptr(127968, 127984, 1), new Range32.Ptr(128000, 128062, 1), new Range32.Ptr(128064, 128066, 2), new Range32.Ptr(128067, 128247, 1), new Range32.Ptr(128249, 128252, 1), new Range32.Ptr(128256, 128317, 1), new Range32.Ptr(128320, 128323, 1), new Range32.Ptr(128336, 128359, 1), new Range32.Ptr(128507, 128576, 1), new Range32.Ptr(128581, 128591, 1), new Range32.Ptr(128640, 128709, 1), new Range32.Ptr(128768, 128883, 1)]), 10);
+		go$pkg.S = _S;
+		_Zs = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(32, 160, 128), new Range16.Ptr(5760, 6158, 398), new Range16.Ptr(8192, 8202, 1), new Range16.Ptr(8239, 8287, 48), new Range16.Ptr(12288, 12288, 1)]), (go$sliceType(Range32)).nil, 1);
+		go$pkg.Zs = _Zs;
+		go$pkg.GraphicRanges = new (go$sliceType((go$ptrType(RangeTable))))([go$pkg.L, go$pkg.M, go$pkg.N, go$pkg.P, go$pkg.S, go$pkg.Zs]);
+		go$pkg.PrintRanges = new (go$sliceType((go$ptrType(RangeTable))))([go$pkg.L, go$pkg.M, go$pkg.N, go$pkg.P, go$pkg.S]);
+		_Cc = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(1, 31, 1), new Range16.Ptr(127, 159, 1)]), (go$sliceType(Range32)).nil, 2);
+		go$pkg.Cc = _Cc;
+		_Cf = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(173, 1536, 1363), new Range16.Ptr(1537, 1540, 1), new Range16.Ptr(1757, 1807, 50), new Range16.Ptr(8203, 8207, 1), new Range16.Ptr(8234, 8238, 1), new Range16.Ptr(8288, 8292, 1), new Range16.Ptr(8298, 8303, 1), new Range16.Ptr(65279, 65529, 250), new Range16.Ptr(65530, 65531, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(69821, 119155, 49334), new Range32.Ptr(119156, 119162, 1), new Range32.Ptr(917505, 917536, 31), new Range32.Ptr(917537, 917631, 1)]), 0);
+		go$pkg.Cf = _Cf;
+		_Co = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(57344, 63743, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(983040, 1048573, 1), new Range32.Ptr(1048576, 1114109, 1)]), 0);
+		go$pkg.Co = _Co;
+		_Cs = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(55296, 57343, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Cs = _Cs;
+		_Nd = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(48, 57, 1), new Range16.Ptr(1632, 1641, 1), new Range16.Ptr(1776, 1785, 1), new Range16.Ptr(1984, 1993, 1), new Range16.Ptr(2406, 2415, 1), new Range16.Ptr(2534, 2543, 1), new Range16.Ptr(2662, 2671, 1), new Range16.Ptr(2790, 2799, 1), new Range16.Ptr(2918, 2927, 1), new Range16.Ptr(3046, 3055, 1), new Range16.Ptr(3174, 3183, 1), new Range16.Ptr(3302, 3311, 1), new Range16.Ptr(3430, 3439, 1), new Range16.Ptr(3664, 3673, 1), new Range16.Ptr(3792, 3801, 1), new Range16.Ptr(3872, 3881, 1), new Range16.Ptr(4160, 4169, 1), new Range16.Ptr(4240, 4249, 1), new Range16.Ptr(6112, 6121, 1), new Range16.Ptr(6160, 6169, 1), new Range16.Ptr(6470, 6479, 1), new Range16.Ptr(6608, 6617, 1), new Range16.Ptr(6784, 6793, 1), new Range16.Ptr(6800, 6809, 1), new Range16.Ptr(6992, 7001, 1), new Range16.Ptr(7088, 7097, 1), new Range16.Ptr(7232, 7241, 1), new Range16.Ptr(7248, 7257, 1), new Range16.Ptr(42528, 42537, 1), new Range16.Ptr(43216, 43225, 1), new Range16.Ptr(43264, 43273, 1), new Range16.Ptr(43472, 43481, 1), new Range16.Ptr(43600, 43609, 1), new Range16.Ptr(44016, 44025, 1), new Range16.Ptr(65296, 65305, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(66720, 66729, 1), new Range32.Ptr(69734, 69743, 1), new Range32.Ptr(69872, 69881, 1), new Range32.Ptr(69942, 69951, 1), new Range32.Ptr(70096, 70105, 1), new Range32.Ptr(71360, 71369, 1), new Range32.Ptr(120782, 120831, 1)]), 1);
+		go$pkg.Nd = _Nd;
+		_Lm = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(688, 705, 1), new Range16.Ptr(710, 721, 1), new Range16.Ptr(736, 740, 1), new Range16.Ptr(748, 750, 2), new Range16.Ptr(884, 890, 6), new Range16.Ptr(1369, 1600, 231), new Range16.Ptr(1765, 1766, 1), new Range16.Ptr(2036, 2037, 1), new Range16.Ptr(2042, 2074, 32), new Range16.Ptr(2084, 2088, 4), new Range16.Ptr(2417, 3654, 1237), new Range16.Ptr(3782, 4348, 566), new Range16.Ptr(6103, 6211, 108), new Range16.Ptr(6823, 7288, 465), new Range16.Ptr(7289, 7293, 1), new Range16.Ptr(7468, 7530, 1), new Range16.Ptr(7544, 7579, 35), new Range16.Ptr(7580, 7615, 1), new Range16.Ptr(8305, 8319, 14), new Range16.Ptr(8336, 8348, 1), new Range16.Ptr(11388, 11389, 1), new Range16.Ptr(11631, 11823, 192), new Range16.Ptr(12293, 12337, 44), new Range16.Ptr(12338, 12341, 1), new Range16.Ptr(12347, 12445, 98), new Range16.Ptr(12446, 12540, 94), new Range16.Ptr(12541, 12542, 1), new Range16.Ptr(40981, 42232, 1251), new Range16.Ptr(42233, 42237, 1), new Range16.Ptr(42508, 42623, 115), new Range16.Ptr(42775, 42783, 1), new Range16.Ptr(42864, 42888, 24), new Range16.Ptr(43000, 43001, 1), new Range16.Ptr(43471, 43632, 161), new Range16.Ptr(43741, 43763, 22), new Range16.Ptr(43764, 65392, 21628), new Range16.Ptr(65438, 65439, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(94099, 94111, 1)]), 0);
+		go$pkg.Lm = _Lm;
+		_Lo = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(170, 186, 16), new Range16.Ptr(443, 448, 5), new Range16.Ptr(449, 451, 1), new Range16.Ptr(660, 1488, 828), new Range16.Ptr(1489, 1514, 1), new Range16.Ptr(1520, 1522, 1), new Range16.Ptr(1568, 1599, 1), new Range16.Ptr(1601, 1610, 1), new Range16.Ptr(1646, 1647, 1), new Range16.Ptr(1649, 1747, 1), new Range16.Ptr(1749, 1774, 25), new Range16.Ptr(1775, 1786, 11), new Range16.Ptr(1787, 1788, 1), new Range16.Ptr(1791, 1808, 17), new Range16.Ptr(1810, 1839, 1), new Range16.Ptr(1869, 1957, 1), new Range16.Ptr(1969, 1994, 25), new Range16.Ptr(1995, 2026, 1), new Range16.Ptr(2048, 2069, 1), new Range16.Ptr(2112, 2136, 1), new Range16.Ptr(2208, 2210, 2), new Range16.Ptr(2211, 2220, 1), new Range16.Ptr(2308, 2361, 1), new Range16.Ptr(2365, 2384, 19), new Range16.Ptr(2392, 2401, 1), new Range16.Ptr(2418, 2423, 1), new Range16.Ptr(2425, 2431, 1), new Range16.Ptr(2437, 2444, 1), new Range16.Ptr(2447, 2448, 1), new Range16.Ptr(2451, 2472, 1), new Range16.Ptr(2474, 2480, 1), new Range16.Ptr(2482, 2486, 4), new Range16.Ptr(2487, 2489, 1), new Range16.Ptr(2493, 2510, 17), new Range16.Ptr(2524, 2525, 1), new Range16.Ptr(2527, 2529, 1), new Range16.Ptr(2544, 2545, 1), new Range16.Ptr(2565, 2570, 1), new Range16.Ptr(2575, 2576, 1), new Range16.Ptr(2579, 2600, 1), new Range16.Ptr(2602, 2608, 1), new Range16.Ptr(2610, 2611, 1), new Range16.Ptr(2613, 2614, 1), new Range16.Ptr(2616, 2617, 1), new Range16.Ptr(2649, 2652, 1), new Range16.Ptr(2654, 2674, 20), new Range16.Ptr(2675, 2676, 1), new Range16.Ptr(2693, 2701, 1), new Range16.Ptr(2703, 2705, 1), new Range16.Ptr(2707, 2728, 1), new Range16.Ptr(2730, 2736, 1), new Range16.Ptr(2738, 2739, 1), new Range16.Ptr(2741, 2745, 1), new Range16.Ptr(2749, 2768, 19), new Range16.Ptr(2784, 2785, 1), new Range16.Ptr(2821, 2828, 1), new Range16.Ptr(2831, 2832, 1), new Range16.Ptr(2835, 2856, 1), new Range16.Ptr(2858, 2864, 1), new Range16.Ptr(2866, 2867, 1), new Range16.Ptr(2869, 2873, 1), new Range16.Ptr(2877, 2908, 31), new Range16.Ptr(2909, 2911, 2), new Range16.Ptr(2912, 2913, 1), new Range16.Ptr(2929, 2947, 18), new Range16.Ptr(2949, 2954, 1), new Range16.Ptr(2958, 2960, 1), new Range16.Ptr(2962, 2965, 1), new Range16.Ptr(2969, 2970, 1), new Range16.Ptr(2972, 2974, 2), new Range16.Ptr(2975, 2979, 4), new Range16.Ptr(2980, 2984, 4), new Range16.Ptr(2985, 2986, 1), new Range16.Ptr(2990, 3001, 1), new Range16.Ptr(3024, 3077, 53), new Range16.Ptr(3078, 3084, 1), new Range16.Ptr(3086, 3088, 1), new Range16.Ptr(3090, 3112, 1), new Range16.Ptr(3114, 3123, 1), new Range16.Ptr(3125, 3129, 1), new Range16.Ptr(3133, 3160, 27), new Range16.Ptr(3161, 3168, 7), new Range16.Ptr(3169, 3205, 36), new Range16.Ptr(3206, 3212, 1), new Range16.Ptr(3214, 3216, 1), new Range16.Ptr(3218, 3240, 1), new Range16.Ptr(3242, 3251, 1), new Range16.Ptr(3253, 3257, 1), new Range16.Ptr(3261, 3294, 33), new Range16.Ptr(3296, 3297, 1), new Range16.Ptr(3313, 3314, 1), new Range16.Ptr(3333, 3340, 1), new Range16.Ptr(3342, 3344, 1), new Range16.Ptr(3346, 3386, 1), new Range16.Ptr(3389, 3406, 17), new Range16.Ptr(3424, 3425, 1), new Range16.Ptr(3450, 3455, 1), new Range16.Ptr(3461, 3478, 1), new Range16.Ptr(3482, 3505, 1), new Range16.Ptr(3507, 3515, 1), new Range16.Ptr(3517, 3520, 3), new Range16.Ptr(3521, 3526, 1), new Range16.Ptr(3585, 3632, 1), new Range16.Ptr(3634, 3635, 1), new Range16.Ptr(3648, 3653, 1), new Range16.Ptr(3713, 3714, 1), new Range16.Ptr(3716, 3719, 3), new Range16.Ptr(3720, 3722, 2), new Range16.Ptr(3725, 3732, 7), new Range16.Ptr(3733, 3735, 1), new Range16.Ptr(3737, 3743, 1), new Range16.Ptr(3745, 3747, 1), new Range16.Ptr(3749, 3751, 2), new Range16.Ptr(3754, 3755, 1), new Range16.Ptr(3757, 3760, 1), new Range16.Ptr(3762, 3763, 1), new Range16.Ptr(3773, 3776, 3), new Range16.Ptr(3777, 3780, 1), new Range16.Ptr(3804, 3807, 1), new Range16.Ptr(3840, 3904, 64), new Range16.Ptr(3905, 3911, 1), new Range16.Ptr(3913, 3948, 1), new Range16.Ptr(3976, 3980, 1), new Range16.Ptr(4096, 4138, 1), new Range16.Ptr(4159, 4176, 17), new Range16.Ptr(4177, 4181, 1), new Range16.Ptr(4186, 4189, 1), new Range16.Ptr(4193, 4197, 4), new Range16.Ptr(4198, 4206, 8), new Range16.Ptr(4207, 4208, 1), new Range16.Ptr(4213, 4225, 1), new Range16.Ptr(4238, 4304, 66), new Range16.Ptr(4305, 4346, 1), new Range16.Ptr(4349, 4680, 1), new Range16.Ptr(4682, 4685, 1), new Range16.Ptr(4688, 4694, 1), new Range16.Ptr(4696, 4698, 2), new Range16.Ptr(4699, 4701, 1), new Range16.Ptr(4704, 4744, 1), new Range16.Ptr(4746, 4749, 1), new Range16.Ptr(4752, 4784, 1), new Range16.Ptr(4786, 4789, 1), new Range16.Ptr(4792, 4798, 1), new Range16.Ptr(4800, 4802, 2), new Range16.Ptr(4803, 4805, 1), new Range16.Ptr(4808, 4822, 1), new Range16.Ptr(4824, 4880, 1), new Range16.Ptr(4882, 4885, 1), new Range16.Ptr(4888, 4954, 1), new Range16.Ptr(4992, 5007, 1), new Range16.Ptr(5024, 5108, 1), new Range16.Ptr(5121, 5740, 1), new Range16.Ptr(5743, 5759, 1), new Range16.Ptr(5761, 5786, 1), new Range16.Ptr(5792, 5866, 1), new Range16.Ptr(5888, 5900, 1), new Range16.Ptr(5902, 5905, 1), new Range16.Ptr(5920, 5937, 1), new Range16.Ptr(5952, 5969, 1), new Range16.Ptr(5984, 5996, 1), new Range16.Ptr(5998, 6000, 1), new Range16.Ptr(6016, 6067, 1), new Range16.Ptr(6108, 6176, 68), new Range16.Ptr(6177, 6210, 1), new Range16.Ptr(6212, 6263, 1), new Range16.Ptr(6272, 6312, 1), new Range16.Ptr(6314, 6320, 6), new Range16.Ptr(6321, 6389, 1), new Range16.Ptr(6400, 6428, 1), new Range16.Ptr(6480, 6509, 1), new Range16.Ptr(6512, 6516, 1), new Range16.Ptr(6528, 6571, 1), new Range16.Ptr(6593, 6599, 1), new Range16.Ptr(6656, 6678, 1), new Range16.Ptr(6688, 6740, 1), new Range16.Ptr(6917, 6963, 1), new Range16.Ptr(6981, 6987, 1), new Range16.Ptr(7043, 7072, 1), new Range16.Ptr(7086, 7087, 1), new Range16.Ptr(7098, 7141, 1), new Range16.Ptr(7168, 7203, 1), new Range16.Ptr(7245, 7247, 1), new Range16.Ptr(7258, 7287, 1), new Range16.Ptr(7401, 7404, 1), new Range16.Ptr(7406, 7409, 1), new Range16.Ptr(7413, 7414, 1), new Range16.Ptr(8501, 8504, 1), new Range16.Ptr(11568, 11623, 1), new Range16.Ptr(11648, 11670, 1), new Range16.Ptr(11680, 11686, 1), new Range16.Ptr(11688, 11694, 1), new Range16.Ptr(11696, 11702, 1), new Range16.Ptr(11704, 11710, 1), new Range16.Ptr(11712, 11718, 1), new Range16.Ptr(11720, 11726, 1), new Range16.Ptr(11728, 11734, 1), new Range16.Ptr(11736, 11742, 1), new Range16.Ptr(12294, 12348, 54), new Range16.Ptr(12353, 12438, 1), new Range16.Ptr(12447, 12449, 2), new Range16.Ptr(12450, 12538, 1), new Range16.Ptr(12543, 12549, 6), new Range16.Ptr(12550, 12589, 1), new Range16.Ptr(12593, 12686, 1), new Range16.Ptr(12704, 12730, 1), new Range16.Ptr(12784, 12799, 1), new Range16.Ptr(13312, 19893, 1), new Range16.Ptr(19968, 40908, 1), new Range16.Ptr(40960, 40980, 1), new Range16.Ptr(40982, 42124, 1), new Range16.Ptr(42192, 42231, 1), new Range16.Ptr(42240, 42507, 1), new Range16.Ptr(42512, 42527, 1), new Range16.Ptr(42538, 42539, 1), new Range16.Ptr(42606, 42656, 50), new Range16.Ptr(42657, 42725, 1), new Range16.Ptr(43003, 43009, 1), new Range16.Ptr(43011, 43013, 1), new Range16.Ptr(43015, 43018, 1), new Range16.Ptr(43020, 43042, 1), new Range16.Ptr(43072, 43123, 1), new Range16.Ptr(43138, 43187, 1), new Range16.Ptr(43250, 43255, 1), new Range16.Ptr(43259, 43274, 15), new Range16.Ptr(43275, 43301, 1), new Range16.Ptr(43312, 43334, 1), new Range16.Ptr(43360, 43388, 1), new Range16.Ptr(43396, 43442, 1), new Range16.Ptr(43520, 43560, 1), new Range16.Ptr(43584, 43586, 1), new Range16.Ptr(43588, 43595, 1), new Range16.Ptr(43616, 43631, 1), new Range16.Ptr(43633, 43638, 1), new Range16.Ptr(43642, 43648, 6), new Range16.Ptr(43649, 43695, 1), new Range16.Ptr(43697, 43701, 4), new Range16.Ptr(43702, 43705, 3), new Range16.Ptr(43706, 43709, 1), new Range16.Ptr(43712, 43714, 2), new Range16.Ptr(43739, 43740, 1), new Range16.Ptr(43744, 43754, 1), new Range16.Ptr(43762, 43777, 15), new Range16.Ptr(43778, 43782, 1), new Range16.Ptr(43785, 43790, 1), new Range16.Ptr(43793, 43798, 1), new Range16.Ptr(43808, 43814, 1), new Range16.Ptr(43816, 43822, 1), new Range16.Ptr(43968, 44002, 1), new Range16.Ptr(44032, 55203, 1), new Range16.Ptr(55216, 55238, 1), new Range16.Ptr(55243, 55291, 1), new Range16.Ptr(63744, 64109, 1), new Range16.Ptr(64112, 64217, 1), new Range16.Ptr(64285, 64287, 2), new Range16.Ptr(64288, 64296, 1), new Range16.Ptr(64298, 64310, 1), new Range16.Ptr(64312, 64316, 1), new Range16.Ptr(64318, 64320, 2), new Range16.Ptr(64321, 64323, 2), new Range16.Ptr(64324, 64326, 2), new Range16.Ptr(64327, 64433, 1), new Range16.Ptr(64467, 64829, 1), new Range16.Ptr(64848, 64911, 1), new Range16.Ptr(64914, 64967, 1), new Range16.Ptr(65008, 65019, 1), new Range16.Ptr(65136, 65140, 1), new Range16.Ptr(65142, 65276, 1), new Range16.Ptr(65382, 65391, 1), new Range16.Ptr(65393, 65437, 1), new Range16.Ptr(65440, 65470, 1), new Range16.Ptr(65474, 65479, 1), new Range16.Ptr(65482, 65487, 1), new Range16.Ptr(65490, 65495, 1), new Range16.Ptr(65498, 65500, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(65536, 65547, 1), new Range32.Ptr(65549, 65574, 1), new Range32.Ptr(65576, 65594, 1), new Range32.Ptr(65596, 65597, 1), new Range32.Ptr(65599, 65613, 1), new Range32.Ptr(65616, 65629, 1), new Range32.Ptr(65664, 65786, 1), new Range32.Ptr(66176, 66204, 1), new Range32.Ptr(66208, 66256, 1), new Range32.Ptr(66304, 66334, 1), new Range32.Ptr(66352, 66368, 1), new Range32.Ptr(66370, 66377, 1), new Range32.Ptr(66432, 66461, 1), new Range32.Ptr(66464, 66499, 1), new Range32.Ptr(66504, 66511, 1), new Range32.Ptr(66640, 66717, 1), new Range32.Ptr(67584, 67589, 1), new Range32.Ptr(67592, 67594, 2), new Range32.Ptr(67595, 67637, 1), new Range32.Ptr(67639, 67640, 1), new Range32.Ptr(67644, 67647, 3), new Range32.Ptr(67648, 67669, 1), new Range32.Ptr(67840, 67861, 1), new Range32.Ptr(67872, 67897, 1), new Range32.Ptr(67968, 68023, 1), new Range32.Ptr(68030, 68031, 1), new Range32.Ptr(68096, 68112, 16), new Range32.Ptr(68113, 68115, 1), new Range32.Ptr(68117, 68119, 1), new Range32.Ptr(68121, 68147, 1), new Range32.Ptr(68192, 68220, 1), new Range32.Ptr(68352, 68405, 1), new Range32.Ptr(68416, 68437, 1), new Range32.Ptr(68448, 68466, 1), new Range32.Ptr(68608, 68680, 1), new Range32.Ptr(69635, 69687, 1), new Range32.Ptr(69763, 69807, 1), new Range32.Ptr(69840, 69864, 1), new Range32.Ptr(69891, 69926, 1), new Range32.Ptr(70019, 70066, 1), new Range32.Ptr(70081, 70084, 1), new Range32.Ptr(71296, 71338, 1), new Range32.Ptr(73728, 74606, 1), new Range32.Ptr(77824, 78894, 1), new Range32.Ptr(92160, 92728, 1), new Range32.Ptr(93952, 94020, 1), new Range32.Ptr(94032, 110592, 16560), new Range32.Ptr(110593, 126464, 15871), new Range32.Ptr(126465, 126467, 1), new Range32.Ptr(126469, 126495, 1), new Range32.Ptr(126497, 126498, 1), new Range32.Ptr(126500, 126503, 3), new Range32.Ptr(126505, 126514, 1), new Range32.Ptr(126516, 126519, 1), new Range32.Ptr(126521, 126523, 2), new Range32.Ptr(126530, 126535, 5), new Range32.Ptr(126537, 126541, 2), new Range32.Ptr(126542, 126543, 1), new Range32.Ptr(126545, 126546, 1), new Range32.Ptr(126548, 126551, 3), new Range32.Ptr(126553, 126561, 2), new Range32.Ptr(126562, 126564, 2), new Range32.Ptr(126567, 126570, 1), new Range32.Ptr(126572, 126578, 1), new Range32.Ptr(126580, 126583, 1), new Range32.Ptr(126585, 126588, 1), new Range32.Ptr(126590, 126592, 2), new Range32.Ptr(126593, 126601, 1), new Range32.Ptr(126603, 126619, 1), new Range32.Ptr(126625, 126627, 1), new Range32.Ptr(126629, 126633, 1), new Range32.Ptr(126635, 126651, 1), new Range32.Ptr(131072, 173782, 1), new Range32.Ptr(173824, 177972, 1), new Range32.Ptr(177984, 178205, 1), new Range32.Ptr(194560, 195101, 1)]), 1);
+		go$pkg.Lo = _Lo;
+		_Ll = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(97, 122, 1), new Range16.Ptr(181, 223, 42), new Range16.Ptr(224, 246, 1), new Range16.Ptr(248, 255, 1), new Range16.Ptr(257, 311, 2), new Range16.Ptr(312, 328, 2), new Range16.Ptr(329, 375, 2), new Range16.Ptr(378, 382, 2), new Range16.Ptr(383, 384, 1), new Range16.Ptr(387, 389, 2), new Range16.Ptr(392, 396, 4), new Range16.Ptr(397, 402, 5), new Range16.Ptr(405, 409, 4), new Range16.Ptr(410, 411, 1), new Range16.Ptr(414, 417, 3), new Range16.Ptr(419, 421, 2), new Range16.Ptr(424, 426, 2), new Range16.Ptr(427, 429, 2), new Range16.Ptr(432, 436, 4), new Range16.Ptr(438, 441, 3), new Range16.Ptr(442, 445, 3), new Range16.Ptr(446, 447, 1), new Range16.Ptr(454, 460, 3), new Range16.Ptr(462, 476, 2), new Range16.Ptr(477, 495, 2), new Range16.Ptr(496, 499, 3), new Range16.Ptr(501, 505, 4), new Range16.Ptr(507, 563, 2), new Range16.Ptr(564, 569, 1), new Range16.Ptr(572, 575, 3), new Range16.Ptr(576, 578, 2), new Range16.Ptr(583, 591, 2), new Range16.Ptr(592, 659, 1), new Range16.Ptr(661, 687, 1), new Range16.Ptr(881, 883, 2), new Range16.Ptr(887, 891, 4), new Range16.Ptr(892, 893, 1), new Range16.Ptr(912, 940, 28), new Range16.Ptr(941, 974, 1), new Range16.Ptr(976, 977, 1), new Range16.Ptr(981, 983, 1), new Range16.Ptr(985, 1007, 2), new Range16.Ptr(1008, 1011, 1), new Range16.Ptr(1013, 1019, 3), new Range16.Ptr(1020, 1072, 52), new Range16.Ptr(1073, 1119, 1), new Range16.Ptr(1121, 1153, 2), new Range16.Ptr(1163, 1215, 2), new Range16.Ptr(1218, 1230, 2), new Range16.Ptr(1231, 1319, 2), new Range16.Ptr(1377, 1415, 1), new Range16.Ptr(7424, 7467, 1), new Range16.Ptr(7531, 7543, 1), new Range16.Ptr(7545, 7578, 1), new Range16.Ptr(7681, 7829, 2), new Range16.Ptr(7830, 7837, 1), new Range16.Ptr(7839, 7935, 2), new Range16.Ptr(7936, 7943, 1), new Range16.Ptr(7952, 7957, 1), new Range16.Ptr(7968, 7975, 1), new Range16.Ptr(7984, 7991, 1), new Range16.Ptr(8000, 8005, 1), new Range16.Ptr(8016, 8023, 1), new Range16.Ptr(8032, 8039, 1), new Range16.Ptr(8048, 8061, 1), new Range16.Ptr(8064, 8071, 1), new Range16.Ptr(8080, 8087, 1), new Range16.Ptr(8096, 8103, 1), new Range16.Ptr(8112, 8116, 1), new Range16.Ptr(8118, 8119, 1), new Range16.Ptr(8126, 8130, 4), new Range16.Ptr(8131, 8132, 1), new Range16.Ptr(8134, 8135, 1), new Range16.Ptr(8144, 8147, 1), new Range16.Ptr(8150, 8151, 1), new Range16.Ptr(8160, 8167, 1), new Range16.Ptr(8178, 8180, 1), new Range16.Ptr(8182, 8183, 1), new Range16.Ptr(8458, 8462, 4), new Range16.Ptr(8463, 8467, 4), new Range16.Ptr(8495, 8505, 5), new Range16.Ptr(8508, 8509, 1), new Range16.Ptr(8518, 8521, 1), new Range16.Ptr(8526, 8580, 54), new Range16.Ptr(11312, 11358, 1), new Range16.Ptr(11361, 11365, 4), new Range16.Ptr(11366, 11372, 2), new Range16.Ptr(11377, 11379, 2), new Range16.Ptr(11380, 11382, 2), new Range16.Ptr(11383, 11387, 1), new Range16.Ptr(11393, 11491, 2), new Range16.Ptr(11492, 11500, 8), new Range16.Ptr(11502, 11507, 5), new Range16.Ptr(11520, 11557, 1), new Range16.Ptr(11559, 11565, 6), new Range16.Ptr(42561, 42605, 2), new Range16.Ptr(42625, 42647, 2), new Range16.Ptr(42787, 42799, 2), new Range16.Ptr(42800, 42801, 1), new Range16.Ptr(42803, 42865, 2), new Range16.Ptr(42866, 42872, 1), new Range16.Ptr(42874, 42876, 2), new Range16.Ptr(42879, 42887, 2), new Range16.Ptr(42892, 42894, 2), new Range16.Ptr(42897, 42899, 2), new Range16.Ptr(42913, 42921, 2), new Range16.Ptr(43002, 64256, 21254), new Range16.Ptr(64257, 64262, 1), new Range16.Ptr(64275, 64279, 1), new Range16.Ptr(65345, 65370, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(66600, 66639, 1), new Range32.Ptr(119834, 119859, 1), new Range32.Ptr(119886, 119892, 1), new Range32.Ptr(119894, 119911, 1), new Range32.Ptr(119938, 119963, 1), new Range32.Ptr(119990, 119993, 1), new Range32.Ptr(119995, 119997, 2), new Range32.Ptr(119998, 120003, 1), new Range32.Ptr(120005, 120015, 1), new Range32.Ptr(120042, 120067, 1), new Range32.Ptr(120094, 120119, 1), new Range32.Ptr(120146, 120171, 1), new Range32.Ptr(120198, 120223, 1), new Range32.Ptr(120250, 120275, 1), new Range32.Ptr(120302, 120327, 1), new Range32.Ptr(120354, 120379, 1), new Range32.Ptr(120406, 120431, 1), new Range32.Ptr(120458, 120485, 1), new Range32.Ptr(120514, 120538, 1), new Range32.Ptr(120540, 120545, 1), new Range32.Ptr(120572, 120596, 1), new Range32.Ptr(120598, 120603, 1), new Range32.Ptr(120630, 120654, 1), new Range32.Ptr(120656, 120661, 1), new Range32.Ptr(120688, 120712, 1), new Range32.Ptr(120714, 120719, 1), new Range32.Ptr(120746, 120770, 1), new Range32.Ptr(120772, 120777, 1), new Range32.Ptr(120779, 120779, 1)]), 4);
+		go$pkg.Ll = _Ll;
+		_Mc = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(2307, 2363, 56), new Range16.Ptr(2366, 2368, 1), new Range16.Ptr(2377, 2380, 1), new Range16.Ptr(2382, 2383, 1), new Range16.Ptr(2434, 2435, 1), new Range16.Ptr(2494, 2496, 1), new Range16.Ptr(2503, 2504, 1), new Range16.Ptr(2507, 2508, 1), new Range16.Ptr(2519, 2563, 44), new Range16.Ptr(2622, 2624, 1), new Range16.Ptr(2691, 2750, 59), new Range16.Ptr(2751, 2752, 1), new Range16.Ptr(2761, 2763, 2), new Range16.Ptr(2764, 2818, 54), new Range16.Ptr(2819, 2878, 59), new Range16.Ptr(2880, 2887, 7), new Range16.Ptr(2888, 2891, 3), new Range16.Ptr(2892, 2903, 11), new Range16.Ptr(3006, 3007, 1), new Range16.Ptr(3009, 3010, 1), new Range16.Ptr(3014, 3016, 1), new Range16.Ptr(3018, 3020, 1), new Range16.Ptr(3031, 3073, 42), new Range16.Ptr(3074, 3075, 1), new Range16.Ptr(3137, 3140, 1), new Range16.Ptr(3202, 3203, 1), new Range16.Ptr(3262, 3264, 2), new Range16.Ptr(3265, 3268, 1), new Range16.Ptr(3271, 3272, 1), new Range16.Ptr(3274, 3275, 1), new Range16.Ptr(3285, 3286, 1), new Range16.Ptr(3330, 3331, 1), new Range16.Ptr(3390, 3392, 1), new Range16.Ptr(3398, 3400, 1), new Range16.Ptr(3402, 3404, 1), new Range16.Ptr(3415, 3458, 43), new Range16.Ptr(3459, 3535, 76), new Range16.Ptr(3536, 3537, 1), new Range16.Ptr(3544, 3551, 1), new Range16.Ptr(3570, 3571, 1), new Range16.Ptr(3902, 3903, 1), new Range16.Ptr(3967, 4139, 172), new Range16.Ptr(4140, 4145, 5), new Range16.Ptr(4152, 4155, 3), new Range16.Ptr(4156, 4182, 26), new Range16.Ptr(4183, 4194, 11), new Range16.Ptr(4195, 4196, 1), new Range16.Ptr(4199, 4205, 1), new Range16.Ptr(4227, 4228, 1), new Range16.Ptr(4231, 4236, 1), new Range16.Ptr(4239, 4250, 11), new Range16.Ptr(4251, 4252, 1), new Range16.Ptr(6070, 6078, 8), new Range16.Ptr(6079, 6085, 1), new Range16.Ptr(6087, 6088, 1), new Range16.Ptr(6435, 6438, 1), new Range16.Ptr(6441, 6443, 1), new Range16.Ptr(6448, 6449, 1), new Range16.Ptr(6451, 6456, 1), new Range16.Ptr(6576, 6592, 1), new Range16.Ptr(6600, 6601, 1), new Range16.Ptr(6681, 6683, 1), new Range16.Ptr(6741, 6743, 2), new Range16.Ptr(6753, 6755, 2), new Range16.Ptr(6756, 6765, 9), new Range16.Ptr(6766, 6770, 1), new Range16.Ptr(6916, 6965, 49), new Range16.Ptr(6971, 6973, 2), new Range16.Ptr(6974, 6977, 1), new Range16.Ptr(6979, 6980, 1), new Range16.Ptr(7042, 7073, 31), new Range16.Ptr(7078, 7079, 1), new Range16.Ptr(7082, 7084, 2), new Range16.Ptr(7085, 7143, 58), new Range16.Ptr(7146, 7148, 1), new Range16.Ptr(7150, 7154, 4), new Range16.Ptr(7155, 7204, 49), new Range16.Ptr(7205, 7211, 1), new Range16.Ptr(7220, 7221, 1), new Range16.Ptr(7393, 7410, 17), new Range16.Ptr(7411, 12334, 4923), new Range16.Ptr(12335, 43043, 30708), new Range16.Ptr(43044, 43047, 3), new Range16.Ptr(43136, 43137, 1), new Range16.Ptr(43188, 43203, 1), new Range16.Ptr(43346, 43347, 1), new Range16.Ptr(43395, 43444, 49), new Range16.Ptr(43445, 43450, 5), new Range16.Ptr(43451, 43453, 2), new Range16.Ptr(43454, 43456, 1), new Range16.Ptr(43567, 43568, 1), new Range16.Ptr(43571, 43572, 1), new Range16.Ptr(43597, 43643, 46), new Range16.Ptr(43755, 43758, 3), new Range16.Ptr(43759, 43765, 6), new Range16.Ptr(44003, 44004, 1), new Range16.Ptr(44006, 44007, 1), new Range16.Ptr(44009, 44010, 1), new Range16.Ptr(44012, 44012, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(69632, 69632, 1), new Range32.Ptr(69634, 69762, 128), new Range32.Ptr(69808, 69810, 1), new Range32.Ptr(69815, 69816, 1), new Range32.Ptr(69932, 70018, 86), new Range32.Ptr(70067, 70069, 1), new Range32.Ptr(70079, 70080, 1), new Range32.Ptr(71340, 71342, 2), new Range32.Ptr(71343, 71350, 7), new Range32.Ptr(94033, 94078, 1), new Range32.Ptr(119141, 119142, 1), new Range32.Ptr(119149, 119154, 1)]), 0);
+		go$pkg.Mc = _Mc;
+		_Me = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(1160, 1161, 1), new Range16.Ptr(8413, 8416, 1), new Range16.Ptr(8418, 8420, 1), new Range16.Ptr(42608, 42610, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Me = _Me;
+		_Mn = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(768, 879, 1), new Range16.Ptr(1155, 1159, 1), new Range16.Ptr(1425, 1469, 1), new Range16.Ptr(1471, 1473, 2), new Range16.Ptr(1474, 1476, 2), new Range16.Ptr(1477, 1479, 2), new Range16.Ptr(1552, 1562, 1), new Range16.Ptr(1611, 1631, 1), new Range16.Ptr(1648, 1750, 102), new Range16.Ptr(1751, 1756, 1), new Range16.Ptr(1759, 1764, 1), new Range16.Ptr(1767, 1768, 1), new Range16.Ptr(1770, 1773, 1), new Range16.Ptr(1809, 1840, 31), new Range16.Ptr(1841, 1866, 1), new Range16.Ptr(1958, 1968, 1), new Range16.Ptr(2027, 2035, 1), new Range16.Ptr(2070, 2073, 1), new Range16.Ptr(2075, 2083, 1), new Range16.Ptr(2085, 2087, 1), new Range16.Ptr(2089, 2093, 1), new Range16.Ptr(2137, 2139, 1), new Range16.Ptr(2276, 2302, 1), new Range16.Ptr(2304, 2306, 1), new Range16.Ptr(2362, 2364, 2), new Range16.Ptr(2369, 2376, 1), new Range16.Ptr(2381, 2385, 4), new Range16.Ptr(2386, 2391, 1), new Range16.Ptr(2402, 2403, 1), new Range16.Ptr(2433, 2492, 59), new Range16.Ptr(2497, 2500, 1), new Range16.Ptr(2509, 2530, 21), new Range16.Ptr(2531, 2561, 30), new Range16.Ptr(2562, 2620, 58), new Range16.Ptr(2625, 2626, 1), new Range16.Ptr(2631, 2632, 1), new Range16.Ptr(2635, 2637, 1), new Range16.Ptr(2641, 2672, 31), new Range16.Ptr(2673, 2677, 4), new Range16.Ptr(2689, 2690, 1), new Range16.Ptr(2748, 2753, 5), new Range16.Ptr(2754, 2757, 1), new Range16.Ptr(2759, 2760, 1), new Range16.Ptr(2765, 2786, 21), new Range16.Ptr(2787, 2817, 30), new Range16.Ptr(2876, 2879, 3), new Range16.Ptr(2881, 2884, 1), new Range16.Ptr(2893, 2902, 9), new Range16.Ptr(2914, 2915, 1), new Range16.Ptr(2946, 3008, 62), new Range16.Ptr(3021, 3134, 113), new Range16.Ptr(3135, 3136, 1), new Range16.Ptr(3142, 3144, 1), new Range16.Ptr(3146, 3149, 1), new Range16.Ptr(3157, 3158, 1), new Range16.Ptr(3170, 3171, 1), new Range16.Ptr(3260, 3263, 3), new Range16.Ptr(3270, 3276, 6), new Range16.Ptr(3277, 3298, 21), new Range16.Ptr(3299, 3393, 94), new Range16.Ptr(3394, 3396, 1), new Range16.Ptr(3405, 3426, 21), new Range16.Ptr(3427, 3530, 103), new Range16.Ptr(3538, 3540, 1), new Range16.Ptr(3542, 3633, 91), new Range16.Ptr(3636, 3642, 1), new Range16.Ptr(3655, 3662, 1), new Range16.Ptr(3761, 3764, 3), new Range16.Ptr(3765, 3769, 1), new Range16.Ptr(3771, 3772, 1), new Range16.Ptr(3784, 3789, 1), new Range16.Ptr(3864, 3865, 1), new Range16.Ptr(3893, 3897, 2), new Range16.Ptr(3953, 3966, 1), new Range16.Ptr(3968, 3972, 1), new Range16.Ptr(3974, 3975, 1), new Range16.Ptr(3981, 3991, 1), new Range16.Ptr(3993, 4028, 1), new Range16.Ptr(4038, 4141, 103), new Range16.Ptr(4142, 4144, 1), new Range16.Ptr(4146, 4151, 1), new Range16.Ptr(4153, 4154, 1), new Range16.Ptr(4157, 4158, 1), new Range16.Ptr(4184, 4185, 1), new Range16.Ptr(4190, 4192, 1), new Range16.Ptr(4209, 4212, 1), new Range16.Ptr(4226, 4229, 3), new Range16.Ptr(4230, 4237, 7), new Range16.Ptr(4253, 4957, 704), new Range16.Ptr(4958, 4959, 1), new Range16.Ptr(5906, 5908, 1), new Range16.Ptr(5938, 5940, 1), new Range16.Ptr(5970, 5971, 1), new Range16.Ptr(6002, 6003, 1), new Range16.Ptr(6068, 6069, 1), new Range16.Ptr(6071, 6077, 1), new Range16.Ptr(6086, 6089, 3), new Range16.Ptr(6090, 6099, 1), new Range16.Ptr(6109, 6155, 46), new Range16.Ptr(6156, 6157, 1), new Range16.Ptr(6313, 6432, 119), new Range16.Ptr(6433, 6434, 1), new Range16.Ptr(6439, 6440, 1), new Range16.Ptr(6450, 6457, 7), new Range16.Ptr(6458, 6459, 1), new Range16.Ptr(6679, 6680, 1), new Range16.Ptr(6742, 6744, 2), new Range16.Ptr(6745, 6750, 1), new Range16.Ptr(6752, 6754, 2), new Range16.Ptr(6757, 6764, 1), new Range16.Ptr(6771, 6780, 1), new Range16.Ptr(6783, 6912, 129), new Range16.Ptr(6913, 6915, 1), new Range16.Ptr(6964, 6966, 2), new Range16.Ptr(6967, 6970, 1), new Range16.Ptr(6972, 6978, 6), new Range16.Ptr(7019, 7027, 1), new Range16.Ptr(7040, 7041, 1), new Range16.Ptr(7074, 7077, 1), new Range16.Ptr(7080, 7081, 1), new Range16.Ptr(7083, 7142, 59), new Range16.Ptr(7144, 7145, 1), new Range16.Ptr(7149, 7151, 2), new Range16.Ptr(7152, 7153, 1), new Range16.Ptr(7212, 7219, 1), new Range16.Ptr(7222, 7223, 1), new Range16.Ptr(7376, 7378, 1), new Range16.Ptr(7380, 7392, 1), new Range16.Ptr(7394, 7400, 1), new Range16.Ptr(7405, 7412, 7), new Range16.Ptr(7616, 7654, 1), new Range16.Ptr(7676, 7679, 1), new Range16.Ptr(8400, 8412, 1), new Range16.Ptr(8417, 8421, 4), new Range16.Ptr(8422, 8432, 1), new Range16.Ptr(11503, 11505, 1), new Range16.Ptr(11647, 11744, 97), new Range16.Ptr(11745, 11775, 1), new Range16.Ptr(12330, 12333, 1), new Range16.Ptr(12441, 12442, 1), new Range16.Ptr(42607, 42612, 5), new Range16.Ptr(42613, 42621, 1), new Range16.Ptr(42655, 42736, 81), new Range16.Ptr(42737, 43010, 273), new Range16.Ptr(43014, 43019, 5), new Range16.Ptr(43045, 43046, 1), new Range16.Ptr(43204, 43232, 28), new Range16.Ptr(43233, 43249, 1), new Range16.Ptr(43302, 43309, 1), new Range16.Ptr(43335, 43345, 1), new Range16.Ptr(43392, 43394, 1), new Range16.Ptr(43443, 43446, 3), new Range16.Ptr(43447, 43449, 1), new Range16.Ptr(43452, 43561, 109), new Range16.Ptr(43562, 43566, 1), new Range16.Ptr(43569, 43570, 1), new Range16.Ptr(43573, 43574, 1), new Range16.Ptr(43587, 43596, 9), new Range16.Ptr(43696, 43698, 2), new Range16.Ptr(43699, 43700, 1), new Range16.Ptr(43703, 43704, 1), new Range16.Ptr(43710, 43711, 1), new Range16.Ptr(43713, 43756, 43), new Range16.Ptr(43757, 43766, 9), new Range16.Ptr(44005, 44008, 3), new Range16.Ptr(44013, 64286, 20273), new Range16.Ptr(65024, 65039, 1), new Range16.Ptr(65056, 65062, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(66045, 68097, 2052), new Range32.Ptr(68098, 68099, 1), new Range32.Ptr(68101, 68102, 1), new Range32.Ptr(68108, 68111, 1), new Range32.Ptr(68152, 68154, 1), new Range32.Ptr(68159, 69633, 1474), new Range32.Ptr(69688, 69702, 1), new Range32.Ptr(69760, 69761, 1), new Range32.Ptr(69811, 69814, 1), new Range32.Ptr(69817, 69818, 1), new Range32.Ptr(69888, 69890, 1), new Range32.Ptr(69927, 69931, 1), new Range32.Ptr(69933, 69940, 1), new Range32.Ptr(70016, 70017, 1), new Range32.Ptr(70070, 70078, 1), new Range32.Ptr(71339, 71341, 2), new Range32.Ptr(71344, 71349, 1), new Range32.Ptr(71351, 94095, 22744), new Range32.Ptr(94096, 94098, 1), new Range32.Ptr(119143, 119145, 1), new Range32.Ptr(119163, 119170, 1), new Range32.Ptr(119173, 119179, 1), new Range32.Ptr(119210, 119213, 1), new Range32.Ptr(119362, 119364, 1), new Range32.Ptr(917760, 917999, 1)]), 0);
+		go$pkg.Mn = _Mn;
+		_Nl = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(5870, 5872, 1), new Range16.Ptr(8544, 8578, 1), new Range16.Ptr(8581, 8584, 1), new Range16.Ptr(12295, 12321, 26), new Range16.Ptr(12322, 12329, 1), new Range16.Ptr(12344, 12346, 1), new Range16.Ptr(42726, 42735, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(65856, 65908, 1), new Range32.Ptr(66369, 66378, 9), new Range32.Ptr(66513, 66517, 1), new Range32.Ptr(74752, 74850, 1)]), 0);
+		go$pkg.Nl = _Nl;
+		_No = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(178, 179, 1), new Range16.Ptr(185, 188, 3), new Range16.Ptr(189, 190, 1), new Range16.Ptr(2548, 2553, 1), new Range16.Ptr(2930, 2935, 1), new Range16.Ptr(3056, 3058, 1), new Range16.Ptr(3192, 3198, 1), new Range16.Ptr(3440, 3445, 1), new Range16.Ptr(3882, 3891, 1), new Range16.Ptr(4969, 4988, 1), new Range16.Ptr(6128, 6137, 1), new Range16.Ptr(6618, 8304, 1686), new Range16.Ptr(8308, 8313, 1), new Range16.Ptr(8320, 8329, 1), new Range16.Ptr(8528, 8543, 1), new Range16.Ptr(8585, 9312, 727), new Range16.Ptr(9313, 9371, 1), new Range16.Ptr(9450, 9471, 1), new Range16.Ptr(10102, 10131, 1), new Range16.Ptr(11517, 12690, 1173), new Range16.Ptr(12691, 12693, 1), new Range16.Ptr(12832, 12841, 1), new Range16.Ptr(12872, 12879, 1), new Range16.Ptr(12881, 12895, 1), new Range16.Ptr(12928, 12937, 1), new Range16.Ptr(12977, 12991, 1), new Range16.Ptr(43056, 43061, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(65799, 65843, 1), new Range32.Ptr(65909, 65912, 1), new Range32.Ptr(65930, 66336, 406), new Range32.Ptr(66337, 66339, 1), new Range32.Ptr(67672, 67679, 1), new Range32.Ptr(67862, 67867, 1), new Range32.Ptr(68160, 68167, 1), new Range32.Ptr(68221, 68222, 1), new Range32.Ptr(68440, 68447, 1), new Range32.Ptr(68472, 68479, 1), new Range32.Ptr(69216, 69246, 1), new Range32.Ptr(69714, 69733, 1), new Range32.Ptr(119648, 119665, 1), new Range32.Ptr(127232, 127242, 1)]), 3);
+		go$pkg.No = _No;
+		_C = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(1, 31, 1), new Range16.Ptr(127, 159, 1), new Range16.Ptr(173, 1536, 1363), new Range16.Ptr(1537, 1540, 1), new Range16.Ptr(1757, 1807, 50), new Range16.Ptr(8203, 8207, 1), new Range16.Ptr(8234, 8238, 1), new Range16.Ptr(8288, 8292, 1), new Range16.Ptr(8298, 8303, 1), new Range16.Ptr(55296, 63743, 1), new Range16.Ptr(65279, 65529, 250), new Range16.Ptr(65530, 65531, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(69821, 119155, 49334), new Range32.Ptr(119156, 119162, 1), new Range32.Ptr(917505, 917536, 31), new Range32.Ptr(917537, 917631, 1), new Range32.Ptr(983040, 1048573, 1), new Range32.Ptr(1048576, 1114109, 1)]), 2);
+		go$pkg.C = _C;
+		_Pc = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(95, 8255, 8160), new Range16.Ptr(8256, 8276, 20), new Range16.Ptr(65075, 65076, 1), new Range16.Ptr(65101, 65103, 1), new Range16.Ptr(65343, 65343, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Pc = _Pc;
+		_Pd = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(45, 1418, 1373), new Range16.Ptr(1470, 5120, 3650), new Range16.Ptr(6150, 8208, 2058), new Range16.Ptr(8209, 8213, 1), new Range16.Ptr(11799, 11802, 3), new Range16.Ptr(11834, 11835, 1), new Range16.Ptr(12316, 12336, 20), new Range16.Ptr(12448, 65073, 52625), new Range16.Ptr(65074, 65112, 38), new Range16.Ptr(65123, 65293, 170)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Pd = _Pd;
+		_Pe = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(41, 93, 52), new Range16.Ptr(125, 3899, 3774), new Range16.Ptr(3901, 5788, 1887), new Range16.Ptr(8262, 8318, 56), new Range16.Ptr(8334, 9002, 668), new Range16.Ptr(10089, 10101, 2), new Range16.Ptr(10182, 10215, 33), new Range16.Ptr(10217, 10223, 2), new Range16.Ptr(10628, 10648, 2), new Range16.Ptr(10713, 10715, 2), new Range16.Ptr(10749, 11811, 1062), new Range16.Ptr(11813, 11817, 2), new Range16.Ptr(12297, 12305, 2), new Range16.Ptr(12309, 12315, 2), new Range16.Ptr(12318, 12319, 1), new Range16.Ptr(64831, 65048, 217), new Range16.Ptr(65078, 65092, 2), new Range16.Ptr(65096, 65114, 18), new Range16.Ptr(65116, 65118, 2), new Range16.Ptr(65289, 65341, 52), new Range16.Ptr(65373, 65379, 3)]), (go$sliceType(Range32)).nil, 1);
+		go$pkg.Pe = _Pe;
+		_Pf = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(187, 8217, 8030), new Range16.Ptr(8221, 8250, 29), new Range16.Ptr(11779, 11781, 2), new Range16.Ptr(11786, 11789, 3), new Range16.Ptr(11805, 11809, 4)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Pf = _Pf;
+		_Pi = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(171, 8216, 8045), new Range16.Ptr(8219, 8220, 1), new Range16.Ptr(8223, 8249, 26), new Range16.Ptr(11778, 11780, 2), new Range16.Ptr(11785, 11788, 3), new Range16.Ptr(11804, 11808, 4)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Pi = _Pi;
+		_Po = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(33, 35, 1), new Range16.Ptr(37, 39, 1), new Range16.Ptr(42, 46, 2), new Range16.Ptr(47, 58, 11), new Range16.Ptr(59, 63, 4), new Range16.Ptr(64, 92, 28), new Range16.Ptr(161, 167, 6), new Range16.Ptr(182, 183, 1), new Range16.Ptr(191, 894, 703), new Range16.Ptr(903, 1370, 467), new Range16.Ptr(1371, 1375, 1), new Range16.Ptr(1417, 1472, 55), new Range16.Ptr(1475, 1478, 3), new Range16.Ptr(1523, 1524, 1), new Range16.Ptr(1545, 1546, 1), new Range16.Ptr(1548, 1549, 1), new Range16.Ptr(1563, 1566, 3), new Range16.Ptr(1567, 1642, 75), new Range16.Ptr(1643, 1645, 1), new Range16.Ptr(1748, 1792, 44), new Range16.Ptr(1793, 1805, 1), new Range16.Ptr(2039, 2041, 1), new Range16.Ptr(2096, 2110, 1), new Range16.Ptr(2142, 2404, 262), new Range16.Ptr(2405, 2416, 11), new Range16.Ptr(2800, 3572, 772), new Range16.Ptr(3663, 3674, 11), new Range16.Ptr(3675, 3844, 169), new Range16.Ptr(3845, 3858, 1), new Range16.Ptr(3860, 3973, 113), new Range16.Ptr(4048, 4052, 1), new Range16.Ptr(4057, 4058, 1), new Range16.Ptr(4170, 4175, 1), new Range16.Ptr(4347, 4960, 613), new Range16.Ptr(4961, 4968, 1), new Range16.Ptr(5741, 5742, 1), new Range16.Ptr(5867, 5869, 1), new Range16.Ptr(5941, 5942, 1), new Range16.Ptr(6100, 6102, 1), new Range16.Ptr(6104, 6106, 1), new Range16.Ptr(6144, 6149, 1), new Range16.Ptr(6151, 6154, 1), new Range16.Ptr(6468, 6469, 1), new Range16.Ptr(6686, 6687, 1), new Range16.Ptr(6816, 6822, 1), new Range16.Ptr(6824, 6829, 1), new Range16.Ptr(7002, 7008, 1), new Range16.Ptr(7164, 7167, 1), new Range16.Ptr(7227, 7231, 1), new Range16.Ptr(7294, 7295, 1), new Range16.Ptr(7360, 7367, 1), new Range16.Ptr(7379, 8214, 835), new Range16.Ptr(8215, 8224, 9), new Range16.Ptr(8225, 8231, 1), new Range16.Ptr(8240, 8248, 1), new Range16.Ptr(8251, 8254, 1), new Range16.Ptr(8257, 8259, 1), new Range16.Ptr(8263, 8273, 1), new Range16.Ptr(8275, 8277, 2), new Range16.Ptr(8278, 8286, 1), new Range16.Ptr(11513, 11516, 1), new Range16.Ptr(11518, 11519, 1), new Range16.Ptr(11632, 11776, 144), new Range16.Ptr(11777, 11782, 5), new Range16.Ptr(11783, 11784, 1), new Range16.Ptr(11787, 11790, 3), new Range16.Ptr(11791, 11798, 1), new Range16.Ptr(11800, 11801, 1), new Range16.Ptr(11803, 11806, 3), new Range16.Ptr(11807, 11818, 11), new Range16.Ptr(11819, 11822, 1), new Range16.Ptr(11824, 11833, 1), new Range16.Ptr(12289, 12291, 1), new Range16.Ptr(12349, 12539, 190), new Range16.Ptr(42238, 42239, 1), new Range16.Ptr(42509, 42511, 1), new Range16.Ptr(42611, 42622, 11), new Range16.Ptr(42738, 42743, 1), new Range16.Ptr(43124, 43127, 1), new Range16.Ptr(43214, 43215, 1), new Range16.Ptr(43256, 43258, 1), new Range16.Ptr(43310, 43311, 1), new Range16.Ptr(43359, 43457, 98), new Range16.Ptr(43458, 43469, 1), new Range16.Ptr(43486, 43487, 1), new Range16.Ptr(43612, 43615, 1), new Range16.Ptr(43742, 43743, 1), new Range16.Ptr(43760, 43761, 1), new Range16.Ptr(44011, 65040, 21029), new Range16.Ptr(65041, 65046, 1), new Range16.Ptr(65049, 65072, 23), new Range16.Ptr(65093, 65094, 1), new Range16.Ptr(65097, 65100, 1), new Range16.Ptr(65104, 65106, 1), new Range16.Ptr(65108, 65111, 1), new Range16.Ptr(65119, 65121, 1), new Range16.Ptr(65128, 65130, 2), new Range16.Ptr(65131, 65281, 150), new Range16.Ptr(65282, 65283, 1), new Range16.Ptr(65285, 65287, 1), new Range16.Ptr(65290, 65294, 2), new Range16.Ptr(65295, 65306, 11), new Range16.Ptr(65307, 65311, 4), new Range16.Ptr(65312, 65340, 28), new Range16.Ptr(65377, 65380, 3), new Range16.Ptr(65381, 65381, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(65792, 65792, 1), new Range32.Ptr(65793, 65794, 1), new Range32.Ptr(66463, 66512, 49), new Range32.Ptr(67671, 67871, 200), new Range32.Ptr(67903, 68176, 273), new Range32.Ptr(68177, 68184, 1), new Range32.Ptr(68223, 68409, 186), new Range32.Ptr(68410, 68415, 1), new Range32.Ptr(69703, 69709, 1), new Range32.Ptr(69819, 69820, 1), new Range32.Ptr(69822, 69825, 1), new Range32.Ptr(69952, 69955, 1), new Range32.Ptr(70085, 70088, 1), new Range32.Ptr(74864, 74867, 1)]), 8);
+		go$pkg.Po = _Po;
+		_Ps = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(40, 91, 51), new Range16.Ptr(123, 3898, 3775), new Range16.Ptr(3900, 5787, 1887), new Range16.Ptr(8218, 8222, 4), new Range16.Ptr(8261, 8317, 56), new Range16.Ptr(8333, 9001, 668), new Range16.Ptr(10088, 10100, 2), new Range16.Ptr(10181, 10214, 33), new Range16.Ptr(10216, 10222, 2), new Range16.Ptr(10627, 10647, 2), new Range16.Ptr(10712, 10714, 2), new Range16.Ptr(10748, 11810, 1062), new Range16.Ptr(11812, 11816, 2), new Range16.Ptr(12296, 12304, 2), new Range16.Ptr(12308, 12314, 2), new Range16.Ptr(12317, 64830, 52513), new Range16.Ptr(65047, 65077, 30), new Range16.Ptr(65079, 65091, 2), new Range16.Ptr(65095, 65113, 18), new Range16.Ptr(65115, 65117, 2), new Range16.Ptr(65288, 65339, 51), new Range16.Ptr(65371, 65375, 4), new Range16.Ptr(65378, 65378, 1)]), (go$sliceType(Range32)).nil, 1);
+		go$pkg.Ps = _Ps;
+		_Sc = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(36, 162, 126), new Range16.Ptr(163, 165, 1), new Range16.Ptr(1423, 1547, 124), new Range16.Ptr(2546, 2547, 1), new Range16.Ptr(2555, 2801, 246), new Range16.Ptr(3065, 3647, 582), new Range16.Ptr(6107, 8352, 2245), new Range16.Ptr(8353, 8378, 1), new Range16.Ptr(43064, 65020, 21956), new Range16.Ptr(65129, 65284, 155), new Range16.Ptr(65504, 65505, 1), new Range16.Ptr(65509, 65510, 1)]), (go$sliceType(Range32)).nil, 2);
+		go$pkg.Sc = _Sc;
+		_Sk = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(94, 96, 2), new Range16.Ptr(168, 175, 7), new Range16.Ptr(180, 184, 4), new Range16.Ptr(706, 709, 1), new Range16.Ptr(722, 735, 1), new Range16.Ptr(741, 747, 1), new Range16.Ptr(749, 751, 2), new Range16.Ptr(752, 767, 1), new Range16.Ptr(885, 900, 15), new Range16.Ptr(901, 8125, 7224), new Range16.Ptr(8127, 8129, 1), new Range16.Ptr(8141, 8143, 1), new Range16.Ptr(8157, 8159, 1), new Range16.Ptr(8173, 8175, 1), new Range16.Ptr(8189, 8190, 1), new Range16.Ptr(12443, 12444, 1), new Range16.Ptr(42752, 42774, 1), new Range16.Ptr(42784, 42785, 1), new Range16.Ptr(42889, 42890, 1), new Range16.Ptr(64434, 64449, 1), new Range16.Ptr(65342, 65344, 2), new Range16.Ptr(65507, 65507, 1)]), (go$sliceType(Range32)).nil, 3);
+		go$pkg.Sk = _Sk;
+		_Sm = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(43, 60, 17), new Range16.Ptr(61, 62, 1), new Range16.Ptr(124, 126, 2), new Range16.Ptr(172, 177, 5), new Range16.Ptr(215, 247, 32), new Range16.Ptr(1014, 1542, 528), new Range16.Ptr(1543, 1544, 1), new Range16.Ptr(8260, 8274, 14), new Range16.Ptr(8314, 8316, 1), new Range16.Ptr(8330, 8332, 1), new Range16.Ptr(8472, 8512, 40), new Range16.Ptr(8513, 8516, 1), new Range16.Ptr(8523, 8592, 69), new Range16.Ptr(8593, 8596, 1), new Range16.Ptr(8602, 8603, 1), new Range16.Ptr(8608, 8614, 3), new Range16.Ptr(8622, 8654, 32), new Range16.Ptr(8655, 8658, 3), new Range16.Ptr(8660, 8692, 32), new Range16.Ptr(8693, 8959, 1), new Range16.Ptr(8968, 8971, 1), new Range16.Ptr(8992, 8993, 1), new Range16.Ptr(9084, 9115, 31), new Range16.Ptr(9116, 9139, 1), new Range16.Ptr(9180, 9185, 1), new Range16.Ptr(9655, 9665, 10), new Range16.Ptr(9720, 9727, 1), new Range16.Ptr(9839, 10176, 337), new Range16.Ptr(10177, 10180, 1), new Range16.Ptr(10183, 10213, 1), new Range16.Ptr(10224, 10239, 1), new Range16.Ptr(10496, 10626, 1), new Range16.Ptr(10649, 10711, 1), new Range16.Ptr(10716, 10747, 1), new Range16.Ptr(10750, 11007, 1), new Range16.Ptr(11056, 11076, 1), new Range16.Ptr(11079, 11084, 1), new Range16.Ptr(64297, 65122, 825), new Range16.Ptr(65124, 65126, 1), new Range16.Ptr(65291, 65308, 17), new Range16.Ptr(65309, 65310, 1), new Range16.Ptr(65372, 65374, 2), new Range16.Ptr(65506, 65513, 7), new Range16.Ptr(65514, 65516, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(120513, 120539, 26), new Range32.Ptr(120571, 120597, 26), new Range32.Ptr(120629, 120655, 26), new Range32.Ptr(120687, 120713, 26), new Range32.Ptr(120745, 120771, 26), new Range32.Ptr(126704, 126705, 1)]), 5);
+		go$pkg.Sm = _Sm;
+		_So = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(166, 169, 3), new Range16.Ptr(174, 176, 2), new Range16.Ptr(1154, 1550, 396), new Range16.Ptr(1551, 1758, 207), new Range16.Ptr(1769, 1789, 20), new Range16.Ptr(1790, 2038, 248), new Range16.Ptr(2554, 2928, 374), new Range16.Ptr(3059, 3064, 1), new Range16.Ptr(3066, 3199, 133), new Range16.Ptr(3449, 3841, 392), new Range16.Ptr(3842, 3843, 1), new Range16.Ptr(3859, 3861, 2), new Range16.Ptr(3862, 3863, 1), new Range16.Ptr(3866, 3871, 1), new Range16.Ptr(3892, 3896, 2), new Range16.Ptr(4030, 4037, 1), new Range16.Ptr(4039, 4044, 1), new Range16.Ptr(4046, 4047, 1), new Range16.Ptr(4053, 4056, 1), new Range16.Ptr(4254, 4255, 1), new Range16.Ptr(5008, 5017, 1), new Range16.Ptr(6464, 6622, 158), new Range16.Ptr(6623, 6655, 1), new Range16.Ptr(7009, 7018, 1), new Range16.Ptr(7028, 7036, 1), new Range16.Ptr(8448, 8449, 1), new Range16.Ptr(8451, 8454, 1), new Range16.Ptr(8456, 8457, 1), new Range16.Ptr(8468, 8470, 2), new Range16.Ptr(8471, 8478, 7), new Range16.Ptr(8479, 8483, 1), new Range16.Ptr(8485, 8489, 2), new Range16.Ptr(8494, 8506, 12), new Range16.Ptr(8507, 8522, 15), new Range16.Ptr(8524, 8525, 1), new Range16.Ptr(8527, 8597, 70), new Range16.Ptr(8598, 8601, 1), new Range16.Ptr(8604, 8607, 1), new Range16.Ptr(8609, 8610, 1), new Range16.Ptr(8612, 8613, 1), new Range16.Ptr(8615, 8621, 1), new Range16.Ptr(8623, 8653, 1), new Range16.Ptr(8656, 8657, 1), new Range16.Ptr(8659, 8661, 2), new Range16.Ptr(8662, 8691, 1), new Range16.Ptr(8960, 8967, 1), new Range16.Ptr(8972, 8991, 1), new Range16.Ptr(8994, 9000, 1), new Range16.Ptr(9003, 9083, 1), new Range16.Ptr(9085, 9114, 1), new Range16.Ptr(9140, 9179, 1), new Range16.Ptr(9186, 9203, 1), new Range16.Ptr(9216, 9254, 1), new Range16.Ptr(9280, 9290, 1), new Range16.Ptr(9372, 9449, 1), new Range16.Ptr(9472, 9654, 1), new Range16.Ptr(9656, 9664, 1), new Range16.Ptr(9666, 9719, 1), new Range16.Ptr(9728, 9838, 1), new Range16.Ptr(9840, 9983, 1), new Range16.Ptr(9985, 10087, 1), new Range16.Ptr(10132, 10175, 1), new Range16.Ptr(10240, 10495, 1), new Range16.Ptr(11008, 11055, 1), new Range16.Ptr(11077, 11078, 1), new Range16.Ptr(11088, 11097, 1), new Range16.Ptr(11493, 11498, 1), new Range16.Ptr(11904, 11929, 1), new Range16.Ptr(11931, 12019, 1), new Range16.Ptr(12032, 12245, 1), new Range16.Ptr(12272, 12283, 1), new Range16.Ptr(12292, 12306, 14), new Range16.Ptr(12307, 12320, 13), new Range16.Ptr(12342, 12343, 1), new Range16.Ptr(12350, 12351, 1), new Range16.Ptr(12688, 12689, 1), new Range16.Ptr(12694, 12703, 1), new Range16.Ptr(12736, 12771, 1), new Range16.Ptr(12800, 12830, 1), new Range16.Ptr(12842, 12871, 1), new Range16.Ptr(12880, 12896, 16), new Range16.Ptr(12897, 12927, 1), new Range16.Ptr(12938, 12976, 1), new Range16.Ptr(12992, 13054, 1), new Range16.Ptr(13056, 13311, 1), new Range16.Ptr(19904, 19967, 1), new Range16.Ptr(42128, 42182, 1), new Range16.Ptr(43048, 43051, 1), new Range16.Ptr(43062, 43063, 1), new Range16.Ptr(43065, 43639, 574), new Range16.Ptr(43640, 43641, 1), new Range16.Ptr(65021, 65508, 487), new Range16.Ptr(65512, 65517, 5), new Range16.Ptr(65518, 65532, 14), new Range16.Ptr(65533, 65533, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(65847, 65847, 1), new Range32.Ptr(65848, 65855, 1), new Range32.Ptr(65913, 65929, 1), new Range32.Ptr(65936, 65947, 1), new Range32.Ptr(66000, 66044, 1), new Range32.Ptr(118784, 119029, 1), new Range32.Ptr(119040, 119078, 1), new Range32.Ptr(119081, 119140, 1), new Range32.Ptr(119146, 119148, 1), new Range32.Ptr(119171, 119172, 1), new Range32.Ptr(119180, 119209, 1), new Range32.Ptr(119214, 119261, 1), new Range32.Ptr(119296, 119361, 1), new Range32.Ptr(119365, 119552, 187), new Range32.Ptr(119553, 119638, 1), new Range32.Ptr(126976, 127019, 1), new Range32.Ptr(127024, 127123, 1), new Range32.Ptr(127136, 127150, 1), new Range32.Ptr(127153, 127166, 1), new Range32.Ptr(127169, 127183, 1), new Range32.Ptr(127185, 127199, 1), new Range32.Ptr(127248, 127278, 1), new Range32.Ptr(127280, 127339, 1), new Range32.Ptr(127344, 127386, 1), new Range32.Ptr(127462, 127490, 1), new Range32.Ptr(127504, 127546, 1), new Range32.Ptr(127552, 127560, 1), new Range32.Ptr(127568, 127569, 1), new Range32.Ptr(127744, 127776, 1), new Range32.Ptr(127792, 127797, 1), new Range32.Ptr(127799, 127868, 1), new Range32.Ptr(127872, 127891, 1), new Range32.Ptr(127904, 127940, 1), new Range32.Ptr(127942, 127946, 1), new Range32.Ptr(127968, 127984, 1), new Range32.Ptr(128000, 128062, 1), new Range32.Ptr(128064, 128066, 2), new Range32.Ptr(128067, 128247, 1), new Range32.Ptr(128249, 128252, 1), new Range32.Ptr(128256, 128317, 1), new Range32.Ptr(128320, 128323, 1), new Range32.Ptr(128336, 128359, 1), new Range32.Ptr(128507, 128576, 1), new Range32.Ptr(128581, 128591, 1), new Range32.Ptr(128640, 128709, 1), new Range32.Ptr(128768, 128883, 1)]), 2);
+		go$pkg.So = _So;
+		_Z = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(32, 160, 128), new Range16.Ptr(5760, 6158, 398), new Range16.Ptr(8192, 8202, 1), new Range16.Ptr(8232, 8233, 1), new Range16.Ptr(8239, 8287, 48), new Range16.Ptr(12288, 12288, 1)]), (go$sliceType(Range32)).nil, 1);
+		go$pkg.Z = _Z;
+		_Lt = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(453, 459, 3), new Range16.Ptr(498, 8072, 7574), new Range16.Ptr(8073, 8079, 1), new Range16.Ptr(8088, 8095, 1), new Range16.Ptr(8104, 8111, 1), new Range16.Ptr(8124, 8140, 16), new Range16.Ptr(8188, 8188, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Lt = _Lt;
+		_Lu = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(65, 90, 1), new Range16.Ptr(192, 214, 1), new Range16.Ptr(216, 222, 1), new Range16.Ptr(256, 310, 2), new Range16.Ptr(313, 327, 2), new Range16.Ptr(330, 376, 2), new Range16.Ptr(377, 381, 2), new Range16.Ptr(385, 386, 1), new Range16.Ptr(388, 390, 2), new Range16.Ptr(391, 393, 2), new Range16.Ptr(394, 395, 1), new Range16.Ptr(398, 401, 1), new Range16.Ptr(403, 404, 1), new Range16.Ptr(406, 408, 1), new Range16.Ptr(412, 413, 1), new Range16.Ptr(415, 416, 1), new Range16.Ptr(418, 422, 2), new Range16.Ptr(423, 425, 2), new Range16.Ptr(428, 430, 2), new Range16.Ptr(431, 433, 2), new Range16.Ptr(434, 435, 1), new Range16.Ptr(437, 439, 2), new Range16.Ptr(440, 444, 4), new Range16.Ptr(452, 461, 3), new Range16.Ptr(463, 475, 2), new Range16.Ptr(478, 494, 2), new Range16.Ptr(497, 500, 3), new Range16.Ptr(502, 504, 1), new Range16.Ptr(506, 562, 2), new Range16.Ptr(570, 571, 1), new Range16.Ptr(573, 574, 1), new Range16.Ptr(577, 579, 2), new Range16.Ptr(580, 582, 1), new Range16.Ptr(584, 590, 2), new Range16.Ptr(880, 882, 2), new Range16.Ptr(886, 902, 16), new Range16.Ptr(904, 906, 1), new Range16.Ptr(908, 910, 2), new Range16.Ptr(911, 913, 2), new Range16.Ptr(914, 929, 1), new Range16.Ptr(931, 939, 1), new Range16.Ptr(975, 978, 3), new Range16.Ptr(979, 980, 1), new Range16.Ptr(984, 1006, 2), new Range16.Ptr(1012, 1015, 3), new Range16.Ptr(1017, 1018, 1), new Range16.Ptr(1021, 1071, 1), new Range16.Ptr(1120, 1152, 2), new Range16.Ptr(1162, 1216, 2), new Range16.Ptr(1217, 1229, 2), new Range16.Ptr(1232, 1318, 2), new Range16.Ptr(1329, 1366, 1), new Range16.Ptr(4256, 4293, 1), new Range16.Ptr(4295, 4301, 6), new Range16.Ptr(7680, 7828, 2), new Range16.Ptr(7838, 7934, 2), new Range16.Ptr(7944, 7951, 1), new Range16.Ptr(7960, 7965, 1), new Range16.Ptr(7976, 7983, 1), new Range16.Ptr(7992, 7999, 1), new Range16.Ptr(8008, 8013, 1), new Range16.Ptr(8025, 8031, 2), new Range16.Ptr(8040, 8047, 1), new Range16.Ptr(8120, 8123, 1), new Range16.Ptr(8136, 8139, 1), new Range16.Ptr(8152, 8155, 1), new Range16.Ptr(8168, 8172, 1), new Range16.Ptr(8184, 8187, 1), new Range16.Ptr(8450, 8455, 5), new Range16.Ptr(8459, 8461, 1), new Range16.Ptr(8464, 8466, 1), new Range16.Ptr(8469, 8473, 4), new Range16.Ptr(8474, 8477, 1), new Range16.Ptr(8484, 8490, 2), new Range16.Ptr(8491, 8493, 1), new Range16.Ptr(8496, 8499, 1), new Range16.Ptr(8510, 8511, 1), new Range16.Ptr(8517, 8579, 62), new Range16.Ptr(11264, 11310, 1), new Range16.Ptr(11360, 11362, 2), new Range16.Ptr(11363, 11364, 1), new Range16.Ptr(11367, 11373, 2), new Range16.Ptr(11374, 11376, 1), new Range16.Ptr(11378, 11381, 3), new Range16.Ptr(11390, 11392, 1), new Range16.Ptr(11394, 11490, 2), new Range16.Ptr(11499, 11501, 2), new Range16.Ptr(11506, 42560, 31054), new Range16.Ptr(42562, 42604, 2), new Range16.Ptr(42624, 42646, 2), new Range16.Ptr(42786, 42798, 2), new Range16.Ptr(42802, 42862, 2), new Range16.Ptr(42873, 42877, 2), new Range16.Ptr(42878, 42886, 2), new Range16.Ptr(42891, 42893, 2), new Range16.Ptr(42896, 42898, 2), new Range16.Ptr(42912, 42922, 2), new Range16.Ptr(65313, 65338, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(66560, 66599, 1), new Range32.Ptr(119808, 119833, 1), new Range32.Ptr(119860, 119885, 1), new Range32.Ptr(119912, 119937, 1), new Range32.Ptr(119964, 119966, 2), new Range32.Ptr(119967, 119973, 3), new Range32.Ptr(119974, 119977, 3), new Range32.Ptr(119978, 119980, 1), new Range32.Ptr(119982, 119989, 1), new Range32.Ptr(120016, 120041, 1), new Range32.Ptr(120068, 120069, 1), new Range32.Ptr(120071, 120074, 1), new Range32.Ptr(120077, 120084, 1), new Range32.Ptr(120086, 120092, 1), new Range32.Ptr(120120, 120121, 1), new Range32.Ptr(120123, 120126, 1), new Range32.Ptr(120128, 120132, 1), new Range32.Ptr(120134, 120138, 4), new Range32.Ptr(120139, 120144, 1), new Range32.Ptr(120172, 120197, 1), new Range32.Ptr(120224, 120249, 1), new Range32.Ptr(120276, 120301, 1), new Range32.Ptr(120328, 120353, 1), new Range32.Ptr(120380, 120405, 1), new Range32.Ptr(120432, 120457, 1), new Range32.Ptr(120488, 120512, 1), new Range32.Ptr(120546, 120570, 1), new Range32.Ptr(120604, 120628, 1), new Range32.Ptr(120662, 120686, 1), new Range32.Ptr(120720, 120744, 1), new Range32.Ptr(120778, 120778, 1)]), 3);
+		go$pkg.Lu = _Lu;
+		_Zl = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(8232, 8232, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Zl = _Zl;
+		_Zp = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(8233, 8233, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Zp = _Zp;
+		go$pkg.Categories = (_map = new Go$Map(), _key = "C", _map[_key] = { k: _key, v: go$pkg.C }, _key = "Cc", _map[_key] = { k: _key, v: go$pkg.Cc }, _key = "Cf", _map[_key] = { k: _key, v: go$pkg.Cf }, _key = "Co", _map[_key] = { k: _key, v: go$pkg.Co }, _key = "Cs", _map[_key] = { k: _key, v: go$pkg.Cs }, _key = "L", _map[_key] = { k: _key, v: go$pkg.L }, _key = "Ll", _map[_key] = { k: _key, v: go$pkg.Ll }, _key = "Lm", _map[_key] = { k: _key, v: go$pkg.Lm }, _key = "Lo", _map[_key] = { k: _key, v: go$pkg.Lo }, _key = "Lt", _map[_key] = { k: _key, v: go$pkg.Lt }, _key = "Lu", _map[_key] = { k: _key, v: go$pkg.Lu }, _key = "M", _map[_key] = { k: _key, v: go$pkg.M }, _key = "Mc", _map[_key] = { k: _key, v: go$pkg.Mc }, _key = "Me", _map[_key] = { k: _key, v: go$pkg.Me }, _key = "Mn", _map[_key] = { k: _key, v: go$pkg.Mn }, _key = "N", _map[_key] = { k: _key, v: go$pkg.N }, _key = "Nd", _map[_key] = { k: _key, v: go$pkg.Nd }, _key = "Nl", _map[_key] = { k: _key, v: go$pkg.Nl }, _key = "No", _map[_key] = { k: _key, v: go$pkg.No }, _key = "P", _map[_key] = { k: _key, v: go$pkg.P }, _key = "Pc", _map[_key] = { k: _key, v: go$pkg.Pc }, _key = "Pd", _map[_key] = { k: _key, v: go$pkg.Pd }, _key = "Pe", _map[_key] = { k: _key, v: go$pkg.Pe }, _key = "Pf", _map[_key] = { k: _key, v: go$pkg.Pf }, _key = "Pi", _map[_key] = { k: _key, v: go$pkg.Pi }, _key = "Po", _map[_key] = { k: _key, v: go$pkg.Po }, _key = "Ps", _map[_key] = { k: _key, v: go$pkg.Ps }, _key = "S", _map[_key] = { k: _key, v: go$pkg.S }, _key = "Sc", _map[_key] = { k: _key, v: go$pkg.Sc }, _key = "Sk", _map[_key] = { k: _key, v: go$pkg.Sk }, _key = "Sm", _map[_key] = { k: _key, v: go$pkg.Sm }, _key = "So", _map[_key] = { k: _key, v: go$pkg.So }, _key = "Z", _map[_key] = { k: _key, v: go$pkg.Z }, _key = "Zl", _map[_key] = { k: _key, v: go$pkg.Zl }, _key = "Zp", _map[_key] = { k: _key, v: go$pkg.Zp }, _key = "Zs", _map[_key] = { k: _key, v: go$pkg.Zs }, _map);
+		go$pkg.Digit = _Nd;
+		go$pkg.Letter = _L;
+		go$pkg.Lower = _Ll;
+		go$pkg.Mark = _M;
+		go$pkg.Number = _N;
+		go$pkg.Other = _C;
+		go$pkg.Punct = _P;
+		go$pkg.Space = _Z;
+		go$pkg.Symbol = _S;
+		go$pkg.Title = _Lt;
+		go$pkg.Upper = _Lu;
+		_Arabic = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(1536, 1540, 1), new Range16.Ptr(1542, 1547, 1), new Range16.Ptr(1549, 1562, 1), new Range16.Ptr(1566, 1566, 1), new Range16.Ptr(1568, 1599, 1), new Range16.Ptr(1601, 1610, 1), new Range16.Ptr(1622, 1631, 1), new Range16.Ptr(1642, 1647, 1), new Range16.Ptr(1649, 1756, 1), new Range16.Ptr(1758, 1791, 1), new Range16.Ptr(1872, 1919, 1), new Range16.Ptr(2208, 2208, 1), new Range16.Ptr(2210, 2220, 1), new Range16.Ptr(2276, 2302, 1), new Range16.Ptr(64336, 64449, 1), new Range16.Ptr(64467, 64829, 1), new Range16.Ptr(64848, 64911, 1), new Range16.Ptr(64914, 64967, 1), new Range16.Ptr(65008, 65020, 1), new Range16.Ptr(65136, 65140, 1), new Range16.Ptr(65142, 65276, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(69216, 69246, 1), new Range32.Ptr(126464, 126467, 1), new Range32.Ptr(126469, 126495, 1), new Range32.Ptr(126497, 126498, 1), new Range32.Ptr(126500, 126500, 1), new Range32.Ptr(126503, 126503, 1), new Range32.Ptr(126505, 126514, 1), new Range32.Ptr(126516, 126519, 1), new Range32.Ptr(126521, 126521, 1), new Range32.Ptr(126523, 126523, 1), new Range32.Ptr(126530, 126530, 1), new Range32.Ptr(126535, 126535, 1), new Range32.Ptr(126537, 126537, 1), new Range32.Ptr(126539, 126539, 1), new Range32.Ptr(126541, 126543, 1), new Range32.Ptr(126545, 126546, 1), new Range32.Ptr(126548, 126548, 1), new Range32.Ptr(126551, 126551, 1), new Range32.Ptr(126553, 126553, 1), new Range32.Ptr(126555, 126555, 1), new Range32.Ptr(126557, 126557, 1), new Range32.Ptr(126559, 126559, 1), new Range32.Ptr(126561, 126562, 1), new Range32.Ptr(126564, 126564, 1), new Range32.Ptr(126567, 126570, 1), new Range32.Ptr(126572, 126578, 1), new Range32.Ptr(126580, 126583, 1), new Range32.Ptr(126585, 126588, 1), new Range32.Ptr(126590, 126590, 1), new Range32.Ptr(126592, 126601, 1), new Range32.Ptr(126603, 126619, 1), new Range32.Ptr(126625, 126627, 1), new Range32.Ptr(126629, 126633, 1), new Range32.Ptr(126635, 126651, 1), new Range32.Ptr(126704, 126705, 1)]), 0);
+		go$pkg.Arabic = _Arabic;
+		_Armenian = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(1329, 1366, 1), new Range16.Ptr(1369, 1375, 1), new Range16.Ptr(1377, 1415, 1), new Range16.Ptr(1418, 1418, 1), new Range16.Ptr(1423, 1423, 1), new Range16.Ptr(64275, 64279, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Armenian = _Armenian;
+		_Avestan = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(68352, 68405, 1), new Range32.Ptr(68409, 68415, 1)]), 0);
+		go$pkg.Avestan = _Avestan;
+		_Balinese = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(6912, 6987, 1), new Range16.Ptr(6992, 7036, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Balinese = _Balinese;
+		_Bamum = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(42656, 42743, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(92160, 92728, 1)]), 0);
+		go$pkg.Bamum = _Bamum;
+		_Batak = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(7104, 7155, 1), new Range16.Ptr(7164, 7167, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Batak = _Batak;
+		_Bengali = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(2433, 2435, 1), new Range16.Ptr(2437, 2444, 1), new Range16.Ptr(2447, 2448, 1), new Range16.Ptr(2451, 2472, 1), new Range16.Ptr(2474, 2480, 1), new Range16.Ptr(2482, 2482, 1), new Range16.Ptr(2486, 2489, 1), new Range16.Ptr(2492, 2500, 1), new Range16.Ptr(2503, 2504, 1), new Range16.Ptr(2507, 2510, 1), new Range16.Ptr(2519, 2519, 1), new Range16.Ptr(2524, 2525, 1), new Range16.Ptr(2527, 2531, 1), new Range16.Ptr(2534, 2555, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Bengali = _Bengali;
+		_Bopomofo = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(746, 747, 1), new Range16.Ptr(12549, 12589, 1), new Range16.Ptr(12704, 12730, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Bopomofo = _Bopomofo;
+		_Brahmi = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(69632, 69709, 1), new Range32.Ptr(69714, 69743, 1)]), 0);
+		go$pkg.Brahmi = _Brahmi;
+		_Braille = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(10240, 10495, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Braille = _Braille;
+		_Buginese = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(6656, 6683, 1), new Range16.Ptr(6686, 6687, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Buginese = _Buginese;
+		_Buhid = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(5952, 5971, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Buhid = _Buhid;
+		_Canadian_Aboriginal = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(5120, 5759, 1), new Range16.Ptr(6320, 6389, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Canadian_Aboriginal = _Canadian_Aboriginal;
+		_Carian = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(66208, 66256, 1)]), 0);
+		go$pkg.Carian = _Carian;
+		_Chakma = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(69888, 69940, 1), new Range32.Ptr(69942, 69955, 1)]), 0);
+		go$pkg.Chakma = _Chakma;
+		_Cham = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(43520, 43574, 1), new Range16.Ptr(43584, 43597, 1), new Range16.Ptr(43600, 43609, 1), new Range16.Ptr(43612, 43615, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Cham = _Cham;
+		_Cherokee = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(5024, 5108, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Cherokee = _Cherokee;
+		_Common = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(0, 64, 1), new Range16.Ptr(91, 96, 1), new Range16.Ptr(123, 169, 1), new Range16.Ptr(171, 185, 1), new Range16.Ptr(187, 191, 1), new Range16.Ptr(215, 215, 1), new Range16.Ptr(247, 247, 1), new Range16.Ptr(697, 735, 1), new Range16.Ptr(741, 745, 1), new Range16.Ptr(748, 767, 1), new Range16.Ptr(884, 884, 1), new Range16.Ptr(894, 894, 1), new Range16.Ptr(901, 901, 1), new Range16.Ptr(903, 903, 1), new Range16.Ptr(1417, 1417, 1), new Range16.Ptr(1548, 1548, 1), new Range16.Ptr(1563, 1563, 1), new Range16.Ptr(1567, 1567, 1), new Range16.Ptr(1600, 1600, 1), new Range16.Ptr(1632, 1641, 1), new Range16.Ptr(1757, 1757, 1), new Range16.Ptr(2404, 2405, 1), new Range16.Ptr(3647, 3647, 1), new Range16.Ptr(4053, 4056, 1), new Range16.Ptr(4347, 4347, 1), new Range16.Ptr(5867, 5869, 1), new Range16.Ptr(5941, 5942, 1), new Range16.Ptr(6146, 6147, 1), new Range16.Ptr(6149, 6149, 1), new Range16.Ptr(7379, 7379, 1), new Range16.Ptr(7393, 7393, 1), new Range16.Ptr(7401, 7404, 1), new Range16.Ptr(7406, 7411, 1), new Range16.Ptr(7413, 7414, 1), new Range16.Ptr(8192, 8203, 1), new Range16.Ptr(8206, 8292, 1), new Range16.Ptr(8298, 8304, 1), new Range16.Ptr(8308, 8318, 1), new Range16.Ptr(8320, 8334, 1), new Range16.Ptr(8352, 8378, 1), new Range16.Ptr(8448, 8485, 1), new Range16.Ptr(8487, 8489, 1), new Range16.Ptr(8492, 8497, 1), new Range16.Ptr(8499, 8525, 1), new Range16.Ptr(8527, 8543, 1), new Range16.Ptr(8585, 8585, 1), new Range16.Ptr(8592, 9203, 1), new Range16.Ptr(9216, 9254, 1), new Range16.Ptr(9280, 9290, 1), new Range16.Ptr(9312, 9983, 1), new Range16.Ptr(9985, 10239, 1), new Range16.Ptr(10496, 11084, 1), new Range16.Ptr(11088, 11097, 1), new Range16.Ptr(11776, 11835, 1), new Range16.Ptr(12272, 12283, 1), new Range16.Ptr(12288, 12292, 1), new Range16.Ptr(12294, 12294, 1), new Range16.Ptr(12296, 12320, 1), new Range16.Ptr(12336, 12343, 1), new Range16.Ptr(12348, 12351, 1), new Range16.Ptr(12443, 12444, 1), new Range16.Ptr(12448, 12448, 1), new Range16.Ptr(12539, 12540, 1), new Range16.Ptr(12688, 12703, 1), new Range16.Ptr(12736, 12771, 1), new Range16.Ptr(12832, 12895, 1), new Range16.Ptr(12927, 13007, 1), new Range16.Ptr(13144, 13311, 1), new Range16.Ptr(19904, 19967, 1), new Range16.Ptr(42752, 42785, 1), new Range16.Ptr(42888, 42890, 1), new Range16.Ptr(43056, 43065, 1), new Range16.Ptr(64830, 64831, 1), new Range16.Ptr(65021, 65021, 1), new Range16.Ptr(65040, 65049, 1), new Range16.Ptr(65072, 65106, 1), new Range16.Ptr(65108, 65126, 1), new Range16.Ptr(65128, 65131, 1), new Range16.Ptr(65279, 65279, 1), new Range16.Ptr(65281, 65312, 1), new Range16.Ptr(65339, 65344, 1), new Range16.Ptr(65371, 65381, 1), new Range16.Ptr(65392, 65392, 1), new Range16.Ptr(65438, 65439, 1), new Range16.Ptr(65504, 65510, 1), new Range16.Ptr(65512, 65518, 1), new Range16.Ptr(65529, 65533, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(65792, 65794, 1), new Range32.Ptr(65799, 65843, 1), new Range32.Ptr(65847, 65855, 1), new Range32.Ptr(65936, 65947, 1), new Range32.Ptr(66000, 66044, 1), new Range32.Ptr(118784, 119029, 1), new Range32.Ptr(119040, 119078, 1), new Range32.Ptr(119081, 119142, 1), new Range32.Ptr(119146, 119162, 1), new Range32.Ptr(119171, 119172, 1), new Range32.Ptr(119180, 119209, 1), new Range32.Ptr(119214, 119261, 1), new Range32.Ptr(119552, 119638, 1), new Range32.Ptr(119648, 119665, 1), new Range32.Ptr(119808, 119892, 1), new Range32.Ptr(119894, 119964, 1), new Range32.Ptr(119966, 119967, 1), new Range32.Ptr(119970, 119970, 1), new Range32.Ptr(119973, 119974, 1), new Range32.Ptr(119977, 119980, 1), new Range32.Ptr(119982, 119993, 1), new Range32.Ptr(119995, 119995, 1), new Range32.Ptr(119997, 120003, 1), new Range32.Ptr(120005, 120069, 1), new Range32.Ptr(120071, 120074, 1), new Range32.Ptr(120077, 120084, 1), new Range32.Ptr(120086, 120092, 1), new Range32.Ptr(120094, 120121, 1), new Range32.Ptr(120123, 120126, 1), new Range32.Ptr(120128, 120132, 1), new Range32.Ptr(120134, 120134, 1), new Range32.Ptr(120138, 120144, 1), new Range32.Ptr(120146, 120485, 1), new Range32.Ptr(120488, 120779, 1), new Range32.Ptr(120782, 120831, 1), new Range32.Ptr(126976, 127019, 1), new Range32.Ptr(127024, 127123, 1), new Range32.Ptr(127136, 127150, 1), new Range32.Ptr(127153, 127166, 1), new Range32.Ptr(127169, 127183, 1), new Range32.Ptr(127185, 127199, 1), new Range32.Ptr(127232, 127242, 1), new Range32.Ptr(127248, 127278, 1), new Range32.Ptr(127280, 127339, 1), new Range32.Ptr(127344, 127386, 1), new Range32.Ptr(127462, 127487, 1), new Range32.Ptr(127489, 127490, 1), new Range32.Ptr(127504, 127546, 1), new Range32.Ptr(127552, 127560, 1), new Range32.Ptr(127568, 127569, 1), new Range32.Ptr(127744, 127776, 1), new Range32.Ptr(127792, 127797, 1), new Range32.Ptr(127799, 127868, 1), new Range32.Ptr(127872, 127891, 1), new Range32.Ptr(127904, 127940, 1), new Range32.Ptr(127942, 127946, 1), new Range32.Ptr(127968, 127984, 1), new Range32.Ptr(128000, 128062, 1), new Range32.Ptr(128064, 128064, 1), new Range32.Ptr(128066, 128247, 1), new Range32.Ptr(128249, 128252, 1), new Range32.Ptr(128256, 128317, 1), new Range32.Ptr(128320, 128323, 1), new Range32.Ptr(128336, 128359, 1), new Range32.Ptr(128507, 128576, 1), new Range32.Ptr(128581, 128591, 1), new Range32.Ptr(128640, 128709, 1), new Range32.Ptr(128768, 128883, 1), new Range32.Ptr(917505, 917505, 1), new Range32.Ptr(917536, 917631, 1)]), 7);
+		go$pkg.Common = _Common;
+		_Coptic = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(994, 1007, 1), new Range16.Ptr(11392, 11507, 1), new Range16.Ptr(11513, 11519, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Coptic = _Coptic;
+		_Cuneiform = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(73728, 74606, 1), new Range32.Ptr(74752, 74850, 1), new Range32.Ptr(74864, 74867, 1)]), 0);
+		go$pkg.Cuneiform = _Cuneiform;
+		_Cypriot = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(67584, 67589, 1), new Range32.Ptr(67592, 67592, 1), new Range32.Ptr(67594, 67637, 1), new Range32.Ptr(67639, 67640, 1), new Range32.Ptr(67644, 67644, 1), new Range32.Ptr(67647, 67647, 1)]), 0);
+		go$pkg.Cypriot = _Cypriot;
+		_Cyrillic = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(1024, 1156, 1), new Range16.Ptr(1159, 1319, 1), new Range16.Ptr(7467, 7467, 1), new Range16.Ptr(7544, 7544, 1), new Range16.Ptr(11744, 11775, 1), new Range16.Ptr(42560, 42647, 1), new Range16.Ptr(42655, 42655, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Cyrillic = _Cyrillic;
+		_Deseret = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(66560, 66639, 1)]), 0);
+		go$pkg.Deseret = _Deseret;
+		_Devanagari = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(2304, 2384, 1), new Range16.Ptr(2387, 2403, 1), new Range16.Ptr(2406, 2423, 1), new Range16.Ptr(2425, 2431, 1), new Range16.Ptr(43232, 43259, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Devanagari = _Devanagari;
+		_Egyptian_Hieroglyphs = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(77824, 78894, 1)]), 0);
+		go$pkg.Egyptian_Hieroglyphs = _Egyptian_Hieroglyphs;
+		_Ethiopic = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(4608, 4680, 1), new Range16.Ptr(4682, 4685, 1), new Range16.Ptr(4688, 4694, 1), new Range16.Ptr(4696, 4696, 1), new Range16.Ptr(4698, 4701, 1), new Range16.Ptr(4704, 4744, 1), new Range16.Ptr(4746, 4749, 1), new Range16.Ptr(4752, 4784, 1), new Range16.Ptr(4786, 4789, 1), new Range16.Ptr(4792, 4798, 1), new Range16.Ptr(4800, 4800, 1), new Range16.Ptr(4802, 4805, 1), new Range16.Ptr(4808, 4822, 1), new Range16.Ptr(4824, 4880, 1), new Range16.Ptr(4882, 4885, 1), new Range16.Ptr(4888, 4954, 1), new Range16.Ptr(4957, 4988, 1), new Range16.Ptr(4992, 5017, 1), new Range16.Ptr(11648, 11670, 1), new Range16.Ptr(11680, 11686, 1), new Range16.Ptr(11688, 11694, 1), new Range16.Ptr(11696, 11702, 1), new Range16.Ptr(11704, 11710, 1), new Range16.Ptr(11712, 11718, 1), new Range16.Ptr(11720, 11726, 1), new Range16.Ptr(11728, 11734, 1), new Range16.Ptr(11736, 11742, 1), new Range16.Ptr(43777, 43782, 1), new Range16.Ptr(43785, 43790, 1), new Range16.Ptr(43793, 43798, 1), new Range16.Ptr(43808, 43814, 1), new Range16.Ptr(43816, 43822, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Ethiopic = _Ethiopic;
+		_Georgian = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(4256, 4293, 1), new Range16.Ptr(4295, 4295, 1), new Range16.Ptr(4301, 4301, 1), new Range16.Ptr(4304, 4346, 1), new Range16.Ptr(4348, 4351, 1), new Range16.Ptr(11520, 11557, 1), new Range16.Ptr(11559, 11559, 1), new Range16.Ptr(11565, 11565, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Georgian = _Georgian;
+		_Glagolitic = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(11264, 11310, 1), new Range16.Ptr(11312, 11358, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Glagolitic = _Glagolitic;
+		_Gothic = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(66352, 66378, 1)]), 0);
+		go$pkg.Gothic = _Gothic;
+		_Greek = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(880, 883, 1), new Range16.Ptr(885, 887, 1), new Range16.Ptr(890, 893, 1), new Range16.Ptr(900, 900, 1), new Range16.Ptr(902, 902, 1), new Range16.Ptr(904, 906, 1), new Range16.Ptr(908, 908, 1), new Range16.Ptr(910, 929, 1), new Range16.Ptr(931, 993, 1), new Range16.Ptr(1008, 1023, 1), new Range16.Ptr(7462, 7466, 1), new Range16.Ptr(7517, 7521, 1), new Range16.Ptr(7526, 7530, 1), new Range16.Ptr(7615, 7615, 1), new Range16.Ptr(7936, 7957, 1), new Range16.Ptr(7960, 7965, 1), new Range16.Ptr(7968, 8005, 1), new Range16.Ptr(8008, 8013, 1), new Range16.Ptr(8016, 8023, 1), new Range16.Ptr(8025, 8025, 1), new Range16.Ptr(8027, 8027, 1), new Range16.Ptr(8029, 8029, 1), new Range16.Ptr(8031, 8061, 1), new Range16.Ptr(8064, 8116, 1), new Range16.Ptr(8118, 8132, 1), new Range16.Ptr(8134, 8147, 1), new Range16.Ptr(8150, 8155, 1), new Range16.Ptr(8157, 8175, 1), new Range16.Ptr(8178, 8180, 1), new Range16.Ptr(8182, 8190, 1), new Range16.Ptr(8486, 8486, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(65856, 65930, 1), new Range32.Ptr(119296, 119365, 1)]), 0);
+		go$pkg.Greek = _Greek;
+		_Gujarati = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(2689, 2691, 1), new Range16.Ptr(2693, 2701, 1), new Range16.Ptr(2703, 2705, 1), new Range16.Ptr(2707, 2728, 1), new Range16.Ptr(2730, 2736, 1), new Range16.Ptr(2738, 2739, 1), new Range16.Ptr(2741, 2745, 1), new Range16.Ptr(2748, 2757, 1), new Range16.Ptr(2759, 2761, 1), new Range16.Ptr(2763, 2765, 1), new Range16.Ptr(2768, 2768, 1), new Range16.Ptr(2784, 2787, 1), new Range16.Ptr(2790, 2801, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Gujarati = _Gujarati;
+		_Gurmukhi = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(2561, 2563, 1), new Range16.Ptr(2565, 2570, 1), new Range16.Ptr(2575, 2576, 1), new Range16.Ptr(2579, 2600, 1), new Range16.Ptr(2602, 2608, 1), new Range16.Ptr(2610, 2611, 1), new Range16.Ptr(2613, 2614, 1), new Range16.Ptr(2616, 2617, 1), new Range16.Ptr(2620, 2620, 1), new Range16.Ptr(2622, 2626, 1), new Range16.Ptr(2631, 2632, 1), new Range16.Ptr(2635, 2637, 1), new Range16.Ptr(2641, 2641, 1), new Range16.Ptr(2649, 2652, 1), new Range16.Ptr(2654, 2654, 1), new Range16.Ptr(2662, 2677, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Gurmukhi = _Gurmukhi;
+		_Han = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(11904, 11929, 1), new Range16.Ptr(11931, 12019, 1), new Range16.Ptr(12032, 12245, 1), new Range16.Ptr(12293, 12293, 1), new Range16.Ptr(12295, 12295, 1), new Range16.Ptr(12321, 12329, 1), new Range16.Ptr(12344, 12347, 1), new Range16.Ptr(13312, 19893, 1), new Range16.Ptr(19968, 40908, 1), new Range16.Ptr(63744, 64109, 1), new Range16.Ptr(64112, 64217, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(131072, 173782, 1), new Range32.Ptr(173824, 177972, 1), new Range32.Ptr(177984, 178205, 1), new Range32.Ptr(194560, 195101, 1)]), 0);
+		go$pkg.Han = _Han;
+		_Hangul = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(4352, 4607, 1), new Range16.Ptr(12334, 12335, 1), new Range16.Ptr(12593, 12686, 1), new Range16.Ptr(12800, 12830, 1), new Range16.Ptr(12896, 12926, 1), new Range16.Ptr(43360, 43388, 1), new Range16.Ptr(44032, 55203, 1), new Range16.Ptr(55216, 55238, 1), new Range16.Ptr(55243, 55291, 1), new Range16.Ptr(65440, 65470, 1), new Range16.Ptr(65474, 65479, 1), new Range16.Ptr(65482, 65487, 1), new Range16.Ptr(65490, 65495, 1), new Range16.Ptr(65498, 65500, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Hangul = _Hangul;
+		_Hanunoo = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(5920, 5940, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Hanunoo = _Hanunoo;
+		_Hebrew = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(1425, 1479, 1), new Range16.Ptr(1488, 1514, 1), new Range16.Ptr(1520, 1524, 1), new Range16.Ptr(64285, 64310, 1), new Range16.Ptr(64312, 64316, 1), new Range16.Ptr(64318, 64318, 1), new Range16.Ptr(64320, 64321, 1), new Range16.Ptr(64323, 64324, 1), new Range16.Ptr(64326, 64335, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Hebrew = _Hebrew;
+		_Hiragana = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(12353, 12438, 1), new Range16.Ptr(12445, 12447, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(110593, 110593, 1), new Range32.Ptr(127488, 127488, 1)]), 0);
+		go$pkg.Hiragana = _Hiragana;
+		_Imperial_Aramaic = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(67648, 67669, 1), new Range32.Ptr(67671, 67679, 1)]), 0);
+		go$pkg.Imperial_Aramaic = _Imperial_Aramaic;
+		_Inherited = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(768, 879, 1), new Range16.Ptr(1157, 1158, 1), new Range16.Ptr(1611, 1621, 1), new Range16.Ptr(1648, 1648, 1), new Range16.Ptr(2385, 2386, 1), new Range16.Ptr(7376, 7378, 1), new Range16.Ptr(7380, 7392, 1), new Range16.Ptr(7394, 7400, 1), new Range16.Ptr(7405, 7405, 1), new Range16.Ptr(7412, 7412, 1), new Range16.Ptr(7616, 7654, 1), new Range16.Ptr(7676, 7679, 1), new Range16.Ptr(8204, 8205, 1), new Range16.Ptr(8400, 8432, 1), new Range16.Ptr(12330, 12333, 1), new Range16.Ptr(12441, 12442, 1), new Range16.Ptr(65024, 65039, 1), new Range16.Ptr(65056, 65062, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(66045, 66045, 1), new Range32.Ptr(119143, 119145, 1), new Range32.Ptr(119163, 119170, 1), new Range32.Ptr(119173, 119179, 1), new Range32.Ptr(119210, 119213, 1), new Range32.Ptr(917760, 917999, 1)]), 0);
+		go$pkg.Inherited = _Inherited;
+		_Inscriptional_Pahlavi = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(68448, 68466, 1), new Range32.Ptr(68472, 68479, 1)]), 0);
+		go$pkg.Inscriptional_Pahlavi = _Inscriptional_Pahlavi;
+		_Inscriptional_Parthian = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(68416, 68437, 1), new Range32.Ptr(68440, 68447, 1)]), 0);
+		go$pkg.Inscriptional_Parthian = _Inscriptional_Parthian;
+		_Javanese = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(43392, 43469, 1), new Range16.Ptr(43471, 43481, 1), new Range16.Ptr(43486, 43487, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Javanese = _Javanese;
+		_Kaithi = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(69760, 69825, 1)]), 0);
+		go$pkg.Kaithi = _Kaithi;
+		_Kannada = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(3202, 3203, 1), new Range16.Ptr(3205, 3212, 1), new Range16.Ptr(3214, 3216, 1), new Range16.Ptr(3218, 3240, 1), new Range16.Ptr(3242, 3251, 1), new Range16.Ptr(3253, 3257, 1), new Range16.Ptr(3260, 3268, 1), new Range16.Ptr(3270, 3272, 1), new Range16.Ptr(3274, 3277, 1), new Range16.Ptr(3285, 3286, 1), new Range16.Ptr(3294, 3294, 1), new Range16.Ptr(3296, 3299, 1), new Range16.Ptr(3302, 3311, 1), new Range16.Ptr(3313, 3314, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Kannada = _Kannada;
+		_Katakana = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(12449, 12538, 1), new Range16.Ptr(12541, 12543, 1), new Range16.Ptr(12784, 12799, 1), new Range16.Ptr(13008, 13054, 1), new Range16.Ptr(13056, 13143, 1), new Range16.Ptr(65382, 65391, 1), new Range16.Ptr(65393, 65437, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(110592, 110592, 1)]), 0);
+		go$pkg.Katakana = _Katakana;
+		_Kayah_Li = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(43264, 43311, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Kayah_Li = _Kayah_Li;
+		_Kharoshthi = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(68096, 68099, 1), new Range32.Ptr(68101, 68102, 1), new Range32.Ptr(68108, 68115, 1), new Range32.Ptr(68117, 68119, 1), new Range32.Ptr(68121, 68147, 1), new Range32.Ptr(68152, 68154, 1), new Range32.Ptr(68159, 68167, 1), new Range32.Ptr(68176, 68184, 1)]), 0);
+		go$pkg.Kharoshthi = _Kharoshthi;
+		_Khmer = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(6016, 6109, 1), new Range16.Ptr(6112, 6121, 1), new Range16.Ptr(6128, 6137, 1), new Range16.Ptr(6624, 6655, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Khmer = _Khmer;
+		_Lao = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(3713, 3714, 1), new Range16.Ptr(3716, 3716, 1), new Range16.Ptr(3719, 3720, 1), new Range16.Ptr(3722, 3722, 1), new Range16.Ptr(3725, 3725, 1), new Range16.Ptr(3732, 3735, 1), new Range16.Ptr(3737, 3743, 1), new Range16.Ptr(3745, 3747, 1), new Range16.Ptr(3749, 3749, 1), new Range16.Ptr(3751, 3751, 1), new Range16.Ptr(3754, 3755, 1), new Range16.Ptr(3757, 3769, 1), new Range16.Ptr(3771, 3773, 1), new Range16.Ptr(3776, 3780, 1), new Range16.Ptr(3782, 3782, 1), new Range16.Ptr(3784, 3789, 1), new Range16.Ptr(3792, 3801, 1), new Range16.Ptr(3804, 3807, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Lao = _Lao;
+		_Latin = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(65, 90, 1), new Range16.Ptr(97, 122, 1), new Range16.Ptr(170, 170, 1), new Range16.Ptr(186, 186, 1), new Range16.Ptr(192, 214, 1), new Range16.Ptr(216, 246, 1), new Range16.Ptr(248, 696, 1), new Range16.Ptr(736, 740, 1), new Range16.Ptr(7424, 7461, 1), new Range16.Ptr(7468, 7516, 1), new Range16.Ptr(7522, 7525, 1), new Range16.Ptr(7531, 7543, 1), new Range16.Ptr(7545, 7614, 1), new Range16.Ptr(7680, 7935, 1), new Range16.Ptr(8305, 8305, 1), new Range16.Ptr(8319, 8319, 1), new Range16.Ptr(8336, 8348, 1), new Range16.Ptr(8490, 8491, 1), new Range16.Ptr(8498, 8498, 1), new Range16.Ptr(8526, 8526, 1), new Range16.Ptr(8544, 8584, 1), new Range16.Ptr(11360, 11391, 1), new Range16.Ptr(42786, 42887, 1), new Range16.Ptr(42891, 42894, 1), new Range16.Ptr(42896, 42899, 1), new Range16.Ptr(42912, 42922, 1), new Range16.Ptr(43000, 43007, 1), new Range16.Ptr(64256, 64262, 1), new Range16.Ptr(65313, 65338, 1), new Range16.Ptr(65345, 65370, 1)]), (go$sliceType(Range32)).nil, 6);
+		go$pkg.Latin = _Latin;
+		_Lepcha = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(7168, 7223, 1), new Range16.Ptr(7227, 7241, 1), new Range16.Ptr(7245, 7247, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Lepcha = _Lepcha;
+		_Limbu = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(6400, 6428, 1), new Range16.Ptr(6432, 6443, 1), new Range16.Ptr(6448, 6459, 1), new Range16.Ptr(6464, 6464, 1), new Range16.Ptr(6468, 6479, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Limbu = _Limbu;
+		_Linear_B = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(65536, 65547, 1), new Range32.Ptr(65549, 65574, 1), new Range32.Ptr(65576, 65594, 1), new Range32.Ptr(65596, 65597, 1), new Range32.Ptr(65599, 65613, 1), new Range32.Ptr(65616, 65629, 1), new Range32.Ptr(65664, 65786, 1)]), 0);
+		go$pkg.Linear_B = _Linear_B;
+		_Lisu = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(42192, 42239, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Lisu = _Lisu;
+		_Lycian = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(66176, 66204, 1)]), 0);
+		go$pkg.Lycian = _Lycian;
+		_Lydian = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(67872, 67897, 1), new Range32.Ptr(67903, 67903, 1)]), 0);
+		go$pkg.Lydian = _Lydian;
+		_Malayalam = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(3330, 3331, 1), new Range16.Ptr(3333, 3340, 1), new Range16.Ptr(3342, 3344, 1), new Range16.Ptr(3346, 3386, 1), new Range16.Ptr(3389, 3396, 1), new Range16.Ptr(3398, 3400, 1), new Range16.Ptr(3402, 3406, 1), new Range16.Ptr(3415, 3415, 1), new Range16.Ptr(3424, 3427, 1), new Range16.Ptr(3430, 3445, 1), new Range16.Ptr(3449, 3455, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Malayalam = _Malayalam;
+		_Mandaic = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(2112, 2139, 1), new Range16.Ptr(2142, 2142, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Mandaic = _Mandaic;
+		_Meetei_Mayek = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(43744, 43766, 1), new Range16.Ptr(43968, 44013, 1), new Range16.Ptr(44016, 44025, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Meetei_Mayek = _Meetei_Mayek;
+		_Meroitic_Cursive = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(68000, 68023, 1), new Range32.Ptr(68030, 68031, 1)]), 0);
+		go$pkg.Meroitic_Cursive = _Meroitic_Cursive;
+		_Meroitic_Hieroglyphs = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(67968, 67999, 1)]), 0);
+		go$pkg.Meroitic_Hieroglyphs = _Meroitic_Hieroglyphs;
+		_Miao = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(93952, 94020, 1), new Range32.Ptr(94032, 94078, 1), new Range32.Ptr(94095, 94111, 1)]), 0);
+		go$pkg.Miao = _Miao;
+		_Mongolian = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(6144, 6145, 1), new Range16.Ptr(6148, 6148, 1), new Range16.Ptr(6150, 6158, 1), new Range16.Ptr(6160, 6169, 1), new Range16.Ptr(6176, 6263, 1), new Range16.Ptr(6272, 6314, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Mongolian = _Mongolian;
+		_Myanmar = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(4096, 4255, 1), new Range16.Ptr(43616, 43643, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Myanmar = _Myanmar;
+		_New_Tai_Lue = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(6528, 6571, 1), new Range16.Ptr(6576, 6601, 1), new Range16.Ptr(6608, 6618, 1), new Range16.Ptr(6622, 6623, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.New_Tai_Lue = _New_Tai_Lue;
+		_Nko = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(1984, 2042, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Nko = _Nko;
+		_Ogham = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(5760, 5788, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Ogham = _Ogham;
+		_Ol_Chiki = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(7248, 7295, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Ol_Chiki = _Ol_Chiki;
+		_Old_Italic = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(66304, 66334, 1), new Range32.Ptr(66336, 66339, 1)]), 0);
+		go$pkg.Old_Italic = _Old_Italic;
+		_Old_Persian = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(66464, 66499, 1), new Range32.Ptr(66504, 66517, 1)]), 0);
+		go$pkg.Old_Persian = _Old_Persian;
+		_Old_South_Arabian = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(68192, 68223, 1)]), 0);
+		go$pkg.Old_South_Arabian = _Old_South_Arabian;
+		_Old_Turkic = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(68608, 68680, 1)]), 0);
+		go$pkg.Old_Turkic = _Old_Turkic;
+		_Oriya = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(2817, 2819, 1), new Range16.Ptr(2821, 2828, 1), new Range16.Ptr(2831, 2832, 1), new Range16.Ptr(2835, 2856, 1), new Range16.Ptr(2858, 2864, 1), new Range16.Ptr(2866, 2867, 1), new Range16.Ptr(2869, 2873, 1), new Range16.Ptr(2876, 2884, 1), new Range16.Ptr(2887, 2888, 1), new Range16.Ptr(2891, 2893, 1), new Range16.Ptr(2902, 2903, 1), new Range16.Ptr(2908, 2909, 1), new Range16.Ptr(2911, 2915, 1), new Range16.Ptr(2918, 2935, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Oriya = _Oriya;
+		_Osmanya = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(66688, 66717, 1), new Range32.Ptr(66720, 66729, 1)]), 0);
+		go$pkg.Osmanya = _Osmanya;
+		_Phags_Pa = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(43072, 43127, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Phags_Pa = _Phags_Pa;
+		_Phoenician = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(67840, 67867, 1), new Range32.Ptr(67871, 67871, 1)]), 0);
+		go$pkg.Phoenician = _Phoenician;
+		_Rejang = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(43312, 43347, 1), new Range16.Ptr(43359, 43359, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Rejang = _Rejang;
+		_Runic = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(5792, 5866, 1), new Range16.Ptr(5870, 5872, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Runic = _Runic;
+		_Samaritan = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(2048, 2093, 1), new Range16.Ptr(2096, 2110, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Samaritan = _Samaritan;
+		_Saurashtra = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(43136, 43204, 1), new Range16.Ptr(43214, 43225, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Saurashtra = _Saurashtra;
+		_Sharada = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(70016, 70088, 1), new Range32.Ptr(70096, 70105, 1)]), 0);
+		go$pkg.Sharada = _Sharada;
+		_Shavian = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(66640, 66687, 1)]), 0);
+		go$pkg.Shavian = _Shavian;
+		_Sinhala = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(3458, 3459, 1), new Range16.Ptr(3461, 3478, 1), new Range16.Ptr(3482, 3505, 1), new Range16.Ptr(3507, 3515, 1), new Range16.Ptr(3517, 3517, 1), new Range16.Ptr(3520, 3526, 1), new Range16.Ptr(3530, 3530, 1), new Range16.Ptr(3535, 3540, 1), new Range16.Ptr(3542, 3542, 1), new Range16.Ptr(3544, 3551, 1), new Range16.Ptr(3570, 3572, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Sinhala = _Sinhala;
+		_Sora_Sompeng = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(69840, 69864, 1), new Range32.Ptr(69872, 69881, 1)]), 0);
+		go$pkg.Sora_Sompeng = _Sora_Sompeng;
+		_Sundanese = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(7040, 7103, 1), new Range16.Ptr(7360, 7367, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Sundanese = _Sundanese;
+		_Syloti_Nagri = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(43008, 43051, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Syloti_Nagri = _Syloti_Nagri;
+		_Syriac = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(1792, 1805, 1), new Range16.Ptr(1807, 1866, 1), new Range16.Ptr(1869, 1871, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Syriac = _Syriac;
+		_Tagalog = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(5888, 5900, 1), new Range16.Ptr(5902, 5908, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Tagalog = _Tagalog;
+		_Tagbanwa = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(5984, 5996, 1), new Range16.Ptr(5998, 6000, 1), new Range16.Ptr(6002, 6003, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Tagbanwa = _Tagbanwa;
+		_Tai_Le = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(6480, 6509, 1), new Range16.Ptr(6512, 6516, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Tai_Le = _Tai_Le;
+		_Tai_Tham = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(6688, 6750, 1), new Range16.Ptr(6752, 6780, 1), new Range16.Ptr(6783, 6793, 1), new Range16.Ptr(6800, 6809, 1), new Range16.Ptr(6816, 6829, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Tai_Tham = _Tai_Tham;
+		_Tai_Viet = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(43648, 43714, 1), new Range16.Ptr(43739, 43743, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Tai_Viet = _Tai_Viet;
+		_Takri = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(71296, 71351, 1), new Range32.Ptr(71360, 71369, 1)]), 0);
+		go$pkg.Takri = _Takri;
+		_Tamil = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(2946, 2947, 1), new Range16.Ptr(2949, 2954, 1), new Range16.Ptr(2958, 2960, 1), new Range16.Ptr(2962, 2965, 1), new Range16.Ptr(2969, 2970, 1), new Range16.Ptr(2972, 2972, 1), new Range16.Ptr(2974, 2975, 1), new Range16.Ptr(2979, 2980, 1), new Range16.Ptr(2984, 2986, 1), new Range16.Ptr(2990, 3001, 1), new Range16.Ptr(3006, 3010, 1), new Range16.Ptr(3014, 3016, 1), new Range16.Ptr(3018, 3021, 1), new Range16.Ptr(3024, 3024, 1), new Range16.Ptr(3031, 3031, 1), new Range16.Ptr(3046, 3066, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Tamil = _Tamil;
+		_Telugu = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(3073, 3075, 1), new Range16.Ptr(3077, 3084, 1), new Range16.Ptr(3086, 3088, 1), new Range16.Ptr(3090, 3112, 1), new Range16.Ptr(3114, 3123, 1), new Range16.Ptr(3125, 3129, 1), new Range16.Ptr(3133, 3140, 1), new Range16.Ptr(3142, 3144, 1), new Range16.Ptr(3146, 3149, 1), new Range16.Ptr(3157, 3158, 1), new Range16.Ptr(3160, 3161, 1), new Range16.Ptr(3168, 3171, 1), new Range16.Ptr(3174, 3183, 1), new Range16.Ptr(3192, 3199, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Telugu = _Telugu;
+		_Thaana = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(1920, 1969, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Thaana = _Thaana;
+		_Thai = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(3585, 3642, 1), new Range16.Ptr(3648, 3675, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Thai = _Thai;
+		_Tibetan = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(3840, 3911, 1), new Range16.Ptr(3913, 3948, 1), new Range16.Ptr(3953, 3991, 1), new Range16.Ptr(3993, 4028, 1), new Range16.Ptr(4030, 4044, 1), new Range16.Ptr(4046, 4052, 1), new Range16.Ptr(4057, 4058, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Tibetan = _Tibetan;
+		_Tifinagh = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(11568, 11623, 1), new Range16.Ptr(11631, 11632, 1), new Range16.Ptr(11647, 11647, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Tifinagh = _Tifinagh;
+		_Ugaritic = new RangeTable.Ptr(new (go$sliceType(Range16))([]), new (go$sliceType(Range32))([new Range32.Ptr(66432, 66461, 1), new Range32.Ptr(66463, 66463, 1)]), 0);
+		go$pkg.Ugaritic = _Ugaritic;
+		_Vai = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(42240, 42539, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Vai = _Vai;
+		_Yi = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(40960, 42124, 1), new Range16.Ptr(42128, 42182, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Yi = _Yi;
+		go$pkg.Scripts = (_map$1 = new Go$Map(), _key$1 = "Arabic", _map$1[_key$1] = { k: _key$1, v: go$pkg.Arabic }, _key$1 = "Armenian", _map$1[_key$1] = { k: _key$1, v: go$pkg.Armenian }, _key$1 = "Avestan", _map$1[_key$1] = { k: _key$1, v: go$pkg.Avestan }, _key$1 = "Balinese", _map$1[_key$1] = { k: _key$1, v: go$pkg.Balinese }, _key$1 = "Bamum", _map$1[_key$1] = { k: _key$1, v: go$pkg.Bamum }, _key$1 = "Batak", _map$1[_key$1] = { k: _key$1, v: go$pkg.Batak }, _key$1 = "Bengali", _map$1[_key$1] = { k: _key$1, v: go$pkg.Bengali }, _key$1 = "Bopomofo", _map$1[_key$1] = { k: _key$1, v: go$pkg.Bopomofo }, _key$1 = "Brahmi", _map$1[_key$1] = { k: _key$1, v: go$pkg.Brahmi }, _key$1 = "Braille", _map$1[_key$1] = { k: _key$1, v: go$pkg.Braille }, _key$1 = "Buginese", _map$1[_key$1] = { k: _key$1, v: go$pkg.Buginese }, _key$1 = "Buhid", _map$1[_key$1] = { k: _key$1, v: go$pkg.Buhid }, _key$1 = "Canadian_Aboriginal", _map$1[_key$1] = { k: _key$1, v: go$pkg.Canadian_Aboriginal }, _key$1 = "Carian", _map$1[_key$1] = { k: _key$1, v: go$pkg.Carian }, _key$1 = "Chakma", _map$1[_key$1] = { k: _key$1, v: go$pkg.Chakma }, _key$1 = "Cham", _map$1[_key$1] = { k: _key$1, v: go$pkg.Cham }, _key$1 = "Cherokee", _map$1[_key$1] = { k: _key$1, v: go$pkg.Cherokee }, _key$1 = "Common", _map$1[_key$1] = { k: _key$1, v: go$pkg.Common }, _key$1 = "Coptic", _map$1[_key$1] = { k: _key$1, v: go$pkg.Coptic }, _key$1 = "Cuneiform", _map$1[_key$1] = { k: _key$1, v: go$pkg.Cuneiform }, _key$1 = "Cypriot", _map$1[_key$1] = { k: _key$1, v: go$pkg.Cypriot }, _key$1 = "Cyrillic", _map$1[_key$1] = { k: _key$1, v: go$pkg.Cyrillic }, _key$1 = "Deseret", _map$1[_key$1] = { k: _key$1, v: go$pkg.Deseret }, _key$1 = "Devanagari", _map$1[_key$1] = { k: _key$1, v: go$pkg.Devanagari }, _key$1 = "Egyptian_Hieroglyphs", _map$1[_key$1] = { k: _key$1, v: go$pkg.Egyptian_Hieroglyphs }, _key$1 = "Ethiopic", _map$1[_key$1] = { k: _key$1, v: go$pkg.Ethiopic }, _key$1 = "Georgian", _map$1[_key$1] = { k: _key$1, v: go$pkg.Georgian }, _key$1 = "Glagolitic", _map$1[_key$1] = { k: _key$1, v: go$pkg.Glagolitic }, _key$1 = "Gothic", _map$1[_key$1] = { k: _key$1, v: go$pkg.Gothic }, _key$1 = "Greek", _map$1[_key$1] = { k: _key$1, v: go$pkg.Greek }, _key$1 = "Gujarati", _map$1[_key$1] = { k: _key$1, v: go$pkg.Gujarati }, _key$1 = "Gurmukhi", _map$1[_key$1] = { k: _key$1, v: go$pkg.Gurmukhi }, _key$1 = "Han", _map$1[_key$1] = { k: _key$1, v: go$pkg.Han }, _key$1 = "Hangul", _map$1[_key$1] = { k: _key$1, v: go$pkg.Hangul }, _key$1 = "Hanunoo", _map$1[_key$1] = { k: _key$1, v: go$pkg.Hanunoo }, _key$1 = "Hebrew", _map$1[_key$1] = { k: _key$1, v: go$pkg.Hebrew }, _key$1 = "Hiragana", _map$1[_key$1] = { k: _key$1, v: go$pkg.Hiragana }, _key$1 = "Imperial_Aramaic", _map$1[_key$1] = { k: _key$1, v: go$pkg.Imperial_Aramaic }, _key$1 = "Inherited", _map$1[_key$1] = { k: _key$1, v: go$pkg.Inherited }, _key$1 = "Inscriptional_Pahlavi", _map$1[_key$1] = { k: _key$1, v: go$pkg.Inscriptional_Pahlavi }, _key$1 = "Inscriptional_Parthian", _map$1[_key$1] = { k: _key$1, v: go$pkg.Inscriptional_Parthian }, _key$1 = "Javanese", _map$1[_key$1] = { k: _key$1, v: go$pkg.Javanese }, _key$1 = "Kaithi", _map$1[_key$1] = { k: _key$1, v: go$pkg.Kaithi }, _key$1 = "Kannada", _map$1[_key$1] = { k: _key$1, v: go$pkg.Kannada }, _key$1 = "Katakana", _map$1[_key$1] = { k: _key$1, v: go$pkg.Katakana }, _key$1 = "Kayah_Li", _map$1[_key$1] = { k: _key$1, v: go$pkg.Kayah_Li }, _key$1 = "Kharoshthi", _map$1[_key$1] = { k: _key$1, v: go$pkg.Kharoshthi }, _key$1 = "Khmer", _map$1[_key$1] = { k: _key$1, v: go$pkg.Khmer }, _key$1 = "Lao", _map$1[_key$1] = { k: _key$1, v: go$pkg.Lao }, _key$1 = "Latin", _map$1[_key$1] = { k: _key$1, v: go$pkg.Latin }, _key$1 = "Lepcha", _map$1[_key$1] = { k: _key$1, v: go$pkg.Lepcha }, _key$1 = "Limbu", _map$1[_key$1] = { k: _key$1, v: go$pkg.Limbu }, _key$1 = "Linear_B", _map$1[_key$1] = { k: _key$1, v: go$pkg.Linear_B }, _key$1 = "Lisu", _map$1[_key$1] = { k: _key$1, v: go$pkg.Lisu }, _key$1 = "Lycian", _map$1[_key$1] = { k: _key$1, v: go$pkg.Lycian }, _key$1 = "Lydian", _map$1[_key$1] = { k: _key$1, v: go$pkg.Lydian }, _key$1 = "Malayalam", _map$1[_key$1] = { k: _key$1, v: go$pkg.Malayalam }, _key$1 = "Mandaic", _map$1[_key$1] = { k: _key$1, v: go$pkg.Mandaic }, _key$1 = "Meetei_Mayek", _map$1[_key$1] = { k: _key$1, v: go$pkg.Meetei_Mayek }, _key$1 = "Meroitic_Cursive", _map$1[_key$1] = { k: _key$1, v: go$pkg.Meroitic_Cursive }, _key$1 = "Meroitic_Hieroglyphs", _map$1[_key$1] = { k: _key$1, v: go$pkg.Meroitic_Hieroglyphs }, _key$1 = "Miao", _map$1[_key$1] = { k: _key$1, v: go$pkg.Miao }, _key$1 = "Mongolian", _map$1[_key$1] = { k: _key$1, v: go$pkg.Mongolian }, _key$1 = "Myanmar", _map$1[_key$1] = { k: _key$1, v: go$pkg.Myanmar }, _key$1 = "New_Tai_Lue", _map$1[_key$1] = { k: _key$1, v: go$pkg.New_Tai_Lue }, _key$1 = "Nko", _map$1[_key$1] = { k: _key$1, v: go$pkg.Nko }, _key$1 = "Ogham", _map$1[_key$1] = { k: _key$1, v: go$pkg.Ogham }, _key$1 = "Ol_Chiki", _map$1[_key$1] = { k: _key$1, v: go$pkg.Ol_Chiki }, _key$1 = "Old_Italic", _map$1[_key$1] = { k: _key$1, v: go$pkg.Old_Italic }, _key$1 = "Old_Persian", _map$1[_key$1] = { k: _key$1, v: go$pkg.Old_Persian }, _key$1 = "Old_South_Arabian", _map$1[_key$1] = { k: _key$1, v: go$pkg.Old_South_Arabian }, _key$1 = "Old_Turkic", _map$1[_key$1] = { k: _key$1, v: go$pkg.Old_Turkic }, _key$1 = "Oriya", _map$1[_key$1] = { k: _key$1, v: go$pkg.Oriya }, _key$1 = "Osmanya", _map$1[_key$1] = { k: _key$1, v: go$pkg.Osmanya }, _key$1 = "Phags_Pa", _map$1[_key$1] = { k: _key$1, v: go$pkg.Phags_Pa }, _key$1 = "Phoenician", _map$1[_key$1] = { k: _key$1, v: go$pkg.Phoenician }, _key$1 = "Rejang", _map$1[_key$1] = { k: _key$1, v: go$pkg.Rejang }, _key$1 = "Runic", _map$1[_key$1] = { k: _key$1, v: go$pkg.Runic }, _key$1 = "Samaritan", _map$1[_key$1] = { k: _key$1, v: go$pkg.Samaritan }, _key$1 = "Saurashtra", _map$1[_key$1] = { k: _key$1, v: go$pkg.Saurashtra }, _key$1 = "Sharada", _map$1[_key$1] = { k: _key$1, v: go$pkg.Sharada }, _key$1 = "Shavian", _map$1[_key$1] = { k: _key$1, v: go$pkg.Shavian }, _key$1 = "Sinhala", _map$1[_key$1] = { k: _key$1, v: go$pkg.Sinhala }, _key$1 = "Sora_Sompeng", _map$1[_key$1] = { k: _key$1, v: go$pkg.Sora_Sompeng }, _key$1 = "Sundanese", _map$1[_key$1] = { k: _key$1, v: go$pkg.Sundanese }, _key$1 = "Syloti_Nagri", _map$1[_key$1] = { k: _key$1, v: go$pkg.Syloti_Nagri }, _key$1 = "Syriac", _map$1[_key$1] = { k: _key$1, v: go$pkg.Syriac }, _key$1 = "Tagalog", _map$1[_key$1] = { k: _key$1, v: go$pkg.Tagalog }, _key$1 = "Tagbanwa", _map$1[_key$1] = { k: _key$1, v: go$pkg.Tagbanwa }, _key$1 = "Tai_Le", _map$1[_key$1] = { k: _key$1, v: go$pkg.Tai_Le }, _key$1 = "Tai_Tham", _map$1[_key$1] = { k: _key$1, v: go$pkg.Tai_Tham }, _key$1 = "Tai_Viet", _map$1[_key$1] = { k: _key$1, v: go$pkg.Tai_Viet }, _key$1 = "Takri", _map$1[_key$1] = { k: _key$1, v: go$pkg.Takri }, _key$1 = "Tamil", _map$1[_key$1] = { k: _key$1, v: go$pkg.Tamil }, _key$1 = "Telugu", _map$1[_key$1] = { k: _key$1, v: go$pkg.Telugu }, _key$1 = "Thaana", _map$1[_key$1] = { k: _key$1, v: go$pkg.Thaana }, _key$1 = "Thai", _map$1[_key$1] = { k: _key$1, v: go$pkg.Thai }, _key$1 = "Tibetan", _map$1[_key$1] = { k: _key$1, v: go$pkg.Tibetan }, _key$1 = "Tifinagh", _map$1[_key$1] = { k: _key$1, v: go$pkg.Tifinagh }, _key$1 = "Ugaritic", _map$1[_key$1] = { k: _key$1, v: go$pkg.Ugaritic }, _key$1 = "Vai", _map$1[_key$1] = { k: _key$1, v: go$pkg.Vai }, _key$1 = "Yi", _map$1[_key$1] = { k: _key$1, v: go$pkg.Yi }, _map$1);
+		_ASCII_Hex_Digit = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(48, 57, 1), new Range16.Ptr(65, 70, 1), new Range16.Ptr(97, 102, 1)]), (go$sliceType(Range32)).nil, 3);
+		go$pkg.ASCII_Hex_Digit = _ASCII_Hex_Digit;
+		_Bidi_Control = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(8206, 8207, 1), new Range16.Ptr(8234, 8238, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Bidi_Control = _Bidi_Control;
+		_Dash = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(45, 45, 1), new Range16.Ptr(1418, 1418, 1), new Range16.Ptr(1470, 1470, 1), new Range16.Ptr(5120, 5120, 1), new Range16.Ptr(6150, 6150, 1), new Range16.Ptr(8208, 8213, 1), new Range16.Ptr(8275, 8275, 1), new Range16.Ptr(8315, 8315, 1), new Range16.Ptr(8331, 8331, 1), new Range16.Ptr(8722, 8722, 1), new Range16.Ptr(11799, 11799, 1), new Range16.Ptr(11802, 11802, 1), new Range16.Ptr(11834, 11835, 1), new Range16.Ptr(12316, 12316, 1), new Range16.Ptr(12336, 12336, 1), new Range16.Ptr(12448, 12448, 1), new Range16.Ptr(65073, 65074, 1), new Range16.Ptr(65112, 65112, 1), new Range16.Ptr(65123, 65123, 1), new Range16.Ptr(65293, 65293, 1)]), (go$sliceType(Range32)).nil, 1);
+		go$pkg.Dash = _Dash;
+		_Deprecated = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(329, 329, 1), new Range16.Ptr(1651, 1651, 1), new Range16.Ptr(3959, 3959, 1), new Range16.Ptr(3961, 3961, 1), new Range16.Ptr(6051, 6052, 1), new Range16.Ptr(8298, 8303, 1), new Range16.Ptr(9001, 9002, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(917505, 917505, 1), new Range32.Ptr(917536, 917631, 1)]), 0);
+		go$pkg.Deprecated = _Deprecated;
+		_Diacritic = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(94, 94, 1), new Range16.Ptr(96, 96, 1), new Range16.Ptr(168, 168, 1), new Range16.Ptr(175, 175, 1), new Range16.Ptr(180, 180, 1), new Range16.Ptr(183, 184, 1), new Range16.Ptr(688, 846, 1), new Range16.Ptr(848, 855, 1), new Range16.Ptr(861, 866, 1), new Range16.Ptr(884, 885, 1), new Range16.Ptr(890, 890, 1), new Range16.Ptr(900, 901, 1), new Range16.Ptr(1155, 1159, 1), new Range16.Ptr(1369, 1369, 1), new Range16.Ptr(1425, 1441, 1), new Range16.Ptr(1443, 1469, 1), new Range16.Ptr(1471, 1471, 1), new Range16.Ptr(1473, 1474, 1), new Range16.Ptr(1476, 1476, 1), new Range16.Ptr(1611, 1618, 1), new Range16.Ptr(1623, 1624, 1), new Range16.Ptr(1759, 1760, 1), new Range16.Ptr(1765, 1766, 1), new Range16.Ptr(1770, 1772, 1), new Range16.Ptr(1840, 1866, 1), new Range16.Ptr(1958, 1968, 1), new Range16.Ptr(2027, 2037, 1), new Range16.Ptr(2072, 2073, 1), new Range16.Ptr(2276, 2302, 1), new Range16.Ptr(2364, 2364, 1), new Range16.Ptr(2381, 2381, 1), new Range16.Ptr(2385, 2388, 1), new Range16.Ptr(2417, 2417, 1), new Range16.Ptr(2492, 2492, 1), new Range16.Ptr(2509, 2509, 1), new Range16.Ptr(2620, 2620, 1), new Range16.Ptr(2637, 2637, 1), new Range16.Ptr(2748, 2748, 1), new Range16.Ptr(2765, 2765, 1), new Range16.Ptr(2876, 2876, 1), new Range16.Ptr(2893, 2893, 1), new Range16.Ptr(3021, 3021, 1), new Range16.Ptr(3149, 3149, 1), new Range16.Ptr(3260, 3260, 1), new Range16.Ptr(3277, 3277, 1), new Range16.Ptr(3405, 3405, 1), new Range16.Ptr(3530, 3530, 1), new Range16.Ptr(3655, 3660, 1), new Range16.Ptr(3662, 3662, 1), new Range16.Ptr(3784, 3788, 1), new Range16.Ptr(3864, 3865, 1), new Range16.Ptr(3893, 3893, 1), new Range16.Ptr(3895, 3895, 1), new Range16.Ptr(3897, 3897, 1), new Range16.Ptr(3902, 3903, 1), new Range16.Ptr(3970, 3972, 1), new Range16.Ptr(3974, 3975, 1), new Range16.Ptr(4038, 4038, 1), new Range16.Ptr(4151, 4151, 1), new Range16.Ptr(4153, 4154, 1), new Range16.Ptr(4231, 4237, 1), new Range16.Ptr(4239, 4239, 1), new Range16.Ptr(4250, 4251, 1), new Range16.Ptr(6089, 6099, 1), new Range16.Ptr(6109, 6109, 1), new Range16.Ptr(6457, 6459, 1), new Range16.Ptr(6773, 6780, 1), new Range16.Ptr(6783, 6783, 1), new Range16.Ptr(6964, 6964, 1), new Range16.Ptr(6980, 6980, 1), new Range16.Ptr(7019, 7027, 1), new Range16.Ptr(7082, 7083, 1), new Range16.Ptr(7222, 7223, 1), new Range16.Ptr(7288, 7293, 1), new Range16.Ptr(7376, 7400, 1), new Range16.Ptr(7405, 7405, 1), new Range16.Ptr(7412, 7412, 1), new Range16.Ptr(7468, 7530, 1), new Range16.Ptr(7620, 7631, 1), new Range16.Ptr(7677, 7679, 1), new Range16.Ptr(8125, 8125, 1), new Range16.Ptr(8127, 8129, 1), new Range16.Ptr(8141, 8143, 1), new Range16.Ptr(8157, 8159, 1), new Range16.Ptr(8173, 8175, 1), new Range16.Ptr(8189, 8190, 1), new Range16.Ptr(11503, 11505, 1), new Range16.Ptr(11823, 11823, 1), new Range16.Ptr(12330, 12335, 1), new Range16.Ptr(12441, 12444, 1), new Range16.Ptr(12540, 12540, 1), new Range16.Ptr(42607, 42607, 1), new Range16.Ptr(42620, 42621, 1), new Range16.Ptr(42623, 42623, 1), new Range16.Ptr(42736, 42737, 1), new Range16.Ptr(42775, 42785, 1), new Range16.Ptr(42888, 42888, 1), new Range16.Ptr(43000, 43001, 1), new Range16.Ptr(43204, 43204, 1), new Range16.Ptr(43232, 43249, 1), new Range16.Ptr(43307, 43310, 1), new Range16.Ptr(43347, 43347, 1), new Range16.Ptr(43443, 43443, 1), new Range16.Ptr(43456, 43456, 1), new Range16.Ptr(43643, 43643, 1), new Range16.Ptr(43711, 43714, 1), new Range16.Ptr(43766, 43766, 1), new Range16.Ptr(44012, 44013, 1), new Range16.Ptr(64286, 64286, 1), new Range16.Ptr(65056, 65062, 1), new Range16.Ptr(65342, 65342, 1), new Range16.Ptr(65344, 65344, 1), new Range16.Ptr(65392, 65392, 1), new Range16.Ptr(65438, 65439, 1), new Range16.Ptr(65507, 65507, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(69817, 69818, 1), new Range32.Ptr(69939, 69940, 1), new Range32.Ptr(70080, 70080, 1), new Range32.Ptr(71350, 71351, 1), new Range32.Ptr(94095, 94111, 1), new Range32.Ptr(119143, 119145, 1), new Range32.Ptr(119149, 119154, 1), new Range32.Ptr(119163, 119170, 1), new Range32.Ptr(119173, 119179, 1), new Range32.Ptr(119210, 119213, 1)]), 6);
+		go$pkg.Diacritic = _Diacritic;
+		_Extender = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(183, 183, 1), new Range16.Ptr(720, 721, 1), new Range16.Ptr(1600, 1600, 1), new Range16.Ptr(2042, 2042, 1), new Range16.Ptr(3654, 3654, 1), new Range16.Ptr(3782, 3782, 1), new Range16.Ptr(6154, 6154, 1), new Range16.Ptr(6211, 6211, 1), new Range16.Ptr(6823, 6823, 1), new Range16.Ptr(7222, 7222, 1), new Range16.Ptr(7291, 7291, 1), new Range16.Ptr(12293, 12293, 1), new Range16.Ptr(12337, 12341, 1), new Range16.Ptr(12445, 12446, 1), new Range16.Ptr(12540, 12542, 1), new Range16.Ptr(40981, 40981, 1), new Range16.Ptr(42508, 42508, 1), new Range16.Ptr(43471, 43471, 1), new Range16.Ptr(43632, 43632, 1), new Range16.Ptr(43741, 43741, 1), new Range16.Ptr(43763, 43764, 1), new Range16.Ptr(65392, 65392, 1)]), (go$sliceType(Range32)).nil, 1);
+		go$pkg.Extender = _Extender;
+		_Hex_Digit = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(48, 57, 1), new Range16.Ptr(65, 70, 1), new Range16.Ptr(97, 102, 1), new Range16.Ptr(65296, 65305, 1), new Range16.Ptr(65313, 65318, 1), new Range16.Ptr(65345, 65350, 1)]), (go$sliceType(Range32)).nil, 3);
+		go$pkg.Hex_Digit = _Hex_Digit;
+		_Hyphen = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(45, 45, 1), new Range16.Ptr(173, 173, 1), new Range16.Ptr(1418, 1418, 1), new Range16.Ptr(6150, 6150, 1), new Range16.Ptr(8208, 8209, 1), new Range16.Ptr(11799, 11799, 1), new Range16.Ptr(12539, 12539, 1), new Range16.Ptr(65123, 65123, 1), new Range16.Ptr(65293, 65293, 1), new Range16.Ptr(65381, 65381, 1)]), (go$sliceType(Range32)).nil, 2);
+		go$pkg.Hyphen = _Hyphen;
+		_IDS_Binary_Operator = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(12272, 12273, 1), new Range16.Ptr(12276, 12283, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.IDS_Binary_Operator = _IDS_Binary_Operator;
+		_IDS_Trinary_Operator = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(12274, 12275, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.IDS_Trinary_Operator = _IDS_Trinary_Operator;
+		_Ideographic = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(12294, 12295, 1), new Range16.Ptr(12321, 12329, 1), new Range16.Ptr(12344, 12346, 1), new Range16.Ptr(13312, 19893, 1), new Range16.Ptr(19968, 40908, 1), new Range16.Ptr(63744, 64109, 1), new Range16.Ptr(64112, 64217, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(131072, 173782, 1), new Range32.Ptr(173824, 177972, 1), new Range32.Ptr(177984, 178205, 1), new Range32.Ptr(194560, 195101, 1)]), 0);
+		go$pkg.Ideographic = _Ideographic;
+		_Join_Control = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(8204, 8205, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Join_Control = _Join_Control;
+		_Logical_Order_Exception = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(3648, 3652, 1), new Range16.Ptr(3776, 3780, 1), new Range16.Ptr(43701, 43702, 1), new Range16.Ptr(43705, 43705, 1), new Range16.Ptr(43707, 43708, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Logical_Order_Exception = _Logical_Order_Exception;
+		_Noncharacter_Code_Point = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(64976, 65007, 1), new Range16.Ptr(65534, 65535, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(131070, 131071, 1), new Range32.Ptr(196606, 196607, 1), new Range32.Ptr(262142, 262143, 1), new Range32.Ptr(327678, 327679, 1), new Range32.Ptr(393214, 393215, 1), new Range32.Ptr(458750, 458751, 1), new Range32.Ptr(524286, 524287, 1), new Range32.Ptr(589822, 589823, 1), new Range32.Ptr(655358, 655359, 1), new Range32.Ptr(720894, 720895, 1), new Range32.Ptr(786430, 786431, 1), new Range32.Ptr(851966, 851967, 1), new Range32.Ptr(917502, 917503, 1), new Range32.Ptr(983038, 983039, 1), new Range32.Ptr(1048574, 1048575, 1), new Range32.Ptr(1114110, 1114111, 1)]), 0);
+		go$pkg.Noncharacter_Code_Point = _Noncharacter_Code_Point;
+		_Other_Alphabetic = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(837, 837, 1), new Range16.Ptr(1456, 1469, 1), new Range16.Ptr(1471, 1471, 1), new Range16.Ptr(1473, 1474, 1), new Range16.Ptr(1476, 1477, 1), new Range16.Ptr(1479, 1479, 1), new Range16.Ptr(1552, 1562, 1), new Range16.Ptr(1611, 1623, 1), new Range16.Ptr(1625, 1631, 1), new Range16.Ptr(1648, 1648, 1), new Range16.Ptr(1750, 1756, 1), new Range16.Ptr(1761, 1764, 1), new Range16.Ptr(1767, 1768, 1), new Range16.Ptr(1773, 1773, 1), new Range16.Ptr(1809, 1809, 1), new Range16.Ptr(1840, 1855, 1), new Range16.Ptr(1958, 1968, 1), new Range16.Ptr(2070, 2071, 1), new Range16.Ptr(2075, 2083, 1), new Range16.Ptr(2085, 2087, 1), new Range16.Ptr(2089, 2092, 1), new Range16.Ptr(2276, 2281, 1), new Range16.Ptr(2288, 2302, 1), new Range16.Ptr(2304, 2307, 1), new Range16.Ptr(2362, 2363, 1), new Range16.Ptr(2366, 2380, 1), new Range16.Ptr(2382, 2383, 1), new Range16.Ptr(2389, 2391, 1), new Range16.Ptr(2402, 2403, 1), new Range16.Ptr(2433, 2435, 1), new Range16.Ptr(2494, 2500, 1), new Range16.Ptr(2503, 2504, 1), new Range16.Ptr(2507, 2508, 1), new Range16.Ptr(2519, 2519, 1), new Range16.Ptr(2530, 2531, 1), new Range16.Ptr(2561, 2563, 1), new Range16.Ptr(2622, 2626, 1), new Range16.Ptr(2631, 2632, 1), new Range16.Ptr(2635, 2636, 1), new Range16.Ptr(2641, 2641, 1), new Range16.Ptr(2672, 2673, 1), new Range16.Ptr(2677, 2677, 1), new Range16.Ptr(2689, 2691, 1), new Range16.Ptr(2750, 2757, 1), new Range16.Ptr(2759, 2761, 1), new Range16.Ptr(2763, 2764, 1), new Range16.Ptr(2786, 2787, 1), new Range16.Ptr(2817, 2819, 1), new Range16.Ptr(2878, 2884, 1), new Range16.Ptr(2887, 2888, 1), new Range16.Ptr(2891, 2892, 1), new Range16.Ptr(2902, 2903, 1), new Range16.Ptr(2914, 2915, 1), new Range16.Ptr(2946, 2946, 1), new Range16.Ptr(3006, 3010, 1), new Range16.Ptr(3014, 3016, 1), new Range16.Ptr(3018, 3020, 1), new Range16.Ptr(3031, 3031, 1), new Range16.Ptr(3073, 3075, 1), new Range16.Ptr(3134, 3140, 1), new Range16.Ptr(3142, 3144, 1), new Range16.Ptr(3146, 3148, 1), new Range16.Ptr(3157, 3158, 1), new Range16.Ptr(3170, 3171, 1), new Range16.Ptr(3202, 3203, 1), new Range16.Ptr(3262, 3268, 1), new Range16.Ptr(3270, 3272, 1), new Range16.Ptr(3274, 3276, 1), new Range16.Ptr(3285, 3286, 1), new Range16.Ptr(3298, 3299, 1), new Range16.Ptr(3330, 3331, 1), new Range16.Ptr(3390, 3396, 1), new Range16.Ptr(3398, 3400, 1), new Range16.Ptr(3402, 3404, 1), new Range16.Ptr(3415, 3415, 1), new Range16.Ptr(3426, 3427, 1), new Range16.Ptr(3458, 3459, 1), new Range16.Ptr(3535, 3540, 1), new Range16.Ptr(3542, 3542, 1), new Range16.Ptr(3544, 3551, 1), new Range16.Ptr(3570, 3571, 1), new Range16.Ptr(3633, 3633, 1), new Range16.Ptr(3636, 3642, 1), new Range16.Ptr(3661, 3661, 1), new Range16.Ptr(3761, 3761, 1), new Range16.Ptr(3764, 3769, 1), new Range16.Ptr(3771, 3772, 1), new Range16.Ptr(3789, 3789, 1), new Range16.Ptr(3953, 3969, 1), new Range16.Ptr(3981, 3991, 1), new Range16.Ptr(3993, 4028, 1), new Range16.Ptr(4139, 4150, 1), new Range16.Ptr(4152, 4152, 1), new Range16.Ptr(4155, 4158, 1), new Range16.Ptr(4182, 4185, 1), new Range16.Ptr(4190, 4192, 1), new Range16.Ptr(4194, 4194, 1), new Range16.Ptr(4199, 4200, 1), new Range16.Ptr(4209, 4212, 1), new Range16.Ptr(4226, 4230, 1), new Range16.Ptr(4252, 4253, 1), new Range16.Ptr(4959, 4959, 1), new Range16.Ptr(5906, 5907, 1), new Range16.Ptr(5938, 5939, 1), new Range16.Ptr(5970, 5971, 1), new Range16.Ptr(6002, 6003, 1), new Range16.Ptr(6070, 6088, 1), new Range16.Ptr(6313, 6313, 1), new Range16.Ptr(6432, 6443, 1), new Range16.Ptr(6448, 6456, 1), new Range16.Ptr(6576, 6592, 1), new Range16.Ptr(6600, 6601, 1), new Range16.Ptr(6679, 6683, 1), new Range16.Ptr(6741, 6750, 1), new Range16.Ptr(6753, 6772, 1), new Range16.Ptr(6912, 6916, 1), new Range16.Ptr(6965, 6979, 1), new Range16.Ptr(7040, 7042, 1), new Range16.Ptr(7073, 7081, 1), new Range16.Ptr(7084, 7085, 1), new Range16.Ptr(7143, 7153, 1), new Range16.Ptr(7204, 7221, 1), new Range16.Ptr(7410, 7411, 1), new Range16.Ptr(9398, 9449, 1), new Range16.Ptr(11744, 11775, 1), new Range16.Ptr(42612, 42619, 1), new Range16.Ptr(42655, 42655, 1), new Range16.Ptr(43043, 43047, 1), new Range16.Ptr(43136, 43137, 1), new Range16.Ptr(43188, 43203, 1), new Range16.Ptr(43302, 43306, 1), new Range16.Ptr(43335, 43346, 1), new Range16.Ptr(43392, 43395, 1), new Range16.Ptr(43444, 43455, 1), new Range16.Ptr(43561, 43574, 1), new Range16.Ptr(43587, 43587, 1), new Range16.Ptr(43596, 43597, 1), new Range16.Ptr(43696, 43696, 1), new Range16.Ptr(43698, 43700, 1), new Range16.Ptr(43703, 43704, 1), new Range16.Ptr(43710, 43710, 1), new Range16.Ptr(43755, 43759, 1), new Range16.Ptr(43765, 43765, 1), new Range16.Ptr(44003, 44010, 1), new Range16.Ptr(64286, 64286, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(68097, 68099, 1), new Range32.Ptr(68101, 68102, 1), new Range32.Ptr(68108, 68111, 1), new Range32.Ptr(69632, 69634, 1), new Range32.Ptr(69688, 69701, 1), new Range32.Ptr(69762, 69762, 1), new Range32.Ptr(69808, 69816, 1), new Range32.Ptr(69888, 69890, 1), new Range32.Ptr(69927, 69938, 1), new Range32.Ptr(70016, 70018, 1), new Range32.Ptr(70067, 70079, 1), new Range32.Ptr(71339, 71349, 1), new Range32.Ptr(94033, 94078, 1)]), 0);
+		go$pkg.Other_Alphabetic = _Other_Alphabetic;
+		_Other_Default_Ignorable_Code_Point = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(847, 847, 1), new Range16.Ptr(4447, 4448, 1), new Range16.Ptr(6068, 6069, 1), new Range16.Ptr(8293, 8297, 1), new Range16.Ptr(12644, 12644, 1), new Range16.Ptr(65440, 65440, 1), new Range16.Ptr(65520, 65528, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(917504, 917504, 1), new Range32.Ptr(917506, 917535, 1), new Range32.Ptr(917632, 917759, 1), new Range32.Ptr(918000, 921599, 1)]), 0);
+		go$pkg.Other_Default_Ignorable_Code_Point = _Other_Default_Ignorable_Code_Point;
+		_Other_Grapheme_Extend = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(2494, 2494, 1), new Range16.Ptr(2519, 2519, 1), new Range16.Ptr(2878, 2878, 1), new Range16.Ptr(2903, 2903, 1), new Range16.Ptr(3006, 3006, 1), new Range16.Ptr(3031, 3031, 1), new Range16.Ptr(3266, 3266, 1), new Range16.Ptr(3285, 3286, 1), new Range16.Ptr(3390, 3390, 1), new Range16.Ptr(3415, 3415, 1), new Range16.Ptr(3535, 3535, 1), new Range16.Ptr(3551, 3551, 1), new Range16.Ptr(8204, 8205, 1), new Range16.Ptr(12334, 12335, 1), new Range16.Ptr(65438, 65439, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(119141, 119141, 1), new Range32.Ptr(119150, 119154, 1)]), 0);
+		go$pkg.Other_Grapheme_Extend = _Other_Grapheme_Extend;
+		_Other_ID_Continue = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(183, 183, 1), new Range16.Ptr(903, 903, 1), new Range16.Ptr(4969, 4977, 1), new Range16.Ptr(6618, 6618, 1)]), (go$sliceType(Range32)).nil, 1);
+		go$pkg.Other_ID_Continue = _Other_ID_Continue;
+		_Other_ID_Start = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(8472, 8472, 1), new Range16.Ptr(8494, 8494, 1), new Range16.Ptr(12443, 12444, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Other_ID_Start = _Other_ID_Start;
+		_Other_Lowercase = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(170, 170, 1), new Range16.Ptr(186, 186, 1), new Range16.Ptr(688, 696, 1), new Range16.Ptr(704, 705, 1), new Range16.Ptr(736, 740, 1), new Range16.Ptr(837, 837, 1), new Range16.Ptr(890, 890, 1), new Range16.Ptr(7468, 7530, 1), new Range16.Ptr(7544, 7544, 1), new Range16.Ptr(7579, 7615, 1), new Range16.Ptr(8305, 8305, 1), new Range16.Ptr(8319, 8319, 1), new Range16.Ptr(8336, 8348, 1), new Range16.Ptr(8560, 8575, 1), new Range16.Ptr(9424, 9449, 1), new Range16.Ptr(11388, 11389, 1), new Range16.Ptr(42864, 42864, 1), new Range16.Ptr(43000, 43001, 1)]), (go$sliceType(Range32)).nil, 2);
+		go$pkg.Other_Lowercase = _Other_Lowercase;
+		_Other_Math = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(94, 94, 1), new Range16.Ptr(976, 978, 1), new Range16.Ptr(981, 981, 1), new Range16.Ptr(1008, 1009, 1), new Range16.Ptr(1012, 1013, 1), new Range16.Ptr(8214, 8214, 1), new Range16.Ptr(8242, 8244, 1), new Range16.Ptr(8256, 8256, 1), new Range16.Ptr(8289, 8292, 1), new Range16.Ptr(8317, 8318, 1), new Range16.Ptr(8333, 8334, 1), new Range16.Ptr(8400, 8412, 1), new Range16.Ptr(8417, 8417, 1), new Range16.Ptr(8421, 8422, 1), new Range16.Ptr(8427, 8431, 1), new Range16.Ptr(8450, 8450, 1), new Range16.Ptr(8455, 8455, 1), new Range16.Ptr(8458, 8467, 1), new Range16.Ptr(8469, 8469, 1), new Range16.Ptr(8473, 8477, 1), new Range16.Ptr(8484, 8484, 1), new Range16.Ptr(8488, 8489, 1), new Range16.Ptr(8492, 8493, 1), new Range16.Ptr(8495, 8497, 1), new Range16.Ptr(8499, 8504, 1), new Range16.Ptr(8508, 8511, 1), new Range16.Ptr(8517, 8521, 1), new Range16.Ptr(8597, 8601, 1), new Range16.Ptr(8604, 8607, 1), new Range16.Ptr(8609, 8610, 1), new Range16.Ptr(8612, 8613, 1), new Range16.Ptr(8615, 8615, 1), new Range16.Ptr(8617, 8621, 1), new Range16.Ptr(8624, 8625, 1), new Range16.Ptr(8630, 8631, 1), new Range16.Ptr(8636, 8653, 1), new Range16.Ptr(8656, 8657, 1), new Range16.Ptr(8659, 8659, 1), new Range16.Ptr(8661, 8667, 1), new Range16.Ptr(8669, 8669, 1), new Range16.Ptr(8676, 8677, 1), new Range16.Ptr(9140, 9141, 1), new Range16.Ptr(9143, 9143, 1), new Range16.Ptr(9168, 9168, 1), new Range16.Ptr(9186, 9186, 1), new Range16.Ptr(9632, 9633, 1), new Range16.Ptr(9646, 9654, 1), new Range16.Ptr(9660, 9664, 1), new Range16.Ptr(9670, 9671, 1), new Range16.Ptr(9674, 9675, 1), new Range16.Ptr(9679, 9683, 1), new Range16.Ptr(9698, 9698, 1), new Range16.Ptr(9700, 9700, 1), new Range16.Ptr(9703, 9708, 1), new Range16.Ptr(9733, 9734, 1), new Range16.Ptr(9792, 9792, 1), new Range16.Ptr(9794, 9794, 1), new Range16.Ptr(9824, 9827, 1), new Range16.Ptr(9837, 9838, 1), new Range16.Ptr(10181, 10182, 1), new Range16.Ptr(10214, 10223, 1), new Range16.Ptr(10627, 10648, 1), new Range16.Ptr(10712, 10715, 1), new Range16.Ptr(10748, 10749, 1), new Range16.Ptr(65121, 65121, 1), new Range16.Ptr(65123, 65123, 1), new Range16.Ptr(65128, 65128, 1), new Range16.Ptr(65340, 65340, 1), new Range16.Ptr(65342, 65342, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(119808, 119892, 1), new Range32.Ptr(119894, 119964, 1), new Range32.Ptr(119966, 119967, 1), new Range32.Ptr(119970, 119970, 1), new Range32.Ptr(119973, 119974, 1), new Range32.Ptr(119977, 119980, 1), new Range32.Ptr(119982, 119993, 1), new Range32.Ptr(119995, 119995, 1), new Range32.Ptr(119997, 120003, 1), new Range32.Ptr(120005, 120069, 1), new Range32.Ptr(120071, 120074, 1), new Range32.Ptr(120077, 120084, 1), new Range32.Ptr(120086, 120092, 1), new Range32.Ptr(120094, 120121, 1), new Range32.Ptr(120123, 120126, 1), new Range32.Ptr(120128, 120132, 1), new Range32.Ptr(120134, 120134, 1), new Range32.Ptr(120138, 120144, 1), new Range32.Ptr(120146, 120485, 1), new Range32.Ptr(120488, 120512, 1), new Range32.Ptr(120514, 120538, 1), new Range32.Ptr(120540, 120570, 1), new Range32.Ptr(120572, 120596, 1), new Range32.Ptr(120598, 120628, 1), new Range32.Ptr(120630, 120654, 1), new Range32.Ptr(120656, 120686, 1), new Range32.Ptr(120688, 120712, 1), new Range32.Ptr(120714, 120744, 1), new Range32.Ptr(120746, 120770, 1), new Range32.Ptr(120772, 120779, 1), new Range32.Ptr(120782, 120831, 1), new Range32.Ptr(126464, 126467, 1), new Range32.Ptr(126469, 126495, 1), new Range32.Ptr(126497, 126498, 1), new Range32.Ptr(126500, 126500, 1), new Range32.Ptr(126503, 126503, 1), new Range32.Ptr(126505, 126514, 1), new Range32.Ptr(126516, 126519, 1), new Range32.Ptr(126521, 126521, 1), new Range32.Ptr(126523, 126523, 1), new Range32.Ptr(126530, 126530, 1), new Range32.Ptr(126535, 126535, 1), new Range32.Ptr(126537, 126537, 1), new Range32.Ptr(126539, 126539, 1), new Range32.Ptr(126541, 126543, 1), new Range32.Ptr(126545, 126546, 1), new Range32.Ptr(126548, 126548, 1), new Range32.Ptr(126551, 126551, 1), new Range32.Ptr(126553, 126553, 1), new Range32.Ptr(126555, 126555, 1), new Range32.Ptr(126557, 126557, 1), new Range32.Ptr(126559, 126559, 1), new Range32.Ptr(126561, 126562, 1), new Range32.Ptr(126564, 126564, 1), new Range32.Ptr(126567, 126570, 1), new Range32.Ptr(126572, 126578, 1), new Range32.Ptr(126580, 126583, 1), new Range32.Ptr(126585, 126588, 1), new Range32.Ptr(126590, 126590, 1), new Range32.Ptr(126592, 126601, 1), new Range32.Ptr(126603, 126619, 1), new Range32.Ptr(126625, 126627, 1), new Range32.Ptr(126629, 126633, 1), new Range32.Ptr(126635, 126651, 1)]), 1);
+		go$pkg.Other_Math = _Other_Math;
+		_Other_Uppercase = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(8544, 8559, 1), new Range16.Ptr(9398, 9423, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Other_Uppercase = _Other_Uppercase;
+		_Pattern_Syntax = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(33, 47, 1), new Range16.Ptr(58, 64, 1), new Range16.Ptr(91, 94, 1), new Range16.Ptr(96, 96, 1), new Range16.Ptr(123, 126, 1), new Range16.Ptr(161, 167, 1), new Range16.Ptr(169, 169, 1), new Range16.Ptr(171, 172, 1), new Range16.Ptr(174, 174, 1), new Range16.Ptr(176, 177, 1), new Range16.Ptr(182, 182, 1), new Range16.Ptr(187, 187, 1), new Range16.Ptr(191, 191, 1), new Range16.Ptr(215, 215, 1), new Range16.Ptr(247, 247, 1), new Range16.Ptr(8208, 8231, 1), new Range16.Ptr(8240, 8254, 1), new Range16.Ptr(8257, 8275, 1), new Range16.Ptr(8277, 8286, 1), new Range16.Ptr(8592, 9311, 1), new Range16.Ptr(9472, 10101, 1), new Range16.Ptr(10132, 11263, 1), new Range16.Ptr(11776, 11903, 1), new Range16.Ptr(12289, 12291, 1), new Range16.Ptr(12296, 12320, 1), new Range16.Ptr(12336, 12336, 1), new Range16.Ptr(64830, 64831, 1), new Range16.Ptr(65093, 65094, 1)]), (go$sliceType(Range32)).nil, 15);
+		go$pkg.Pattern_Syntax = _Pattern_Syntax;
+		_Pattern_White_Space = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(9, 13, 1), new Range16.Ptr(32, 32, 1), new Range16.Ptr(133, 133, 1), new Range16.Ptr(8206, 8207, 1), new Range16.Ptr(8232, 8233, 1)]), (go$sliceType(Range32)).nil, 3);
+		go$pkg.Pattern_White_Space = _Pattern_White_Space;
+		_Quotation_Mark = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(34, 34, 1), new Range16.Ptr(39, 39, 1), new Range16.Ptr(171, 171, 1), new Range16.Ptr(187, 187, 1), new Range16.Ptr(8216, 8223, 1), new Range16.Ptr(8249, 8250, 1), new Range16.Ptr(12300, 12303, 1), new Range16.Ptr(12317, 12319, 1), new Range16.Ptr(65089, 65092, 1), new Range16.Ptr(65282, 65282, 1), new Range16.Ptr(65287, 65287, 1), new Range16.Ptr(65378, 65379, 1)]), (go$sliceType(Range32)).nil, 4);
+		go$pkg.Quotation_Mark = _Quotation_Mark;
+		_Radical = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(11904, 11929, 1), new Range16.Ptr(11931, 12019, 1), new Range16.Ptr(12032, 12245, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.Radical = _Radical;
+		_STerm = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(33, 33, 1), new Range16.Ptr(46, 46, 1), new Range16.Ptr(63, 63, 1), new Range16.Ptr(1372, 1372, 1), new Range16.Ptr(1374, 1374, 1), new Range16.Ptr(1417, 1417, 1), new Range16.Ptr(1567, 1567, 1), new Range16.Ptr(1748, 1748, 1), new Range16.Ptr(1792, 1794, 1), new Range16.Ptr(2041, 2041, 1), new Range16.Ptr(2404, 2405, 1), new Range16.Ptr(4170, 4171, 1), new Range16.Ptr(4962, 4962, 1), new Range16.Ptr(4967, 4968, 1), new Range16.Ptr(5742, 5742, 1), new Range16.Ptr(5941, 5942, 1), new Range16.Ptr(6147, 6147, 1), new Range16.Ptr(6153, 6153, 1), new Range16.Ptr(6468, 6469, 1), new Range16.Ptr(6824, 6827, 1), new Range16.Ptr(7002, 7003, 1), new Range16.Ptr(7006, 7007, 1), new Range16.Ptr(7227, 7228, 1), new Range16.Ptr(7294, 7295, 1), new Range16.Ptr(8252, 8253, 1), new Range16.Ptr(8263, 8265, 1), new Range16.Ptr(11822, 11822, 1), new Range16.Ptr(12290, 12290, 1), new Range16.Ptr(42239, 42239, 1), new Range16.Ptr(42510, 42511, 1), new Range16.Ptr(42739, 42739, 1), new Range16.Ptr(42743, 42743, 1), new Range16.Ptr(43126, 43127, 1), new Range16.Ptr(43214, 43215, 1), new Range16.Ptr(43311, 43311, 1), new Range16.Ptr(43464, 43465, 1), new Range16.Ptr(43613, 43615, 1), new Range16.Ptr(43760, 43761, 1), new Range16.Ptr(44011, 44011, 1), new Range16.Ptr(65106, 65106, 1), new Range16.Ptr(65110, 65111, 1), new Range16.Ptr(65281, 65281, 1), new Range16.Ptr(65294, 65294, 1), new Range16.Ptr(65311, 65311, 1), new Range16.Ptr(65377, 65377, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(68182, 68183, 1), new Range32.Ptr(69703, 69704, 1), new Range32.Ptr(69822, 69825, 1), new Range32.Ptr(69953, 69955, 1), new Range32.Ptr(70085, 70086, 1)]), 3);
+		go$pkg.STerm = _STerm;
+		_Soft_Dotted = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(105, 106, 1), new Range16.Ptr(303, 303, 1), new Range16.Ptr(585, 585, 1), new Range16.Ptr(616, 616, 1), new Range16.Ptr(669, 669, 1), new Range16.Ptr(690, 690, 1), new Range16.Ptr(1011, 1011, 1), new Range16.Ptr(1110, 1110, 1), new Range16.Ptr(1112, 1112, 1), new Range16.Ptr(7522, 7522, 1), new Range16.Ptr(7574, 7574, 1), new Range16.Ptr(7588, 7588, 1), new Range16.Ptr(7592, 7592, 1), new Range16.Ptr(7725, 7725, 1), new Range16.Ptr(7883, 7883, 1), new Range16.Ptr(8305, 8305, 1), new Range16.Ptr(8520, 8521, 1), new Range16.Ptr(11388, 11388, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(119842, 119843, 1), new Range32.Ptr(119894, 119895, 1), new Range32.Ptr(119946, 119947, 1), new Range32.Ptr(119998, 119999, 1), new Range32.Ptr(120050, 120051, 1), new Range32.Ptr(120102, 120103, 1), new Range32.Ptr(120154, 120155, 1), new Range32.Ptr(120206, 120207, 1), new Range32.Ptr(120258, 120259, 1), new Range32.Ptr(120310, 120311, 1), new Range32.Ptr(120362, 120363, 1), new Range32.Ptr(120414, 120415, 1), new Range32.Ptr(120466, 120467, 1)]), 1);
+		go$pkg.Soft_Dotted = _Soft_Dotted;
+		_Terminal_Punctuation = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(33, 33, 1), new Range16.Ptr(44, 44, 1), new Range16.Ptr(46, 46, 1), new Range16.Ptr(58, 59, 1), new Range16.Ptr(63, 63, 1), new Range16.Ptr(894, 894, 1), new Range16.Ptr(903, 903, 1), new Range16.Ptr(1417, 1417, 1), new Range16.Ptr(1475, 1475, 1), new Range16.Ptr(1548, 1548, 1), new Range16.Ptr(1563, 1563, 1), new Range16.Ptr(1567, 1567, 1), new Range16.Ptr(1748, 1748, 1), new Range16.Ptr(1792, 1802, 1), new Range16.Ptr(1804, 1804, 1), new Range16.Ptr(2040, 2041, 1), new Range16.Ptr(2096, 2110, 1), new Range16.Ptr(2142, 2142, 1), new Range16.Ptr(2404, 2405, 1), new Range16.Ptr(3674, 3675, 1), new Range16.Ptr(3848, 3848, 1), new Range16.Ptr(3853, 3858, 1), new Range16.Ptr(4170, 4171, 1), new Range16.Ptr(4961, 4968, 1), new Range16.Ptr(5741, 5742, 1), new Range16.Ptr(5867, 5869, 1), new Range16.Ptr(6100, 6102, 1), new Range16.Ptr(6106, 6106, 1), new Range16.Ptr(6146, 6149, 1), new Range16.Ptr(6152, 6153, 1), new Range16.Ptr(6468, 6469, 1), new Range16.Ptr(6824, 6827, 1), new Range16.Ptr(7002, 7003, 1), new Range16.Ptr(7005, 7007, 1), new Range16.Ptr(7227, 7231, 1), new Range16.Ptr(7294, 7295, 1), new Range16.Ptr(8252, 8253, 1), new Range16.Ptr(8263, 8265, 1), new Range16.Ptr(11822, 11822, 1), new Range16.Ptr(12289, 12290, 1), new Range16.Ptr(42238, 42239, 1), new Range16.Ptr(42509, 42511, 1), new Range16.Ptr(42739, 42743, 1), new Range16.Ptr(43126, 43127, 1), new Range16.Ptr(43214, 43215, 1), new Range16.Ptr(43311, 43311, 1), new Range16.Ptr(43463, 43465, 1), new Range16.Ptr(43613, 43615, 1), new Range16.Ptr(43743, 43743, 1), new Range16.Ptr(43760, 43761, 1), new Range16.Ptr(44011, 44011, 1), new Range16.Ptr(65104, 65106, 1), new Range16.Ptr(65108, 65111, 1), new Range16.Ptr(65281, 65281, 1), new Range16.Ptr(65292, 65292, 1), new Range16.Ptr(65294, 65294, 1), new Range16.Ptr(65306, 65307, 1), new Range16.Ptr(65311, 65311, 1), new Range16.Ptr(65377, 65377, 1), new Range16.Ptr(65380, 65380, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(66463, 66463, 1), new Range32.Ptr(66512, 66512, 1), new Range32.Ptr(67671, 67671, 1), new Range32.Ptr(67871, 67871, 1), new Range32.Ptr(68410, 68415, 1), new Range32.Ptr(69703, 69709, 1), new Range32.Ptr(69822, 69825, 1), new Range32.Ptr(69953, 69955, 1), new Range32.Ptr(70085, 70086, 1), new Range32.Ptr(74864, 74867, 1)]), 5);
+		go$pkg.Terminal_Punctuation = _Terminal_Punctuation;
+		_Unified_Ideograph = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(13312, 19893, 1), new Range16.Ptr(19968, 40908, 1), new Range16.Ptr(64014, 64015, 1), new Range16.Ptr(64017, 64017, 1), new Range16.Ptr(64019, 64020, 1), new Range16.Ptr(64031, 64031, 1), new Range16.Ptr(64033, 64033, 1), new Range16.Ptr(64035, 64036, 1), new Range16.Ptr(64039, 64041, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(131072, 173782, 1), new Range32.Ptr(173824, 177972, 1), new Range32.Ptr(177984, 178205, 1)]), 0);
+		go$pkg.Unified_Ideograph = _Unified_Ideograph;
+		_Variation_Selector = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(6155, 6157, 1), new Range16.Ptr(65024, 65039, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(917760, 917999, 1)]), 0);
+		go$pkg.Variation_Selector = _Variation_Selector;
+		_White_Space = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(9, 13, 1), new Range16.Ptr(32, 32, 1), new Range16.Ptr(133, 133, 1), new Range16.Ptr(160, 160, 1), new Range16.Ptr(5760, 5760, 1), new Range16.Ptr(6158, 6158, 1), new Range16.Ptr(8192, 8202, 1), new Range16.Ptr(8232, 8233, 1), new Range16.Ptr(8239, 8239, 1), new Range16.Ptr(8287, 8287, 1), new Range16.Ptr(12288, 12288, 1)]), (go$sliceType(Range32)).nil, 4);
+		go$pkg.White_Space = _White_Space;
+		go$pkg.Properties = (_map$2 = new Go$Map(), _key$2 = "ASCII_Hex_Digit", _map$2[_key$2] = { k: _key$2, v: go$pkg.ASCII_Hex_Digit }, _key$2 = "Bidi_Control", _map$2[_key$2] = { k: _key$2, v: go$pkg.Bidi_Control }, _key$2 = "Dash", _map$2[_key$2] = { k: _key$2, v: go$pkg.Dash }, _key$2 = "Deprecated", _map$2[_key$2] = { k: _key$2, v: go$pkg.Deprecated }, _key$2 = "Diacritic", _map$2[_key$2] = { k: _key$2, v: go$pkg.Diacritic }, _key$2 = "Extender", _map$2[_key$2] = { k: _key$2, v: go$pkg.Extender }, _key$2 = "Hex_Digit", _map$2[_key$2] = { k: _key$2, v: go$pkg.Hex_Digit }, _key$2 = "Hyphen", _map$2[_key$2] = { k: _key$2, v: go$pkg.Hyphen }, _key$2 = "IDS_Binary_Operator", _map$2[_key$2] = { k: _key$2, v: go$pkg.IDS_Binary_Operator }, _key$2 = "IDS_Trinary_Operator", _map$2[_key$2] = { k: _key$2, v: go$pkg.IDS_Trinary_Operator }, _key$2 = "Ideographic", _map$2[_key$2] = { k: _key$2, v: go$pkg.Ideographic }, _key$2 = "Join_Control", _map$2[_key$2] = { k: _key$2, v: go$pkg.Join_Control }, _key$2 = "Logical_Order_Exception", _map$2[_key$2] = { k: _key$2, v: go$pkg.Logical_Order_Exception }, _key$2 = "Noncharacter_Code_Point", _map$2[_key$2] = { k: _key$2, v: go$pkg.Noncharacter_Code_Point }, _key$2 = "Other_Alphabetic", _map$2[_key$2] = { k: _key$2, v: go$pkg.Other_Alphabetic }, _key$2 = "Other_Default_Ignorable_Code_Point", _map$2[_key$2] = { k: _key$2, v: go$pkg.Other_Default_Ignorable_Code_Point }, _key$2 = "Other_Grapheme_Extend", _map$2[_key$2] = { k: _key$2, v: go$pkg.Other_Grapheme_Extend }, _key$2 = "Other_ID_Continue", _map$2[_key$2] = { k: _key$2, v: go$pkg.Other_ID_Continue }, _key$2 = "Other_ID_Start", _map$2[_key$2] = { k: _key$2, v: go$pkg.Other_ID_Start }, _key$2 = "Other_Lowercase", _map$2[_key$2] = { k: _key$2, v: go$pkg.Other_Lowercase }, _key$2 = "Other_Math", _map$2[_key$2] = { k: _key$2, v: go$pkg.Other_Math }, _key$2 = "Other_Uppercase", _map$2[_key$2] = { k: _key$2, v: go$pkg.Other_Uppercase }, _key$2 = "Pattern_Syntax", _map$2[_key$2] = { k: _key$2, v: go$pkg.Pattern_Syntax }, _key$2 = "Pattern_White_Space", _map$2[_key$2] = { k: _key$2, v: go$pkg.Pattern_White_Space }, _key$2 = "Quotation_Mark", _map$2[_key$2] = { k: _key$2, v: go$pkg.Quotation_Mark }, _key$2 = "Radical", _map$2[_key$2] = { k: _key$2, v: go$pkg.Radical }, _key$2 = "STerm", _map$2[_key$2] = { k: _key$2, v: go$pkg.STerm }, _key$2 = "Soft_Dotted", _map$2[_key$2] = { k: _key$2, v: go$pkg.Soft_Dotted }, _key$2 = "Terminal_Punctuation", _map$2[_key$2] = { k: _key$2, v: go$pkg.Terminal_Punctuation }, _key$2 = "Unified_Ideograph", _map$2[_key$2] = { k: _key$2, v: go$pkg.Unified_Ideograph }, _key$2 = "Variation_Selector", _map$2[_key$2] = { k: _key$2, v: go$pkg.Variation_Selector }, _key$2 = "White_Space", _map$2[_key$2] = { k: _key$2, v: go$pkg.White_Space }, _map$2);
+		_CaseRanges = new (go$sliceType(CaseRange))([new CaseRange.Ptr(65, 90, go$toNativeArray("Int32", [0, 32, 0])), new CaseRange.Ptr(97, 122, go$toNativeArray("Int32", [-32, 0, -32])), new CaseRange.Ptr(181, 181, go$toNativeArray("Int32", [743, 0, 743])), new CaseRange.Ptr(192, 214, go$toNativeArray("Int32", [0, 32, 0])), new CaseRange.Ptr(216, 222, go$toNativeArray("Int32", [0, 32, 0])), new CaseRange.Ptr(224, 246, go$toNativeArray("Int32", [-32, 0, -32])), new CaseRange.Ptr(248, 254, go$toNativeArray("Int32", [-32, 0, -32])), new CaseRange.Ptr(255, 255, go$toNativeArray("Int32", [121, 0, 121])), new CaseRange.Ptr(256, 303, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(304, 304, go$toNativeArray("Int32", [0, -199, 0])), new CaseRange.Ptr(305, 305, go$toNativeArray("Int32", [-232, 0, -232])), new CaseRange.Ptr(306, 311, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(313, 328, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(330, 375, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(376, 376, go$toNativeArray("Int32", [0, -121, 0])), new CaseRange.Ptr(377, 382, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(383, 383, go$toNativeArray("Int32", [-300, 0, -300])), new CaseRange.Ptr(384, 384, go$toNativeArray("Int32", [195, 0, 195])), new CaseRange.Ptr(385, 385, go$toNativeArray("Int32", [0, 210, 0])), new CaseRange.Ptr(386, 389, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(390, 390, go$toNativeArray("Int32", [0, 206, 0])), new CaseRange.Ptr(391, 392, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(393, 394, go$toNativeArray("Int32", [0, 205, 0])), new CaseRange.Ptr(395, 396, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(398, 398, go$toNativeArray("Int32", [0, 79, 0])), new CaseRange.Ptr(399, 399, go$toNativeArray("Int32", [0, 202, 0])), new CaseRange.Ptr(400, 400, go$toNativeArray("Int32", [0, 203, 0])), new CaseRange.Ptr(401, 402, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(403, 403, go$toNativeArray("Int32", [0, 205, 0])), new CaseRange.Ptr(404, 404, go$toNativeArray("Int32", [0, 207, 0])), new CaseRange.Ptr(405, 405, go$toNativeArray("Int32", [97, 0, 97])), new CaseRange.Ptr(406, 406, go$toNativeArray("Int32", [0, 211, 0])), new CaseRange.Ptr(407, 407, go$toNativeArray("Int32", [0, 209, 0])), new CaseRange.Ptr(408, 409, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(410, 410, go$toNativeArray("Int32", [163, 0, 163])), new CaseRange.Ptr(412, 412, go$toNativeArray("Int32", [0, 211, 0])), new CaseRange.Ptr(413, 413, go$toNativeArray("Int32", [0, 213, 0])), new CaseRange.Ptr(414, 414, go$toNativeArray("Int32", [130, 0, 130])), new CaseRange.Ptr(415, 415, go$toNativeArray("Int32", [0, 214, 0])), new CaseRange.Ptr(416, 421, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(422, 422, go$toNativeArray("Int32", [0, 218, 0])), new CaseRange.Ptr(423, 424, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(425, 425, go$toNativeArray("Int32", [0, 218, 0])), new CaseRange.Ptr(428, 429, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(430, 430, go$toNativeArray("Int32", [0, 218, 0])), new CaseRange.Ptr(431, 432, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(433, 434, go$toNativeArray("Int32", [0, 217, 0])), new CaseRange.Ptr(435, 438, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(439, 439, go$toNativeArray("Int32", [0, 219, 0])), new CaseRange.Ptr(440, 441, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(444, 445, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(447, 447, go$toNativeArray("Int32", [56, 0, 56])), new CaseRange.Ptr(452, 452, go$toNativeArray("Int32", [0, 2, 1])), new CaseRange.Ptr(453, 453, go$toNativeArray("Int32", [-1, 1, 0])), new CaseRange.Ptr(454, 454, go$toNativeArray("Int32", [-2, 0, -1])), new CaseRange.Ptr(455, 455, go$toNativeArray("Int32", [0, 2, 1])), new CaseRange.Ptr(456, 456, go$toNativeArray("Int32", [-1, 1, 0])), new CaseRange.Ptr(457, 457, go$toNativeArray("Int32", [-2, 0, -1])), new CaseRange.Ptr(458, 458, go$toNativeArray("Int32", [0, 2, 1])), new CaseRange.Ptr(459, 459, go$toNativeArray("Int32", [-1, 1, 0])), new CaseRange.Ptr(460, 460, go$toNativeArray("Int32", [-2, 0, -1])), new CaseRange.Ptr(461, 476, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(477, 477, go$toNativeArray("Int32", [-79, 0, -79])), new CaseRange.Ptr(478, 495, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(497, 497, go$toNativeArray("Int32", [0, 2, 1])), new CaseRange.Ptr(498, 498, go$toNativeArray("Int32", [-1, 1, 0])), new CaseRange.Ptr(499, 499, go$toNativeArray("Int32", [-2, 0, -1])), new CaseRange.Ptr(500, 501, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(502, 502, go$toNativeArray("Int32", [0, -97, 0])), new CaseRange.Ptr(503, 503, go$toNativeArray("Int32", [0, -56, 0])), new CaseRange.Ptr(504, 543, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(544, 544, go$toNativeArray("Int32", [0, -130, 0])), new CaseRange.Ptr(546, 563, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(570, 570, go$toNativeArray("Int32", [0, 10795, 0])), new CaseRange.Ptr(571, 572, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(573, 573, go$toNativeArray("Int32", [0, -163, 0])), new CaseRange.Ptr(574, 574, go$toNativeArray("Int32", [0, 10792, 0])), new CaseRange.Ptr(575, 576, go$toNativeArray("Int32", [10815, 0, 10815])), new CaseRange.Ptr(577, 578, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(579, 579, go$toNativeArray("Int32", [0, -195, 0])), new CaseRange.Ptr(580, 580, go$toNativeArray("Int32", [0, 69, 0])), new CaseRange.Ptr(581, 581, go$toNativeArray("Int32", [0, 71, 0])), new CaseRange.Ptr(582, 591, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(592, 592, go$toNativeArray("Int32", [10783, 0, 10783])), new CaseRange.Ptr(593, 593, go$toNativeArray("Int32", [10780, 0, 10780])), new CaseRange.Ptr(594, 594, go$toNativeArray("Int32", [10782, 0, 10782])), new CaseRange.Ptr(595, 595, go$toNativeArray("Int32", [-210, 0, -210])), new CaseRange.Ptr(596, 596, go$toNativeArray("Int32", [-206, 0, -206])), new CaseRange.Ptr(598, 599, go$toNativeArray("Int32", [-205, 0, -205])), new CaseRange.Ptr(601, 601, go$toNativeArray("Int32", [-202, 0, -202])), new CaseRange.Ptr(603, 603, go$toNativeArray("Int32", [-203, 0, -203])), new CaseRange.Ptr(608, 608, go$toNativeArray("Int32", [-205, 0, -205])), new CaseRange.Ptr(611, 611, go$toNativeArray("Int32", [-207, 0, -207])), new CaseRange.Ptr(613, 613, go$toNativeArray("Int32", [42280, 0, 42280])), new CaseRange.Ptr(614, 614, go$toNativeArray("Int32", [42308, 0, 42308])), new CaseRange.Ptr(616, 616, go$toNativeArray("Int32", [-209, 0, -209])), new CaseRange.Ptr(617, 617, go$toNativeArray("Int32", [-211, 0, -211])), new CaseRange.Ptr(619, 619, go$toNativeArray("Int32", [10743, 0, 10743])), new CaseRange.Ptr(623, 623, go$toNativeArray("Int32", [-211, 0, -211])), new CaseRange.Ptr(625, 625, go$toNativeArray("Int32", [10749, 0, 10749])), new CaseRange.Ptr(626, 626, go$toNativeArray("Int32", [-213, 0, -213])), new CaseRange.Ptr(629, 629, go$toNativeArray("Int32", [-214, 0, -214])), new CaseRange.Ptr(637, 637, go$toNativeArray("Int32", [10727, 0, 10727])), new CaseRange.Ptr(640, 640, go$toNativeArray("Int32", [-218, 0, -218])), new CaseRange.Ptr(643, 643, go$toNativeArray("Int32", [-218, 0, -218])), new CaseRange.Ptr(648, 648, go$toNativeArray("Int32", [-218, 0, -218])), new CaseRange.Ptr(649, 649, go$toNativeArray("Int32", [-69, 0, -69])), new CaseRange.Ptr(650, 651, go$toNativeArray("Int32", [-217, 0, -217])), new CaseRange.Ptr(652, 652, go$toNativeArray("Int32", [-71, 0, -71])), new CaseRange.Ptr(658, 658, go$toNativeArray("Int32", [-219, 0, -219])), new CaseRange.Ptr(837, 837, go$toNativeArray("Int32", [84, 0, 84])), new CaseRange.Ptr(880, 883, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(886, 887, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(891, 893, go$toNativeArray("Int32", [130, 0, 130])), new CaseRange.Ptr(902, 902, go$toNativeArray("Int32", [0, 38, 0])), new CaseRange.Ptr(904, 906, go$toNativeArray("Int32", [0, 37, 0])), new CaseRange.Ptr(908, 908, go$toNativeArray("Int32", [0, 64, 0])), new CaseRange.Ptr(910, 911, go$toNativeArray("Int32", [0, 63, 0])), new CaseRange.Ptr(913, 929, go$toNativeArray("Int32", [0, 32, 0])), new CaseRange.Ptr(931, 939, go$toNativeArray("Int32", [0, 32, 0])), new CaseRange.Ptr(940, 940, go$toNativeArray("Int32", [-38, 0, -38])), new CaseRange.Ptr(941, 943, go$toNativeArray("Int32", [-37, 0, -37])), new CaseRange.Ptr(945, 961, go$toNativeArray("Int32", [-32, 0, -32])), new CaseRange.Ptr(962, 962, go$toNativeArray("Int32", [-31, 0, -31])), new CaseRange.Ptr(963, 971, go$toNativeArray("Int32", [-32, 0, -32])), new CaseRange.Ptr(972, 972, go$toNativeArray("Int32", [-64, 0, -64])), new CaseRange.Ptr(973, 974, go$toNativeArray("Int32", [-63, 0, -63])), new CaseRange.Ptr(975, 975, go$toNativeArray("Int32", [0, 8, 0])), new CaseRange.Ptr(976, 976, go$toNativeArray("Int32", [-62, 0, -62])), new CaseRange.Ptr(977, 977, go$toNativeArray("Int32", [-57, 0, -57])), new CaseRange.Ptr(981, 981, go$toNativeArray("Int32", [-47, 0, -47])), new CaseRange.Ptr(982, 982, go$toNativeArray("Int32", [-54, 0, -54])), new CaseRange.Ptr(983, 983, go$toNativeArray("Int32", [-8, 0, -8])), new CaseRange.Ptr(984, 1007, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(1008, 1008, go$toNativeArray("Int32", [-86, 0, -86])), new CaseRange.Ptr(1009, 1009, go$toNativeArray("Int32", [-80, 0, -80])), new CaseRange.Ptr(1010, 1010, go$toNativeArray("Int32", [7, 0, 7])), new CaseRange.Ptr(1012, 1012, go$toNativeArray("Int32", [0, -60, 0])), new CaseRange.Ptr(1013, 1013, go$toNativeArray("Int32", [-96, 0, -96])), new CaseRange.Ptr(1015, 1016, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(1017, 1017, go$toNativeArray("Int32", [0, -7, 0])), new CaseRange.Ptr(1018, 1019, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(1021, 1023, go$toNativeArray("Int32", [0, -130, 0])), new CaseRange.Ptr(1024, 1039, go$toNativeArray("Int32", [0, 80, 0])), new CaseRange.Ptr(1040, 1071, go$toNativeArray("Int32", [0, 32, 0])), new CaseRange.Ptr(1072, 1103, go$toNativeArray("Int32", [-32, 0, -32])), new CaseRange.Ptr(1104, 1119, go$toNativeArray("Int32", [-80, 0, -80])), new CaseRange.Ptr(1120, 1153, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(1162, 1215, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(1216, 1216, go$toNativeArray("Int32", [0, 15, 0])), new CaseRange.Ptr(1217, 1230, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(1231, 1231, go$toNativeArray("Int32", [-15, 0, -15])), new CaseRange.Ptr(1232, 1319, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(1329, 1366, go$toNativeArray("Int32", [0, 48, 0])), new CaseRange.Ptr(1377, 1414, go$toNativeArray("Int32", [-48, 0, -48])), new CaseRange.Ptr(4256, 4293, go$toNativeArray("Int32", [0, 7264, 0])), new CaseRange.Ptr(4295, 4295, go$toNativeArray("Int32", [0, 7264, 0])), new CaseRange.Ptr(4301, 4301, go$toNativeArray("Int32", [0, 7264, 0])), new CaseRange.Ptr(7545, 7545, go$toNativeArray("Int32", [35332, 0, 35332])), new CaseRange.Ptr(7549, 7549, go$toNativeArray("Int32", [3814, 0, 3814])), new CaseRange.Ptr(7680, 7829, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(7835, 7835, go$toNativeArray("Int32", [-59, 0, -59])), new CaseRange.Ptr(7838, 7838, go$toNativeArray("Int32", [0, -7615, 0])), new CaseRange.Ptr(7840, 7935, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(7936, 7943, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(7944, 7951, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(7952, 7957, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(7960, 7965, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(7968, 7975, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(7976, 7983, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(7984, 7991, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(7992, 7999, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8000, 8005, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8008, 8013, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8017, 8017, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8019, 8019, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8021, 8021, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8023, 8023, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8025, 8025, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8027, 8027, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8029, 8029, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8031, 8031, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8032, 8039, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8040, 8047, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8048, 8049, go$toNativeArray("Int32", [74, 0, 74])), new CaseRange.Ptr(8050, 8053, go$toNativeArray("Int32", [86, 0, 86])), new CaseRange.Ptr(8054, 8055, go$toNativeArray("Int32", [100, 0, 100])), new CaseRange.Ptr(8056, 8057, go$toNativeArray("Int32", [128, 0, 128])), new CaseRange.Ptr(8058, 8059, go$toNativeArray("Int32", [112, 0, 112])), new CaseRange.Ptr(8060, 8061, go$toNativeArray("Int32", [126, 0, 126])), new CaseRange.Ptr(8064, 8071, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8072, 8079, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8080, 8087, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8088, 8095, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8096, 8103, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8104, 8111, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8112, 8113, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8115, 8115, go$toNativeArray("Int32", [9, 0, 9])), new CaseRange.Ptr(8120, 8121, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8122, 8123, go$toNativeArray("Int32", [0, -74, 0])), new CaseRange.Ptr(8124, 8124, go$toNativeArray("Int32", [0, -9, 0])), new CaseRange.Ptr(8126, 8126, go$toNativeArray("Int32", [-7205, 0, -7205])), new CaseRange.Ptr(8131, 8131, go$toNativeArray("Int32", [9, 0, 9])), new CaseRange.Ptr(8136, 8139, go$toNativeArray("Int32", [0, -86, 0])), new CaseRange.Ptr(8140, 8140, go$toNativeArray("Int32", [0, -9, 0])), new CaseRange.Ptr(8144, 8145, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8152, 8153, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8154, 8155, go$toNativeArray("Int32", [0, -100, 0])), new CaseRange.Ptr(8160, 8161, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8165, 8165, go$toNativeArray("Int32", [7, 0, 7])), new CaseRange.Ptr(8168, 8169, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8170, 8171, go$toNativeArray("Int32", [0, -112, 0])), new CaseRange.Ptr(8172, 8172, go$toNativeArray("Int32", [0, -7, 0])), new CaseRange.Ptr(8179, 8179, go$toNativeArray("Int32", [9, 0, 9])), new CaseRange.Ptr(8184, 8185, go$toNativeArray("Int32", [0, -128, 0])), new CaseRange.Ptr(8186, 8187, go$toNativeArray("Int32", [0, -126, 0])), new CaseRange.Ptr(8188, 8188, go$toNativeArray("Int32", [0, -9, 0])), new CaseRange.Ptr(8486, 8486, go$toNativeArray("Int32", [0, -7517, 0])), new CaseRange.Ptr(8490, 8490, go$toNativeArray("Int32", [0, -8383, 0])), new CaseRange.Ptr(8491, 8491, go$toNativeArray("Int32", [0, -8262, 0])), new CaseRange.Ptr(8498, 8498, go$toNativeArray("Int32", [0, 28, 0])), new CaseRange.Ptr(8526, 8526, go$toNativeArray("Int32", [-28, 0, -28])), new CaseRange.Ptr(8544, 8559, go$toNativeArray("Int32", [0, 16, 0])), new CaseRange.Ptr(8560, 8575, go$toNativeArray("Int32", [-16, 0, -16])), new CaseRange.Ptr(8579, 8580, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(9398, 9423, go$toNativeArray("Int32", [0, 26, 0])), new CaseRange.Ptr(9424, 9449, go$toNativeArray("Int32", [-26, 0, -26])), new CaseRange.Ptr(11264, 11310, go$toNativeArray("Int32", [0, 48, 0])), new CaseRange.Ptr(11312, 11358, go$toNativeArray("Int32", [-48, 0, -48])), new CaseRange.Ptr(11360, 11361, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(11362, 11362, go$toNativeArray("Int32", [0, -10743, 0])), new CaseRange.Ptr(11363, 11363, go$toNativeArray("Int32", [0, -3814, 0])), new CaseRange.Ptr(11364, 11364, go$toNativeArray("Int32", [0, -10727, 0])), new CaseRange.Ptr(11365, 11365, go$toNativeArray("Int32", [-10795, 0, -10795])), new CaseRange.Ptr(11366, 11366, go$toNativeArray("Int32", [-10792, 0, -10792])), new CaseRange.Ptr(11367, 11372, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(11373, 11373, go$toNativeArray("Int32", [0, -10780, 0])), new CaseRange.Ptr(11374, 11374, go$toNativeArray("Int32", [0, -10749, 0])), new CaseRange.Ptr(11375, 11375, go$toNativeArray("Int32", [0, -10783, 0])), new CaseRange.Ptr(11376, 11376, go$toNativeArray("Int32", [0, -10782, 0])), new CaseRange.Ptr(11378, 11379, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(11381, 11382, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(11390, 11391, go$toNativeArray("Int32", [0, -10815, 0])), new CaseRange.Ptr(11392, 11491, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(11499, 11502, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(11506, 11507, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(11520, 11557, go$toNativeArray("Int32", [-7264, 0, -7264])), new CaseRange.Ptr(11559, 11559, go$toNativeArray("Int32", [-7264, 0, -7264])), new CaseRange.Ptr(11565, 11565, go$toNativeArray("Int32", [-7264, 0, -7264])), new CaseRange.Ptr(42560, 42605, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42624, 42647, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42786, 42799, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42802, 42863, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42873, 42876, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42877, 42877, go$toNativeArray("Int32", [0, -35332, 0])), new CaseRange.Ptr(42878, 42887, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42891, 42892, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42893, 42893, go$toNativeArray("Int32", [0, -42280, 0])), new CaseRange.Ptr(42896, 42899, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42912, 42921, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42922, 42922, go$toNativeArray("Int32", [0, -42308, 0])), new CaseRange.Ptr(65313, 65338, go$toNativeArray("Int32", [0, 32, 0])), new CaseRange.Ptr(65345, 65370, go$toNativeArray("Int32", [-32, 0, -32])), new CaseRange.Ptr(66560, 66599, go$toNativeArray("Int32", [0, 40, 0])), new CaseRange.Ptr(66600, 66639, go$toNativeArray("Int32", [-40, 0, -40]))]);
+		go$pkg.CaseRanges = _CaseRanges;
+		properties = go$toNativeArray("Uint8", [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 144, 130, 130, 130, 136, 130, 130, 130, 130, 130, 130, 136, 130, 130, 130, 130, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 130, 130, 136, 136, 136, 130, 130, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 130, 130, 130, 136, 130, 136, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 130, 136, 130, 136, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 16, 130, 136, 136, 136, 136, 136, 130, 136, 136, 224, 130, 136, 0, 136, 136, 136, 136, 132, 132, 136, 192, 130, 130, 136, 132, 224, 130, 132, 132, 132, 130, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 136, 160, 160, 160, 160, 160, 160, 160, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 136, 192, 192, 192, 192, 192, 192, 192, 192]);
+		caseOrbit = new (go$sliceType(foldPair))([new foldPair.Ptr(75, 107), new foldPair.Ptr(83, 115), new foldPair.Ptr(107, 8490), new foldPair.Ptr(115, 383), new foldPair.Ptr(181, 924), new foldPair.Ptr(197, 229), new foldPair.Ptr(223, 7838), new foldPair.Ptr(229, 8491), new foldPair.Ptr(304, 304), new foldPair.Ptr(305, 305), new foldPair.Ptr(383, 83), new foldPair.Ptr(452, 453), new foldPair.Ptr(453, 454), new foldPair.Ptr(454, 452), new foldPair.Ptr(455, 456), new foldPair.Ptr(456, 457), new foldPair.Ptr(457, 455), new foldPair.Ptr(458, 459), new foldPair.Ptr(459, 460), new foldPair.Ptr(460, 458), new foldPair.Ptr(497, 498), new foldPair.Ptr(498, 499), new foldPair.Ptr(499, 497), new foldPair.Ptr(837, 921), new foldPair.Ptr(914, 946), new foldPair.Ptr(917, 949), new foldPair.Ptr(920, 952), new foldPair.Ptr(921, 953), new foldPair.Ptr(922, 954), new foldPair.Ptr(924, 956), new foldPair.Ptr(928, 960), new foldPair.Ptr(929, 961), new foldPair.Ptr(931, 962), new foldPair.Ptr(934, 966), new foldPair.Ptr(937, 969), new foldPair.Ptr(946, 976), new foldPair.Ptr(949, 1013), new foldPair.Ptr(952, 977), new foldPair.Ptr(953, 8126), new foldPair.Ptr(954, 1008), new foldPair.Ptr(956, 181), new foldPair.Ptr(960, 982), new foldPair.Ptr(961, 1009), new foldPair.Ptr(962, 963), new foldPair.Ptr(963, 931), new foldPair.Ptr(966, 981), new foldPair.Ptr(969, 8486), new foldPair.Ptr(976, 914), new foldPair.Ptr(977, 1012), new foldPair.Ptr(981, 934), new foldPair.Ptr(982, 928), new foldPair.Ptr(1008, 922), new foldPair.Ptr(1009, 929), new foldPair.Ptr(1012, 920), new foldPair.Ptr(1013, 917), new foldPair.Ptr(7776, 7777), new foldPair.Ptr(7777, 7835), new foldPair.Ptr(7835, 7776), new foldPair.Ptr(7838, 223), new foldPair.Ptr(8126, 837), new foldPair.Ptr(8486, 937), new foldPair.Ptr(8490, 75), new foldPair.Ptr(8491, 197)]);
+		foldCommon = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(924, 956, 32)]), (go$sliceType(Range32)).nil, 0);
+		foldGreek = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(181, 837, 656)]), (go$sliceType(Range32)).nil, 0);
+		foldInherited = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(921, 953, 32), new Range16.Ptr(8126, 8126, 1)]), (go$sliceType(Range32)).nil, 0);
+		foldL = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(837, 837, 1)]), (go$sliceType(Range32)).nil, 0);
+		foldLl = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(65, 90, 1), new Range16.Ptr(192, 214, 1), new Range16.Ptr(216, 222, 1), new Range16.Ptr(256, 302, 2), new Range16.Ptr(306, 310, 2), new Range16.Ptr(313, 327, 2), new Range16.Ptr(330, 376, 2), new Range16.Ptr(377, 381, 2), new Range16.Ptr(385, 386, 1), new Range16.Ptr(388, 390, 2), new Range16.Ptr(391, 393, 2), new Range16.Ptr(394, 395, 1), new Range16.Ptr(398, 401, 1), new Range16.Ptr(403, 404, 1), new Range16.Ptr(406, 408, 1), new Range16.Ptr(412, 413, 1), new Range16.Ptr(415, 416, 1), new Range16.Ptr(418, 422, 2), new Range16.Ptr(423, 425, 2), new Range16.Ptr(428, 430, 2), new Range16.Ptr(431, 433, 2), new Range16.Ptr(434, 435, 1), new Range16.Ptr(437, 439, 2), new Range16.Ptr(440, 444, 4), new Range16.Ptr(452, 453, 1), new Range16.Ptr(455, 456, 1), new Range16.Ptr(458, 459, 1), new Range16.Ptr(461, 475, 2), new Range16.Ptr(478, 494, 2), new Range16.Ptr(497, 498, 1), new Range16.Ptr(500, 502, 2), new Range16.Ptr(503, 504, 1), new Range16.Ptr(506, 562, 2), new Range16.Ptr(570, 571, 1), new Range16.Ptr(573, 574, 1), new Range16.Ptr(577, 579, 2), new Range16.Ptr(580, 582, 1), new Range16.Ptr(584, 590, 2), new Range16.Ptr(837, 880, 43), new Range16.Ptr(882, 886, 4), new Range16.Ptr(902, 904, 2), new Range16.Ptr(905, 906, 1), new Range16.Ptr(908, 910, 2), new Range16.Ptr(911, 913, 2), new Range16.Ptr(914, 929, 1), new Range16.Ptr(931, 939, 1), new Range16.Ptr(975, 984, 9), new Range16.Ptr(986, 1006, 2), new Range16.Ptr(1012, 1015, 3), new Range16.Ptr(1017, 1018, 1), new Range16.Ptr(1021, 1071, 1), new Range16.Ptr(1120, 1152, 2), new Range16.Ptr(1162, 1216, 2), new Range16.Ptr(1217, 1229, 2), new Range16.Ptr(1232, 1318, 2), new Range16.Ptr(1329, 1366, 1), new Range16.Ptr(4256, 4293, 1), new Range16.Ptr(4295, 4301, 6), new Range16.Ptr(7680, 7828, 2), new Range16.Ptr(7838, 7934, 2), new Range16.Ptr(7944, 7951, 1), new Range16.Ptr(7960, 7965, 1), new Range16.Ptr(7976, 7983, 1), new Range16.Ptr(7992, 7999, 1), new Range16.Ptr(8008, 8013, 1), new Range16.Ptr(8025, 8031, 2), new Range16.Ptr(8040, 8047, 1), new Range16.Ptr(8072, 8079, 1), new Range16.Ptr(8088, 8095, 1), new Range16.Ptr(8104, 8111, 1), new Range16.Ptr(8120, 8124, 1), new Range16.Ptr(8136, 8140, 1), new Range16.Ptr(8152, 8155, 1), new Range16.Ptr(8168, 8172, 1), new Range16.Ptr(8184, 8188, 1), new Range16.Ptr(8486, 8490, 4), new Range16.Ptr(8491, 8498, 7), new Range16.Ptr(8579, 11264, 2685), new Range16.Ptr(11265, 11310, 1), new Range16.Ptr(11360, 11362, 2), new Range16.Ptr(11363, 11364, 1), new Range16.Ptr(11367, 11373, 2), new Range16.Ptr(11374, 11376, 1), new Range16.Ptr(11378, 11381, 3), new Range16.Ptr(11390, 11392, 1), new Range16.Ptr(11394, 11490, 2), new Range16.Ptr(11499, 11501, 2), new Range16.Ptr(11506, 42560, 31054), new Range16.Ptr(42562, 42604, 2), new Range16.Ptr(42624, 42646, 2), new Range16.Ptr(42786, 42798, 2), new Range16.Ptr(42802, 42862, 2), new Range16.Ptr(42873, 42877, 2), new Range16.Ptr(42878, 42886, 2), new Range16.Ptr(42891, 42893, 2), new Range16.Ptr(42896, 42898, 2), new Range16.Ptr(42912, 42922, 2), new Range16.Ptr(65313, 65338, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(66560, 66599, 1)]), 3);
+		foldLt = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(452, 454, 2), new Range16.Ptr(455, 457, 2), new Range16.Ptr(458, 460, 2), new Range16.Ptr(497, 499, 2), new Range16.Ptr(8064, 8071, 1), new Range16.Ptr(8080, 8087, 1), new Range16.Ptr(8096, 8103, 1), new Range16.Ptr(8115, 8131, 16), new Range16.Ptr(8179, 8179, 1)]), (go$sliceType(Range32)).nil, 0);
+		foldLu = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(97, 122, 1), new Range16.Ptr(181, 223, 42), new Range16.Ptr(224, 246, 1), new Range16.Ptr(248, 255, 1), new Range16.Ptr(257, 303, 2), new Range16.Ptr(307, 311, 2), new Range16.Ptr(314, 328, 2), new Range16.Ptr(331, 375, 2), new Range16.Ptr(378, 382, 2), new Range16.Ptr(383, 384, 1), new Range16.Ptr(387, 389, 2), new Range16.Ptr(392, 396, 4), new Range16.Ptr(402, 405, 3), new Range16.Ptr(409, 410, 1), new Range16.Ptr(414, 417, 3), new Range16.Ptr(419, 421, 2), new Range16.Ptr(424, 429, 5), new Range16.Ptr(432, 436, 4), new Range16.Ptr(438, 441, 3), new Range16.Ptr(445, 447, 2), new Range16.Ptr(453, 454, 1), new Range16.Ptr(456, 457, 1), new Range16.Ptr(459, 460, 1), new Range16.Ptr(462, 476, 2), new Range16.Ptr(477, 495, 2), new Range16.Ptr(498, 499, 1), new Range16.Ptr(501, 505, 4), new Range16.Ptr(507, 543, 2), new Range16.Ptr(547, 563, 2), new Range16.Ptr(572, 575, 3), new Range16.Ptr(576, 578, 2), new Range16.Ptr(583, 591, 2), new Range16.Ptr(592, 596, 1), new Range16.Ptr(598, 599, 1), new Range16.Ptr(601, 603, 2), new Range16.Ptr(608, 611, 3), new Range16.Ptr(613, 614, 1), new Range16.Ptr(616, 617, 1), new Range16.Ptr(619, 623, 4), new Range16.Ptr(625, 626, 1), new Range16.Ptr(629, 637, 8), new Range16.Ptr(640, 643, 3), new Range16.Ptr(648, 652, 1), new Range16.Ptr(658, 837, 179), new Range16.Ptr(881, 883, 2), new Range16.Ptr(887, 891, 4), new Range16.Ptr(892, 893, 1), new Range16.Ptr(940, 943, 1), new Range16.Ptr(945, 974, 1), new Range16.Ptr(976, 977, 1), new Range16.Ptr(981, 983, 1), new Range16.Ptr(985, 1007, 2), new Range16.Ptr(1008, 1010, 1), new Range16.Ptr(1013, 1019, 3), new Range16.Ptr(1072, 1119, 1), new Range16.Ptr(1121, 1153, 2), new Range16.Ptr(1163, 1215, 2), new Range16.Ptr(1218, 1230, 2), new Range16.Ptr(1231, 1319, 2), new Range16.Ptr(1377, 1414, 1), new Range16.Ptr(7545, 7549, 4), new Range16.Ptr(7681, 7829, 2), new Range16.Ptr(7835, 7841, 6), new Range16.Ptr(7843, 7935, 2), new Range16.Ptr(7936, 7943, 1), new Range16.Ptr(7952, 7957, 1), new Range16.Ptr(7968, 7975, 1), new Range16.Ptr(7984, 7991, 1), new Range16.Ptr(8000, 8005, 1), new Range16.Ptr(8017, 8023, 2), new Range16.Ptr(8032, 8039, 1), new Range16.Ptr(8048, 8061, 1), new Range16.Ptr(8112, 8113, 1), new Range16.Ptr(8126, 8144, 18), new Range16.Ptr(8145, 8160, 15), new Range16.Ptr(8161, 8165, 4), new Range16.Ptr(8526, 8580, 54), new Range16.Ptr(11312, 11358, 1), new Range16.Ptr(11361, 11365, 4), new Range16.Ptr(11366, 11372, 2), new Range16.Ptr(11379, 11382, 3), new Range16.Ptr(11393, 11491, 2), new Range16.Ptr(11500, 11502, 2), new Range16.Ptr(11507, 11520, 13), new Range16.Ptr(11521, 11557, 1), new Range16.Ptr(11559, 11565, 6), new Range16.Ptr(42561, 42605, 2), new Range16.Ptr(42625, 42647, 2), new Range16.Ptr(42787, 42799, 2), new Range16.Ptr(42803, 42863, 2), new Range16.Ptr(42874, 42876, 2), new Range16.Ptr(42879, 42887, 2), new Range16.Ptr(42892, 42897, 5), new Range16.Ptr(42899, 42913, 14), new Range16.Ptr(42915, 42921, 2), new Range16.Ptr(65345, 65370, 1)]), new (go$sliceType(Range32))([new Range32.Ptr(66600, 66639, 1)]), 4);
+		foldM = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(921, 953, 32), new Range16.Ptr(8126, 8126, 1)]), (go$sliceType(Range32)).nil, 0);
+		foldMn = new RangeTable.Ptr(new (go$sliceType(Range16))([new Range16.Ptr(921, 953, 32), new Range16.Ptr(8126, 8126, 1)]), (go$sliceType(Range32)).nil, 0);
+		go$pkg.FoldCategory = (_map$3 = new Go$Map(), _key$3 = "Common", _map$3[_key$3] = { k: _key$3, v: foldCommon }, _key$3 = "Greek", _map$3[_key$3] = { k: _key$3, v: foldGreek }, _key$3 = "Inherited", _map$3[_key$3] = { k: _key$3, v: foldInherited }, _key$3 = "L", _map$3[_key$3] = { k: _key$3, v: foldL }, _key$3 = "Ll", _map$3[_key$3] = { k: _key$3, v: foldLl }, _key$3 = "Lt", _map$3[_key$3] = { k: _key$3, v: foldLt }, _key$3 = "Lu", _map$3[_key$3] = { k: _key$3, v: foldLu }, _key$3 = "M", _map$3[_key$3] = { k: _key$3, v: foldM }, _key$3 = "Mn", _map$3[_key$3] = { k: _key$3, v: foldMn }, _map$3);
+		go$pkg.FoldScript = (_map$4 = new Go$Map(), _map$4);
+	};
+	return go$pkg;
+})();
+go$packages["strings"] = (function() {
+	var go$pkg = {};
+	var errors = go$packages["errors"];
+	var io = go$packages["io"];
+	var utf8 = go$packages["unicode/utf8"];
+	var unicode = go$packages["unicode"];
+	var Reader;
+	Reader = go$newType(0, "Struct", "strings.Reader", "Reader", "strings", function(s_, i_, prevRune_) {
+		this.go$val = this;
+		this.s = s_ !== undefined ? s_ : "";
+		this.i = i_ !== undefined ? i_ : 0;
+		this.prevRune = prevRune_ !== undefined ? prevRune_ : 0;
+	});
+	go$pkg.Reader = Reader;
+	var Replacer;
+	Replacer = go$newType(0, "Struct", "strings.Replacer", "Replacer", "strings", function(r_) {
+		this.go$val = this;
+		this.r = r_ !== undefined ? r_ : null;
+	});
+	go$pkg.Replacer = Replacer;
+	var replacer;
+	replacer = go$newType(0, "Interface", "strings.replacer", "replacer", "strings", null);
+	go$pkg.replacer = replacer;
+	var byteBitmap;
+	byteBitmap = go$newType(0, "Array", "strings.byteBitmap", "byteBitmap", "strings", null);
+	go$pkg.byteBitmap = byteBitmap;
+	var trieNode;
+	trieNode = go$newType(0, "Struct", "strings.trieNode", "trieNode", "strings", function(value_, priority_, prefix_, next_, table_) {
+		this.go$val = this;
+		this.value = value_ !== undefined ? value_ : "";
+		this.priority = priority_ !== undefined ? priority_ : 0;
+		this.prefix = prefix_ !== undefined ? prefix_ : "";
+		this.next = next_ !== undefined ? next_ : (go$ptrType(trieNode)).nil;
+		this.table = table_ !== undefined ? table_ : (go$sliceType((go$ptrType(trieNode)))).nil;
+	});
+	go$pkg.trieNode = trieNode;
+	var genericReplacer;
+	genericReplacer = go$newType(0, "Struct", "strings.genericReplacer", "genericReplacer", "strings", function(root_, tableSize_, mapping_) {
+		this.go$val = this;
+		this.root = root_ !== undefined ? root_ : new trieNode.Ptr();
+		this.tableSize = tableSize_ !== undefined ? tableSize_ : 0;
+		this.mapping = mapping_ !== undefined ? mapping_ : go$makeNativeArray("Uint8", 256, function() { return 0; });
+	});
+	go$pkg.genericReplacer = genericReplacer;
+	var appendSliceWriter;
+	appendSliceWriter = go$newType(0, "Slice", "strings.appendSliceWriter", "appendSliceWriter", "strings", null);
+	go$pkg.appendSliceWriter = appendSliceWriter;
+	var stringWriterIface;
+	stringWriterIface = go$newType(0, "Interface", "strings.stringWriterIface", "stringWriterIface", "strings", null);
+	go$pkg.stringWriterIface = stringWriterIface;
+	var stringWriter;
+	stringWriter = go$newType(0, "Struct", "strings.stringWriter", "stringWriter", "strings", function(w_) {
+		this.go$val = this;
+		this.w = w_ !== undefined ? w_ : null;
+	});
+	go$pkg.stringWriter = stringWriter;
+	var singleStringReplacer;
+	singleStringReplacer = go$newType(0, "Struct", "strings.singleStringReplacer", "singleStringReplacer", "strings", function(finder_, value_) {
+		this.go$val = this;
+		this.finder = finder_ !== undefined ? finder_ : (go$ptrType(stringFinder)).nil;
+		this.value = value_ !== undefined ? value_ : "";
+	});
+	go$pkg.singleStringReplacer = singleStringReplacer;
+	var byteReplacer;
+	byteReplacer = go$newType(0, "Struct", "strings.byteReplacer", "byteReplacer", "strings", function(old_, new$1_) {
+		this.go$val = this;
+		this.old = old_ !== undefined ? old_ : go$makeNativeArray("Uint32", 8, function() { return 0; });
+		this.new$1 = new$1_ !== undefined ? new$1_ : go$makeNativeArray("Uint8", 256, function() { return 0; });
+	});
+	go$pkg.byteReplacer = byteReplacer;
+	var byteStringReplacer;
+	byteStringReplacer = go$newType(0, "Struct", "strings.byteStringReplacer", "byteStringReplacer", "strings", function(old_, new$1_) {
+		this.go$val = this;
+		this.old = old_ !== undefined ? old_ : go$makeNativeArray("Uint32", 8, function() { return 0; });
+		this.new$1 = new$1_ !== undefined ? new$1_ : go$makeNativeArray("Slice", 256, function() { return (go$sliceType(Go$Uint8)).nil; });
+	});
+	go$pkg.byteStringReplacer = byteStringReplacer;
+	var stringFinder;
+	stringFinder = go$newType(0, "Struct", "strings.stringFinder", "stringFinder", "strings", function(pattern_, badCharSkip_, goodSuffixSkip_) {
+		this.go$val = this;
+		this.pattern = pattern_ !== undefined ? pattern_ : "";
+		this.badCharSkip = badCharSkip_ !== undefined ? badCharSkip_ : go$makeNativeArray("Int", 256, function() { return 0; });
+		this.goodSuffixSkip = goodSuffixSkip_ !== undefined ? goodSuffixSkip_ : (go$sliceType(Go$Int)).nil;
+	});
+	go$pkg.stringFinder = stringFinder;
+	Reader.init([["s", "strings", Go$String, ""], ["i", "strings", Go$Int, ""], ["prevRune", "strings", Go$Int, ""]]);
+	(go$ptrType(Reader)).methods = [["Len", "", [], [Go$Int], false], ["Read", "", [(go$sliceType(Go$Uint8))], [Go$Int, go$error], false], ["ReadAt", "", [(go$sliceType(Go$Uint8)), Go$Int64], [Go$Int, go$error], false], ["ReadByte", "", [], [Go$Uint8, go$error], false], ["ReadRune", "", [], [Go$Int32, Go$Int, go$error], false], ["Seek", "", [Go$Int64, Go$Int], [Go$Int64, go$error], false], ["UnreadByte", "", [], [go$error], false], ["UnreadRune", "", [], [go$error], false], ["WriteTo", "", [io.Writer], [Go$Int64, go$error], false]];
+	Replacer.init([["r", "strings", replacer, ""]]);
+	(go$ptrType(Replacer)).methods = [["Replace", "", [Go$String], [Go$String], false], ["WriteString", "", [io.Writer, Go$String], [Go$Int, go$error], false]];
+	replacer.init([["Replace", "", (go$funcType([Go$String], [Go$String], false))], ["WriteString", "", (go$funcType([io.Writer, Go$String], [Go$Int, go$error], false))]]);
+	byteBitmap.init(Go$Uint32, 8);
+	(go$ptrType(byteBitmap)).methods = [["set", "strings", [Go$Uint8], [], false]];
+	trieNode.init([["value", "strings", Go$String, ""], ["priority", "strings", Go$Int, ""], ["prefix", "strings", Go$String, ""], ["next", "strings", (go$ptrType(trieNode)), ""], ["table", "strings", (go$sliceType((go$ptrType(trieNode)))), ""]]);
+	(go$ptrType(trieNode)).methods = [["add", "strings", [Go$String, Go$String, Go$Int, (go$ptrType(genericReplacer))], [], false]];
+	genericReplacer.init([["root", "strings", trieNode, ""], ["tableSize", "strings", Go$Int, ""], ["mapping", "strings", (go$arrayType(Go$Uint8, 256)), ""]]);
+	(go$ptrType(genericReplacer)).methods = [["Replace", "", [Go$String], [Go$String], false], ["WriteString", "", [io.Writer, Go$String], [Go$Int, go$error], false], ["lookup", "strings", [Go$String, Go$Bool], [Go$String, Go$Int, Go$Bool], false]];
+	appendSliceWriter.init(Go$Uint8);
+	(go$ptrType(appendSliceWriter)).methods = [["Write", "", [(go$sliceType(Go$Uint8))], [Go$Int, go$error], false], ["WriteString", "", [Go$String], [Go$Int, go$error], false]];
+	stringWriterIface.init([["WriteString", "", (go$funcType([Go$String], [Go$Int, go$error], false))]]);
+	stringWriter.init([["w", "strings", io.Writer, ""]]);
+	stringWriter.methods = [["WriteString", "", [Go$String], [Go$Int, go$error], false]];
+	(go$ptrType(stringWriter)).methods = [["WriteString", "", [Go$String], [Go$Int, go$error], false]];
+	singleStringReplacer.init([["finder", "strings", (go$ptrType(stringFinder)), ""], ["value", "strings", Go$String, ""]]);
+	(go$ptrType(singleStringReplacer)).methods = [["Replace", "", [Go$String], [Go$String], false], ["WriteString", "", [io.Writer, Go$String], [Go$Int, go$error], false]];
+	byteReplacer.init([["old", "strings", byteBitmap, ""], ["new", "strings", (go$arrayType(Go$Uint8, 256)), ""]]);
+	(go$ptrType(byteReplacer)).methods = [["Replace", "", [Go$String], [Go$String], false], ["WriteString", "", [io.Writer, Go$String], [Go$Int, go$error], false]];
+	byteStringReplacer.init([["old", "strings", byteBitmap, ""], ["new", "strings", (go$arrayType((go$sliceType(Go$Uint8)), 256)), ""]]);
+	(go$ptrType(byteStringReplacer)).methods = [["Replace", "", [Go$String], [Go$String], false], ["WriteString", "", [io.Writer, Go$String], [Go$Int, go$error], false]];
+	stringFinder.init([["pattern", "strings", Go$String, ""], ["badCharSkip", "strings", (go$arrayType(Go$Int, 256)), ""], ["goodSuffixSkip", "strings", (go$sliceType(Go$Int)), ""]]);
+	(go$ptrType(stringFinder)).methods = [["next", "strings", [Go$String], [Go$Int], false]];
+	Reader.Ptr.prototype.Len = function() {
+		var r;
+		r = this;
+		if (r.i >= r.s.length) {
+			return 0;
+		}
+		return r.s.length - r.i >> 0;
+	};
+	Reader.prototype.Len = function() { return this.go$val.Len(); };
+	Reader.Ptr.prototype.Read = function(b) {
+		var n, err, r, _tuple, _tuple$1;
+		n = 0;
+		err = null;
+		r = this;
+		if (b.length === 0) {
+			_tuple = [0, null], n = _tuple[0], err = _tuple[1];
+			return [n, err];
+		}
+		if (r.i >= r.s.length) {
+			_tuple$1 = [0, io.EOF], n = _tuple$1[0], err = _tuple$1[1];
+			return [n, err];
+		}
+		n = go$copyString(b, r.s.substring(r.i));
+		r.i = r.i + (n) >> 0;
+		r.prevRune = -1;
+		return [n, err];
+	};
+	Reader.prototype.Read = function(b) { return this.go$val.Read(b); };
+	Reader.Ptr.prototype.ReadAt = function(b, off) {
+		var n, err, r, _tuple, x, _tuple$1;
+		n = 0;
+		err = null;
+		r = this;
+		if ((off.high < 0 || (off.high === 0 && off.low < 0))) {
+			_tuple = [0, errors.New("strings: invalid offset")], n = _tuple[0], err = _tuple[1];
+			return [n, err];
+		}
+		if ((x = new Go$Int64(0, r.s.length), (off.high > x.high || (off.high === x.high && off.low >= x.low)))) {
+			_tuple$1 = [0, io.EOF], n = _tuple$1[0], err = _tuple$1[1];
+			return [n, err];
+		}
+		n = go$copyString(b, r.s.substring(((off.low + ((off.high >> 31) * 4294967296)) >> 0)));
+		if (n < b.length) {
+			err = io.EOF;
+		}
+		return [n, err];
+	};
+	Reader.prototype.ReadAt = function(b, off) { return this.go$val.ReadAt(b, off); };
+	Reader.Ptr.prototype.ReadByte = function() {
+		var b, err, r, _tuple;
+		b = 0;
+		err = null;
+		r = this;
+		if (r.i >= r.s.length) {
+			_tuple = [0, io.EOF], b = _tuple[0], err = _tuple[1];
+			return [b, err];
+		}
+		b = r.s.charCodeAt(r.i);
+		r.i = r.i + 1 >> 0;
+		r.prevRune = -1;
+		return [b, err];
+	};
+	Reader.prototype.ReadByte = function() { return this.go$val.ReadByte(); };
+	Reader.Ptr.prototype.UnreadByte = function() {
+		var r;
+		r = this;
+		if (r.i <= 0) {
+			return errors.New("strings.Reader: at beginning of string");
+		}
+		r.i = r.i - 1 >> 0;
+		r.prevRune = -1;
+		return null;
+	};
+	Reader.prototype.UnreadByte = function() { return this.go$val.UnreadByte(); };
+	Reader.Ptr.prototype.ReadRune = function() {
+		var ch, size, err, r, _tuple, c, _tuple$1, _tuple$2;
+		ch = 0;
+		size = 0;
+		err = null;
+		r = this;
+		if (r.i >= r.s.length) {
+			_tuple = [0, 0, io.EOF], ch = _tuple[0], size = _tuple[1], err = _tuple[2];
+			return [ch, size, err];
+		}
+		r.prevRune = r.i;
+		if (c = r.s.charCodeAt(r.i), c < 128) {
+			r.i = r.i + 1 >> 0;
+			_tuple$1 = [(c >> 0), 1, null], ch = _tuple$1[0], size = _tuple$1[1], err = _tuple$1[2];
+			return [ch, size, err];
+		}
+		_tuple$2 = utf8.DecodeRuneInString(r.s.substring(r.i)), ch = _tuple$2[0], size = _tuple$2[1];
+		r.i = r.i + (size) >> 0;
+		return [ch, size, err];
+	};
+	Reader.prototype.ReadRune = function() { return this.go$val.ReadRune(); };
+	Reader.Ptr.prototype.UnreadRune = function() {
+		var r;
+		r = this;
+		if (r.prevRune < 0) {
+			return errors.New("strings.Reader: previous operation was not ReadRune");
+		}
+		r.i = r.prevRune;
+		r.prevRune = -1;
+		return null;
+	};
+	Reader.prototype.UnreadRune = function() { return this.go$val.UnreadRune(); };
+	Reader.Ptr.prototype.Seek = function(offset, whence) {
+		var r, abs, _ref, x, x$1;
+		r = this;
+		abs = new Go$Int64(0, 0);
+		_ref = whence;
+		if (_ref === 0) {
+			abs = offset;
+		} else if (_ref === 1) {
+			abs = (x = new Go$Int64(0, r.i), new Go$Int64(x.high + offset.high, x.low + offset.low));
+		} else if (_ref === 2) {
+			abs = (x$1 = new Go$Int64(0, r.s.length), new Go$Int64(x$1.high + offset.high, x$1.low + offset.low));
+		} else {
+			return [new Go$Int64(0, 0), errors.New("strings: invalid whence")];
+		}
+		if ((abs.high < 0 || (abs.high === 0 && abs.low < 0))) {
+			return [new Go$Int64(0, 0), errors.New("strings: negative position")];
+		}
+		if ((abs.high > 0 || (abs.high === 0 && abs.low >= 2147483648))) {
+			return [new Go$Int64(0, 0), errors.New("strings: position out of range")];
+		}
+		r.i = ((abs.low + ((abs.high >> 31) * 4294967296)) >> 0);
+		return [abs, null];
+	};
+	Reader.prototype.Seek = function(offset, whence) { return this.go$val.Seek(offset, whence); };
+	Reader.Ptr.prototype.WriteTo = function(w) {
+		var n, err, r, _tuple, s, _tuple$1, m;
+		n = new Go$Int64(0, 0);
+		err = null;
+		r = this;
+		r.prevRune = -1;
+		if (r.i >= r.s.length) {
+			_tuple = [new Go$Int64(0, 0), null], n = _tuple[0], err = _tuple[1];
+			return [n, err];
+		}
+		s = r.s.substring(r.i);
+		_tuple$1 = io.WriteString(w, s), m = _tuple$1[0], err = _tuple$1[1];
+		if (m > s.length) {
+			throw go$panic(new Go$String("strings.Reader.WriteTo: invalid WriteString count"));
+		}
+		r.i = r.i + (m) >> 0;
+		n = new Go$Int64(0, m);
+		if (!((m === s.length)) && go$interfaceIsEqual(err, null)) {
+			err = io.ErrShortWrite;
+		}
+		return [n, err];
+	};
+	Reader.prototype.WriteTo = function(w) { return this.go$val.WriteTo(w); };
+	var NewReader = go$pkg.NewReader = function(s) {
+		return new Reader.Ptr(s, 0, -1);
+	};
+	byteBitmap.prototype.set = function(b) {
+		var m, _lhs, _index, y;
+		m = this.go$val;
+		_lhs = m, _index = b >>> 5 << 24 >>> 24, _lhs[_index] = (_lhs[_index] | (((y = (((b & 31) >>> 0)), y < 32 ? (1 << y) : 0) >>> 0))) >>> 0;
+	};
+	go$ptrType(byteBitmap).prototype.set = function(b) { return (new byteBitmap(this.go$get())).set(b); };
+	var NewReplacer = go$pkg.NewReplacer = function(oldnew) {
+		var _r, _slice, _index, _slice$1, _index$1, _slice$2, _index$2, allNewBytes, i, _slice$3, _index$3, _slice$4, _index$4, bb, i$1, _slice$5, _index$5, _slice$6, _index$6, _tuple, o, n, y, bs, i$2, _slice$7, _index$7, _slice$8, _index$8, _tuple$1, o$1, new$1, y$1;
+		if ((_r = oldnew.length % 2, _r === _r ? _r : go$throwRuntimeError("integer divide by zero")) === 1) {
+			throw go$panic(new Go$String("strings.NewReplacer: odd argument count"));
+		}
+		if ((oldnew.length === 2) && (_slice = oldnew, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")).length > 1) {
+			return new Replacer.Ptr(makeSingleStringReplacer((_slice$1 = oldnew, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")), (_slice$2 = oldnew, _index$2 = 1, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range"))));
+		}
+		allNewBytes = true;
+		i = 0;
+		while (i < oldnew.length) {
+			if (!(((_slice$3 = oldnew, _index$3 = i, (_index$3 >= 0 && _index$3 < _slice$3.length) ? _slice$3.array[_slice$3.offset + _index$3] : go$throwRuntimeError("index out of range")).length === 1))) {
+				return new Replacer.Ptr(makeGenericReplacer(oldnew));
+			}
+			if (!(((_slice$4 = oldnew, _index$4 = (i + 1 >> 0), (_index$4 >= 0 && _index$4 < _slice$4.length) ? _slice$4.array[_slice$4.offset + _index$4] : go$throwRuntimeError("index out of range")).length === 1))) {
+				allNewBytes = false;
+			}
+			i = i + 2 >> 0;
+		}
+		if (allNewBytes) {
+			bb = new byteReplacer.Ptr(go$makeNativeArray("Uint32", 8, function() { return 0; }), go$makeNativeArray("Uint8", 256, function() { return 0; }));
+			i$1 = 0;
+			while (i$1 < oldnew.length) {
+				_tuple = [(_slice$5 = oldnew, _index$5 = i$1, (_index$5 >= 0 && _index$5 < _slice$5.length) ? _slice$5.array[_slice$5.offset + _index$5] : go$throwRuntimeError("index out of range")).charCodeAt(0), (_slice$6 = oldnew, _index$6 = (i$1 + 1 >> 0), (_index$6 >= 0 && _index$6 < _slice$6.length) ? _slice$6.array[_slice$6.offset + _index$6] : go$throwRuntimeError("index out of range")).charCodeAt(0)], o = _tuple[0], n = _tuple[1];
+				if (!((((bb.old[(o >>> 5 << 24 >>> 24)] & ((y = (((o & 31) >>> 0)), y < 32 ? (1 << y) : 0) >>> 0)) >>> 0) === 0))) {
+					i$1 = i$1 + 2 >> 0;
+					continue;
+				}
+				(new byteBitmap(bb.old)).set(o);
+				bb.new$1[o] = n;
+				i$1 = i$1 + 2 >> 0;
+			}
+			return new Replacer.Ptr(bb);
+		}
+		bs = new byteStringReplacer.Ptr(go$makeNativeArray("Uint32", 8, function() { return 0; }), go$makeNativeArray("Slice", 256, function() { return (go$sliceType(Go$Uint8)).nil; }));
+		i$2 = 0;
+		while (i$2 < oldnew.length) {
+			_tuple$1 = [(_slice$7 = oldnew, _index$7 = i$2, (_index$7 >= 0 && _index$7 < _slice$7.length) ? _slice$7.array[_slice$7.offset + _index$7] : go$throwRuntimeError("index out of range")).charCodeAt(0), (_slice$8 = oldnew, _index$8 = (i$2 + 1 >> 0), (_index$8 >= 0 && _index$8 < _slice$8.length) ? _slice$8.array[_slice$8.offset + _index$8] : go$throwRuntimeError("index out of range"))], o$1 = _tuple$1[0], new$1 = _tuple$1[1];
+			if (!((((bs.old[(o$1 >>> 5 << 24 >>> 24)] & ((y$1 = (((o$1 & 31) >>> 0)), y$1 < 32 ? (1 << y$1) : 0) >>> 0)) >>> 0) === 0))) {
+				i$2 = i$2 + 2 >> 0;
+				continue;
+			}
+			(new byteBitmap(bs.old)).set(o$1);
+			bs.new$1[o$1] = new (go$sliceType(Go$Uint8))(go$stringToBytes(new$1));
+			i$2 = i$2 + 2 >> 0;
+		}
+		return new Replacer.Ptr(bs);
+	};
+	Replacer.Ptr.prototype.Replace = function(s) {
+		var r;
+		r = this;
+		return r.r.Replace(s);
+	};
+	Replacer.prototype.Replace = function(s) { return this.go$val.Replace(s); };
+	Replacer.Ptr.prototype.WriteString = function(w, s) {
+		var n, err, r, _tuple;
+		n = 0;
+		err = null;
+		r = this;
+		_tuple = r.r.WriteString(w, s), n = _tuple[0], err = _tuple[1];
+		return [n, err];
+	};
+	Replacer.prototype.WriteString = function(w, s) { return this.go$val.WriteString(w, s); };
+	trieNode.Ptr.prototype.add = function(key, val, priority, r) {
+		var t, n, prefixNode, keyNode, _slice, _index, _slice$1, _index$1, next, m, _slice$2, _index$2, _slice$3, _index$3, _slice$4, _index$4;
+		t = this;
+		if (key === "") {
+			if (t.priority === 0) {
+				t.value = val;
+				t.priority = priority;
+			}
+			return;
+		}
+		if (!(t.prefix === "")) {
+			n = 0;
+			while (n < t.prefix.length && n < key.length) {
+				if (!((t.prefix.charCodeAt(n) === key.charCodeAt(n)))) {
+					break;
+				}
+				n = n + 1 >> 0;
+			}
+			if (n === t.prefix.length) {
+				t.next.add(key.substring(n), val, priority, r);
+			} else if (n === 0) {
+				prefixNode = (go$ptrType(trieNode)).nil;
+				if (t.prefix.length === 1) {
+					prefixNode = t.next;
+				} else {
+					prefixNode = new trieNode.Ptr("", 0, t.prefix.substring(1), t.next, (go$sliceType((go$ptrType(trieNode)))).nil);
+				}
+				keyNode = new trieNode.Ptr();
+				t.table = (go$sliceType((go$ptrType(trieNode)))).make(r.tableSize, 0, function() { return (go$ptrType(trieNode)).nil; });
+				_slice = t.table, _index = r.mapping[t.prefix.charCodeAt(0)], (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = prefixNode) : go$throwRuntimeError("index out of range");
+				_slice$1 = t.table, _index$1 = r.mapping[key.charCodeAt(0)], (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = keyNode) : go$throwRuntimeError("index out of range");
+				t.prefix = "";
+				t.next = (go$ptrType(trieNode)).nil;
+				keyNode.add(key.substring(1), val, priority, r);
+			} else {
+				next = new trieNode.Ptr("", 0, t.prefix.substring(n), t.next, (go$sliceType((go$ptrType(trieNode)))).nil);
+				t.prefix = t.prefix.substring(0, n);
+				t.next = next;
+				next.add(key.substring(n), val, priority, r);
+			}
+		} else if (!(t.table === (go$sliceType((go$ptrType(trieNode)))).nil)) {
+			m = r.mapping[key.charCodeAt(0)];
+			if ((_slice$2 = t.table, _index$2 = m, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")) === (go$ptrType(trieNode)).nil) {
+				_slice$3 = t.table, _index$3 = m, (_index$3 >= 0 && _index$3 < _slice$3.length) ? (_slice$3.array[_slice$3.offset + _index$3] = new trieNode.Ptr()) : go$throwRuntimeError("index out of range");
+			}
+			(_slice$4 = t.table, _index$4 = m, (_index$4 >= 0 && _index$4 < _slice$4.length) ? _slice$4.array[_slice$4.offset + _index$4] : go$throwRuntimeError("index out of range")).add(key.substring(1), val, priority, r);
+		} else {
+			t.prefix = key;
+			t.next = new trieNode.Ptr();
+			t.next.add("", val, priority, r);
+		}
+	};
+	trieNode.prototype.add = function(key, val, priority, r) { return this.go$val.add(key, val, priority, r); };
+	genericReplacer.Ptr.prototype.lookup = function(s, ignoreRoot) {
+		var val, keylen, found, r, bestPriority, node, n, index, _slice, _index;
+		val = "";
+		keylen = 0;
+		found = false;
+		r = this;
+		bestPriority = 0;
+		node = r.root;
+		n = 0;
+		while (!(node === (go$ptrType(trieNode)).nil)) {
+			if (node.priority > bestPriority && !(ignoreRoot && node === r.root)) {
+				bestPriority = node.priority;
+				val = node.value;
+				keylen = n;
+				found = true;
+			}
+			if (s === "") {
+				break;
+			}
+			if (!(node.table === (go$sliceType((go$ptrType(trieNode)))).nil)) {
+				index = r.mapping[s.charCodeAt(0)];
+				if ((index >> 0) === r.tableSize) {
+					break;
+				}
+				node = (_slice = node.table, _index = index, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
+				s = s.substring(1);
+				n = n + 1 >> 0;
+			} else if (!(node.prefix === "") && HasPrefix(s, node.prefix)) {
+				n = n + (node.prefix.length) >> 0;
+				s = s.substring(node.prefix.length);
+				node = node.next;
+			} else {
+				break;
+			}
+		}
+		return [val, keylen, found];
+	};
+	genericReplacer.prototype.lookup = function(s, ignoreRoot) { return this.go$val.lookup(s, ignoreRoot); };
+	var makeGenericReplacer = function(oldnew) {
+		var r, i, _slice, _index, key, j, _ref, _i, b, index, _ref$1, _i$1, b$1, i$1, i$2, _slice$1, _index$1, _slice$2, _index$2;
+		r = new genericReplacer.Ptr();
+		i = 0;
+		while (i < oldnew.length) {
+			key = (_slice = oldnew, _index = i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
+			j = 0;
+			while (j < key.length) {
+				r.mapping[key.charCodeAt(j)] = 1;
+				j = j + 1 >> 0;
+			}
+			i = i + 2 >> 0;
+		}
+		_ref = r.mapping;
+		_i = 0;
+		while (_i < 256) {
+			b = _ref[_i];
+			r.tableSize = r.tableSize + ((b >> 0)) >> 0;
+			_i++;
+		}
+		index = 0;
+		_ref$1 = r.mapping;
+		_i$1 = 0;
+		while (_i$1 < 256) {
+			b$1 = _ref$1[_i$1];
+			i$1 = _i$1;
+			if (b$1 === 0) {
+				r.mapping[i$1] = (r.tableSize << 24 >>> 24);
+			} else {
+				r.mapping[i$1] = index;
+				index = index + 1 << 24 >>> 24;
+			}
+			_i$1++;
+		}
+		r.root.table = (go$sliceType((go$ptrType(trieNode)))).make(r.tableSize, 0, function() { return (go$ptrType(trieNode)).nil; });
+		i$2 = 0;
+		while (i$2 < oldnew.length) {
+			r.root.add((_slice$1 = oldnew, _index$1 = i$2, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")), (_slice$2 = oldnew, _index$2 = (i$2 + 1 >> 0), (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")), oldnew.length - i$2 >> 0, r);
+			i$2 = i$2 + 2 >> 0;
+		}
+		return r;
+	};
+	go$ptrType(appendSliceWriter).prototype.Write = function(p) {
+		var w;
+		w = this;
+		w.go$set(go$appendSlice(w.go$get(), p));
+		return [p.length, null];
+	};
+	appendSliceWriter.prototype.Write = function(p) { var obj = this; return (new (go$ptrType(appendSliceWriter))(function() { return obj; }, null)).Write(p); };
+	go$ptrType(appendSliceWriter).prototype.WriteString = function(s) {
+		var w;
+		w = this;
+		w.go$set(go$appendSlice(w.go$get(), new appendSliceWriter(go$stringToBytes(s))));
+		return [s.length, null];
+	};
+	appendSliceWriter.prototype.WriteString = function(s) { var obj = this; return (new (go$ptrType(appendSliceWriter))(function() { return obj; }, null)).WriteString(s); };
+	stringWriter.Ptr.prototype.WriteString = function(s) {
+		var _struct, w;
+		w = (_struct = this, new stringWriter.Ptr(_struct.w));
+		return w.w.Write(new (go$sliceType(Go$Uint8))(go$stringToBytes(s)));
+	};
+	stringWriter.prototype.WriteString = function(s) { return this.go$val.WriteString(s); };
+	var getStringWriter = function(w) {
+		var _tuple, sw, ok, x;
+		_tuple = (w !== null && stringWriterIface.implementedBy.indexOf(w.constructor) !== -1 ? [w, true] : [null, false]), sw = _tuple[0], ok = _tuple[1];
+		if (!ok) {
+			sw = (x = new stringWriter.Ptr(w), new x.constructor.Struct(x));
+		}
+		return sw;
+	};
+	genericReplacer.Ptr.prototype.Replace = function(s) {
+		var r, buf, v;
+		r = this;
+		buf = appendSliceWriter.make(0, s.length, function() { return 0; });
+		r.WriteString(new (go$ptrType(appendSliceWriter))(function() { return buf; }, function(v) { buf = v; }), s);
+		return go$bytesToString(buf);
+	};
+	genericReplacer.prototype.Replace = function(s) { return this.go$val.Replace(s); };
+	genericReplacer.Ptr.prototype.WriteString = function(w, s) {
+		var n, err, r, sw, _tuple, last, wn, prevMatchEmpty, i, _tuple$1, val, keylen, match, _tuple$2, _tuple$3, _tuple$4;
+		n = 0;
+		err = null;
+		r = this;
+		sw = getStringWriter(w);
+		_tuple = [0, 0], last = _tuple[0], wn = _tuple[1];
+		prevMatchEmpty = false;
+		i = 0;
+		while (i <= s.length) {
+			_tuple$1 = r.lookup(s.substring(i), prevMatchEmpty), val = _tuple$1[0], keylen = _tuple$1[1], match = _tuple$1[2];
+			prevMatchEmpty = match && (keylen === 0);
+			if (match) {
+				_tuple$2 = sw.WriteString(s.substring(last, i)), wn = _tuple$2[0], err = _tuple$2[1];
+				n = n + (wn) >> 0;
+				if (!(go$interfaceIsEqual(err, null))) {
+					return [n, err];
+				}
+				_tuple$3 = sw.WriteString(val), wn = _tuple$3[0], err = _tuple$3[1];
+				n = n + (wn) >> 0;
+				if (!(go$interfaceIsEqual(err, null))) {
+					return [n, err];
+				}
+				i = i + (keylen) >> 0;
+				last = i;
+				continue;
+			}
+			i = i + 1 >> 0;
+		}
+		if (!((last === s.length))) {
+			_tuple$4 = sw.WriteString(s.substring(last)), wn = _tuple$4[0], err = _tuple$4[1];
+			n = n + (wn) >> 0;
+		}
+		return [n, err];
+	};
+	genericReplacer.prototype.WriteString = function(w, s) { return this.go$val.WriteString(w, s); };
+	var makeSingleStringReplacer = function(pattern, value) {
+		return new singleStringReplacer.Ptr(makeStringFinder(pattern), value);
+	};
+	singleStringReplacer.Ptr.prototype.Replace = function(s) {
+		var r, buf, _tuple, i, matched, match;
+		r = this;
+		buf = (go$sliceType(Go$Uint8)).nil;
+		_tuple = [0, false], i = _tuple[0], matched = _tuple[1];
+		while (true) {
+			match = r.finder.next(s.substring(i));
+			if (match === -1) {
+				break;
+			}
+			matched = true;
+			buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes(s.substring(i, (i + match >> 0)))));
+			buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes(r.value)));
+			i = i + ((match + r.finder.pattern.length >> 0)) >> 0;
+		}
+		if (!matched) {
+			return s;
+		}
+		buf = go$appendSlice(buf, new (go$sliceType(Go$Uint8))(go$stringToBytes(s.substring(i))));
+		return go$bytesToString(buf);
+	};
+	singleStringReplacer.prototype.Replace = function(s) { return this.go$val.Replace(s); };
+	singleStringReplacer.Ptr.prototype.WriteString = function(w, s) {
+		var n, err, r, sw, _tuple, i, wn, match, _tuple$1, _tuple$2, _tuple$3;
+		n = 0;
+		err = null;
+		r = this;
+		sw = getStringWriter(w);
+		_tuple = [0, 0], i = _tuple[0], wn = _tuple[1];
+		while (true) {
+			match = r.finder.next(s.substring(i));
+			if (match === -1) {
+				break;
+			}
+			_tuple$1 = sw.WriteString(s.substring(i, (i + match >> 0))), wn = _tuple$1[0], err = _tuple$1[1];
+			n = n + (wn) >> 0;
+			if (!(go$interfaceIsEqual(err, null))) {
+				return [n, err];
+			}
+			_tuple$2 = sw.WriteString(r.value), wn = _tuple$2[0], err = _tuple$2[1];
+			n = n + (wn) >> 0;
+			if (!(go$interfaceIsEqual(err, null))) {
+				return [n, err];
+			}
+			i = i + ((match + r.finder.pattern.length >> 0)) >> 0;
+		}
+		_tuple$3 = sw.WriteString(s.substring(i)), wn = _tuple$3[0], err = _tuple$3[1];
+		n = n + (wn) >> 0;
+		return [n, err];
+	};
+	singleStringReplacer.prototype.WriteString = function(w, s) { return this.go$val.WriteString(w, s); };
+	byteReplacer.Ptr.prototype.Replace = function(s) {
+		var r, buf, i, b, y, _slice, _index;
+		r = this;
+		buf = (go$sliceType(Go$Uint8)).nil;
+		i = 0;
+		while (i < s.length) {
+			b = s.charCodeAt(i);
+			if (!((((r.old[(b >>> 5 << 24 >>> 24)] & ((y = (((b & 31) >>> 0)), y < 32 ? (1 << y) : 0) >>> 0)) >>> 0) === 0))) {
+				if (buf === (go$sliceType(Go$Uint8)).nil) {
+					buf = new (go$sliceType(Go$Uint8))(go$stringToBytes(s));
+				}
+				_slice = buf, _index = i, (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = r.new$1[b]) : go$throwRuntimeError("index out of range");
+			}
+			i = i + 1 >> 0;
+		}
+		if (buf === (go$sliceType(Go$Uint8)).nil) {
+			return s;
+		}
+		return go$bytesToString(buf);
+	};
+	byteReplacer.prototype.Replace = function(s) { return this.go$val.Replace(s); };
+	byteReplacer.Ptr.prototype.WriteString = function(w, s) {
+		var n, err, r, bufsize, buf, ncopy, _ref, _i, _slice, _index, b, i, y, _slice$1, _index$1, _tuple, wn, err$1, _tuple$1, _tuple$2;
+		n = 0;
+		err = null;
+		r = this;
+		bufsize = 32768;
+		if (s.length < bufsize) {
+			bufsize = s.length;
+		}
+		buf = (go$sliceType(Go$Uint8)).make(bufsize, 0, function() { return 0; });
+		while (s.length > 0) {
+			ncopy = go$copyString(buf, s);
+			s = s.substring(ncopy);
+			_ref = go$subslice(buf, 0, ncopy);
+			_i = 0;
+			while (_i < _ref.length) {
+				b = (_slice = _ref, _index = _i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
+				i = _i;
+				if (!((((r.old[(b >>> 5 << 24 >>> 24)] & ((y = (((b & 31) >>> 0)), y < 32 ? (1 << y) : 0) >>> 0)) >>> 0) === 0))) {
+					_slice$1 = buf, _index$1 = i, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = r.new$1[b]) : go$throwRuntimeError("index out of range");
+				}
+				_i++;
+			}
+			_tuple = w.Write(go$subslice(buf, 0, ncopy)), wn = _tuple[0], err$1 = _tuple[1];
+			n = n + (wn) >> 0;
+			if (!(go$interfaceIsEqual(err$1, null))) {
+				_tuple$1 = [n, err$1], n = _tuple$1[0], err = _tuple$1[1];
+				return [n, err];
+			}
+		}
+		_tuple$2 = [n, null], n = _tuple$2[0], err = _tuple$2[1];
+		return [n, err];
+	};
+	byteReplacer.prototype.WriteString = function(w, s) { return this.go$val.WriteString(w, s); };
+	byteStringReplacer.Ptr.prototype.Replace = function(s) {
+		var r, newSize, anyChanges, i, b, y, buf, bi, i$1, b$1, y$1, n, _slice, _index;
+		r = this;
+		newSize = 0;
+		anyChanges = false;
+		i = 0;
+		while (i < s.length) {
+			b = s.charCodeAt(i);
+			if (!((((r.old[(b >>> 5 << 24 >>> 24)] & ((y = (((b & 31) >>> 0)), y < 32 ? (1 << y) : 0) >>> 0)) >>> 0) === 0))) {
+				anyChanges = true;
+				newSize = newSize + (r.new$1[b].length) >> 0;
+			} else {
+				newSize = newSize + 1 >> 0;
+			}
+			i = i + 1 >> 0;
+		}
+		if (!anyChanges) {
+			return s;
+		}
+		buf = (go$sliceType(Go$Uint8)).make(newSize, 0, function() { return 0; });
+		bi = buf;
+		i$1 = 0;
+		while (i$1 < s.length) {
+			b$1 = s.charCodeAt(i$1);
+			if (!((((r.old[(b$1 >>> 5 << 24 >>> 24)] & ((y$1 = (((b$1 & 31) >>> 0)), y$1 < 32 ? (1 << y$1) : 0) >>> 0)) >>> 0) === 0))) {
+				n = go$copySlice(bi, r.new$1[b$1]);
+				bi = go$subslice(bi, n);
+			} else {
+				_slice = bi, _index = 0, (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = b$1) : go$throwRuntimeError("index out of range");
+				bi = go$subslice(bi, 1);
+			}
+			i$1 = i$1 + 1 >> 0;
+		}
+		return go$bytesToString(buf);
+	};
+	byteStringReplacer.prototype.Replace = function(s) { return this.go$val.Replace(s); };
+	byteStringReplacer.Ptr.prototype.WriteString = function(w, s) {
+		var n, err, r, bufsize, buf, bi, i, b, new$1, y, _tuple, nw, err$1, _tuple$1, _tuple$2, nw$1, err$2, _tuple$3, _tuple$4, nw$2, err$3, _tuple$5, _tuple$6;
+		n = 0;
+		err = null;
+		r = this;
+		bufsize = 32768;
+		if (s.length < bufsize) {
+			bufsize = s.length;
+		}
+		buf = (go$sliceType(Go$Uint8)).make(bufsize, 0, function() { return 0; });
+		bi = go$subslice(buf, 0, 0);
+		i = 0;
+		while (i < s.length) {
+			b = s.charCodeAt(i);
+			new$1 = (go$sliceType(Go$Uint8)).nil;
+			if (!((((r.old[(b >>> 5 << 24 >>> 24)] & ((y = (((b & 31) >>> 0)), y < 32 ? (1 << y) : 0) >>> 0)) >>> 0) === 0))) {
+				new$1 = r.new$1[b];
+			} else {
+				bi = go$append(bi, b);
+			}
+			if ((bi.length === bi.capacity) || (bi.length > 0 && new$1.length > 0)) {
+				_tuple = w.Write(bi), nw = _tuple[0], err$1 = _tuple[1];
+				n = n + (nw) >> 0;
+				if (!(go$interfaceIsEqual(err$1, null))) {
+					_tuple$1 = [n, err$1], n = _tuple$1[0], err = _tuple$1[1];
+					return [n, err];
+				}
+				bi = go$subslice(buf, 0, 0);
+			}
+			if (new$1.length > 0) {
+				_tuple$2 = w.Write(new$1), nw$1 = _tuple$2[0], err$2 = _tuple$2[1];
+				n = n + (nw$1) >> 0;
+				if (!(go$interfaceIsEqual(err$2, null))) {
+					_tuple$3 = [n, err$2], n = _tuple$3[0], err = _tuple$3[1];
+					return [n, err];
+				}
+			}
+			i = i + 1 >> 0;
+		}
+		if (bi.length > 0) {
+			_tuple$4 = w.Write(bi), nw$2 = _tuple$4[0], err$3 = _tuple$4[1];
+			n = n + (nw$2) >> 0;
+			if (!(go$interfaceIsEqual(err$3, null))) {
+				_tuple$5 = [n, err$3], n = _tuple$5[0], err = _tuple$5[1];
+				return [n, err];
+			}
+		}
+		_tuple$6 = [n, null], n = _tuple$6[0], err = _tuple$6[1];
+		return [n, err];
+	};
+	byteStringReplacer.prototype.WriteString = function(w, s) { return this.go$val.WriteString(w, s); };
+	var makeStringFinder = function(pattern) {
+		var f, last, _ref, _i, i, i$1, lastPrefix, i$2, _slice, _index, i$3, lenSuffix, _slice$1, _index$1;
+		f = new stringFinder.Ptr(pattern, go$makeNativeArray("Int", 256, function() { return 0; }), (go$sliceType(Go$Int)).make(pattern.length, 0, function() { return 0; }));
+		last = pattern.length - 1 >> 0;
+		_ref = f.badCharSkip;
+		_i = 0;
+		while (_i < 256) {
+			i = _i;
+			f.badCharSkip[i] = pattern.length;
+			_i++;
+		}
+		i$1 = 0;
+		while (i$1 < last) {
+			f.badCharSkip[pattern.charCodeAt(i$1)] = last - i$1 >> 0;
+			i$1 = i$1 + 1 >> 0;
+		}
+		lastPrefix = last;
+		i$2 = last;
+		while (i$2 >= 0) {
+			if (HasPrefix(pattern, pattern.substring((i$2 + 1 >> 0)))) {
+				lastPrefix = i$2 + 1 >> 0;
+			}
+			_slice = f.goodSuffixSkip, _index = i$2, (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = (lastPrefix + last >> 0) - i$2 >> 0) : go$throwRuntimeError("index out of range");
+			i$2 = i$2 - 1 >> 0;
+		}
+		i$3 = 0;
+		while (i$3 < last) {
+			lenSuffix = longestCommonSuffix(pattern, pattern.substring(1, (i$3 + 1 >> 0)));
+			if (!((pattern.charCodeAt((i$3 - lenSuffix >> 0)) === pattern.charCodeAt((last - lenSuffix >> 0))))) {
+				_slice$1 = f.goodSuffixSkip, _index$1 = last - lenSuffix >> 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = (lenSuffix + last >> 0) - i$3 >> 0) : go$throwRuntimeError("index out of range");
+			}
+			i$3 = i$3 + 1 >> 0;
+		}
+		return f;
+	};
+	var longestCommonSuffix = function(a, b) {
+		var i;
+		i = 0;
+		while (i < a.length && i < b.length) {
+			if (!((a.charCodeAt(((a.length - 1 >> 0) - i >> 0)) === b.charCodeAt(((b.length - 1 >> 0) - i >> 0))))) {
+				break;
+			}
+			i = i + 1 >> 0;
+		}
+		return i;
+	};
+	stringFinder.Ptr.prototype.next = function(text) {
+		var f, i, j, _slice, _index;
+		f = this;
+		i = f.pattern.length - 1 >> 0;
+		while (i < text.length) {
+			j = f.pattern.length - 1 >> 0;
+			while (j >= 0 && (text.charCodeAt(i) === f.pattern.charCodeAt(j))) {
+				i = i - 1 >> 0;
+				j = j - 1 >> 0;
+			}
+			if (j < 0) {
+				return i + 1 >> 0;
+			}
+			i = i + (max(f.badCharSkip[text.charCodeAt(i)], (_slice = f.goodSuffixSkip, _index = j, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")))) >> 0;
+		}
+		return -1;
+	};
+	stringFinder.prototype.next = function(text) { return this.go$val.next(text); };
+	var max = function(a, b) {
+		if (a > b) {
+			return a;
+		}
+		return b;
+	};
+	var explode = function(s, n) {
+		var l, a, size, ch, _tuple, i, cur, _tuple$1, _slice, _index, _slice$1, _index$1, _slice$2, _index$2;
+		if (n === 0) {
+			return (go$sliceType(Go$String)).nil;
+		}
+		l = utf8.RuneCountInString(s);
+		if (n <= 0 || n > l) {
+			n = l;
+		}
+		a = (go$sliceType(Go$String)).make(n, 0, function() { return ""; });
+		size = 0;
+		ch = 0;
+		_tuple = [0, 0], i = _tuple[0], cur = _tuple[1];
+		while ((i + 1 >> 0) < n) {
+			_tuple$1 = utf8.DecodeRuneInString(s.substring(cur)), ch = _tuple$1[0], size = _tuple$1[1];
+			if (ch === 65533) {
+				_slice = a, _index = i, (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = "\xEF\xBF\xBD") : go$throwRuntimeError("index out of range");
+			} else {
+				_slice$1 = a, _index$1 = i, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = s.substring(cur, (cur + size >> 0))) : go$throwRuntimeError("index out of range");
+			}
+			cur = cur + (size) >> 0;
+			i = i + 1 >> 0;
+		}
+		if (cur < s.length) {
+			_slice$2 = a, _index$2 = i, (_index$2 >= 0 && _index$2 < _slice$2.length) ? (_slice$2.array[_slice$2.offset + _index$2] = s.substring(cur)) : go$throwRuntimeError("index out of range");
+		}
+		return a;
+	};
+	var hashstr = function(sep) {
+		var hash, i, _tuple, pow, sq, i$1, x, x$1;
+		hash = 0;
+		i = 0;
+		while (i < sep.length) {
+			hash = ((((hash >>> 16 << 16) * 16777619 >>> 0) + (hash << 16 >>> 16) * 16777619) >>> 0) + (sep.charCodeAt(i) >>> 0) >>> 0;
+			i = i + 1 >> 0;
+		}
+		_tuple = [1, 16777619], pow = _tuple[0], sq = _tuple[1];
+		i$1 = sep.length;
+		while (i$1 > 0) {
+			if (!(((i$1 & 1) === 0))) {
+				pow = (x = sq, (((pow >>> 16 << 16) * x >>> 0) + (pow << 16 >>> 16) * x) >>> 0);
+			}
+			sq = (x$1 = sq, (((sq >>> 16 << 16) * x$1 >>> 0) + (sq << 16 >>> 16) * x$1) >>> 0);
+			i$1 = i$1 >> 1 >> 0;
+		}
+		return [hash, pow];
+	};
+	var Count = go$pkg.Count = function(s, sep) {
+		var n, c, i, _tuple, hashsep, pow, h, i$1, lastmatch, i$2, x, x$1;
+		n = 0;
+		if (sep.length === 0) {
+			return utf8.RuneCountInString(s) + 1 >> 0;
+		} else if (sep.length === 1) {
+			c = sep.charCodeAt(0);
+			i = 0;
+			while (i < s.length) {
+				if (s.charCodeAt(i) === c) {
+					n = n + 1 >> 0;
+				}
+				i = i + 1 >> 0;
+			}
+			return n;
+		} else if (sep.length > s.length) {
+			return 0;
+		} else if (sep.length === s.length) {
+			if (sep === s) {
+				return 1;
+			}
+			return 0;
+		}
+		_tuple = hashstr(sep), hashsep = _tuple[0], pow = _tuple[1];
+		h = 0;
+		i$1 = 0;
+		while (i$1 < sep.length) {
+			h = ((((h >>> 16 << 16) * 16777619 >>> 0) + (h << 16 >>> 16) * 16777619) >>> 0) + (s.charCodeAt(i$1) >>> 0) >>> 0;
+			i$1 = i$1 + 1 >> 0;
+		}
+		lastmatch = 0;
+		if ((h === hashsep) && s.substring(0, sep.length) === sep) {
+			n = n + 1 >> 0;
+			lastmatch = sep.length;
+		}
+		i$2 = sep.length;
+		while (i$2 < s.length) {
+			h = (x = 16777619, (((h >>> 16 << 16) * x >>> 0) + (h << 16 >>> 16) * x) >>> 0);
+			h = h + ((s.charCodeAt(i$2) >>> 0)) >>> 0;
+			h = h - ((x$1 = (s.charCodeAt((i$2 - sep.length >> 0)) >>> 0), (((pow >>> 16 << 16) * x$1 >>> 0) + (pow << 16 >>> 16) * x$1) >>> 0)) >>> 0;
+			i$2 = i$2 + 1 >> 0;
+			if ((h === hashsep) && lastmatch <= (i$2 - sep.length >> 0) && s.substring(i$2 - sep.length >> 0, i$2) === sep) {
+				n = n + 1 >> 0;
+				lastmatch = i$2;
+			}
+		}
+		return n;
+	};
+	var Contains = go$pkg.Contains = function(s, substr) {
+		return Index(s, substr) >= 0;
+	};
+	var ContainsAny = go$pkg.ContainsAny = function(s, chars) {
+		return IndexAny(s, chars) >= 0;
+	};
+	var ContainsRune = go$pkg.ContainsRune = function(s, r) {
+		return IndexRune(s, r) >= 0;
+	};
+	var Index = go$pkg.Index = function(s, sep) {
+		var n, _tuple, hashsep, pow, h, i, i$1, x, x$1;
+		n = sep.length;
+		if (n === 0) {
+			return 0;
+		} else if (n === 1) {
+			return IndexByte(s, sep.charCodeAt(0));
+		} else if (n === s.length) {
+			if (sep === s) {
+				return 0;
+			}
+			return -1;
+		} else if (n > s.length) {
+			return -1;
+		}
+		_tuple = hashstr(sep), hashsep = _tuple[0], pow = _tuple[1];
+		h = 0;
+		i = 0;
+		while (i < n) {
+			h = ((((h >>> 16 << 16) * 16777619 >>> 0) + (h << 16 >>> 16) * 16777619) >>> 0) + (s.charCodeAt(i) >>> 0) >>> 0;
+			i = i + 1 >> 0;
+		}
+		if ((h === hashsep) && s.substring(0, n) === sep) {
+			return 0;
+		}
+		i$1 = n;
+		while (i$1 < s.length) {
+			h = (x = 16777619, (((h >>> 16 << 16) * x >>> 0) + (h << 16 >>> 16) * x) >>> 0);
+			h = h + ((s.charCodeAt(i$1) >>> 0)) >>> 0;
+			h = h - ((x$1 = (s.charCodeAt((i$1 - n >> 0)) >>> 0), (((pow >>> 16 << 16) * x$1 >>> 0) + (pow << 16 >>> 16) * x$1) >>> 0)) >>> 0;
+			i$1 = i$1 + 1 >> 0;
+			if ((h === hashsep) && s.substring(i$1 - n >> 0, i$1) === sep) {
+				return i$1 - n >> 0;
+			}
+		}
+		return -1;
+	};
+	var LastIndex = go$pkg.LastIndex = function(s, sep) {
+		var n, c, i, i$1;
+		n = sep.length;
+		if (n === 0) {
+			return s.length;
+		}
+		c = sep.charCodeAt(0);
+		if (n === 1) {
+			i = s.length - 1 >> 0;
+			while (i >= 0) {
+				if (s.charCodeAt(i) === c) {
+					return i;
+				}
+				i = i - 1 >> 0;
+			}
+			return -1;
+		}
+		i$1 = s.length - n >> 0;
+		while (i$1 >= 0) {
+			if ((s.charCodeAt(i$1) === c) && s.substring(i$1, (i$1 + n >> 0)) === sep) {
+				return i$1;
+			}
+			i$1 = i$1 - 1 >> 0;
+		}
+		return -1;
+	};
+	var IndexRune = go$pkg.IndexRune = function(s, r) {
+		var b, i, _ref, _i, _rune, c, i$1;
+		if (r < 128) {
+			b = (r << 24 >>> 24);
+			i = 0;
+			while (i < s.length) {
+				if (s.charCodeAt(i) === b) {
+					return i;
+				}
+				i = i + 1 >> 0;
+			}
+		} else {
+			_ref = s;
+			_i = 0;
+			while (_i < _ref.length) {
+				_rune = go$decodeRune(_ref, _i);
+				c = _rune[0];
+				i$1 = _i;
+				if (c === r) {
+					return i$1;
+				}
+				_i += _rune[1];
+			}
+		}
+		return -1;
+	};
+	var IndexAny = go$pkg.IndexAny = function(s, chars) {
+		var _ref, _i, _rune, c, i, _ref$1, _i$1, _rune$1, m;
+		if (chars.length > 0) {
+			_ref = s;
+			_i = 0;
+			while (_i < _ref.length) {
+				_rune = go$decodeRune(_ref, _i);
+				c = _rune[0];
+				i = _i;
+				_ref$1 = chars;
+				_i$1 = 0;
+				while (_i$1 < _ref$1.length) {
+					_rune$1 = go$decodeRune(_ref$1, _i$1);
+					m = _rune$1[0];
+					if (c === m) {
+						return i;
+					}
+					_i$1 += _rune$1[1];
+				}
+				_i += _rune[1];
+			}
+		}
+		return -1;
+	};
+	var LastIndexAny = go$pkg.LastIndexAny = function(s, chars) {
+		var i, _tuple, rune, size, _ref, _i, _rune, m;
+		if (chars.length > 0) {
+			i = s.length;
+			while (i > 0) {
+				_tuple = utf8.DecodeLastRuneInString(s.substring(0, i)), rune = _tuple[0], size = _tuple[1];
+				i = i - (size) >> 0;
+				_ref = chars;
+				_i = 0;
+				while (_i < _ref.length) {
+					_rune = go$decodeRune(_ref, _i);
+					m = _rune[0];
+					if (rune === m) {
+						return i;
+					}
+					_i += _rune[1];
+				}
+			}
+		}
+		return -1;
+	};
+	var genSplit = function(s, sep, sepSave, n) {
+		var c, start, a, na, i, _slice, _index, _slice$1, _index$1;
+		if (n === 0) {
+			return (go$sliceType(Go$String)).nil;
+		}
+		if (sep === "") {
+			return explode(s, n);
+		}
+		if (n < 0) {
+			n = Count(s, sep) + 1 >> 0;
+		}
+		c = sep.charCodeAt(0);
+		start = 0;
+		a = (go$sliceType(Go$String)).make(n, 0, function() { return ""; });
+		na = 0;
+		i = 0;
+		while ((i + sep.length >> 0) <= s.length && (na + 1 >> 0) < n) {
+			if ((s.charCodeAt(i) === c) && ((sep.length === 1) || s.substring(i, (i + sep.length >> 0)) === sep)) {
+				_slice = a, _index = na, (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = s.substring(start, (i + sepSave >> 0))) : go$throwRuntimeError("index out of range");
+				na = na + 1 >> 0;
+				start = i + sep.length >> 0;
+				i = i + ((sep.length - 1 >> 0)) >> 0;
+			}
+			i = i + 1 >> 0;
+		}
+		_slice$1 = a, _index$1 = na, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = s.substring(start)) : go$throwRuntimeError("index out of range");
+		return go$subslice(a, 0, (na + 1 >> 0));
+	};
+	var SplitN = go$pkg.SplitN = function(s, sep, n) {
+		return genSplit(s, sep, 0, n);
+	};
+	var SplitAfterN = go$pkg.SplitAfterN = function(s, sep, n) {
+		return genSplit(s, sep, sep.length, n);
+	};
+	var Split = go$pkg.Split = function(s, sep) {
+		return genSplit(s, sep, 0, -1);
+	};
+	var SplitAfter = go$pkg.SplitAfter = function(s, sep) {
+		return genSplit(s, sep, sep.length, -1);
+	};
+	var Fields = go$pkg.Fields = function(s) {
+		return FieldsFunc(s, unicode.IsSpace);
+	};
+	var FieldsFunc = go$pkg.FieldsFunc = function(s, f) {
+		var n, inField, _ref, _i, _rune, rune, wasInField, a, na, fieldStart, _ref$1, _i$1, _rune$1, rune$1, i, _slice, _index, _slice$1, _index$1;
+		n = 0;
+		inField = false;
+		_ref = s;
+		_i = 0;
+		while (_i < _ref.length) {
+			_rune = go$decodeRune(_ref, _i);
+			rune = _rune[0];
+			wasInField = inField;
+			inField = !f(rune);
+			if (inField && !wasInField) {
+				n = n + 1 >> 0;
+			}
+			_i += _rune[1];
+		}
+		a = (go$sliceType(Go$String)).make(n, 0, function() { return ""; });
+		na = 0;
+		fieldStart = -1;
+		_ref$1 = s;
+		_i$1 = 0;
+		while (_i$1 < _ref$1.length) {
+			_rune$1 = go$decodeRune(_ref$1, _i$1);
+			rune$1 = _rune$1[0];
+			i = _i$1;
+			if (f(rune$1)) {
+				if (fieldStart >= 0) {
+					_slice = a, _index = na, (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = s.substring(fieldStart, i)) : go$throwRuntimeError("index out of range");
+					na = na + 1 >> 0;
+					fieldStart = -1;
+				}
+			} else if (fieldStart === -1) {
+				fieldStart = i;
+			}
+			_i$1 += _rune$1[1];
+		}
+		if (fieldStart >= 0) {
+			_slice$1 = a, _index$1 = na, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = s.substring(fieldStart)) : go$throwRuntimeError("index out of range");
+		}
+		return a;
+	};
+	var Join = go$pkg.Join = function(a, sep) {
+		var _slice, _index, x, x$1, n, i, _slice$1, _index$1, b, _slice$2, _index$2, bp, _ref, _i, _slice$3, _index$3, s;
+		if (a.length === 0) {
+			return "";
+		}
+		if (a.length === 1) {
+			return (_slice = a, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
+		}
+		n = (x = sep.length, x$1 = (a.length - 1 >> 0), (((x >>> 16 << 16) * x$1 >> 0) + (x << 16 >>> 16) * x$1) >> 0);
+		i = 0;
+		while (i < a.length) {
+			n = n + ((_slice$1 = a, _index$1 = i, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")).length) >> 0;
+			i = i + 1 >> 0;
+		}
+		b = (go$sliceType(Go$Uint8)).make(n, 0, function() { return 0; });
+		bp = go$copyString(b, (_slice$2 = a, _index$2 = 0, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")));
+		_ref = go$subslice(a, 1);
+		_i = 0;
+		while (_i < _ref.length) {
+			s = (_slice$3 = _ref, _index$3 = _i, (_index$3 >= 0 && _index$3 < _slice$3.length) ? _slice$3.array[_slice$3.offset + _index$3] : go$throwRuntimeError("index out of range"));
+			bp = bp + (go$copyString(go$subslice(b, bp), sep)) >> 0;
+			bp = bp + (go$copyString(go$subslice(b, bp), s)) >> 0;
+			_i++;
+		}
+		return go$bytesToString(b);
+	};
+	var HasPrefix = go$pkg.HasPrefix = function(s, prefix) {
+		return s.length >= prefix.length && s.substring(0, prefix.length) === prefix;
+	};
+	var HasSuffix = go$pkg.HasSuffix = function(s, suffix) {
+		return s.length >= suffix.length && s.substring((s.length - suffix.length >> 0)) === suffix;
+	};
+	var Map = go$pkg.Map = function(mapping, s) {
+		var maxbytes, nbytes, b, _ref, _i, _rune, c, i, r, wid, x, nb;
+		maxbytes = s.length;
+		nbytes = 0;
+		b = (go$sliceType(Go$Uint8)).nil;
+		_ref = s;
+		_i = 0;
+		while (_i < _ref.length) {
+			_rune = go$decodeRune(_ref, _i);
+			c = _rune[0];
+			i = _i;
+			r = mapping(c);
+			if (b === (go$sliceType(Go$Uint8)).nil) {
+				if (r === c) {
+					_i += _rune[1];
+					continue;
+				}
+				b = (go$sliceType(Go$Uint8)).make(maxbytes, 0, function() { return 0; });
+				nbytes = go$copyString(b, s.substring(0, i));
+			}
+			if (r >= 0) {
+				wid = 1;
+				if (r >= 128) {
+					wid = utf8.RuneLen(r);
+				}
+				if ((nbytes + wid >> 0) > maxbytes) {
+					maxbytes = (x = 2, (((maxbytes >>> 16 << 16) * x >> 0) + (maxbytes << 16 >>> 16) * x) >> 0) + 4 >> 0;
+					nb = (go$sliceType(Go$Uint8)).make(maxbytes, 0, function() { return 0; });
+					go$copySlice(nb, go$subslice(b, 0, nbytes));
+					b = nb;
+				}
+				nbytes = nbytes + (utf8.EncodeRune(go$subslice(b, nbytes, maxbytes), r)) >> 0;
+			}
+			_i += _rune[1];
+		}
+		if (b === (go$sliceType(Go$Uint8)).nil) {
+			return s;
+		}
+		return go$bytesToString(go$subslice(b, 0, nbytes));
+	};
+	var Repeat = go$pkg.Repeat = function(s, count) {
+		var x, b, bp, i;
+		b = (go$sliceType(Go$Uint8)).make((x = s.length, (((x >>> 16 << 16) * count >> 0) + (x << 16 >>> 16) * count) >> 0), 0, function() { return 0; });
+		bp = 0;
+		i = 0;
+		while (i < count) {
+			bp = bp + (go$copyString(go$subslice(b, bp), s)) >> 0;
+			i = i + 1 >> 0;
+		}
+		return go$bytesToString(b);
+	};
+	var ToUpper = go$pkg.ToUpper = function(s) {
+		return Map(unicode.ToUpper, s);
+	};
+	var ToLower = go$pkg.ToLower = function(s) {
+		return Map(unicode.ToLower, s);
+	};
+	var ToTitle = go$pkg.ToTitle = function(s) {
+		return Map(unicode.ToTitle, s);
+	};
+	var ToUpperSpecial = go$pkg.ToUpperSpecial = function(_case, s) {
+		return Map((function(r) {
+			return _case.ToUpper(r);
+		}), s);
+	};
+	var ToLowerSpecial = go$pkg.ToLowerSpecial = function(_case, s) {
+		return Map((function(r) {
+			return _case.ToLower(r);
+		}), s);
+	};
+	var ToTitleSpecial = go$pkg.ToTitleSpecial = function(_case, s) {
+		return Map((function(r) {
+			return _case.ToTitle(r);
+		}), s);
+	};
+	var isSeparator = function(r) {
+		if (r <= 127) {
+			if (48 <= r && r <= 57) {
+				return false;
+			} else if (97 <= r && r <= 122) {
+				return false;
+			} else if (65 <= r && r <= 90) {
+				return false;
+			} else if (r === 95) {
+				return false;
+			}
+			return true;
+		}
+		if (unicode.IsLetter(r) || unicode.IsDigit(r)) {
+			return false;
+		}
+		return unicode.IsSpace(r);
+	};
+	var Title = go$pkg.Title = function(s) {
+		var prev;
+		prev = 32;
+		return Map((function(r) {
+			if (isSeparator(prev)) {
+				prev = r;
+				return unicode.ToTitle(r);
+			}
+			prev = r;
+			return r;
+		}), s);
+	};
+	var TrimLeftFunc = go$pkg.TrimLeftFunc = function(s, f) {
+		var i;
+		i = indexFunc(s, f, false);
+		if (i === -1) {
+			return "";
+		}
+		return s.substring(i);
+	};
+	var TrimRightFunc = go$pkg.TrimRightFunc = function(s, f) {
+		var i, _tuple, wid;
+		i = lastIndexFunc(s, f, false);
+		if (i >= 0 && s.charCodeAt(i) >= 128) {
+			_tuple = utf8.DecodeRuneInString(s.substring(i)), wid = _tuple[1];
+			i = i + (wid) >> 0;
+		} else {
+			i = i + 1 >> 0;
+		}
+		return s.substring(0, i);
+	};
+	var TrimFunc = go$pkg.TrimFunc = function(s, f) {
+		return TrimRightFunc(TrimLeftFunc(s, f), f);
+	};
+	var IndexFunc = go$pkg.IndexFunc = function(s, f) {
+		return indexFunc(s, f, true);
+	};
+	var LastIndexFunc = go$pkg.LastIndexFunc = function(s, f) {
+		return lastIndexFunc(s, f, true);
+	};
+	var indexFunc = function(s, f, truth) {
+		var start, wid, r, _tuple;
+		start = 0;
+		while (start < s.length) {
+			wid = 1;
+			r = (s.charCodeAt(start) >> 0);
+			if (r >= 128) {
+				_tuple = utf8.DecodeRuneInString(s.substring(start)), r = _tuple[0], wid = _tuple[1];
+			}
+			if (f(r) === truth) {
+				return start;
+			}
+			start = start + (wid) >> 0;
+		}
+		return -1;
+	};
+	var lastIndexFunc = function(s, f, truth) {
+		var i, _tuple, r, size;
+		i = s.length;
+		while (i > 0) {
+			_tuple = utf8.DecodeLastRuneInString(s.substring(0, i)), r = _tuple[0], size = _tuple[1];
+			i = i - (size) >> 0;
+			if (f(r) === truth) {
+				return i;
+			}
+		}
+		return -1;
+	};
+	var makeCutsetFunc = function(cutset) {
+		return (function(r) {
+			return IndexRune(cutset, r) >= 0;
+		});
+	};
+	var Trim = go$pkg.Trim = function(s, cutset) {
+		if (s === "" || cutset === "") {
+			return s;
+		}
+		return TrimFunc(s, makeCutsetFunc(cutset));
+	};
+	var TrimLeft = go$pkg.TrimLeft = function(s, cutset) {
+		if (s === "" || cutset === "") {
+			return s;
+		}
+		return TrimLeftFunc(s, makeCutsetFunc(cutset));
+	};
+	var TrimRight = go$pkg.TrimRight = function(s, cutset) {
+		if (s === "" || cutset === "") {
+			return s;
+		}
+		return TrimRightFunc(s, makeCutsetFunc(cutset));
+	};
+	var TrimSpace = go$pkg.TrimSpace = function(s) {
+		return TrimFunc(s, unicode.IsSpace);
+	};
+	var TrimPrefix = go$pkg.TrimPrefix = function(s, prefix) {
+		if (HasPrefix(s, prefix)) {
+			return s.substring(prefix.length);
+		}
+		return s;
+	};
+	var TrimSuffix = go$pkg.TrimSuffix = function(s, suffix) {
+		if (HasSuffix(s, suffix)) {
+			return s.substring(0, (s.length - suffix.length >> 0));
+		}
+		return s;
+	};
+	var Replace = go$pkg.Replace = function(s, old, new$1, n) {
+		var m, x, t, w, start, i, j, _tuple, wid;
+		if (old === new$1 || (n === 0)) {
+			return s;
+		}
+		if (m = Count(s, old), m === 0) {
+			return s;
+		} else if (n < 0 || m < n) {
+			n = m;
+		}
+		t = (go$sliceType(Go$Uint8)).make(s.length + (x = (new$1.length - old.length >> 0), (((n >>> 16 << 16) * x >> 0) + (n << 16 >>> 16) * x) >> 0) >> 0, 0, function() { return 0; });
+		w = 0;
+		start = 0;
+		i = 0;
+		while (i < n) {
+			j = start;
+			if (old.length === 0) {
+				if (i > 0) {
+					_tuple = utf8.DecodeRuneInString(s.substring(start)), wid = _tuple[1];
+					j = j + (wid) >> 0;
+				}
+			} else {
+				j = j + (Index(s.substring(start), old)) >> 0;
+			}
+			w = w + (go$copyString(go$subslice(t, w), s.substring(start, j))) >> 0;
+			w = w + (go$copyString(go$subslice(t, w), new$1)) >> 0;
+			start = j + old.length >> 0;
+			i = i + 1 >> 0;
+		}
+		w = w + (go$copyString(go$subslice(t, w), s.substring(start))) >> 0;
+		return go$bytesToString(go$subslice(t, 0, w));
+	};
+	var EqualFold = go$pkg.EqualFold = function(s, t) {
+		var _tuple, sr, tr, _tuple$1, _tuple$2, r, size, _tuple$3, _tuple$4, _tuple$5, r$1, size$1, _tuple$6, _tuple$7, r$2;
+		while (!(s === "") && !(t === "")) {
+			_tuple = [0, 0], sr = _tuple[0], tr = _tuple[1];
+			if (s.charCodeAt(0) < 128) {
+				_tuple$1 = [(s.charCodeAt(0) >> 0), s.substring(1)], sr = _tuple$1[0], s = _tuple$1[1];
+			} else {
+				_tuple$2 = utf8.DecodeRuneInString(s), r = _tuple$2[0], size = _tuple$2[1];
+				_tuple$3 = [r, s.substring(size)], sr = _tuple$3[0], s = _tuple$3[1];
+			}
+			if (t.charCodeAt(0) < 128) {
+				_tuple$4 = [(t.charCodeAt(0) >> 0), t.substring(1)], tr = _tuple$4[0], t = _tuple$4[1];
+			} else {
+				_tuple$5 = utf8.DecodeRuneInString(t), r$1 = _tuple$5[0], size$1 = _tuple$5[1];
+				_tuple$6 = [r$1, t.substring(size$1)], tr = _tuple$6[0], t = _tuple$6[1];
+			}
+			if (tr === sr) {
+				continue;
+			}
+			if (tr < sr) {
+				_tuple$7 = [sr, tr], tr = _tuple$7[0], sr = _tuple$7[1];
+			}
+			if (tr < 128 && 65 <= sr && sr <= 90) {
+				if (tr === ((sr + 97 >> 0) - 65 >> 0)) {
+					continue;
+				}
+				return false;
+			}
+			r$2 = unicode.SimpleFold(sr);
+			while (!((r$2 === sr)) && r$2 < tr) {
+				r$2 = unicode.SimpleFold(r$2);
+			}
+			if (r$2 === tr) {
+				continue;
+			}
+			return false;
+		}
+		return s === t;
+	};
+	var IndexByte = go$pkg.IndexByte = function(s, c) { return s.indexOf(String.fromCharCode(c)); };
+	go$pkg.init = function() {
 	};
 	return go$pkg;
 })();
@@ -17419,6 +20253,7 @@ go$packages["main"] = (function() {
 	var jquery = go$packages["github.com/rusco/jquery"];
 	var qunit = go$packages["github.com/rusco/qunit"];
 	var strconv = go$packages["strconv"];
+	var strings = go$packages["strings"];
 	var time = go$packages["time"];
 	var jQuery;
 	var getDocumentBody = function() {
@@ -17447,7 +20282,7 @@ go$packages["main"] = (function() {
 			assert.Equal(new Go$String(go$internalize(test.o.context, Go$String)), getDocumentBody(), "#qunit-fixture find Context");
 		}));
 		qunit.Test("Static Functions", (function(assert) {
-			var x, _map, _key, o;
+			var x, _map, _key, o, _map$1, _key$1;
 			jquery.GlobalEval("var globalEvalTest = 2;");
 			assert.Equal(new Go$Int((go$parseInt(getGlobalVariable("globalEvalTest")) >> 0)), new Go$Int(2), "GlobalEval: Test variable declarations are global");
 			assert.Equal(new Go$String(jquery.Trim("  GopherJS  ")), new Go$String("GopherJS"), "Trim: leading and trailing space");
@@ -17463,6 +20298,8 @@ go$packages["main"] = (function() {
 			assert.Equal(new Go$String(jquery.Type(new (go$funcType([], [js.Object], false))(getDocumentBody))), new Go$String("function"), "Type: Function");
 			assert.Ok(new Go$Bool(!jquery.IsPlainObject(new Go$String(""))), "IsPlainObject: string");
 			assert.Ok(new Go$Bool(jquery.IsPlainObject(new (go$mapType(Go$String, go$emptyInterface))(o))), "IsPlainObject: Object");
+			assert.Ok(new Go$Bool(!jquery.IsEmptyObject(new (go$mapType(Go$String, go$emptyInterface))(o))), "IsEmptyObject: Object");
+			assert.Ok(new Go$Bool(jquery.IsEmptyObject(new (go$mapType(Go$String, go$emptyInterface))((_map$1 = new Go$Map(), _map$1)))), "IsEmptyObject: Object");
 			assert.Ok(new Go$Bool(!jquery.IsFunction(new Go$String(""))), "IsFunction: string");
 			assert.Ok(new Go$Bool(jquery.IsFunction(new (go$funcType([], [js.Object], false))(getDocumentBody))), "IsFunction: getDocumentBody");
 			assert.Ok(new Go$Bool(!jquery.IsNumeric(new Go$String("a3a"))), "IsNumeric: string");
@@ -17492,10 +20329,107 @@ go$packages["main"] = (function() {
 		}));
 		qunit.Test("ApiOnly:SelectFn,SetText,Show,FadeOut", (function(assert) {
 			qunit.Expect(0);
-			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("\n\t\t\t<p>Click and drag the mouse to select text in the inputs.</p>\n  \t\t\t<input type=\"text\" value=\"Some text\">\n  \t\t\t<input type=\"text\" value=\"to test on\">\n  \t\t\t<div></div>")])).AppendTo("#qunit-fixture");
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("<p>Click and drag the mouse to select text in the inputs.</p>\n  \t\t\t\t<input type=\"text\" value=\"Some text\">\n  \t\t\t\t<input type=\"text\" value=\"to test on\">\n  \t\t\t\t<div></div>")])).AppendTo("#qunit-fixture");
 			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String(":input")])).SelectFn((function() {
 				jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("div")])).SetText("Something was selected").Show().FadeOut("1000");
 			}));
+		}));
+		qunit.Test("Eq,Find", (function(assert) {
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("<div></div>\n\t\t\t\t<div></div>\n\t\t\t\t<div class=\"test\"></div>\n\t\t\t\t<div></div>\n\t\t\t\t<div></div>\n\t\t\t\t<div></div>")])).AppendTo("#qunit-fixture");
+			assert.Ok(new Go$Bool(jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find("div").Eq(2).HasClass("test")), "Eq(2) has class test");
+			assert.Ok(new Go$Bool(!jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find("div").Eq(0).HasClass("test")), "Eq(0) has no class test");
+		}));
+		qunit.Test("Find,End", (function(assert) {
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("<p class='ok'><span class='notok'>Hello</span>, how are you?</p>")])).AppendTo("#qunit-fixture");
+			assert.Ok(new Go$Bool(jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find("p").Find("span").HasClass("notok")), "before call to end");
+			assert.Ok(new Go$Bool(jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find("p").Find("span").End().HasClass("ok")), "after call to end");
+		}));
+		qunit.Test("ToArray,InArray", (function(assert) {
+			var _struct, divs, str, _ref, _i, _slice, _index, v, arr;
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("<div>a</div>\n\t\t\t\t<div>b</div>\n\t\t\t\t<div>c</div>")])).AppendTo("#qunit-fixture");
+			divs = (_struct = jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find("div"), new jquery.JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
+			assert.Equal(new Go$String(go$internalize(divs.o.length, Go$String)), new Go$Int(3), "3 divs in Fixture inserted");
+			str = "";
+			_ref = divs.ToArray();
+			_i = 0;
+			while (_i < _ref.length) {
+				v = (_slice = _ref, _index = _i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
+				str = str + (jQuery(new (go$sliceType(go$emptyInterface))([v])).Text());
+				_i++;
+			}
+			assert.Equal(new Go$String(str), new Go$String("abc"), "ToArray() allows range over selection");
+			arr = new (go$sliceType(go$emptyInterface))([new Go$String("a"), new Go$Int(3), new Go$Bool(true), new Go$Float64(2.2), new Go$String("GopherJS")]);
+			assert.Equal(new Go$Int(jquery.InArray(new Go$Int(4), arr)), new Go$Int(-1), "InArray");
+			assert.Equal(new Go$Int(jquery.InArray(new Go$Int(3), arr)), new Go$Int(1), "InArray");
+			assert.Equal(new Go$Int(jquery.InArray(new Go$String("a"), arr)), new Go$Int(0), "InArray");
+			assert.Equal(new Go$Int(jquery.InArray(new Go$String("b"), arr)), new Go$Int(-1), "InArray");
+			assert.Equal(new Go$Int(jquery.InArray(new Go$String("GopherJS"), arr)), new Go$Int(4), "InArray");
+		}));
+		qunit.Test("Slice,Attr,First,Last", (function(assert) {
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("<ul>\n  \t\t\t\t<li class=\"firstclass\">list item 1</li>\n  \t\t\t\t<li>list item 2</li>\n  \t\t\t\t<li>list item 3</li>\n  \t\t\t\t<li>list item 4</li>\n  \t\t\t\t<li class=\"lastclass\">list item 5</li>\n\t\t\t\t</ul>")])).AppendTo("#qunit-fixture");
+			assert.Equal(new Go$String(go$internalize(jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find("li").Slice(2).o.length, Go$String)), new Go$Int(3), "Slice");
+			assert.Equal(new Go$String(go$internalize(jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find("li").SliceByEnd(2, 4).o.length, Go$String)), new Go$Int(2), "SliceByEnd");
+			assert.Equal(new Go$String(jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find("li").First().Attr("class")), new Go$String("firstclass"), "First");
+			assert.Equal(new Go$String(jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find("li").Last().Attr("class")), new Go$String("lastclass"), "Last");
+		}));
+		qunit.Test("ParseHTML, ParseXML, ParseJSON", (function(assert) {
+			var str, arr, xml, xmlDoc, obj, x, _entry, language;
+			str = "<ul>\n  \t\t\t\t<li class=\"firstclass\">list item 1</li>\n  \t\t\t\t<li>list item 2</li>\n  \t\t\t\t<li>list item 3</li>\n  \t\t\t\t<li>list item 4</li>\n  \t\t\t\t<li class=\"lastclass\">list item 5</li>\n\t\t\t\t</ul>";
+			arr = jquery.ParseHTML(str);
+			jQuery(new (go$sliceType(go$emptyInterface))([arr])).AppendTo("#qunit-fixture");
+			assert.Equal(new Go$String(go$internalize(jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find("ul li").o.length, Go$String)), new Go$Int(5), "ParseHTML");
+			xml = "<rss version='2.0'><channel><title>RSS Title</title></channel></rss>";
+			xmlDoc = jquery.ParseXML(xml);
+			assert.Equal(new Go$String(jQuery(new (go$sliceType(go$emptyInterface))([xmlDoc])).Find("title").Text()), new Go$String("RSS Title"), "ParseXML");
+			obj = jquery.ParseJSON("{ \"language\": \"go\" }");
+			language = (x = (_entry = (obj !== null && obj.constructor === (go$mapType(Go$String, go$emptyInterface)) ? obj.go$val : go$typeAssertionFailed(obj, (go$mapType(Go$String, go$emptyInterface))))["language"], _entry !== undefined ? _entry.v : null), (x !== null && x.constructor === Go$String ? x.go$val : go$typeAssertionFailed(x, Go$String)));
+			assert.Equal(new Go$String(language), new Go$String("go"), "ParseJSON");
+		}));
+		qunit.Test("Grep,Each,Map", (function(assert) {
+			var arr, arr2, sum, allLanguages, _map, _key, o, letterArr, resultArr, allLetters, _ref, _i, _slice, _index, val, upperLanguages, allUpperLanguages, _ref$1, _i$1, _slice$1, _index$1, val$1;
+			arr = new (go$sliceType(go$emptyInterface))([new Go$Int(1), new Go$Int(9), new Go$Int(3), new Go$Int(8), new Go$Int(6), new Go$Int(1), new Go$Int(5), new Go$Int(9), new Go$Int(4), new Go$Int(7), new Go$Int(3), new Go$Int(8), new Go$Int(6), new Go$Int(9), new Go$Int(1)]);
+			arr2 = jquery.Grep(arr, (function(n, idx) {
+				return !(((n !== null && n.constructor === Go$Float64 ? n.go$val : go$typeAssertionFailed(n, Go$Float64)) === 5)) && idx > 4;
+			}));
+			assert.Equal(new Go$Int(arr2.length), new Go$Int(9), "Grep");
+			sum = 0;
+			jquery.EachOverArray(arr, (function(idx, n) {
+				sum = sum + ((n !== null && n.constructor === Go$Float64 ? n.go$val : go$typeAssertionFailed(n, Go$Float64)));
+				return idx < 5;
+			}));
+			assert.Equal(new Go$Float64(sum), new Go$Int(28), "EachOverArray");
+			allLanguages = "";
+			o = (_map = new Go$Map(), _key = "lang1", _map[_key] = { k: _key, v: new Go$String("Golang") }, _key = "lang2", _map[_key] = { k: _key, v: new Go$String("Javascript") }, _key = "lang3", _map[_key] = { k: _key, v: new Go$String("Typescript") }, _map);
+			jquery.EachOverMap(o, (function(key, val) {
+				allLanguages = allLanguages + ((val !== null && val.constructor === Go$String ? val.go$val : go$typeAssertionFailed(val, Go$String)));
+				return true;
+			}));
+			assert.Equal(new Go$String(allLanguages), new Go$String("GolangJavascriptTypescript"), "EachOverMap");
+			letterArr = new (go$sliceType(go$emptyInterface))([new Go$String("a"), new Go$String("b"), new Go$String("c"), new Go$String("d"), new Go$String("e")]);
+			resultArr = jquery.MapOverArray(letterArr, (function(n, idx) {
+				return new Go$String(strings.ToUpper((n !== null && n.constructor === Go$String ? n.go$val : go$typeAssertionFailed(n, Go$String))) + strconv.Itoa(idx));
+			}));
+			allLetters = "";
+			_ref = resultArr;
+			_i = 0;
+			while (_i < _ref.length) {
+				val = (_slice = _ref, _index = _i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
+				allLetters = allLetters + ((val !== null && val.constructor === Go$String ? val.go$val : go$typeAssertionFailed(val, Go$String)));
+				_i++;
+			}
+			assert.Equal(new Go$String(allLetters), new Go$String("A0B1C2D3E4"), "MapOverArray");
+			upperLanguages = jquery.MapOverMap(o, (function(val$1, key) {
+				return new Go$String(strings.ToUpper((val$1 !== null && val$1.constructor === Go$String ? val$1.go$val : go$typeAssertionFailed(val$1, Go$String))));
+			}));
+			allUpperLanguages = "";
+			_ref$1 = upperLanguages;
+			_i$1 = 0;
+			while (_i$1 < _ref$1.length) {
+				val$1 = (_slice$1 = _ref$1, _index$1 = _i$1, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range"));
+				allUpperLanguages = allUpperLanguages + ((val$1 !== null && val$1.constructor === Go$String ? val$1.go$val : go$typeAssertionFailed(val$1, Go$String)));
+				_i$1++;
+			}
+			assert.Equal(new Go$String(allUpperLanguages), new Go$String("GOLANGJAVASCRIPTTYPESCRIPT"), "MapOverMap");
 		}));
 	};
 	go$pkg.init = function() {
@@ -17508,6 +20442,29 @@ go$packages["runtime"].Error.implementedBy = [go$packages["runtime"].TypeAsserti
 go$packages["runtime"].stringer.implementedBy = [go$packages["github.com/gopherjs/gopherjs/js"].Error, go$packages["github.com/gopherjs/gopherjs/js"].Error.Ptr, go$packages["github.com/rusco/jquery"].Event, go$packages["github.com/rusco/jquery"].Event.Ptr, go$packages["github.com/rusco/qunit"].DoneCallbackObject, go$packages["github.com/rusco/qunit"].DoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].LogCallbackObject, go$packages["github.com/rusco/qunit"].LogCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].ModuleDoneCallbackObject, go$packages["github.com/rusco/qunit"].ModuleDoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].ModuleStartCallbackObject, go$packages["github.com/rusco/qunit"].ModuleStartCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].QUnitAssert, go$packages["github.com/rusco/qunit"].QUnitAssert.Ptr, go$packages["github.com/rusco/qunit"].Raises, go$packages["github.com/rusco/qunit"].Raises.Ptr, go$packages["github.com/rusco/qunit"].TestDoneCallbackObject, go$packages["github.com/rusco/qunit"].TestDoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].TestStartCallbackObject, go$packages["github.com/rusco/qunit"].TestStartCallbackObject.Ptr, go$packages["strconv"].decimal.Ptr, go$packages["syscall"].Signal, go$packages["time"].Duration, go$packages["time"].Location.Ptr, go$packages["time"].Month, go$packages["time"].Time, go$packages["time"].Time.Ptr, go$packages["time"].Weekday, go$ptrType(go$packages["syscall"].Signal), go$ptrType(go$packages["time"].Duration), go$ptrType(go$packages["time"].Month), go$ptrType(go$packages["time"].Weekday)];
 go$packages["github.com/gopherjs/gopherjs/js"].Object.implementedBy = [go$packages["github.com/gopherjs/gopherjs/js"].Error, go$packages["github.com/gopherjs/gopherjs/js"].Error.Ptr, go$packages["github.com/rusco/jquery"].Event, go$packages["github.com/rusco/jquery"].Event.Ptr, go$packages["github.com/rusco/qunit"].DoneCallbackObject, go$packages["github.com/rusco/qunit"].DoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].LogCallbackObject, go$packages["github.com/rusco/qunit"].LogCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].ModuleDoneCallbackObject, go$packages["github.com/rusco/qunit"].ModuleDoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].ModuleStartCallbackObject, go$packages["github.com/rusco/qunit"].ModuleStartCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].QUnitAssert, go$packages["github.com/rusco/qunit"].QUnitAssert.Ptr, go$packages["github.com/rusco/qunit"].Raises, go$packages["github.com/rusco/qunit"].Raises.Ptr, go$packages["github.com/rusco/qunit"].TestDoneCallbackObject, go$packages["github.com/rusco/qunit"].TestDoneCallbackObject.Ptr, go$packages["github.com/rusco/qunit"].TestStartCallbackObject, go$packages["github.com/rusco/qunit"].TestStartCallbackObject.Ptr];
 go$packages["sync"].Locker.implementedBy = [go$packages["sync"].Mutex.Ptr, go$packages["sync"].RWMutex.Ptr, go$packages["sync"].rlocker.Ptr];
+go$packages["io"].ByteReader.implementedBy = [go$packages["strings"].Reader.Ptr];
+go$packages["io"].ByteScanner.implementedBy = [go$packages["strings"].Reader.Ptr];
+go$packages["io"].ByteWriter.implementedBy = [];
+go$packages["io"].Closer.implementedBy = [go$packages["io"].PipeReader.Ptr, go$packages["io"].PipeWriter.Ptr, go$packages["syscall"].Token, go$ptrType(go$packages["syscall"].Token)];
+go$packages["io"].ReadCloser.implementedBy = [go$packages["io"].PipeReader.Ptr];
+go$packages["io"].ReadSeeker.implementedBy = [go$packages["io"].SectionReader.Ptr, go$packages["strings"].Reader.Ptr];
+go$packages["io"].ReadWriteCloser.implementedBy = [];
+go$packages["io"].ReadWriteSeeker.implementedBy = [];
+go$packages["io"].ReadWriter.implementedBy = [];
+go$packages["io"].Reader.implementedBy = [go$packages["io"].LimitedReader.Ptr, go$packages["io"].PipeReader.Ptr, go$packages["io"].SectionReader.Ptr, go$packages["io"].multiReader.Ptr, go$packages["io"].teeReader.Ptr, go$packages["strings"].Reader.Ptr];
+go$packages["io"].ReaderAt.implementedBy = [go$packages["io"].SectionReader.Ptr, go$packages["strings"].Reader.Ptr];
+go$packages["io"].ReaderFrom.implementedBy = [];
+go$packages["io"].RuneReader.implementedBy = [go$packages["strings"].Reader.Ptr];
+go$packages["io"].RuneScanner.implementedBy = [go$packages["strings"].Reader.Ptr];
+go$packages["io"].Seeker.implementedBy = [go$packages["io"].SectionReader.Ptr, go$packages["strings"].Reader.Ptr];
+go$packages["io"].WriteCloser.implementedBy = [go$packages["io"].PipeWriter.Ptr];
+go$packages["io"].WriteSeeker.implementedBy = [];
+go$packages["io"].Writer.implementedBy = [go$packages["io"].PipeWriter.Ptr, go$packages["io"].multiWriter.Ptr, go$ptrType(go$packages["strings"].appendSliceWriter)];
+go$packages["io"].WriterAt.implementedBy = [];
+go$packages["io"].WriterTo.implementedBy = [go$packages["strings"].Reader.Ptr];
+go$packages["io"].stringWriter.implementedBy = [go$packages["strings"].stringWriter, go$packages["strings"].stringWriter.Ptr, go$ptrType(go$packages["strings"].appendSliceWriter)];
+go$packages["strings"].replacer.implementedBy = [go$packages["strings"].Replacer.Ptr, go$packages["strings"].byteReplacer.Ptr, go$packages["strings"].byteStringReplacer.Ptr, go$packages["strings"].genericReplacer.Ptr, go$packages["strings"].singleStringReplacer.Ptr];
+go$packages["strings"].stringWriterIface.implementedBy = [go$packages["strings"].stringWriter, go$packages["strings"].stringWriter.Ptr, go$ptrType(go$packages["strings"].appendSliceWriter)];
 go$packages["syscall"].Sockaddr.implementedBy = [go$packages["syscall"].SockaddrInet4.Ptr, go$packages["syscall"].SockaddrInet6.Ptr, go$packages["syscall"].SockaddrUnix.Ptr];
 go$packages["runtime"].init();
 go$packages["github.com/gopherjs/gopherjs/js"].init();
@@ -17519,6 +20476,9 @@ go$packages["unicode/utf8"].init();
 go$packages["strconv"].init();
 go$packages["sync/atomic"].init();
 go$packages["sync"].init();
+go$packages["io"].init();
+go$packages["unicode"].init();
+go$packages["strings"].init();
 go$packages["unicode/utf16"].init();
 go$packages["syscall"].init();
 go$packages["time"].init();
