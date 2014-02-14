@@ -7,6 +7,7 @@ type JQuery struct {
 	Jquery   string `js:"jquery"`
 	Selector string `js:"selector"`
 	Length   string `js:"length"`
+	Context  string `js:"context"`
 }
 
 type Event struct {
@@ -33,11 +34,48 @@ func NewJQuery(args ...interface{}) JQuery {
 	return JQuery{o: js.Global("jQuery").New()}
 }
 
-//static method
+//static function
 func Trim(text string) string {
 	return js.Global("jQuery").Call("trim", text).String()
 }
 
+//static function
+func GlobalEval(cmd string) {
+	js.Global("jQuery").Call("globalEval", cmd)
+}
+
+//static function
+//native js Types: is this useful/a good idea ?
+func Type(sth interface{}) string {
+	return js.Global("jQuery").Call("type", sth).String()
+}
+
+//static function
+func IsPlainObject(sth interface{}) bool {
+	return js.Global("jQuery").Call("isPlainObject", sth).Bool()
+}
+
+//static function
+func IsFunction(sth interface{}) bool {
+	return js.Global("jQuery").Call("isFunction", sth).Bool()
+}
+
+//static function
+func IsNumeric(sth interface{}) bool {
+	return js.Global("jQuery").Call("isNumeric", sth).Bool()
+}
+
+//static function
+func IsXMLDoc(sth interface{}) bool {
+	return js.Global("jQuery").Call("isXMLDoc", sth).Bool()
+}
+
+//static function
+func IsWindow(sth interface{}) bool {
+	return js.Global("jQuery").Call("isWindow", sth).Bool()
+}
+
+//methods
 func (j JQuery) Serialize() string {
 	return j.o.Call("serialize").String()
 }
