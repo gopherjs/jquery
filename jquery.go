@@ -121,6 +121,45 @@ func MapOverMap(arr map[string]interface{}, fn func(interface{}, string) interfa
 	return js.Global("jQuery").Call("map", arr, fn).Interface().([]interface{})
 }
 
+//static function
+func Noop() interface{} {
+	return js.Global("jQuery").Get("noop").Interface()
+}
+
+//static function
+func Now() float64 {
+	return js.Global("jQuery").Call("now").Float()
+}
+
+//2do: unique(array: Element[]): Element[];
+
+func (j JQuery) Underlying() js.Object {
+	return j.o
+}
+
+func (j JQuery) Get() js.Object {
+	return j.o.Call("get")
+}
+
+func (j JQuery) GetByIndex(index int) js.Object {
+	return j.o.Call("get", index)
+}
+
+func (j JQuery) Append(obj interface{}) JQuery {
+	j.o = j.o.Call("append", obj)
+	return j
+}
+
+func (j JQuery) Detach() JQuery {
+	j.o = j.o.Call("detach")
+	return j
+}
+
+func (j JQuery) DetachBySelector(sel string) JQuery {
+	j.o = j.o.Call("detach", sel)
+	return j
+}
+
 //methods
 func (j JQuery) Serialize() string {
 	return j.o.Call("serialize").String()
@@ -141,6 +180,15 @@ func (j JQuery) ToArray() []interface{} {
 	return j.o.Call("toArray").Interface().([]interface{})
 }
 
+func (j JQuery) Remove() JQuery {
+	j.o = j.o.Call("remove")
+	return j
+}
+func (j JQuery) RemoveBySelector(selector string) JQuery {
+	j.o = j.o.Call("remove", selector)
+	return j
+}
+
 func (j JQuery) AddBackBySelector(selector string) JQuery {
 	j.o = j.o.Call("addBack", selector)
 	return j
@@ -152,6 +200,11 @@ func (j JQuery) Css(name string) string {
 
 func (j JQuery) SetCss(name, value interface{}) JQuery {
 	j.o = j.o.Call("css", name, value)
+	return j
+}
+
+func (j JQuery) SetCssMap(propertiesMap map[string]interface{}) JQuery {
+	j.o = j.o.Call("css", propertiesMap)
 	return j
 }
 

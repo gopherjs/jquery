@@ -16,6 +16,7 @@ const (
 )
 
 var (
+	//if created via NewJQuery constructor it is not static:
 	jQuery = jQueryStatic.NewJQuery
 )
 
@@ -86,61 +87,6 @@ func main() {
 
 	})
 
-	QUnit.Module("dom")
-
-	QUnit.Test("AddClass,Clone,Add,AppenTo,Find", func(assert QUnit.QUnitAssert) {
-
-		jQuery("p").AddClass("wow").Clone().Add("<span id='dom02'>WhatADay</span>").AppendTo(FIX)
-		txt := jQuery(FIX).Find("span#dom02").Text()
-		assert.Equal(txt, "WhatADay", "Test of Clone, Add, AppendTo, Find, Text Functions")
-	})
-
-	QUnit.Test("ApiOnly:ScollFn,SetCss,FadeOut", func(assert QUnit.QUnitAssert) {
-
-		QUnit.Expect(0)
-		for i := 0; i < 3; i++ {
-			jQuery("p").Clone().AppendTo(FIX)
-		}
-		jQuery(FIX).ScrollFn(func() {
-			jQuery("span").SetCss("display", "inline").FadeOut("slow")
-		})
-	})
-
-	QUnit.Test("ApiOnly:SelectFn,SetText,Show,FadeOut", func(assert QUnit.QUnitAssert) {
-
-		QUnit.Expect(0)
-		jQuery(`<p>Click and drag the mouse to select text in the inputs.</p>
-  				<input type="text" value="Some text">
-  				<input type="text" value="to test on">
-  				<div></div>`).AppendTo(FIX)
-
-		jQuery(":input").SelectFn(func() {
-			jQuery("div").SetText("Something was selected").Show().FadeOut("1000")
-		})
-
-	})
-
-	QUnit.Test("Eq,Find", func(assert QUnit.QUnitAssert) {
-
-		jQuery(`<div></div>
-				<div></div>
-				<div class="test"></div>
-				<div></div>
-				<div></div>
-				<div></div>`).AppendTo(FIX)
-
-		assert.Ok(jQuery(FIX).Find("div").Eq(2).HasClass("test"), "Eq(2) has class test")
-		assert.Ok(!jQuery(FIX).Find("div").Eq(0).HasClass("test"), "Eq(0) has no class test")
-	})
-
-	QUnit.Test("Find,End", func(assert QUnit.QUnitAssert) {
-
-		jQuery(`<p class='ok'><span class='notok'>Hello</span>, how are you?</p>`).AppendTo(FIX)
-
-		assert.Ok(jQuery(FIX).Find("p").Find("span").HasClass("notok"), "before call to end")
-		assert.Ok(jQuery(FIX).Find("p").Find("span").End().HasClass("ok"), "after call to end")
-	})
-
 	QUnit.Test("ToArray,InArray", func(assert QUnit.QUnitAssert) {
 
 		jQuery(`<div>a</div>
@@ -162,24 +108,6 @@ func main() {
 		assert.Equal(jQueryStatic.InArray("a", arr), 0, "InArray")
 		assert.Equal(jQueryStatic.InArray("b", arr), -1, "InArray")
 		assert.Equal(jQueryStatic.InArray("GopherJS", arr), 4, "InArray")
-
-	})
-
-	QUnit.Test("Slice,Attr,First,Last", func(assert QUnit.QUnitAssert) {
-
-		jQuery(`<ul>
-  				<li class="firstclass">list item 1</li>
-  				<li>list item 2</li>
-  				<li>list item 3</li>
-  				<li>list item 4</li>
-  				<li class="lastclass">list item 5</li>
-				</ul>`).AppendTo(FIX)
-
-		assert.Equal(jQuery(FIX).Find("li").Slice(2).Length, 3, "Slice")
-		assert.Equal(jQuery(FIX).Find("li").SliceByEnd(2, 4).Length, 2, "SliceByEnd")
-
-		assert.Equal(jQuery(FIX).Find("li").First().Attr("class"), "firstclass", "First")
-		assert.Equal(jQuery(FIX).Find("li").Last().Attr("class"), "lastclass", "Last")
 
 	})
 
@@ -250,4 +178,106 @@ func main() {
 		assert.Equal(allUpperLanguages, "GOLANGJAVASCRIPTTYPESCRIPT", "MapOverMap")
 
 	})
+
+	QUnit.Test("Noop,Now", func(assert QUnit.QUnitAssert) {
+
+		callSth := func(fn func() interface{}) interface{} {
+			return fn()
+		}
+		_ = callSth(jQueryStatic.Noop)
+		_ = jQueryStatic.Noop()
+		assert.Ok(jQueryStatic.IsFunction(jQueryStatic.Noop), "jQueryStatic.Noop")
+
+		date := js.Global("Date").New()
+		time := date.Call("getTime").Float()
+		assert.Ok(time >= jQueryStatic.Now(), "jQueryStatic.Now()")
+
+	})
+
+	QUnit.Module("dom")
+	QUnit.Test("AddClass,Clone,Add,AppenTo,Find", func(assert QUnit.QUnitAssert) {
+
+		jQuery("p").AddClass("wow").Clone().Add("<span id='dom02'>WhatADay</span>").AppendTo(FIX)
+		txt := jQuery(FIX).Find("span#dom02").Text()
+		assert.Equal(txt, "WhatADay", "Test of Clone, Add, AppendTo, Find, Text Functions")
+	})
+
+	QUnit.Test("ApiOnly:ScollFn,SetCss,FadeOut", func(assert QUnit.QUnitAssert) {
+
+		QUnit.Expect(0)
+		for i := 0; i < 3; i++ {
+			jQuery("p").Clone().AppendTo(FIX)
+		}
+		jQuery(FIX).ScrollFn(func() {
+			jQuery("span").SetCss("display", "inline").FadeOut("slow")
+		})
+	})
+
+	QUnit.Test("ApiOnly:SelectFn,SetText,Show,FadeOut", func(assert QUnit.QUnitAssert) {
+
+		QUnit.Expect(0)
+		jQuery(`<p>Click and drag the mouse to select text in the inputs.</p>
+  				<input type="text" value="Some text">
+  				<input type="text" value="to test on">
+  				<div></div>`).AppendTo(FIX)
+
+		jQuery(":input").SelectFn(func() {
+			jQuery("div").SetText("Something was selected").Show().FadeOut("1000")
+		})
+	})
+
+	QUnit.Test("Eq,Find", func(assert QUnit.QUnitAssert) {
+
+		jQuery(`<div></div>
+				<div></div>
+				<div class="test"></div>
+				<div></div>
+				<div></div>
+				<div></div>`).AppendTo(FIX)
+
+		assert.Ok(jQuery(FIX).Find("div").Eq(2).HasClass("test"), "Eq(2) has class test")
+		assert.Ok(!jQuery(FIX).Find("div").Eq(0).HasClass("test"), "Eq(0) has no class test")
+	})
+
+	QUnit.Test("Find,End", func(assert QUnit.QUnitAssert) {
+
+		jQuery(`<p class='ok'><span class='notok'>Hello</span>, how are you?</p>`).AppendTo(FIX)
+
+		assert.Ok(jQuery(FIX).Find("p").Find("span").HasClass("notok"), "before call to end")
+		assert.Ok(jQuery(FIX).Find("p").Find("span").End().HasClass("ok"), "after call to end")
+	})
+
+	QUnit.Test("Slice,Attr,First,Last", func(assert QUnit.QUnitAssert) {
+
+		jQuery(`<ul>
+  				<li class="firstclass">list item 1</li>
+  				<li>list item 2</li>
+  				<li>list item 3</li>
+  				<li>list item 4</li>
+  				<li class="lastclass">list item 5</li>
+				</ul>`).AppendTo(FIX)
+
+		assert.Equal(jQuery(FIX).Find("li").Slice(2).Length, 3, "Slice")
+		assert.Equal(jQuery(FIX).Find("li").SliceByEnd(2, 4).Length, 2, "SliceByEnd")
+
+		assert.Equal(jQuery(FIX).Find("li").First().Attr("class"), "firstclass", "First")
+		assert.Equal(jQuery(FIX).Find("li").Last().Attr("class"), "lastclass", "Last")
+
+	})
+
+	QUnit.Test("Css", func(assert QUnit.QUnitAssert) {
+
+		jQuery(FIX).SetCssMap(map[string]interface{}{"color": "red", "background": "blue", "width": "20px", "height": "10px"})
+		assert.Ok(jQuery(FIX).Css("width") == "20px" && jQuery(FIX).Css("height") == "10px", "SetCssMap")
+
+		div := jQuery("<div style='display: inline'/>").Show().AppendTo(FIX)
+		assert.Equal(div.Css("display"), "inline", "Make sure that element has same display when it was created.")
+		div.Remove()
+
+		span := jQuery("<span/>").Hide().Show()
+		assert.Equal(span.GetByIndex(0).Get("style").Get("display"), "inline", "For detached span elements, display should always be inline")
+		span.Remove()
+
+	})
+
 }
