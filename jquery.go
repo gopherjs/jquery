@@ -150,6 +150,11 @@ func (j JQuery) Append(obj interface{}) JQuery {
 	return j
 }
 
+func (j JQuery) Empty() JQuery {
+	j.o = j.o.Call("empty")
+	return j
+}
+
 func (j JQuery) Detach() JQuery {
 	j.o = j.o.Call("detach")
 	return j
@@ -226,17 +231,48 @@ func (j JQuery) SetVal(name string) JQuery {
 	return j
 }
 
+//2do: can return string
 func (j JQuery) Prop(property string) bool {
 	return j.o.Call("prop", property).Bool()
 }
 
+//2do: value can be string
 func (j JQuery) SetProp(name string, value bool) JQuery {
 	j.o = j.o.Call("prop", name, value)
 	return j
 }
 
+func (j JQuery) SetPropMap(propertiesMap map[string]interface{}) JQuery {
+	j.o = j.o.Call("prop", propertiesMap)
+	return j
+}
+
+func (j JQuery) RemoveProp(property string) JQuery {
+	j.o = j.o.Call("removeProp", property)
+	return j
+}
+
 func (j JQuery) Attr(property string) string {
-	return j.o.Call("attr", property).String()
+	attr := j.o.Call("attr", property)
+	if attr.IsUndefined() {
+		return ""
+	}
+	return attr.String()
+}
+
+func (j JQuery) SetAttr(property string, value string) JQuery {
+	j.o = j.o.Call("attr", property, value)
+	return j
+}
+
+func (j JQuery) SetAttrMap(propertiesMap map[string]interface{}) JQuery {
+	j.o = j.o.Call("attr", propertiesMap)
+	return j
+}
+
+func (j JQuery) RemoveAttr(property string) JQuery {
+	j.o = j.o.Call("removeAttr", property)
+	return j
 }
 
 func (j JQuery) HasClass(class string) bool {
@@ -667,7 +703,7 @@ func (j JQuery) Has(selector string) JQuery {
 	return j
 }
 
-func (j JQuery) Is(selector string) bool {
+func (j JQuery) Is(selector interface{}) bool {
 	return j.o.Call("is", selector).Bool()
 }
 

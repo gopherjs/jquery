@@ -1,7 +1,6 @@
 package test
 
-//test package for jquery bindings
-//developed in itertative TDD style
+//test package for jquery bindings, developed in TDD style
 import (
 	"github.com/gopherjs/gopherjs/js"
 	jQueryStatic "github.com/rusco/jquery"
@@ -277,6 +276,36 @@ func main() {
 		span := jQuery("<span/>").Hide().Show()
 		assert.Equal(span.GetByIndex(0).Get("style").Get("display"), "inline", "For detached span elements, display should always be inline")
 		span.Remove()
+
+	})
+
+	QUnit.Test("Attributes", func(assert QUnit.QUnitAssert) {
+
+		jQuery("<form id='testForm'></form>").AppendTo(FIX)
+		extras := jQuery("<input id='id' name='id' /><input id='name' name='name' /><input id='target' name='target' />").AppendTo("#testForm")
+		assert.Equal(jQuery("#testForm").Attr("target"), "", "Attr")
+		assert.Equal(jQuery("#testForm").SetAttr("target", "newTarget").Attr("target"), "newTarget", "SetAttr2")
+		assert.Equal(jQuery("#testForm").RemoveAttr("id").Attr("id"), "", "RemoveAttr ")
+		assert.Equal(jQuery("#testForm").Attr("name"), "", "Attr undefined")
+		extras.Remove()
+
+		jQuery("<a/>").SetAttrMap(map[string]interface{}{"id": "tAnchor5", "href": "#5"}).AppendTo(FIX)
+		assert.Equal(jQuery("#tAnchor5").Attr("href"), "#5", "Attr")
+		jQuery("<a id='tAnchor6' href='#5' />").AppendTo(FIX)
+		assert.Equal(jQuery("#tAnchor5").Prop("href"), jQuery("#tAnchor6").Prop("href"), "Prop")
+
+		input := jQuery("<input name='tester' />")
+		assert.StrictEqual(input.CloneWithDataAndEvents(true).SetAttr("name", "test").Underlying().Index(0).Get("name"), "test", "Clone")
+
+		jQuery(FIX).Empty()
+
+		jQuery(`<input type="checkbox" checked="checked">
+  			<input type="checkbox">
+  			<input type="checkbox">
+  			<input type="checkbox" checked="checked">`).AppendTo(FIX)
+
+		jQuery(FIX).Find("input[type='checkbox']").SetProp("disabled", true)
+		assert.Ok(jQuery(FIX).Find("input[type='checkbox']").Prop("disabled"), "SetProp")
 
 	})
 
