@@ -309,4 +309,24 @@ func main() {
 
 	})
 
+	QUnit.Test("Unique", func(assert QUnit.QUnitAssert) {
+
+		jQuery(`<div>There are 6 divs in this document.</div>
+				<div></div>
+				<div class="dup"></div>
+				<div class="dup"></div>
+				<div class="dup"></div>
+				<div></div>`).AppendTo(FIX)
+
+		divs := jQuery(FIX).Find("div").Get()
+		assert.Equal(divs.Get("length"), 6, "6 divs inserted")
+
+		jQuery(FIX).Find(".dup").CloneWithDataAndEvents(true).AppendTo(FIX)
+		divs2 := jQuery(FIX).Find("div").Get()
+		assert.Equal(divs2.Get("length"), 9, "9 divs inserted")
+
+		divs3 := jQueryStatic.Unique(divs)
+		assert.Equal(divs3.Get("length"), 6, "post-qunique should be 6 elements")
+	})
+
 }

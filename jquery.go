@@ -21,6 +21,11 @@ type Event struct {
 	Which          int         `js:"which"`
 }
 
+type JQueryCoordinates struct {
+	Left int `js:"left"`
+	Top  int `js:"top"`
+}
+
 func (event *Event) PreventDefault() {
 	event.Call("preventDefault")
 }
@@ -123,6 +128,7 @@ func MapOverMap(arr map[string]interface{}, fn func(interface{}, string) interfa
 
 //static function
 func Noop() interface{} {
+	//2do: check difference to empty gopherjs function
 	return js.Global("jQuery").Get("noop").Interface()
 }
 
@@ -131,7 +137,9 @@ func Now() float64 {
 	return js.Global("jQuery").Call("now").Float()
 }
 
-//2do: unique(array: Element[]): Element[];
+func Unique(arr js.Object) js.Object {
+	return js.Global("jQuery").Call("unique", arr)
+}
 
 func (j JQuery) Underlying() js.Object {
 	return j.o
@@ -140,7 +148,6 @@ func (j JQuery) Underlying() js.Object {
 func (j JQuery) Get() js.Object {
 	return j.o.Call("get")
 }
-
 func (j JQuery) GetByIndex(index int) js.Object {
 	return j.o.Call("get", index)
 }
@@ -237,7 +244,7 @@ func (j JQuery) Prop(property string) bool {
 }
 
 //2do: value can be string
-func (j JQuery) SetProp(name string, value bool) JQuery {
+func (j JQuery) SetProp(name string, value interface{}) JQuery {
 	j.o = j.o.Call("prop", name, value)
 	return j
 }
@@ -356,13 +363,43 @@ func (j JQuery) Off(event string, handler func(Event)) JQuery {
 	return j
 }
 
-func (j JQuery) AppendTo(destination string) JQuery {
-	j.o = j.o.Call("appendTo", destination)
+func (j JQuery) After(sel interface{}) JQuery {
+	j.o = j.o.Call("after", sel)
 	return j
 }
 
-func (j JQuery) AppendToJQuery(obj JQuery) JQuery {
-	j.o = j.o.Call("appendTo", obj.o)
+func (j JQuery) AfterContext(sel interface{}, ctx interface{}) JQuery {
+	j.o = j.o.Call("after", sel, ctx)
+	return j
+}
+
+func (j JQuery) Before(sel interface{}) JQuery {
+	j.o = j.o.Call("before", sel)
+	return j
+}
+
+func (j JQuery) BeforeContext(sel interface{}, ctx interface{}) JQuery {
+	j.o = j.o.Call("before", sel, ctx)
+	return j
+}
+
+func (j JQuery) Prepend(sel interface{}) JQuery {
+	j.o = j.o.Call("prepend", sel)
+	return j
+}
+
+func (j JQuery) PrependContext(sel interface{}, ctx interface{}) JQuery {
+	j.o = j.o.Call("prepend", sel, ctx)
+	return j
+}
+
+func (j JQuery) PrependTo(sel interface{}) JQuery {
+	j.o = j.o.Call("prependTo", sel)
+	return j
+}
+
+func (j JQuery) AppendTo(sel interface{}) JQuery {
+	j.o = j.o.Call("appendTo", sel)
 	return j
 }
 
@@ -378,6 +415,11 @@ func (j JQuery) Show() JQuery {
 
 func (j JQuery) Hide() JQuery {
 	j.o.Call("hide")
+	return j
+}
+
+func (j JQuery) Contents() JQuery {
+	j.o = j.o.Call("html")
 	return j
 }
 
@@ -404,7 +446,7 @@ func (j JQuery) TextByFunc(fn func(idx int, txt string) string) JQuery {
 	return j
 }
 
-func (j JQuery) Closest(selector string) JQuery {
+func (j JQuery) Closest(selector interface{}) JQuery {
 	j.o = j.o.Call("closest", selector)
 	return j
 }
@@ -413,21 +455,12 @@ func (j JQuery) End() JQuery {
 	return j
 }
 
-func (j JQuery) Add(selector string) JQuery {
-	j.o = j.o.Call("add", selector)
+func (j JQuery) Add(sel interface{}) JQuery {
+	j.o = j.o.Call("add", sel)
 	return j
 }
 func (j JQuery) AddByContext(selector string, context interface{}) JQuery {
 	j.o = j.o.Call("add", selector, context)
-	return j
-}
-
-func (j JQuery) AddHtml(html string) JQuery {
-	j.o = j.o.Call("add", html)
-	return j
-}
-func (j JQuery) AddJQuery(obj JQuery) JQuery {
-	j.o = j.o.Call("add", obj.o)
 	return j
 }
 
@@ -454,23 +487,6 @@ func (j JQuery) SetHeight(value string) JQuery {
 	j.o = j.o.Call("height", value)
 	return j
 }
-func (j JQuery) ScrollLeft() int {
-	return j.o.Call("scrollLeft").Int()
-}
-
-func (j JQuery) SetScrollLeft(value int) JQuery {
-	j.o = j.o.Call("scrollLeft", value)
-	return j
-}
-
-func (j JQuery) ScrollTop() int {
-	return j.o.Call("scrollTop").Int()
-}
-
-func (j JQuery) SetScrollTop(value int) JQuery {
-	j.o = j.o.Call("scrollTop", value)
-	return j
-}
 
 func (j JQuery) Width() int {
 	return j.o.Call("scrollTop").Int()
@@ -485,6 +501,62 @@ func (j JQuery) WidthByFunc(fn func(index int, width string) string) JQuery {
 	j.o.Call("width", func(index int, width string) string {
 		return fn(index, width)
 	})
+	return j
+}
+
+func (j JQuery) InnerHeight() int {
+	return j.o.Call("innerHeight").Int()
+}
+
+func (j JQuery) InnerWidth() int {
+	return j.o.Call("innerWidth").Int()
+}
+
+func (j JQuery) Offset() JQueryCoordinates {
+	obj := j.o.Call("offset")
+	return JQueryCoordinates{Left: obj.Get("left").Int(), Top: obj.Get("top").Int()}
+}
+
+func (j JQuery) SetOffset(jc JQueryCoordinates) JQuery {
+	//2do: test
+	j.o = j.o.Call("offset", jc)
+	return j
+}
+
+func (j JQuery) OuterHeight() int {
+	return j.o.Call("outerHeight").Int()
+
+}
+func (j JQuery) OuterHeightWithMargin(includeMargin bool) int {
+	return j.o.Call("outerHeight", includeMargin).Int()
+
+}
+func (j JQuery) OuterWidth() int {
+	return j.o.Call("outerWidth").Int()
+
+}
+func (j JQuery) OuterWidthWithMargin(includeMargin bool) int {
+	return j.o.Call("outerWidth", includeMargin).Int()
+}
+
+func (j JQuery) Position() JQueryCoordinates {
+	obj := j.o.Call("position")
+	return JQueryCoordinates{obj.Get("left").Int(), obj.Get("top").Int()}
+}
+
+func (j JQuery) ScrollLeft() int {
+	return j.o.Call("scrollLeft").Int()
+}
+func (j JQuery) SetScrollLeft(value int) JQuery {
+	j.o = j.o.Call("scrollLeft", value)
+	return j
+}
+
+func (j JQuery) ScrollTop() int {
+	return j.o.Call("scrollTop").Int()
+}
+func (j JQuery) SetScrollTop(value int) JQuery {
+	j.o = j.o.Call("scrollTop", value)
 	return j
 }
 
@@ -536,23 +608,18 @@ func (j JQuery) ParentsBySelector(selector string) JQuery {
 	return j
 }
 
-func (j JQuery) ParentsUntil(selector string) JQuery {
-	j.o = j.o.Call("parentsUntil", selector)
+func (j JQuery) ParentsUntil() JQuery {
+	j.o = j.o.Call("parentsUntil")
 	return j
 }
 
-func (j JQuery) ParentsUntilByFilter(selector string, filter string) JQuery {
+func (j JQuery) ParentsUntilBySelector(sel interface{}) JQuery {
+	j.o = j.o.Call("parentsUntil", sel)
+	return j
+}
+
+func (j JQuery) ParentsUntilBySelectorAndFilter(selector interface{}, filter interface{}) JQuery {
 	j.o = j.o.Call("parentsUntil", selector, filter)
-	return j
-}
-
-func (j JQuery) ParentsUntilByJQuery(obj JQuery) JQuery {
-	j.o = j.o.Call("parentsUntil", obj.o)
-	return j
-}
-
-func (j JQuery) ParentsUntilByJQueryAndFilter(obj JQuery, filter string) JQuery {
-	j.o = j.o.Call("parentsUntil", obj.o, filter)
 	return j
 }
 
@@ -613,6 +680,31 @@ func (j JQuery) Slice(start int) JQuery {
 
 func (j JQuery) SliceByEnd(start int, end int) JQuery {
 	j.o = j.o.Call("slice", start, end)
+	return j
+}
+
+func (j JQuery) Children(selector interface{}) JQuery {
+	j.o = j.o.Call("children", selector)
+	return j
+}
+
+func (j JQuery) Unwrap() JQuery {
+	j.o = j.o.Call("unwrap")
+	return j
+}
+
+func (j JQuery) Wrap(obj interface{}) JQuery {
+	j.o = j.o.Call("wrap", obj)
+	return j
+}
+
+func (j JQuery) WrapAll(obj interface{}) JQuery {
+	j.o = j.o.Call("wrapAll", obj)
+	return j
+}
+
+func (j JQuery) WrapInner(obj interface{}) JQuery {
+	j.o = j.o.Call("wrapInner", obj)
 	return j
 }
 
@@ -888,24 +980,24 @@ func (j JQuery) UnloadEventdata(eventData js.Object, handler func(Event) js.Obje
 }
 
 const (
-	EvtBLUR     = "blur"
-	EvtCHANGE   = "change"
-	EvtCLICK    = "click"
-	EvtDBLCLICK = "dblclick"
-	EvtFOCUS    = "focus"
-	EvtFOCUSIN  = "focusin"
-	EvtFOCUSOUT = "focusout"
-	EvtHOVER    = "hover"
-	EvtKEYDOWN  = "keydown"
-	EvtKEYPRESS = "keypress"
-	EvtKEYUP    = "keyup"
+	BLUR     = "blur"
+	CHANGE   = "change"
+	CLICK    = "click"
+	DBLCLICK = "dblclick"
+	FOCUS    = "focus"
+	FOCUSIN  = "focusin"
+	FOCUSOUT = "focusout"
+	HOVER    = "hover"
+	KEYDOWN  = "keydown"
+	KEYPRESS = "keypress"
+	KEYUP    = "keyup"
 
-	EvtLOAD       = "load"
-	EvtMOUSEDOWN  = "mousedown"
-	EvtMOUSEENTER = "mouseenter"
-	EvtMOUSELEAVE = "mouseleave"
-	EvtMOUSEMOVE  = "mousemove"
-	EvtMOUSEOUT   = "mouseout"
-	EvtMOUSEOVER  = "mouseover"
-	EvtMOUSEUP    = "mouseup"
+	LOAD       = "load"
+	MOUSEDOWN  = "mousedown"
+	MOUSEENTER = "mouseenter"
+	MOUSELEAVE = "mouseleave"
+	MOUSEMOVE  = "mousemove"
+	MOUSEOUT   = "mouseout"
+	MOUSEOVER  = "mouseover"
+	MOUSEUP    = "mouseup"
 )
