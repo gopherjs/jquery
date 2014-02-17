@@ -419,7 +419,7 @@ func (j JQuery) Hide() JQuery {
 }
 
 func (j JQuery) Contents() JQuery {
-	j.o = j.o.Call("html")
+	j.o = j.o.Call("contents")
 	return j
 }
 
