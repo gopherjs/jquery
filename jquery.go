@@ -1,6 +1,7 @@
 package jquery
 
 import "github.com/gopherjs/gopherjs/js"
+import "fmt"
 
 type JQuery struct {
 	o        js.Object
@@ -12,22 +13,49 @@ type JQuery struct {
 
 type Event struct {
 	js.Object
-	KeyCode        int         `js:"keyCode"`
-	Target         js.Object   `js:"target"`
-	CurrentTarget  js.Object   `js:"currentTarget"`
-	DelegateTarget js.Object   `js:"delegateTarget"`
-	RelatedTarget  js.Object   `js:"relatedTarget"`
-	Data           interface{} `js:"data"`
-	Which          int         `js:"which"`
+	KeyCode        int       `js:"keyCode"`
+	Target         js.Object `js:"target"`
+	CurrentTarget  js.Object `js:"currentTarget"`
+	DelegateTarget js.Object `js:"delegateTarget"`
+	RelatedTarget  js.Object `js:"relatedTarget"`
+	Data           js.Object `js:"data"`
+	Result         js.Object `js:"result"`
+	Which          int       `js:"which"`
+	Namespace      string    `js:"namespace"`
+	MetaKey        bool      `js:"metaKey"`
+	PageX          int       `js:"pageX"`
+	PageY          int       `js:"pageY"`
+
+	Type string `js:"type"`
+}
+
+func (event *Event) PreventDefault() {
+	event.Call("preventDefault")
+}
+
+func (event *Event) IsDefaultPrevented() bool {
+	return event.Call("isDefaultPrevented").Bool()
+}
+
+func (event *Event) IsImmediatePropogationStopped() bool {
+	return event.Call("isImmediatePropogationStopped").Bool()
+}
+
+func (event *Event) IsPropagationStopped() bool {
+	return event.Call("isPropagationStopped").Bool()
+}
+
+func (event *Event) StopImmediatePropagation() {
+	event.Call("stopImmediatePropagation")
+}
+
+func (event *Event) StopPropagation() {
+	event.Call("stopPropagation")
 }
 
 type JQueryCoordinates struct {
 	Left int `js:"left"`
 	Top  int `js:"top"`
-}
-
-func (event *Event) PreventDefault() {
-	event.Call("preventDefault")
 }
 
 //JQuery constructor
@@ -145,11 +173,8 @@ func (j JQuery) Underlying() js.Object {
 	return j.o
 }
 
-func (j JQuery) Get() js.Object {
-	return j.o.Call("get")
-}
-func (j JQuery) GetByIndex(index int) js.Object {
-	return j.o.Call("get", index)
+func (j JQuery) Get(i ...interface{}) js.Object {
+	return j.o.Call("get", i...)
 }
 
 func (j JQuery) Append(obj interface{}) JQuery {
@@ -177,6 +202,10 @@ func (j JQuery) Serialize() string {
 	return j.o.Call("serialize").String()
 }
 
+func (j JQuery) SerializeArray() js.Object {
+	return j.o.Call("serializeArray")
+}
+
 func (j JQuery) AddBack() JQuery {
 	j.o = j.o.Call("addBack")
 	return j
@@ -192,12 +221,8 @@ func (j JQuery) ToArray() []interface{} {
 	return j.o.Call("toArray").Interface().([]interface{})
 }
 
-func (j JQuery) Remove() JQuery {
-	j.o = j.o.Call("remove")
-	return j
-}
-func (j JQuery) RemoveBySelector(selector string) JQuery {
-	j.o = j.o.Call("remove", selector)
+func (j JQuery) Remove(i ...interface{}) JQuery {
+	j.o = j.o.Call("remove", i...)
 	return j
 }
 
@@ -329,37 +354,12 @@ func (j JQuery) Blur() JQuery {
 	return j
 }
 
-func (j JQuery) On(event string, handler func(Event)) JQuery {
-	j.o.Call("on", event, func(e js.Object) {
-		handler(Event{Object: e})
-	})
+func (j JQuery) ReplaceAll(sel interface{}) JQuery {
+	j.o = j.o.Call("replaceAll", sel)
 	return j
 }
-
-func (j JQuery) OnParam(event string, param interface{}) JQuery {
-	j.o.Call("on", event, param)
-	return j
-}
-
-func (j JQuery) OnSelector(event string, selector string, handler func(Event)) JQuery {
-	j.o.Call("on", event, selector, func(e js.Object) {
-		handler(Event{Object: e})
-
-	})
-	return j
-}
-
-func (j JQuery) One(event string, handler func(Event)) JQuery {
-	j.o.Call("one", event, func(e js.Object) {
-		handler(Event{Object: e})
-	})
-	return j
-}
-
-func (j JQuery) Off(event string, handler func(Event)) JQuery {
-	j.o.Call("off", event, func(e js.Object) {
-		handler(Event{Object: e})
-	})
+func (j JQuery) ReplaceWith(sel interface{}) JQuery {
+	j.o = j.o.Call("replaceWith", sel)
 	return j
 }
 
@@ -446,36 +446,23 @@ func (j JQuery) TextByFunc(fn func(idx int, txt string) string) JQuery {
 	return j
 }
 
-func (j JQuery) Closest(selector interface{}) JQuery {
-	j.o = j.o.Call("closest", selector)
+func (j JQuery) Closest(i ...interface{}) JQuery {
+	j.o = j.o.Call("closest", i...)
 	return j
 }
+
 func (j JQuery) End() JQuery {
 	j.o = j.o.Call("end")
 	return j
 }
 
-func (j JQuery) Add(sel interface{}) JQuery {
-	j.o = j.o.Call("add", sel)
-	return j
-}
-func (j JQuery) AddByContext(selector string, context interface{}) JQuery {
-	j.o = j.o.Call("add", selector, context)
+func (j JQuery) Add(i ...interface{}) JQuery {
+	j.o = j.o.Call("add", i...)
 	return j
 }
 
-func (j JQuery) Clone() JQuery {
-	j.o = j.o.Call("clone")
-	return j
-}
-
-func (j JQuery) CloneWithDataAndEvents(withDataAndEvents bool) JQuery {
-	j.o = j.o.Call("clone", withDataAndEvents)
-	return j
-}
-
-func (j JQuery) CloneDeep(withDataAndEvents bool, deepWithDataAndEvents bool) JQuery {
-	j.o = j.o.Call("clone", withDataAndEvents, deepWithDataAndEvents)
+func (j JQuery) Clone(b ...interface{}) JQuery {
+	j.o = j.o.Call("clone", b...)
 	return j
 }
 
@@ -623,53 +610,23 @@ func (j JQuery) ParentsUntilBySelectorAndFilter(selector interface{}, filter int
 	return j
 }
 
-func (j JQuery) Prev() JQuery {
-	j.o = j.o.Call("prev")
+func (j JQuery) Prev(i ...interface{}) JQuery {
+	j.o = j.o.Call("prev", i...)
 	return j
 }
 
-func (j JQuery) PrevBySelector(selector string) JQuery {
-	j.o = j.o.Call("prev", selector)
+func (j JQuery) PrevAll(i ...interface{}) JQuery {
+	j.o = j.o.Call("prevAll", i...)
 	return j
 }
 
-func (j JQuery) PrevAll() JQuery {
-	j.o = j.o.Call("prevAll")
+func (j JQuery) PrevUntil(i ...interface{}) JQuery {
+	j.o = j.o.Call("prevUntil", i...)
 	return j
 }
 
-func (j JQuery) PrevAllBySelector(selector string) JQuery {
-	j.o = j.o.Call("prevAll", selector)
-	return j
-}
-
-func (j JQuery) PrevUntil(selector string) JQuery {
-	j.o = j.o.Call("prevUntil", selector)
-	return j
-}
-
-func (j JQuery) PrevUntilByFilter(selector string, filter string) JQuery {
-	j.o = j.o.Call("prevUntil", selector, filter)
-	return j
-}
-
-func (j JQuery) PrevUntilByJQuery(obj JQuery) JQuery {
-	j.o = j.o.Call("prevUntil", obj.o)
-	return j
-}
-
-func (j JQuery) PrevUntilByJQueryAndFilter(obj JQuery, filter string) JQuery {
-	j.o = j.o.Call("prevUntil", obj.o, filter)
-	return j
-}
-
-func (j JQuery) Siblings() JQuery {
-	j.o = j.o.Call("siblings")
-	return j
-}
-
-func (j JQuery) SiblingsBySelector(selector string) JQuery {
-	j.o = j.o.Call("siblings", selector)
+func (j JQuery) Siblings(i ...interface{}) JQuery {
+	j.o = j.o.Call("siblings", i...)
 	return j
 }
 
@@ -718,33 +675,13 @@ func (j JQuery) NextBySelector(selector string) JQuery {
 	return j
 }
 
-func (j JQuery) NextAll() JQuery {
-	j.o = j.o.Call("nextAll")
+func (j JQuery) NextAll(i ...interface{}) JQuery {
+	j.o = j.o.Call("nextAll", i...)
 	return j
 }
 
-func (j JQuery) NextAllBySelector(selector string) JQuery {
-	j.o = j.o.Call("nextAll", selector)
-	return j
-}
-
-func (j JQuery) NextUntil(selector string) JQuery {
-	j.o = j.o.Call("nextUntil", selector)
-	return j
-}
-
-func (j JQuery) NextUntilByFilter(selector string, filter string) JQuery {
-	j.o = j.o.Call("nextUntil", selector, filter)
-	return j
-}
-
-func (j JQuery) NextUntilByJQuery(obj JQuery) JQuery {
-	j.o = j.o.Call("nextUntil", obj.o)
-	return j
-}
-
-func (j JQuery) NextUntilByJQueryAndFilter(obj JQuery, filter string) JQuery {
-	j.o = j.o.Call("nextUntil", obj.o, filter)
+func (j JQuery) NextUntil(i ...interface{}) JQuery {
+	j.o = j.o.Call("nextUntil", i...)
 	return j
 }
 
@@ -845,19 +782,17 @@ func (j JQuery) Scroll() JQuery {
 	j.o = j.o.Call("scroll")
 	return j
 }
+func (j JQuery) ScrollFn(handler func(eventObject Event)) JQuery {
 
-func (j JQuery) ScrollFn(handler func()) JQuery {
-
-	j.o.Call("scroll", func() {
-		handler()
+	j.o.Call("scroll", func(e js.Object) {
+		handler(Event{Object: e})
 	})
 	return j
 }
-
 func (j JQuery) ScrollDataFn(eventData js.Object, handler func(js.Object) js.Object) JQuery {
 
-	j.o.Call("scroll", eventData, func(ev js.Object) js.Object {
-		return handler(ev)
+	j.o.Call("scroll", eventData, func(e js.Object) js.Object {
+		return handler(Event{Object: e})
 	})
 	return j
 }
@@ -871,19 +806,17 @@ func (j JQuery) Select() JQuery {
 	j.o = j.o.Call("select")
 	return j
 }
+func (j JQuery) SelectFn(handler func(eventObject Event)) JQuery {
 
-func (j JQuery) SelectFn(handler func()) JQuery {
-
-	j.o.Call("select", func() {
-		handler()
+	j.o.Call("select", func(e js.Object) {
+		handler(Event{Object: e})
 	})
 	return j
 }
-
 func (j JQuery) SelectDataFn(eventData js.Object, handler func(js.Object) js.Object) JQuery {
 
-	j.o.Call("select", eventData, func(ev js.Object) js.Object {
-		return handler(ev)
+	j.o.Call("select", eventData, func(e js.Object) js.Object {
+		return handler(Event{Object: e})
 	})
 	return j
 }
@@ -892,15 +825,13 @@ func (j JQuery) Submit() JQuery {
 	j.o = j.o.Call("submit")
 	return j
 }
+func (j JQuery) SubmitFn(handler func(eventObject Event)) JQuery {
 
-func (j JQuery) SubmitFn(handler func()) JQuery {
-
-	j.o.Call("submit", func() {
-		handler()
+	j.o.Call("submit", func(e js.Object) {
+		handler(Event{Object: e})
 	})
 	return j
 }
-
 func (j JQuery) SubmitDataFn(eventData js.Object, handler func(Event)) JQuery {
 
 	j.o.Call("submit", eventData, func(e js.Object) {
@@ -920,24 +851,6 @@ func (j JQuery) TriggerParam(eventType string, extraParam interface{}) JQuery {
 
 func (j JQuery) TriggerHandler(eventType string, extraParam interface{}) JQuery {
 	j.o = j.o.Call("triggerHandler", eventType, extraParam)
-	return j
-}
-
-func (j JQuery) Unbind() JQuery {
-	j.o.Call("unbind")
-	return j
-}
-
-func (j JQuery) UnbindEvent(eventType js.Object) JQuery {
-	j.o.Call("unbind", eventType)
-	return j
-}
-
-func (j JQuery) UnbindFn(eventType js.Object, handler func(js.Object) js.Object) JQuery {
-
-	j.o.Call("unbind", eventType, func(ev js.Object) js.Object {
-		return handler(ev)
-	})
 	return j
 }
 
@@ -977,6 +890,74 @@ func (j JQuery) UnloadEventdata(eventData js.Object, handler func(Event) js.Obje
 		return handler(Event{Object: ev})
 	})
 	return j
+}
+
+func (j JQuery) On(p ...interface{}) JQuery {
+	return j.events("on", p...)
+}
+
+func (j JQuery) One(p ...interface{}) JQuery {
+	return j.events("one", p...)
+}
+
+func (j JQuery) Off(p ...interface{}) JQuery {
+	return j.events("off", p...)
+}
+
+func (j JQuery) events(evt string, p ...interface{}) JQuery {
+
+	count := len(p)
+	last := count - 1
+	typeStr := fmt.Sprintf("%T", p[last])
+	isEventFunc := typeStr == "func(jquery.Event)" || typeStr == "func(Event)"
+
+	switch count {
+	case 0:
+		j.o = j.o.Call(evt)
+		return j
+	case 1:
+		j.o = j.o.Call(evt, p[0])
+		return j
+	case 2:
+		if isEventFunc {
+			j.o = j.o.Call(evt, p[0], func(e js.Object) {
+				p[1].(func(Event))(Event{Object: e})
+			})
+			return j
+
+		} else {
+			j.o = j.o.Call(evt, p[0], p[1])
+			return j
+		}
+	case 3:
+		if isEventFunc {
+
+			j.o = j.o.Call(evt, p[0], p[1], func(e js.Object) {
+				p[2].(func(Event))(Event{Object: e})
+			})
+			return j
+
+		} else {
+			j.o = j.o.Call(evt, p[0], p[1], p[2])
+			return j
+		}
+	case 4:
+		if isEventFunc {
+
+			j.o = j.o.Call(evt, p[0], p[1], p[2], func(e js.Object) {
+				p[3].(func(Event))(Event{Object: e})
+			})
+			return j
+
+		} else {
+			j.o = j.o.Call(evt, p[0], p[1], p[2], p[3])
+			return j
+		}
+	default:
+		print("func events():should no enter here")
+		j.o = j.o.Call(evt, p...)
+		return j
+	}
 }
 
 const (

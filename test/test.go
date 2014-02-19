@@ -31,6 +31,17 @@ func getGlobalVariable(variable string) js.Object {
 	return js.Global("window").Get(variable)
 }
 
+type EvtScenario struct{}
+
+func (s EvtScenario) Setup() {
+	jQuery(`<p id="firstp">See 
+			<a id="someid" href="somehref" rel="bookmark">this blog entry</a>
+			for more information.</p>`).AppendTo(FIX)
+}
+func (s EvtScenario) Teardown() {
+	jQuery(FIX).Empty()
+}
+
 func main() {
 
 	QUnit.Module("core")
@@ -207,7 +218,7 @@ func main() {
 		for i := 0; i < 3; i++ {
 			jQuery("p").Clone().AppendTo(FIX)
 		}
-		jQuery(FIX).ScrollFn(func() {
+		jQuery(FIX).ScrollFn(func(e jQueryStatic.Event) {
 			jQuery("span").SetCss("display", "inline").FadeOut("slow")
 		})
 	})
@@ -220,7 +231,7 @@ func main() {
   				<input type="text" value="to test on">
   				<div></div>`).AppendTo(FIX)
 
-		jQuery(":input").SelectFn(func() {
+		jQuery(":input").SelectFn(func(e jQueryStatic.Event) {
 			jQuery("div").SetText("Something was selected").Show().FadeOut("1000")
 		})
 	})
@@ -274,7 +285,7 @@ func main() {
 		div.Remove()
 
 		span := jQuery("<span/>").Hide().Show()
-		assert.Equal(span.GetByIndex(0).Get("style").Get("display"), "inline", "For detached span elements, display should always be inline")
+		assert.Equal(span.Get(0).Get("style").Get("display"), "inline", "For detached span elements, display should always be inline")
 		span.Remove()
 
 	})
@@ -295,7 +306,7 @@ func main() {
 		assert.Equal(jQuery("#tAnchor5").Prop("href"), jQuery("#tAnchor6").Prop("href"), "Prop")
 
 		input := jQuery("<input name='tester' />")
-		assert.StrictEqual(input.CloneWithDataAndEvents(true).SetAttr("name", "test").Underlying().Index(0).Get("name"), "test", "Clone")
+		assert.StrictEqual(input.Clone(true).SetAttr("name", "test").Underlying().Index(0).Get("name"), "test", "Clone")
 
 		jQuery(FIX).Empty()
 
@@ -321,7 +332,7 @@ func main() {
 		divs := jQuery(FIX).Find("div").Get()
 		assert.Equal(divs.Get("length"), 6, "6 divs inserted")
 
-		jQuery(FIX).Find(".dup").CloneWithDataAndEvents(true).AppendTo(FIX)
+		jQuery(FIX).Find(".dup").Clone(true).AppendTo(FIX)
 		divs2 := jQuery(FIX).Find("div").Get()
 		assert.Equal(divs2.Get("length"), 9, "9 divs inserted")
 
@@ -329,4 +340,96 @@ func main() {
 		assert.Equal(divs3.Get("length"), 6, "post-qunique should be 6 elements")
 	})
 
+	QUnit.Test("Serialize,SerializeArray,Trigger", func(assert QUnit.QUnitAssert) {
+
+		QUnit.Expect(2)
+		jQuery(`<form>
+				  <div><input type="text" name="a" value="1" id="a"></div>
+				  <div><input type="text" name="b" value="2" id="b"></div>
+				  <div><input type="hidden" name="c" value="3" id="c"></div>
+				  <div>
+				    <textarea name="d" rows="8" cols="40">4</textarea>
+				  </div>
+				  <div><select name="e">
+				    <option value="5" selected="selected">5</option>
+				    <option value="6">6</option>
+				    <option value="7">7</option>
+				  </select></div>
+				  <div>
+				    <input type="checkbox" name="f" value="8" id="f">
+				  </div>
+				  <div>
+				    <input type="submit" name="g" value="Submit" id="g">
+				  </div>
+				</form>`).AppendTo(FIX)
+
+		var collectResults string
+		jQuery(FIX).Find("form").SubmitFn(func(evt jQueryStatic.Event) {
+
+			sa := jQuery(evt.Target).SerializeArray()
+			for i := 0; i < sa.Length(); i++ {
+				collectResults += sa.Index(i).Get("name").String()
+			}
+			assert.Equal(collectResults, "abcde", "SerializeArray")
+			evt.PreventDefault()
+		})
+
+		serializedString := "a=1&b=2&c=3&d=4&e=5"
+		assert.Equal(jQuery(FIX).Find("form").Serialize(), serializedString, "Serialize")
+
+		jQuery(FIX).Find("form").Trigger("submit")
+	})
+
+	QUnit.ModuleLifecycle("events", EvtScenario{})
+	QUnit.Test("On,One,Off,Trigger", func(assert QUnit.QUnitAssert) {
+
+		fn := func(ev jQueryStatic.Event) {
+			assert.Ok(!ev.Data.IsUndefined(), "on() with data, check passed data exists")
+			assert.Equal(ev.Data.Get("foo"), "bar", "on() with data, Check value of passed data")
+		}
+
+		data := map[string]interface{}{"foo": "bar"}
+		jQuery("#firstp").On(jQueryStatic.CLICK, data, fn).Trigger(jQueryStatic.CLICK).Off(jQueryStatic.CLICK, fn)
+
+		var clickCounter, mouseoverCounter int
+		handler := func(ev jQueryStatic.Event) {
+			if ev.Type == jQueryStatic.CLICK {
+				clickCounter++
+			} else if ev.Type == jQueryStatic.MOUSEOVER {
+				mouseoverCounter++
+			}
+		}
+
+		handlerWithData := func(ev jQueryStatic.Event) {
+			if ev.Type == jQueryStatic.CLICK {
+				clickCounter += ev.Data.Get("data").Int()
+			} else if ev.Type == jQueryStatic.MOUSEOVER {
+				mouseoverCounter += ev.Data.Get("data").Int()
+			}
+		}
+
+		data2 := map[string]interface{}{"data": 2}
+		elem := jQuery("#firstp").On(jQueryStatic.CLICK, handler).On(jQueryStatic.MOUSEOVER, handler).One(jQueryStatic.CLICK, data2, handlerWithData).One(jQueryStatic.MOUSEOVER, data2, handlerWithData)
+		assert.Equal(clickCounter, 0, "clickCounter initialization ok")
+		assert.Equal(mouseoverCounter, 0, "mouseoverCounter initialization ok")
+
+		elem.Trigger(jQueryStatic.CLICK).Trigger(jQueryStatic.MOUSEOVER)
+		assert.Equal(clickCounter, 3, "clickCounter Increased after Trigger/On/One")
+		assert.Equal(mouseoverCounter, 3, "mouseoverCounter Increased after Trigger/On/One")
+
+		elem.Trigger(jQueryStatic.CLICK).Trigger(jQueryStatic.MOUSEOVER)
+		assert.Equal(clickCounter, 4, "clickCounter Increased after Trigger/On")
+		assert.Equal(mouseoverCounter, 4, "a) mouseoverCounter Increased after TriggerOn")
+
+		elem.Trigger(jQueryStatic.CLICK).Trigger(jQueryStatic.MOUSEOVER)
+		assert.Equal(clickCounter, 5, "b) clickCounter not Increased after Off")
+		assert.Equal(mouseoverCounter, 5, "c) mouseoverCounter not Increased after Off")
+
+		elem.Off(jQueryStatic.CLICK).Off(jQueryStatic.MOUSEOVER)
+		//2do: elem.Off(jQueryStatic.CLICK, handlerWithData).Off(jQueryStatic.MOUSEOVER, handlerWithData)
+		elem.Trigger(jQueryStatic.CLICK).Trigger(jQueryStatic.MOUSEOVER)
+		assert.Equal(clickCounter, 5, "clickCounter not Increased after Off")
+		assert.Equal(mouseoverCounter, 5, "mouseoverCounter not Increased after Off")
+
+	})
 }
