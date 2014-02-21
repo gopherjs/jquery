@@ -1,7 +1,6 @@
 package jquery
 
 import "github.com/gopherjs/gopherjs/js"
-import "fmt"
 
 type JQuery struct {
 	o        js.Object
@@ -25,8 +24,7 @@ type Event struct {
 	MetaKey        bool      `js:"metaKey"`
 	PageX          int       `js:"pageX"`
 	PageY          int       `js:"pageY"`
-
-	Type string `js:"type"`
+	Type           string    `js:"type"`
 }
 
 func (event *Event) PreventDefault() {
@@ -156,7 +154,6 @@ func MapOverMap(arr map[string]interface{}, fn func(interface{}, string) interfa
 
 //static function
 func Noop() interface{} {
-	//2do: check difference to empty gopherjs function
 	return js.Global("jQuery").Get("noop").Interface()
 }
 
@@ -187,13 +184,8 @@ func (j JQuery) Empty() JQuery {
 	return j
 }
 
-func (j JQuery) Detach() JQuery {
-	j.o = j.o.Call("detach")
-	return j
-}
-
-func (j JQuery) DetachBySelector(sel string) JQuery {
-	j.o = j.o.Call("detach", sel)
+func (j JQuery) Detach(i ...interface{}) JQuery {
+	j.o = j.o.Call("detach", i...)
 	return j
 }
 
@@ -204,11 +196,6 @@ func (j JQuery) Serialize() string {
 
 func (j JQuery) SerializeArray() js.Object {
 	return j.o.Call("serializeArray")
-}
-
-func (j JQuery) AddBack() JQuery {
-	j.o = j.o.Call("addBack")
-	return j
 }
 
 func (j JQuery) Eq(idx int) JQuery {
@@ -226,8 +213,13 @@ func (j JQuery) Remove(i ...interface{}) JQuery {
 	return j
 }
 
-func (j JQuery) AddBackBySelector(selector string) JQuery {
-	j.o = j.o.Call("addBack", selector)
+func (j JQuery) Stop(i ...interface{}) JQuery {
+	j.o = j.o.Call("stop", i...)
+	return j
+}
+
+func (j JQuery) AddBack(i ...interface{}) JQuery {
+	j.o = j.o.Call("addBack", i...)
 	return j
 }
 
@@ -249,8 +241,15 @@ func (j JQuery) Text() string {
 	return j.o.Call("text").String()
 }
 
-func (j JQuery) SetText(name string) JQuery {
-	j.o = j.o.Call("text", name)
+func (j JQuery) SetText(i interface{}) JQuery {
+
+	switch i.(type) {
+	case func(int, string) string, string:
+	default:
+		print("SetText Argument should be 'string' or 'func(int, string) string'")
+	}
+
+	j.o = j.o.Call("text", i)
 	return j
 }
 
@@ -311,19 +310,23 @@ func (j JQuery) HasClass(class string) bool {
 	return j.o.Call("hasClass", class).Bool()
 }
 
+//2do: use interfaces
 func (j JQuery) AddClass(property string) JQuery {
 	j.o = j.o.Call("addClass", property)
 	return j
 }
 
+//2do: use interfaces
 func (j JQuery) AddClassFn(fn func(idx int) string) JQuery {
-	j.o.Call("html", func(idx int) string {
+	j.o.Call("addClass", func(idx int) string {
 		return fn(idx)
 	})
 	return j
 }
+
+//2do: use interfaces
 func (j JQuery) AddClassFnClass(fn func(idx int, class string) string) JQuery {
-	j.o.Call("html", func(idx int, class string) string {
+	j.o.Call("addClass", func(idx int, class string) string {
 		return fn(idx, class)
 	})
 	return j
@@ -334,13 +337,8 @@ func (j JQuery) RemoveClass(property string) JQuery {
 	return j
 }
 
-func (j JQuery) ToggleClassByName(className string, swtch bool) JQuery {
-	j.o = j.o.Call("toggleClass", className, swtch)
-	return j
-}
-
-func (j JQuery) ToggleClass(swtch bool) JQuery {
-	j.o.Call("toggleClass", swtch)
+func (j JQuery) ToggleClass(i ...interface{}) JQuery {
+	j.o = j.o.Call("toggleClass", i...)
 	return j
 }
 
@@ -363,33 +361,18 @@ func (j JQuery) ReplaceWith(sel interface{}) JQuery {
 	return j
 }
 
-func (j JQuery) After(sel interface{}) JQuery {
-	j.o = j.o.Call("after", sel)
+func (j JQuery) After(i ...interface{}) JQuery {
+	j.o = j.o.Call("after", i...)
 	return j
 }
 
-func (j JQuery) AfterContext(sel interface{}, ctx interface{}) JQuery {
-	j.o = j.o.Call("after", sel, ctx)
+func (j JQuery) Before(i ...interface{}) JQuery {
+	j.o = j.o.Call("before", i...)
 	return j
 }
 
-func (j JQuery) Before(sel interface{}) JQuery {
-	j.o = j.o.Call("before", sel)
-	return j
-}
-
-func (j JQuery) BeforeContext(sel interface{}, ctx interface{}) JQuery {
-	j.o = j.o.Call("before", sel, ctx)
-	return j
-}
-
-func (j JQuery) Prepend(sel interface{}) JQuery {
-	j.o = j.o.Call("prepend", sel)
-	return j
-}
-
-func (j JQuery) PrependContext(sel interface{}, ctx interface{}) JQuery {
-	j.o = j.o.Call("prepend", sel, ctx)
+func (j JQuery) Prepend(i ...interface{}) JQuery {
+	j.o = j.o.Call("prepend", i...)
 	return j
 }
 
@@ -427,22 +410,15 @@ func (j JQuery) Html() string {
 	return j.o.Call("html").String()
 }
 
-func (j JQuery) SetHtml(html string) JQuery {
-	j.o = j.o.Call("html", html)
-	return j
-}
+func (j JQuery) SetHtml(i interface{}) JQuery {
 
-func (j JQuery) HtmlByFunc(fn func(idx int, txt string) string) JQuery {
-	j.o.Call("html", func(idx int, txt string) string {
-		return fn(idx, txt)
-	})
-	return j
-}
+	switch i.(type) {
+	case func(int, string) string, string:
+	default:
+		print("SetHtml Argument should be 'string' or 'func(int, string) string'")
+	}
 
-func (j JQuery) TextByFunc(fn func(idx int, txt string) string) JQuery {
-	j.o.Call("text", func(idx int, txt string) string {
-		return fn(idx, txt)
-	})
+	j.o = j.o.Call("html", i)
 	return j
 }
 
@@ -476,18 +452,18 @@ func (j JQuery) SetHeight(value string) JQuery {
 }
 
 func (j JQuery) Width() int {
-	return j.o.Call("scrollTop").Int()
+	return j.o.Call("width").Int()
 }
 
-func (j JQuery) SetWidth(value string) JQuery {
-	j.o = j.o.Call("scrollTop", value)
-	return j
-}
+func (j JQuery) SetWidth(i interface{}) JQuery {
 
-func (j JQuery) WidthByFunc(fn func(index int, width string) string) JQuery {
-	j.o.Call("width", func(index int, width string) string {
-		return fn(index, width)
-	})
+	switch i.(type) {
+	case func(int, string) string, string:
+	default:
+		print("SetWidth Argument should be 'string' or 'func(int, string) string'")
+	}
+
+	j.o = j.o.Call("width", i)
 	return j
 }
 
@@ -505,25 +481,22 @@ func (j JQuery) Offset() JQueryCoordinates {
 }
 
 func (j JQuery) SetOffset(jc JQueryCoordinates) JQuery {
-	//2do: test
 	j.o = j.o.Call("offset", jc)
 	return j
 }
 
-func (j JQuery) OuterHeight() int {
-	return j.o.Call("outerHeight").Int()
-
+func (j JQuery) OuterHeight(includeMargin ...bool) int {
+	if len(includeMargin) == 0 {
+		return j.o.Call("outerHeight").Int()
+	}
+	return j.o.Call("outerHeight", includeMargin[0]).Int()
 }
-func (j JQuery) OuterHeightWithMargin(includeMargin bool) int {
-	return j.o.Call("outerHeight", includeMargin).Int()
+func (j JQuery) OuterWidth(includeMargin ...bool) int {
 
-}
-func (j JQuery) OuterWidth() int {
-	return j.o.Call("outerWidth").Int()
-
-}
-func (j JQuery) OuterWidthWithMargin(includeMargin bool) int {
-	return j.o.Call("outerWidth", includeMargin).Int()
+	if len(includeMargin) == 0 {
+		return j.o.Call("outerWidth").Int()
+	}
+	return j.o.Call("outerWidth", includeMargin[0]).Int()
 }
 
 func (j JQuery) Position() JQueryCoordinates {
@@ -557,8 +530,8 @@ func (j JQuery) SetData(key string, value string) JQuery {
 	return j
 }
 
-func (j JQuery) Data(key string) string {
-	return j.o.Call("data", key).String()
+func (j JQuery) Data(key string) interface{} {
+	return j.o.Call("data", key).Interface()
 }
 
 func (j JQuery) Dequeue(queueName string) JQuery {
@@ -576,37 +549,18 @@ func (j JQuery) OffsetParent() JQuery {
 	return j
 }
 
-func (j JQuery) Parent() JQuery {
-	j.o = j.o.Call("parent")
+func (j JQuery) Parent(i ...interface{}) JQuery {
+	j.o = j.o.Call("parent", i...)
 	return j
 }
 
-func (j JQuery) ParentBySelector(selector string) JQuery {
-	j.o = j.o.Call("parent", selector)
-	return j
-}
-func (j JQuery) Parents() JQuery {
-	j.o = j.o.Call("parents")
+func (j JQuery) Parents(i ...interface{}) JQuery {
+	j.o = j.o.Call("parents", i...)
 	return j
 }
 
-func (j JQuery) ParentsBySelector(selector string) JQuery {
-	j.o = j.o.Call("parents", selector)
-	return j
-}
-
-func (j JQuery) ParentsUntil() JQuery {
-	j.o = j.o.Call("parentsUntil")
-	return j
-}
-
-func (j JQuery) ParentsUntilBySelector(sel interface{}) JQuery {
-	j.o = j.o.Call("parentsUntil", sel)
-	return j
-}
-
-func (j JQuery) ParentsUntilBySelectorAndFilter(selector interface{}, filter interface{}) JQuery {
-	j.o = j.o.Call("parentsUntil", selector, filter)
+func (j JQuery) ParentsUntil(i ...interface{}) JQuery {
+	j.o = j.o.Call("parentsUntil", i...)
 	return j
 }
 
@@ -630,13 +584,8 @@ func (j JQuery) Siblings(i ...interface{}) JQuery {
 	return j
 }
 
-func (j JQuery) Slice(start int) JQuery {
-	j.o = j.o.Call("slice", start)
-	return j
-}
-
-func (j JQuery) SliceByEnd(start int, end int) JQuery {
-	j.o = j.o.Call("slice", start, end)
+func (j JQuery) Slice(i ...interface{}) JQuery {
+	j.o = j.o.Call("slice", i...)
 	return j
 }
 
@@ -665,13 +614,8 @@ func (j JQuery) WrapInner(obj interface{}) JQuery {
 	return j
 }
 
-func (j JQuery) Next() JQuery {
-	j.o = j.o.Call("next")
-	return j
-}
-
-func (j JQuery) NextBySelector(selector string) JQuery {
-	j.o = j.o.Call("next", selector)
+func (j JQuery) Next(i ...interface{}) JQuery {
+	j.o = j.o.Call("next", i...)
 	return j
 }
 
@@ -685,40 +629,18 @@ func (j JQuery) NextUntil(i ...interface{}) JQuery {
 	return j
 }
 
-func (j JQuery) Not(selector string) JQuery {
-	j.o = j.o.Call("not", selector)
+func (j JQuery) Not(i ...interface{}) JQuery {
+	j.o = j.o.Call("not", i...)
 	return j
 }
 
-func (j JQuery) NotByJQuery(obj JQuery) JQuery {
-	j.o = j.o.Call("not", obj.o)
+func (j JQuery) Filter(i ...interface{}) JQuery {
+	j.o = j.o.Call("filter", i...)
 	return j
 }
 
-func (j JQuery) Filter(selector string) JQuery {
-	j.o = j.o.Call("filter", selector)
-	return j
-}
-
-func (j JQuery) FilterByFunc(fn func(index int) int) JQuery {
-	j.o.Call("filter", func(index int) int {
-		return fn(index)
-	})
-	return j
-}
-
-func (j JQuery) FilterByJQuery(obj JQuery) JQuery {
-	j.o = j.o.Call("filter", obj.o)
-	return j
-}
-
-func (j JQuery) Find(selector string) JQuery {
-	j.o = j.o.Call("find", selector)
-	return j
-}
-
-func (j JQuery) FindByJQuery(obj JQuery) JQuery {
-	j.o = j.o.Call("find", obj.o)
+func (j JQuery) Find(i ...interface{}) JQuery {
+	j.o = j.o.Call("find", i...)
 	return j
 }
 
@@ -732,19 +654,8 @@ func (j JQuery) Has(selector string) JQuery {
 	return j
 }
 
-func (j JQuery) Is(selector interface{}) bool {
-	return j.o.Call("is", selector).Bool()
-}
-
-func (j JQuery) IsByFunc(fn func(index int) bool) JQuery {
-	j.o.Call("width", func(index int) bool {
-		return fn(index)
-	})
-	return j
-}
-
-func (j JQuery) IsByJQuery(obj JQuery) bool {
-	return j.o.Call("is", obj.o).Bool()
+func (j JQuery) Is(i ...interface{}) bool {
+	return j.o.Call("is", i...).Bool()
 }
 
 func (j JQuery) Last() JQuery {
@@ -757,123 +668,49 @@ func (j JQuery) Ready(handler func()) JQuery {
 	return j
 }
 
-func (j JQuery) Resize() JQuery {
-	j.o = j.o.Call("resize")
+func (j JQuery) Resize(i ...interface{}) JQuery {
+	j.o = j.o.Call("resize", i...)
 	return j
 }
 
-func (j JQuery) ResizeFn(handler func(js.Object) js.Object) JQuery {
+func (j JQuery) Scroll(i ...interface{}) JQuery {
+	return j.handleEvent("scroll", i...)
+}
 
-	j.o.Call("resize", func(ev js.Object) js.Object {
-		return handler(ev)
-	})
+func (j JQuery) FadeOut(i ...interface{}) JQuery {
+	j.o = j.o.Call("fadeOut", i...)
 	return j
 }
 
-func (j JQuery) ResizeDataFn(eventData js.Object, handler func(js.Object) js.Object) JQuery {
+func (j JQuery) Select(i ...interface{}) JQuery {
+	return j.handleEvent("select", i...)
+}
 
-	j.o.Call("resize", eventData, func(ev js.Object) js.Object {
-		return handler(ev)
-	})
+func (j JQuery) Submit(i ...interface{}) JQuery {
+	return j.handleEvent("submit", i...)
+}
+
+func (j JQuery) handleEvent(evt string, i ...interface{}) JQuery {
+
+	switch len(i) {
+	case 0:
+		j.o = j.o.Call(evt)
+	case 1:
+		j.o = j.o.Call(evt, func(e js.Object) {
+			i[0].(func(Event))(Event{Object: e})
+		})
+	case 2:
+		j.o = j.o.Call(evt, i[0].(map[string]interface{}), func(e js.Object) {
+			i[1].(func(Event))(Event{Object: e})
+		})
+	default:
+		print(evt + " event expects 0 to 2 arguments")
+	}
 	return j
 }
 
-func (j JQuery) Scroll() JQuery {
-	j.o = j.o.Call("scroll")
-	return j
-}
-func (j JQuery) ScrollFn(handler func(eventObject Event)) JQuery {
-
-	j.o.Call("scroll", func(e js.Object) {
-		handler(Event{Object: e})
-	})
-	return j
-}
-func (j JQuery) ScrollDataFn(eventData js.Object, handler func(js.Object) js.Object) JQuery {
-
-	j.o.Call("scroll", eventData, func(e js.Object) js.Object {
-		return handler(Event{Object: e})
-	})
-	return j
-}
-
-func (j JQuery) FadeOut(duration string) JQuery {
-	j.o = j.o.Call("fadeOut", duration)
-	return j
-}
-
-func (j JQuery) Select() JQuery {
-	j.o = j.o.Call("select")
-	return j
-}
-func (j JQuery) SelectFn(handler func(eventObject Event)) JQuery {
-
-	j.o.Call("select", func(e js.Object) {
-		handler(Event{Object: e})
-	})
-	return j
-}
-func (j JQuery) SelectDataFn(eventData js.Object, handler func(js.Object) js.Object) JQuery {
-
-	j.o.Call("select", eventData, func(e js.Object) js.Object {
-		return handler(Event{Object: e})
-	})
-	return j
-}
-
-func (j JQuery) Submit() JQuery {
-	j.o = j.o.Call("submit")
-	return j
-}
-func (j JQuery) SubmitFn(handler func(eventObject Event)) JQuery {
-
-	j.o.Call("submit", func(e js.Object) {
-		handler(Event{Object: e})
-	})
-	return j
-}
-func (j JQuery) SubmitDataFn(eventData js.Object, handler func(Event)) JQuery {
-
-	j.o.Call("submit", eventData, func(e js.Object) {
-		handler(Event{Object: e})
-	})
-	return j
-}
-
-func (j JQuery) Trigger(event string) JQuery {
-	j.o = j.o.Call("trigger", event)
-	return j
-}
-func (j JQuery) TriggerParam(eventType string, extraParam interface{}) JQuery {
-	j.o = j.o.Call("trigger", eventType, extraParam)
-	return j
-}
-
-func (j JQuery) TriggerHandler(eventType string, extraParam interface{}) JQuery {
-	j.o = j.o.Call("triggerHandler", eventType, extraParam)
-	return j
-}
-
-func (j JQuery) Undelegate() JQuery {
-	j.o.Call("undelegate")
-	return j
-}
-
-func (j JQuery) UndelegateEvent(eventType js.Object) JQuery {
-	j.o.Call("undelegate", eventType)
-	return j
-}
-
-func (j JQuery) UndelegateNamespace(ns string) JQuery {
-	j.o.Call("undelegate", ns)
-	return j
-}
-
-func (j JQuery) UndelegateFn(eventType js.Object, handler func(js.Object) js.Object) JQuery {
-
-	j.o.Call("undelegate", eventType, func(ev js.Object) js.Object {
-		return handler(ev)
-	})
+func (j JQuery) Trigger(i ...interface{}) JQuery {
+	j.o = j.o.Call("trigger", i...)
 	return j
 }
 
@@ -907,9 +744,14 @@ func (j JQuery) Off(p ...interface{}) JQuery {
 func (j JQuery) events(evt string, p ...interface{}) JQuery {
 
 	count := len(p)
-	last := count - 1
-	typeStr := fmt.Sprintf("%T", p[last])
-	isEventFunc := typeStr == "func(jquery.Event)" || typeStr == "func(Event)"
+
+	var isEventFunc bool
+	switch p[len(p)-1].(type) {
+	case func(Event):
+		isEventFunc = true
+	default:
+		isEventFunc = false
+	}
 
 	switch count {
 	case 0:
@@ -924,7 +766,6 @@ func (j JQuery) events(evt string, p ...interface{}) JQuery {
 				p[1].(func(Event))(Event{Object: e})
 			})
 			return j
-
 		} else {
 			j.o = j.o.Call(evt, p[0], p[1])
 			return j
@@ -954,7 +795,7 @@ func (j JQuery) events(evt string, p ...interface{}) JQuery {
 			return j
 		}
 	default:
-		print("func events():should no enter here")
+		print(evt + " event should no have more than 4 arguments")
 		j.o = j.o.Call(evt, p...)
 		return j
 	}
@@ -972,6 +813,7 @@ const (
 	KEYDOWN  = "keydown"
 	KEYPRESS = "keypress"
 	KEYUP    = "keyup"
+	SUBMIT   = "submit"
 
 	LOAD       = "load"
 	MOUSEDOWN  = "mousedown"
@@ -981,4 +823,11 @@ const (
 	MOUSEOUT   = "mouseout"
 	MOUSEOVER  = "mouseover"
 	MOUSEUP    = "mouseup"
+
+	TOUCHSTART  = "touchstart"
+	TOUCHMOVE   = "touchmove"
+	TOUCHEND    = "touchend"
+	TOUCHENTER  = "touchenter"
+	TOUCHLEAVE  = "touchleave"
+	TOUCHCANCEL = "touchcancel"
 )

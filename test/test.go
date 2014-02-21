@@ -218,7 +218,7 @@ func main() {
 		for i := 0; i < 3; i++ {
 			jQuery("p").Clone().AppendTo(FIX)
 		}
-		jQuery(FIX).ScrollFn(func(e jQueryStatic.Event) {
+		jQuery(FIX).Scroll(func(e jQueryStatic.Event) {
 			jQuery("span").SetCss("display", "inline").FadeOut("slow")
 		})
 	})
@@ -231,7 +231,7 @@ func main() {
   				<input type="text" value="to test on">
   				<div></div>`).AppendTo(FIX)
 
-		jQuery(":input").SelectFn(func(e jQueryStatic.Event) {
+		jQuery(":input").Select(func(e jQueryStatic.Event) {
 			jQuery("div").SetText("Something was selected").Show().FadeOut("1000")
 		})
 	})
@@ -268,7 +268,7 @@ func main() {
 				</ul>`).AppendTo(FIX)
 
 		assert.Equal(jQuery(FIX).Find("li").Slice(2).Length, 3, "Slice")
-		assert.Equal(jQuery(FIX).Find("li").SliceByEnd(2, 4).Length, 2, "SliceByEnd")
+		assert.Equal(jQuery(FIX).Find("li").Slice(2, 4).Length, 2, "SliceByEnd")
 
 		assert.Equal(jQuery(FIX).Find("li").First().Attr("class"), "firstclass", "First")
 		assert.Equal(jQuery(FIX).Find("li").Last().Attr("class"), "lastclass", "Last")
@@ -364,7 +364,7 @@ func main() {
 				</form>`).AppendTo(FIX)
 
 		var collectResults string
-		jQuery(FIX).Find("form").SubmitFn(func(evt jQueryStatic.Event) {
+		jQuery(FIX).Find("form").Submit(func(evt jQueryStatic.Event) {
 
 			sa := jQuery(evt.Target).SerializeArray()
 			for i := 0; i < sa.Length(); i++ {
