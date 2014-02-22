@@ -227,13 +227,12 @@ func (j JQuery) Css(name string) string {
 	return j.o.Call("css", name).String()
 }
 
-func (j JQuery) SetCss(name, value interface{}) JQuery {
-	j.o = j.o.Call("css", name, value)
-	return j
+func (j JQuery) CssArray(arr ...string) map[string]interface{} {
+	return j.o.Call("css", arr).Interface().(map[string]interface{})
 }
 
-func (j JQuery) SetCssMap(propertiesMap map[string]interface{}) JQuery {
-	j.o = j.o.Call("css", propertiesMap)
+func (j JQuery) SetCss(i ...interface{}) JQuery {
+	j.o = j.o.Call("css", i...)
 	return j
 }
 
@@ -267,14 +266,8 @@ func (j JQuery) Prop(property string) bool {
 	return j.o.Call("prop", property).Bool()
 }
 
-//2do: value can be string
-func (j JQuery) SetProp(name string, value interface{}) JQuery {
-	j.o = j.o.Call("prop", name, value)
-	return j
-}
-
-func (j JQuery) SetPropMap(propertiesMap map[string]interface{}) JQuery {
-	j.o = j.o.Call("prop", propertiesMap)
+func (j JQuery) SetProp(i ...interface{}) JQuery {
+	j.o = j.o.Call("prop", i...)
 	return j
 }
 
@@ -291,13 +284,8 @@ func (j JQuery) Attr(property string) string {
 	return attr.String()
 }
 
-func (j JQuery) SetAttr(property string, value string) JQuery {
-	j.o = j.o.Call("attr", property, value)
-	return j
-}
-
-func (j JQuery) SetAttrMap(propertiesMap map[string]interface{}) JQuery {
-	j.o = j.o.Call("attr", propertiesMap)
+func (j JQuery) SetAttr(i ...interface{}) JQuery {
+	j.o = j.o.Call("attr", i...)
 	return j
 }
 
@@ -310,25 +298,13 @@ func (j JQuery) HasClass(class string) bool {
 	return j.o.Call("hasClass", class).Bool()
 }
 
-//2do: use interfaces
-func (j JQuery) AddClass(property string) JQuery {
-	j.o = j.o.Call("addClass", property)
-	return j
-}
-
-//2do: use interfaces
-func (j JQuery) AddClassFn(fn func(idx int) string) JQuery {
-	j.o.Call("addClass", func(idx int) string {
-		return fn(idx)
-	})
-	return j
-}
-
-//2do: use interfaces
-func (j JQuery) AddClassFnClass(fn func(idx int, class string) string) JQuery {
-	j.o.Call("addClass", func(idx int, class string) string {
-		return fn(idx, class)
-	})
+func (j JQuery) AddClass(i interface{}) JQuery {
+	switch i.(type) {
+	case func(int, string) string, string:
+	default:
+		print("addClass Argument should be 'string' or 'func(int, string) string'")
+	}
+	j.o = j.o.Call("addClass", i)
 	return j
 }
 
@@ -714,21 +690,6 @@ func (j JQuery) Trigger(i ...interface{}) JQuery {
 	return j
 }
 
-func (j JQuery) Unload(handler func(Event) js.Object) JQuery {
-
-	j.o.Call("unload", func(ev js.Object) js.Object {
-		return handler(Event{Object: ev})
-	})
-	return j
-}
-func (j JQuery) UnloadEventdata(eventData js.Object, handler func(Event) js.Object) JQuery {
-
-	j.o.Call("unload", eventData, func(ev js.Object) js.Object {
-		return handler(Event{Object: ev})
-	})
-	return j
-}
-
 func (j JQuery) On(p ...interface{}) JQuery {
 	return j.events("on", p...)
 }
@@ -741,6 +702,7 @@ func (j JQuery) Off(p ...interface{}) JQuery {
 	return j.events("off", p...)
 }
 
+//2do: merge with handleEvent ?
 func (j JQuery) events(evt string, p ...interface{}) JQuery {
 
 	count := len(p)
@@ -802,28 +764,30 @@ func (j JQuery) events(evt string, p ...interface{}) JQuery {
 }
 
 const (
-	BLUR     = "blur"
-	CHANGE   = "change"
-	CLICK    = "click"
-	DBLCLICK = "dblclick"
-	FOCUS    = "focus"
-	FOCUSIN  = "focusin"
-	FOCUSOUT = "focusout"
-	HOVER    = "hover"
-	KEYDOWN  = "keydown"
-	KEYPRESS = "keypress"
-	KEYUP    = "keyup"
-	SUBMIT   = "submit"
-
-	LOAD       = "load"
-	MOUSEDOWN  = "mousedown"
-	MOUSEENTER = "mouseenter"
-	MOUSELEAVE = "mouseleave"
-	MOUSEMOVE  = "mousemove"
-	MOUSEOUT   = "mouseout"
-	MOUSEOVER  = "mouseover"
-	MOUSEUP    = "mouseup"
-
+	BLUR        = "blur"
+	CHANGE      = "change"
+	CLICK       = "click"
+	DBLCLICK    = "dblclick"
+	FOCUS       = "focus"
+	FOCUSIN     = "focusin"
+	FOCUSOUT    = "focusout"
+	HOVER       = "hover"
+	KEYDOWN     = "keydown"
+	KEYPRESS    = "keypress"
+	KEYUP       = "keyup"
+	
+	SUBMIT      = "submit"
+	LOAD        = "load"
+	UNLOAD      = "unload"
+	
+	MOUSEDOWN   = "mousedown"
+	MOUSEENTER  = "mouseenter"
+	MOUSELEAVE  = "mouseleave"
+	MOUSEMOVE   = "mousemove"
+	MOUSEOUT    = "mouseout"
+	MOUSEOVER   = "mouseover"
+	MOUSEUP     = "mouseup"
+	
 	TOUCHSTART  = "touchstart"
 	TOUCHMOVE   = "touchmove"
 	TOUCHEND    = "touchend"
@@ -831,3 +795,5 @@ const (
 	TOUCHLEAVE  = "touchleave"
 	TOUCHCANCEL = "touchcancel"
 )
+
+//2do: ajax, deferred, promises, more tests, docs
