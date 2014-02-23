@@ -27,6 +27,11 @@ type Event struct {
 	Type           string    `js:"type"`
 }
 
+type JQueryCoordinates struct {
+	Left int 
+	Top  int 
+}
+
 func (event *Event) PreventDefault() {
 	event.Call("preventDefault")
 }
@@ -51,10 +56,7 @@ func (event *Event) StopPropagation() {
 	event.Call("stopPropagation")
 }
 
-type JQueryCoordinates struct {
-	Left int `js:"left"`
-	Top  int `js:"top"`
-}
+
 
 //JQuery constructor
 func NewJQuery(args ...interface{}) JQuery {
@@ -261,9 +263,9 @@ func (j JQuery) SetVal(name string) JQuery {
 	return j
 }
 
-//2do: can return string
-func (j JQuery) Prop(property string) bool {
-	return j.o.Call("prop", property).Bool()
+//can return string or bool
+func (j JQuery) Prop(property string) interface{} {
+	return j.o.Call("prop", property).Interface()
 }
 
 func (j JQuery) SetProp(i ...interface{}) JQuery {
@@ -477,7 +479,7 @@ func (j JQuery) OuterWidth(includeMargin ...bool) int {
 
 func (j JQuery) Position() JQueryCoordinates {
 	obj := j.o.Call("position")
-	return JQueryCoordinates{obj.Get("left").Int(), obj.Get("top").Int()}
+	return JQueryCoordinates{Left: obj.Get("left").Int(), Top: obj.Get("top").Int()}
 }
 
 func (j JQuery) ScrollLeft() int {
@@ -497,11 +499,11 @@ func (j JQuery) SetScrollTop(value int) JQuery {
 }
 
 func (j JQuery) ClearQueue(queueName string) JQuery {
-	j.o = j.o.Call("clearQueue", queueName)
+	j.o = j.o.Call("cleFifarQueue", queueName)
 	return j
 }
 
-func (j JQuery) SetData(key string, value string) JQuery {
+func (j JQuery) SetData(key string, value interface{}) JQuery {
 	j.o = j.o.Call("data", key, value)
 	return j
 }
@@ -764,30 +766,30 @@ func (j JQuery) events(evt string, p ...interface{}) JQuery {
 }
 
 const (
-	BLUR        = "blur"
-	CHANGE      = "change"
-	CLICK       = "click"
-	DBLCLICK    = "dblclick"
-	FOCUS       = "focus"
-	FOCUSIN     = "focusin"
-	FOCUSOUT    = "focusout"
-	HOVER       = "hover"
-	KEYDOWN     = "keydown"
-	KEYPRESS    = "keypress"
-	KEYUP       = "keyup"
-	
-	SUBMIT      = "submit"
-	LOAD        = "load"
-	UNLOAD      = "unload"
-	
-	MOUSEDOWN   = "mousedown"
-	MOUSEENTER  = "mouseenter"
-	MOUSELEAVE  = "mouseleave"
-	MOUSEMOVE   = "mousemove"
-	MOUSEOUT    = "mouseout"
-	MOUSEOVER   = "mouseover"
-	MOUSEUP     = "mouseup"
-	
+	BLUR     = "blur"
+	CHANGE   = "change"
+	CLICK    = "click"
+	DBLCLICK = "dblclick"
+	FOCUS    = "focus"
+	FOCUSIN  = "focusin"
+	FOCUSOUT = "focusout"
+	HOVER    = "hover"
+	KEYDOWN  = "keydown"
+	KEYPRESS = "keypress"
+	KEYUP    = "keyup"
+
+	SUBMIT = "submit"
+	LOAD   = "load"
+	UNLOAD = "unload"
+
+	MOUSEDOWN  = "mousedown"
+	MOUSEENTER = "mouseenter"
+	MOUSELEAVE = "mouseleave"
+	MOUSEMOVE  = "mousemove"
+	MOUSEOUT   = "mouseout"
+	MOUSEOVER  = "mouseover"
+	MOUSEUP    = "mouseup"
+
 	TOUCHSTART  = "touchstart"
 	TOUCHMOVE   = "touchmove"
 	TOUCHEND    = "touchend"

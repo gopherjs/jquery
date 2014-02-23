@@ -277,7 +277,7 @@ func main() {
 
 	QUnit.Test("Css", func(assert QUnit.QUnitAssert) {
 
-		jQuery(FIX).SetCssMap(map[string]interface{}{"color": "red", "background": "blue", "width": "20px", "height": "10px"})
+		jQuery(FIX).SetCss(map[string]interface{}{"color": "red", "background": "blue", "width": "20px", "height": "10px"})
 		assert.Ok(jQuery(FIX).Css("width") == "20px" && jQuery(FIX).Css("height") == "10px", "SetCssMap")
 
 		div := jQuery("<div style='display: inline'/>").Show().AppendTo(FIX)
@@ -300,7 +300,7 @@ func main() {
 		assert.Equal(jQuery("#testForm").Attr("name"), "", "Attr undefined")
 		extras.Remove()
 
-		jQuery("<a/>").SetAttrMap(map[string]interface{}{"id": "tAnchor5", "href": "#5"}).AppendTo(FIX)
+		jQuery("<a/>").SetAttr(map[string]interface{}{"id": "tAnchor5", "href": "#5"}).AppendTo(FIX)
 		assert.Equal(jQuery("#tAnchor5").Attr("href"), "#5", "Attr")
 		jQuery("<a id='tAnchor6' href='#5' />").AppendTo(FIX)
 		assert.Equal(jQuery("#tAnchor5").Prop("href"), jQuery("#tAnchor6").Prop("href"), "Prop")
