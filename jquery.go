@@ -28,8 +28,8 @@ type Event struct {
 }
 
 type JQueryCoordinates struct {
-	Left int 
-	Top  int 
+	Left int
+	Top  int
 }
 
 func (event *Event) PreventDefault() {
@@ -55,8 +55,6 @@ func (event *Event) StopImmediatePropagation() {
 func (event *Event) StopPropagation() {
 	event.Call("stopPropagation")
 }
-
-
 
 //JQuery constructor
 func NewJQuery(args ...interface{}) JQuery {
@@ -499,7 +497,7 @@ func (j JQuery) SetScrollTop(value int) JQuery {
 }
 
 func (j JQuery) ClearQueue(queueName string) JQuery {
-	j.o = j.o.Call("cleFifarQueue", queueName)
+	j.o = j.o.Call("clearQueue", queueName)
 	return j
 }
 
