@@ -5,7 +5,7 @@ import "github.com/gopherjs/gopherjs/js"
 type JQuery struct {
 	o        js.Object
 	Jquery   string `js:"jquery"`
-	Selector string `js:"selector"`
+	Selector string `js:"selector"` //2do: deprecate
 	Length   string `js:"length"`
 	Context  string `js:"context"`
 }
@@ -72,7 +72,6 @@ func GlobalEval(cmd string) {
 }
 
 //static function
-//native js Types: is this useful/a good idea ?
 func Type(sth interface{}) string {
 	return js.Global("jQuery").Call("type", sth).String()
 }
@@ -110,6 +109,11 @@ func IsWindow(sth interface{}) bool {
 //static function
 func InArray(val interface{}, arr []interface{}) int {
 	return js.Global("jQuery").Call("inArray", val, arr).Int()
+}
+
+//static function
+func Contains(container interface{}, contained interface{}) bool {
+	return js.Global("jQuery").Call("contains", container, contained).Bool()
 }
 
 //static function
@@ -158,14 +162,16 @@ func Noop() interface{} {
 }
 
 //static function
-func Now() float64 {
-	return js.Global("jQuery").Call("now").Float()
+func Now() int {
+	return js.Global("jQuery").Call("now").Int()
 }
 
+//static function
 func Unique(arr js.Object) js.Object {
 	return js.Global("jQuery").Call("unique", arr)
 }
 
+//methods
 func (j JQuery) Underlying() js.Object {
 	return j.o
 }
@@ -174,9 +180,8 @@ func (j JQuery) Get(i ...interface{}) js.Object {
 	return j.o.Call("get", i...)
 }
 
-func (j JQuery) Append(obj interface{}) JQuery {
-	j.o = j.o.Call("append", obj)
-	return j
+func (j JQuery) Append(i ...interface{}) JQuery {
+	return j.dom2args("append", i...)
 }
 
 func (j JQuery) Empty() JQuery {
@@ -189,7 +194,6 @@ func (j JQuery) Detach(i ...interface{}) JQuery {
 	return j
 }
 
-//methods
 func (j JQuery) Serialize() string {
 	return j.o.Call("serialize").String()
 }
@@ -328,43 +332,39 @@ func (j JQuery) Blur() JQuery {
 	return j
 }
 
-func (j JQuery) ReplaceAll(sel interface{}) JQuery {
-	j.o = j.o.Call("replaceAll", sel)
-	return j
+func (j JQuery) ReplaceAll(i interface{}) JQuery {
+	return j.dom1arg("replaceAll", i)
 }
-func (j JQuery) ReplaceWith(sel interface{}) JQuery {
-	j.o = j.o.Call("replaceWith", sel)
-	return j
+func (j JQuery) ReplaceWith(i interface{}) JQuery {
+	return j.dom1arg("replaceWith", i)
 }
 
 func (j JQuery) After(i ...interface{}) JQuery {
-	j.o = j.o.Call("after", i...)
-	return j
+	return j.dom2args("after", i...)
 }
 
 func (j JQuery) Before(i ...interface{}) JQuery {
-	j.o = j.o.Call("before", i...)
-	return j
+	return j.dom2args("before", i...)
 }
 
 func (j JQuery) Prepend(i ...interface{}) JQuery {
-	j.o = j.o.Call("prepend", i...)
-	return j
+	return j.dom2args("prepend", i...)
 }
 
-func (j JQuery) PrependTo(sel interface{}) JQuery {
-	j.o = j.o.Call("prependTo", sel)
-	return j
+func (j JQuery) PrependTo(i interface{}) JQuery {
+	return j.dom1arg("prependTo", i)
 }
 
-func (j JQuery) AppendTo(sel interface{}) JQuery {
-	j.o = j.o.Call("appendTo", sel)
-	return j
+func (j JQuery) AppendTo(i interface{}) JQuery {
+	return j.dom1arg("appendTo", i)
 }
 
-func (j JQuery) Toggle(showOrHide bool) JQuery {
-	j.o = j.o.Call("toggle", showOrHide)
-	return j
+func (j JQuery) InsertAfter(i interface{}) JQuery {
+	return j.dom1arg("insertAfter", i)
+}
+
+func (j JQuery) InsertBefore(i interface{}) JQuery {
+	return j.dom1arg("insertBefore", i)
 }
 
 func (j JQuery) Show() JQuery {
@@ -374,6 +374,11 @@ func (j JQuery) Show() JQuery {
 
 func (j JQuery) Hide() JQuery {
 	j.o.Call("hide")
+	return j
+}
+
+func (j JQuery) Toggle(showOrHide bool) JQuery {
+	j.o = j.o.Call("toggle", showOrHide)
 	return j
 }
 
@@ -399,8 +404,7 @@ func (j JQuery) SetHtml(i interface{}) JQuery {
 }
 
 func (j JQuery) Closest(i ...interface{}) JQuery {
-	j.o = j.o.Call("closest", i...)
-	return j
+	return j.dom2args("closest", i...)
 }
 
 func (j JQuery) End() JQuery {
@@ -409,8 +413,7 @@ func (j JQuery) End() JQuery {
 }
 
 func (j JQuery) Add(i ...interface{}) JQuery {
-	j.o = j.o.Call("add", i...)
-	return j
+	return j.dom2args("add", i...)
 }
 
 func (j JQuery) Clone(b ...interface{}) JQuery {
@@ -580,14 +583,12 @@ func (j JQuery) Wrap(obj interface{}) JQuery {
 	return j
 }
 
-func (j JQuery) WrapAll(obj interface{}) JQuery {
-	j.o = j.o.Call("wrapAll", obj)
-	return j
+func (j JQuery) WrapAll(i interface{}) JQuery {
+	return j.dom1arg("wrapAll", i)
 }
 
-func (j JQuery) WrapInner(obj interface{}) JQuery {
-	j.o = j.o.Call("wrapInner", obj)
-	return j
+func (j JQuery) WrapInner(i interface{}) JQuery {
+	return j.dom1arg("wrapInner", i)
 }
 
 func (j JQuery) Next(i ...interface{}) JQuery {
@@ -702,7 +703,6 @@ func (j JQuery) Off(p ...interface{}) JQuery {
 	return j.events("off", p...)
 }
 
-//2do: merge with handleEvent ?
 func (j JQuery) events(evt string, p ...interface{}) JQuery {
 
 	count := len(p)
@@ -763,6 +763,49 @@ func (j JQuery) events(evt string, p ...interface{}) JQuery {
 	}
 }
 
+func (j JQuery) dom2args(method string, i ...interface{}) JQuery {
+
+	switch len(i) {
+	case 2:
+		selector, selOk := i[0].(JQuery)
+		context, ctxOk := i[1].(JQuery)
+		if !selOk && !ctxOk {
+			j.o = j.o.Call(method, i[0], i[1])
+			return j
+		} else if selOk && !ctxOk {
+			j.o = j.o.Call(method, selector.o, i[1])
+			return j
+		} else if !selOk && ctxOk {
+			j.o = j.o.Call(method, i[0], context.o)
+			return j
+		}
+		j.o = j.o.Call(method, selector.o, context.o)
+		return j
+	case 1:
+		selector, selOk := i[0].(JQuery)
+		if !selOk {
+			j.o = j.o.Call(method, i[0])
+			return j
+		}
+		j.o = j.o.Call(method, selector.o)
+		return j
+	default:
+		print(" only 1 or 2 parameters allowed for method ", method)
+		return j
+	}
+}
+
+func (j JQuery) dom1arg(method string, i interface{}) JQuery {
+
+	selector, selOk := i.(JQuery)
+	if !selOk {
+		j.o = j.o.Call(method, i)
+		return j
+	}
+	j.o = j.o.Call(method, selector.o)
+	return j
+}
+
 const (
 	BLUR     = "blur"
 	CHANGE   = "change"
@@ -796,4 +839,8 @@ const (
 	TOUCHCANCEL = "touchcancel"
 )
 
-//2do: ajax, deferred, promises, more tests, docs
+//2do: ajax api
+//2do: promises and deferred api
+//2do: animations api
+//2do: more tests 
+//2do: more docs
