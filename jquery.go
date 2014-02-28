@@ -58,117 +58,117 @@ func (event *Event) StopPropagation() {
 
 //JQuery constructor
 func NewJQuery(args ...interface{}) JQuery {
-	return JQuery{o: js.Global("jQuery").New(args...)}
+	return JQuery{o: js.Global.Get("jQuery").New(args...)}
 }
 
 //static function
 func Trim(text string) string {
-	return js.Global("jQuery").Call("trim", text).String()
+	return js.Global.Get("jQuery").Call("trim", text).String()
 }
 
 //static function
 func GlobalEval(cmd string) {
-	js.Global("jQuery").Call("globalEval", cmd)
+	js.Global.Get("jQuery").Call("globalEval", cmd)
 }
 
 //static function
 func Type(sth interface{}) string {
-	return js.Global("jQuery").Call("type", sth).String()
+	return js.Global.Get("jQuery").Call("type", sth).String()
 }
 
 //static function
 func IsPlainObject(sth interface{}) bool {
-	return js.Global("jQuery").Call("isPlainObject", sth).Bool()
+	return js.Global.Get("jQuery").Call("isPlainObject", sth).Bool()
 }
 
 //static function
 func IsEmptyObject(sth interface{}) bool {
-	return js.Global("jQuery").Call("isEmptyObject", sth).Bool()
+	return js.Global.Get("jQuery").Call("isEmptyObject", sth).Bool()
 }
 
 //static function
 func IsFunction(sth interface{}) bool {
-	return js.Global("jQuery").Call("isFunction", sth).Bool()
+	return js.Global.Get("jQuery").Call("isFunction", sth).Bool()
 }
 
 //static function
 func IsNumeric(sth interface{}) bool {
-	return js.Global("jQuery").Call("isNumeric", sth).Bool()
+	return js.Global.Get("jQuery").Call("isNumeric", sth).Bool()
 }
 
 //static function
 func IsXMLDoc(sth interface{}) bool {
-	return js.Global("jQuery").Call("isXMLDoc", sth).Bool()
+	return js.Global.Get("jQuery").Call("isXMLDoc", sth).Bool()
 }
 
 //static function
 func IsWindow(sth interface{}) bool {
-	return js.Global("jQuery").Call("isWindow", sth).Bool()
+	return js.Global.Get("jQuery").Call("isWindow", sth).Bool()
 }
 
 //static function
 func InArray(val interface{}, arr []interface{}) int {
-	return js.Global("jQuery").Call("inArray", val, arr).Int()
+	return js.Global.Get("jQuery").Call("inArray", val, arr).Int()
 }
 
 //static function
 func Contains(container interface{}, contained interface{}) bool {
-	return js.Global("jQuery").Call("contains", container, contained).Bool()
+	return js.Global.Get("jQuery").Call("contains", container, contained).Bool()
 }
 
 //static function
 func ParseHTML(text string) []interface{} {
-	return js.Global("jQuery").Call("parseHTML", text).Interface().([]interface{})
+	return js.Global.Get("jQuery").Call("parseHTML", text).Interface().([]interface{})
 }
 
 //static function
 func ParseXML(text string) interface{} {
-	return js.Global("jQuery").Call("parseXML", text).Interface()
+	return js.Global.Get("jQuery").Call("parseXML", text).Interface()
 }
 
 //static function
 func ParseJSON(text string) interface{} {
-	return js.Global("jQuery").Call("parseJSON", text).Interface()
+	return js.Global.Get("jQuery").Call("parseJSON", text).Interface()
 }
 
 //static function
 func Grep(arr []interface{}, fn func(interface{}, int) bool) []interface{} {
-	return js.Global("jQuery").Call("grep", arr, fn).Interface().([]interface{})
+	return js.Global.Get("jQuery").Call("grep", arr, fn).Interface().([]interface{})
 }
 
 //static function
 func EachOverArray(arr []interface{}, fn func(int, interface{}) bool) []interface{} {
-	return js.Global("jQuery").Call("each", arr, fn).Interface().([]interface{})
+	return js.Global.Get("jQuery").Call("each", arr, fn).Interface().([]interface{})
 }
 
 //static function
 func EachOverMap(arr map[string]interface{}, fn func(string, interface{}) bool) map[string]interface{} {
-	return js.Global("jQuery").Call("each", arr, fn).Interface().(map[string]interface{})
+	return js.Global.Get("jQuery").Call("each", arr, fn).Interface().(map[string]interface{})
 }
 
 //static function
 func MapOverArray(arr []interface{}, fn func(interface{}, int) interface{}) []interface{} {
-	return js.Global("jQuery").Call("map", arr, fn).Interface().([]interface{})
+	return js.Global.Get("jQuery").Call("map", arr, fn).Interface().([]interface{})
 }
 
 //static function
 func MapOverMap(arr map[string]interface{}, fn func(interface{}, string) interface{}) []interface{} {
-	return js.Global("jQuery").Call("map", arr, fn).Interface().([]interface{})
+	return js.Global.Get("jQuery").Call("map", arr, fn).Interface().([]interface{})
 }
 
 //static function
 func Noop() interface{} {
-	return js.Global("jQuery").Get("noop").Interface()
+	return js.Global.Get("jQuery").Get("noop").Interface()
 }
 
 //static function
 func Now() int {
-	return js.Global("jQuery").Call("now").Int()
+	return js.Global.Get("jQuery").Call("now").Int()
 }
 
 //static function
 func Unique(arr js.Object) js.Object {
-	return js.Global("jQuery").Call("unique", arr)
+	return js.Global.Get("jQuery").Call("unique", arr)
 }
 
 //methods
