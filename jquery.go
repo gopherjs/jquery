@@ -162,8 +162,8 @@ func Noop() interface{} {
 }
 
 //static function
-func Now() int {
-	return js.Global.Get("jQuery").Call("now").Int()
+func Now() float64 {
+	return js.Global.Get("jQuery").Call("now").Float()
 }
 
 //static function
@@ -204,6 +204,15 @@ func (j JQuery) SerializeArray() js.Object {
 
 func (j JQuery) Eq(idx int) JQuery {
 	j.o = j.o.Call("eq", idx)
+	return j
+}
+func (j JQuery) FadeIn(i ...interface{}) JQuery {
+	j.o = j.o.Call("fadeIn", i...)
+	return j
+}
+
+func (j JQuery) Delay(i ...interface{}) JQuery {
+	j.o = j.o.Call("delay", i...)
 	return j
 }
 
@@ -260,8 +269,8 @@ func (j JQuery) Val() string {
 	return j.o.Call("val").String()
 }
 
-func (j JQuery) SetVal(name string) JQuery {
-	j.o.Call("val", name)
+func (j JQuery) SetVal(i interface{}) JQuery {
+	j.o.Call("val", i)
 	return j
 }
 

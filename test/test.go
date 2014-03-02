@@ -20,15 +20,15 @@ var (
 )
 
 func getDocumentBody() js.Object {
-	return js.Global("document").Get("body")
+	return js.Global.Get("document").Get("body")
 }
 
 func getWindow() js.Object {
-	return js.Global("window")
+	return js.Global
 }
 
 func getGlobalVariable(variable string) js.Object {
-	return js.Global("window").Get(variable)
+	return js.Global.Get(variable)
 }
 
 type EvtScenario struct{}
@@ -55,12 +55,14 @@ func main() {
 		assert.Equal(jQuery("body").Selector, "body", `jQuery("body").Selector`)
 	})
 
+	
 	QUnit.Test("Test Setup", func(assert QUnit.QUnitAssert) {
-
+		
 		test := jQuery(getDocumentBody()).Find(FIX)
 		assert.Equal(test.Selector, FIX, "#qunit-fixture find Selector")
 		assert.Equal(test.Context, getDocumentBody(), "#qunit-fixture find Context")
 	})
+	
 
 	QUnit.Test("Static Functions", func(assert QUnit.QUnitAssert) {
 
@@ -198,7 +200,7 @@ func main() {
 		_ = jQueryStatic.Noop()
 		assert.Ok(jQueryStatic.IsFunction(jQueryStatic.Noop), "jQueryStatic.Noop")
 
-		date := js.Global("Date").New()
+		date := js.Global.Get("Date").New()
 		time := date.Call("getTime").Float()
 		assert.Ok(time >= jQueryStatic.Now(), "jQueryStatic.Now()")
 
