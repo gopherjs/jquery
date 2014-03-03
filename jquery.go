@@ -519,7 +519,11 @@ func (j JQuery) SetData(key string, value interface{}) JQuery {
 }
 
 func (j JQuery) Data(key string) interface{} {
-	return j.o.Call("data", key).Interface()
+	result := j.o.Call("data", key)
+	if result.IsUndefined() {
+		return nil
+	}
+	return result.Interface()
 }
 
 func (j JQuery) Dequeue(queueName string) JQuery {
@@ -851,5 +855,5 @@ const (
 //2do: ajax api
 //2do: promises and deferred api
 //2do: animations api
-//2do: more tests 
+//2do: more tests
 //2do: more docs
