@@ -855,5 +855,5 @@ const (
 //2do: ajax api
 //2do: promises and deferred api
 //2do: animations api
-//2do: more tests
+//2do: more tests, test return values against "undefined" values
 //2do: more docs

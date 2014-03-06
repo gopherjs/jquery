@@ -3,7 +3,7 @@ package test
 //test package for jquery bindings, developed in TDD style
 import (
 	"github.com/gopherjs/gopherjs/js"
-	jQueryStatic "github.com/rusco/jquery"
+	"github.com/rusco/jquery"
 	QUnit "github.com/rusco/qunit"
 	"strconv"
 	"strings"
@@ -14,10 +14,7 @@ const (
 	FIX = "#qunit-fixture"
 )
 
-var (
-	//if created via NewJQuery constructor it is not static:
-	jQuery = jQueryStatic.NewJQuery
-)
+var jQuery = jquery.NewJQuery //convenience
 
 func getDocumentBody() js.Object {
 	return js.Global.Get("document").Get("body")
@@ -25,10 +22,6 @@ func getDocumentBody() js.Object {
 
 func getWindow() js.Object {
 	return js.Global
-}
-
-func getGlobalVariable(variable string) js.Object {
-	return js.Global.Get(variable)
 }
 
 type EvtScenario struct{}
@@ -44,7 +37,7 @@ func (s EvtScenario) Teardown() {
 
 func main() {
 
-	QUnit.Module("core")
+	QUnit.Module("jquery core")
 	QUnit.Test("jQuery Properties", func(assert QUnit.QUnitAssert) {
 
 		assert.Equal(jQuery().Jquery, "2.1.0", "JQuery Version")
@@ -55,47 +48,45 @@ func main() {
 		assert.Equal(jQuery("body").Selector, "body", `jQuery("body").Selector`)
 	})
 
-	
 	QUnit.Test("Test Setup", func(assert QUnit.QUnitAssert) {
-		
+
 		test := jQuery(getDocumentBody()).Find(FIX)
 		assert.Equal(test.Selector, FIX, "#qunit-fixture find Selector")
 		assert.Equal(test.Context, getDocumentBody(), "#qunit-fixture find Context")
 	})
-	
 
 	QUnit.Test("Static Functions", func(assert QUnit.QUnitAssert) {
 
-		jQueryStatic.GlobalEval("var globalEvalTest = 2;")
-		assert.Equal(getGlobalVariable("globalEvalTest").Int(), 2, "GlobalEval: Test variable declarations are global")
+		jquery.GlobalEval("var globalEvalTest = 2;")
+		assert.Equal(js.Global.Get("globalEvalTest").Int(), 2, "GlobalEval: Test variable declarations are global")
 
-		assert.Equal(jQueryStatic.Trim("  GopherJS  "), "GopherJS", "Trim: leading and trailing space")
+		assert.Equal(jquery.Trim("  GopherJS  "), "GopherJS", "Trim: leading and trailing space")
 
-		assert.Equal(jQueryStatic.Type(true), "boolean", "Type: Boolean")
-		assert.Equal(jQueryStatic.Type(time.Now()), "date", "Type: Date")
-		assert.Equal(jQueryStatic.Type("GopherJS"), "string", "Type: String")
-		assert.Equal(jQueryStatic.Type(12.21), "number", "Type: Number")
-		assert.Equal(jQueryStatic.Type(nil), "null", "Type: Null")
-		assert.Equal(jQueryStatic.Type([2]string{"go", "lang"}), "array", "Type: Array")
-		assert.Equal(jQueryStatic.Type([]string{"go", "lang"}), "array", "Type: Array")
+		assert.Equal(jquery.Type(true), "boolean", "Type: Boolean")
+		assert.Equal(jquery.Type(time.Now()), "date", "Type: Date")
+		assert.Equal(jquery.Type("GopherJS"), "string", "Type: String")
+		assert.Equal(jquery.Type(12.21), "number", "Type: Number")
+		assert.Equal(jquery.Type(nil), "null", "Type: Null")
+		assert.Equal(jquery.Type([2]string{"go", "lang"}), "array", "Type: Array")
+		assert.Equal(jquery.Type([]string{"go", "lang"}), "array", "Type: Array")
 		o := map[string]interface{}{"a": true, "b": 1.1, "c": "more"}
-		assert.Equal(jQueryStatic.Type(o), "object", "Type: Object")
-		assert.Equal(jQueryStatic.Type(getDocumentBody), "function", "Type: Function")
+		assert.Equal(jquery.Type(o), "object", "Type: Object")
+		assert.Equal(jquery.Type(getDocumentBody), "function", "Type: Function")
 
-		assert.Ok(!jQueryStatic.IsPlainObject(""), "IsPlainObject: string")
-		assert.Ok(jQueryStatic.IsPlainObject(o), "IsPlainObject: Object")
-		assert.Ok(!jQueryStatic.IsEmptyObject(o), "IsEmptyObject: Object")
-		assert.Ok(jQueryStatic.IsEmptyObject(map[string]interface{}{}), "IsEmptyObject: Object")
+		assert.Ok(!jquery.IsPlainObject(""), "IsPlainObject: string")
+		assert.Ok(jquery.IsPlainObject(o), "IsPlainObject: Object")
+		assert.Ok(!jquery.IsEmptyObject(o), "IsEmptyObject: Object")
+		assert.Ok(jquery.IsEmptyObject(map[string]interface{}{}), "IsEmptyObject: Object")
 
-		assert.Ok(!jQueryStatic.IsFunction(""), "IsFunction: string")
-		assert.Ok(jQueryStatic.IsFunction(getDocumentBody), "IsFunction: getDocumentBody")
+		assert.Ok(!jquery.IsFunction(""), "IsFunction: string")
+		assert.Ok(jquery.IsFunction(getDocumentBody), "IsFunction: getDocumentBody")
 
-		assert.Ok(!jQueryStatic.IsNumeric("a3a"), "IsNumeric: string")
-		assert.Ok(jQueryStatic.IsNumeric("0xFFF"), "IsNumeric: hex")
-		assert.Ok(jQueryStatic.IsNumeric("8e-2"), "IsNumeric: exponential")
+		assert.Ok(!jquery.IsNumeric("a3a"), "IsNumeric: string")
+		assert.Ok(jquery.IsNumeric("0xFFF"), "IsNumeric: hex")
+		assert.Ok(jquery.IsNumeric("8e-2"), "IsNumeric: exponential")
 
-		assert.Ok(!jQueryStatic.IsXMLDoc(getDocumentBody), "HTML Body element")
-		assert.Ok(jQueryStatic.IsWindow(getWindow()), "window")
+		assert.Ok(!jquery.IsXMLDoc(getDocumentBody), "HTML Body element")
+		assert.Ok(jquery.IsWindow(getWindow()), "window")
 
 	})
 
@@ -115,11 +106,11 @@ func main() {
 		assert.Equal(str, "abc", "ToArray() allows range over selection")
 
 		arr := []interface{}{"a", 3, true, 2.2, "GopherJS"}
-		assert.Equal(jQueryStatic.InArray(4, arr), -1, "InArray")
-		assert.Equal(jQueryStatic.InArray(3, arr), 1, "InArray")
-		assert.Equal(jQueryStatic.InArray("a", arr), 0, "InArray")
-		assert.Equal(jQueryStatic.InArray("b", arr), -1, "InArray")
-		assert.Equal(jQueryStatic.InArray("GopherJS", arr), 4, "InArray")
+		assert.Equal(jquery.InArray(4, arr), -1, "InArray")
+		assert.Equal(jquery.InArray(3, arr), 1, "InArray")
+		assert.Equal(jquery.InArray("a", arr), 0, "InArray")
+		assert.Equal(jquery.InArray("b", arr), -1, "InArray")
+		assert.Equal(jquery.InArray("GopherJS", arr), 4, "InArray")
 
 	})
 
@@ -133,15 +124,15 @@ func main() {
   				<li class="lastclass">list item 5</li>
 				</ul>`
 
-		arr := jQueryStatic.ParseHTML(str)
+		arr := jquery.ParseHTML(str)
 		jQuery(arr).AppendTo(FIX)
 		assert.Equal(jQuery(FIX).Find("ul li").Length, 5, "ParseHTML")
 
 		xml := "<rss version='2.0'><channel><title>RSS Title</title></channel></rss>"
-		xmlDoc := jQueryStatic.ParseXML(xml)
+		xmlDoc := jquery.ParseXML(xml)
 		assert.Equal(jQuery(xmlDoc).Find("title").Text(), "RSS Title", "ParseXML")
 
-		obj := jQueryStatic.ParseJSON(`{ "language": "go" }`)
+		obj := jquery.ParseJSON(`{ "language": "go" }`)
 		language := obj.(map[string]interface{})["language"].(string)
 		assert.Equal(language, "go", "ParseJSON")
 
@@ -150,13 +141,13 @@ func main() {
 	QUnit.Test("Grep,Each,Map", func(assert QUnit.QUnitAssert) {
 
 		arr := []interface{}{1, 9, 3, 8, 6, 1, 5, 9, 4, 7, 3, 8, 6, 9, 1}
-		arr2 := jQueryStatic.Grep(arr, func(n interface{}, idx int) bool {
+		arr2 := jquery.Grep(arr, func(n interface{}, idx int) bool {
 			return n.(float64) != float64(5) && idx > 4
 		})
 		assert.Equal(len(arr2), 9, "Grep")
 
 		sum := float64(0.0)
-		jQueryStatic.EachOverArray(arr, func(idx int, n interface{}) bool {
+		jquery.EachOverArray(arr, func(idx int, n interface{}) bool {
 			sum += n.(float64)
 			return idx < 5 //add first 5 numbers
 		})
@@ -164,14 +155,14 @@ func main() {
 
 		allLanguages := ""
 		o := map[string]interface{}{"lang1": "Golang", "lang2": "Javascript", "lang3": "Typescript"}
-		jQueryStatic.EachOverMap(o, func(key string, val interface{}) bool {
+		jquery.EachOverMap(o, func(key string, val interface{}) bool {
 			allLanguages += val.(string)
 			return true //add all
 		})
 		assert.Equal(allLanguages, "GolangJavascriptTypescript", "EachOverMap")
 
 		letterArr := []interface{}{"a", "b", "c", "d", "e"}
-		resultArr := jQueryStatic.MapOverArray(letterArr, func(n interface{}, idx int) interface{} {
+		resultArr := jquery.MapOverArray(letterArr, func(n interface{}, idx int) interface{} {
 			return strings.ToUpper(n.(string)) + strconv.Itoa(idx)
 		})
 		allLetters := ""
@@ -180,7 +171,7 @@ func main() {
 		}
 		assert.Equal(allLetters, "A0B1C2D3E4", "MapOverArray")
 
-		upperLanguages := jQueryStatic.MapOverMap(o, func(val interface{}, key string) interface{} {
+		upperLanguages := jquery.MapOverMap(o, func(val interface{}, key string) interface{} {
 			return strings.ToUpper(val.(string))
 		})
 		allUpperLanguages := ""
@@ -196,33 +187,124 @@ func main() {
 		callSth := func(fn func() interface{}) interface{} {
 			return fn()
 		}
-		_ = callSth(jQueryStatic.Noop)
-		_ = jQueryStatic.Noop()
-		assert.Ok(jQueryStatic.IsFunction(jQueryStatic.Noop), "jQueryStatic.Noop")
+		_ = callSth(jquery.Noop)
+		_ = jquery.Noop()
+		assert.Ok(jquery.IsFunction(jquery.Noop), "jquery.Noop")
 
 		date := js.Global.Get("Date").New()
 		time := date.Call("getTime").Float()
-		assert.Ok(time >= jQueryStatic.Now(), "jQueryStatic.Now()")
 
+		assert.Ok(time <= jquery.Now(), "jquery.Now()")
 	})
 
 	QUnit.Module("dom")
-	QUnit.Test("AddClass,Clone,Add,AppenTo,Find", func(assert QUnit.QUnitAssert) {
+	QUnit.Test("AddClass,Clone,Add,AppendTo,Find", func(assert QUnit.QUnitAssert) {
 
 		jQuery("p").AddClass("wow").Clone().Add("<span id='dom02'>WhatADay</span>").AppendTo(FIX)
 		txt := jQuery(FIX).Find("span#dom02").Text()
 		assert.Equal(txt, "WhatADay", "Test of Clone, Add, AppendTo, Find, Text Functions")
+
+		jQuery(FIX).Empty()
+
+		html := `
+			<div>This div should be white</div>
+			<div class="red">This div will be green because it now has the "green" and "red" classes.
+			   It would be red if the addClass function failed.</div>
+			<div>This div should be white</div>
+			<p>There are zero green divs</p>
+
+			<button>some btn</button>`
+		jQuery(html).AppendTo(FIX)
+		jQuery(FIX).Find("div").AddClass(func(index int, currentClass string) string {
+
+			addedClass := ""
+			if currentClass == "red" {
+				addedClass = "green"
+				jQuery("p").SetText("There is one green div")
+			}
+			return addedClass
+		})
+		jQuery(FIX).Find("button").AddClass("red")
+		assert.Ok(jQuery(FIX).Find("button").HasClass("red"), "button hasClass red")
+		assert.Ok(jQuery(FIX).Find("p").Text() == "There is one green div", "There is one green div")
+		assert.Ok(jQuery(FIX).Find("div:eq(1)").HasClass("green"), "one div hasClass green")
+		jQuery(FIX).Empty()
+
+	})
+	QUnit.Test("Children,Append", func(assert QUnit.QUnitAssert) {
+
+		var j = jQuery(`<div class="pipe animated"><div class="pipe_upper" style="height: 79px;"></div><div class="guess top" style="top: 114px;"></div><div class="pipe_middle" style="height: 100px; top: 179px;"></div><div class="guess bottom" style="bottom: 76px;"></div><div class="pipe_lower" style="height: 41px;"></div><div class="question"></div></div>`)
+		assert.Ok(len(j.Html()) == 301, "jQuery html len")
+
+		j.Children(".question").Append(jQuery(`<div class = "question_digit first" style = "background-image: url('assets/font_big_3.png');"></div>`))
+		assert.Ok(len(j.Html()) == 397, "jquery html len after 1st jquery object append")
+
+		j.Children(".question").Append(jQuery(`<div class = "question_digit symbol" style="background-image: url('assets/font_shitty_x.png');"></div>`))
+		assert.Ok(len(j.Html()) == 497, "jquery htm len after 2nd jquery object append")
+
+		j.Children(".question").Append(`<div class = "question_digit second" style = "background-image: url('assets/font_big_1.png');"></div>`)
+		assert.Ok(len(j.Html()) == 594, "jquery html len after html append")
+
 	})
 
-	QUnit.Test("ApiOnly:ScollFn,SetCss,FadeOut", func(assert QUnit.QUnitAssert) {
+	QUnit.Test("ApiOnly:ScollFn,SetCss,CssArray,FadeOut", func(assert QUnit.QUnitAssert) {
 
-		QUnit.Expect(0)
+		//QUnit.Expect(0)
 		for i := 0; i < 3; i++ {
 			jQuery("p").Clone().AppendTo(FIX)
 		}
-		jQuery(FIX).Scroll(func(e jQueryStatic.Event) {
+		jQuery(FIX).Scroll(func(e jquery.Event) {
 			jQuery("span").SetCss("display", "inline").FadeOut("slow")
 		})
+
+		htmlsnippet := `<style>
+			  div {
+			    height: 50px;
+			    margin: 5px;
+			    padding: 5px;
+			    float: left;
+			  }
+			  #box1 {
+			    width: 50px;
+			    color: yellow;
+			    background-color: blue;
+			  }
+			  #box2 {
+			    width: 80px;
+			    color: rgb(255, 255, 255);
+			    background-color: rgb(15, 99, 30);
+			  }
+			  #box3 {
+			    width: 40px;
+			    color: #fcc;
+			    background-color: #123456;
+			  }
+			  #box4 {
+			    width: 70px;
+			    background-color: #f11;
+			  }
+			  </style>
+			 
+			<p id="result">&nbsp;</p>
+			<div id="box1">1</div>
+			<div id="box2">2</div>
+			<div id="box3">3</div>
+			<div id="box4">4</div>`
+
+		jQuery(htmlsnippet).AppendTo(FIX)
+
+		jQuery(FIX).Find("div").On("click", func() {
+
+			html := []string{"The clicked div has the following styles:"}
+			var styleProps = jQuery(js.This).CssArray("width", "height")
+			for prop, value := range styleProps {
+				html = append(html, prop+": "+value.(string))
+			}
+			jQuery(FIX).Find("#result").SetHtml(strings.Join(html, "<br>"))
+		})
+		jQuery(FIX).Find("div:eq(0)").Trigger("click")
+		assert.Ok(jQuery(FIX).Find("#result").Html() == "The clicked div has the following styles:<br>width: 50px<br>height: 50px", "CssArray read properties")
+
 	})
 
 	QUnit.Test("ApiOnly:SelectFn,SetText,Show,FadeOut", func(assert QUnit.QUnitAssert) {
@@ -233,7 +315,7 @@ func main() {
   				<input type="text" value="to test on">
   				<div></div>`).AppendTo(FIX)
 
-		jQuery(":input").Select(func(e jQueryStatic.Event) {
+		jQuery(":input").Select(func(e jquery.Event) {
 			jQuery("div").SetText("Something was selected").Show().FadeOut("1000")
 		})
 	})
@@ -338,11 +420,11 @@ func main() {
 		divs2 := jQuery(FIX).Find("div").Get()
 		assert.Equal(divs2.Get("length"), 9, "9 divs inserted")
 
-		divs3 := jQueryStatic.Unique(divs)
+		divs3 := jquery.Unique(divs)
 		assert.Equal(divs3.Get("length"), 6, "post-qunique should be 6 elements")
 	})
 
-	QUnit.Test("Serialize,SerializeArray,Trigger", func(assert QUnit.QUnitAssert) {
+	QUnit.Test("Serialize,SerializeArray,Trigger,Submit", func(assert QUnit.QUnitAssert) {
 
 		QUnit.Expect(2)
 		jQuery(`<form>
@@ -366,7 +448,7 @@ func main() {
 				</form>`).AppendTo(FIX)
 
 		var collectResults string
-		jQuery(FIX).Find("form").Submit(func(evt jQueryStatic.Event) {
+		jQuery(FIX).Find("form").Submit(func(evt jquery.Event) {
 
 			sa := jQuery(evt.Target).SerializeArray()
 			for i := 0; i < sa.Length(); i++ {
@@ -385,51 +467,51 @@ func main() {
 	QUnit.ModuleLifecycle("events", EvtScenario{})
 	QUnit.Test("On,One,Off,Trigger", func(assert QUnit.QUnitAssert) {
 
-		fn := func(ev jQueryStatic.Event) {
+		fn := func(ev jquery.Event) {
 			assert.Ok(!ev.Data.IsUndefined(), "on() with data, check passed data exists")
 			assert.Equal(ev.Data.Get("foo"), "bar", "on() with data, Check value of passed data")
 		}
 
 		data := map[string]interface{}{"foo": "bar"}
-		jQuery("#firstp").On(jQueryStatic.CLICK, data, fn).Trigger(jQueryStatic.CLICK).Off(jQueryStatic.CLICK, fn)
+		jQuery("#firstp").On(jquery.CLICK, data, fn).Trigger(jquery.CLICK).Off(jquery.CLICK, fn)
 
 		var clickCounter, mouseoverCounter int
-		handler := func(ev jQueryStatic.Event) {
-			if ev.Type == jQueryStatic.CLICK {
+		handler := func(ev jquery.Event) {
+			if ev.Type == jquery.CLICK {
 				clickCounter++
-			} else if ev.Type == jQueryStatic.MOUSEOVER {
+			} else if ev.Type == jquery.MOUSEOVER {
 				mouseoverCounter++
 			}
 		}
 
-		handlerWithData := func(ev jQueryStatic.Event) {
-			if ev.Type == jQueryStatic.CLICK {
+		handlerWithData := func(ev jquery.Event) {
+			if ev.Type == jquery.CLICK {
 				clickCounter += ev.Data.Get("data").Int()
-			} else if ev.Type == jQueryStatic.MOUSEOVER {
+			} else if ev.Type == jquery.MOUSEOVER {
 				mouseoverCounter += ev.Data.Get("data").Int()
 			}
 		}
 
 		data2 := map[string]interface{}{"data": 2}
-		elem := jQuery("#firstp").On(jQueryStatic.CLICK, handler).On(jQueryStatic.MOUSEOVER, handler).One(jQueryStatic.CLICK, data2, handlerWithData).One(jQueryStatic.MOUSEOVER, data2, handlerWithData)
+		elem := jQuery("#firstp").On(jquery.CLICK, handler).On(jquery.MOUSEOVER, handler).One(jquery.CLICK, data2, handlerWithData).One(jquery.MOUSEOVER, data2, handlerWithData)
 		assert.Equal(clickCounter, 0, "clickCounter initialization ok")
 		assert.Equal(mouseoverCounter, 0, "mouseoverCounter initialization ok")
 
-		elem.Trigger(jQueryStatic.CLICK).Trigger(jQueryStatic.MOUSEOVER)
+		elem.Trigger(jquery.CLICK).Trigger(jquery.MOUSEOVER)
 		assert.Equal(clickCounter, 3, "clickCounter Increased after Trigger/On/One")
 		assert.Equal(mouseoverCounter, 3, "mouseoverCounter Increased after Trigger/On/One")
 
-		elem.Trigger(jQueryStatic.CLICK).Trigger(jQueryStatic.MOUSEOVER)
+		elem.Trigger(jquery.CLICK).Trigger(jquery.MOUSEOVER)
 		assert.Equal(clickCounter, 4, "clickCounter Increased after Trigger/On")
 		assert.Equal(mouseoverCounter, 4, "a) mouseoverCounter Increased after TriggerOn")
 
-		elem.Trigger(jQueryStatic.CLICK).Trigger(jQueryStatic.MOUSEOVER)
+		elem.Trigger(jquery.CLICK).Trigger(jquery.MOUSEOVER)
 		assert.Equal(clickCounter, 5, "b) clickCounter not Increased after Off")
 		assert.Equal(mouseoverCounter, 5, "c) mouseoverCounter not Increased after Off")
 
-		elem.Off(jQueryStatic.CLICK).Off(jQueryStatic.MOUSEOVER)
-		//2do: elem.Off(jQueryStatic.CLICK, handlerWithData).Off(jQueryStatic.MOUSEOVER, handlerWithData)
-		elem.Trigger(jQueryStatic.CLICK).Trigger(jQueryStatic.MOUSEOVER)
+		elem.Off(jquery.CLICK).Off(jquery.MOUSEOVER)
+		//2do: elem.Off(jquery.CLICK, handlerWithData).Off(jquery.MOUSEOVER, handlerWithData)
+		elem.Trigger(jquery.CLICK).Trigger(jquery.MOUSEOVER)
 		assert.Equal(clickCounter, 5, "clickCounter not Increased after Off")
 		assert.Equal(mouseoverCounter, 5, "mouseoverCounter not Increased after Off")
 
