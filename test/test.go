@@ -1,6 +1,5 @@
 package test
 
-//test package for jquery bindings, developed in TDD style
 import (
 	"github.com/gopherjs/gopherjs/js"
 	"github.com/rusco/jquery"
@@ -20,13 +19,10 @@ func getDocumentBody() js.Object {
 	return js.Global.Get("document").Get("body")
 }
 
-func getWindow() js.Object {
-	return js.Global
-}
-
 type EvtScenario struct{}
 
 func (s EvtScenario) Setup() {
+	//how to add params to Setup Function for reusability ?
 	jQuery(`<p id="firstp">See 
 			<a id="someid" href="somehref" rel="bookmark">this blog entry</a>
 			for more information.</p>`).AppendTo(FIX)
@@ -86,7 +82,7 @@ func main() {
 		assert.Ok(jquery.IsNumeric("8e-2"), "IsNumeric: exponential")
 
 		assert.Ok(!jquery.IsXMLDoc(getDocumentBody), "HTML Body element")
-		assert.Ok(jquery.IsWindow(getWindow()), "window")
+		assert.Ok(jquery.IsWindow(js.Global), "window")
 
 	})
 
@@ -138,47 +134,13 @@ func main() {
 
 	})
 
-	QUnit.Test("Grep,Each,Map", func(assert QUnit.QUnitAssert) {
+	QUnit.Test("Grep", func(assert QUnit.QUnitAssert) {
 
 		arr := []interface{}{1, 9, 3, 8, 6, 1, 5, 9, 4, 7, 3, 8, 6, 9, 1}
 		arr2 := jquery.Grep(arr, func(n interface{}, idx int) bool {
 			return n.(float64) != float64(5) && idx > 4
 		})
 		assert.Equal(len(arr2), 9, "Grep")
-
-		sum := float64(0.0)
-		jquery.EachOverArray(arr, func(idx int, n interface{}) bool {
-			sum += n.(float64)
-			return idx < 5 //add first 5 numbers
-		})
-		assert.Equal(sum, 28, "EachOverArray")
-
-		allLanguages := ""
-		o := map[string]interface{}{"lang1": "Golang", "lang2": "Javascript", "lang3": "Typescript"}
-		jquery.EachOverMap(o, func(key string, val interface{}) bool {
-			allLanguages += val.(string)
-			return true //add all
-		})
-		assert.Equal(allLanguages, "GolangJavascriptTypescript", "EachOverMap")
-
-		letterArr := []interface{}{"a", "b", "c", "d", "e"}
-		resultArr := jquery.MapOverArray(letterArr, func(n interface{}, idx int) interface{} {
-			return strings.ToUpper(n.(string)) + strconv.Itoa(idx)
-		})
-		allLetters := ""
-		for _, val := range resultArr {
-			allLetters += val.(string)
-		}
-		assert.Equal(allLetters, "A0B1C2D3E4", "MapOverArray")
-
-		upperLanguages := jquery.MapOverMap(o, func(val interface{}, key string) interface{} {
-			return strings.ToUpper(val.(string))
-		})
-		allUpperLanguages := ""
-		for _, val := range upperLanguages {
-			allUpperLanguages += val.(string)
-		}
-		assert.Equal(allUpperLanguages, "GOLANGJAVASCRIPTTYPESCRIPT", "MapOverMap")
 
 	})
 
@@ -515,5 +477,112 @@ func main() {
 		assert.Equal(clickCounter, 5, "clickCounter not Increased after Off")
 		assert.Equal(mouseoverCounter, 5, "mouseoverCounter not Increased after Off")
 
+	})
+	QUnit.Test("Each", func(assert QUnit.QUnitAssert) {
+
+		jQuery(FIX).Empty()
+
+		html := `<style>
+			  		div {
+			    		color: red;
+			    		text-align: center;
+			    		cursor: pointer;
+			    		font-weight: bolder;
+				    width: 300px;
+				  }
+				 </style>
+				 <div>Click here</div>
+				 <div>to iterate through</div>
+				 <div>these divs.</div>`
+
+		jQuery(html).AppendTo(FIX)
+		blueCount := 0
+
+		jQuery(FIX).On(jquery.CLICK, func(e jquery.Event) {
+
+			jQuery(FIX).Find("div").Each(func(i int, elem interface{}) interface{} {
+
+				style := jQuery(elem).Get(0).Get("style")
+				if style.Get("color").String() != "blue" {
+					style.Set("color", "blue")
+				} else {
+					blueCount += 1
+					style.Set("color", "")
+				}
+				return nil
+
+			})
+		})
+		for i := 0; i < 6; i++ {
+			jQuery(FIX).Find("div:eq(0)").Trigger("click")
+
+		}
+		assert.Equal(jQuery(FIX).Find("div").Length, 3, "Test setup problem: 3 divs expected")
+		assert.Equal(blueCount, 9, "blueCount Counter should be 9")
+	})
+
+	QUnit.Test("Filter, Resize", func(assert QUnit.QUnitAssert) {
+
+		jQuery(FIX).Empty()
+		html := `<style>
+				  	div {
+				    	width: 60px;
+				    	height: 60px;
+				    	margin: 5px;
+				    	float: left;
+				    	border: 2px white solid;
+				  	}
+				 </style>
+				  
+				 <div></div>
+				 <div class="middle"></div>
+				 <div class="middle"></div>
+				 <div class="middle"></div>
+				 <div class="middle"></div>
+				 <div></div>`
+
+		jQuery(html).AppendTo(FIX)
+
+		jQuery(FIX).Find("div").SetCss("background", "silver").Filter(func(index int) bool {
+			return index%3 == 2
+		}).SetCss("font-weight", "bold")
+
+		countFontweight := 0
+		jQuery(FIX).Find("div").Each(func(i int, elem interface{}) interface{} {
+			if jQuery(elem).Css("font-weight") == "bold" {
+				countFontweight += 1
+			}
+			return nil
+		})
+		assert.Equal(countFontweight, 2, "2 divs should have font-weight = 'bold'")
+
+		jQuery(js.Global).Resize(func() {
+			jQuery(FIX).Find("div:eq(0)").SetText(strconv.Itoa(jQuery("div:eq(0)").Width()))
+		}).Resize()
+		assert.Equal(jQuery(FIX).Find("div:eq(0)").Text(), "60", "text of first div should be 60")
+
+	})
+
+	QUnit.Test("Not,Offset", func(assert QUnit.QUnitAssert) {
+
+		QUnit.Expect(0) //api test only
+
+		jQuery(FIX).Empty()
+		html := `<div></div>
+				 <div id="blueone"></div>
+				 <div></div>
+				 <div class="green"></div>
+				 <div class="green"></div>
+				 <div class="gray"></div>
+				 <div></div>`
+		jQuery(html).AppendTo(FIX)
+		jQuery(FIX).Find("div").Not(".green,#blueone").SetCss("border-color", "red")
+
+		jQuery("*", "body").On("click", func(event jquery.Event) {
+			offset := jQuery(event.Target).Offset()
+			event.StopPropagation()
+			tag := jQuery(event.Target).Prop("tagName").(string)
+			jQuery("#result").SetText(tag + " coords ( " + strconv.Itoa(offset.Left) + ", " + strconv.Itoa(offset.Top) + " )")
+		})
 	})
 }

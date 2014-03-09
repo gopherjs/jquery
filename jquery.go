@@ -137,26 +137,6 @@ func Grep(arr []interface{}, fn func(interface{}, int) bool) []interface{} {
 }
 
 //static function
-func EachOverArray(arr []interface{}, fn func(int, interface{}) bool) []interface{} {
-	return js.Global.Get("jQuery").Call("each", arr, fn).Interface().([]interface{})
-}
-
-//static function
-func EachOverMap(arr map[string]interface{}, fn func(string, interface{}) bool) map[string]interface{} {
-	return js.Global.Get("jQuery").Call("each", arr, fn).Interface().(map[string]interface{})
-}
-
-//static function
-func MapOverArray(arr []interface{}, fn func(interface{}, int) interface{}) []interface{} {
-	return js.Global.Get("jQuery").Call("map", arr, fn).Interface().([]interface{})
-}
-
-//static function
-func MapOverMap(arr map[string]interface{}, fn func(interface{}, string) interface{}) []interface{} {
-	return js.Global.Get("jQuery").Call("map", arr, fn).Interface().([]interface{})
-}
-
-//static function
 func Noop() interface{} {
 	return js.Global.Get("jQuery").Get("noop").Interface()
 }
@@ -172,6 +152,11 @@ func Unique(arr js.Object) js.Object {
 }
 
 //methods
+func (j JQuery) Each(fn func(int, interface{}) interface{}) JQuery {
+	j.o = j.o.Call("each", fn)
+	return j
+}
+
 func (j JQuery) Underlying() js.Object {
 	return j.o
 }
@@ -835,6 +820,7 @@ const (
 	SUBMIT = "submit"
 	LOAD   = "load"
 	UNLOAD = "unload"
+	RESIZE = "resize"
 
 	MOUSEDOWN  = "mousedown"
 	MOUSEENTER = "mouseenter"

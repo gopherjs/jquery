@@ -1423,7 +1423,7 @@ go$packages["github.com/gopherjs/gopherjs/js"] = (function() {
 	return go$pkg;
 })();
 go$packages["github.com/rusco/jquery"] = (function() {
-	var go$pkg = {}, js = go$packages["github.com/gopherjs/gopherjs/js"], JQuery, Event, JQueryCoordinates, NewJQuery, Trim, GlobalEval, Type, IsPlainObject, IsEmptyObject, IsFunction, IsNumeric, IsXMLDoc, IsWindow, InArray, ParseHTML, ParseXML, ParseJSON, Grep, EachOverArray, EachOverMap, MapOverArray, MapOverMap, Noop, Now, Unique;
+	var go$pkg = {}, js = go$packages["github.com/gopherjs/gopherjs/js"], JQuery, Event, JQueryCoordinates, NewJQuery, Trim, GlobalEval, Type, IsPlainObject, IsEmptyObject, IsFunction, IsNumeric, IsXMLDoc, IsWindow, InArray, ParseHTML, ParseXML, ParseJSON, Grep, Noop, Now, Unique;
 	JQuery = go$pkg.JQuery = go$newType(0, "Struct", "jquery.JQuery", "JQuery", "github.com/rusco/jquery", function(o_, Jquery_, Selector_, Length_, Context_) {
 		this.go$val = this;
 		this.o = o_ !== undefined ? o_ : null;
@@ -1537,22 +1537,6 @@ go$packages["github.com/rusco/jquery"] = (function() {
 		var x;
 		return (x = go$internalize(go$global.jQuery.grep(go$externalize(arr, (go$sliceType(go$emptyInterface))), go$externalize(fn, (go$funcType([go$emptyInterface, Go$Int], [Go$Bool], false)))), go$emptyInterface), (x !== null && x.constructor === (go$sliceType(go$emptyInterface)) ? x.go$val : go$typeAssertionFailed(x, (go$sliceType(go$emptyInterface)))));
 	};
-	EachOverArray = go$pkg.EachOverArray = function(arr, fn) {
-		var x;
-		return (x = go$internalize(go$global.jQuery.each(go$externalize(arr, (go$sliceType(go$emptyInterface))), go$externalize(fn, (go$funcType([Go$Int, go$emptyInterface], [Go$Bool], false)))), go$emptyInterface), (x !== null && x.constructor === (go$sliceType(go$emptyInterface)) ? x.go$val : go$typeAssertionFailed(x, (go$sliceType(go$emptyInterface)))));
-	};
-	EachOverMap = go$pkg.EachOverMap = function(arr, fn) {
-		var x;
-		return (x = go$internalize(go$global.jQuery.each(go$externalize(arr, (go$mapType(Go$String, go$emptyInterface))), go$externalize(fn, (go$funcType([Go$String, go$emptyInterface], [Go$Bool], false)))), go$emptyInterface), (x !== null && x.constructor === (go$mapType(Go$String, go$emptyInterface)) ? x.go$val : go$typeAssertionFailed(x, (go$mapType(Go$String, go$emptyInterface)))));
-	};
-	MapOverArray = go$pkg.MapOverArray = function(arr, fn) {
-		var x;
-		return (x = go$internalize(go$global.jQuery.map(go$externalize(arr, (go$sliceType(go$emptyInterface))), go$externalize(fn, (go$funcType([go$emptyInterface, Go$Int], [go$emptyInterface], false)))), go$emptyInterface), (x !== null && x.constructor === (go$sliceType(go$emptyInterface)) ? x.go$val : go$typeAssertionFailed(x, (go$sliceType(go$emptyInterface)))));
-	};
-	MapOverMap = go$pkg.MapOverMap = function(arr, fn) {
-		var x;
-		return (x = go$internalize(go$global.jQuery.map(go$externalize(arr, (go$mapType(Go$String, go$emptyInterface))), go$externalize(fn, (go$funcType([go$emptyInterface, Go$String], [go$emptyInterface], false)))), go$emptyInterface), (x !== null && x.constructor === (go$sliceType(go$emptyInterface)) ? x.go$val : go$typeAssertionFailed(x, (go$sliceType(go$emptyInterface)))));
-	};
 	Noop = go$pkg.Noop = function() {
 		return go$internalize(go$global.jQuery.noop, go$emptyInterface);
 	};
@@ -1562,6 +1546,13 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	Unique = go$pkg.Unique = function(arr) {
 		return go$global.jQuery.unique(arr);
 	};
+	JQuery.Ptr.prototype.Each = function(fn) {
+		var _struct, j, _struct$1;
+		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
+		j.o = j.o.each(go$externalize(fn, (go$funcType([Go$Int, go$emptyInterface], [go$emptyInterface], false))));
+		return (_struct$1 = j, new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context));
+	};
+	JQuery.prototype.Each = function(fn) { return this.go$val.Each(fn); };
 	JQuery.Ptr.prototype.Underlying = function() {
 		var _struct, j;
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
@@ -2426,8 +2417,8 @@ go$packages["github.com/rusco/jquery"] = (function() {
 	};
 	JQuery.prototype.dom1arg = function(method, i) { return this.go$val.dom1arg(method, i); };
 	go$pkg.init = function() {
-		JQuery.methods = [["Add", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddBack", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddClass", "", [go$emptyInterface], [JQuery], false, -1], ["After", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Append", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AppendTo", "", [go$emptyInterface], [JQuery], false, -1], ["Attr", "", [Go$String], [Go$String], false, -1], ["Before", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Blur", "", [], [JQuery], false, -1], ["Children", "", [go$emptyInterface], [JQuery], false, -1], ["ClearQueue", "", [Go$String], [JQuery], false, -1], ["Clone", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Closest", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Contents", "", [], [JQuery], false, -1], ["Css", "", [Go$String], [Go$String], false, -1], ["CssArray", "", [(go$sliceType(Go$String))], [(go$mapType(Go$String, go$emptyInterface))], true, -1], ["Data", "", [Go$String], [go$emptyInterface], false, -1], ["Delay", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Dequeue", "", [Go$String], [JQuery], false, -1], ["Detach", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Empty", "", [], [JQuery], false, -1], ["End", "", [], [JQuery], false, -1], ["Eq", "", [Go$Int], [JQuery], false, -1], ["FadeIn", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["FadeOut", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Filter", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Find", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["First", "", [], [JQuery], false, -1], ["Focus", "", [], [JQuery], false, -1], ["Get", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, -1], ["Has", "", [Go$String], [JQuery], false, -1], ["HasClass", "", [Go$String], [Go$Bool], false, -1], ["Height", "", [], [Go$Int], false, -1], ["Hide", "", [], [JQuery], false, -1], ["Html", "", [], [Go$String], false, -1], ["InnerHeight", "", [], [Go$Int], false, -1], ["InnerWidth", "", [], [Go$Int], false, -1], ["InsertAfter", "", [go$emptyInterface], [JQuery], false, -1], ["InsertBefore", "", [go$emptyInterface], [JQuery], false, -1], ["Is", "", [(go$sliceType(go$emptyInterface))], [Go$Bool], true, -1], ["Last", "", [], [JQuery], false, -1], ["Next", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Not", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Off", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Offset", "", [], [JQueryCoordinates], false, -1], ["OffsetParent", "", [], [JQuery], false, -1], ["On", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["One", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["OuterHeight", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["OuterWidth", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["Parent", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Parents", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ParentsUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Position", "", [], [JQueryCoordinates], false, -1], ["Prepend", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrependTo", "", [go$emptyInterface], [JQuery], false, -1], ["Prev", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Prop", "", [Go$String], [go$emptyInterface], false, -1], ["Ready", "", [(go$funcType([], [], false))], [JQuery], false, -1], ["Remove", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["RemoveAttr", "", [Go$String], [JQuery], false, -1], ["RemoveClass", "", [Go$String], [JQuery], false, -1], ["RemoveData", "", [Go$String], [JQuery], false, -1], ["RemoveProp", "", [Go$String], [JQuery], false, -1], ["ReplaceAll", "", [go$emptyInterface], [JQuery], false, -1], ["ReplaceWith", "", [go$emptyInterface], [JQuery], false, -1], ["Resize", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Scroll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ScrollLeft", "", [], [Go$Int], false, -1], ["ScrollTop", "", [], [Go$Int], false, -1], ["Select", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Serialize", "", [], [Go$String], false, -1], ["SerializeArray", "", [], [js.Object], false, -1], ["SetAttr", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetCss", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetData", "", [Go$String, go$emptyInterface], [JQuery], false, -1], ["SetHeight", "", [Go$String], [JQuery], false, -1], ["SetHtml", "", [go$emptyInterface], [JQuery], false, -1], ["SetOffset", "", [JQueryCoordinates], [JQuery], false, -1], ["SetProp", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetScrollLeft", "", [Go$Int], [JQuery], false, -1], ["SetScrollTop", "", [Go$Int], [JQuery], false, -1], ["SetText", "", [go$emptyInterface], [JQuery], false, -1], ["SetVal", "", [go$emptyInterface], [JQuery], false, -1], ["SetWidth", "", [go$emptyInterface], [JQuery], false, -1], ["Show", "", [], [JQuery], false, -1], ["Siblings", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Slice", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Stop", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Submit", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Text", "", [], [Go$String], false, -1], ["ToArray", "", [], [(go$sliceType(go$emptyInterface))], false, -1], ["Toggle", "", [Go$Bool], [JQuery], false, -1], ["ToggleClass", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Trigger", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Underlying", "", [], [js.Object], false, -1], ["Unwrap", "", [], [JQuery], false, -1], ["Val", "", [], [Go$String], false, -1], ["Width", "", [], [Go$Int], false, -1], ["Wrap", "", [go$emptyInterface], [JQuery], false, -1], ["WrapAll", "", [go$emptyInterface], [JQuery], false, -1], ["WrapInner", "", [go$emptyInterface], [JQuery], false, -1], ["dom1arg", "github.com/rusco/jquery", [Go$String, go$emptyInterface], [JQuery], false, -1], ["dom2args", "github.com/rusco/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["events", "github.com/rusco/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["handleEvent", "github.com/rusco/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1]];
-		(go$ptrType(JQuery)).methods = [["Add", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddBack", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddClass", "", [go$emptyInterface], [JQuery], false, -1], ["After", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Append", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AppendTo", "", [go$emptyInterface], [JQuery], false, -1], ["Attr", "", [Go$String], [Go$String], false, -1], ["Before", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Blur", "", [], [JQuery], false, -1], ["Children", "", [go$emptyInterface], [JQuery], false, -1], ["ClearQueue", "", [Go$String], [JQuery], false, -1], ["Clone", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Closest", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Contents", "", [], [JQuery], false, -1], ["Css", "", [Go$String], [Go$String], false, -1], ["CssArray", "", [(go$sliceType(Go$String))], [(go$mapType(Go$String, go$emptyInterface))], true, -1], ["Data", "", [Go$String], [go$emptyInterface], false, -1], ["Delay", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Dequeue", "", [Go$String], [JQuery], false, -1], ["Detach", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Empty", "", [], [JQuery], false, -1], ["End", "", [], [JQuery], false, -1], ["Eq", "", [Go$Int], [JQuery], false, -1], ["FadeIn", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["FadeOut", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Filter", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Find", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["First", "", [], [JQuery], false, -1], ["Focus", "", [], [JQuery], false, -1], ["Get", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, -1], ["Has", "", [Go$String], [JQuery], false, -1], ["HasClass", "", [Go$String], [Go$Bool], false, -1], ["Height", "", [], [Go$Int], false, -1], ["Hide", "", [], [JQuery], false, -1], ["Html", "", [], [Go$String], false, -1], ["InnerHeight", "", [], [Go$Int], false, -1], ["InnerWidth", "", [], [Go$Int], false, -1], ["InsertAfter", "", [go$emptyInterface], [JQuery], false, -1], ["InsertBefore", "", [go$emptyInterface], [JQuery], false, -1], ["Is", "", [(go$sliceType(go$emptyInterface))], [Go$Bool], true, -1], ["Last", "", [], [JQuery], false, -1], ["Next", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Not", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Off", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Offset", "", [], [JQueryCoordinates], false, -1], ["OffsetParent", "", [], [JQuery], false, -1], ["On", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["One", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["OuterHeight", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["OuterWidth", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["Parent", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Parents", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ParentsUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Position", "", [], [JQueryCoordinates], false, -1], ["Prepend", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrependTo", "", [go$emptyInterface], [JQuery], false, -1], ["Prev", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Prop", "", [Go$String], [go$emptyInterface], false, -1], ["Ready", "", [(go$funcType([], [], false))], [JQuery], false, -1], ["Remove", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["RemoveAttr", "", [Go$String], [JQuery], false, -1], ["RemoveClass", "", [Go$String], [JQuery], false, -1], ["RemoveData", "", [Go$String], [JQuery], false, -1], ["RemoveProp", "", [Go$String], [JQuery], false, -1], ["ReplaceAll", "", [go$emptyInterface], [JQuery], false, -1], ["ReplaceWith", "", [go$emptyInterface], [JQuery], false, -1], ["Resize", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Scroll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ScrollLeft", "", [], [Go$Int], false, -1], ["ScrollTop", "", [], [Go$Int], false, -1], ["Select", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Serialize", "", [], [Go$String], false, -1], ["SerializeArray", "", [], [js.Object], false, -1], ["SetAttr", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetCss", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetData", "", [Go$String, go$emptyInterface], [JQuery], false, -1], ["SetHeight", "", [Go$String], [JQuery], false, -1], ["SetHtml", "", [go$emptyInterface], [JQuery], false, -1], ["SetOffset", "", [JQueryCoordinates], [JQuery], false, -1], ["SetProp", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetScrollLeft", "", [Go$Int], [JQuery], false, -1], ["SetScrollTop", "", [Go$Int], [JQuery], false, -1], ["SetText", "", [go$emptyInterface], [JQuery], false, -1], ["SetVal", "", [go$emptyInterface], [JQuery], false, -1], ["SetWidth", "", [go$emptyInterface], [JQuery], false, -1], ["Show", "", [], [JQuery], false, -1], ["Siblings", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Slice", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Stop", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Submit", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Text", "", [], [Go$String], false, -1], ["ToArray", "", [], [(go$sliceType(go$emptyInterface))], false, -1], ["Toggle", "", [Go$Bool], [JQuery], false, -1], ["ToggleClass", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Trigger", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Underlying", "", [], [js.Object], false, -1], ["Unwrap", "", [], [JQuery], false, -1], ["Val", "", [], [Go$String], false, -1], ["Width", "", [], [Go$Int], false, -1], ["Wrap", "", [go$emptyInterface], [JQuery], false, -1], ["WrapAll", "", [go$emptyInterface], [JQuery], false, -1], ["WrapInner", "", [go$emptyInterface], [JQuery], false, -1], ["dom1arg", "github.com/rusco/jquery", [Go$String, go$emptyInterface], [JQuery], false, -1], ["dom2args", "github.com/rusco/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["events", "github.com/rusco/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["handleEvent", "github.com/rusco/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1]];
+		JQuery.methods = [["Add", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddBack", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddClass", "", [go$emptyInterface], [JQuery], false, -1], ["After", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Append", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AppendTo", "", [go$emptyInterface], [JQuery], false, -1], ["Attr", "", [Go$String], [Go$String], false, -1], ["Before", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Blur", "", [], [JQuery], false, -1], ["Children", "", [go$emptyInterface], [JQuery], false, -1], ["ClearQueue", "", [Go$String], [JQuery], false, -1], ["Clone", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Closest", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Contents", "", [], [JQuery], false, -1], ["Css", "", [Go$String], [Go$String], false, -1], ["CssArray", "", [(go$sliceType(Go$String))], [(go$mapType(Go$String, go$emptyInterface))], true, -1], ["Data", "", [Go$String], [go$emptyInterface], false, -1], ["Delay", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Dequeue", "", [Go$String], [JQuery], false, -1], ["Detach", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Each", "", [(go$funcType([Go$Int, go$emptyInterface], [go$emptyInterface], false))], [JQuery], false, -1], ["Empty", "", [], [JQuery], false, -1], ["End", "", [], [JQuery], false, -1], ["Eq", "", [Go$Int], [JQuery], false, -1], ["FadeIn", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["FadeOut", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Filter", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Find", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["First", "", [], [JQuery], false, -1], ["Focus", "", [], [JQuery], false, -1], ["Get", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, -1], ["Has", "", [Go$String], [JQuery], false, -1], ["HasClass", "", [Go$String], [Go$Bool], false, -1], ["Height", "", [], [Go$Int], false, -1], ["Hide", "", [], [JQuery], false, -1], ["Html", "", [], [Go$String], false, -1], ["InnerHeight", "", [], [Go$Int], false, -1], ["InnerWidth", "", [], [Go$Int], false, -1], ["InsertAfter", "", [go$emptyInterface], [JQuery], false, -1], ["InsertBefore", "", [go$emptyInterface], [JQuery], false, -1], ["Is", "", [(go$sliceType(go$emptyInterface))], [Go$Bool], true, -1], ["Last", "", [], [JQuery], false, -1], ["Next", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Not", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Off", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Offset", "", [], [JQueryCoordinates], false, -1], ["OffsetParent", "", [], [JQuery], false, -1], ["On", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["One", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["OuterHeight", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["OuterWidth", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["Parent", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Parents", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ParentsUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Position", "", [], [JQueryCoordinates], false, -1], ["Prepend", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrependTo", "", [go$emptyInterface], [JQuery], false, -1], ["Prev", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Prop", "", [Go$String], [go$emptyInterface], false, -1], ["Ready", "", [(go$funcType([], [], false))], [JQuery], false, -1], ["Remove", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["RemoveAttr", "", [Go$String], [JQuery], false, -1], ["RemoveClass", "", [Go$String], [JQuery], false, -1], ["RemoveData", "", [Go$String], [JQuery], false, -1], ["RemoveProp", "", [Go$String], [JQuery], false, -1], ["ReplaceAll", "", [go$emptyInterface], [JQuery], false, -1], ["ReplaceWith", "", [go$emptyInterface], [JQuery], false, -1], ["Resize", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Scroll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ScrollLeft", "", [], [Go$Int], false, -1], ["ScrollTop", "", [], [Go$Int], false, -1], ["Select", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Serialize", "", [], [Go$String], false, -1], ["SerializeArray", "", [], [js.Object], false, -1], ["SetAttr", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetCss", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetData", "", [Go$String, go$emptyInterface], [JQuery], false, -1], ["SetHeight", "", [Go$String], [JQuery], false, -1], ["SetHtml", "", [go$emptyInterface], [JQuery], false, -1], ["SetOffset", "", [JQueryCoordinates], [JQuery], false, -1], ["SetProp", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetScrollLeft", "", [Go$Int], [JQuery], false, -1], ["SetScrollTop", "", [Go$Int], [JQuery], false, -1], ["SetText", "", [go$emptyInterface], [JQuery], false, -1], ["SetVal", "", [go$emptyInterface], [JQuery], false, -1], ["SetWidth", "", [go$emptyInterface], [JQuery], false, -1], ["Show", "", [], [JQuery], false, -1], ["Siblings", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Slice", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Stop", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Submit", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Text", "", [], [Go$String], false, -1], ["ToArray", "", [], [(go$sliceType(go$emptyInterface))], false, -1], ["Toggle", "", [Go$Bool], [JQuery], false, -1], ["ToggleClass", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Trigger", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Underlying", "", [], [js.Object], false, -1], ["Unwrap", "", [], [JQuery], false, -1], ["Val", "", [], [Go$String], false, -1], ["Width", "", [], [Go$Int], false, -1], ["Wrap", "", [go$emptyInterface], [JQuery], false, -1], ["WrapAll", "", [go$emptyInterface], [JQuery], false, -1], ["WrapInner", "", [go$emptyInterface], [JQuery], false, -1], ["dom1arg", "github.com/rusco/jquery", [Go$String, go$emptyInterface], [JQuery], false, -1], ["dom2args", "github.com/rusco/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["events", "github.com/rusco/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["handleEvent", "github.com/rusco/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1]];
+		(go$ptrType(JQuery)).methods = [["Add", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddBack", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddClass", "", [go$emptyInterface], [JQuery], false, -1], ["After", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Append", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AppendTo", "", [go$emptyInterface], [JQuery], false, -1], ["Attr", "", [Go$String], [Go$String], false, -1], ["Before", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Blur", "", [], [JQuery], false, -1], ["Children", "", [go$emptyInterface], [JQuery], false, -1], ["ClearQueue", "", [Go$String], [JQuery], false, -1], ["Clone", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Closest", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Contents", "", [], [JQuery], false, -1], ["Css", "", [Go$String], [Go$String], false, -1], ["CssArray", "", [(go$sliceType(Go$String))], [(go$mapType(Go$String, go$emptyInterface))], true, -1], ["Data", "", [Go$String], [go$emptyInterface], false, -1], ["Delay", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Dequeue", "", [Go$String], [JQuery], false, -1], ["Detach", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Each", "", [(go$funcType([Go$Int, go$emptyInterface], [go$emptyInterface], false))], [JQuery], false, -1], ["Empty", "", [], [JQuery], false, -1], ["End", "", [], [JQuery], false, -1], ["Eq", "", [Go$Int], [JQuery], false, -1], ["FadeIn", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["FadeOut", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Filter", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Find", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["First", "", [], [JQuery], false, -1], ["Focus", "", [], [JQuery], false, -1], ["Get", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, -1], ["Has", "", [Go$String], [JQuery], false, -1], ["HasClass", "", [Go$String], [Go$Bool], false, -1], ["Height", "", [], [Go$Int], false, -1], ["Hide", "", [], [JQuery], false, -1], ["Html", "", [], [Go$String], false, -1], ["InnerHeight", "", [], [Go$Int], false, -1], ["InnerWidth", "", [], [Go$Int], false, -1], ["InsertAfter", "", [go$emptyInterface], [JQuery], false, -1], ["InsertBefore", "", [go$emptyInterface], [JQuery], false, -1], ["Is", "", [(go$sliceType(go$emptyInterface))], [Go$Bool], true, -1], ["Last", "", [], [JQuery], false, -1], ["Next", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Not", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Off", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Offset", "", [], [JQueryCoordinates], false, -1], ["OffsetParent", "", [], [JQuery], false, -1], ["On", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["One", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["OuterHeight", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["OuterWidth", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["Parent", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Parents", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ParentsUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Position", "", [], [JQueryCoordinates], false, -1], ["Prepend", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrependTo", "", [go$emptyInterface], [JQuery], false, -1], ["Prev", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Prop", "", [Go$String], [go$emptyInterface], false, -1], ["Ready", "", [(go$funcType([], [], false))], [JQuery], false, -1], ["Remove", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["RemoveAttr", "", [Go$String], [JQuery], false, -1], ["RemoveClass", "", [Go$String], [JQuery], false, -1], ["RemoveData", "", [Go$String], [JQuery], false, -1], ["RemoveProp", "", [Go$String], [JQuery], false, -1], ["ReplaceAll", "", [go$emptyInterface], [JQuery], false, -1], ["ReplaceWith", "", [go$emptyInterface], [JQuery], false, -1], ["Resize", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Scroll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ScrollLeft", "", [], [Go$Int], false, -1], ["ScrollTop", "", [], [Go$Int], false, -1], ["Select", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Serialize", "", [], [Go$String], false, -1], ["SerializeArray", "", [], [js.Object], false, -1], ["SetAttr", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetCss", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetData", "", [Go$String, go$emptyInterface], [JQuery], false, -1], ["SetHeight", "", [Go$String], [JQuery], false, -1], ["SetHtml", "", [go$emptyInterface], [JQuery], false, -1], ["SetOffset", "", [JQueryCoordinates], [JQuery], false, -1], ["SetProp", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetScrollLeft", "", [Go$Int], [JQuery], false, -1], ["SetScrollTop", "", [Go$Int], [JQuery], false, -1], ["SetText", "", [go$emptyInterface], [JQuery], false, -1], ["SetVal", "", [go$emptyInterface], [JQuery], false, -1], ["SetWidth", "", [go$emptyInterface], [JQuery], false, -1], ["Show", "", [], [JQuery], false, -1], ["Siblings", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Slice", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Stop", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Submit", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Text", "", [], [Go$String], false, -1], ["ToArray", "", [], [(go$sliceType(go$emptyInterface))], false, -1], ["Toggle", "", [Go$Bool], [JQuery], false, -1], ["ToggleClass", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Trigger", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Underlying", "", [], [js.Object], false, -1], ["Unwrap", "", [], [JQuery], false, -1], ["Val", "", [], [Go$String], false, -1], ["Width", "", [], [Go$Int], false, -1], ["Wrap", "", [go$emptyInterface], [JQuery], false, -1], ["WrapAll", "", [go$emptyInterface], [JQuery], false, -1], ["WrapInner", "", [go$emptyInterface], [JQuery], false, -1], ["dom1arg", "github.com/rusco/jquery", [Go$String, go$emptyInterface], [JQuery], false, -1], ["dom2args", "github.com/rusco/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["events", "github.com/rusco/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["handleEvent", "github.com/rusco/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1]];
 		JQuery.init([["o", "o", "github.com/rusco/jquery", js.Object, ""], ["Jquery", "Jquery", "", Go$String, "js:\"jquery\""], ["Selector", "Selector", "", Go$String, "js:\"selector\""], ["Length", "Length", "", Go$String, "js:\"length\""], ["Context", "Context", "", Go$String, "js:\"context\""]]);
 		Event.methods = [["Bool", "", [], [Go$Bool], false, 0], ["Call", "", [Go$String, (go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["Float", "", [], [Go$Float64], false, 0], ["Get", "", [Go$String], [js.Object], false, 0], ["Index", "", [Go$Int], [js.Object], false, 0], ["Int", "", [], [Go$Int], false, 0], ["Interface", "", [], [go$emptyInterface], false, 0], ["Invoke", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["IsNull", "", [], [Go$Bool], false, 0], ["IsUndefined", "", [], [Go$Bool], false, 0], ["Length", "", [], [Go$Int], false, 0], ["New", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["Set", "", [Go$String, go$emptyInterface], [], false, 0], ["SetIndex", "", [Go$Int, go$emptyInterface], [], false, 0], ["String", "", [], [Go$String], false, 0]];
 		(go$ptrType(Event)).methods = [["Bool", "", [], [Go$Bool], false, 0], ["Call", "", [Go$String, (go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["Float", "", [], [Go$Float64], false, 0], ["Get", "", [Go$String], [js.Object], false, 0], ["Index", "", [Go$Int], [js.Object], false, 0], ["Int", "", [], [Go$Int], false, 0], ["Interface", "", [], [go$emptyInterface], false, 0], ["Invoke", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["IsDefaultPrevented", "", [], [Go$Bool], false, -1], ["IsImmediatePropogationStopped", "", [], [Go$Bool], false, -1], ["IsNull", "", [], [Go$Bool], false, 0], ["IsPropagationStopped", "", [], [Go$Bool], false, -1], ["IsUndefined", "", [], [Go$Bool], false, 0], ["Length", "", [], [Go$Int], false, 0], ["New", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["PreventDefault", "", [], [], false, -1], ["Set", "", [Go$String, go$emptyInterface], [], false, 0], ["SetIndex", "", [Go$Int, go$emptyInterface], [], false, 0], ["StopImmediatePropagation", "", [], [], false, -1], ["StopPropagation", "", [], [], false, -1], ["String", "", [], [Go$String], false, 0]];
@@ -2910,52 +2901,7 @@ go$packages["math"] = (function() {
 	return go$pkg;
 })();
 go$packages["unicode/utf8"] = (function() {
-	var go$pkg = {}, RuneLen, EncodeRune;
-	RuneLen = go$pkg.RuneLen = function(r) {
-		if (r < 0) {
-			return -1;
-		} else if (r <= 127) {
-			return 1;
-		} else if (r <= 2047) {
-			return 2;
-		} else if (55296 <= r && r <= 57343) {
-			return -1;
-		} else if (r <= 65535) {
-			return 3;
-		} else if (r <= 1114111) {
-			return 4;
-		}
-		return -1;
-	};
-	EncodeRune = go$pkg.EncodeRune = function(p, r) {
-		var _slice, _index, _slice$1, _index$1, _slice$2, _index$2, _slice$3, _index$3, _slice$4, _index$4, _slice$5, _index$5, _slice$6, _index$6, _slice$7, _index$7, _slice$8, _index$8, _slice$9, _index$9;
-		if ((r >>> 0) <= 127) {
-			_slice = p, _index = 0, (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = (r << 24 >>> 24)) : go$throwRuntimeError("index out of range");
-			return 1;
-		}
-		if ((r >>> 0) <= 2047) {
-			_slice$1 = p, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = (192 | ((r >> 6 >> 0) << 24 >>> 24)) >>> 0) : go$throwRuntimeError("index out of range");
-			_slice$2 = p, _index$2 = 1, (_index$2 >= 0 && _index$2 < _slice$2.length) ? (_slice$2.array[_slice$2.offset + _index$2] = (128 | (((r << 24 >>> 24) & 63) >>> 0)) >>> 0) : go$throwRuntimeError("index out of range");
-			return 2;
-		}
-		if ((r >>> 0) > 1114111) {
-			r = 65533;
-		}
-		if (55296 <= r && r <= 57343) {
-			r = 65533;
-		}
-		if ((r >>> 0) <= 65535) {
-			_slice$3 = p, _index$3 = 0, (_index$3 >= 0 && _index$3 < _slice$3.length) ? (_slice$3.array[_slice$3.offset + _index$3] = (224 | ((r >> 12 >> 0) << 24 >>> 24)) >>> 0) : go$throwRuntimeError("index out of range");
-			_slice$4 = p, _index$4 = 1, (_index$4 >= 0 && _index$4 < _slice$4.length) ? (_slice$4.array[_slice$4.offset + _index$4] = (128 | ((((r >> 6 >> 0) << 24 >>> 24) & 63) >>> 0)) >>> 0) : go$throwRuntimeError("index out of range");
-			_slice$5 = p, _index$5 = 2, (_index$5 >= 0 && _index$5 < _slice$5.length) ? (_slice$5.array[_slice$5.offset + _index$5] = (128 | (((r << 24 >>> 24) & 63) >>> 0)) >>> 0) : go$throwRuntimeError("index out of range");
-			return 3;
-		}
-		_slice$6 = p, _index$6 = 0, (_index$6 >= 0 && _index$6 < _slice$6.length) ? (_slice$6.array[_slice$6.offset + _index$6] = (240 | ((r >> 18 >> 0) << 24 >>> 24)) >>> 0) : go$throwRuntimeError("index out of range");
-		_slice$7 = p, _index$7 = 1, (_index$7 >= 0 && _index$7 < _slice$7.length) ? (_slice$7.array[_slice$7.offset + _index$7] = (128 | ((((r >> 12 >> 0) << 24 >>> 24) & 63) >>> 0)) >>> 0) : go$throwRuntimeError("index out of range");
-		_slice$8 = p, _index$8 = 2, (_index$8 >= 0 && _index$8 < _slice$8.length) ? (_slice$8.array[_slice$8.offset + _index$8] = (128 | ((((r >> 6 >> 0) << 24 >>> 24) & 63) >>> 0)) >>> 0) : go$throwRuntimeError("index out of range");
-		_slice$9 = p, _index$9 = 3, (_index$9 >= 0 && _index$9 < _slice$9.length) ? (_slice$9.array[_slice$9.offset + _index$9] = (128 | (((r << 24 >>> 24) & 63) >>> 0)) >>> 0) : go$throwRuntimeError("index out of range");
-		return 4;
-	};
+	var go$pkg = {};
 	go$pkg.init = function() {
 	}
 	return go$pkg;
@@ -3176,61 +3122,13 @@ go$packages["io"] = (function() {
 	return go$pkg;
 })();
 go$packages["unicode"] = (function() {
-	var go$pkg = {}, CaseRange, d, to, To, ToUpper, _CaseRanges;
-	CaseRange = go$pkg.CaseRange = go$newType(0, "Struct", "unicode.CaseRange", "CaseRange", "unicode", function(Lo_, Hi_, Delta_) {
-		this.go$val = this;
-		this.Lo = Lo_ !== undefined ? Lo_ : 0;
-		this.Hi = Hi_ !== undefined ? Hi_ : 0;
-		this.Delta = Delta_ !== undefined ? Delta_ : go$makeNativeArray("Int32", 3, function() { return 0; });
-	});
-	d = go$pkg.d = go$newType(0, "Array", "unicode.d", "d", "unicode", null);
-	to = function(_case, r, caseRange) {
-		var lo, hi, _q, m, _slice, _index, _struct, cr, delta;
-		if (_case < 0 || 3 <= _case) {
-			return 65533;
-		}
-		lo = 0;
-		hi = caseRange.length;
-		while (lo < hi) {
-			m = lo + (_q = ((hi - lo >> 0)) / 2, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero")) >> 0;
-			cr = (_struct = (_slice = caseRange, _index = m, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")), new CaseRange.Ptr(_struct.Lo, _struct.Hi, go$mapArray(_struct.Delta, function(entry) { return entry; })));
-			if ((cr.Lo >> 0) <= r && r <= (cr.Hi >> 0)) {
-				delta = cr.Delta[_case];
-				if (delta > 1114111) {
-					return (cr.Lo >> 0) + (((((r - (cr.Lo >> 0) >> 0)) & ~1) | ((_case & 1) >> 0))) >> 0;
-				}
-				return r + delta >> 0;
-			}
-			if (r < (cr.Lo >> 0)) {
-				hi = m;
-			} else {
-				lo = m + 1 >> 0;
-			}
-		}
-		return r;
-	};
-	To = go$pkg.To = function(_case, r) {
-		return to(_case, r, go$pkg.CaseRanges);
-	};
-	ToUpper = go$pkg.ToUpper = function(r) {
-		if (r <= 127) {
-			if (97 <= r && r <= 122) {
-				r = r - 32 >> 0;
-			}
-			return r;
-		}
-		return To(0, r);
-	};
+	var go$pkg = {};
 	go$pkg.init = function() {
-		CaseRange.init([["Lo", "Lo", "", Go$Uint32, ""], ["Hi", "Hi", "", Go$Uint32, ""], ["Delta", "Delta", "", d, ""]]);
-		d.init(Go$Int32, 3);
-		_CaseRanges = new (go$sliceType(CaseRange))([new CaseRange.Ptr(65, 90, go$toNativeArray("Int32", [0, 32, 0])), new CaseRange.Ptr(97, 122, go$toNativeArray("Int32", [-32, 0, -32])), new CaseRange.Ptr(181, 181, go$toNativeArray("Int32", [743, 0, 743])), new CaseRange.Ptr(192, 214, go$toNativeArray("Int32", [0, 32, 0])), new CaseRange.Ptr(216, 222, go$toNativeArray("Int32", [0, 32, 0])), new CaseRange.Ptr(224, 246, go$toNativeArray("Int32", [-32, 0, -32])), new CaseRange.Ptr(248, 254, go$toNativeArray("Int32", [-32, 0, -32])), new CaseRange.Ptr(255, 255, go$toNativeArray("Int32", [121, 0, 121])), new CaseRange.Ptr(256, 303, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(304, 304, go$toNativeArray("Int32", [0, -199, 0])), new CaseRange.Ptr(305, 305, go$toNativeArray("Int32", [-232, 0, -232])), new CaseRange.Ptr(306, 311, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(313, 328, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(330, 375, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(376, 376, go$toNativeArray("Int32", [0, -121, 0])), new CaseRange.Ptr(377, 382, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(383, 383, go$toNativeArray("Int32", [-300, 0, -300])), new CaseRange.Ptr(384, 384, go$toNativeArray("Int32", [195, 0, 195])), new CaseRange.Ptr(385, 385, go$toNativeArray("Int32", [0, 210, 0])), new CaseRange.Ptr(386, 389, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(390, 390, go$toNativeArray("Int32", [0, 206, 0])), new CaseRange.Ptr(391, 392, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(393, 394, go$toNativeArray("Int32", [0, 205, 0])), new CaseRange.Ptr(395, 396, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(398, 398, go$toNativeArray("Int32", [0, 79, 0])), new CaseRange.Ptr(399, 399, go$toNativeArray("Int32", [0, 202, 0])), new CaseRange.Ptr(400, 400, go$toNativeArray("Int32", [0, 203, 0])), new CaseRange.Ptr(401, 402, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(403, 403, go$toNativeArray("Int32", [0, 205, 0])), new CaseRange.Ptr(404, 404, go$toNativeArray("Int32", [0, 207, 0])), new CaseRange.Ptr(405, 405, go$toNativeArray("Int32", [97, 0, 97])), new CaseRange.Ptr(406, 406, go$toNativeArray("Int32", [0, 211, 0])), new CaseRange.Ptr(407, 407, go$toNativeArray("Int32", [0, 209, 0])), new CaseRange.Ptr(408, 409, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(410, 410, go$toNativeArray("Int32", [163, 0, 163])), new CaseRange.Ptr(412, 412, go$toNativeArray("Int32", [0, 211, 0])), new CaseRange.Ptr(413, 413, go$toNativeArray("Int32", [0, 213, 0])), new CaseRange.Ptr(414, 414, go$toNativeArray("Int32", [130, 0, 130])), new CaseRange.Ptr(415, 415, go$toNativeArray("Int32", [0, 214, 0])), new CaseRange.Ptr(416, 421, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(422, 422, go$toNativeArray("Int32", [0, 218, 0])), new CaseRange.Ptr(423, 424, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(425, 425, go$toNativeArray("Int32", [0, 218, 0])), new CaseRange.Ptr(428, 429, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(430, 430, go$toNativeArray("Int32", [0, 218, 0])), new CaseRange.Ptr(431, 432, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(433, 434, go$toNativeArray("Int32", [0, 217, 0])), new CaseRange.Ptr(435, 438, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(439, 439, go$toNativeArray("Int32", [0, 219, 0])), new CaseRange.Ptr(440, 441, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(444, 445, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(447, 447, go$toNativeArray("Int32", [56, 0, 56])), new CaseRange.Ptr(452, 452, go$toNativeArray("Int32", [0, 2, 1])), new CaseRange.Ptr(453, 453, go$toNativeArray("Int32", [-1, 1, 0])), new CaseRange.Ptr(454, 454, go$toNativeArray("Int32", [-2, 0, -1])), new CaseRange.Ptr(455, 455, go$toNativeArray("Int32", [0, 2, 1])), new CaseRange.Ptr(456, 456, go$toNativeArray("Int32", [-1, 1, 0])), new CaseRange.Ptr(457, 457, go$toNativeArray("Int32", [-2, 0, -1])), new CaseRange.Ptr(458, 458, go$toNativeArray("Int32", [0, 2, 1])), new CaseRange.Ptr(459, 459, go$toNativeArray("Int32", [-1, 1, 0])), new CaseRange.Ptr(460, 460, go$toNativeArray("Int32", [-2, 0, -1])), new CaseRange.Ptr(461, 476, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(477, 477, go$toNativeArray("Int32", [-79, 0, -79])), new CaseRange.Ptr(478, 495, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(497, 497, go$toNativeArray("Int32", [0, 2, 1])), new CaseRange.Ptr(498, 498, go$toNativeArray("Int32", [-1, 1, 0])), new CaseRange.Ptr(499, 499, go$toNativeArray("Int32", [-2, 0, -1])), new CaseRange.Ptr(500, 501, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(502, 502, go$toNativeArray("Int32", [0, -97, 0])), new CaseRange.Ptr(503, 503, go$toNativeArray("Int32", [0, -56, 0])), new CaseRange.Ptr(504, 543, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(544, 544, go$toNativeArray("Int32", [0, -130, 0])), new CaseRange.Ptr(546, 563, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(570, 570, go$toNativeArray("Int32", [0, 10795, 0])), new CaseRange.Ptr(571, 572, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(573, 573, go$toNativeArray("Int32", [0, -163, 0])), new CaseRange.Ptr(574, 574, go$toNativeArray("Int32", [0, 10792, 0])), new CaseRange.Ptr(575, 576, go$toNativeArray("Int32", [10815, 0, 10815])), new CaseRange.Ptr(577, 578, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(579, 579, go$toNativeArray("Int32", [0, -195, 0])), new CaseRange.Ptr(580, 580, go$toNativeArray("Int32", [0, 69, 0])), new CaseRange.Ptr(581, 581, go$toNativeArray("Int32", [0, 71, 0])), new CaseRange.Ptr(582, 591, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(592, 592, go$toNativeArray("Int32", [10783, 0, 10783])), new CaseRange.Ptr(593, 593, go$toNativeArray("Int32", [10780, 0, 10780])), new CaseRange.Ptr(594, 594, go$toNativeArray("Int32", [10782, 0, 10782])), new CaseRange.Ptr(595, 595, go$toNativeArray("Int32", [-210, 0, -210])), new CaseRange.Ptr(596, 596, go$toNativeArray("Int32", [-206, 0, -206])), new CaseRange.Ptr(598, 599, go$toNativeArray("Int32", [-205, 0, -205])), new CaseRange.Ptr(601, 601, go$toNativeArray("Int32", [-202, 0, -202])), new CaseRange.Ptr(603, 603, go$toNativeArray("Int32", [-203, 0, -203])), new CaseRange.Ptr(608, 608, go$toNativeArray("Int32", [-205, 0, -205])), new CaseRange.Ptr(611, 611, go$toNativeArray("Int32", [-207, 0, -207])), new CaseRange.Ptr(613, 613, go$toNativeArray("Int32", [42280, 0, 42280])), new CaseRange.Ptr(614, 614, go$toNativeArray("Int32", [42308, 0, 42308])), new CaseRange.Ptr(616, 616, go$toNativeArray("Int32", [-209, 0, -209])), new CaseRange.Ptr(617, 617, go$toNativeArray("Int32", [-211, 0, -211])), new CaseRange.Ptr(619, 619, go$toNativeArray("Int32", [10743, 0, 10743])), new CaseRange.Ptr(623, 623, go$toNativeArray("Int32", [-211, 0, -211])), new CaseRange.Ptr(625, 625, go$toNativeArray("Int32", [10749, 0, 10749])), new CaseRange.Ptr(626, 626, go$toNativeArray("Int32", [-213, 0, -213])), new CaseRange.Ptr(629, 629, go$toNativeArray("Int32", [-214, 0, -214])), new CaseRange.Ptr(637, 637, go$toNativeArray("Int32", [10727, 0, 10727])), new CaseRange.Ptr(640, 640, go$toNativeArray("Int32", [-218, 0, -218])), new CaseRange.Ptr(643, 643, go$toNativeArray("Int32", [-218, 0, -218])), new CaseRange.Ptr(648, 648, go$toNativeArray("Int32", [-218, 0, -218])), new CaseRange.Ptr(649, 649, go$toNativeArray("Int32", [-69, 0, -69])), new CaseRange.Ptr(650, 651, go$toNativeArray("Int32", [-217, 0, -217])), new CaseRange.Ptr(652, 652, go$toNativeArray("Int32", [-71, 0, -71])), new CaseRange.Ptr(658, 658, go$toNativeArray("Int32", [-219, 0, -219])), new CaseRange.Ptr(837, 837, go$toNativeArray("Int32", [84, 0, 84])), new CaseRange.Ptr(880, 883, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(886, 887, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(891, 893, go$toNativeArray("Int32", [130, 0, 130])), new CaseRange.Ptr(902, 902, go$toNativeArray("Int32", [0, 38, 0])), new CaseRange.Ptr(904, 906, go$toNativeArray("Int32", [0, 37, 0])), new CaseRange.Ptr(908, 908, go$toNativeArray("Int32", [0, 64, 0])), new CaseRange.Ptr(910, 911, go$toNativeArray("Int32", [0, 63, 0])), new CaseRange.Ptr(913, 929, go$toNativeArray("Int32", [0, 32, 0])), new CaseRange.Ptr(931, 939, go$toNativeArray("Int32", [0, 32, 0])), new CaseRange.Ptr(940, 940, go$toNativeArray("Int32", [-38, 0, -38])), new CaseRange.Ptr(941, 943, go$toNativeArray("Int32", [-37, 0, -37])), new CaseRange.Ptr(945, 961, go$toNativeArray("Int32", [-32, 0, -32])), new CaseRange.Ptr(962, 962, go$toNativeArray("Int32", [-31, 0, -31])), new CaseRange.Ptr(963, 971, go$toNativeArray("Int32", [-32, 0, -32])), new CaseRange.Ptr(972, 972, go$toNativeArray("Int32", [-64, 0, -64])), new CaseRange.Ptr(973, 974, go$toNativeArray("Int32", [-63, 0, -63])), new CaseRange.Ptr(975, 975, go$toNativeArray("Int32", [0, 8, 0])), new CaseRange.Ptr(976, 976, go$toNativeArray("Int32", [-62, 0, -62])), new CaseRange.Ptr(977, 977, go$toNativeArray("Int32", [-57, 0, -57])), new CaseRange.Ptr(981, 981, go$toNativeArray("Int32", [-47, 0, -47])), new CaseRange.Ptr(982, 982, go$toNativeArray("Int32", [-54, 0, -54])), new CaseRange.Ptr(983, 983, go$toNativeArray("Int32", [-8, 0, -8])), new CaseRange.Ptr(984, 1007, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(1008, 1008, go$toNativeArray("Int32", [-86, 0, -86])), new CaseRange.Ptr(1009, 1009, go$toNativeArray("Int32", [-80, 0, -80])), new CaseRange.Ptr(1010, 1010, go$toNativeArray("Int32", [7, 0, 7])), new CaseRange.Ptr(1012, 1012, go$toNativeArray("Int32", [0, -60, 0])), new CaseRange.Ptr(1013, 1013, go$toNativeArray("Int32", [-96, 0, -96])), new CaseRange.Ptr(1015, 1016, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(1017, 1017, go$toNativeArray("Int32", [0, -7, 0])), new CaseRange.Ptr(1018, 1019, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(1021, 1023, go$toNativeArray("Int32", [0, -130, 0])), new CaseRange.Ptr(1024, 1039, go$toNativeArray("Int32", [0, 80, 0])), new CaseRange.Ptr(1040, 1071, go$toNativeArray("Int32", [0, 32, 0])), new CaseRange.Ptr(1072, 1103, go$toNativeArray("Int32", [-32, 0, -32])), new CaseRange.Ptr(1104, 1119, go$toNativeArray("Int32", [-80, 0, -80])), new CaseRange.Ptr(1120, 1153, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(1162, 1215, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(1216, 1216, go$toNativeArray("Int32", [0, 15, 0])), new CaseRange.Ptr(1217, 1230, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(1231, 1231, go$toNativeArray("Int32", [-15, 0, -15])), new CaseRange.Ptr(1232, 1319, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(1329, 1366, go$toNativeArray("Int32", [0, 48, 0])), new CaseRange.Ptr(1377, 1414, go$toNativeArray("Int32", [-48, 0, -48])), new CaseRange.Ptr(4256, 4293, go$toNativeArray("Int32", [0, 7264, 0])), new CaseRange.Ptr(4295, 4295, go$toNativeArray("Int32", [0, 7264, 0])), new CaseRange.Ptr(4301, 4301, go$toNativeArray("Int32", [0, 7264, 0])), new CaseRange.Ptr(7545, 7545, go$toNativeArray("Int32", [35332, 0, 35332])), new CaseRange.Ptr(7549, 7549, go$toNativeArray("Int32", [3814, 0, 3814])), new CaseRange.Ptr(7680, 7829, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(7835, 7835, go$toNativeArray("Int32", [-59, 0, -59])), new CaseRange.Ptr(7838, 7838, go$toNativeArray("Int32", [0, -7615, 0])), new CaseRange.Ptr(7840, 7935, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(7936, 7943, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(7944, 7951, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(7952, 7957, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(7960, 7965, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(7968, 7975, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(7976, 7983, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(7984, 7991, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(7992, 7999, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8000, 8005, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8008, 8013, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8017, 8017, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8019, 8019, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8021, 8021, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8023, 8023, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8025, 8025, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8027, 8027, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8029, 8029, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8031, 8031, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8032, 8039, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8040, 8047, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8048, 8049, go$toNativeArray("Int32", [74, 0, 74])), new CaseRange.Ptr(8050, 8053, go$toNativeArray("Int32", [86, 0, 86])), new CaseRange.Ptr(8054, 8055, go$toNativeArray("Int32", [100, 0, 100])), new CaseRange.Ptr(8056, 8057, go$toNativeArray("Int32", [128, 0, 128])), new CaseRange.Ptr(8058, 8059, go$toNativeArray("Int32", [112, 0, 112])), new CaseRange.Ptr(8060, 8061, go$toNativeArray("Int32", [126, 0, 126])), new CaseRange.Ptr(8064, 8071, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8072, 8079, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8080, 8087, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8088, 8095, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8096, 8103, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8104, 8111, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8112, 8113, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8115, 8115, go$toNativeArray("Int32", [9, 0, 9])), new CaseRange.Ptr(8120, 8121, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8122, 8123, go$toNativeArray("Int32", [0, -74, 0])), new CaseRange.Ptr(8124, 8124, go$toNativeArray("Int32", [0, -9, 0])), new CaseRange.Ptr(8126, 8126, go$toNativeArray("Int32", [-7205, 0, -7205])), new CaseRange.Ptr(8131, 8131, go$toNativeArray("Int32", [9, 0, 9])), new CaseRange.Ptr(8136, 8139, go$toNativeArray("Int32", [0, -86, 0])), new CaseRange.Ptr(8140, 8140, go$toNativeArray("Int32", [0, -9, 0])), new CaseRange.Ptr(8144, 8145, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8152, 8153, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8154, 8155, go$toNativeArray("Int32", [0, -100, 0])), new CaseRange.Ptr(8160, 8161, go$toNativeArray("Int32", [8, 0, 8])), new CaseRange.Ptr(8165, 8165, go$toNativeArray("Int32", [7, 0, 7])), new CaseRange.Ptr(8168, 8169, go$toNativeArray("Int32", [0, -8, 0])), new CaseRange.Ptr(8170, 8171, go$toNativeArray("Int32", [0, -112, 0])), new CaseRange.Ptr(8172, 8172, go$toNativeArray("Int32", [0, -7, 0])), new CaseRange.Ptr(8179, 8179, go$toNativeArray("Int32", [9, 0, 9])), new CaseRange.Ptr(8184, 8185, go$toNativeArray("Int32", [0, -128, 0])), new CaseRange.Ptr(8186, 8187, go$toNativeArray("Int32", [0, -126, 0])), new CaseRange.Ptr(8188, 8188, go$toNativeArray("Int32", [0, -9, 0])), new CaseRange.Ptr(8486, 8486, go$toNativeArray("Int32", [0, -7517, 0])), new CaseRange.Ptr(8490, 8490, go$toNativeArray("Int32", [0, -8383, 0])), new CaseRange.Ptr(8491, 8491, go$toNativeArray("Int32", [0, -8262, 0])), new CaseRange.Ptr(8498, 8498, go$toNativeArray("Int32", [0, 28, 0])), new CaseRange.Ptr(8526, 8526, go$toNativeArray("Int32", [-28, 0, -28])), new CaseRange.Ptr(8544, 8559, go$toNativeArray("Int32", [0, 16, 0])), new CaseRange.Ptr(8560, 8575, go$toNativeArray("Int32", [-16, 0, -16])), new CaseRange.Ptr(8579, 8580, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(9398, 9423, go$toNativeArray("Int32", [0, 26, 0])), new CaseRange.Ptr(9424, 9449, go$toNativeArray("Int32", [-26, 0, -26])), new CaseRange.Ptr(11264, 11310, go$toNativeArray("Int32", [0, 48, 0])), new CaseRange.Ptr(11312, 11358, go$toNativeArray("Int32", [-48, 0, -48])), new CaseRange.Ptr(11360, 11361, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(11362, 11362, go$toNativeArray("Int32", [0, -10743, 0])), new CaseRange.Ptr(11363, 11363, go$toNativeArray("Int32", [0, -3814, 0])), new CaseRange.Ptr(11364, 11364, go$toNativeArray("Int32", [0, -10727, 0])), new CaseRange.Ptr(11365, 11365, go$toNativeArray("Int32", [-10795, 0, -10795])), new CaseRange.Ptr(11366, 11366, go$toNativeArray("Int32", [-10792, 0, -10792])), new CaseRange.Ptr(11367, 11372, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(11373, 11373, go$toNativeArray("Int32", [0, -10780, 0])), new CaseRange.Ptr(11374, 11374, go$toNativeArray("Int32", [0, -10749, 0])), new CaseRange.Ptr(11375, 11375, go$toNativeArray("Int32", [0, -10783, 0])), new CaseRange.Ptr(11376, 11376, go$toNativeArray("Int32", [0, -10782, 0])), new CaseRange.Ptr(11378, 11379, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(11381, 11382, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(11390, 11391, go$toNativeArray("Int32", [0, -10815, 0])), new CaseRange.Ptr(11392, 11491, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(11499, 11502, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(11506, 11507, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(11520, 11557, go$toNativeArray("Int32", [-7264, 0, -7264])), new CaseRange.Ptr(11559, 11559, go$toNativeArray("Int32", [-7264, 0, -7264])), new CaseRange.Ptr(11565, 11565, go$toNativeArray("Int32", [-7264, 0, -7264])), new CaseRange.Ptr(42560, 42605, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42624, 42647, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42786, 42799, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42802, 42863, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42873, 42876, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42877, 42877, go$toNativeArray("Int32", [0, -35332, 0])), new CaseRange.Ptr(42878, 42887, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42891, 42892, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42893, 42893, go$toNativeArray("Int32", [0, -42280, 0])), new CaseRange.Ptr(42896, 42899, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42912, 42921, go$toNativeArray("Int32", [1114112, 1114112, 1114112])), new CaseRange.Ptr(42922, 42922, go$toNativeArray("Int32", [0, -42308, 0])), new CaseRange.Ptr(65313, 65338, go$toNativeArray("Int32", [0, 32, 0])), new CaseRange.Ptr(65345, 65370, go$toNativeArray("Int32", [-32, 0, -32])), new CaseRange.Ptr(66560, 66599, go$toNativeArray("Int32", [0, 40, 0])), new CaseRange.Ptr(66600, 66639, go$toNativeArray("Int32", [-40, 0, -40]))]);
-		go$pkg.CaseRanges = _CaseRanges;
 	}
 	return go$pkg;
 })();
 go$packages["strings"] = (function() {
-	var go$pkg = {}, errors = go$packages["errors"], io = go$packages["io"], utf8 = go$packages["unicode/utf8"], unicode = go$packages["unicode"], Join, Map, ToUpper;
+	var go$pkg = {}, errors = go$packages["errors"], io = go$packages["io"], utf8 = go$packages["unicode/utf8"], unicode = go$packages["unicode"], Join;
 	Join = go$pkg.Join = function(a, sep) {
 		var _slice, _index, x, x$1, n, i, _slice$1, _index$1, b, _slice$2, _index$2, bp, _ref, _i, _slice$3, _index$3, s;
 		if (a.length === 0) {
@@ -3256,49 +3154,6 @@ go$packages["strings"] = (function() {
 			_i++;
 		}
 		return go$bytesToString(b);
-	};
-	Map = go$pkg.Map = function(mapping, s) {
-		var maxbytes, nbytes, b, _ref, _i, _rune, c, i, r, wid, x, nb;
-		maxbytes = s.length;
-		nbytes = 0;
-		b = (go$sliceType(Go$Uint8)).nil;
-		_ref = s;
-		_i = 0;
-		while (_i < _ref.length) {
-			_rune = go$decodeRune(_ref, _i);
-			c = _rune[0];
-			i = _i;
-			r = mapping(c);
-			if (b === (go$sliceType(Go$Uint8)).nil) {
-				if (r === c) {
-					_i += _rune[1];
-					continue;
-				}
-				b = (go$sliceType(Go$Uint8)).make(maxbytes, 0, function() { return 0; });
-				nbytes = go$copyString(b, s.substring(0, i));
-			}
-			if (r >= 0) {
-				wid = 1;
-				if (r >= 128) {
-					wid = utf8.RuneLen(r);
-				}
-				if ((nbytes + wid >> 0) > maxbytes) {
-					maxbytes = (x = 2, (((maxbytes >>> 16 << 16) * x >> 0) + (maxbytes << 16 >>> 16) * x) >> 0) + 4 >> 0;
-					nb = (go$sliceType(Go$Uint8)).make(maxbytes, 0, function() { return 0; });
-					go$copySlice(nb, go$subslice(b, 0, nbytes));
-					b = nb;
-				}
-				nbytes = nbytes + (utf8.EncodeRune(go$subslice(b, nbytes, maxbytes), r)) >> 0;
-			}
-			_i += _rune[1];
-		}
-		if (b === (go$sliceType(Go$Uint8)).nil) {
-			return s;
-		}
-		return go$bytesToString(go$subslice(b, 0, nbytes));
-	};
-	ToUpper = go$pkg.ToUpper = function(s) {
-		return Map(unicode.ToUpper, s);
 	};
 	go$pkg.init = function() {
 	}
@@ -6209,15 +6064,12 @@ go$packages["time"] = (function() {
 	return go$pkg;
 })();
 go$packages["main"] = (function() {
-	var go$pkg = {}, js = go$packages["github.com/gopherjs/gopherjs/js"], jquery = go$packages["github.com/rusco/jquery"], qunit = go$packages["github.com/rusco/qunit"], strconv = go$packages["strconv"], strings = go$packages["strings"], time = go$packages["time"], EvtScenario, getDocumentBody, getWindow, main, jQuery;
+	var go$pkg = {}, js = go$packages["github.com/gopherjs/gopherjs/js"], jquery = go$packages["github.com/rusco/jquery"], qunit = go$packages["github.com/rusco/qunit"], strconv = go$packages["strconv"], strings = go$packages["strings"], time = go$packages["time"], EvtScenario, getDocumentBody, main, jQuery;
 	EvtScenario = go$pkg.EvtScenario = go$newType(0, "Struct", "test.EvtScenario", "EvtScenario", "main", function() {
 		this.go$val = this;
 	});
 	getDocumentBody = function() {
 		return go$global.document.body;
-	};
-	getWindow = function() {
-		return go$global;
 	};
 	EvtScenario.Ptr.prototype.Setup = function() {
 		var _struct, s;
@@ -6273,7 +6125,7 @@ go$packages["main"] = (function() {
 			assert.Ok(new Go$Bool(jquery.IsNumeric(new Go$String("0xFFF"))), "IsNumeric: hex");
 			assert.Ok(new Go$Bool(jquery.IsNumeric(new Go$String("8e-2"))), "IsNumeric: exponential");
 			assert.Ok(new Go$Bool(!jquery.IsXMLDoc(new (go$funcType([], [js.Object], false))(getDocumentBody))), "HTML Body element");
-			assert.Ok(new Go$Bool(jquery.IsWindow(getWindow())), "window");
+			assert.Ok(new Go$Bool(jquery.IsWindow(go$global)), "window");
 		}));
 		qunit.Test("ToArray,InArray", (function(assert) {
 			var _struct, divs, str, _ref, _i, _slice, _index, v, arr;
@@ -6309,51 +6161,13 @@ go$packages["main"] = (function() {
 			language = (x = (_entry = (obj !== null && obj.constructor === (go$mapType(Go$String, go$emptyInterface)) ? obj.go$val : go$typeAssertionFailed(obj, (go$mapType(Go$String, go$emptyInterface))))["language"], _entry !== undefined ? _entry.v : null), (x !== null && x.constructor === Go$String ? x.go$val : go$typeAssertionFailed(x, Go$String)));
 			assert.Equal(new Go$String(language), new Go$String("go"), "ParseJSON");
 		}));
-		qunit.Test("Grep,Each,Map", (function(assert) {
-			var arr, arr2, sum, allLanguages, _map, _key, o, letterArr, resultArr, allLetters, _ref, _i, _slice, _index, val, upperLanguages, allUpperLanguages, _ref$1, _i$1, _slice$1, _index$1, val$1;
+		qunit.Test("Grep", (function(assert) {
+			var arr, arr2;
 			arr = new (go$sliceType(go$emptyInterface))([new Go$Int(1), new Go$Int(9), new Go$Int(3), new Go$Int(8), new Go$Int(6), new Go$Int(1), new Go$Int(5), new Go$Int(9), new Go$Int(4), new Go$Int(7), new Go$Int(3), new Go$Int(8), new Go$Int(6), new Go$Int(9), new Go$Int(1)]);
 			arr2 = jquery.Grep(arr, (function(n, idx) {
 				return !(((n !== null && n.constructor === Go$Float64 ? n.go$val : go$typeAssertionFailed(n, Go$Float64)) === 5)) && idx > 4;
 			}));
 			assert.Equal(new Go$Int(arr2.length), new Go$Int(9), "Grep");
-			sum = 0;
-			jquery.EachOverArray(arr, (function(idx, n) {
-				sum = sum + ((n !== null && n.constructor === Go$Float64 ? n.go$val : go$typeAssertionFailed(n, Go$Float64)));
-				return idx < 5;
-			}));
-			assert.Equal(new Go$Float64(sum), new Go$Int(28), "EachOverArray");
-			allLanguages = "";
-			o = (_map = new Go$Map(), _key = "lang1", _map[_key] = { k: _key, v: new Go$String("Golang") }, _key = "lang2", _map[_key] = { k: _key, v: new Go$String("Javascript") }, _key = "lang3", _map[_key] = { k: _key, v: new Go$String("Typescript") }, _map);
-			jquery.EachOverMap(o, (function(key, val) {
-				allLanguages = allLanguages + ((val !== null && val.constructor === Go$String ? val.go$val : go$typeAssertionFailed(val, Go$String)));
-				return true;
-			}));
-			assert.Equal(new Go$String(allLanguages), new Go$String("GolangJavascriptTypescript"), "EachOverMap");
-			letterArr = new (go$sliceType(go$emptyInterface))([new Go$String("a"), new Go$String("b"), new Go$String("c"), new Go$String("d"), new Go$String("e")]);
-			resultArr = jquery.MapOverArray(letterArr, (function(n, idx) {
-				return new Go$String(strings.ToUpper((n !== null && n.constructor === Go$String ? n.go$val : go$typeAssertionFailed(n, Go$String))) + strconv.Itoa(idx));
-			}));
-			allLetters = "";
-			_ref = resultArr;
-			_i = 0;
-			while (_i < _ref.length) {
-				val = (_slice = _ref, _index = _i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
-				allLetters = allLetters + ((val !== null && val.constructor === Go$String ? val.go$val : go$typeAssertionFailed(val, Go$String)));
-				_i++;
-			}
-			assert.Equal(new Go$String(allLetters), new Go$String("A0B1C2D3E4"), "MapOverArray");
-			upperLanguages = jquery.MapOverMap(o, (function(val$1, key) {
-				return new Go$String(strings.ToUpper((val$1 !== null && val$1.constructor === Go$String ? val$1.go$val : go$typeAssertionFailed(val$1, Go$String))));
-			}));
-			allUpperLanguages = "";
-			_ref$1 = upperLanguages;
-			_i$1 = 0;
-			while (_i$1 < _ref$1.length) {
-				val$1 = (_slice$1 = _ref$1, _index$1 = _i$1, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range"));
-				allUpperLanguages = allUpperLanguages + ((val$1 !== null && val$1.constructor === Go$String ? val$1.go$val : go$typeAssertionFailed(val$1, Go$String)));
-				_i$1++;
-			}
-			assert.Equal(new Go$String(allUpperLanguages), new Go$String("GOLANGJAVASCRIPTTYPESCRIPT"), "MapOverMap");
 		}));
 		qunit.Test("Noop,Now", (function(assert) {
 			var callSth, date, time$1;
@@ -6560,6 +6374,70 @@ go$packages["main"] = (function() {
 			elem.Trigger(new (go$sliceType(go$emptyInterface))([new Go$String("click")])).Trigger(new (go$sliceType(go$emptyInterface))([new Go$String("mouseover")]));
 			assert.Equal(new Go$Int(clickCounter), new Go$Int(5), "clickCounter not Increased after Off");
 			assert.Equal(new Go$Int(mouseoverCounter), new Go$Int(5), "mouseoverCounter not Increased after Off");
+		}));
+		qunit.Test("Each", (function(assert) {
+			var html, blueCount, i;
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Empty();
+			html = "<style>\n\t\t\t  \t\tdiv {\n\t\t\t    \t\tcolor: red;\n\t\t\t    \t\ttext-align: center;\n\t\t\t    \t\tcursor: pointer;\n\t\t\t    \t\tfont-weight: bolder;\n\t\t\t\t    width: 300px;\n\t\t\t\t  }\n\t\t\t\t </style>\n\t\t\t\t <div>Click here</div>\n\t\t\t\t <div>to iterate through</div>\n\t\t\t\t <div>these divs.</div>";
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String(html)])).AppendTo(new Go$String("#qunit-fixture"));
+			blueCount = 0;
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([jquery.Event], [], false))((function(e) {
+				jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find(new (go$sliceType(go$emptyInterface))([new Go$String("div")])).Each((function(i, elem) {
+					var style;
+					style = jQuery(new (go$sliceType(go$emptyInterface))([elem])).Get(new (go$sliceType(go$emptyInterface))([new Go$Int(0)])).style;
+					if (!(go$internalize(style.color, Go$String) === "blue")) {
+						style.color = go$externalize("blue", Go$String);
+					} else {
+						blueCount = blueCount + 1 >> 0;
+						style.color = go$externalize("", Go$String);
+					}
+					return null;
+				}));
+			}))]));
+			i = 0;
+			while (i < 6) {
+				jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find(new (go$sliceType(go$emptyInterface))([new Go$String("div:eq(0)")])).Trigger(new (go$sliceType(go$emptyInterface))([new Go$String("click")]));
+				i = i + 1 >> 0;
+			}
+			assert.Equal(new Go$String(go$internalize(jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find(new (go$sliceType(go$emptyInterface))([new Go$String("div")])).o.length, Go$String)), new Go$Int(3), "Test setup problem: 3 divs expected");
+			assert.Equal(new Go$Int(blueCount), new Go$Int(9), "blueCount Counter should be 9");
+		}));
+		qunit.Test("Filter, Resize", (function(assert) {
+			var html, countFontweight;
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Empty();
+			html = "<style>\n\t\t\t\t  \tdiv {\n\t\t\t\t    \twidth: 60px;\n\t\t\t\t    \theight: 60px;\n\t\t\t\t    \tmargin: 5px;\n\t\t\t\t    \tfloat: left;\n\t\t\t\t    \tborder: 2px white solid;\n\t\t\t\t  \t}\n\t\t\t\t </style>\n\t\t\t\t  \n\t\t\t\t <div></div>\n\t\t\t\t <div class=\"middle\"></div>\n\t\t\t\t <div class=\"middle\"></div>\n\t\t\t\t <div class=\"middle\"></div>\n\t\t\t\t <div class=\"middle\"></div>\n\t\t\t\t <div></div>";
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String(html)])).AppendTo(new Go$String("#qunit-fixture"));
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find(new (go$sliceType(go$emptyInterface))([new Go$String("div")])).SetCss(new (go$sliceType(go$emptyInterface))([new Go$String("background"), new Go$String("silver")])).Filter(new (go$sliceType(go$emptyInterface))([new (go$funcType([Go$Int], [Go$Bool], false))((function(index) {
+				var _r;
+				return (_r = index % 3, _r === _r ? _r : go$throwRuntimeError("integer divide by zero")) === 2;
+			}))])).SetCss(new (go$sliceType(go$emptyInterface))([new Go$String("font-weight"), new Go$String("bold")]));
+			countFontweight = 0;
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find(new (go$sliceType(go$emptyInterface))([new Go$String("div")])).Each((function(i, elem) {
+				if (jQuery(new (go$sliceType(go$emptyInterface))([elem])).Css("font-weight") === "bold") {
+					countFontweight = countFontweight + 1 >> 0;
+				}
+				return null;
+			}));
+			assert.Equal(new Go$Int(countFontweight), new Go$Int(2), "2 divs should have font-weight = 'bold'");
+			jQuery(new (go$sliceType(go$emptyInterface))([go$global])).Resize(new (go$sliceType(go$emptyInterface))([new (go$funcType([], [], false))((function() {
+				jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find(new (go$sliceType(go$emptyInterface))([new Go$String("div:eq(0)")])).SetText(new Go$String(strconv.Itoa(jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("div:eq(0)")])).Width())));
+			}))])).Resize(new (go$sliceType(go$emptyInterface))([]));
+			assert.Equal(new Go$String(jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find(new (go$sliceType(go$emptyInterface))([new Go$String("div:eq(0)")])).Text()), new Go$String("60"), "text of first div should be 60");
+		}));
+		qunit.Test("Not,Offset", (function(assert) {
+			var html;
+			qunit.Expect(0);
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Empty();
+			html = "<div></div>\n\t\t\t\t <div id=\"blueone\"></div>\n\t\t\t\t <div></div>\n\t\t\t\t <div class=\"green\"></div>\n\t\t\t\t <div class=\"green\"></div>\n\t\t\t\t <div class=\"gray\"></div>\n\t\t\t\t <div></div>";
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String(html)])).AppendTo(new Go$String("#qunit-fixture"));
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#qunit-fixture")])).Find(new (go$sliceType(go$emptyInterface))([new Go$String("div")])).Not(new (go$sliceType(go$emptyInterface))([new Go$String(".green,#blueone")])).SetCss(new (go$sliceType(go$emptyInterface))([new Go$String("border-color"), new Go$String("red")]));
+			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("*"), new Go$String("body")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([jquery.Event], [], false))((function(event) {
+				var _struct, offset, x$1, tag;
+				offset = (_struct = jQuery(new (go$sliceType(go$emptyInterface))([event.Object.target])).Offset(), new jquery.JQueryCoordinates.Ptr(_struct.Left, _struct.Top));
+				event.StopPropagation();
+				tag = (x$1 = jQuery(new (go$sliceType(go$emptyInterface))([event.Object.target])).Prop("tagName"), (x$1 !== null && x$1.constructor === Go$String ? x$1.go$val : go$typeAssertionFailed(x$1, Go$String)));
+				jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#result")])).SetText(new Go$String(tag + " coords ( " + strconv.Itoa(offset.Left) + ", " + strconv.Itoa(offset.Top) + " )"));
+			}))]));
 		}));
 	};
 	go$pkg.init = function() {
