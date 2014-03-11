@@ -7,7 +7,7 @@
 ### How To Use
 
 welcome.html file:
-
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,7 +21,7 @@ welcome.html file:
     <script src="welcome.js"></script>
 </body>
 </html>
-
+```
 
 welcome.go file:
 
