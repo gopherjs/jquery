@@ -59,6 +59,11 @@ func main() {
 }
 ```
 
+Compile welcome.go:
+
+    $ gopherjs build welcome.go
+    
+
 ### Sample Apps ported from Javascript/Coffeescript to GopherJS 
 	
 Look at the Sample Apps to find out what is working and how. Any feedback is welcome !
