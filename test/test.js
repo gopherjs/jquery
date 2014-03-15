@@ -2917,7 +2917,7 @@ go$packages["strconv"] = (function() {
 		return FormatInt(new Go$Int64(0, i), 10);
 	};
 	formatBits = function(dst, u, base, neg, append_) {
-		var d, s, a, i, s$1, q, x, j, q$1, x$1, b, m, b$1;
+		var d, s, a, i, q, x, j, q$1, x$1, s$1, b, m, b$1;
 		d = (go$sliceType(Go$Uint8)).nil;
 		s = "";
 		if (base < 2 || base > 36) {
@@ -2943,20 +2943,23 @@ go$packages["strconv"] = (function() {
 				a[i] = "0123456789abcdefghijklmnopqrstuvwxyz".charCodeAt(((x$1 = go$mul64(q$1, new Go$Uint64(0, 10)), new Go$Uint64(u.high - x$1.high, u.low - x$1.low)).low >>> 0));
 				u = q$1;
 			}
-		} else if (s$1 = shifts[base], s$1 > 0) {
-			b = new Go$Uint64(0, base);
-			m = (b.low >>> 0) - 1 >>> 0;
-			while ((u.high > b.high || (u.high === b.high && u.low >= b.low))) {
-				i = i - 1 >> 0;
-				a[i] = "0123456789abcdefghijklmnopqrstuvwxyz".charCodeAt((((u.low >>> 0) & m) >>> 0));
-				u = go$shiftRightUint64(u, (s$1));
-			}
 		} else {
-			b$1 = new Go$Uint64(0, base);
-			while ((u.high > b$1.high || (u.high === b$1.high && u.low >= b$1.low))) {
-				i = i - 1 >> 0;
-				a[i] = "0123456789abcdefghijklmnopqrstuvwxyz".charCodeAt((go$div64(u, b$1, true).low >>> 0));
-				u = go$div64(u, (b$1), false);
+			s$1 = shifts[base];
+			if (s$1 > 0) {
+				b = new Go$Uint64(0, base);
+				m = (b.low >>> 0) - 1 >>> 0;
+				while ((u.high > b.high || (u.high === b.high && u.low >= b.low))) {
+					i = i - 1 >> 0;
+					a[i] = "0123456789abcdefghijklmnopqrstuvwxyz".charCodeAt((((u.low >>> 0) & m) >>> 0));
+					u = go$shiftRightUint64(u, (s$1));
+				}
+			} else {
+				b$1 = new Go$Uint64(0, base);
+				while ((u.high > b$1.high || (u.high === b$1.high && u.low >= b$1.low))) {
+					i = i - 1 >> 0;
+					a[i] = "0123456789abcdefghijklmnopqrstuvwxyz".charCodeAt((go$div64(u, b$1, true).low >>> 0));
+					u = go$div64(u, (b$1), false);
+				}
 			}
 		}
 		i = i - 1 >> 0;
@@ -4379,7 +4382,15 @@ go$packages["time"] = (function() {
 	Time.Ptr.prototype.Format = function(layout) {
 		var _struct, t, _tuple, name, offset, abs, year, month, day, hour, min, sec, b, buf, max, _tuple$1, prefix, std, suffix, _tuple$2, _tuple$3, _ref, y, _r, y$1, m, s, _r$1, hr, _r$2, hr$1, _q, zone$1, absoffset, _q$1, _r$3, _r$4, _q$2, zone$2, _q$3, _r$5;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
-		_tuple = t.locabs(), name = _tuple[0], offset = _tuple[1], abs = _tuple[2], year = -1, month = 0, day = 0, hour = -1, min = 0, sec = 0, b = (go$sliceType(Go$Uint8)).nil, buf = go$makeNativeArray("Uint8", 64, function() { return 0; });
+		_tuple = t.locabs(), name = _tuple[0], offset = _tuple[1], abs = _tuple[2];
+		year = -1;
+		month = 0;
+		day = 0;
+		hour = -1;
+		min = 0;
+		sec = 0;
+		b = (go$sliceType(Go$Uint8)).nil;
+		buf = go$makeNativeArray("Uint8", 64, function() { return 0; });
 		max = layout.length + 10 >> 0;
 		if (max <= 64) {
 			b = go$subslice(new (go$sliceType(Go$Uint8))(buf), 0, 0);
@@ -4596,7 +4607,16 @@ go$packages["time"] = (function() {
 		rangeErrString = "";
 		amSet = false;
 		pmSet = false;
-		year = 0, month = 1, day = 1, hour = 0, min = 0, sec = 0, nsec = 0, z = (go$ptrType(Location)).nil, zoneOffset = -1, zoneName = "";
+		year = 0;
+		month = 1;
+		day = 1;
+		hour = 0;
+		min = 0;
+		sec = 0;
+		nsec = 0;
+		z = (go$ptrType(Location)).nil;
+		zoneOffset = -1;
+		zoneName = "";
 		while (true) {
 			err = null;
 			_tuple$1 = nextStdChunk(layout), prefix = _tuple$1[0], std = _tuple$1[1], suffix = _tuple$1[2];
@@ -4874,7 +4894,8 @@ go$packages["time"] = (function() {
 			if (nUpper >= value.length) {
 				break;
 			}
-			if (c = value.charCodeAt(nUpper), c < 65 || 90 < c) {
+			c = value.charCodeAt(nUpper);
+			if (c < 65 || 90 < c) {
 				break;
 			}
 			nUpper = nUpper + 1 >> 0;
@@ -4931,7 +4952,8 @@ go$packages["time"] = (function() {
 			err = errBad;
 			return [ns, rangeErrString, err];
 		}
-		if (_tuple = atoi(value.substring(1, nbytes)), ns = _tuple[0], err = _tuple[1], !(go$interfaceIsEqual(err, null))) {
+		_tuple = atoi(value.substring(1, nbytes)), ns = _tuple[0], err = _tuple[1];
+		if (!(go$interfaceIsEqual(err, null))) {
 			return [ns, rangeErrString, err];
 		}
 		if (ns < 0 || 1000000000 <= ns) {
@@ -5091,7 +5113,7 @@ go$packages["time"] = (function() {
 		return ((_q = (sec.low >> 0) / 86400, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero")) >> 0);
 	};
 	Time.Ptr.prototype.ISOWeek = function() {
-		var year, week, _struct, t, _tuple, month, day, yday, _r, wday, _q, _r$1, jan1wday, dec31wday, _r$2;
+		var year, week, _struct, t, _tuple, month, day, yday, _r, wday, _q, _r$1, jan1wday, _r$2, dec31wday;
 		year = 0;
 		week = 0;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
@@ -5110,7 +5132,8 @@ go$packages["time"] = (function() {
 			}
 		}
 		if ((month === 12) && day >= 29 && wday < 3) {
-			if (dec31wday = (_r$2 = (((wday + 31 >> 0) - day >> 0)) % 7, _r$2 === _r$2 ? _r$2 : go$throwRuntimeError("integer divide by zero")), 0 <= dec31wday && dec31wday <= 2) {
+			dec31wday = (_r$2 = (((wday + 31 >> 0) - day >> 0)) % 7, _r$2 === _r$2 ? _r$2 : go$throwRuntimeError("integer divide by zero"));
+			if (0 <= dec31wday && dec31wday <= 2) {
 				year = year + 1 >> 0;
 				week = 1;
 			}
@@ -5182,7 +5205,8 @@ go$packages["time"] = (function() {
 			u = new Go$Uint64(-u.high, -u.low);
 		}
 		if ((u.high < 0 || (u.high === 0 && u.low < 1000000000))) {
-			prec = 0, unit = 0;
+			prec = 0;
+			unit = 0;
 			if ((u.high === 0 && u.low === 0)) {
 				return "0";
 			} else if ((u.high < 0 || (u.high === 0 && u.low < 1000))) {
@@ -5480,7 +5504,7 @@ go$packages["time"] = (function() {
 	};
 	Time.prototype.MarshalBinary = function() { return this.go$val.MarshalBinary(); };
 	Time.Ptr.prototype.UnmarshalBinary = function(data$1) {
-		var t, buf, _slice, _index, x, x$1, x$2, x$3, x$4, x$5, x$6, _slice$1, _index$1, x$7, _slice$2, _index$2, x$8, _slice$3, _index$3, x$9, _slice$4, _index$4, x$10, _slice$5, _index$5, x$11, _slice$6, _index$6, x$12, _slice$7, _index$7, x$13, _slice$8, _index$8, _slice$9, _index$9, _slice$10, _index$10, _slice$11, _index$11, _slice$12, _index$12, x$14, _slice$13, _index$13, _slice$14, _index$14, x$15, offset, localoff, _tuple, x$16;
+		var t, buf, _slice, _index, x, x$1, x$2, x$3, x$4, x$5, x$6, _slice$1, _index$1, x$7, _slice$2, _index$2, x$8, _slice$3, _index$3, x$9, _slice$4, _index$4, x$10, _slice$5, _index$5, x$11, _slice$6, _index$6, x$12, _slice$7, _index$7, x$13, _slice$8, _index$8, _slice$9, _index$9, _slice$10, _index$10, _slice$11, _index$11, _slice$12, _index$12, x$14, _slice$13, _index$13, _slice$14, _index$14, x$15, offset, _tuple, x$16, localoff;
 		t = this;
 		buf = data$1;
 		if (buf.length === 0) {
@@ -5500,10 +5524,13 @@ go$packages["time"] = (function() {
 		offset = (x$14 = ((((_slice$13 = buf, _index$13 = 1, (_index$13 >= 0 && _index$13 < _slice$13.length) ? _slice$13.array[_slice$13.offset + _index$13] : go$throwRuntimeError("index out of range")) << 16 >> 16) | (((_slice$14 = buf, _index$14 = 0, (_index$14 >= 0 && _index$14 < _slice$14.length) ? _slice$14.array[_slice$14.offset + _index$14] : go$throwRuntimeError("index out of range")) << 16 >> 16) << 8 << 16 >> 16)) >> 0), x$15 = 60, (((x$14 >>> 16 << 16) * x$15 >> 0) + (x$14 << 16 >>> 16) * x$15) >> 0);
 		if (offset === -60) {
 			t.loc = utcLoc;
-		} else if (_tuple = go$pkg.Local.lookup((x$16 = t.sec, new Go$Int64(x$16.high + -15, x$16.low + 2288912640))), localoff = _tuple[1], offset === localoff) {
-			t.loc = go$pkg.Local;
 		} else {
-			t.loc = FixedZone("", offset);
+			_tuple = go$pkg.Local.lookup((x$16 = t.sec, new Go$Int64(x$16.high + -15, x$16.low + 2288912640))), localoff = _tuple[1];
+			if (offset === localoff) {
+				t.loc = go$pkg.Local;
+			} else {
+				t.loc = FixedZone("", offset);
+			}
 		}
 		return null;
 	};
@@ -5523,7 +5550,8 @@ go$packages["time"] = (function() {
 	Time.Ptr.prototype.MarshalJSON = function() {
 		var _struct, t, y;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
-		if (y = t.Year(), y < 0 || y >= 10000) {
+		y = t.Year();
+		if (y < 0 || y >= 10000) {
 			return [(go$sliceType(Go$Uint8)).nil, errors.New("Time.MarshalJSON: year outside of range [0,9999]")];
 		}
 		return [new (go$sliceType(Go$Uint8))(go$stringToBytes(t.Format("\"2006-01-02T15:04:05.999999999Z07:00\""))), null];
@@ -5540,7 +5568,8 @@ go$packages["time"] = (function() {
 	Time.Ptr.prototype.MarshalText = function() {
 		var _struct, t, y;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
-		if (y = t.Year(), y < 0 || y >= 10000) {
+		y = t.Year();
+		if (y < 0 || y >= 10000) {
 			return [(go$sliceType(Go$Uint8)).nil, errors.New("Time.MarshalText: year outside of range [0,9999]")];
 		}
 		return [new (go$sliceType(Go$Uint8))(go$stringToBytes(t.Format("2006-01-02T15:04:05.999999999Z07:00"))), null];
@@ -5749,7 +5778,8 @@ go$packages["time"] = (function() {
 			end = new Go$Int64(2147483647, 4294967295);
 			return [name, offset, isDST, start, end];
 		}
-		if (zone$1 = l.cacheZone, !(zone$1 === (go$ptrType(zone)).nil) && (x = l.cacheStart, (x.high < sec.high || (x.high === sec.high && x.low <= sec.low))) && (x$1 = l.cacheEnd, (sec.high < x$1.high || (sec.high === x$1.high && sec.low < x$1.low)))) {
+		zone$1 = l.cacheZone;
+		if (!(zone$1 === (go$ptrType(zone)).nil) && (x = l.cacheStart, (x.high < sec.high || (x.high === sec.high && x.low <= sec.low))) && (x$1 = l.cacheEnd, (sec.high < x$1.high || (sec.high === x$1.high && sec.low < x$1.low)))) {
 			name = zone$1.name;
 			offset = zone$1.offset;
 			isDST = zone$1.isDST;
@@ -5815,12 +5845,13 @@ go$packages["time"] = (function() {
 	};
 	Location.prototype.lookupName = function(name, unix) { return this.go$val.lookupName(name, unix); };
 	getKeyValue = function(kh, kname) {
-		var buf, typ, n, _tuple, p, err, v, v$1;
+		var buf, typ, n, _tuple, p, v, v$1, err;
 		buf = go$makeNativeArray("Uint16", 50, function() { return 0; });
 		typ = 0;
 		n = 100;
 		_tuple = syscall.UTF16PtrFromString(kname), p = _tuple[0];
-		if (err = syscall.RegQueryValueEx(kh, p, (go$ptrType(Go$Uint32)).nil, new (go$ptrType(Go$Uint32))(function() { return typ; }, function(v) { typ = v; }), go$sliceToArray(new (go$sliceType(Go$Uint8))(buf)), new (go$ptrType(Go$Uint32))(function() { return n; }, function(v$1) { n = v$1; })), !(go$interfaceIsEqual(err, null))) {
+		err = syscall.RegQueryValueEx(kh, p, (go$ptrType(Go$Uint32)).nil, new (go$ptrType(Go$Uint32))(function() { return typ; }, function(v) { typ = v; }), go$sliceToArray(new (go$sliceType(Go$Uint8))(buf)), new (go$ptrType(Go$Uint32))(function() { return n; }, function(v$1) { n = v$1; }));
+		if (!(go$interfaceIsEqual(err, null))) {
 			return ["", err];
 		}
 		if (!((typ === 1))) {
@@ -5829,14 +5860,15 @@ go$packages["time"] = (function() {
 		return [syscall.UTF16ToString(new (go$sliceType(Go$Uint16))(buf)), null];
 	};
 	matchZoneKey = function(zones, kname, stdname, dstname) {
-		var matched, err2, h, _tuple, p, err, v, _tuple$1, _tuple$2, s, err$1, _tuple$3, _tuple$4, _tuple$5, _tuple$6, _tuple$7, _tuple$8;
+		var matched, err2, h, _tuple, p, v, err, _tuple$1, _tuple$2, s, err$1, _tuple$3, _tuple$4, _tuple$5, _tuple$6, _tuple$7, _tuple$8;
 		matched = false;
 		err2 = null;
 		var go$deferred = [];
 		try {
 			h = 0;
 			_tuple = syscall.UTF16PtrFromString(kname), p = _tuple[0];
-			if (err = syscall.RegOpenKeyEx(zones, p, 0, 131097, new (go$ptrType(syscall.Handle))(function() { return h; }, function(v) { h = v; })), !(go$interfaceIsEqual(err, null))) {
+			err = syscall.RegOpenKeyEx(zones, p, 0, 131097, new (go$ptrType(syscall.Handle))(function() { return h; }, function(v) { h = v; }));
+			if (!(go$interfaceIsEqual(err, null))) {
 				_tuple$1 = [false, err], matched = _tuple$1[0], err2 = _tuple$1[1];
 				return [matched, err2];
 			}
@@ -5869,17 +5901,19 @@ go$packages["time"] = (function() {
 		}
 	};
 	toEnglishName = function(stdname, dstname) {
-		var zones, _tuple, p, err, v, count, err$1, v$1, buf, i, n, v$2, v$3, kname, _tuple$1, matched, err$2;
+		var zones, _tuple, p, v, err, count, v$1, err$1, buf, i, n, v$2, v$3, kname, _tuple$1, matched, err$2;
 		var go$deferred = [];
 		try {
 			zones = 0;
 			_tuple = syscall.UTF16PtrFromString("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Time Zones"), p = _tuple[0];
-			if (err = syscall.RegOpenKeyEx(2147483650, p, 0, 131097, new (go$ptrType(syscall.Handle))(function() { return zones; }, function(v) { zones = v; })), !(go$interfaceIsEqual(err, null))) {
+			err = syscall.RegOpenKeyEx(2147483650, p, 0, 131097, new (go$ptrType(syscall.Handle))(function() { return zones; }, function(v) { zones = v; }));
+			if (!(go$interfaceIsEqual(err, null))) {
 				return ["", err];
 			}
 			go$deferred.push({ recv: syscall, method: "RegCloseKey", args: [zones] });
 			count = 0;
-			if (err$1 = syscall.RegQueryInfoKey(zones, (go$ptrType(Go$Uint16)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, new (go$ptrType(Go$Uint32))(function() { return count; }, function(v$1) { count = v$1; }), (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(syscall.Filetime)).nil), !(go$interfaceIsEqual(err$1, null))) {
+			err$1 = syscall.RegQueryInfoKey(zones, (go$ptrType(Go$Uint16)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, new (go$ptrType(Go$Uint32))(function() { return count; }, function(v$1) { count = v$1; }), (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(syscall.Filetime)).nil);
+			if (!(go$interfaceIsEqual(err$1, null))) {
 				return ["", err$1];
 			}
 			buf = go$makeNativeArray("Uint16", 50, function() { return 0; });
@@ -5952,7 +5986,8 @@ go$packages["time"] = (function() {
 			i = i + 7 >> 0;
 		}
 		day = day + (i) >> 0;
-		if (week = (d.Day >> 0) - 1 >> 0, week < 4) {
+		week = (d.Day >> 0) - 1 >> 0;
+		if (week < 4) {
 			day = day + ((x = 7, (((week >>> 16 << 16) * x >> 0) + (week << 16 >>> 16) * x) >> 0)) >> 0;
 		} else {
 			day = day + 28 >> 0;
@@ -6014,9 +6049,10 @@ go$packages["time"] = (function() {
 		}
 	};
 	initLocal = function() {
-		var i, err, _tuple;
+		var i, _tuple, err;
 		i = new syscall.Timezoneinformation.Ptr();
-		if (_tuple = syscall.GetTimeZoneInformation(i), err = _tuple[1], !(go$interfaceIsEqual(err, null))) {
+		_tuple = syscall.GetTimeZoneInformation(i), err = _tuple[1];
+		if (!(go$interfaceIsEqual(err, null))) {
 			localLoc.name = "UTC";
 			return;
 		}
