@@ -2,7 +2,7 @@
 
 ## Install
 
-    $ go get github.com/rusco/jquery
+    $ go get github.com/gopherjs/jquery
 
 ### How To Use
 
@@ -28,7 +28,7 @@ welcome.go file:
 ```go
 package main
 
-import "github.com/rusco/jquery"
+import "github.com/gopherjs/jquery"
 
 //convenience:
 var jQuery = jquery.NewJQuery
