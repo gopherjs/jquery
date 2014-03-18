@@ -804,6 +804,10 @@ func (j JQuery) dom1arg(method string, i interface{}) JQuery {
 	return j
 }
 
+func Ajax(options map[string]interface{}) {
+	js.Global.Get("jQuery").Call("ajax", options)
+}
+
 const (
 	BLUR     = "blur"
 	CHANGE   = "change"
@@ -838,7 +842,8 @@ const (
 	TOUCHCANCEL = "touchcancel"
 )
 
-//2do: ajax api
+//in progress: ajax api
+
 //2do: promises and deferred api
 //2do: animations api
 //2do: more tests, test return values against "undefined" values
