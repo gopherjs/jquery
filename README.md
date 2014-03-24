@@ -68,10 +68,11 @@ Compile welcome.go:
 	
 Look at the Sample Apps to find out what is working and how. Any feedback is welcome !
 
-- TodoMVC :  	the canonical jQuery Version
-- Flappy Math : teach your kids the multiplication tables
-- Tabata Timer: Get in Shape with GopherJS
-- QUnit Tests:	Don't bet on this, I am not sure wheter I will switch to golangs Idiomatic Testing facilities 
+- ([TodoMVC, jQuery Example](https://github.com/gopherjs/todomvc))
+- ([Flappy Bird, Math Edition](https://github.com/rusco/flappy-math-saga))
+- ([Simple Tabata Timer](https://github.com/rusco/tabata-timer))
+- ([QUnit](https://github.com/rusco/qunit))
+
 
 ### Status
 
