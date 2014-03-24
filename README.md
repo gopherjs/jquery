@@ -68,10 +68,10 @@ Compile welcome.go:
 	
 Look at the Sample Apps to find out what is working and how. Any feedback is welcome !
 
-- ([TodoMVC, jQuery Example](https://github.com/gopherjs/todomvc))
-- ([Flappy Bird, Math Edition](https://github.com/rusco/flappy-math-saga))
-- ([Simple Tabata Timer](https://github.com/rusco/tabata-timer))
-- ([QUnit](https://github.com/rusco/qunit))
+- [TodoMVC, jQuery Example](https://github.com/gopherjs/todomvc)
+- [Flappy Bird, Math Edition](https://github.com/rusco/flappy-math-saga)
+- [Simple Tabata Timer](https://github.com/rusco/tabata-timer)
+- [QUnit](https://github.com/rusco/qunit)
 
 
 ### Status
