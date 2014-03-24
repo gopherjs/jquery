@@ -12,7 +12,7 @@ var jQuery = jquery.NewJQuery
 
 func main() {
 
-	jQuery("#btnGopherJS").On(jquery.CLICK, func() {
+	jQuery("#btnAjaxGopherJs").On(jquery.CLICK, func() {
 
 		showConsole := jQuery("input[name='console']").Is(":checked")
 		if showConsole {
@@ -21,8 +21,8 @@ func main() {
 
 		ajaxopt := Object{
 			"async":       true,
-			"type":        "GET",
-			"url":         "http://localhost:3000/",
+			"type":        "POST",
+			"url":         "http://localhost:3000/json/",
 			"contentType": "application/json; charset=utf-8",
 			"dataType":    "json",
 			"data":        nil,
@@ -60,6 +60,17 @@ func main() {
 		}
 		//Ajax Call:
 		jquery.Ajax(ajaxopt)
+	})
+
+	jQuery("#btnLoadGopherJS").On("click", func() {
+		var showConsole = jQuery("input[name='console']").Is(":checked")
+
+		jQuery("#result").Load("/snippet.html", func() {
+			if showConsole {
+				print("load was performed")
+			}
+		})
+
 	})
 
 }

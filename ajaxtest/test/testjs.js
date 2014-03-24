@@ -1,6 +1,6 @@
 //Javascript Version:
 
-$("#btnJs").click(function () {
+$("#btnAjaxJs").click(function () {
 
 	var showConsole = $("input[name='console']").is(":checked");
 
@@ -10,7 +10,7 @@ $("#btnJs").click(function () {
     $.ajax({
         async: true,
         type: "POST",
-        url: "http://localhost:3000/",
+        url: "http://localhost:3000/json/",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         beforeSend: function (data) {
@@ -33,4 +33,16 @@ $("#btnJs").click(function () {
 
 $("#btnClear").click(function () {
     $("textarea").val("");
+    $("#result").html("<p><small>GopherJS Rocks !</small></p>");
+});
+
+
+$("#btnLoadJs").on("click", function() {
+    var showConsole = $("input[name='console']").is(":checked");
+
+    $("#result").load("/snippet.html", function() {
+        if (showConsole) 
+            console.log("load was performed");
+    });
+
 });

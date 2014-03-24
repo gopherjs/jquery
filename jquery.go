@@ -179,14 +179,6 @@ func (j JQuery) Detach(i ...interface{}) JQuery {
 	return j
 }
 
-func (j JQuery) Serialize() string {
-	return j.o.Call("serialize").String()
-}
-
-func (j JQuery) SerializeArray() js.Object {
-	return j.o.Call("serializeArray")
-}
-
 func (j JQuery) Eq(idx int) JQuery {
 	j.o = j.o.Call("eq", idx)
 	return j
@@ -804,11 +796,58 @@ func (j JQuery) dom1arg(method string, i interface{}) JQuery {
 	return j
 }
 
+//ajax
+func Param(params map[string]interface{}) {
+	js.Global.Get("jQuery").Call("param", params)
+}
+
+func (j JQuery) Load(i ...interface{}) JQuery {
+	j.o = j.o.Call("load", i...)
+	return j
+}
+
+func (j JQuery) Serialize() string {
+	return j.o.Call("serialize").String()
+}
+
+func (j JQuery) SerializeArray() js.Object {
+	return j.o.Call("serializeArray")
+}
+
 func Ajax(options map[string]interface{}) {
 	js.Global.Get("jQuery").Call("ajax", options)
 }
 
+func AjaxPrefilter(options map[string]interface{}) {
+	js.Global.Get("jQuery").Call("ajaxPrefilter", options)
+}
+
+func AjaxSetup(options map[string]interface{}) {
+	js.Global.Get("jQuery").Call("ajaxSetup", options)
+}
+
+func AjaxTransport(options map[string]interface{}) {
+	js.Global.Get("jQuery").Call("ajaxTransport", options)
+}
+
+func Get(options map[string]interface{}) {
+	js.Global.Get("jQuery").Call("get", options)
+}
+
+func Post(options map[string]interface{}) {
+	js.Global.Get("jQuery").Call("post", options)
+}
+
+func GetJSON(options map[string]interface{}) {
+	js.Global.Get("jQuery").Call("getJSON", options)
+}
+
+func GetScript(options map[string]interface{}) {
+	js.Global.Get("jQuery").Call("getScript", options)
+}
+
 const (
+	//keys
 	BLUR     = "blur"
 	CHANGE   = "change"
 	CLICK    = "click"
@@ -820,12 +859,12 @@ const (
 	KEYDOWN  = "keydown"
 	KEYPRESS = "keypress"
 	KEYUP    = "keyup"
-
+	//form
 	SUBMIT = "submit"
 	LOAD   = "load"
 	UNLOAD = "unload"
 	RESIZE = "resize"
-
+	//mouse
 	MOUSEDOWN  = "mousedown"
 	MOUSEENTER = "mouseenter"
 	MOUSELEAVE = "mouseleave"
@@ -833,13 +872,24 @@ const (
 	MOUSEOUT   = "mouseout"
 	MOUSEOVER  = "mouseover"
 	MOUSEUP    = "mouseup"
-
+	//touch
 	TOUCHSTART  = "touchstart"
 	TOUCHMOVE   = "touchmove"
 	TOUCHEND    = "touchend"
 	TOUCHENTER  = "touchenter"
 	TOUCHLEAVE  = "touchleave"
 	TOUCHCANCEL = "touchcancel"
+	//ajax Events:
+	AJAXSTART    = "ajaxStart"
+	BEFORESEND   = "beforeSend"
+	AJAXSEND     = "ajaxSend"
+	SUCCESS      = "success"
+	AJAXSUCESS   = "ajaxSuccess"
+	ERROR        = "error"
+	AJAXERROR    = "ajaxError"
+	COMPLETE     = "complete"
+	AJAXCOMPLETE = "ajaxComplete"
+	AJAXSTOP     = "ajaxStop"
 )
 
 //in progress: ajax api
