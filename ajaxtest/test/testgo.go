@@ -10,12 +10,19 @@ type Object map[string]interface{}
 
 var jQuery = jquery.NewJQuery
 
+func isChecked() bool {
+	return jQuery("input[name='console']").Is(":checked")
+}
+
+func stringify(i interface{}) string {
+	return js.Global.Get("JSON").Call("stringify", i).String()
+}
+
 func main() {
 
 	jQuery("#btnAjaxGopherJs").On(jquery.CLICK, func() {
 
-		showConsole := jQuery("input[name='console']").Is(":checked")
-		if showConsole {
+		if isChecked() {
 			print("GoperJS here")
 		}
 
@@ -27,16 +34,16 @@ func main() {
 			"dataType":    "json",
 			"data":        nil,
 			"beforeSend": func(data Object) {
-				if showConsole {
+				if isChecked() {
 					print(" before:", data)
 				}
 			},
 			"success": func(data Object) {
 
-				dataStr := js.Global.Get("JSON").Call("stringify", data).String()
+				dataStr := stringify(data)
 				jQuery("#inTextArea").SetVal(dataStr)
 
-				if showConsole {
+				if isChecked() {
 					print(" success:", data)
 					for k, v := range data {
 						switch v.(type) {
@@ -53,24 +60,52 @@ func main() {
 				}
 			},
 			"error": func(status interface{}) {
-				if showConsole {
+				if isChecked() {
 					print(" error:", status)
 				}
 			},
 		}
-		//Ajax Call:
+		//ajax
 		jquery.Ajax(ajaxopt)
 	})
 
-	jQuery("#btnLoadGopherJS").On("click", func() {
-		var showConsole = jQuery("input[name='console']").Is(":checked")
+	//load
+	jQuery("#btnLoadGopherJS").On(jquery.CLICK, func() {
 
-		jQuery("#result").Load("/snippet.html", func() {
-			if showConsole {
+		jQuery("#result").Load("/load.html", func() {
+			if isChecked() {
 				print("load was performed")
 			}
 		})
 
 	})
+	//get
+	jQuery("#btnGetGopherJS").On(jquery.CLICK, func() {
+
+		jquery.Get("/get.html", func(data interface{}, status string, xhr interface{}) {
+			if isChecked() {
+				print(" data:   ", data)
+				print(" status: ", status)
+				print(" xhr:    ", xhr)
+			}
+			jQuery("#result").SetHtml(data)
+		})
+	})
+	//post
+	jQuery("#btnPostGopherJS").On(jquery.CLICK, func() {
+		jquery.Post("/gopher", func(data interface{}, status string, xhr interface{}) {
+			if isChecked() {
+				print(" data:   ", data)
+				print(" status: ", status)
+				print(" xhr:    ", xhr)
+			}
+			jQuery("#result").SetHtml(data)
+		})
+	})
+	//getJson
+	//getScript
+	//ajaxSetup
+	//reorg indexhtml: use qunit
+	//use struct for getParam ?
 
 }

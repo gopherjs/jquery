@@ -40,9 +40,23 @@ $("#btnClear").click(function () {
 $("#btnLoadJs").on("click", function() {
     var showConsole = $("input[name='console']").is(":checked");
 
-    $("#result").load("/snippet.html", function() {
+    $("#result").load("/load.html", function() {
         if (showConsole) 
             console.log("load was performed");
     });
 
+});
+
+
+$("#btnGetJs").on("click", function() {
+    $.get( "/get.html", function( data ) {
+        $( "#result" ).html( data );
+
+    });
+})
+
+$("#btnPostJs").on("click", function() {
+    $.post( "/jquery", function( data ) {
+        $( "#result" ).html( data );
+    });
 });

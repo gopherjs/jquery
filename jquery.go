@@ -2,6 +2,53 @@ package jquery
 
 import "github.com/gopherjs/gopherjs/js"
 
+const (
+	JQ = "jQuery"
+	//keys
+	BLUR     = "blur"
+	CHANGE   = "change"
+	CLICK    = "click"
+	DBLCLICK = "dblclick"
+	FOCUS    = "focus"
+	FOCUSIN  = "focusin"
+	FOCUSOUT = "focusout"
+	HOVER    = "hover"
+	KEYDOWN  = "keydown"
+	KEYPRESS = "keypress"
+	KEYUP    = "keyup"
+	//form
+	SUBMIT = "submit"
+	LOAD   = "load"
+	UNLOAD = "unload"
+	RESIZE = "resize"
+	//mouse
+	MOUSEDOWN  = "mousedown"
+	MOUSEENTER = "mouseenter"
+	MOUSELEAVE = "mouseleave"
+	MOUSEMOVE  = "mousemove"
+	MOUSEOUT   = "mouseout"
+	MOUSEOVER  = "mouseover"
+	MOUSEUP    = "mouseup"
+	//touch
+	TOUCHSTART  = "touchstart"
+	TOUCHMOVE   = "touchmove"
+	TOUCHEND    = "touchend"
+	TOUCHENTER  = "touchenter"
+	TOUCHLEAVE  = "touchleave"
+	TOUCHCANCEL = "touchcancel"
+	//ajax Events:
+	AJAXSTART    = "ajaxStart"
+	BEFORESEND   = "beforeSend"
+	AJAXSEND     = "ajaxSend"
+	SUCCESS      = "success"
+	AJAXSUCESS   = "ajaxSuccess"
+	ERROR        = "error"
+	AJAXERROR    = "ajaxError"
+	COMPLETE     = "complete"
+	AJAXCOMPLETE = "ajaxComplete"
+	AJAXSTOP     = "ajaxStop"
+)
+
 type JQuery struct {
 	o        js.Object
 	Jquery   string `js:"jquery"`
@@ -58,97 +105,97 @@ func (event *Event) StopPropagation() {
 
 //JQuery constructor
 func NewJQuery(args ...interface{}) JQuery {
-	return JQuery{o: js.Global.Get("jQuery").New(args...)}
+	return JQuery{o: js.Global.Get(JQ).New(args...)}
 }
 
 //static function
 func Trim(text string) string {
-	return js.Global.Get("jQuery").Call("trim", text).String()
+	return js.Global.Get(JQ).Call("trim", text).String()
 }
 
 //static function
 func GlobalEval(cmd string) {
-	js.Global.Get("jQuery").Call("globalEval", cmd)
+	js.Global.Get(JQ).Call("globalEval", cmd)
 }
 
 //static function
 func Type(sth interface{}) string {
-	return js.Global.Get("jQuery").Call("type", sth).String()
+	return js.Global.Get(JQ).Call("type", sth).String()
 }
 
 //static function
 func IsPlainObject(sth interface{}) bool {
-	return js.Global.Get("jQuery").Call("isPlainObject", sth).Bool()
+	return js.Global.Get(JQ).Call("isPlainObject", sth).Bool()
 }
 
 //static function
 func IsEmptyObject(sth interface{}) bool {
-	return js.Global.Get("jQuery").Call("isEmptyObject", sth).Bool()
+	return js.Global.Get(JQ).Call("isEmptyObject", sth).Bool()
 }
 
 //static function
 func IsFunction(sth interface{}) bool {
-	return js.Global.Get("jQuery").Call("isFunction", sth).Bool()
+	return js.Global.Get(JQ).Call("isFunction", sth).Bool()
 }
 
 //static function
 func IsNumeric(sth interface{}) bool {
-	return js.Global.Get("jQuery").Call("isNumeric", sth).Bool()
+	return js.Global.Get(JQ).Call("isNumeric", sth).Bool()
 }
 
 //static function
 func IsXMLDoc(sth interface{}) bool {
-	return js.Global.Get("jQuery").Call("isXMLDoc", sth).Bool()
+	return js.Global.Get(JQ).Call("isXMLDoc", sth).Bool()
 }
 
 //static function
 func IsWindow(sth interface{}) bool {
-	return js.Global.Get("jQuery").Call("isWindow", sth).Bool()
+	return js.Global.Get(JQ).Call("isWindow", sth).Bool()
 }
 
 //static function
 func InArray(val interface{}, arr []interface{}) int {
-	return js.Global.Get("jQuery").Call("inArray", val, arr).Int()
+	return js.Global.Get(JQ).Call("inArray", val, arr).Int()
 }
 
 //static function
 func Contains(container interface{}, contained interface{}) bool {
-	return js.Global.Get("jQuery").Call("contains", container, contained).Bool()
+	return js.Global.Get(JQ).Call("contains", container, contained).Bool()
 }
 
 //static function
 func ParseHTML(text string) []interface{} {
-	return js.Global.Get("jQuery").Call("parseHTML", text).Interface().([]interface{})
+	return js.Global.Get(JQ).Call("parseHTML", text).Interface().([]interface{})
 }
 
 //static function
 func ParseXML(text string) interface{} {
-	return js.Global.Get("jQuery").Call("parseXML", text).Interface()
+	return js.Global.Get(JQ).Call("parseXML", text).Interface()
 }
 
 //static function
 func ParseJSON(text string) interface{} {
-	return js.Global.Get("jQuery").Call("parseJSON", text).Interface()
+	return js.Global.Get(JQ).Call("parseJSON", text).Interface()
 }
 
 //static function
 func Grep(arr []interface{}, fn func(interface{}, int) bool) []interface{} {
-	return js.Global.Get("jQuery").Call("grep", arr, fn).Interface().([]interface{})
+	return js.Global.Get(JQ).Call("grep", arr, fn).Interface().([]interface{})
 }
 
 //static function
 func Noop() interface{} {
-	return js.Global.Get("jQuery").Get("noop").Interface()
+	return js.Global.Get(JQ).Get("noop").Interface()
 }
 
 //static function
 func Now() float64 {
-	return js.Global.Get("jQuery").Call("now").Float()
+	return js.Global.Get(JQ).Call("now").Float()
 }
 
 //static function
 func Unique(arr js.Object) js.Object {
-	return js.Global.Get("jQuery").Call("unique", arr)
+	return js.Global.Get(JQ).Call("unique", arr)
 }
 
 //methods
@@ -798,7 +845,7 @@ func (j JQuery) dom1arg(method string, i interface{}) JQuery {
 
 //ajax
 func Param(params map[string]interface{}) {
-	js.Global.Get("jQuery").Call("param", params)
+	js.Global.Get(JQ).Call("param", params)
 }
 
 func (j JQuery) Load(i ...interface{}) JQuery {
@@ -815,82 +862,40 @@ func (j JQuery) SerializeArray() js.Object {
 }
 
 func Ajax(options map[string]interface{}) {
-	js.Global.Get("jQuery").Call("ajax", options)
+	js.Global.Get(JQ).Call("ajax", options)
 }
 
 func AjaxPrefilter(options map[string]interface{}) {
-	js.Global.Get("jQuery").Call("ajaxPrefilter", options)
+	js.Global.Get(JQ).Call("ajaxPrefilter", options)
 }
 
 func AjaxSetup(options map[string]interface{}) {
-	js.Global.Get("jQuery").Call("ajaxSetup", options)
+	js.Global.Get(JQ).Call("ajaxSetup", options)
 }
 
 func AjaxTransport(options map[string]interface{}) {
-	js.Global.Get("jQuery").Call("ajaxTransport", options)
+	js.Global.Get(JQ).Call("ajaxTransport", options)
 }
 
-func Get(options map[string]interface{}) {
-	js.Global.Get("jQuery").Call("get", options)
+func Get_(url string, options map[string]interface{}) {
+	js.Global.Get(JQ).Call("get", url, options)
 }
 
-func Post(options map[string]interface{}) {
-	js.Global.Get("jQuery").Call("post", options)
+func Get(i ...interface{}) {
+	js.Global.Get(JQ).Call("get", i...)
+}
+
+func Post(i ...interface{}) {
+	js.Global.Get(JQ).Call("post", i...)
 }
 
 func GetJSON(options map[string]interface{}) {
-	js.Global.Get("jQuery").Call("getJSON", options)
+	js.Global.Get(JQ).Call("getJSON", options)
 }
 
 func GetScript(options map[string]interface{}) {
-	js.Global.Get("jQuery").Call("getScript", options)
+	js.Global.Get(JQ).Call("getScript", options)
 }
-
-const (
-	//keys
-	BLUR     = "blur"
-	CHANGE   = "change"
-	CLICK    = "click"
-	DBLCLICK = "dblclick"
-	FOCUS    = "focus"
-	FOCUSIN  = "focusin"
-	FOCUSOUT = "focusout"
-	HOVER    = "hover"
-	KEYDOWN  = "keydown"
-	KEYPRESS = "keypress"
-	KEYUP    = "keyup"
-	//form
-	SUBMIT = "submit"
-	LOAD   = "load"
-	UNLOAD = "unload"
-	RESIZE = "resize"
-	//mouse
-	MOUSEDOWN  = "mousedown"
-	MOUSEENTER = "mouseenter"
-	MOUSELEAVE = "mouseleave"
-	MOUSEMOVE  = "mousemove"
-	MOUSEOUT   = "mouseout"
-	MOUSEOVER  = "mouseover"
-	MOUSEUP    = "mouseup"
-	//touch
-	TOUCHSTART  = "touchstart"
-	TOUCHMOVE   = "touchmove"
-	TOUCHEND    = "touchend"
-	TOUCHENTER  = "touchenter"
-	TOUCHLEAVE  = "touchleave"
-	TOUCHCANCEL = "touchcancel"
-	//ajax Events:
-	AJAXSTART    = "ajaxStart"
-	BEFORESEND   = "beforeSend"
-	AJAXSEND     = "ajaxSend"
-	SUCCESS      = "success"
-	AJAXSUCESS   = "ajaxSuccess"
-	ERROR        = "error"
-	AJAXERROR    = "ajaxError"
-	COMPLETE     = "complete"
-	AJAXCOMPLETE = "ajaxComplete"
-	AJAXSTOP     = "ajaxStop"
-)
 
 //in progress: ajax api
 

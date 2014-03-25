@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="date" content="17.03.2014" />
     <title>Simple GopherJS Ajax Testing Tool</title>
+    <!-- this index.html file will be migrated to QUnit to automize tests -->
 	<script src="jquery-2.1.0.min.js" type="text/javascript"></script>
 	<style type="text/css">
 		* {
@@ -33,11 +34,17 @@
 	</div>
 	<div class="row">
 		<div class="span6">
-			<button id="btnAjaxJs" class="btn">Test Ajax (pure  JS)</button>
+			<button id="btnAjaxJs" class="btn">Test Ajax (JS)</button>
 			<button id="btnAjaxGopherJs" class="btn">Test Ajax (GopherJS)</button>
 			&nbsp;|&nbsp;
-			<button id="btnLoadJs" class="btn">Test Load (pure  JS)</button>
+			<button id="btnLoadJs" class="btn">Test Load (JS)</button>
 			<button id="btnLoadGopherJS" class="btn">Test Load (GopherJS)</button>
+			&nbsp;|&nbsp;
+			<button id="btnGetJs" class="btn">Test Get (JS)</button>
+			<button id="btnGetGopherJS" class="btn">Test Get (GopherJS)</button>
+			&nbsp;|&nbsp;
+			<button id="btnPostJs" class="btn">Test Post (JS)</button>
+			<button id="btnPostGopherJS" class="btn">Test Post (GopherJS)</button>
 			&nbsp;|&nbsp;
 			
 			<button id="btnClear" class="btn">Clear Text</button>

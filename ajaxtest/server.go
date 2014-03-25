@@ -22,5 +22,9 @@ func main() {
 		r.JSON(200, map[string]interface{}{"success": true, "message": "Welcome!", "nested": map[string]interface{}{"moresuccess": true, "level": 1}})
 	})
 
+	m.Post("/:name", func(args martini.Params) string {
+		return "<div>Welcome " + args["name"] + "</div>"
+	})
+
 	m.Run()
 }
