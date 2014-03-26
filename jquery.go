@@ -877,10 +877,6 @@ func AjaxTransport(options map[string]interface{}) {
 	js.Global.Get(JQ).Call("ajaxTransport", options)
 }
 
-func Get_(url string, options map[string]interface{}) {
-	js.Global.Get(JQ).Call("get", url, options)
-}
-
 func Get(i ...interface{}) {
 	js.Global.Get(JQ).Call("get", i...)
 }
@@ -889,12 +885,12 @@ func Post(i ...interface{}) {
 	js.Global.Get(JQ).Call("post", i...)
 }
 
-func GetJSON(options map[string]interface{}) {
-	js.Global.Get(JQ).Call("getJSON", options)
+func GetJSON(i ...interface{}) {
+	js.Global.Get(JQ).Call("getJSON", i...)
 }
 
-func GetScript(options map[string]interface{}) {
-	js.Global.Get(JQ).Call("getScript", options)
+func GetScript(i ...interface{}) {
+	js.Global.Get(JQ).Call("getScript", i...)
 }
 
 //in progress: ajax api

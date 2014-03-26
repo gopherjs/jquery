@@ -29,7 +29,7 @@ func main() {
 		ajaxopt := Object{
 			"async":       true,
 			"type":        "POST",
-			"url":         "http://localhost:3000/json/",
+			"url":         "http://localhost:3000/nestedjson/",
 			"contentType": "application/json; charset=utf-8",
 			"dataType":    "json",
 			"data":        nil,
@@ -102,10 +102,28 @@ func main() {
 			jQuery("#result").SetHtml(data)
 		})
 	})
-	//getJson
-	//getScript
-	//ajaxSetup
-	//reorg indexhtml: use qunit
-	//use struct for getParam ?
+
+	//getjson
+	jQuery("#btnJsonGopherJs").On("click", func() {
+
+		jquery.GetJSON("/json/1", func(data interface{}) {
+			if val, ok := data.(map[string]interface{})["json"]; ok {
+				jQuery("#inTextArea").SetVal(val)
+			}
+		})
+	})
+
+	//getscript
+	jQuery("#btnGetScriptGopherJs").On("click", func() {
+
+		jquery.GetScript("/script", func(data interface{}) {
+			jQuery("#inTextArea").SetVal(data)
+
+		})
+	})
+
+	//2do: ajaxSetup
+	//2do: reorg indexhtml: use qunit
+	//2do: use struct for getParam
 
 }

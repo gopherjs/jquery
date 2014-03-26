@@ -10,7 +10,7 @@ $("#btnAjaxJs").click(function () {
     $.ajax({
         async: true,
         type: "POST",
-        url: "http://localhost:3000/json/",
+        url: "http://localhost:3000/nestedjson/",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         beforeSend: function (data) {
@@ -60,3 +60,25 @@ $("#btnPostJs").on("click", function() {
         $( "#result" ).html( data );
     });
 });
+
+
+//getjson
+$("#btnJsonJs").on("click", function() {
+
+    $.getJSON( "/json/1", function( data ) {
+
+        if (data.json)
+            $("#inTextArea").val(data.json);
+    });
+})
+
+
+//getscript
+$("#btnGetScriptJs").on("click", function() {
+
+    $.getScript( "/script", function( data ) {
+        $("#inTextArea").val(data);
+    });
+})
+
+
