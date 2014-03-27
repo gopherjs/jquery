@@ -1423,7 +1423,7 @@ go$packages["github.com/gopherjs/gopherjs/js"] = (function() {
 	return go$pkg;
 })();
 go$packages["github.com/gopherjs/jquery"] = (function() {
-	var go$pkg = {}, js = go$packages["github.com/gopherjs/gopherjs/js"], JQuery, Event, JQueryCoordinates, NewJQuery, Ajax, Get, Post, GetJSON, GetScript;
+	var go$pkg = {}, js = go$packages["github.com/gopherjs/gopherjs/js"], JQuery, Event, JQueryCoordinates, NewJQuery, Ajax, AjaxPrefilter, AjaxSetup, AjaxTransport, Get, Post, GetJSON, GetScript;
 	JQuery = go$pkg.JQuery = go$newType(0, "Struct", "jquery.JQuery", "JQuery", "github.com/gopherjs/jquery", function(o_, Jquery_, Selector_, Length_, Context_) {
 		this.go$val = this;
 		this.o = o_ !== undefined ? o_ : null;
@@ -2373,6 +2373,17 @@ go$packages["github.com/gopherjs/jquery"] = (function() {
 	Ajax = go$pkg.Ajax = function(options) {
 		go$global.jQuery.ajax(go$externalize(options, (go$mapType(Go$String, go$emptyInterface))));
 	};
+	AjaxPrefilter = go$pkg.AjaxPrefilter = function(i) {
+		var obj;
+		(obj = go$global.jQuery, obj.ajaxPrefilter.apply(obj, go$externalize(i, (go$sliceType(go$emptyInterface)))));
+	};
+	AjaxSetup = go$pkg.AjaxSetup = function(options) {
+		go$global.jQuery.ajaxSetup(go$externalize(options, (go$mapType(Go$String, go$emptyInterface))));
+	};
+	AjaxTransport = go$pkg.AjaxTransport = function(i) {
+		var obj;
+		(obj = go$global.jQuery, obj.ajaxTransport.apply(obj, go$externalize(i, (go$sliceType(go$emptyInterface)))));
+	};
 	Get = go$pkg.Get = function(i) {
 		var obj;
 		(obj = go$global.jQuery, obj.get.apply(obj, go$externalize(i, (go$sliceType(go$emptyInterface)))));
@@ -2401,9 +2412,9 @@ go$packages["github.com/gopherjs/jquery"] = (function() {
 	return go$pkg;
 })();
 go$packages["main"] = (function() {
-	var go$pkg = {}, js = go$packages["github.com/gopherjs/gopherjs/js"], jquery = go$packages["github.com/gopherjs/jquery"], Object, isChecked, stringify, main, jQuery;
+	var go$pkg = {}, js = go$packages["github.com/gopherjs/gopherjs/js"], jquery = go$packages["github.com/gopherjs/jquery"], Object, showConsole, stringify, main, jQuery;
 	Object = go$pkg.Object = go$newType(0, "Map", "main.Object", "Object", "main", null);
-	isChecked = function() {
+	showConsole = function() {
 		return jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("input[name='console']")])).Is(new (go$sliceType(go$emptyInterface))([new Go$String(":checked")]));
 	};
 	stringify = function(i) {
@@ -2412,18 +2423,18 @@ go$packages["main"] = (function() {
 	main = go$pkg.main = function() {
 		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnAjaxGopherJs")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
 			var _map, _key, ajaxopt;
-			if (isChecked()) {
+			if (showConsole()) {
 				console.log("GoperJS here");
 			}
-			ajaxopt = (_map = new Go$Map(), _key = "async", _map[_key] = { k: _key, v: new Go$Bool(true) }, _key = "type", _map[_key] = { k: _key, v: new Go$String("POST") }, _key = "url", _map[_key] = { k: _key, v: new Go$String("http://localhost:3000/nestedjson/") }, _key = "contentType", _map[_key] = { k: _key, v: new Go$String("application/json; charset=utf-8") }, _key = "dataType", _map[_key] = { k: _key, v: new Go$String("json") }, _key = "data", _map[_key] = { k: _key, v: null }, _key = "beforeSend", _map[_key] = { k: _key, v: new (go$funcType([Object], [], false))((function(data) {
-				if (isChecked()) {
+			ajaxopt = (_map = new Go$Map(), _key = "async", _map[_key] = { k: _key, v: new Go$Bool(true) }, _key = "type", _map[_key] = { k: _key, v: new Go$String("POST") }, _key = "url", _map[_key] = { k: _key, v: new Go$String("http://localhost:3000/nestedjson/") }, _key = "contentType", _map[_key] = { k: _key, v: new Go$String("application/json charset=utf-8") }, _key = "dataType", _map[_key] = { k: _key, v: new Go$String("json") }, _key = "data", _map[_key] = { k: _key, v: null }, _key = "beforeSend", _map[_key] = { k: _key, v: new (go$funcType([Object], [], false))((function(data) {
+				if (showConsole()) {
 					console.log(" before:", data);
 				}
 			})) }, _key = "success", _map[_key] = { k: _key, v: new (go$funcType([Object], [], false))((function(data) {
 				var dataStr, _ref, _i, _keys, _entry, v, k, _ref$1, _type;
 				dataStr = stringify(new Object(data));
 				jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#inTextArea")])).SetVal(new Go$String(dataStr));
-				if (isChecked()) {
+				if (showConsole()) {
 					console.log(" success:", data);
 					_ref = data;
 					_i = 0;
@@ -2447,7 +2458,7 @@ go$packages["main"] = (function() {
 					}
 				}
 			})) }, _key = "error", _map[_key] = { k: _key, v: new (go$funcType([go$emptyInterface], [], false))((function(status) {
-				if (isChecked()) {
+				if (showConsole()) {
 					console.log(" error:", status);
 				}
 			})) }, _map);
@@ -2455,14 +2466,14 @@ go$packages["main"] = (function() {
 		}))]));
 		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnLoadGopherJS")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
 			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#result")])).Load(new (go$sliceType(go$emptyInterface))([new Go$String("/load.html"), new (go$funcType([], [], false))((function() {
-				if (isChecked()) {
+				if (showConsole()) {
 					console.log("load was performed");
 				}
 			}))]));
 		}))]));
 		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnGetGopherJS")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
 			jquery.Get(new (go$sliceType(go$emptyInterface))([new Go$String("/get.html"), new (go$funcType([go$emptyInterface, Go$String, go$emptyInterface], [], false))((function(data, status, xhr) {
-				if (isChecked()) {
+				if (showConsole()) {
 					console.log(" data:   ", data);
 					console.log(" status: ", status);
 					console.log(" xhr:    ", xhr);
@@ -2472,7 +2483,7 @@ go$packages["main"] = (function() {
 		}))]));
 		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnPostGopherJS")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
 			jquery.Post(new (go$sliceType(go$emptyInterface))([new Go$String("/gopher"), new (go$funcType([go$emptyInterface, Go$String, go$emptyInterface], [], false))((function(data, status, xhr) {
-				if (isChecked()) {
+				if (showConsole()) {
 					console.log(" data:   ", data);
 					console.log(" status: ", status);
 					console.log(" xhr:    ", xhr);
@@ -2492,6 +2503,78 @@ go$packages["main"] = (function() {
 		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnGetScriptGopherJs")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
 			jquery.GetScript(new (go$sliceType(go$emptyInterface))([new Go$String("/script"), new (go$funcType([go$emptyInterface], [], false))((function(data) {
 				jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#inTextArea")])).SetVal(data);
+			}))]));
+		}))]));
+		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnAjaxsetupGopherJs")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
+			var _map, _key, ajaxSetupOptions, _map$1, _key$1, ajaxopt;
+			ajaxSetupOptions = (_map = new Go$Map(), _key = "async", _map[_key] = { k: _key, v: new Go$Bool(true) }, _key = "type", _map[_key] = { k: _key, v: new Go$String("POST") }, _key = "url", _map[_key] = { k: _key, v: new Go$String("http://localhost:3000/nestedjson/") }, _key = "contentType", _map[_key] = { k: _key, v: new Go$String("application/json charset=utf-8") }, _map);
+			jquery.AjaxSetup(ajaxSetupOptions);
+			ajaxopt = (_map$1 = new Go$Map(), _key$1 = "dataType", _map$1[_key$1] = { k: _key$1, v: new Go$String("json") }, _key$1 = "data", _map$1[_key$1] = { k: _key$1, v: null }, _key$1 = "beforeSend", _map$1[_key$1] = { k: _key$1, v: new (go$funcType([Object], [], false))((function(data) {
+				if (showConsole()) {
+					console.log(" before:", data);
+				}
+			})) }, _key$1 = "success", _map$1[_key$1] = { k: _key$1, v: new (go$funcType([Object], [], false))((function(data) {
+				var dataStr, _ref, _i, _keys, _entry, v, k, _ref$1, _type;
+				dataStr = stringify(new Object(data));
+				jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#inTextArea")])).SetVal(new Go$String(dataStr));
+				if (showConsole()) {
+					console.log(" success:", data);
+					_ref = data;
+					_i = 0;
+					_keys = go$keys(_ref);
+					while (_i < _keys.length) {
+						_entry = _ref[_keys[_i]];
+						v = _entry.v;
+						k = _entry.k;
+						_ref$1 = v;
+						_type = _ref$1 !== null ? _ref$1.constructor : null;
+						if (_type === Go$Bool) {
+							console.log(k, (v !== null && v.constructor === Go$Bool ? v.go$val : go$typeAssertionFailed(v, Go$Bool)));
+						} else if (_type === Go$String) {
+							console.log(k, (v !== null && v.constructor === Go$String ? v.go$val : go$typeAssertionFailed(v, Go$String)));
+						} else if (_type === Go$Float64) {
+							console.log(k, (v !== null && v.constructor === Go$Float64 ? v.go$val : go$typeAssertionFailed(v, Go$Float64)));
+						} else {
+							console.log("sth. else:", k, v);
+						}
+						_i++;
+					}
+				}
+			})) }, _key$1 = "error", _map$1[_key$1] = { k: _key$1, v: new (go$funcType([go$emptyInterface], [], false))((function(status) {
+				if (showConsole()) {
+					console.log(" error:", status);
+				}
+			})) }, _map$1);
+			jquery.Ajax(ajaxopt);
+		}))]));
+		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnAjaxPrefilterGopherJs")])).One(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
+			jquery.AjaxPrefilter(new (go$sliceType(go$emptyInterface))([new Go$String("+json"), new (go$funcType([go$emptyInterface, Go$String, go$emptyInterface], [], false))((function(options, originalOptions, jqXHR) {
+				if (showConsole()) {
+					console.log(" ajax prefilter options:", options);
+				}
+			}))]));
+		}))])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
+			jquery.GetJSON(new (go$sliceType(go$emptyInterface))([new Go$String("/json/2"), new (go$funcType([go$emptyInterface], [], false))((function(data) {
+				var _tuple, _entry, val, ok;
+				_tuple = (_entry = (data !== null && data.constructor === (go$mapType(Go$String, go$emptyInterface)) ? data.go$val : go$typeAssertionFailed(data, (go$mapType(Go$String, go$emptyInterface))))["json"], _entry !== undefined ? [_entry.v, true] : [null, false]); val = _tuple[0]; ok = _tuple[1];
+				if (ok) {
+					jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#inTextArea")])).SetVal(val);
+				}
+			}))]));
+		}))]));
+		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnAjaxTransportGopherJs")])).One(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
+			jquery.AjaxTransport(new (go$sliceType(go$emptyInterface))([new Go$String("+json"), new (go$funcType([go$emptyInterface, Go$String, go$emptyInterface], [], false))((function(options, originalOptions, jqXHR) {
+				if (showConsole()) {
+					console.log(" ajax transport options:", options);
+				}
+			}))]));
+		}))])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
+			jquery.GetJSON(new (go$sliceType(go$emptyInterface))([new Go$String("/json/3"), new (go$funcType([go$emptyInterface], [], false))((function(data) {
+				var _tuple, _entry, val, ok;
+				_tuple = (_entry = (data !== null && data.constructor === (go$mapType(Go$String, go$emptyInterface)) ? data.go$val : go$typeAssertionFailed(data, (go$mapType(Go$String, go$emptyInterface))))["json"], _entry !== undefined ? [_entry.v, true] : [null, false]); val = _tuple[0]; ok = _tuple[1];
+				if (ok) {
+					jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#inTextArea")])).SetVal(val);
+				}
 			}))]));
 		}))]));
 	};

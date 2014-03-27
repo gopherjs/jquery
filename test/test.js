@@ -1585,18 +1585,6 @@ go$packages["github.com/gopherjs/jquery"] = (function() {
 		return (_struct$1 = j, new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context));
 	};
 	JQuery.prototype.Detach = function(i) { return this.go$val.Detach(i); };
-	JQuery.Ptr.prototype.Serialize = function() {
-		var _struct, j;
-		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
-		return go$internalize(j.o.serialize(), Go$String);
-	};
-	JQuery.prototype.Serialize = function() { return this.go$val.Serialize(); };
-	JQuery.Ptr.prototype.SerializeArray = function() {
-		var _struct, j;
-		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
-		return j.o.serializeArray();
-	};
-	JQuery.prototype.SerializeArray = function() { return this.go$val.SerializeArray(); };
 	JQuery.Ptr.prototype.Eq = function(idx) {
 		var _struct, j, _struct$1;
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
@@ -2376,8 +2364,8 @@ go$packages["github.com/gopherjs/jquery"] = (function() {
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
 		_ref = i.length;
 		if (_ref === 2) {
-			_tuple = (x = (_slice = i, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")), (x !== null && x.constructor === JQuery ? [x.go$val, true] : [new JQuery.Ptr(), false])), selector = (_struct$1 = _tuple[0], new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context)), selOk = _tuple[1];
-			_tuple$1 = (x$1 = (_slice$1 = i, _index$1 = 1, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")), (x$1 !== null && x$1.constructor === JQuery ? [x$1.go$val, true] : [new JQuery.Ptr(), false])), context = (_struct$2 = _tuple$1[0], new JQuery.Ptr(_struct$2.o, _struct$2.Jquery, _struct$2.Selector, _struct$2.Length, _struct$2.Context)), ctxOk = _tuple$1[1];
+			_tuple = (x = (_slice = i, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")), (x !== null && x.constructor === JQuery ? [x.go$val, true] : [new JQuery.Ptr(), false])); selector = (_struct$1 = _tuple[0], new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context)); selOk = _tuple[1];
+			_tuple$1 = (x$1 = (_slice$1 = i, _index$1 = 1, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")), (x$1 !== null && x$1.constructor === JQuery ? [x$1.go$val, true] : [new JQuery.Ptr(), false])); context = (_struct$2 = _tuple$1[0], new JQuery.Ptr(_struct$2.o, _struct$2.Jquery, _struct$2.Selector, _struct$2.Length, _struct$2.Context)); ctxOk = _tuple$1[1];
 			if (!selOk && !ctxOk) {
 				j.o = j.o[go$externalize(method, Go$String)](go$externalize((_slice$2 = i, _index$2 = 0, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")), go$emptyInterface), go$externalize((_slice$3 = i, _index$3 = 1, (_index$3 >= 0 && _index$3 < _slice$3.length) ? _slice$3.array[_slice$3.offset + _index$3] : go$throwRuntimeError("index out of range")), go$emptyInterface));
 				return (_struct$3 = j, new JQuery.Ptr(_struct$3.o, _struct$3.Jquery, _struct$3.Selector, _struct$3.Length, _struct$3.Context));
@@ -2391,7 +2379,7 @@ go$packages["github.com/gopherjs/jquery"] = (function() {
 			j.o = j.o[go$externalize(method, Go$String)](selector.o, context.o);
 			return (_struct$6 = j, new JQuery.Ptr(_struct$6.o, _struct$6.Jquery, _struct$6.Selector, _struct$6.Length, _struct$6.Context));
 		} else if (_ref === 1) {
-			_tuple$2 = (x$2 = (_slice$6 = i, _index$6 = 0, (_index$6 >= 0 && _index$6 < _slice$6.length) ? _slice$6.array[_slice$6.offset + _index$6] : go$throwRuntimeError("index out of range")), (x$2 !== null && x$2.constructor === JQuery ? [x$2.go$val, true] : [new JQuery.Ptr(), false])), selector$1 = (_struct$7 = _tuple$2[0], new JQuery.Ptr(_struct$7.o, _struct$7.Jquery, _struct$7.Selector, _struct$7.Length, _struct$7.Context)), selOk$1 = _tuple$2[1];
+			_tuple$2 = (x$2 = (_slice$6 = i, _index$6 = 0, (_index$6 >= 0 && _index$6 < _slice$6.length) ? _slice$6.array[_slice$6.offset + _index$6] : go$throwRuntimeError("index out of range")), (x$2 !== null && x$2.constructor === JQuery ? [x$2.go$val, true] : [new JQuery.Ptr(), false])); selector$1 = (_struct$7 = _tuple$2[0], new JQuery.Ptr(_struct$7.o, _struct$7.Jquery, _struct$7.Selector, _struct$7.Length, _struct$7.Context)); selOk$1 = _tuple$2[1];
 			if (!selOk$1) {
 				j.o = j.o[go$externalize(method, Go$String)](go$externalize((_slice$7 = i, _index$7 = 0, (_index$7 >= 0 && _index$7 < _slice$7.length) ? _slice$7.array[_slice$7.offset + _index$7] : go$throwRuntimeError("index out of range")), go$emptyInterface));
 				return (_struct$8 = j, new JQuery.Ptr(_struct$8.o, _struct$8.Jquery, _struct$8.Selector, _struct$8.Length, _struct$8.Context));
@@ -2407,7 +2395,7 @@ go$packages["github.com/gopherjs/jquery"] = (function() {
 	JQuery.Ptr.prototype.dom1arg = function(method, i) {
 		var _struct, j, _tuple, _struct$1, selector, selOk, _struct$2, _struct$3;
 		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
-		_tuple = (i !== null && i.constructor === JQuery ? [i.go$val, true] : [new JQuery.Ptr(), false]), selector = (_struct$1 = _tuple[0], new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context)), selOk = _tuple[1];
+		_tuple = (i !== null && i.constructor === JQuery ? [i.go$val, true] : [new JQuery.Ptr(), false]); selector = (_struct$1 = _tuple[0], new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context)); selOk = _tuple[1];
 		if (!selOk) {
 			j.o = j.o[go$externalize(method, Go$String)](go$externalize(i, go$emptyInterface));
 			return (_struct$2 = j, new JQuery.Ptr(_struct$2.o, _struct$2.Jquery, _struct$2.Selector, _struct$2.Length, _struct$2.Context));
@@ -2416,9 +2404,28 @@ go$packages["github.com/gopherjs/jquery"] = (function() {
 		return (_struct$3 = j, new JQuery.Ptr(_struct$3.o, _struct$3.Jquery, _struct$3.Selector, _struct$3.Length, _struct$3.Context));
 	};
 	JQuery.prototype.dom1arg = function(method, i) { return this.go$val.dom1arg(method, i); };
+	JQuery.Ptr.prototype.Load = function(i) {
+		var _struct, j, obj, _struct$1;
+		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
+		j.o = (obj = j.o, obj.load.apply(obj, go$externalize(i, (go$sliceType(go$emptyInterface)))));
+		return (_struct$1 = j, new JQuery.Ptr(_struct$1.o, _struct$1.Jquery, _struct$1.Selector, _struct$1.Length, _struct$1.Context));
+	};
+	JQuery.prototype.Load = function(i) { return this.go$val.Load(i); };
+	JQuery.Ptr.prototype.Serialize = function() {
+		var _struct, j;
+		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
+		return go$internalize(j.o.serialize(), Go$String);
+	};
+	JQuery.prototype.Serialize = function() { return this.go$val.Serialize(); };
+	JQuery.Ptr.prototype.SerializeArray = function() {
+		var _struct, j;
+		j = (_struct = this, new JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
+		return j.o.serializeArray();
+	};
+	JQuery.prototype.SerializeArray = function() { return this.go$val.SerializeArray(); };
 	go$pkg.init = function() {
-		JQuery.methods = [["Add", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddBack", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddClass", "", [go$emptyInterface], [JQuery], false, -1], ["After", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Append", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AppendTo", "", [go$emptyInterface], [JQuery], false, -1], ["Attr", "", [Go$String], [Go$String], false, -1], ["Before", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Blur", "", [], [JQuery], false, -1], ["Children", "", [go$emptyInterface], [JQuery], false, -1], ["ClearQueue", "", [Go$String], [JQuery], false, -1], ["Clone", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Closest", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Contents", "", [], [JQuery], false, -1], ["Css", "", [Go$String], [Go$String], false, -1], ["CssArray", "", [(go$sliceType(Go$String))], [(go$mapType(Go$String, go$emptyInterface))], true, -1], ["Data", "", [Go$String], [go$emptyInterface], false, -1], ["Delay", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Dequeue", "", [Go$String], [JQuery], false, -1], ["Detach", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Each", "", [(go$funcType([Go$Int, go$emptyInterface], [go$emptyInterface], false))], [JQuery], false, -1], ["Empty", "", [], [JQuery], false, -1], ["End", "", [], [JQuery], false, -1], ["Eq", "", [Go$Int], [JQuery], false, -1], ["FadeIn", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["FadeOut", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Filter", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Find", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["First", "", [], [JQuery], false, -1], ["Focus", "", [], [JQuery], false, -1], ["Get", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, -1], ["Has", "", [Go$String], [JQuery], false, -1], ["HasClass", "", [Go$String], [Go$Bool], false, -1], ["Height", "", [], [Go$Int], false, -1], ["Hide", "", [], [JQuery], false, -1], ["Html", "", [], [Go$String], false, -1], ["InnerHeight", "", [], [Go$Int], false, -1], ["InnerWidth", "", [], [Go$Int], false, -1], ["InsertAfter", "", [go$emptyInterface], [JQuery], false, -1], ["InsertBefore", "", [go$emptyInterface], [JQuery], false, -1], ["Is", "", [(go$sliceType(go$emptyInterface))], [Go$Bool], true, -1], ["Last", "", [], [JQuery], false, -1], ["Next", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Not", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Off", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Offset", "", [], [JQueryCoordinates], false, -1], ["OffsetParent", "", [], [JQuery], false, -1], ["On", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["One", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["OuterHeight", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["OuterWidth", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["Parent", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Parents", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ParentsUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Position", "", [], [JQueryCoordinates], false, -1], ["Prepend", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrependTo", "", [go$emptyInterface], [JQuery], false, -1], ["Prev", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Prop", "", [Go$String], [go$emptyInterface], false, -1], ["Ready", "", [(go$funcType([], [], false))], [JQuery], false, -1], ["Remove", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["RemoveAttr", "", [Go$String], [JQuery], false, -1], ["RemoveClass", "", [Go$String], [JQuery], false, -1], ["RemoveData", "", [Go$String], [JQuery], false, -1], ["RemoveProp", "", [Go$String], [JQuery], false, -1], ["ReplaceAll", "", [go$emptyInterface], [JQuery], false, -1], ["ReplaceWith", "", [go$emptyInterface], [JQuery], false, -1], ["Resize", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Scroll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ScrollLeft", "", [], [Go$Int], false, -1], ["ScrollTop", "", [], [Go$Int], false, -1], ["Select", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Serialize", "", [], [Go$String], false, -1], ["SerializeArray", "", [], [js.Object], false, -1], ["SetAttr", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetCss", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetData", "", [Go$String, go$emptyInterface], [JQuery], false, -1], ["SetHeight", "", [Go$String], [JQuery], false, -1], ["SetHtml", "", [go$emptyInterface], [JQuery], false, -1], ["SetOffset", "", [JQueryCoordinates], [JQuery], false, -1], ["SetProp", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetScrollLeft", "", [Go$Int], [JQuery], false, -1], ["SetScrollTop", "", [Go$Int], [JQuery], false, -1], ["SetText", "", [go$emptyInterface], [JQuery], false, -1], ["SetVal", "", [go$emptyInterface], [JQuery], false, -1], ["SetWidth", "", [go$emptyInterface], [JQuery], false, -1], ["Show", "", [], [JQuery], false, -1], ["Siblings", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Slice", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Stop", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Submit", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Text", "", [], [Go$String], false, -1], ["ToArray", "", [], [(go$sliceType(go$emptyInterface))], false, -1], ["Toggle", "", [Go$Bool], [JQuery], false, -1], ["ToggleClass", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Trigger", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Underlying", "", [], [js.Object], false, -1], ["Unwrap", "", [], [JQuery], false, -1], ["Val", "", [], [Go$String], false, -1], ["Width", "", [], [Go$Int], false, -1], ["Wrap", "", [go$emptyInterface], [JQuery], false, -1], ["WrapAll", "", [go$emptyInterface], [JQuery], false, -1], ["WrapInner", "", [go$emptyInterface], [JQuery], false, -1], ["dom1arg", "github.com/gopherjs/jquery", [Go$String, go$emptyInterface], [JQuery], false, -1], ["dom2args", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["events", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["handleEvent", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1]];
-		(go$ptrType(JQuery)).methods = [["Add", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddBack", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddClass", "", [go$emptyInterface], [JQuery], false, -1], ["After", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Append", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AppendTo", "", [go$emptyInterface], [JQuery], false, -1], ["Attr", "", [Go$String], [Go$String], false, -1], ["Before", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Blur", "", [], [JQuery], false, -1], ["Children", "", [go$emptyInterface], [JQuery], false, -1], ["ClearQueue", "", [Go$String], [JQuery], false, -1], ["Clone", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Closest", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Contents", "", [], [JQuery], false, -1], ["Css", "", [Go$String], [Go$String], false, -1], ["CssArray", "", [(go$sliceType(Go$String))], [(go$mapType(Go$String, go$emptyInterface))], true, -1], ["Data", "", [Go$String], [go$emptyInterface], false, -1], ["Delay", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Dequeue", "", [Go$String], [JQuery], false, -1], ["Detach", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Each", "", [(go$funcType([Go$Int, go$emptyInterface], [go$emptyInterface], false))], [JQuery], false, -1], ["Empty", "", [], [JQuery], false, -1], ["End", "", [], [JQuery], false, -1], ["Eq", "", [Go$Int], [JQuery], false, -1], ["FadeIn", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["FadeOut", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Filter", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Find", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["First", "", [], [JQuery], false, -1], ["Focus", "", [], [JQuery], false, -1], ["Get", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, -1], ["Has", "", [Go$String], [JQuery], false, -1], ["HasClass", "", [Go$String], [Go$Bool], false, -1], ["Height", "", [], [Go$Int], false, -1], ["Hide", "", [], [JQuery], false, -1], ["Html", "", [], [Go$String], false, -1], ["InnerHeight", "", [], [Go$Int], false, -1], ["InnerWidth", "", [], [Go$Int], false, -1], ["InsertAfter", "", [go$emptyInterface], [JQuery], false, -1], ["InsertBefore", "", [go$emptyInterface], [JQuery], false, -1], ["Is", "", [(go$sliceType(go$emptyInterface))], [Go$Bool], true, -1], ["Last", "", [], [JQuery], false, -1], ["Next", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Not", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Off", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Offset", "", [], [JQueryCoordinates], false, -1], ["OffsetParent", "", [], [JQuery], false, -1], ["On", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["One", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["OuterHeight", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["OuterWidth", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["Parent", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Parents", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ParentsUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Position", "", [], [JQueryCoordinates], false, -1], ["Prepend", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrependTo", "", [go$emptyInterface], [JQuery], false, -1], ["Prev", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Prop", "", [Go$String], [go$emptyInterface], false, -1], ["Ready", "", [(go$funcType([], [], false))], [JQuery], false, -1], ["Remove", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["RemoveAttr", "", [Go$String], [JQuery], false, -1], ["RemoveClass", "", [Go$String], [JQuery], false, -1], ["RemoveData", "", [Go$String], [JQuery], false, -1], ["RemoveProp", "", [Go$String], [JQuery], false, -1], ["ReplaceAll", "", [go$emptyInterface], [JQuery], false, -1], ["ReplaceWith", "", [go$emptyInterface], [JQuery], false, -1], ["Resize", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Scroll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ScrollLeft", "", [], [Go$Int], false, -1], ["ScrollTop", "", [], [Go$Int], false, -1], ["Select", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Serialize", "", [], [Go$String], false, -1], ["SerializeArray", "", [], [js.Object], false, -1], ["SetAttr", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetCss", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetData", "", [Go$String, go$emptyInterface], [JQuery], false, -1], ["SetHeight", "", [Go$String], [JQuery], false, -1], ["SetHtml", "", [go$emptyInterface], [JQuery], false, -1], ["SetOffset", "", [JQueryCoordinates], [JQuery], false, -1], ["SetProp", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetScrollLeft", "", [Go$Int], [JQuery], false, -1], ["SetScrollTop", "", [Go$Int], [JQuery], false, -1], ["SetText", "", [go$emptyInterface], [JQuery], false, -1], ["SetVal", "", [go$emptyInterface], [JQuery], false, -1], ["SetWidth", "", [go$emptyInterface], [JQuery], false, -1], ["Show", "", [], [JQuery], false, -1], ["Siblings", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Slice", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Stop", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Submit", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Text", "", [], [Go$String], false, -1], ["ToArray", "", [], [(go$sliceType(go$emptyInterface))], false, -1], ["Toggle", "", [Go$Bool], [JQuery], false, -1], ["ToggleClass", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Trigger", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Underlying", "", [], [js.Object], false, -1], ["Unwrap", "", [], [JQuery], false, -1], ["Val", "", [], [Go$String], false, -1], ["Width", "", [], [Go$Int], false, -1], ["Wrap", "", [go$emptyInterface], [JQuery], false, -1], ["WrapAll", "", [go$emptyInterface], [JQuery], false, -1], ["WrapInner", "", [go$emptyInterface], [JQuery], false, -1], ["dom1arg", "github.com/gopherjs/jquery", [Go$String, go$emptyInterface], [JQuery], false, -1], ["dom2args", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["events", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["handleEvent", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1]];
+		JQuery.methods = [["Add", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddBack", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddClass", "", [go$emptyInterface], [JQuery], false, -1], ["After", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Append", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AppendTo", "", [go$emptyInterface], [JQuery], false, -1], ["Attr", "", [Go$String], [Go$String], false, -1], ["Before", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Blur", "", [], [JQuery], false, -1], ["Children", "", [go$emptyInterface], [JQuery], false, -1], ["ClearQueue", "", [Go$String], [JQuery], false, -1], ["Clone", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Closest", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Contents", "", [], [JQuery], false, -1], ["Css", "", [Go$String], [Go$String], false, -1], ["CssArray", "", [(go$sliceType(Go$String))], [(go$mapType(Go$String, go$emptyInterface))], true, -1], ["Data", "", [Go$String], [go$emptyInterface], false, -1], ["Delay", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Dequeue", "", [Go$String], [JQuery], false, -1], ["Detach", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Each", "", [(go$funcType([Go$Int, go$emptyInterface], [go$emptyInterface], false))], [JQuery], false, -1], ["Empty", "", [], [JQuery], false, -1], ["End", "", [], [JQuery], false, -1], ["Eq", "", [Go$Int], [JQuery], false, -1], ["FadeIn", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["FadeOut", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Filter", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Find", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["First", "", [], [JQuery], false, -1], ["Focus", "", [], [JQuery], false, -1], ["Get", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, -1], ["Has", "", [Go$String], [JQuery], false, -1], ["HasClass", "", [Go$String], [Go$Bool], false, -1], ["Height", "", [], [Go$Int], false, -1], ["Hide", "", [], [JQuery], false, -1], ["Html", "", [], [Go$String], false, -1], ["InnerHeight", "", [], [Go$Int], false, -1], ["InnerWidth", "", [], [Go$Int], false, -1], ["InsertAfter", "", [go$emptyInterface], [JQuery], false, -1], ["InsertBefore", "", [go$emptyInterface], [JQuery], false, -1], ["Is", "", [(go$sliceType(go$emptyInterface))], [Go$Bool], true, -1], ["Last", "", [], [JQuery], false, -1], ["Load", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Next", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Not", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Off", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Offset", "", [], [JQueryCoordinates], false, -1], ["OffsetParent", "", [], [JQuery], false, -1], ["On", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["One", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["OuterHeight", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["OuterWidth", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["Parent", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Parents", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ParentsUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Position", "", [], [JQueryCoordinates], false, -1], ["Prepend", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrependTo", "", [go$emptyInterface], [JQuery], false, -1], ["Prev", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Prop", "", [Go$String], [go$emptyInterface], false, -1], ["Ready", "", [(go$funcType([], [], false))], [JQuery], false, -1], ["Remove", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["RemoveAttr", "", [Go$String], [JQuery], false, -1], ["RemoveClass", "", [Go$String], [JQuery], false, -1], ["RemoveData", "", [Go$String], [JQuery], false, -1], ["RemoveProp", "", [Go$String], [JQuery], false, -1], ["ReplaceAll", "", [go$emptyInterface], [JQuery], false, -1], ["ReplaceWith", "", [go$emptyInterface], [JQuery], false, -1], ["Resize", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Scroll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ScrollLeft", "", [], [Go$Int], false, -1], ["ScrollTop", "", [], [Go$Int], false, -1], ["Select", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Serialize", "", [], [Go$String], false, -1], ["SerializeArray", "", [], [js.Object], false, -1], ["SetAttr", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetCss", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetData", "", [Go$String, go$emptyInterface], [JQuery], false, -1], ["SetHeight", "", [Go$String], [JQuery], false, -1], ["SetHtml", "", [go$emptyInterface], [JQuery], false, -1], ["SetOffset", "", [JQueryCoordinates], [JQuery], false, -1], ["SetProp", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetScrollLeft", "", [Go$Int], [JQuery], false, -1], ["SetScrollTop", "", [Go$Int], [JQuery], false, -1], ["SetText", "", [go$emptyInterface], [JQuery], false, -1], ["SetVal", "", [go$emptyInterface], [JQuery], false, -1], ["SetWidth", "", [go$emptyInterface], [JQuery], false, -1], ["Show", "", [], [JQuery], false, -1], ["Siblings", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Slice", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Stop", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Submit", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Text", "", [], [Go$String], false, -1], ["ToArray", "", [], [(go$sliceType(go$emptyInterface))], false, -1], ["Toggle", "", [Go$Bool], [JQuery], false, -1], ["ToggleClass", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Trigger", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Underlying", "", [], [js.Object], false, -1], ["Unwrap", "", [], [JQuery], false, -1], ["Val", "", [], [Go$String], false, -1], ["Width", "", [], [Go$Int], false, -1], ["Wrap", "", [go$emptyInterface], [JQuery], false, -1], ["WrapAll", "", [go$emptyInterface], [JQuery], false, -1], ["WrapInner", "", [go$emptyInterface], [JQuery], false, -1], ["dom1arg", "github.com/gopherjs/jquery", [Go$String, go$emptyInterface], [JQuery], false, -1], ["dom2args", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["events", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["handleEvent", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1]];
+		(go$ptrType(JQuery)).methods = [["Add", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddBack", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddClass", "", [go$emptyInterface], [JQuery], false, -1], ["After", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Append", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AppendTo", "", [go$emptyInterface], [JQuery], false, -1], ["Attr", "", [Go$String], [Go$String], false, -1], ["Before", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Blur", "", [], [JQuery], false, -1], ["Children", "", [go$emptyInterface], [JQuery], false, -1], ["ClearQueue", "", [Go$String], [JQuery], false, -1], ["Clone", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Closest", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Contents", "", [], [JQuery], false, -1], ["Css", "", [Go$String], [Go$String], false, -1], ["CssArray", "", [(go$sliceType(Go$String))], [(go$mapType(Go$String, go$emptyInterface))], true, -1], ["Data", "", [Go$String], [go$emptyInterface], false, -1], ["Delay", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Dequeue", "", [Go$String], [JQuery], false, -1], ["Detach", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Each", "", [(go$funcType([Go$Int, go$emptyInterface], [go$emptyInterface], false))], [JQuery], false, -1], ["Empty", "", [], [JQuery], false, -1], ["End", "", [], [JQuery], false, -1], ["Eq", "", [Go$Int], [JQuery], false, -1], ["FadeIn", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["FadeOut", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Filter", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Find", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["First", "", [], [JQuery], false, -1], ["Focus", "", [], [JQuery], false, -1], ["Get", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, -1], ["Has", "", [Go$String], [JQuery], false, -1], ["HasClass", "", [Go$String], [Go$Bool], false, -1], ["Height", "", [], [Go$Int], false, -1], ["Hide", "", [], [JQuery], false, -1], ["Html", "", [], [Go$String], false, -1], ["InnerHeight", "", [], [Go$Int], false, -1], ["InnerWidth", "", [], [Go$Int], false, -1], ["InsertAfter", "", [go$emptyInterface], [JQuery], false, -1], ["InsertBefore", "", [go$emptyInterface], [JQuery], false, -1], ["Is", "", [(go$sliceType(go$emptyInterface))], [Go$Bool], true, -1], ["Last", "", [], [JQuery], false, -1], ["Load", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Next", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Not", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Off", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Offset", "", [], [JQueryCoordinates], false, -1], ["OffsetParent", "", [], [JQuery], false, -1], ["On", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["One", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["OuterHeight", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["OuterWidth", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["Parent", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Parents", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ParentsUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Position", "", [], [JQueryCoordinates], false, -1], ["Prepend", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrependTo", "", [go$emptyInterface], [JQuery], false, -1], ["Prev", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Prop", "", [Go$String], [go$emptyInterface], false, -1], ["Ready", "", [(go$funcType([], [], false))], [JQuery], false, -1], ["Remove", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["RemoveAttr", "", [Go$String], [JQuery], false, -1], ["RemoveClass", "", [Go$String], [JQuery], false, -1], ["RemoveData", "", [Go$String], [JQuery], false, -1], ["RemoveProp", "", [Go$String], [JQuery], false, -1], ["ReplaceAll", "", [go$emptyInterface], [JQuery], false, -1], ["ReplaceWith", "", [go$emptyInterface], [JQuery], false, -1], ["Resize", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Scroll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ScrollLeft", "", [], [Go$Int], false, -1], ["ScrollTop", "", [], [Go$Int], false, -1], ["Select", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Serialize", "", [], [Go$String], false, -1], ["SerializeArray", "", [], [js.Object], false, -1], ["SetAttr", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetCss", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetData", "", [Go$String, go$emptyInterface], [JQuery], false, -1], ["SetHeight", "", [Go$String], [JQuery], false, -1], ["SetHtml", "", [go$emptyInterface], [JQuery], false, -1], ["SetOffset", "", [JQueryCoordinates], [JQuery], false, -1], ["SetProp", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetScrollLeft", "", [Go$Int], [JQuery], false, -1], ["SetScrollTop", "", [Go$Int], [JQuery], false, -1], ["SetText", "", [go$emptyInterface], [JQuery], false, -1], ["SetVal", "", [go$emptyInterface], [JQuery], false, -1], ["SetWidth", "", [go$emptyInterface], [JQuery], false, -1], ["Show", "", [], [JQuery], false, -1], ["Siblings", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Slice", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Stop", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Submit", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Text", "", [], [Go$String], false, -1], ["ToArray", "", [], [(go$sliceType(go$emptyInterface))], false, -1], ["Toggle", "", [Go$Bool], [JQuery], false, -1], ["ToggleClass", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Trigger", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Underlying", "", [], [js.Object], false, -1], ["Unwrap", "", [], [JQuery], false, -1], ["Val", "", [], [Go$String], false, -1], ["Width", "", [], [Go$Int], false, -1], ["Wrap", "", [go$emptyInterface], [JQuery], false, -1], ["WrapAll", "", [go$emptyInterface], [JQuery], false, -1], ["WrapInner", "", [go$emptyInterface], [JQuery], false, -1], ["dom1arg", "github.com/gopherjs/jquery", [Go$String, go$emptyInterface], [JQuery], false, -1], ["dom2args", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["events", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["handleEvent", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1]];
 		JQuery.init([["o", "o", "github.com/gopherjs/jquery", js.Object, ""], ["Jquery", "Jquery", "", Go$String, "js:\"jquery\""], ["Selector", "Selector", "", Go$String, "js:\"selector\""], ["Length", "Length", "", Go$String, "js:\"length\""], ["Context", "Context", "", Go$String, "js:\"context\""]]);
 		Event.methods = [["Bool", "", [], [Go$Bool], false, 0], ["Call", "", [Go$String, (go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["Float", "", [], [Go$Float64], false, 0], ["Get", "", [Go$String], [js.Object], false, 0], ["Index", "", [Go$Int], [js.Object], false, 0], ["Int", "", [], [Go$Int], false, 0], ["Interface", "", [], [go$emptyInterface], false, 0], ["Invoke", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["IsNull", "", [], [Go$Bool], false, 0], ["IsUndefined", "", [], [Go$Bool], false, 0], ["Length", "", [], [Go$Int], false, 0], ["New", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["Set", "", [Go$String, go$emptyInterface], [], false, 0], ["SetIndex", "", [Go$Int, go$emptyInterface], [], false, 0], ["String", "", [], [Go$String], false, 0]];
 		(go$ptrType(Event)).methods = [["Bool", "", [], [Go$Bool], false, 0], ["Call", "", [Go$String, (go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["Float", "", [], [Go$Float64], false, 0], ["Get", "", [Go$String], [js.Object], false, 0], ["Index", "", [Go$Int], [js.Object], false, 0], ["Int", "", [], [Go$Int], false, 0], ["Interface", "", [], [go$emptyInterface], false, 0], ["Invoke", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["IsDefaultPrevented", "", [], [Go$Bool], false, -1], ["IsImmediatePropogationStopped", "", [], [Go$Bool], false, -1], ["IsNull", "", [], [Go$Bool], false, 0], ["IsPropagationStopped", "", [], [Go$Bool], false, -1], ["IsUndefined", "", [], [Go$Bool], false, 0], ["Length", "", [], [Go$Int], false, 0], ["New", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["PreventDefault", "", [], [], false, -1], ["Set", "", [Go$String, go$emptyInterface], [], false, 0], ["SetIndex", "", [Go$Int, go$emptyInterface], [], false, 0], ["StopImmediatePropagation", "", [], [], false, -1], ["StopPropagation", "", [], [], false, -1], ["String", "", [], [Go$String], false, 0]];
@@ -2561,10 +2568,10 @@ go$packages["math"] = (function() {
 		y = 0;
 		exp$1 = 0;
 		if (Abs(x) < 2.2250738585072014e-308) {
-			_tuple = [x * 4.503599627370496e+15, -52], y = _tuple[0], exp$1 = _tuple[1];
+			_tuple = [x * 4.503599627370496e+15, -52]; y = _tuple[0]; exp$1 = _tuple[1];
 			return [y, exp$1];
 		}
-		_tuple$1 = [x, 0], y = _tuple$1[0], exp$1 = _tuple$1[1];
+		_tuple$1 = [x, 0]; y = _tuple$1[0]; exp$1 = _tuple$1[1];
 		return [y, exp$1];
 	};
 	expm1 = function(x) {
@@ -2591,7 +2598,7 @@ go$packages["math"] = (function() {
 		c = 0;
 		k = 0;
 		if (absx > 0.34657359027997264) {
-			_tuple = [0, 0], hi = _tuple[0], lo = _tuple[1];
+			_tuple = [0, 0]; hi = _tuple[0]; lo = _tuple[1];
 			if (absx < 1.0397207708399179) {
 				if (!sign) {
 					hi = x - 0.6931471803691238;
@@ -2659,13 +2666,13 @@ go$packages["math"] = (function() {
 		frac = 0;
 		exp$1 = 0;
 		if (f === 0) {
-			_tuple = [f, 0], frac = _tuple[0], exp$1 = _tuple[1];
+			_tuple = [f, 0]; frac = _tuple[0]; exp$1 = _tuple[1];
 			return [frac, exp$1];
 		} else if (IsInf(f, 0) || IsNaN(f)) {
-			_tuple$1 = [f, 0], frac = _tuple$1[0], exp$1 = _tuple$1[1];
+			_tuple$1 = [f, 0]; frac = _tuple$1[0]; exp$1 = _tuple$1[1];
 			return [frac, exp$1];
 		}
-		_tuple$2 = normalize(f), f = _tuple$2[0], exp$1 = _tuple$2[1];
+		_tuple$2 = normalize(f); f = _tuple$2[0]; exp$1 = _tuple$2[1];
 		x = Float64bits(f);
 		exp$1 = exp$1 + (((((x$1 = go$shiftRightUint64(x, 52), new Go$Uint64(x$1.high & 0, (x$1.low & 2047) >>> 0)).low >> 0) - 1023 >> 0) + 1 >> 0)) >> 0;
 		x = new Go$Uint64(x.high &~ 2146435072, (x.low &~ 0) >>> 0);
@@ -2687,7 +2694,7 @@ go$packages["math"] = (function() {
 			q = -q;
 		}
 		if (p < q) {
-			_tuple = [q, p], p = _tuple[0], q = _tuple[1];
+			_tuple = [q, p]; p = _tuple[0]; q = _tuple[1];
 		}
 		if (p === 0) {
 			return 0;
@@ -2701,7 +2708,7 @@ go$packages["math"] = (function() {
 	};
 	log2 = function(x) {
 		var _tuple, frac, exp$1;
-		_tuple = Frexp(x), frac = _tuple[0], exp$1 = _tuple[1];
+		_tuple = Frexp(x); frac = _tuple[0]; exp$1 = _tuple[1];
 		return Log(frac) * 1.4426950408889634 + exp$1;
 	};
 	log1p = function(x) {
@@ -2763,7 +2770,7 @@ go$packages["math"] = (function() {
 			f = u - 1;
 		}
 		hfsq = 0.5 * f * f;
-		_tuple = [0, 0, 0], s = _tuple[0], R = _tuple[1], z = _tuple[2];
+		_tuple = [0, 0, 0]; s = _tuple[0]; R = _tuple[1]; z = _tuple[2];
 		if ((iu.high === 0 && iu.low === 0)) {
 			if (f === 0) {
 				if (k === 0) {
@@ -2910,7 +2917,7 @@ go$packages["strconv"] = (function() {
 	var go$pkg = {}, math = go$packages["math"], errors = go$packages["errors"], utf8 = go$packages["unicode/utf8"], FormatInt, Itoa, formatBits, shifts;
 	FormatInt = go$pkg.FormatInt = function(i, base) {
 		var _tuple, s;
-		_tuple = formatBits((go$sliceType(Go$Uint8)).nil, new Go$Uint64(i.high, i.low), base, (i.high < 0 || (i.high === 0 && i.low < 0)), false), s = _tuple[1];
+		_tuple = formatBits((go$sliceType(Go$Uint8)).nil, new Go$Uint64(i.high, i.low), base, (i.high < 0 || (i.high === 0 && i.low < 0)), false); s = _tuple[1];
 		return s;
 	};
 	Itoa = go$pkg.Itoa = function(i) {
@@ -3027,7 +3034,7 @@ go$packages["sync"] = (function() {
 	Mutex.Ptr.prototype.Lock = function() {
 		var m, v, awoke, old, new$1, v$1, v$2;
 		m = this;
-		if (atomic.CompareAndSwapInt32(new (go$ptrType(Go$Int32))(function() { return m.state; }, function(v) { m.state = v; }), 0, 1)) {
+		if (atomic.CompareAndSwapInt32(new (go$ptrType(Go$Int32))(function() { return m.state; }, function(v) { m.state = v;; }), 0, 1)) {
 			return;
 		}
 		awoke = false;
@@ -3040,11 +3047,11 @@ go$packages["sync"] = (function() {
 			if (awoke) {
 				new$1 = new$1 & ~2;
 			}
-			if (atomic.CompareAndSwapInt32(new (go$ptrType(Go$Int32))(function() { return m.state; }, function(v$1) { m.state = v$1; }), old, new$1)) {
+			if (atomic.CompareAndSwapInt32(new (go$ptrType(Go$Int32))(function() { return m.state; }, function(v$1) { m.state = v$1;; }), old, new$1)) {
 				if ((old & 1) === 0) {
 					break;
 				}
-				runtime_Semacquire(new (go$ptrType(Go$Uint32))(function() { return m.sema; }, function(v$2) { m.sema = v$2; }));
+				runtime_Semacquire(new (go$ptrType(Go$Uint32))(function() { return m.sema; }, function(v$2) { m.sema = v$2;; }));
 				awoke = true;
 			}
 		}
@@ -3053,7 +3060,7 @@ go$packages["sync"] = (function() {
 	Mutex.Ptr.prototype.Unlock = function() {
 		var m, v, new$1, old, v$1, v$2;
 		m = this;
-		new$1 = atomic.AddInt32(new (go$ptrType(Go$Int32))(function() { return m.state; }, function(v) { m.state = v; }), -1);
+		new$1 = atomic.AddInt32(new (go$ptrType(Go$Int32))(function() { return m.state; }, function(v) { m.state = v;; }), -1);
 		if ((((new$1 + 1 >> 0)) & 1) === 0) {
 			throw go$panic(new Go$String("sync: unlock of unlocked mutex"));
 		}
@@ -3063,8 +3070,8 @@ go$packages["sync"] = (function() {
 				return;
 			}
 			new$1 = ((old - 4 >> 0)) | 2;
-			if (atomic.CompareAndSwapInt32(new (go$ptrType(Go$Int32))(function() { return m.state; }, function(v$1) { m.state = v$1; }), old, new$1)) {
-				runtime_Semrelease(new (go$ptrType(Go$Uint32))(function() { return m.sema; }, function(v$2) { m.sema = v$2; }));
+			if (atomic.CompareAndSwapInt32(new (go$ptrType(Go$Int32))(function() { return m.state; }, function(v$1) { m.state = v$1;; }), old, new$1)) {
+				runtime_Semrelease(new (go$ptrType(Go$Uint32))(function() { return m.sema; }, function(v$2) { m.sema = v$2;; }));
 				return;
 			}
 			old = m.state;
@@ -3076,14 +3083,14 @@ go$packages["sync"] = (function() {
 		var go$deferred = [];
 		try {
 			o = this;
-			if (atomic.LoadUint32(new (go$ptrType(Go$Uint32))(function() { return o.done; }, function(v) { o.done = v; })) === 1) {
+			if (atomic.LoadUint32(new (go$ptrType(Go$Uint32))(function() { return o.done; }, function(v) { o.done = v;; })) === 1) {
 				return;
 			}
 			o.m.Lock();
 			go$deferred.push({ recv: o.m, method: "Unlock", args: [] });
 			if (o.done === 0) {
 				f();
-				atomic.StoreUint32(new (go$ptrType(Go$Uint32))(function() { return o.done; }, function(v$1) { o.done = v$1; }), 1);
+				atomic.StoreUint32(new (go$ptrType(Go$Uint32))(function() { return o.done; }, function(v$1) { o.done = v$1;; }), 1);
 			}
 		} catch(go$err) {
 			go$pushErr(go$err);
@@ -3178,11 +3185,11 @@ go$packages["unicode/utf16"] = (function() {
 		r1 = 0;
 		r2 = 0;
 		if (r < 65536 || r > 1114111 || IsSurrogate(r)) {
-			_tuple = [65533, 65533], r1 = _tuple[0], r2 = _tuple[1];
+			_tuple = [65533, 65533]; r1 = _tuple[0]; r2 = _tuple[1];
 			return [r1, r2];
 		}
 		r = r - 65536 >> 0;
-		_tuple$1 = [55296 + (((r >> 10 >> 0)) & 1023) >> 0, 56320 + (r & 1023) >> 0], r1 = _tuple$1[0], r2 = _tuple$1[1];
+		_tuple$1 = [55296 + (((r >> 10 >> 0)) & 1023) >> 0, 56320 + (r & 1023) >> 0]; r1 = _tuple$1[0]; r2 = _tuple$1[1];
 		return [r1, r2];
 	};
 	Encode = go$pkg.Encode = function(s) {
@@ -3205,15 +3212,15 @@ go$packages["unicode/utf16"] = (function() {
 			v$1 = (_slice$1 = _ref$1, _index$1 = _i$1, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range"));
 			if (v$1 < 0 || 55296 <= v$1 && v$1 < 57344 || v$1 > 1114111) {
 				v$1 = 65533;
-				_slice$2 = a, _index$2 = n, (_index$2 >= 0 && _index$2 < _slice$2.length) ? (_slice$2.array[_slice$2.offset + _index$2] = (v$1 << 16 >>> 16)) : go$throwRuntimeError("index out of range");
+				_slice$2 = a; _index$2 = n;(_index$2 >= 0 && _index$2 < _slice$2.length) ? (_slice$2.array[_slice$2.offset + _index$2] = (v$1 << 16 >>> 16)) : go$throwRuntimeError("index out of range");
 				n = n + 1 >> 0;
 			} else if (v$1 < 65536) {
-				_slice$3 = a, _index$3 = n, (_index$3 >= 0 && _index$3 < _slice$3.length) ? (_slice$3.array[_slice$3.offset + _index$3] = (v$1 << 16 >>> 16)) : go$throwRuntimeError("index out of range");
+				_slice$3 = a; _index$3 = n;(_index$3 >= 0 && _index$3 < _slice$3.length) ? (_slice$3.array[_slice$3.offset + _index$3] = (v$1 << 16 >>> 16)) : go$throwRuntimeError("index out of range");
 				n = n + 1 >> 0;
 			} else {
-				_tuple = EncodeRune(v$1), r1 = _tuple[0], r2 = _tuple[1];
-				_slice$4 = a, _index$4 = n, (_index$4 >= 0 && _index$4 < _slice$4.length) ? (_slice$4.array[_slice$4.offset + _index$4] = (r1 << 16 >>> 16)) : go$throwRuntimeError("index out of range");
-				_slice$5 = a, _index$5 = n + 1 >> 0, (_index$5 >= 0 && _index$5 < _slice$5.length) ? (_slice$5.array[_slice$5.offset + _index$5] = (r2 << 16 >>> 16)) : go$throwRuntimeError("index out of range");
+				_tuple = EncodeRune(v$1); r1 = _tuple[0]; r2 = _tuple[1];
+				_slice$4 = a; _index$4 = n;(_index$4 >= 0 && _index$4 < _slice$4.length) ? (_slice$4.array[_slice$4.offset + _index$4] = (r1 << 16 >>> 16)) : go$throwRuntimeError("index out of range");
+				_slice$5 = a; _index$5 = n + 1 >> 0;(_index$5 >= 0 && _index$5 < _slice$5.length) ? (_slice$5.array[_slice$5.offset + _index$5] = (r2 << 16 >>> 16)) : go$throwRuntimeError("index out of range");
 				n = n + 2 >> 0;
 			}
 			_i$1++;
@@ -3228,14 +3235,14 @@ go$packages["unicode/utf16"] = (function() {
 		while (i < s.length) {
 			r = (_slice = s, _index = i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
 			if (55296 <= r && r < 56320 && (i + 1 >> 0) < s.length && 56320 <= (_slice$1 = s, _index$1 = (i + 1 >> 0), (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")) && (_slice$2 = s, _index$2 = (i + 1 >> 0), (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")) < 57344) {
-				_slice$4 = a, _index$4 = n, (_index$4 >= 0 && _index$4 < _slice$4.length) ? (_slice$4.array[_slice$4.offset + _index$4] = DecodeRune((r >> 0), ((_slice$3 = s, _index$3 = (i + 1 >> 0), (_index$3 >= 0 && _index$3 < _slice$3.length) ? _slice$3.array[_slice$3.offset + _index$3] : go$throwRuntimeError("index out of range")) >> 0))) : go$throwRuntimeError("index out of range");
+				_slice$4 = a; _index$4 = n;(_index$4 >= 0 && _index$4 < _slice$4.length) ? (_slice$4.array[_slice$4.offset + _index$4] = DecodeRune((r >> 0), ((_slice$3 = s, _index$3 = (i + 1 >> 0), (_index$3 >= 0 && _index$3 < _slice$3.length) ? _slice$3.array[_slice$3.offset + _index$3] : go$throwRuntimeError("index out of range")) >> 0))) : go$throwRuntimeError("index out of range");
 				i = i + 1 >> 0;
 				n = n + 1 >> 0;
 			} else if (55296 <= r && r < 57344) {
-				_slice$5 = a, _index$5 = n, (_index$5 >= 0 && _index$5 < _slice$5.length) ? (_slice$5.array[_slice$5.offset + _index$5] = 65533) : go$throwRuntimeError("index out of range");
+				_slice$5 = a; _index$5 = n;(_index$5 >= 0 && _index$5 < _slice$5.length) ? (_slice$5.array[_slice$5.offset + _index$5] = 65533) : go$throwRuntimeError("index out of range");
 				n = n + 1 >> 0;
 			} else {
-				_slice$6 = a, _index$6 = n, (_index$6 >= 0 && _index$6 < _slice$6.length) ? (_slice$6.array[_slice$6.offset + _index$6] = (r >> 0)) : go$throwRuntimeError("index out of range");
+				_slice$6 = a; _index$6 = n;(_index$6 >= 0 && _index$6 < _slice$6.length) ? (_slice$6.array[_slice$6.offset + _index$6] = (r >> 0)) : go$throwRuntimeError("index out of range");
 				n = n + 1 >> 0;
 			}
 			i = i + 1 >> 0;
@@ -3337,18 +3344,18 @@ go$packages["syscall"] = (function() {
 		var dll, err, _tuple, namep, _tuple$1, _tuple$2, h, e, _tuple$3, d, _tuple$4;
 		dll = (go$ptrType(DLL)).nil;
 		err = null;
-		_tuple = UTF16PtrFromString(name), namep = _tuple[0], err = _tuple[1];
+		_tuple = UTF16PtrFromString(name); namep = _tuple[0]; err = _tuple[1];
 		if (!(go$interfaceIsEqual(err, null))) {
-			_tuple$1 = [(go$ptrType(DLL)).nil, err], dll = _tuple$1[0], err = _tuple$1[1];
+			_tuple$1 = [(go$ptrType(DLL)).nil, err]; dll = _tuple$1[0]; err = _tuple$1[1];
 			return [dll, err];
 		}
-		_tuple$2 = loadlibrary(namep), h = _tuple$2[0], e = _tuple$2[1];
+		_tuple$2 = loadlibrary(namep); h = _tuple$2[0]; e = _tuple$2[1];
 		if (!((e === 0))) {
-			_tuple$3 = [(go$ptrType(DLL)).nil, new DLLError.Ptr(new Errno(e), name, "Failed to load " + name + ": " + (new Errno(e)).Error())], dll = _tuple$3[0], err = _tuple$3[1];
+			_tuple$3 = [(go$ptrType(DLL)).nil, new DLLError.Ptr(new Errno(e), name, "Failed to load " + name + ": " + (new Errno(e)).Error())]; dll = _tuple$3[0]; err = _tuple$3[1];
 			return [dll, err];
 		}
 		d = new DLL.Ptr(name, (h >>> 0));
-		_tuple$4 = [d, null], dll = _tuple$4[0], err = _tuple$4[1];
+		_tuple$4 = [d, null]; dll = _tuple$4[0]; err = _tuple$4[1];
 		return [dll, err];
 	};
 	DLL.Ptr.prototype.FindProc = function(name) {
@@ -3356,25 +3363,25 @@ go$packages["syscall"] = (function() {
 		proc = (go$ptrType(Proc)).nil;
 		err = null;
 		d = this;
-		_tuple = BytePtrFromString(name), namep = _tuple[0], err = _tuple[1];
+		_tuple = BytePtrFromString(name); namep = _tuple[0]; err = _tuple[1];
 		if (!(go$interfaceIsEqual(err, null))) {
-			_tuple$1 = [(go$ptrType(Proc)).nil, err], proc = _tuple$1[0], err = _tuple$1[1];
+			_tuple$1 = [(go$ptrType(Proc)).nil, err]; proc = _tuple$1[0]; err = _tuple$1[1];
 			return [proc, err];
 		}
-		_tuple$2 = getprocaddress((d.Handle >>> 0), namep), a = _tuple$2[0], e = _tuple$2[1];
+		_tuple$2 = getprocaddress((d.Handle >>> 0), namep); a = _tuple$2[0]; e = _tuple$2[1];
 		if (!((e === 0))) {
-			_tuple$3 = [(go$ptrType(Proc)).nil, new DLLError.Ptr(new Errno(e), name, "Failed to find " + name + " procedure in " + d.Name + ": " + (new Errno(e)).Error())], proc = _tuple$3[0], err = _tuple$3[1];
+			_tuple$3 = [(go$ptrType(Proc)).nil, new DLLError.Ptr(new Errno(e), name, "Failed to find " + name + " procedure in " + d.Name + ": " + (new Errno(e)).Error())]; proc = _tuple$3[0]; err = _tuple$3[1];
 			return [proc, err];
 		}
 		p = new Proc.Ptr(d, name, a);
-		_tuple$4 = [p, null], proc = _tuple$4[0], err = _tuple$4[1];
+		_tuple$4 = [p, null]; proc = _tuple$4[0]; err = _tuple$4[1];
 		return [proc, err];
 	};
 	DLL.prototype.FindProc = function(name) { return this.go$val.FindProc(name); };
 	DLL.Ptr.prototype.MustFindProc = function(name) {
 		var d, _tuple, p, e;
 		d = this;
-		_tuple = d.FindProc(name), p = _tuple[0], e = _tuple[1];
+		_tuple = d.FindProc(name); p = _tuple[0]; e = _tuple[1];
 		if (!(go$interfaceIsEqual(e, null))) {
 			throw go$panic(e);
 		}
@@ -3403,52 +3410,52 @@ go$packages["syscall"] = (function() {
 		p = this;
 		_ref = a.length;
 		if (_ref === 0) {
-			_tuple = Syscall(p.Addr(), (a.length >>> 0), 0, 0, 0), r1 = _tuple[0], r2 = _tuple[1], lastErr = new Errno(_tuple[2]);
+			_tuple = Syscall(p.Addr(), (a.length >>> 0), 0, 0, 0); r1 = _tuple[0]; r2 = _tuple[1]; lastErr = new Errno(_tuple[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 1) {
-			_tuple$1 = Syscall(p.Addr(), (a.length >>> 0), (_slice = a, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")), 0, 0), r1 = _tuple$1[0], r2 = _tuple$1[1], lastErr = new Errno(_tuple$1[2]);
+			_tuple$1 = Syscall(p.Addr(), (a.length >>> 0), (_slice = a, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")), 0, 0); r1 = _tuple$1[0]; r2 = _tuple$1[1]; lastErr = new Errno(_tuple$1[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 2) {
-			_tuple$2 = Syscall(p.Addr(), (a.length >>> 0), (_slice$1 = a, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")), (_slice$2 = a, _index$2 = 1, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")), 0), r1 = _tuple$2[0], r2 = _tuple$2[1], lastErr = new Errno(_tuple$2[2]);
+			_tuple$2 = Syscall(p.Addr(), (a.length >>> 0), (_slice$1 = a, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")), (_slice$2 = a, _index$2 = 1, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")), 0); r1 = _tuple$2[0]; r2 = _tuple$2[1]; lastErr = new Errno(_tuple$2[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 3) {
-			_tuple$3 = Syscall(p.Addr(), (a.length >>> 0), (_slice$3 = a, _index$3 = 0, (_index$3 >= 0 && _index$3 < _slice$3.length) ? _slice$3.array[_slice$3.offset + _index$3] : go$throwRuntimeError("index out of range")), (_slice$4 = a, _index$4 = 1, (_index$4 >= 0 && _index$4 < _slice$4.length) ? _slice$4.array[_slice$4.offset + _index$4] : go$throwRuntimeError("index out of range")), (_slice$5 = a, _index$5 = 2, (_index$5 >= 0 && _index$5 < _slice$5.length) ? _slice$5.array[_slice$5.offset + _index$5] : go$throwRuntimeError("index out of range"))), r1 = _tuple$3[0], r2 = _tuple$3[1], lastErr = new Errno(_tuple$3[2]);
+			_tuple$3 = Syscall(p.Addr(), (a.length >>> 0), (_slice$3 = a, _index$3 = 0, (_index$3 >= 0 && _index$3 < _slice$3.length) ? _slice$3.array[_slice$3.offset + _index$3] : go$throwRuntimeError("index out of range")), (_slice$4 = a, _index$4 = 1, (_index$4 >= 0 && _index$4 < _slice$4.length) ? _slice$4.array[_slice$4.offset + _index$4] : go$throwRuntimeError("index out of range")), (_slice$5 = a, _index$5 = 2, (_index$5 >= 0 && _index$5 < _slice$5.length) ? _slice$5.array[_slice$5.offset + _index$5] : go$throwRuntimeError("index out of range"))); r1 = _tuple$3[0]; r2 = _tuple$3[1]; lastErr = new Errno(_tuple$3[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 4) {
-			_tuple$4 = Syscall6(p.Addr(), (a.length >>> 0), (_slice$6 = a, _index$6 = 0, (_index$6 >= 0 && _index$6 < _slice$6.length) ? _slice$6.array[_slice$6.offset + _index$6] : go$throwRuntimeError("index out of range")), (_slice$7 = a, _index$7 = 1, (_index$7 >= 0 && _index$7 < _slice$7.length) ? _slice$7.array[_slice$7.offset + _index$7] : go$throwRuntimeError("index out of range")), (_slice$8 = a, _index$8 = 2, (_index$8 >= 0 && _index$8 < _slice$8.length) ? _slice$8.array[_slice$8.offset + _index$8] : go$throwRuntimeError("index out of range")), (_slice$9 = a, _index$9 = 3, (_index$9 >= 0 && _index$9 < _slice$9.length) ? _slice$9.array[_slice$9.offset + _index$9] : go$throwRuntimeError("index out of range")), 0, 0), r1 = _tuple$4[0], r2 = _tuple$4[1], lastErr = new Errno(_tuple$4[2]);
+			_tuple$4 = Syscall6(p.Addr(), (a.length >>> 0), (_slice$6 = a, _index$6 = 0, (_index$6 >= 0 && _index$6 < _slice$6.length) ? _slice$6.array[_slice$6.offset + _index$6] : go$throwRuntimeError("index out of range")), (_slice$7 = a, _index$7 = 1, (_index$7 >= 0 && _index$7 < _slice$7.length) ? _slice$7.array[_slice$7.offset + _index$7] : go$throwRuntimeError("index out of range")), (_slice$8 = a, _index$8 = 2, (_index$8 >= 0 && _index$8 < _slice$8.length) ? _slice$8.array[_slice$8.offset + _index$8] : go$throwRuntimeError("index out of range")), (_slice$9 = a, _index$9 = 3, (_index$9 >= 0 && _index$9 < _slice$9.length) ? _slice$9.array[_slice$9.offset + _index$9] : go$throwRuntimeError("index out of range")), 0, 0); r1 = _tuple$4[0]; r2 = _tuple$4[1]; lastErr = new Errno(_tuple$4[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 5) {
-			_tuple$5 = Syscall6(p.Addr(), (a.length >>> 0), (_slice$10 = a, _index$10 = 0, (_index$10 >= 0 && _index$10 < _slice$10.length) ? _slice$10.array[_slice$10.offset + _index$10] : go$throwRuntimeError("index out of range")), (_slice$11 = a, _index$11 = 1, (_index$11 >= 0 && _index$11 < _slice$11.length) ? _slice$11.array[_slice$11.offset + _index$11] : go$throwRuntimeError("index out of range")), (_slice$12 = a, _index$12 = 2, (_index$12 >= 0 && _index$12 < _slice$12.length) ? _slice$12.array[_slice$12.offset + _index$12] : go$throwRuntimeError("index out of range")), (_slice$13 = a, _index$13 = 3, (_index$13 >= 0 && _index$13 < _slice$13.length) ? _slice$13.array[_slice$13.offset + _index$13] : go$throwRuntimeError("index out of range")), (_slice$14 = a, _index$14 = 4, (_index$14 >= 0 && _index$14 < _slice$14.length) ? _slice$14.array[_slice$14.offset + _index$14] : go$throwRuntimeError("index out of range")), 0), r1 = _tuple$5[0], r2 = _tuple$5[1], lastErr = new Errno(_tuple$5[2]);
+			_tuple$5 = Syscall6(p.Addr(), (a.length >>> 0), (_slice$10 = a, _index$10 = 0, (_index$10 >= 0 && _index$10 < _slice$10.length) ? _slice$10.array[_slice$10.offset + _index$10] : go$throwRuntimeError("index out of range")), (_slice$11 = a, _index$11 = 1, (_index$11 >= 0 && _index$11 < _slice$11.length) ? _slice$11.array[_slice$11.offset + _index$11] : go$throwRuntimeError("index out of range")), (_slice$12 = a, _index$12 = 2, (_index$12 >= 0 && _index$12 < _slice$12.length) ? _slice$12.array[_slice$12.offset + _index$12] : go$throwRuntimeError("index out of range")), (_slice$13 = a, _index$13 = 3, (_index$13 >= 0 && _index$13 < _slice$13.length) ? _slice$13.array[_slice$13.offset + _index$13] : go$throwRuntimeError("index out of range")), (_slice$14 = a, _index$14 = 4, (_index$14 >= 0 && _index$14 < _slice$14.length) ? _slice$14.array[_slice$14.offset + _index$14] : go$throwRuntimeError("index out of range")), 0); r1 = _tuple$5[0]; r2 = _tuple$5[1]; lastErr = new Errno(_tuple$5[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 6) {
-			_tuple$6 = Syscall6(p.Addr(), (a.length >>> 0), (_slice$15 = a, _index$15 = 0, (_index$15 >= 0 && _index$15 < _slice$15.length) ? _slice$15.array[_slice$15.offset + _index$15] : go$throwRuntimeError("index out of range")), (_slice$16 = a, _index$16 = 1, (_index$16 >= 0 && _index$16 < _slice$16.length) ? _slice$16.array[_slice$16.offset + _index$16] : go$throwRuntimeError("index out of range")), (_slice$17 = a, _index$17 = 2, (_index$17 >= 0 && _index$17 < _slice$17.length) ? _slice$17.array[_slice$17.offset + _index$17] : go$throwRuntimeError("index out of range")), (_slice$18 = a, _index$18 = 3, (_index$18 >= 0 && _index$18 < _slice$18.length) ? _slice$18.array[_slice$18.offset + _index$18] : go$throwRuntimeError("index out of range")), (_slice$19 = a, _index$19 = 4, (_index$19 >= 0 && _index$19 < _slice$19.length) ? _slice$19.array[_slice$19.offset + _index$19] : go$throwRuntimeError("index out of range")), (_slice$20 = a, _index$20 = 5, (_index$20 >= 0 && _index$20 < _slice$20.length) ? _slice$20.array[_slice$20.offset + _index$20] : go$throwRuntimeError("index out of range"))), r1 = _tuple$6[0], r2 = _tuple$6[1], lastErr = new Errno(_tuple$6[2]);
+			_tuple$6 = Syscall6(p.Addr(), (a.length >>> 0), (_slice$15 = a, _index$15 = 0, (_index$15 >= 0 && _index$15 < _slice$15.length) ? _slice$15.array[_slice$15.offset + _index$15] : go$throwRuntimeError("index out of range")), (_slice$16 = a, _index$16 = 1, (_index$16 >= 0 && _index$16 < _slice$16.length) ? _slice$16.array[_slice$16.offset + _index$16] : go$throwRuntimeError("index out of range")), (_slice$17 = a, _index$17 = 2, (_index$17 >= 0 && _index$17 < _slice$17.length) ? _slice$17.array[_slice$17.offset + _index$17] : go$throwRuntimeError("index out of range")), (_slice$18 = a, _index$18 = 3, (_index$18 >= 0 && _index$18 < _slice$18.length) ? _slice$18.array[_slice$18.offset + _index$18] : go$throwRuntimeError("index out of range")), (_slice$19 = a, _index$19 = 4, (_index$19 >= 0 && _index$19 < _slice$19.length) ? _slice$19.array[_slice$19.offset + _index$19] : go$throwRuntimeError("index out of range")), (_slice$20 = a, _index$20 = 5, (_index$20 >= 0 && _index$20 < _slice$20.length) ? _slice$20.array[_slice$20.offset + _index$20] : go$throwRuntimeError("index out of range"))); r1 = _tuple$6[0]; r2 = _tuple$6[1]; lastErr = new Errno(_tuple$6[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 7) {
-			_tuple$7 = Syscall9(p.Addr(), (a.length >>> 0), (_slice$21 = a, _index$21 = 0, (_index$21 >= 0 && _index$21 < _slice$21.length) ? _slice$21.array[_slice$21.offset + _index$21] : go$throwRuntimeError("index out of range")), (_slice$22 = a, _index$22 = 1, (_index$22 >= 0 && _index$22 < _slice$22.length) ? _slice$22.array[_slice$22.offset + _index$22] : go$throwRuntimeError("index out of range")), (_slice$23 = a, _index$23 = 2, (_index$23 >= 0 && _index$23 < _slice$23.length) ? _slice$23.array[_slice$23.offset + _index$23] : go$throwRuntimeError("index out of range")), (_slice$24 = a, _index$24 = 3, (_index$24 >= 0 && _index$24 < _slice$24.length) ? _slice$24.array[_slice$24.offset + _index$24] : go$throwRuntimeError("index out of range")), (_slice$25 = a, _index$25 = 4, (_index$25 >= 0 && _index$25 < _slice$25.length) ? _slice$25.array[_slice$25.offset + _index$25] : go$throwRuntimeError("index out of range")), (_slice$26 = a, _index$26 = 5, (_index$26 >= 0 && _index$26 < _slice$26.length) ? _slice$26.array[_slice$26.offset + _index$26] : go$throwRuntimeError("index out of range")), (_slice$27 = a, _index$27 = 6, (_index$27 >= 0 && _index$27 < _slice$27.length) ? _slice$27.array[_slice$27.offset + _index$27] : go$throwRuntimeError("index out of range")), 0, 0), r1 = _tuple$7[0], r2 = _tuple$7[1], lastErr = new Errno(_tuple$7[2]);
+			_tuple$7 = Syscall9(p.Addr(), (a.length >>> 0), (_slice$21 = a, _index$21 = 0, (_index$21 >= 0 && _index$21 < _slice$21.length) ? _slice$21.array[_slice$21.offset + _index$21] : go$throwRuntimeError("index out of range")), (_slice$22 = a, _index$22 = 1, (_index$22 >= 0 && _index$22 < _slice$22.length) ? _slice$22.array[_slice$22.offset + _index$22] : go$throwRuntimeError("index out of range")), (_slice$23 = a, _index$23 = 2, (_index$23 >= 0 && _index$23 < _slice$23.length) ? _slice$23.array[_slice$23.offset + _index$23] : go$throwRuntimeError("index out of range")), (_slice$24 = a, _index$24 = 3, (_index$24 >= 0 && _index$24 < _slice$24.length) ? _slice$24.array[_slice$24.offset + _index$24] : go$throwRuntimeError("index out of range")), (_slice$25 = a, _index$25 = 4, (_index$25 >= 0 && _index$25 < _slice$25.length) ? _slice$25.array[_slice$25.offset + _index$25] : go$throwRuntimeError("index out of range")), (_slice$26 = a, _index$26 = 5, (_index$26 >= 0 && _index$26 < _slice$26.length) ? _slice$26.array[_slice$26.offset + _index$26] : go$throwRuntimeError("index out of range")), (_slice$27 = a, _index$27 = 6, (_index$27 >= 0 && _index$27 < _slice$27.length) ? _slice$27.array[_slice$27.offset + _index$27] : go$throwRuntimeError("index out of range")), 0, 0); r1 = _tuple$7[0]; r2 = _tuple$7[1]; lastErr = new Errno(_tuple$7[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 8) {
-			_tuple$8 = Syscall9(p.Addr(), (a.length >>> 0), (_slice$28 = a, _index$28 = 0, (_index$28 >= 0 && _index$28 < _slice$28.length) ? _slice$28.array[_slice$28.offset + _index$28] : go$throwRuntimeError("index out of range")), (_slice$29 = a, _index$29 = 1, (_index$29 >= 0 && _index$29 < _slice$29.length) ? _slice$29.array[_slice$29.offset + _index$29] : go$throwRuntimeError("index out of range")), (_slice$30 = a, _index$30 = 2, (_index$30 >= 0 && _index$30 < _slice$30.length) ? _slice$30.array[_slice$30.offset + _index$30] : go$throwRuntimeError("index out of range")), (_slice$31 = a, _index$31 = 3, (_index$31 >= 0 && _index$31 < _slice$31.length) ? _slice$31.array[_slice$31.offset + _index$31] : go$throwRuntimeError("index out of range")), (_slice$32 = a, _index$32 = 4, (_index$32 >= 0 && _index$32 < _slice$32.length) ? _slice$32.array[_slice$32.offset + _index$32] : go$throwRuntimeError("index out of range")), (_slice$33 = a, _index$33 = 5, (_index$33 >= 0 && _index$33 < _slice$33.length) ? _slice$33.array[_slice$33.offset + _index$33] : go$throwRuntimeError("index out of range")), (_slice$34 = a, _index$34 = 6, (_index$34 >= 0 && _index$34 < _slice$34.length) ? _slice$34.array[_slice$34.offset + _index$34] : go$throwRuntimeError("index out of range")), (_slice$35 = a, _index$35 = 7, (_index$35 >= 0 && _index$35 < _slice$35.length) ? _slice$35.array[_slice$35.offset + _index$35] : go$throwRuntimeError("index out of range")), 0), r1 = _tuple$8[0], r2 = _tuple$8[1], lastErr = new Errno(_tuple$8[2]);
+			_tuple$8 = Syscall9(p.Addr(), (a.length >>> 0), (_slice$28 = a, _index$28 = 0, (_index$28 >= 0 && _index$28 < _slice$28.length) ? _slice$28.array[_slice$28.offset + _index$28] : go$throwRuntimeError("index out of range")), (_slice$29 = a, _index$29 = 1, (_index$29 >= 0 && _index$29 < _slice$29.length) ? _slice$29.array[_slice$29.offset + _index$29] : go$throwRuntimeError("index out of range")), (_slice$30 = a, _index$30 = 2, (_index$30 >= 0 && _index$30 < _slice$30.length) ? _slice$30.array[_slice$30.offset + _index$30] : go$throwRuntimeError("index out of range")), (_slice$31 = a, _index$31 = 3, (_index$31 >= 0 && _index$31 < _slice$31.length) ? _slice$31.array[_slice$31.offset + _index$31] : go$throwRuntimeError("index out of range")), (_slice$32 = a, _index$32 = 4, (_index$32 >= 0 && _index$32 < _slice$32.length) ? _slice$32.array[_slice$32.offset + _index$32] : go$throwRuntimeError("index out of range")), (_slice$33 = a, _index$33 = 5, (_index$33 >= 0 && _index$33 < _slice$33.length) ? _slice$33.array[_slice$33.offset + _index$33] : go$throwRuntimeError("index out of range")), (_slice$34 = a, _index$34 = 6, (_index$34 >= 0 && _index$34 < _slice$34.length) ? _slice$34.array[_slice$34.offset + _index$34] : go$throwRuntimeError("index out of range")), (_slice$35 = a, _index$35 = 7, (_index$35 >= 0 && _index$35 < _slice$35.length) ? _slice$35.array[_slice$35.offset + _index$35] : go$throwRuntimeError("index out of range")), 0); r1 = _tuple$8[0]; r2 = _tuple$8[1]; lastErr = new Errno(_tuple$8[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 9) {
-			_tuple$9 = Syscall9(p.Addr(), (a.length >>> 0), (_slice$36 = a, _index$36 = 0, (_index$36 >= 0 && _index$36 < _slice$36.length) ? _slice$36.array[_slice$36.offset + _index$36] : go$throwRuntimeError("index out of range")), (_slice$37 = a, _index$37 = 1, (_index$37 >= 0 && _index$37 < _slice$37.length) ? _slice$37.array[_slice$37.offset + _index$37] : go$throwRuntimeError("index out of range")), (_slice$38 = a, _index$38 = 2, (_index$38 >= 0 && _index$38 < _slice$38.length) ? _slice$38.array[_slice$38.offset + _index$38] : go$throwRuntimeError("index out of range")), (_slice$39 = a, _index$39 = 3, (_index$39 >= 0 && _index$39 < _slice$39.length) ? _slice$39.array[_slice$39.offset + _index$39] : go$throwRuntimeError("index out of range")), (_slice$40 = a, _index$40 = 4, (_index$40 >= 0 && _index$40 < _slice$40.length) ? _slice$40.array[_slice$40.offset + _index$40] : go$throwRuntimeError("index out of range")), (_slice$41 = a, _index$41 = 5, (_index$41 >= 0 && _index$41 < _slice$41.length) ? _slice$41.array[_slice$41.offset + _index$41] : go$throwRuntimeError("index out of range")), (_slice$42 = a, _index$42 = 6, (_index$42 >= 0 && _index$42 < _slice$42.length) ? _slice$42.array[_slice$42.offset + _index$42] : go$throwRuntimeError("index out of range")), (_slice$43 = a, _index$43 = 7, (_index$43 >= 0 && _index$43 < _slice$43.length) ? _slice$43.array[_slice$43.offset + _index$43] : go$throwRuntimeError("index out of range")), (_slice$44 = a, _index$44 = 8, (_index$44 >= 0 && _index$44 < _slice$44.length) ? _slice$44.array[_slice$44.offset + _index$44] : go$throwRuntimeError("index out of range"))), r1 = _tuple$9[0], r2 = _tuple$9[1], lastErr = new Errno(_tuple$9[2]);
+			_tuple$9 = Syscall9(p.Addr(), (a.length >>> 0), (_slice$36 = a, _index$36 = 0, (_index$36 >= 0 && _index$36 < _slice$36.length) ? _slice$36.array[_slice$36.offset + _index$36] : go$throwRuntimeError("index out of range")), (_slice$37 = a, _index$37 = 1, (_index$37 >= 0 && _index$37 < _slice$37.length) ? _slice$37.array[_slice$37.offset + _index$37] : go$throwRuntimeError("index out of range")), (_slice$38 = a, _index$38 = 2, (_index$38 >= 0 && _index$38 < _slice$38.length) ? _slice$38.array[_slice$38.offset + _index$38] : go$throwRuntimeError("index out of range")), (_slice$39 = a, _index$39 = 3, (_index$39 >= 0 && _index$39 < _slice$39.length) ? _slice$39.array[_slice$39.offset + _index$39] : go$throwRuntimeError("index out of range")), (_slice$40 = a, _index$40 = 4, (_index$40 >= 0 && _index$40 < _slice$40.length) ? _slice$40.array[_slice$40.offset + _index$40] : go$throwRuntimeError("index out of range")), (_slice$41 = a, _index$41 = 5, (_index$41 >= 0 && _index$41 < _slice$41.length) ? _slice$41.array[_slice$41.offset + _index$41] : go$throwRuntimeError("index out of range")), (_slice$42 = a, _index$42 = 6, (_index$42 >= 0 && _index$42 < _slice$42.length) ? _slice$42.array[_slice$42.offset + _index$42] : go$throwRuntimeError("index out of range")), (_slice$43 = a, _index$43 = 7, (_index$43 >= 0 && _index$43 < _slice$43.length) ? _slice$43.array[_slice$43.offset + _index$43] : go$throwRuntimeError("index out of range")), (_slice$44 = a, _index$44 = 8, (_index$44 >= 0 && _index$44 < _slice$44.length) ? _slice$44.array[_slice$44.offset + _index$44] : go$throwRuntimeError("index out of range"))); r1 = _tuple$9[0]; r2 = _tuple$9[1]; lastErr = new Errno(_tuple$9[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 10) {
-			_tuple$10 = Syscall12(p.Addr(), (a.length >>> 0), (_slice$45 = a, _index$45 = 0, (_index$45 >= 0 && _index$45 < _slice$45.length) ? _slice$45.array[_slice$45.offset + _index$45] : go$throwRuntimeError("index out of range")), (_slice$46 = a, _index$46 = 1, (_index$46 >= 0 && _index$46 < _slice$46.length) ? _slice$46.array[_slice$46.offset + _index$46] : go$throwRuntimeError("index out of range")), (_slice$47 = a, _index$47 = 2, (_index$47 >= 0 && _index$47 < _slice$47.length) ? _slice$47.array[_slice$47.offset + _index$47] : go$throwRuntimeError("index out of range")), (_slice$48 = a, _index$48 = 3, (_index$48 >= 0 && _index$48 < _slice$48.length) ? _slice$48.array[_slice$48.offset + _index$48] : go$throwRuntimeError("index out of range")), (_slice$49 = a, _index$49 = 4, (_index$49 >= 0 && _index$49 < _slice$49.length) ? _slice$49.array[_slice$49.offset + _index$49] : go$throwRuntimeError("index out of range")), (_slice$50 = a, _index$50 = 5, (_index$50 >= 0 && _index$50 < _slice$50.length) ? _slice$50.array[_slice$50.offset + _index$50] : go$throwRuntimeError("index out of range")), (_slice$51 = a, _index$51 = 6, (_index$51 >= 0 && _index$51 < _slice$51.length) ? _slice$51.array[_slice$51.offset + _index$51] : go$throwRuntimeError("index out of range")), (_slice$52 = a, _index$52 = 7, (_index$52 >= 0 && _index$52 < _slice$52.length) ? _slice$52.array[_slice$52.offset + _index$52] : go$throwRuntimeError("index out of range")), (_slice$53 = a, _index$53 = 8, (_index$53 >= 0 && _index$53 < _slice$53.length) ? _slice$53.array[_slice$53.offset + _index$53] : go$throwRuntimeError("index out of range")), (_slice$54 = a, _index$54 = 9, (_index$54 >= 0 && _index$54 < _slice$54.length) ? _slice$54.array[_slice$54.offset + _index$54] : go$throwRuntimeError("index out of range")), 0, 0), r1 = _tuple$10[0], r2 = _tuple$10[1], lastErr = new Errno(_tuple$10[2]);
+			_tuple$10 = Syscall12(p.Addr(), (a.length >>> 0), (_slice$45 = a, _index$45 = 0, (_index$45 >= 0 && _index$45 < _slice$45.length) ? _slice$45.array[_slice$45.offset + _index$45] : go$throwRuntimeError("index out of range")), (_slice$46 = a, _index$46 = 1, (_index$46 >= 0 && _index$46 < _slice$46.length) ? _slice$46.array[_slice$46.offset + _index$46] : go$throwRuntimeError("index out of range")), (_slice$47 = a, _index$47 = 2, (_index$47 >= 0 && _index$47 < _slice$47.length) ? _slice$47.array[_slice$47.offset + _index$47] : go$throwRuntimeError("index out of range")), (_slice$48 = a, _index$48 = 3, (_index$48 >= 0 && _index$48 < _slice$48.length) ? _slice$48.array[_slice$48.offset + _index$48] : go$throwRuntimeError("index out of range")), (_slice$49 = a, _index$49 = 4, (_index$49 >= 0 && _index$49 < _slice$49.length) ? _slice$49.array[_slice$49.offset + _index$49] : go$throwRuntimeError("index out of range")), (_slice$50 = a, _index$50 = 5, (_index$50 >= 0 && _index$50 < _slice$50.length) ? _slice$50.array[_slice$50.offset + _index$50] : go$throwRuntimeError("index out of range")), (_slice$51 = a, _index$51 = 6, (_index$51 >= 0 && _index$51 < _slice$51.length) ? _slice$51.array[_slice$51.offset + _index$51] : go$throwRuntimeError("index out of range")), (_slice$52 = a, _index$52 = 7, (_index$52 >= 0 && _index$52 < _slice$52.length) ? _slice$52.array[_slice$52.offset + _index$52] : go$throwRuntimeError("index out of range")), (_slice$53 = a, _index$53 = 8, (_index$53 >= 0 && _index$53 < _slice$53.length) ? _slice$53.array[_slice$53.offset + _index$53] : go$throwRuntimeError("index out of range")), (_slice$54 = a, _index$54 = 9, (_index$54 >= 0 && _index$54 < _slice$54.length) ? _slice$54.array[_slice$54.offset + _index$54] : go$throwRuntimeError("index out of range")), 0, 0); r1 = _tuple$10[0]; r2 = _tuple$10[1]; lastErr = new Errno(_tuple$10[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 11) {
-			_tuple$11 = Syscall12(p.Addr(), (a.length >>> 0), (_slice$55 = a, _index$55 = 0, (_index$55 >= 0 && _index$55 < _slice$55.length) ? _slice$55.array[_slice$55.offset + _index$55] : go$throwRuntimeError("index out of range")), (_slice$56 = a, _index$56 = 1, (_index$56 >= 0 && _index$56 < _slice$56.length) ? _slice$56.array[_slice$56.offset + _index$56] : go$throwRuntimeError("index out of range")), (_slice$57 = a, _index$57 = 2, (_index$57 >= 0 && _index$57 < _slice$57.length) ? _slice$57.array[_slice$57.offset + _index$57] : go$throwRuntimeError("index out of range")), (_slice$58 = a, _index$58 = 3, (_index$58 >= 0 && _index$58 < _slice$58.length) ? _slice$58.array[_slice$58.offset + _index$58] : go$throwRuntimeError("index out of range")), (_slice$59 = a, _index$59 = 4, (_index$59 >= 0 && _index$59 < _slice$59.length) ? _slice$59.array[_slice$59.offset + _index$59] : go$throwRuntimeError("index out of range")), (_slice$60 = a, _index$60 = 5, (_index$60 >= 0 && _index$60 < _slice$60.length) ? _slice$60.array[_slice$60.offset + _index$60] : go$throwRuntimeError("index out of range")), (_slice$61 = a, _index$61 = 6, (_index$61 >= 0 && _index$61 < _slice$61.length) ? _slice$61.array[_slice$61.offset + _index$61] : go$throwRuntimeError("index out of range")), (_slice$62 = a, _index$62 = 7, (_index$62 >= 0 && _index$62 < _slice$62.length) ? _slice$62.array[_slice$62.offset + _index$62] : go$throwRuntimeError("index out of range")), (_slice$63 = a, _index$63 = 8, (_index$63 >= 0 && _index$63 < _slice$63.length) ? _slice$63.array[_slice$63.offset + _index$63] : go$throwRuntimeError("index out of range")), (_slice$64 = a, _index$64 = 9, (_index$64 >= 0 && _index$64 < _slice$64.length) ? _slice$64.array[_slice$64.offset + _index$64] : go$throwRuntimeError("index out of range")), (_slice$65 = a, _index$65 = 10, (_index$65 >= 0 && _index$65 < _slice$65.length) ? _slice$65.array[_slice$65.offset + _index$65] : go$throwRuntimeError("index out of range")), 0), r1 = _tuple$11[0], r2 = _tuple$11[1], lastErr = new Errno(_tuple$11[2]);
+			_tuple$11 = Syscall12(p.Addr(), (a.length >>> 0), (_slice$55 = a, _index$55 = 0, (_index$55 >= 0 && _index$55 < _slice$55.length) ? _slice$55.array[_slice$55.offset + _index$55] : go$throwRuntimeError("index out of range")), (_slice$56 = a, _index$56 = 1, (_index$56 >= 0 && _index$56 < _slice$56.length) ? _slice$56.array[_slice$56.offset + _index$56] : go$throwRuntimeError("index out of range")), (_slice$57 = a, _index$57 = 2, (_index$57 >= 0 && _index$57 < _slice$57.length) ? _slice$57.array[_slice$57.offset + _index$57] : go$throwRuntimeError("index out of range")), (_slice$58 = a, _index$58 = 3, (_index$58 >= 0 && _index$58 < _slice$58.length) ? _slice$58.array[_slice$58.offset + _index$58] : go$throwRuntimeError("index out of range")), (_slice$59 = a, _index$59 = 4, (_index$59 >= 0 && _index$59 < _slice$59.length) ? _slice$59.array[_slice$59.offset + _index$59] : go$throwRuntimeError("index out of range")), (_slice$60 = a, _index$60 = 5, (_index$60 >= 0 && _index$60 < _slice$60.length) ? _slice$60.array[_slice$60.offset + _index$60] : go$throwRuntimeError("index out of range")), (_slice$61 = a, _index$61 = 6, (_index$61 >= 0 && _index$61 < _slice$61.length) ? _slice$61.array[_slice$61.offset + _index$61] : go$throwRuntimeError("index out of range")), (_slice$62 = a, _index$62 = 7, (_index$62 >= 0 && _index$62 < _slice$62.length) ? _slice$62.array[_slice$62.offset + _index$62] : go$throwRuntimeError("index out of range")), (_slice$63 = a, _index$63 = 8, (_index$63 >= 0 && _index$63 < _slice$63.length) ? _slice$63.array[_slice$63.offset + _index$63] : go$throwRuntimeError("index out of range")), (_slice$64 = a, _index$64 = 9, (_index$64 >= 0 && _index$64 < _slice$64.length) ? _slice$64.array[_slice$64.offset + _index$64] : go$throwRuntimeError("index out of range")), (_slice$65 = a, _index$65 = 10, (_index$65 >= 0 && _index$65 < _slice$65.length) ? _slice$65.array[_slice$65.offset + _index$65] : go$throwRuntimeError("index out of range")), 0); r1 = _tuple$11[0]; r2 = _tuple$11[1]; lastErr = new Errno(_tuple$11[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 12) {
-			_tuple$12 = Syscall12(p.Addr(), (a.length >>> 0), (_slice$66 = a, _index$66 = 0, (_index$66 >= 0 && _index$66 < _slice$66.length) ? _slice$66.array[_slice$66.offset + _index$66] : go$throwRuntimeError("index out of range")), (_slice$67 = a, _index$67 = 1, (_index$67 >= 0 && _index$67 < _slice$67.length) ? _slice$67.array[_slice$67.offset + _index$67] : go$throwRuntimeError("index out of range")), (_slice$68 = a, _index$68 = 2, (_index$68 >= 0 && _index$68 < _slice$68.length) ? _slice$68.array[_slice$68.offset + _index$68] : go$throwRuntimeError("index out of range")), (_slice$69 = a, _index$69 = 3, (_index$69 >= 0 && _index$69 < _slice$69.length) ? _slice$69.array[_slice$69.offset + _index$69] : go$throwRuntimeError("index out of range")), (_slice$70 = a, _index$70 = 4, (_index$70 >= 0 && _index$70 < _slice$70.length) ? _slice$70.array[_slice$70.offset + _index$70] : go$throwRuntimeError("index out of range")), (_slice$71 = a, _index$71 = 5, (_index$71 >= 0 && _index$71 < _slice$71.length) ? _slice$71.array[_slice$71.offset + _index$71] : go$throwRuntimeError("index out of range")), (_slice$72 = a, _index$72 = 6, (_index$72 >= 0 && _index$72 < _slice$72.length) ? _slice$72.array[_slice$72.offset + _index$72] : go$throwRuntimeError("index out of range")), (_slice$73 = a, _index$73 = 7, (_index$73 >= 0 && _index$73 < _slice$73.length) ? _slice$73.array[_slice$73.offset + _index$73] : go$throwRuntimeError("index out of range")), (_slice$74 = a, _index$74 = 8, (_index$74 >= 0 && _index$74 < _slice$74.length) ? _slice$74.array[_slice$74.offset + _index$74] : go$throwRuntimeError("index out of range")), (_slice$75 = a, _index$75 = 9, (_index$75 >= 0 && _index$75 < _slice$75.length) ? _slice$75.array[_slice$75.offset + _index$75] : go$throwRuntimeError("index out of range")), (_slice$76 = a, _index$76 = 10, (_index$76 >= 0 && _index$76 < _slice$76.length) ? _slice$76.array[_slice$76.offset + _index$76] : go$throwRuntimeError("index out of range")), (_slice$77 = a, _index$77 = 11, (_index$77 >= 0 && _index$77 < _slice$77.length) ? _slice$77.array[_slice$77.offset + _index$77] : go$throwRuntimeError("index out of range"))), r1 = _tuple$12[0], r2 = _tuple$12[1], lastErr = new Errno(_tuple$12[2]);
+			_tuple$12 = Syscall12(p.Addr(), (a.length >>> 0), (_slice$66 = a, _index$66 = 0, (_index$66 >= 0 && _index$66 < _slice$66.length) ? _slice$66.array[_slice$66.offset + _index$66] : go$throwRuntimeError("index out of range")), (_slice$67 = a, _index$67 = 1, (_index$67 >= 0 && _index$67 < _slice$67.length) ? _slice$67.array[_slice$67.offset + _index$67] : go$throwRuntimeError("index out of range")), (_slice$68 = a, _index$68 = 2, (_index$68 >= 0 && _index$68 < _slice$68.length) ? _slice$68.array[_slice$68.offset + _index$68] : go$throwRuntimeError("index out of range")), (_slice$69 = a, _index$69 = 3, (_index$69 >= 0 && _index$69 < _slice$69.length) ? _slice$69.array[_slice$69.offset + _index$69] : go$throwRuntimeError("index out of range")), (_slice$70 = a, _index$70 = 4, (_index$70 >= 0 && _index$70 < _slice$70.length) ? _slice$70.array[_slice$70.offset + _index$70] : go$throwRuntimeError("index out of range")), (_slice$71 = a, _index$71 = 5, (_index$71 >= 0 && _index$71 < _slice$71.length) ? _slice$71.array[_slice$71.offset + _index$71] : go$throwRuntimeError("index out of range")), (_slice$72 = a, _index$72 = 6, (_index$72 >= 0 && _index$72 < _slice$72.length) ? _slice$72.array[_slice$72.offset + _index$72] : go$throwRuntimeError("index out of range")), (_slice$73 = a, _index$73 = 7, (_index$73 >= 0 && _index$73 < _slice$73.length) ? _slice$73.array[_slice$73.offset + _index$73] : go$throwRuntimeError("index out of range")), (_slice$74 = a, _index$74 = 8, (_index$74 >= 0 && _index$74 < _slice$74.length) ? _slice$74.array[_slice$74.offset + _index$74] : go$throwRuntimeError("index out of range")), (_slice$75 = a, _index$75 = 9, (_index$75 >= 0 && _index$75 < _slice$75.length) ? _slice$75.array[_slice$75.offset + _index$75] : go$throwRuntimeError("index out of range")), (_slice$76 = a, _index$76 = 10, (_index$76 >= 0 && _index$76 < _slice$76.length) ? _slice$76.array[_slice$76.offset + _index$76] : go$throwRuntimeError("index out of range")), (_slice$77 = a, _index$77 = 11, (_index$77 >= 0 && _index$77 < _slice$77.length) ? _slice$77.array[_slice$77.offset + _index$77] : go$throwRuntimeError("index out of range"))); r1 = _tuple$12[0]; r2 = _tuple$12[1]; lastErr = new Errno(_tuple$12[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 13) {
-			_tuple$13 = Syscall15(p.Addr(), (a.length >>> 0), (_slice$78 = a, _index$78 = 0, (_index$78 >= 0 && _index$78 < _slice$78.length) ? _slice$78.array[_slice$78.offset + _index$78] : go$throwRuntimeError("index out of range")), (_slice$79 = a, _index$79 = 1, (_index$79 >= 0 && _index$79 < _slice$79.length) ? _slice$79.array[_slice$79.offset + _index$79] : go$throwRuntimeError("index out of range")), (_slice$80 = a, _index$80 = 2, (_index$80 >= 0 && _index$80 < _slice$80.length) ? _slice$80.array[_slice$80.offset + _index$80] : go$throwRuntimeError("index out of range")), (_slice$81 = a, _index$81 = 3, (_index$81 >= 0 && _index$81 < _slice$81.length) ? _slice$81.array[_slice$81.offset + _index$81] : go$throwRuntimeError("index out of range")), (_slice$82 = a, _index$82 = 4, (_index$82 >= 0 && _index$82 < _slice$82.length) ? _slice$82.array[_slice$82.offset + _index$82] : go$throwRuntimeError("index out of range")), (_slice$83 = a, _index$83 = 5, (_index$83 >= 0 && _index$83 < _slice$83.length) ? _slice$83.array[_slice$83.offset + _index$83] : go$throwRuntimeError("index out of range")), (_slice$84 = a, _index$84 = 6, (_index$84 >= 0 && _index$84 < _slice$84.length) ? _slice$84.array[_slice$84.offset + _index$84] : go$throwRuntimeError("index out of range")), (_slice$85 = a, _index$85 = 7, (_index$85 >= 0 && _index$85 < _slice$85.length) ? _slice$85.array[_slice$85.offset + _index$85] : go$throwRuntimeError("index out of range")), (_slice$86 = a, _index$86 = 8, (_index$86 >= 0 && _index$86 < _slice$86.length) ? _slice$86.array[_slice$86.offset + _index$86] : go$throwRuntimeError("index out of range")), (_slice$87 = a, _index$87 = 9, (_index$87 >= 0 && _index$87 < _slice$87.length) ? _slice$87.array[_slice$87.offset + _index$87] : go$throwRuntimeError("index out of range")), (_slice$88 = a, _index$88 = 10, (_index$88 >= 0 && _index$88 < _slice$88.length) ? _slice$88.array[_slice$88.offset + _index$88] : go$throwRuntimeError("index out of range")), (_slice$89 = a, _index$89 = 11, (_index$89 >= 0 && _index$89 < _slice$89.length) ? _slice$89.array[_slice$89.offset + _index$89] : go$throwRuntimeError("index out of range")), (_slice$90 = a, _index$90 = 12, (_index$90 >= 0 && _index$90 < _slice$90.length) ? _slice$90.array[_slice$90.offset + _index$90] : go$throwRuntimeError("index out of range")), 0, 0), r1 = _tuple$13[0], r2 = _tuple$13[1], lastErr = new Errno(_tuple$13[2]);
+			_tuple$13 = Syscall15(p.Addr(), (a.length >>> 0), (_slice$78 = a, _index$78 = 0, (_index$78 >= 0 && _index$78 < _slice$78.length) ? _slice$78.array[_slice$78.offset + _index$78] : go$throwRuntimeError("index out of range")), (_slice$79 = a, _index$79 = 1, (_index$79 >= 0 && _index$79 < _slice$79.length) ? _slice$79.array[_slice$79.offset + _index$79] : go$throwRuntimeError("index out of range")), (_slice$80 = a, _index$80 = 2, (_index$80 >= 0 && _index$80 < _slice$80.length) ? _slice$80.array[_slice$80.offset + _index$80] : go$throwRuntimeError("index out of range")), (_slice$81 = a, _index$81 = 3, (_index$81 >= 0 && _index$81 < _slice$81.length) ? _slice$81.array[_slice$81.offset + _index$81] : go$throwRuntimeError("index out of range")), (_slice$82 = a, _index$82 = 4, (_index$82 >= 0 && _index$82 < _slice$82.length) ? _slice$82.array[_slice$82.offset + _index$82] : go$throwRuntimeError("index out of range")), (_slice$83 = a, _index$83 = 5, (_index$83 >= 0 && _index$83 < _slice$83.length) ? _slice$83.array[_slice$83.offset + _index$83] : go$throwRuntimeError("index out of range")), (_slice$84 = a, _index$84 = 6, (_index$84 >= 0 && _index$84 < _slice$84.length) ? _slice$84.array[_slice$84.offset + _index$84] : go$throwRuntimeError("index out of range")), (_slice$85 = a, _index$85 = 7, (_index$85 >= 0 && _index$85 < _slice$85.length) ? _slice$85.array[_slice$85.offset + _index$85] : go$throwRuntimeError("index out of range")), (_slice$86 = a, _index$86 = 8, (_index$86 >= 0 && _index$86 < _slice$86.length) ? _slice$86.array[_slice$86.offset + _index$86] : go$throwRuntimeError("index out of range")), (_slice$87 = a, _index$87 = 9, (_index$87 >= 0 && _index$87 < _slice$87.length) ? _slice$87.array[_slice$87.offset + _index$87] : go$throwRuntimeError("index out of range")), (_slice$88 = a, _index$88 = 10, (_index$88 >= 0 && _index$88 < _slice$88.length) ? _slice$88.array[_slice$88.offset + _index$88] : go$throwRuntimeError("index out of range")), (_slice$89 = a, _index$89 = 11, (_index$89 >= 0 && _index$89 < _slice$89.length) ? _slice$89.array[_slice$89.offset + _index$89] : go$throwRuntimeError("index out of range")), (_slice$90 = a, _index$90 = 12, (_index$90 >= 0 && _index$90 < _slice$90.length) ? _slice$90.array[_slice$90.offset + _index$90] : go$throwRuntimeError("index out of range")), 0, 0); r1 = _tuple$13[0]; r2 = _tuple$13[1]; lastErr = new Errno(_tuple$13[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 14) {
-			_tuple$14 = Syscall15(p.Addr(), (a.length >>> 0), (_slice$91 = a, _index$91 = 0, (_index$91 >= 0 && _index$91 < _slice$91.length) ? _slice$91.array[_slice$91.offset + _index$91] : go$throwRuntimeError("index out of range")), (_slice$92 = a, _index$92 = 1, (_index$92 >= 0 && _index$92 < _slice$92.length) ? _slice$92.array[_slice$92.offset + _index$92] : go$throwRuntimeError("index out of range")), (_slice$93 = a, _index$93 = 2, (_index$93 >= 0 && _index$93 < _slice$93.length) ? _slice$93.array[_slice$93.offset + _index$93] : go$throwRuntimeError("index out of range")), (_slice$94 = a, _index$94 = 3, (_index$94 >= 0 && _index$94 < _slice$94.length) ? _slice$94.array[_slice$94.offset + _index$94] : go$throwRuntimeError("index out of range")), (_slice$95 = a, _index$95 = 4, (_index$95 >= 0 && _index$95 < _slice$95.length) ? _slice$95.array[_slice$95.offset + _index$95] : go$throwRuntimeError("index out of range")), (_slice$96 = a, _index$96 = 5, (_index$96 >= 0 && _index$96 < _slice$96.length) ? _slice$96.array[_slice$96.offset + _index$96] : go$throwRuntimeError("index out of range")), (_slice$97 = a, _index$97 = 6, (_index$97 >= 0 && _index$97 < _slice$97.length) ? _slice$97.array[_slice$97.offset + _index$97] : go$throwRuntimeError("index out of range")), (_slice$98 = a, _index$98 = 7, (_index$98 >= 0 && _index$98 < _slice$98.length) ? _slice$98.array[_slice$98.offset + _index$98] : go$throwRuntimeError("index out of range")), (_slice$99 = a, _index$99 = 8, (_index$99 >= 0 && _index$99 < _slice$99.length) ? _slice$99.array[_slice$99.offset + _index$99] : go$throwRuntimeError("index out of range")), (_slice$100 = a, _index$100 = 9, (_index$100 >= 0 && _index$100 < _slice$100.length) ? _slice$100.array[_slice$100.offset + _index$100] : go$throwRuntimeError("index out of range")), (_slice$101 = a, _index$101 = 10, (_index$101 >= 0 && _index$101 < _slice$101.length) ? _slice$101.array[_slice$101.offset + _index$101] : go$throwRuntimeError("index out of range")), (_slice$102 = a, _index$102 = 11, (_index$102 >= 0 && _index$102 < _slice$102.length) ? _slice$102.array[_slice$102.offset + _index$102] : go$throwRuntimeError("index out of range")), (_slice$103 = a, _index$103 = 12, (_index$103 >= 0 && _index$103 < _slice$103.length) ? _slice$103.array[_slice$103.offset + _index$103] : go$throwRuntimeError("index out of range")), (_slice$104 = a, _index$104 = 13, (_index$104 >= 0 && _index$104 < _slice$104.length) ? _slice$104.array[_slice$104.offset + _index$104] : go$throwRuntimeError("index out of range")), 0), r1 = _tuple$14[0], r2 = _tuple$14[1], lastErr = new Errno(_tuple$14[2]);
+			_tuple$14 = Syscall15(p.Addr(), (a.length >>> 0), (_slice$91 = a, _index$91 = 0, (_index$91 >= 0 && _index$91 < _slice$91.length) ? _slice$91.array[_slice$91.offset + _index$91] : go$throwRuntimeError("index out of range")), (_slice$92 = a, _index$92 = 1, (_index$92 >= 0 && _index$92 < _slice$92.length) ? _slice$92.array[_slice$92.offset + _index$92] : go$throwRuntimeError("index out of range")), (_slice$93 = a, _index$93 = 2, (_index$93 >= 0 && _index$93 < _slice$93.length) ? _slice$93.array[_slice$93.offset + _index$93] : go$throwRuntimeError("index out of range")), (_slice$94 = a, _index$94 = 3, (_index$94 >= 0 && _index$94 < _slice$94.length) ? _slice$94.array[_slice$94.offset + _index$94] : go$throwRuntimeError("index out of range")), (_slice$95 = a, _index$95 = 4, (_index$95 >= 0 && _index$95 < _slice$95.length) ? _slice$95.array[_slice$95.offset + _index$95] : go$throwRuntimeError("index out of range")), (_slice$96 = a, _index$96 = 5, (_index$96 >= 0 && _index$96 < _slice$96.length) ? _slice$96.array[_slice$96.offset + _index$96] : go$throwRuntimeError("index out of range")), (_slice$97 = a, _index$97 = 6, (_index$97 >= 0 && _index$97 < _slice$97.length) ? _slice$97.array[_slice$97.offset + _index$97] : go$throwRuntimeError("index out of range")), (_slice$98 = a, _index$98 = 7, (_index$98 >= 0 && _index$98 < _slice$98.length) ? _slice$98.array[_slice$98.offset + _index$98] : go$throwRuntimeError("index out of range")), (_slice$99 = a, _index$99 = 8, (_index$99 >= 0 && _index$99 < _slice$99.length) ? _slice$99.array[_slice$99.offset + _index$99] : go$throwRuntimeError("index out of range")), (_slice$100 = a, _index$100 = 9, (_index$100 >= 0 && _index$100 < _slice$100.length) ? _slice$100.array[_slice$100.offset + _index$100] : go$throwRuntimeError("index out of range")), (_slice$101 = a, _index$101 = 10, (_index$101 >= 0 && _index$101 < _slice$101.length) ? _slice$101.array[_slice$101.offset + _index$101] : go$throwRuntimeError("index out of range")), (_slice$102 = a, _index$102 = 11, (_index$102 >= 0 && _index$102 < _slice$102.length) ? _slice$102.array[_slice$102.offset + _index$102] : go$throwRuntimeError("index out of range")), (_slice$103 = a, _index$103 = 12, (_index$103 >= 0 && _index$103 < _slice$103.length) ? _slice$103.array[_slice$103.offset + _index$103] : go$throwRuntimeError("index out of range")), (_slice$104 = a, _index$104 = 13, (_index$104 >= 0 && _index$104 < _slice$104.length) ? _slice$104.array[_slice$104.offset + _index$104] : go$throwRuntimeError("index out of range")), 0); r1 = _tuple$14[0]; r2 = _tuple$14[1]; lastErr = new Errno(_tuple$14[2]);
 			return [r1, r2, lastErr];
 		} else if (_ref === 15) {
-			_tuple$15 = Syscall15(p.Addr(), (a.length >>> 0), (_slice$105 = a, _index$105 = 0, (_index$105 >= 0 && _index$105 < _slice$105.length) ? _slice$105.array[_slice$105.offset + _index$105] : go$throwRuntimeError("index out of range")), (_slice$106 = a, _index$106 = 1, (_index$106 >= 0 && _index$106 < _slice$106.length) ? _slice$106.array[_slice$106.offset + _index$106] : go$throwRuntimeError("index out of range")), (_slice$107 = a, _index$107 = 2, (_index$107 >= 0 && _index$107 < _slice$107.length) ? _slice$107.array[_slice$107.offset + _index$107] : go$throwRuntimeError("index out of range")), (_slice$108 = a, _index$108 = 3, (_index$108 >= 0 && _index$108 < _slice$108.length) ? _slice$108.array[_slice$108.offset + _index$108] : go$throwRuntimeError("index out of range")), (_slice$109 = a, _index$109 = 4, (_index$109 >= 0 && _index$109 < _slice$109.length) ? _slice$109.array[_slice$109.offset + _index$109] : go$throwRuntimeError("index out of range")), (_slice$110 = a, _index$110 = 5, (_index$110 >= 0 && _index$110 < _slice$110.length) ? _slice$110.array[_slice$110.offset + _index$110] : go$throwRuntimeError("index out of range")), (_slice$111 = a, _index$111 = 6, (_index$111 >= 0 && _index$111 < _slice$111.length) ? _slice$111.array[_slice$111.offset + _index$111] : go$throwRuntimeError("index out of range")), (_slice$112 = a, _index$112 = 7, (_index$112 >= 0 && _index$112 < _slice$112.length) ? _slice$112.array[_slice$112.offset + _index$112] : go$throwRuntimeError("index out of range")), (_slice$113 = a, _index$113 = 8, (_index$113 >= 0 && _index$113 < _slice$113.length) ? _slice$113.array[_slice$113.offset + _index$113] : go$throwRuntimeError("index out of range")), (_slice$114 = a, _index$114 = 9, (_index$114 >= 0 && _index$114 < _slice$114.length) ? _slice$114.array[_slice$114.offset + _index$114] : go$throwRuntimeError("index out of range")), (_slice$115 = a, _index$115 = 10, (_index$115 >= 0 && _index$115 < _slice$115.length) ? _slice$115.array[_slice$115.offset + _index$115] : go$throwRuntimeError("index out of range")), (_slice$116 = a, _index$116 = 11, (_index$116 >= 0 && _index$116 < _slice$116.length) ? _slice$116.array[_slice$116.offset + _index$116] : go$throwRuntimeError("index out of range")), (_slice$117 = a, _index$117 = 12, (_index$117 >= 0 && _index$117 < _slice$117.length) ? _slice$117.array[_slice$117.offset + _index$117] : go$throwRuntimeError("index out of range")), (_slice$118 = a, _index$118 = 13, (_index$118 >= 0 && _index$118 < _slice$118.length) ? _slice$118.array[_slice$118.offset + _index$118] : go$throwRuntimeError("index out of range")), (_slice$119 = a, _index$119 = 14, (_index$119 >= 0 && _index$119 < _slice$119.length) ? _slice$119.array[_slice$119.offset + _index$119] : go$throwRuntimeError("index out of range"))), r1 = _tuple$15[0], r2 = _tuple$15[1], lastErr = new Errno(_tuple$15[2]);
+			_tuple$15 = Syscall15(p.Addr(), (a.length >>> 0), (_slice$105 = a, _index$105 = 0, (_index$105 >= 0 && _index$105 < _slice$105.length) ? _slice$105.array[_slice$105.offset + _index$105] : go$throwRuntimeError("index out of range")), (_slice$106 = a, _index$106 = 1, (_index$106 >= 0 && _index$106 < _slice$106.length) ? _slice$106.array[_slice$106.offset + _index$106] : go$throwRuntimeError("index out of range")), (_slice$107 = a, _index$107 = 2, (_index$107 >= 0 && _index$107 < _slice$107.length) ? _slice$107.array[_slice$107.offset + _index$107] : go$throwRuntimeError("index out of range")), (_slice$108 = a, _index$108 = 3, (_index$108 >= 0 && _index$108 < _slice$108.length) ? _slice$108.array[_slice$108.offset + _index$108] : go$throwRuntimeError("index out of range")), (_slice$109 = a, _index$109 = 4, (_index$109 >= 0 && _index$109 < _slice$109.length) ? _slice$109.array[_slice$109.offset + _index$109] : go$throwRuntimeError("index out of range")), (_slice$110 = a, _index$110 = 5, (_index$110 >= 0 && _index$110 < _slice$110.length) ? _slice$110.array[_slice$110.offset + _index$110] : go$throwRuntimeError("index out of range")), (_slice$111 = a, _index$111 = 6, (_index$111 >= 0 && _index$111 < _slice$111.length) ? _slice$111.array[_slice$111.offset + _index$111] : go$throwRuntimeError("index out of range")), (_slice$112 = a, _index$112 = 7, (_index$112 >= 0 && _index$112 < _slice$112.length) ? _slice$112.array[_slice$112.offset + _index$112] : go$throwRuntimeError("index out of range")), (_slice$113 = a, _index$113 = 8, (_index$113 >= 0 && _index$113 < _slice$113.length) ? _slice$113.array[_slice$113.offset + _index$113] : go$throwRuntimeError("index out of range")), (_slice$114 = a, _index$114 = 9, (_index$114 >= 0 && _index$114 < _slice$114.length) ? _slice$114.array[_slice$114.offset + _index$114] : go$throwRuntimeError("index out of range")), (_slice$115 = a, _index$115 = 10, (_index$115 >= 0 && _index$115 < _slice$115.length) ? _slice$115.array[_slice$115.offset + _index$115] : go$throwRuntimeError("index out of range")), (_slice$116 = a, _index$116 = 11, (_index$116 >= 0 && _index$116 < _slice$116.length) ? _slice$116.array[_slice$116.offset + _index$116] : go$throwRuntimeError("index out of range")), (_slice$117 = a, _index$117 = 12, (_index$117 >= 0 && _index$117 < _slice$117.length) ? _slice$117.array[_slice$117.offset + _index$117] : go$throwRuntimeError("index out of range")), (_slice$118 = a, _index$118 = 13, (_index$118 >= 0 && _index$118 < _slice$118.length) ? _slice$118.array[_slice$118.offset + _index$118] : go$throwRuntimeError("index out of range")), (_slice$119 = a, _index$119 = 14, (_index$119 >= 0 && _index$119 < _slice$119.length) ? _slice$119.array[_slice$119.offset + _index$119] : go$throwRuntimeError("index out of range"))); r1 = _tuple$15[0]; r2 = _tuple$15[1]; lastErr = new Errno(_tuple$15[2]);
 			return [r1, r2, lastErr];
 		} else {
 			throw go$panic(new Go$String("Call " + p.Name + " with too many arguments " + itoa(a.length) + "."));
@@ -3461,16 +3468,16 @@ go$packages["syscall"] = (function() {
 		var go$deferred = [];
 		try {
 			d = this;
-			if (atomic.LoadPointer(new (go$ptrType((go$ptrType(DLL))))(function() { return d.dll; }, function(v) { d.dll = v; })) === 0) {
+			if (atomic.LoadPointer(new (go$ptrType((go$ptrType(DLL))))(function() { return d.dll; }, function(v) { d.dll = v;; })) === 0) {
 				d.mu.Lock();
 				go$deferred.push({ recv: d.mu, method: "Unlock", args: [] });
 				if (d.dll === (go$ptrType(DLL)).nil) {
-					_tuple = LoadDLL(d.Name), dll = _tuple[0], e = _tuple[1];
+					_tuple = LoadDLL(d.Name); dll = _tuple[0]; e = _tuple[1];
 					if (!(go$interfaceIsEqual(e, null))) {
 						return e;
 					}
 					_array = new Uint8Array(12);
-					atomic.StorePointer(new (go$ptrType((go$ptrType(DLL))))(function() { return d.dll; }, function(v$1) { d.dll = v$1; }), _array);
+					atomic.StorePointer(new (go$ptrType((go$ptrType(DLL))))(function() { return d.dll; }, function(v$1) { d.dll = v$1;; }), _array);
 					_struct = dll, _view = new DataView(_array.buffer, _array.byteOffset), _struct.Handle = _view.getUintptr(8, true);
 				}
 			}
@@ -3513,7 +3520,7 @@ go$packages["syscall"] = (function() {
 		var go$deferred = [];
 		try {
 			p = this;
-			if (atomic.LoadPointer(new (go$ptrType((go$ptrType(Proc))))(function() { return p.proc; }, function(v) { p.proc = v; })) === 0) {
+			if (atomic.LoadPointer(new (go$ptrType((go$ptrType(Proc))))(function() { return p.proc; }, function(v) { p.proc = v;; })) === 0) {
 				p.mu.Lock();
 				go$deferred.push({ recv: p.mu, method: "Unlock", args: [] });
 				if (p.proc === (go$ptrType(Proc)).nil) {
@@ -3521,12 +3528,12 @@ go$packages["syscall"] = (function() {
 					if (!(go$interfaceIsEqual(e, null))) {
 						return e;
 					}
-					_tuple = p.l.dll.FindProc(p.Name), proc = _tuple[0], e = _tuple[1];
+					_tuple = p.l.dll.FindProc(p.Name); proc = _tuple[0]; e = _tuple[1];
 					if (!(go$interfaceIsEqual(e, null))) {
 						return e;
 					}
 					_array = new Uint8Array(20);
-					atomic.StorePointer(new (go$ptrType((go$ptrType(Proc))))(function() { return p.proc; }, function(v$1) { p.proc = v$1; }), _array);
+					atomic.StorePointer(new (go$ptrType((go$ptrType(Proc))))(function() { return p.proc; }, function(v$1) { p.proc = v$1;; }), _array);
 					_struct = proc, _view = new DataView(_array.buffer, _array.byteOffset), _struct.addr = _view.getUintptr(16, true);
 				}
 			}
@@ -3562,7 +3569,7 @@ go$packages["syscall"] = (function() {
 		lastErr = null;
 		p = this;
 		p.mustFind();
-		_tuple = p.proc.Call(a), r1 = _tuple[0], r2 = _tuple[1], lastErr = _tuple[2];
+		_tuple = p.proc.Call(a); r1 = _tuple[0]; r2 = _tuple[1]; lastErr = _tuple[2];
 		return [r1, r2, lastErr];
 	};
 	LazyProc.prototype.Call = function(a) { return this.go$val.Call(a); };
@@ -3570,25 +3577,25 @@ go$packages["syscall"] = (function() {
 		var value, found, _tuple, keyp, err, _tuple$1, b, _tuple$2, v, _slice, _index, _slice$1, _index$1, n, e, _tuple$3, _tuple$4, v$1, _slice$2, _index$2, _slice$3, _index$3, _tuple$5;
 		value = "";
 		found = false;
-		_tuple = UTF16PtrFromString(key), keyp = _tuple[0], err = _tuple[1];
+		_tuple = UTF16PtrFromString(key); keyp = _tuple[0]; err = _tuple[1];
 		if (!(go$interfaceIsEqual(err, null))) {
-			_tuple$1 = ["", false], value = _tuple$1[0], found = _tuple$1[1];
+			_tuple$1 = ["", false]; value = _tuple$1[0]; found = _tuple$1[1];
 			return [value, found];
 		}
 		b = (go$sliceType(Go$Uint16)).make(100, 0, function() { return 0; });
-		_tuple$2 = GetEnvironmentVariable(keyp, new (go$ptrType(Go$Uint16))(function() { return (_slice = b, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")); }, function(v) { _slice$1 = b, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = v) : go$throwRuntimeError("index out of range"); }), (b.length >>> 0)), n = _tuple$2[0], e = _tuple$2[1];
+		_tuple$2 = GetEnvironmentVariable(keyp, new (go$ptrType(Go$Uint16))(function() { return (_slice$1 = b, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")); }, function(v) { _slice = b; _index = 0;(_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = v) : go$throwRuntimeError("index out of range");; }), (b.length >>> 0)); n = _tuple$2[0]; e = _tuple$2[1];
 		if ((n === 0) && go$interfaceIsEqual(e, new Errno(203))) {
-			_tuple$3 = ["", false], value = _tuple$3[0], found = _tuple$3[1];
+			_tuple$3 = ["", false]; value = _tuple$3[0]; found = _tuple$3[1];
 			return [value, found];
 		}
 		if (n > (b.length >>> 0)) {
 			b = (go$sliceType(Go$Uint16)).make(n, 0, function() { return 0; });
-			_tuple$4 = GetEnvironmentVariable(keyp, new (go$ptrType(Go$Uint16))(function() { return (_slice$2 = b, _index$2 = 0, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")); }, function(v$1) { _slice$3 = b, _index$3 = 0, (_index$3 >= 0 && _index$3 < _slice$3.length) ? (_slice$3.array[_slice$3.offset + _index$3] = v$1) : go$throwRuntimeError("index out of range"); }), (b.length >>> 0)), n = _tuple$4[0], e = _tuple$4[1];
+			_tuple$4 = GetEnvironmentVariable(keyp, new (go$ptrType(Go$Uint16))(function() { return (_slice$3 = b, _index$3 = 0, (_index$3 >= 0 && _index$3 < _slice$3.length) ? _slice$3.array[_slice$3.offset + _index$3] : go$throwRuntimeError("index out of range")); }, function(v$1) { _slice$2 = b; _index$2 = 0;(_index$2 >= 0 && _index$2 < _slice$2.length) ? (_slice$2.array[_slice$2.offset + _index$2] = v$1) : go$throwRuntimeError("index out of range");; }), (b.length >>> 0)); n = _tuple$4[0]; e = _tuple$4[1];
 			if (n > (b.length >>> 0)) {
 				n = 0;
 			}
 		}
-		_tuple$5 = [go$runesToString(utf16.Decode(go$subslice(b, 0, n))), true], value = _tuple$5[0], found = _tuple$5[1];
+		_tuple$5 = [go$runesToString(utf16.Decode(go$subslice(b, 0, n))), true]; value = _tuple$5[0]; found = _tuple$5[1];
 		return [value, found];
 	};
 	CloseOnExec = go$pkg.CloseOnExec = function(fd) {
@@ -3624,11 +3631,11 @@ go$packages["syscall"] = (function() {
 	};
 	BytePtrFromString = go$pkg.BytePtrFromString = function(s) {
 		var _tuple, a, err, v, _slice, _index, _slice$1, _index$1;
-		_tuple = ByteSliceFromString(s), a = _tuple[0], err = _tuple[1];
+		_tuple = ByteSliceFromString(s); a = _tuple[0]; err = _tuple[1];
 		if (!(go$interfaceIsEqual(err, null))) {
 			return [(go$ptrType(Go$Uint8)).nil, err];
 		}
-		return [new (go$ptrType(Go$Uint8))(function() { return (_slice = a, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")); }, function(v) { _slice$1 = a, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = v) : go$throwRuntimeError("index out of range"); }), null];
+		return [new (go$ptrType(Go$Uint8))(function() { return (_slice$1 = a, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")); }, function(v) { _slice = a; _index = 0;(_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = v) : go$throwRuntimeError("index out of range");; }), null];
 	};
 	UTF16FromString = go$pkg.UTF16FromString = function(s) {
 		var i;
@@ -3658,11 +3665,11 @@ go$packages["syscall"] = (function() {
 	};
 	UTF16PtrFromString = go$pkg.UTF16PtrFromString = function(s) {
 		var _tuple, a, err, v, _slice, _index, _slice$1, _index$1;
-		_tuple = UTF16FromString(s), a = _tuple[0], err = _tuple[1];
+		_tuple = UTF16FromString(s); a = _tuple[0]; err = _tuple[1];
 		if (!(go$interfaceIsEqual(err, null))) {
 			return [(go$ptrType(Go$Uint16)).nil, err];
 		}
-		return [new (go$ptrType(Go$Uint16))(function() { return (_slice = a, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")); }, function(v) { _slice$1 = a, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = v) : go$throwRuntimeError("index out of range"); }), null];
+		return [new (go$ptrType(Go$Uint16))(function() { return (_slice$1 = a, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")); }, function(v) { _slice = a; _index = 0;(_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = v) : go$throwRuntimeError("index out of range");; }), null];
 	};
 	langid = function(pri, sub) {
 		return (((sub >>> 0) << 10 >>> 0) | (pri >>> 0)) >>> 0;
@@ -3676,9 +3683,9 @@ go$packages["syscall"] = (function() {
 		}
 		flags = 12800;
 		b = (go$sliceType(Go$Uint16)).make(300, 0, function() { return 0; });
-		_tuple = FormatMessage(flags, 0, (e >>> 0), langid(9, 1), b, (go$ptrType(Go$Uint8)).nil), n = _tuple[0], err = _tuple[1];
+		_tuple = FormatMessage(flags, 0, (e >>> 0), langid(9, 1), b, (go$ptrType(Go$Uint8)).nil); n = _tuple[0]; err = _tuple[1];
 		if (!(go$interfaceIsEqual(err, null))) {
-			_tuple$1 = FormatMessage(flags, 0, (e >>> 0), 0, b, (go$ptrType(Go$Uint8)).nil), n = _tuple$1[0], err = _tuple$1[1];
+			_tuple$1 = FormatMessage(flags, 0, (e >>> 0), 0, b, (go$ptrType(Go$Uint8)).nil); n = _tuple$1[0]; err = _tuple$1[1];
 			if (!(go$interfaceIsEqual(err, null))) {
 				return "winapi error #" + itoa((e >> 0));
 			}
@@ -3704,7 +3711,7 @@ go$packages["syscall"] = (function() {
 	getStdHandle = function(h) {
 		var fd, _tuple, r;
 		fd = 0;
-		_tuple = GetStdHandle(h), r = _tuple[0];
+		_tuple = GetStdHandle(h); r = _tuple[0];
 		CloseOnExec(r);
 		fd = r;
 		return fd;
@@ -3712,7 +3719,7 @@ go$packages["syscall"] = (function() {
 	FreeLibrary = go$pkg.FreeLibrary = function(handle) {
 		var err, _tuple, r1, e1;
 		err = null;
-		_tuple = Syscall(procFreeLibrary.Addr(), 1, (handle >>> 0), 0, 0), r1 = _tuple[0], e1 = _tuple[2];
+		_tuple = Syscall(procFreeLibrary.Addr(), 1, (handle >>> 0), 0, 0); r1 = _tuple[0]; e1 = _tuple[2];
 		if (r1 === 0) {
 			if (!((e1 === 0))) {
 				err = new Errno(e1);
@@ -3728,9 +3735,9 @@ go$packages["syscall"] = (function() {
 		err = null;
 		_p0 = (go$ptrType(Go$Uint16)).nil;
 		if (buf.length > 0) {
-			_p0 = new (go$ptrType(Go$Uint16))(function() { return (_slice = buf, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range")); }, function(v) { _slice$1 = buf, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = v) : go$throwRuntimeError("index out of range"); });
+			_p0 = new (go$ptrType(Go$Uint16))(function() { return (_slice$1 = buf, _index$1 = 0, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range")); }, function(v) { _slice = buf; _index = 0;(_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = v) : go$throwRuntimeError("index out of range");; });
 		}
-		_tuple = Syscall9(procFormatMessageW.Addr(), 7, (flags >>> 0), (msgsrc >>> 0), (msgid >>> 0), (langid$1 >>> 0), _p0, (buf.length >>> 0), args, 0, 0), r0 = _tuple[0], e1 = _tuple[2];
+		_tuple = Syscall9(procFormatMessageW.Addr(), 7, (flags >>> 0), (msgsrc >>> 0), (msgid >>> 0), (langid$1 >>> 0), _p0, (buf.length >>> 0), args, 0, 0); r0 = _tuple[0]; e1 = _tuple[2];
 		n = (r0 >>> 0);
 		if (n === 0) {
 			if (!((e1 === 0))) {
@@ -3745,7 +3752,7 @@ go$packages["syscall"] = (function() {
 		var handle, err, _tuple, r0, e1;
 		handle = 0;
 		err = null;
-		_tuple = Syscall(procGetStdHandle.Addr(), 1, (stdhandle >>> 0), 0, 0), r0 = _tuple[0], e1 = _tuple[2];
+		_tuple = Syscall(procGetStdHandle.Addr(), 1, (stdhandle >>> 0), 0, 0); r0 = _tuple[0]; e1 = _tuple[2];
 		handle = (r0 >>> 0);
 		if (handle === 4294967295) {
 			if (!((e1 === 0))) {
@@ -3761,7 +3768,7 @@ go$packages["syscall"] = (function() {
 		rc = 0;
 		err = null;
 		_array = new Uint8Array(172);
-		_tuple = Syscall(procGetTimeZoneInformation.Addr(), 1, _array, 0, 0), r0 = _tuple[0], e1 = _tuple[2];
+		_tuple = Syscall(procGetTimeZoneInformation.Addr(), 1, _array, 0, 0); r0 = _tuple[0]; e1 = _tuple[2];
 		_struct = tzi, _view = new DataView(_array.buffer, _array.byteOffset), _struct.Bias = _view.getInt32(0, true), _struct.StandardName = new (go$nativeArray("Uint16"))(_array.buffer, go$min(_array.byteOffset + 4, _array.buffer.byteLength)), _struct.StandardDate.Year = _view.getUint16(68, true), _struct.StandardDate.Month = _view.getUint16(70, true), _struct.StandardDate.DayOfWeek = _view.getUint16(72, true), _struct.StandardDate.Day = _view.getUint16(74, true), _struct.StandardDate.Hour = _view.getUint16(76, true), _struct.StandardDate.Minute = _view.getUint16(78, true), _struct.StandardDate.Second = _view.getUint16(80, true), _struct.StandardDate.Milliseconds = _view.getUint16(82, true), _struct.StandardBias = _view.getInt32(84, true), _struct.DaylightName = new (go$nativeArray("Uint16"))(_array.buffer, go$min(_array.byteOffset + 88, _array.buffer.byteLength)), _struct.DaylightDate.Year = _view.getUint16(152, true), _struct.DaylightDate.Month = _view.getUint16(154, true), _struct.DaylightDate.DayOfWeek = _view.getUint16(156, true), _struct.DaylightDate.Day = _view.getUint16(158, true), _struct.DaylightDate.Hour = _view.getUint16(160, true), _struct.DaylightDate.Minute = _view.getUint16(162, true), _struct.DaylightDate.Second = _view.getUint16(164, true), _struct.DaylightDate.Milliseconds = _view.getUint16(166, true), _struct.DaylightBias = _view.getInt32(168, true);
 		rc = (r0 >>> 0);
 		if (rc === 4294967295) {
@@ -3777,7 +3784,7 @@ go$packages["syscall"] = (function() {
 		var n, err, _tuple, r0, e1;
 		n = 0;
 		err = null;
-		_tuple = Syscall(procGetEnvironmentVariableW.Addr(), 3, name, buffer, (size >>> 0)), r0 = _tuple[0], e1 = _tuple[2];
+		_tuple = Syscall(procGetEnvironmentVariableW.Addr(), 3, name, buffer, (size >>> 0)); r0 = _tuple[0]; e1 = _tuple[2];
 		n = (r0 >>> 0);
 		if (n === 0) {
 			if (!((e1 === 0))) {
@@ -3791,7 +3798,7 @@ go$packages["syscall"] = (function() {
 	GetCommandLine = go$pkg.GetCommandLine = function() {
 		var cmd, _tuple, r0;
 		cmd = (go$ptrType(Go$Uint16)).nil;
-		_tuple = Syscall(procGetCommandLineW.Addr(), 0, 0, 0, 0), r0 = _tuple[0];
+		_tuple = Syscall(procGetCommandLineW.Addr(), 0, 0, 0, 0); r0 = _tuple[0];
 		cmd = r0;
 		return cmd;
 	};
@@ -3799,7 +3806,7 @@ go$packages["syscall"] = (function() {
 		var argv, err, _tuple, r0, e1;
 		argv = (go$ptrType((go$arrayType((go$ptrType((go$arrayType(Go$Uint16, 8192)))), 8192)))).nil;
 		err = null;
-		_tuple = Syscall(procCommandLineToArgvW.Addr(), 2, cmd, argc, 0), r0 = _tuple[0], e1 = _tuple[2];
+		_tuple = Syscall(procCommandLineToArgvW.Addr(), 2, cmd, argc, 0); r0 = _tuple[0]; e1 = _tuple[2];
 		argv = r0;
 		if (go$arrayIsEqual(argv, (go$ptrType((go$arrayType((go$ptrType((go$arrayType(Go$Uint16, 8192)))), 8192)))).nil)) {
 			if (!((e1 === 0))) {
@@ -3813,7 +3820,7 @@ go$packages["syscall"] = (function() {
 	SetHandleInformation = go$pkg.SetHandleInformation = function(handle, mask, flags) {
 		var err, _tuple, r1, e1;
 		err = null;
-		_tuple = Syscall(procSetHandleInformation.Addr(), 3, (handle >>> 0), (mask >>> 0), (flags >>> 0)), r1 = _tuple[0], e1 = _tuple[2];
+		_tuple = Syscall(procSetHandleInformation.Addr(), 3, (handle >>> 0), (mask >>> 0), (flags >>> 0)); r1 = _tuple[0]; e1 = _tuple[2];
 		if (r1 === 0) {
 			if (!((e1 === 0))) {
 				err = new Errno(e1);
@@ -3826,7 +3833,7 @@ go$packages["syscall"] = (function() {
 	RegOpenKeyEx = go$pkg.RegOpenKeyEx = function(key, subkey, options, desiredAccess, result) {
 		var regerrno, _tuple, r0;
 		regerrno = null;
-		_tuple = Syscall6(procRegOpenKeyExW.Addr(), 5, (key >>> 0), subkey, (options >>> 0), (desiredAccess >>> 0), result, 0), r0 = _tuple[0];
+		_tuple = Syscall6(procRegOpenKeyExW.Addr(), 5, (key >>> 0), subkey, (options >>> 0), (desiredAccess >>> 0), result, 0); r0 = _tuple[0];
 		if (!((r0 === 0))) {
 			regerrno = new Errno((r0 >>> 0));
 		}
@@ -3836,7 +3843,7 @@ go$packages["syscall"] = (function() {
 		var regerrno, _tuple, _array, _struct, _view, r0;
 		regerrno = null;
 		_array = new Uint8Array(8);
-		_tuple = Syscall12(procRegQueryInfoKeyW.Addr(), 12, (key >>> 0), class$1, classLen, reserved, subkeysLen, maxSubkeyLen, maxClassLen, valuesLen, maxValueNameLen, maxValueLen, saLen, _array), r0 = _tuple[0];
+		_tuple = Syscall12(procRegQueryInfoKeyW.Addr(), 12, (key >>> 0), class$1, classLen, reserved, subkeysLen, maxSubkeyLen, maxClassLen, valuesLen, maxValueNameLen, maxValueLen, saLen, _array); r0 = _tuple[0];
 		_struct = lastWriteTime, _view = new DataView(_array.buffer, _array.byteOffset), _struct.LowDateTime = _view.getUint32(0, true), _struct.HighDateTime = _view.getUint32(4, true);
 		if (!((r0 === 0))) {
 			regerrno = new Errno((r0 >>> 0));
@@ -3847,7 +3854,7 @@ go$packages["syscall"] = (function() {
 		var regerrno, _tuple, _array, _struct, _view, r0;
 		regerrno = null;
 		_array = new Uint8Array(8);
-		_tuple = Syscall9(procRegEnumKeyExW.Addr(), 8, (key >>> 0), (index >>> 0), name, nameLen, reserved, class$1, classLen, _array, 0), r0 = _tuple[0];
+		_tuple = Syscall9(procRegEnumKeyExW.Addr(), 8, (key >>> 0), (index >>> 0), name, nameLen, reserved, class$1, classLen, _array, 0); r0 = _tuple[0];
 		_struct = lastWriteTime, _view = new DataView(_array.buffer, _array.byteOffset), _struct.LowDateTime = _view.getUint32(0, true), _struct.HighDateTime = _view.getUint32(4, true);
 		if (!((r0 === 0))) {
 			regerrno = new Errno((r0 >>> 0));
@@ -3857,7 +3864,7 @@ go$packages["syscall"] = (function() {
 	RegQueryValueEx = go$pkg.RegQueryValueEx = function(key, name, reserved, valtype, buf, buflen) {
 		var regerrno, _tuple, r0;
 		regerrno = null;
-		_tuple = Syscall6(procRegQueryValueExW.Addr(), 6, (key >>> 0), name, reserved, valtype, buf, buflen), r0 = _tuple[0];
+		_tuple = Syscall6(procRegQueryValueExW.Addr(), 6, (key >>> 0), name, reserved, valtype, buf, buflen); r0 = _tuple[0];
 		if (!((r0 === 0))) {
 			regerrno = new Errno((r0 >>> 0));
 		}
@@ -4141,11 +4148,11 @@ go$packages["time"] = (function() {
 			if (_ref === 74) {
 				if (layout.length >= (i + 3 >> 0) && layout.substring(i, (i + 3 >> 0)) === "Jan") {
 					if (layout.length >= (i + 7 >> 0) && layout.substring(i, (i + 7 >> 0)) === "January") {
-						_tuple = [layout.substring(0, i), 257, layout.substring((i + 7 >> 0))], prefix = _tuple[0], std = _tuple[1], suffix = _tuple[2];
+						_tuple = [layout.substring(0, i), 257, layout.substring((i + 7 >> 0))]; prefix = _tuple[0]; std = _tuple[1]; suffix = _tuple[2];
 						return [prefix, std, suffix];
 					}
 					if (!startsWithLowerCase(layout.substring((i + 3 >> 0)))) {
-						_tuple$1 = [layout.substring(0, i), 258, layout.substring((i + 3 >> 0))], prefix = _tuple$1[0], std = _tuple$1[1], suffix = _tuple$1[2];
+						_tuple$1 = [layout.substring(0, i), 258, layout.substring((i + 3 >> 0))]; prefix = _tuple$1[0]; std = _tuple$1[1]; suffix = _tuple$1[2];
 						return [prefix, std, suffix];
 					}
 				}
@@ -4153,98 +4160,98 @@ go$packages["time"] = (function() {
 				if (layout.length >= (i + 3 >> 0)) {
 					if (layout.substring(i, (i + 3 >> 0)) === "Mon") {
 						if (layout.length >= (i + 6 >> 0) && layout.substring(i, (i + 6 >> 0)) === "Monday") {
-							_tuple$2 = [layout.substring(0, i), 261, layout.substring((i + 6 >> 0))], prefix = _tuple$2[0], std = _tuple$2[1], suffix = _tuple$2[2];
+							_tuple$2 = [layout.substring(0, i), 261, layout.substring((i + 6 >> 0))]; prefix = _tuple$2[0]; std = _tuple$2[1]; suffix = _tuple$2[2];
 							return [prefix, std, suffix];
 						}
 						if (!startsWithLowerCase(layout.substring((i + 3 >> 0)))) {
-							_tuple$3 = [layout.substring(0, i), 262, layout.substring((i + 3 >> 0))], prefix = _tuple$3[0], std = _tuple$3[1], suffix = _tuple$3[2];
+							_tuple$3 = [layout.substring(0, i), 262, layout.substring((i + 3 >> 0))]; prefix = _tuple$3[0]; std = _tuple$3[1]; suffix = _tuple$3[2];
 							return [prefix, std, suffix];
 						}
 					}
 					if (layout.substring(i, (i + 3 >> 0)) === "MST") {
-						_tuple$4 = [layout.substring(0, i), 21, layout.substring((i + 3 >> 0))], prefix = _tuple$4[0], std = _tuple$4[1], suffix = _tuple$4[2];
+						_tuple$4 = [layout.substring(0, i), 21, layout.substring((i + 3 >> 0))]; prefix = _tuple$4[0]; std = _tuple$4[1]; suffix = _tuple$4[2];
 						return [prefix, std, suffix];
 					}
 				}
 			} else if (_ref === 48) {
 				if (layout.length >= (i + 2 >> 0) && 49 <= layout.charCodeAt((i + 1 >> 0)) && layout.charCodeAt((i + 1 >> 0)) <= 54) {
-					_tuple$5 = [layout.substring(0, i), std0x[(layout.charCodeAt((i + 1 >> 0)) - 49 << 24 >>> 24)], layout.substring((i + 2 >> 0))], prefix = _tuple$5[0], std = _tuple$5[1], suffix = _tuple$5[2];
+					_tuple$5 = [layout.substring(0, i), std0x[(layout.charCodeAt((i + 1 >> 0)) - 49 << 24 >>> 24)], layout.substring((i + 2 >> 0))]; prefix = _tuple$5[0]; std = _tuple$5[1]; suffix = _tuple$5[2];
 					return [prefix, std, suffix];
 				}
 			} else if (_ref === 49) {
 				if (layout.length >= (i + 2 >> 0) && (layout.charCodeAt((i + 1 >> 0)) === 53)) {
-					_tuple$6 = [layout.substring(0, i), 522, layout.substring((i + 2 >> 0))], prefix = _tuple$6[0], std = _tuple$6[1], suffix = _tuple$6[2];
+					_tuple$6 = [layout.substring(0, i), 522, layout.substring((i + 2 >> 0))]; prefix = _tuple$6[0]; std = _tuple$6[1]; suffix = _tuple$6[2];
 					return [prefix, std, suffix];
 				}
-				_tuple$7 = [layout.substring(0, i), 259, layout.substring((i + 1 >> 0))], prefix = _tuple$7[0], std = _tuple$7[1], suffix = _tuple$7[2];
+				_tuple$7 = [layout.substring(0, i), 259, layout.substring((i + 1 >> 0))]; prefix = _tuple$7[0]; std = _tuple$7[1]; suffix = _tuple$7[2];
 				return [prefix, std, suffix];
 			} else if (_ref === 50) {
 				if (layout.length >= (i + 4 >> 0) && layout.substring(i, (i + 4 >> 0)) === "2006") {
-					_tuple$8 = [layout.substring(0, i), 273, layout.substring((i + 4 >> 0))], prefix = _tuple$8[0], std = _tuple$8[1], suffix = _tuple$8[2];
+					_tuple$8 = [layout.substring(0, i), 273, layout.substring((i + 4 >> 0))]; prefix = _tuple$8[0]; std = _tuple$8[1]; suffix = _tuple$8[2];
 					return [prefix, std, suffix];
 				}
-				_tuple$9 = [layout.substring(0, i), 263, layout.substring((i + 1 >> 0))], prefix = _tuple$9[0], std = _tuple$9[1], suffix = _tuple$9[2];
+				_tuple$9 = [layout.substring(0, i), 263, layout.substring((i + 1 >> 0))]; prefix = _tuple$9[0]; std = _tuple$9[1]; suffix = _tuple$9[2];
 				return [prefix, std, suffix];
 			} else if (_ref === 95) {
 				if (layout.length >= (i + 2 >> 0) && (layout.charCodeAt((i + 1 >> 0)) === 50)) {
-					_tuple$10 = [layout.substring(0, i), 264, layout.substring((i + 2 >> 0))], prefix = _tuple$10[0], std = _tuple$10[1], suffix = _tuple$10[2];
+					_tuple$10 = [layout.substring(0, i), 264, layout.substring((i + 2 >> 0))]; prefix = _tuple$10[0]; std = _tuple$10[1]; suffix = _tuple$10[2];
 					return [prefix, std, suffix];
 				}
 			} else if (_ref === 51) {
-				_tuple$11 = [layout.substring(0, i), 523, layout.substring((i + 1 >> 0))], prefix = _tuple$11[0], std = _tuple$11[1], suffix = _tuple$11[2];
+				_tuple$11 = [layout.substring(0, i), 523, layout.substring((i + 1 >> 0))]; prefix = _tuple$11[0]; std = _tuple$11[1]; suffix = _tuple$11[2];
 				return [prefix, std, suffix];
 			} else if (_ref === 52) {
-				_tuple$12 = [layout.substring(0, i), 525, layout.substring((i + 1 >> 0))], prefix = _tuple$12[0], std = _tuple$12[1], suffix = _tuple$12[2];
+				_tuple$12 = [layout.substring(0, i), 525, layout.substring((i + 1 >> 0))]; prefix = _tuple$12[0]; std = _tuple$12[1]; suffix = _tuple$12[2];
 				return [prefix, std, suffix];
 			} else if (_ref === 53) {
-				_tuple$13 = [layout.substring(0, i), 527, layout.substring((i + 1 >> 0))], prefix = _tuple$13[0], std = _tuple$13[1], suffix = _tuple$13[2];
+				_tuple$13 = [layout.substring(0, i), 527, layout.substring((i + 1 >> 0))]; prefix = _tuple$13[0]; std = _tuple$13[1]; suffix = _tuple$13[2];
 				return [prefix, std, suffix];
 			} else if (_ref === 80) {
 				if (layout.length >= (i + 2 >> 0) && (layout.charCodeAt((i + 1 >> 0)) === 77)) {
-					_tuple$14 = [layout.substring(0, i), 531, layout.substring((i + 2 >> 0))], prefix = _tuple$14[0], std = _tuple$14[1], suffix = _tuple$14[2];
+					_tuple$14 = [layout.substring(0, i), 531, layout.substring((i + 2 >> 0))]; prefix = _tuple$14[0]; std = _tuple$14[1]; suffix = _tuple$14[2];
 					return [prefix, std, suffix];
 				}
 			} else if (_ref === 112) {
 				if (layout.length >= (i + 2 >> 0) && (layout.charCodeAt((i + 1 >> 0)) === 109)) {
-					_tuple$15 = [layout.substring(0, i), 532, layout.substring((i + 2 >> 0))], prefix = _tuple$15[0], std = _tuple$15[1], suffix = _tuple$15[2];
+					_tuple$15 = [layout.substring(0, i), 532, layout.substring((i + 2 >> 0))]; prefix = _tuple$15[0]; std = _tuple$15[1]; suffix = _tuple$15[2];
 					return [prefix, std, suffix];
 				}
 			} else if (_ref === 45) {
 				if (layout.length >= (i + 7 >> 0) && layout.substring(i, (i + 7 >> 0)) === "-070000") {
-					_tuple$16 = [layout.substring(0, i), 27, layout.substring((i + 7 >> 0))], prefix = _tuple$16[0], std = _tuple$16[1], suffix = _tuple$16[2];
+					_tuple$16 = [layout.substring(0, i), 27, layout.substring((i + 7 >> 0))]; prefix = _tuple$16[0]; std = _tuple$16[1]; suffix = _tuple$16[2];
 					return [prefix, std, suffix];
 				}
 				if (layout.length >= (i + 9 >> 0) && layout.substring(i, (i + 9 >> 0)) === "-07:00:00") {
-					_tuple$17 = [layout.substring(0, i), 30, layout.substring((i + 9 >> 0))], prefix = _tuple$17[0], std = _tuple$17[1], suffix = _tuple$17[2];
+					_tuple$17 = [layout.substring(0, i), 30, layout.substring((i + 9 >> 0))]; prefix = _tuple$17[0]; std = _tuple$17[1]; suffix = _tuple$17[2];
 					return [prefix, std, suffix];
 				}
 				if (layout.length >= (i + 5 >> 0) && layout.substring(i, (i + 5 >> 0)) === "-0700") {
-					_tuple$18 = [layout.substring(0, i), 26, layout.substring((i + 5 >> 0))], prefix = _tuple$18[0], std = _tuple$18[1], suffix = _tuple$18[2];
+					_tuple$18 = [layout.substring(0, i), 26, layout.substring((i + 5 >> 0))]; prefix = _tuple$18[0]; std = _tuple$18[1]; suffix = _tuple$18[2];
 					return [prefix, std, suffix];
 				}
 				if (layout.length >= (i + 6 >> 0) && layout.substring(i, (i + 6 >> 0)) === "-07:00") {
-					_tuple$19 = [layout.substring(0, i), 29, layout.substring((i + 6 >> 0))], prefix = _tuple$19[0], std = _tuple$19[1], suffix = _tuple$19[2];
+					_tuple$19 = [layout.substring(0, i), 29, layout.substring((i + 6 >> 0))]; prefix = _tuple$19[0]; std = _tuple$19[1]; suffix = _tuple$19[2];
 					return [prefix, std, suffix];
 				}
 				if (layout.length >= (i + 3 >> 0) && layout.substring(i, (i + 3 >> 0)) === "-07") {
-					_tuple$20 = [layout.substring(0, i), 28, layout.substring((i + 3 >> 0))], prefix = _tuple$20[0], std = _tuple$20[1], suffix = _tuple$20[2];
+					_tuple$20 = [layout.substring(0, i), 28, layout.substring((i + 3 >> 0))]; prefix = _tuple$20[0]; std = _tuple$20[1]; suffix = _tuple$20[2];
 					return [prefix, std, suffix];
 				}
 			} else if (_ref === 90) {
 				if (layout.length >= (i + 7 >> 0) && layout.substring(i, (i + 7 >> 0)) === "Z070000") {
-					_tuple$21 = [layout.substring(0, i), 23, layout.substring((i + 7 >> 0))], prefix = _tuple$21[0], std = _tuple$21[1], suffix = _tuple$21[2];
+					_tuple$21 = [layout.substring(0, i), 23, layout.substring((i + 7 >> 0))]; prefix = _tuple$21[0]; std = _tuple$21[1]; suffix = _tuple$21[2];
 					return [prefix, std, suffix];
 				}
 				if (layout.length >= (i + 9 >> 0) && layout.substring(i, (i + 9 >> 0)) === "Z07:00:00") {
-					_tuple$22 = [layout.substring(0, i), 25, layout.substring((i + 9 >> 0))], prefix = _tuple$22[0], std = _tuple$22[1], suffix = _tuple$22[2];
+					_tuple$22 = [layout.substring(0, i), 25, layout.substring((i + 9 >> 0))]; prefix = _tuple$22[0]; std = _tuple$22[1]; suffix = _tuple$22[2];
 					return [prefix, std, suffix];
 				}
 				if (layout.length >= (i + 5 >> 0) && layout.substring(i, (i + 5 >> 0)) === "Z0700") {
-					_tuple$23 = [layout.substring(0, i), 22, layout.substring((i + 5 >> 0))], prefix = _tuple$23[0], std = _tuple$23[1], suffix = _tuple$23[2];
+					_tuple$23 = [layout.substring(0, i), 22, layout.substring((i + 5 >> 0))]; prefix = _tuple$23[0]; std = _tuple$23[1]; suffix = _tuple$23[2];
 					return [prefix, std, suffix];
 				}
 				if (layout.length >= (i + 6 >> 0) && layout.substring(i, (i + 6 >> 0)) === "Z07:00") {
-					_tuple$24 = [layout.substring(0, i), 24, layout.substring((i + 6 >> 0))], prefix = _tuple$24[0], std = _tuple$24[1], suffix = _tuple$24[2];
+					_tuple$24 = [layout.substring(0, i), 24, layout.substring((i + 6 >> 0))]; prefix = _tuple$24[0]; std = _tuple$24[1]; suffix = _tuple$24[2];
 					return [prefix, std, suffix];
 				}
 			} else if (_ref === 46) {
@@ -4260,14 +4267,14 @@ go$packages["time"] = (function() {
 							std$1 = 32;
 						}
 						std$1 = std$1 | ((((j - ((i + 1 >> 0)) >> 0)) << 16 >> 0));
-						_tuple$25 = [layout.substring(0, i), std$1, layout.substring(j)], prefix = _tuple$25[0], std = _tuple$25[1], suffix = _tuple$25[2];
+						_tuple$25 = [layout.substring(0, i), std$1, layout.substring(j)]; prefix = _tuple$25[0]; std = _tuple$25[1]; suffix = _tuple$25[2];
 						return [prefix, std, suffix];
 					}
 				}
 			}
 			i = i + 1 >> 0;
 		}
-		_tuple$26 = [layout, 0, ""], prefix = _tuple$26[0], std = _tuple$26[1], suffix = _tuple$26[2];
+		_tuple$26 = [layout, 0, ""]; prefix = _tuple$26[0]; std = _tuple$26[1]; suffix = _tuple$26[2];
 		return [prefix, std, suffix];
 	};
 	match = function(s1, s2) {
@@ -4337,16 +4344,16 @@ go$packages["time"] = (function() {
 			neg = s.charCodeAt(0) === 45;
 			s = s.substring(1);
 		}
-		_tuple = leadingInt(s), q = _tuple[0], rem = _tuple[1], err = _tuple[2];
+		_tuple = leadingInt(s); q = _tuple[0]; rem = _tuple[1]; err = _tuple[2];
 		x = ((q.low + ((q.high >> 31) * 4294967296)) >> 0);
 		if (!(go$interfaceIsEqual(err, null)) || !(rem === "")) {
-			_tuple$1 = [0, atoiError], x = _tuple$1[0], err = _tuple$1[1];
+			_tuple$1 = [0, atoiError]; x = _tuple$1[0]; err = _tuple$1[1];
 			return [x, err];
 		}
 		if (neg) {
 			x = -x;
 		}
-		_tuple$2 = [x, null], x = _tuple$2[0], err = _tuple$2[1];
+		_tuple$2 = [x, null]; x = _tuple$2[0]; err = _tuple$2[1];
 		return [x, err];
 	};
 	formatNano = function(b, nanosec, n, trim) {
@@ -4382,7 +4389,7 @@ go$packages["time"] = (function() {
 	Time.Ptr.prototype.Format = function(layout) {
 		var _struct, t, _tuple, name, offset, abs, year, month, day, hour, min, sec, b, buf, max, _tuple$1, prefix, std, suffix, _tuple$2, _tuple$3, _ref, y, _r, y$1, m, s, _r$1, hr, _r$2, hr$1, _q, zone$1, absoffset, _q$1, _r$3, _r$4, _q$2, zone$2, _q$3, _r$5;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
-		_tuple = t.locabs(), name = _tuple[0], offset = _tuple[1], abs = _tuple[2];
+		_tuple = t.locabs(); name = _tuple[0]; offset = _tuple[1]; abs = _tuple[2];
 		year = -1;
 		month = 0;
 		day = 0;
@@ -4398,7 +4405,7 @@ go$packages["time"] = (function() {
 			b = (go$sliceType(Go$Uint8)).make(0, max, function() { return 0; });
 		}
 		while (!(layout === "")) {
-			_tuple$1 = nextStdChunk(layout), prefix = _tuple$1[0], std = _tuple$1[1], suffix = _tuple$1[2];
+			_tuple$1 = nextStdChunk(layout); prefix = _tuple$1[0]; std = _tuple$1[1]; suffix = _tuple$1[2];
 			if (!(prefix === "")) {
 				b = go$appendSlice(b, new (go$sliceType(Go$Uint8))(go$stringToBytes(prefix)));
 			}
@@ -4407,10 +4414,10 @@ go$packages["time"] = (function() {
 			}
 			layout = suffix;
 			if (year < 0 && !(((std & 256) === 0))) {
-				_tuple$2 = absDate(abs, true), year = _tuple$2[0], month = _tuple$2[1], day = _tuple$2[2];
+				_tuple$2 = absDate(abs, true); year = _tuple$2[0]; month = _tuple$2[1]; day = _tuple$2[2];
 			}
 			if (hour < 0 && !(((std & 512) === 0))) {
-				_tuple$3 = absClock(abs), hour = _tuple$3[0], min = _tuple$3[1], sec = _tuple$3[2];
+				_tuple$3 = absClock(abs); hour = _tuple$3[0]; min = _tuple$3[1]; sec = _tuple$3[2];
 			}
 			_ref = std & 65535;
 			switch (0) { default: if (_ref === 274) {
@@ -4562,7 +4569,7 @@ go$packages["time"] = (function() {
 		return 48 <= c && c <= 57;
 	};
 	getnum = function(s, fixed) {
-		var x, x$1;
+		var x;
 		if (!isDigit(s, 0)) {
 			return [0, s, errBad];
 		}
@@ -4572,7 +4579,7 @@ go$packages["time"] = (function() {
 			}
 			return [((s.charCodeAt(0) - 48 << 24 >>> 24) >> 0), s.substring(1), null];
 		}
-		return [(x = ((s.charCodeAt(0) - 48 << 24 >>> 24) >> 0), x$1 = 10, (((x >>> 16 << 16) * x$1 >> 0) + (x << 16 >>> 16) * x$1) >> 0) + ((s.charCodeAt(1) - 48 << 24 >>> 24) >> 0) >> 0, s.substring(2), null];
+		return [(x = ((s.charCodeAt(0) - 48 << 24 >>> 24) >> 0), (((x >>> 16 << 16) * 10 >> 0) + (x << 16 >>> 16) * 10) >> 0) + ((s.charCodeAt(1) - 48 << 24 >>> 24) >> 0) >> 0, s.substring(2), null];
 	};
 	cutspace = function(s) {
 		while (s.length > 0 && (s.charCodeAt(0) === 32)) {
@@ -4602,8 +4609,8 @@ go$packages["time"] = (function() {
 		return parse(layout, value, go$pkg.UTC, go$pkg.Local);
 	};
 	parse = function(layout, value, defaultLocation, local) {
-		var _tuple, alayout, avalue, rangeErrString, amSet, pmSet, year, month, day, hour, min, sec, nsec, z, zoneOffset, zoneName, err, _tuple$1, prefix, std, suffix, stdstr, _tuple$2, p, _ref, _tuple$3, _tuple$4, _tuple$5, _tuple$6, _tuple$7, _tuple$8, _tuple$9, _tuple$10, _tuple$11, _tuple$12, _tuple$13, _tuple$14, _tuple$15, _tuple$16, _tuple$17, n, _tuple$18, _tuple$19, _ref$1, _tuple$20, _ref$2, _tuple$21, sign, hour$1, min$1, seconds, _tuple$22, _tuple$23, _tuple$24, _tuple$25, _tuple$26, _tuple$27, hr, mm, ss, _tuple$28, _tuple$29, _tuple$30, x, x$1, x$2, _ref$3, _tuple$31, n$1, ok, _tuple$32, ndigit, _tuple$33, i, _tuple$34, _struct, _struct$1, t, x$3, x$4, _tuple$35, x$5, name, offset, _struct$2, _struct$3, _struct$4, t$1, _tuple$36, x$6, offset$1, ok$1, x$7, x$8, _struct$5, _tuple$37, x$9, _struct$6, _struct$7;
-		_tuple = [layout, value], alayout = _tuple[0], avalue = _tuple[1];
+		var _tuple, alayout, avalue, rangeErrString, amSet, pmSet, year, month, day, hour, min, sec, nsec, z, zoneOffset, zoneName, err, _tuple$1, prefix, std, suffix, stdstr, _tuple$2, p, _ref, _tuple$3, _tuple$4, _tuple$5, _tuple$6, _tuple$7, _tuple$8, _tuple$9, _tuple$10, _tuple$11, _tuple$12, _tuple$13, _tuple$14, _tuple$15, _tuple$16, _tuple$17, n, _tuple$18, _tuple$19, _ref$1, _tuple$20, _ref$2, _tuple$21, sign, hour$1, min$1, seconds, _tuple$22, _tuple$23, _tuple$24, _tuple$25, _tuple$26, _tuple$27, hr, mm, ss, _tuple$28, _tuple$29, _tuple$30, x, _ref$3, _tuple$31, n$1, ok, _tuple$32, ndigit, _tuple$33, i, _tuple$34, _struct, _struct$1, t, x$1, x$2, _tuple$35, x$3, name, offset, _struct$2, _struct$3, _struct$4, t$1, _tuple$36, x$4, offset$1, ok$1, x$5, x$6, _struct$5, _tuple$37, _struct$6, _struct$7;
+		_tuple = [layout, value]; alayout = _tuple[0]; avalue = _tuple[1];
 		rangeErrString = "";
 		amSet = false;
 		pmSet = false;
@@ -4619,9 +4626,9 @@ go$packages["time"] = (function() {
 		zoneName = "";
 		while (true) {
 			err = null;
-			_tuple$1 = nextStdChunk(layout), prefix = _tuple$1[0], std = _tuple$1[1], suffix = _tuple$1[2];
+			_tuple$1 = nextStdChunk(layout); prefix = _tuple$1[0]; std = _tuple$1[1]; suffix = _tuple$1[2];
 			stdstr = layout.substring(prefix.length, (layout.length - suffix.length >> 0));
-			_tuple$2 = skip(value, prefix), value = _tuple$2[0], err = _tuple$2[1];
+			_tuple$2 = skip(value, prefix); value = _tuple$2[0]; err = _tuple$2[1];
 			if (!(go$interfaceIsEqual(err, null))) {
 				return [new Time.Ptr(new Go$Int64(0, 0), 0, (go$ptrType(Location)).nil), new ParseError.Ptr(alayout, avalue, prefix, value, "")];
 			}
@@ -4639,8 +4646,8 @@ go$packages["time"] = (function() {
 					err = errBad;
 					break;
 				}
-				_tuple$3 = [value.substring(0, 2), value.substring(2)], p = _tuple$3[0], value = _tuple$3[1];
-				_tuple$4 = atoi(p), year = _tuple$4[0], err = _tuple$4[1];
+				_tuple$3 = [value.substring(0, 2), value.substring(2)]; p = _tuple$3[0]; value = _tuple$3[1];
+				_tuple$4 = atoi(p); year = _tuple$4[0]; err = _tuple$4[1];
 				if (year >= 69) {
 					year = year + 1900 >> 0;
 				} else {
@@ -4651,51 +4658,51 @@ go$packages["time"] = (function() {
 					err = errBad;
 					break;
 				}
-				_tuple$5 = [value.substring(0, 4), value.substring(4)], p = _tuple$5[0], value = _tuple$5[1];
-				_tuple$6 = atoi(p), year = _tuple$6[0], err = _tuple$6[1];
+				_tuple$5 = [value.substring(0, 4), value.substring(4)]; p = _tuple$5[0]; value = _tuple$5[1];
+				_tuple$6 = atoi(p); year = _tuple$6[0]; err = _tuple$6[1];
 			} else if (_ref === 258) {
-				_tuple$7 = lookup(shortMonthNames, value), month = _tuple$7[0], value = _tuple$7[1], err = _tuple$7[2];
+				_tuple$7 = lookup(shortMonthNames, value); month = _tuple$7[0]; value = _tuple$7[1]; err = _tuple$7[2];
 			} else if (_ref === 257) {
-				_tuple$8 = lookup(longMonthNames, value), month = _tuple$8[0], value = _tuple$8[1], err = _tuple$8[2];
+				_tuple$8 = lookup(longMonthNames, value); month = _tuple$8[0]; value = _tuple$8[1]; err = _tuple$8[2];
 			} else if (_ref === 259 || _ref === 260) {
-				_tuple$9 = getnum(value, std === 260), month = _tuple$9[0], value = _tuple$9[1], err = _tuple$9[2];
+				_tuple$9 = getnum(value, std === 260); month = _tuple$9[0]; value = _tuple$9[1]; err = _tuple$9[2];
 				if (month <= 0 || 12 < month) {
 					rangeErrString = "month";
 				}
 			} else if (_ref === 262) {
-				_tuple$10 = lookup(shortDayNames, value), value = _tuple$10[1], err = _tuple$10[2];
+				_tuple$10 = lookup(shortDayNames, value); value = _tuple$10[1]; err = _tuple$10[2];
 			} else if (_ref === 261) {
-				_tuple$11 = lookup(longDayNames, value), value = _tuple$11[1], err = _tuple$11[2];
+				_tuple$11 = lookup(longDayNames, value); value = _tuple$11[1]; err = _tuple$11[2];
 			} else if (_ref === 263 || _ref === 264 || _ref === 265) {
 				if ((std === 264) && value.length > 0 && (value.charCodeAt(0) === 32)) {
 					value = value.substring(1);
 				}
-				_tuple$12 = getnum(value, std === 265), day = _tuple$12[0], value = _tuple$12[1], err = _tuple$12[2];
+				_tuple$12 = getnum(value, std === 265); day = _tuple$12[0]; value = _tuple$12[1]; err = _tuple$12[2];
 				if (day < 0 || 31 < day) {
 					rangeErrString = "day";
 				}
 			} else if (_ref === 522) {
-				_tuple$13 = getnum(value, false), hour = _tuple$13[0], value = _tuple$13[1], err = _tuple$13[2];
+				_tuple$13 = getnum(value, false); hour = _tuple$13[0]; value = _tuple$13[1]; err = _tuple$13[2];
 				if (hour < 0 || 24 <= hour) {
 					rangeErrString = "hour";
 				}
 			} else if (_ref === 523 || _ref === 524) {
-				_tuple$14 = getnum(value, std === 524), hour = _tuple$14[0], value = _tuple$14[1], err = _tuple$14[2];
+				_tuple$14 = getnum(value, std === 524); hour = _tuple$14[0]; value = _tuple$14[1]; err = _tuple$14[2];
 				if (hour < 0 || 12 < hour) {
 					rangeErrString = "hour";
 				}
 			} else if (_ref === 525 || _ref === 526) {
-				_tuple$15 = getnum(value, std === 526), min = _tuple$15[0], value = _tuple$15[1], err = _tuple$15[2];
+				_tuple$15 = getnum(value, std === 526); min = _tuple$15[0]; value = _tuple$15[1]; err = _tuple$15[2];
 				if (min < 0 || 60 <= min) {
 					rangeErrString = "minute";
 				}
 			} else if (_ref === 527 || _ref === 528) {
-				_tuple$16 = getnum(value, std === 528), sec = _tuple$16[0], value = _tuple$16[1], err = _tuple$16[2];
+				_tuple$16 = getnum(value, std === 528); sec = _tuple$16[0]; value = _tuple$16[1]; err = _tuple$16[2];
 				if (sec < 0 || 60 <= sec) {
 					rangeErrString = "second";
 				}
 				if (value.length >= 2 && (value.charCodeAt(0) === 46) && isDigit(value, 1)) {
-					_tuple$17 = nextStdChunk(layout), std = _tuple$17[1];
+					_tuple$17 = nextStdChunk(layout); std = _tuple$17[1];
 					std = std & 65535;
 					if ((std === 31) || (std === 32)) {
 						break;
@@ -4704,7 +4711,7 @@ go$packages["time"] = (function() {
 					while (n < value.length && isDigit(value, n)) {
 						n = n + 1 >> 0;
 					}
-					_tuple$18 = parseNanoseconds(value, n), nsec = _tuple$18[0], rangeErrString = _tuple$18[1], err = _tuple$18[2];
+					_tuple$18 = parseNanoseconds(value, n); nsec = _tuple$18[0]; rangeErrString = _tuple$18[1]; err = _tuple$18[2];
 					value = value.substring(n);
 				}
 			} else if (_ref === 531) {
@@ -4712,7 +4719,7 @@ go$packages["time"] = (function() {
 					err = errBad;
 					break;
 				}
-				_tuple$19 = [value.substring(0, 2), value.substring(2)], p = _tuple$19[0], value = _tuple$19[1];
+				_tuple$19 = [value.substring(0, 2), value.substring(2)]; p = _tuple$19[0]; value = _tuple$19[1];
 				_ref$1 = p;
 				if (_ref$1 === "PM") {
 					pmSet = true;
@@ -4726,7 +4733,7 @@ go$packages["time"] = (function() {
 					err = errBad;
 					break;
 				}
-				_tuple$20 = [value.substring(0, 2), value.substring(2)], p = _tuple$20[0], value = _tuple$20[1];
+				_tuple$20 = [value.substring(0, 2), value.substring(2)]; p = _tuple$20[0]; value = _tuple$20[1];
 				_ref$2 = p;
 				if (_ref$2 === "pm") {
 					pmSet = true;
@@ -4741,7 +4748,7 @@ go$packages["time"] = (function() {
 					z = go$pkg.UTC;
 					break;
 				}
-				_tuple$21 = ["", "", "", ""], sign = _tuple$21[0], hour$1 = _tuple$21[1], min$1 = _tuple$21[2], seconds = _tuple$21[3];
+				_tuple$21 = ["", "", "", ""]; sign = _tuple$21[0]; hour$1 = _tuple$21[1]; min$1 = _tuple$21[2]; seconds = _tuple$21[3];
 				if ((std === 24) || (std === 29)) {
 					if (value.length < 6) {
 						err = errBad;
@@ -4751,13 +4758,13 @@ go$packages["time"] = (function() {
 						err = errBad;
 						break;
 					}
-					_tuple$22 = [value.substring(0, 1), value.substring(1, 3), value.substring(4, 6), "00", value.substring(6)], sign = _tuple$22[0], hour$1 = _tuple$22[1], min$1 = _tuple$22[2], seconds = _tuple$22[3], value = _tuple$22[4];
+					_tuple$22 = [value.substring(0, 1), value.substring(1, 3), value.substring(4, 6), "00", value.substring(6)]; sign = _tuple$22[0]; hour$1 = _tuple$22[1]; min$1 = _tuple$22[2]; seconds = _tuple$22[3]; value = _tuple$22[4];
 				} else if (std === 28) {
 					if (value.length < 3) {
 						err = errBad;
 						break;
 					}
-					_tuple$23 = [value.substring(0, 1), value.substring(1, 3), "00", "00", value.substring(3)], sign = _tuple$23[0], hour$1 = _tuple$23[1], min$1 = _tuple$23[2], seconds = _tuple$23[3], value = _tuple$23[4];
+					_tuple$23 = [value.substring(0, 1), value.substring(1, 3), "00", "00", value.substring(3)]; sign = _tuple$23[0]; hour$1 = _tuple$23[1]; min$1 = _tuple$23[2]; seconds = _tuple$23[3]; value = _tuple$23[4];
 				} else if ((std === 25) || (std === 30)) {
 					if (value.length < 9) {
 						err = errBad;
@@ -4767,29 +4774,29 @@ go$packages["time"] = (function() {
 						err = errBad;
 						break;
 					}
-					_tuple$24 = [value.substring(0, 1), value.substring(1, 3), value.substring(4, 6), value.substring(7, 9), value.substring(9)], sign = _tuple$24[0], hour$1 = _tuple$24[1], min$1 = _tuple$24[2], seconds = _tuple$24[3], value = _tuple$24[4];
+					_tuple$24 = [value.substring(0, 1), value.substring(1, 3), value.substring(4, 6), value.substring(7, 9), value.substring(9)]; sign = _tuple$24[0]; hour$1 = _tuple$24[1]; min$1 = _tuple$24[2]; seconds = _tuple$24[3]; value = _tuple$24[4];
 				} else if ((std === 23) || (std === 27)) {
 					if (value.length < 7) {
 						err = errBad;
 						break;
 					}
-					_tuple$25 = [value.substring(0, 1), value.substring(1, 3), value.substring(3, 5), value.substring(5, 7), value.substring(7)], sign = _tuple$25[0], hour$1 = _tuple$25[1], min$1 = _tuple$25[2], seconds = _tuple$25[3], value = _tuple$25[4];
+					_tuple$25 = [value.substring(0, 1), value.substring(1, 3), value.substring(3, 5), value.substring(5, 7), value.substring(7)]; sign = _tuple$25[0]; hour$1 = _tuple$25[1]; min$1 = _tuple$25[2]; seconds = _tuple$25[3]; value = _tuple$25[4];
 				} else {
 					if (value.length < 5) {
 						err = errBad;
 						break;
 					}
-					_tuple$26 = [value.substring(0, 1), value.substring(1, 3), value.substring(3, 5), "00", value.substring(5)], sign = _tuple$26[0], hour$1 = _tuple$26[1], min$1 = _tuple$26[2], seconds = _tuple$26[3], value = _tuple$26[4];
+					_tuple$26 = [value.substring(0, 1), value.substring(1, 3), value.substring(3, 5), "00", value.substring(5)]; sign = _tuple$26[0]; hour$1 = _tuple$26[1]; min$1 = _tuple$26[2]; seconds = _tuple$26[3]; value = _tuple$26[4];
 				}
-				_tuple$27 = [0, 0, 0], hr = _tuple$27[0], mm = _tuple$27[1], ss = _tuple$27[2];
-				_tuple$28 = atoi(hour$1), hr = _tuple$28[0], err = _tuple$28[1];
+				_tuple$27 = [0, 0, 0]; hr = _tuple$27[0]; mm = _tuple$27[1]; ss = _tuple$27[2];
+				_tuple$28 = atoi(hour$1); hr = _tuple$28[0]; err = _tuple$28[1];
 				if (go$interfaceIsEqual(err, null)) {
-					_tuple$29 = atoi(min$1), mm = _tuple$29[0], err = _tuple$29[1];
+					_tuple$29 = atoi(min$1); mm = _tuple$29[0]; err = _tuple$29[1];
 				}
 				if (go$interfaceIsEqual(err, null)) {
-					_tuple$30 = atoi(seconds), ss = _tuple$30[0], err = _tuple$30[1];
+					_tuple$30 = atoi(seconds); ss = _tuple$30[0]; err = _tuple$30[1];
 				}
-				zoneOffset = (x = ((x$1 = 60, (((hr >>> 16 << 16) * x$1 >> 0) + (hr << 16 >>> 16) * x$1) >> 0) + mm >> 0), x$2 = 60, (((x >>> 16 << 16) * x$2 >> 0) + (x << 16 >>> 16) * x$2) >> 0) + ss >> 0;
+				zoneOffset = (x = (((((hr >>> 16 << 16) * 60 >> 0) + (hr << 16 >>> 16) * 60) >> 0) + mm >> 0), (((x >>> 16 << 16) * 60 >> 0) + (x << 16 >>> 16) * 60) >> 0) + ss >> 0;
 				_ref$3 = sign.charCodeAt(0);
 				if (_ref$3 === 43) {
 				} else if (_ref$3 === 45) {
@@ -4803,19 +4810,19 @@ go$packages["time"] = (function() {
 					value = value.substring(3);
 					break;
 				}
-				_tuple$31 = parseTimeZone(value), n$1 = _tuple$31[0], ok = _tuple$31[1];
+				_tuple$31 = parseTimeZone(value); n$1 = _tuple$31[0]; ok = _tuple$31[1];
 				if (!ok) {
 					err = errBad;
 					break;
 				}
-				_tuple$32 = [value.substring(0, n$1), value.substring(n$1)], zoneName = _tuple$32[0], value = _tuple$32[1];
+				_tuple$32 = [value.substring(0, n$1), value.substring(n$1)]; zoneName = _tuple$32[0]; value = _tuple$32[1];
 			} else if (_ref === 31) {
 				ndigit = 1 + ((std >> 16 >> 0)) >> 0;
 				if (value.length < ndigit) {
 					err = errBad;
 					break;
 				}
-				_tuple$33 = parseNanoseconds(value, ndigit), nsec = _tuple$33[0], rangeErrString = _tuple$33[1], err = _tuple$33[2];
+				_tuple$33 = parseNanoseconds(value, ndigit); nsec = _tuple$33[0]; rangeErrString = _tuple$33[1]; err = _tuple$33[2];
 				value = value.substring(ndigit);
 			} else if (_ref === 32) {
 				if (value.length < 2 || !((value.charCodeAt(0) === 46)) || value.charCodeAt(1) < 48 || 57 < value.charCodeAt(1)) {
@@ -4825,7 +4832,7 @@ go$packages["time"] = (function() {
 				while (i < 9 && (i + 1 >> 0) < value.length && 48 <= value.charCodeAt((i + 1 >> 0)) && value.charCodeAt((i + 1 >> 0)) <= 57) {
 					i = i + 1 >> 0;
 				}
-				_tuple$34 = parseNanoseconds(value, 1 + i >> 0), nsec = _tuple$34[0], rangeErrString = _tuple$34[1], err = _tuple$34[2];
+				_tuple$34 = parseNanoseconds(value, 1 + i >> 0); nsec = _tuple$34[0]; rangeErrString = _tuple$34[1]; err = _tuple$34[2];
 				value = value.substring((1 + i >> 0));
 			} }
 			if (!(rangeErrString === "")) {
@@ -4845,8 +4852,8 @@ go$packages["time"] = (function() {
 		}
 		if (!((zoneOffset === -1))) {
 			t = (_struct$1 = Date(year, (month >> 0), day, hour, min, sec, nsec, go$pkg.UTC), new Time.Ptr(_struct$1.sec, _struct$1.nsec, _struct$1.loc));
-			t.sec = (x$3 = t.sec, x$4 = new Go$Int64(0, zoneOffset), new Go$Int64(x$3.high - x$4.high, x$3.low - x$4.low));
-			_tuple$35 = local.lookup((x$5 = t.sec, new Go$Int64(x$5.high + -15, x$5.low + 2288912640))), name = _tuple$35[0], offset = _tuple$35[1];
+			t.sec = (x$1 = t.sec, x$2 = new Go$Int64(0, zoneOffset), new Go$Int64(x$1.high - x$2.high, x$1.low - x$2.low));
+			_tuple$35 = local.lookup((x$3 = t.sec, new Go$Int64(x$3.high + -15, x$3.low + 2288912640))); name = _tuple$35[0]; offset = _tuple$35[1];
 			if ((offset === zoneOffset) && (zoneName === "" || name === zoneName)) {
 				t.loc = local;
 				return [(_struct$2 = t, new Time.Ptr(_struct$2.sec, _struct$2.nsec, _struct$2.loc)), null];
@@ -4856,15 +4863,15 @@ go$packages["time"] = (function() {
 		}
 		if (!(zoneName === "")) {
 			t$1 = (_struct$4 = Date(year, (month >> 0), day, hour, min, sec, nsec, go$pkg.UTC), new Time.Ptr(_struct$4.sec, _struct$4.nsec, _struct$4.loc));
-			_tuple$36 = local.lookupName(zoneName, (x$6 = t$1.sec, new Go$Int64(x$6.high + -15, x$6.low + 2288912640))), offset$1 = _tuple$36[0], ok$1 = _tuple$36[2];
+			_tuple$36 = local.lookupName(zoneName, (x$4 = t$1.sec, new Go$Int64(x$4.high + -15, x$4.low + 2288912640))); offset$1 = _tuple$36[0]; ok$1 = _tuple$36[2];
 			if (ok$1) {
-				t$1.sec = (x$7 = t$1.sec, x$8 = new Go$Int64(0, offset$1), new Go$Int64(x$7.high - x$8.high, x$7.low - x$8.low));
+				t$1.sec = (x$5 = t$1.sec, x$6 = new Go$Int64(0, offset$1), new Go$Int64(x$5.high - x$6.high, x$5.low - x$6.low));
 				t$1.loc = local;
 				return [(_struct$5 = t$1, new Time.Ptr(_struct$5.sec, _struct$5.nsec, _struct$5.loc)), null];
 			}
 			if (zoneName.length > 3 && zoneName.substring(0, 3) === "GMT") {
-				_tuple$37 = atoi(zoneName.substring(3)), offset$1 = _tuple$37[0];
-				offset$1 = (x$9 = 3600, (((offset$1 >>> 16 << 16) * x$9 >> 0) + (offset$1 << 16 >>> 16) * x$9) >> 0);
+				_tuple$37 = atoi(zoneName.substring(3)); offset$1 = _tuple$37[0];
+				offset$1 = (((offset$1 >>> 16 << 16) * 3600 >> 0) + (offset$1 << 16 >>> 16) * 3600) >> 0;
 			}
 			t$1.loc = FixedZone(zoneName, offset$1);
 			return [(_struct$6 = t$1, new Time.Ptr(_struct$6.sec, _struct$6.nsec, _struct$6.loc)), null];
@@ -4876,16 +4883,16 @@ go$packages["time"] = (function() {
 		length = 0;
 		ok = false;
 		if (value.length < 3) {
-			_tuple = [0, false], length = _tuple[0], ok = _tuple[1];
+			_tuple = [0, false]; length = _tuple[0]; ok = _tuple[1];
 			return [length, ok];
 		}
 		if (value.length >= 4 && value.substring(0, 4) === "ChST") {
-			_tuple$1 = [4, true], length = _tuple$1[0], ok = _tuple$1[1];
+			_tuple$1 = [4, true]; length = _tuple$1[0]; ok = _tuple$1[1];
 			return [length, ok];
 		}
 		if (value.substring(0, 3) === "GMT") {
 			length = parseGMT(value);
-			_tuple$2 = [length, true], length = _tuple$2[0], ok = _tuple$2[1];
+			_tuple$2 = [length, true]; length = _tuple$2[0]; ok = _tuple$2[1];
 			return [length, ok];
 		}
 		nUpper = 0;
@@ -4902,23 +4909,23 @@ go$packages["time"] = (function() {
 		}
 		_ref = nUpper;
 		if (_ref === 0 || _ref === 1 || _ref === 2 || _ref === 6) {
-			_tuple$3 = [0, false], length = _tuple$3[0], ok = _tuple$3[1];
+			_tuple$3 = [0, false]; length = _tuple$3[0]; ok = _tuple$3[1];
 			return [length, ok];
 		} else if (_ref === 5) {
 			if (value.charCodeAt(4) === 84) {
-				_tuple$4 = [5, true], length = _tuple$4[0], ok = _tuple$4[1];
+				_tuple$4 = [5, true]; length = _tuple$4[0]; ok = _tuple$4[1];
 				return [length, ok];
 			}
 		} else if (_ref === 4) {
 			if (value.charCodeAt(3) === 84) {
-				_tuple$5 = [4, true], length = _tuple$5[0], ok = _tuple$5[1];
+				_tuple$5 = [4, true]; length = _tuple$5[0]; ok = _tuple$5[1];
 				return [length, ok];
 			}
 		} else if (_ref === 3) {
-			_tuple$6 = [3, true], length = _tuple$6[0], ok = _tuple$6[1];
+			_tuple$6 = [3, true]; length = _tuple$6[0]; ok = _tuple$6[1];
 			return [length, ok];
 		}
-		_tuple$7 = [0, false], length = _tuple$7[0], ok = _tuple$7[1];
+		_tuple$7 = [0, false]; length = _tuple$7[0]; ok = _tuple$7[1];
 		return [length, ok];
 	};
 	parseGMT = function(value) {
@@ -4931,7 +4938,7 @@ go$packages["time"] = (function() {
 		if (!((sign === 45)) && !((sign === 43))) {
 			return 3;
 		}
-		_tuple = leadingInt(value.substring(1)), x = _tuple[0], rem = _tuple[1], err = _tuple[2];
+		_tuple = leadingInt(value.substring(1)); x = _tuple[0]; rem = _tuple[1]; err = _tuple[2];
 		if (!(go$interfaceIsEqual(err, null))) {
 			return 3;
 		}
@@ -4944,7 +4951,7 @@ go$packages["time"] = (function() {
 		return (3 + value.length >> 0) - rem.length >> 0;
 	};
 	parseNanoseconds = function(value, nbytes) {
-		var ns, rangeErrString, err, _tuple, scaleDigits, i, x;
+		var ns, rangeErrString, err, _tuple, scaleDigits, i;
 		ns = 0;
 		rangeErrString = "";
 		err = null;
@@ -4952,7 +4959,7 @@ go$packages["time"] = (function() {
 			err = errBad;
 			return [ns, rangeErrString, err];
 		}
-		_tuple = atoi(value.substring(1, nbytes)), ns = _tuple[0], err = _tuple[1];
+		_tuple = atoi(value.substring(1, nbytes)); ns = _tuple[0]; err = _tuple[1];
 		if (!(go$interfaceIsEqual(err, null))) {
 			return [ns, rangeErrString, err];
 		}
@@ -4963,7 +4970,7 @@ go$packages["time"] = (function() {
 		scaleDigits = 10 - nbytes >> 0;
 		i = 0;
 		while (i < scaleDigits) {
-			ns = (x = 10, (((ns >>> 16 << 16) * x >> 0) + (ns << 16 >>> 16) * x) >> 0);
+			ns = (((ns >>> 16 << 16) * 10 >> 0) + (ns << 16 >>> 16) * 10) >> 0;
 			i = i + 1 >> 0;
 		}
 		return [ns, rangeErrString, err];
@@ -4980,13 +4987,13 @@ go$packages["time"] = (function() {
 				break;
 			}
 			if ((x.high > 214748364 || (x.high === 214748364 && x.low >= 3435973835))) {
-				_tuple = [new Go$Int64(0, 0), "", errLeadingInt], x = _tuple[0], rem = _tuple[1], err = _tuple[2];
+				_tuple = [new Go$Int64(0, 0), "", errLeadingInt]; x = _tuple[0]; rem = _tuple[1]; err = _tuple[2];
 				return [x, rem, err];
 			}
 			x = (x$1 = (x$2 = go$mul64(x, new Go$Int64(0, 10)), x$3 = new Go$Int64(0, c), new Go$Int64(x$2.high + x$3.high, x$2.low + x$3.low)), new Go$Int64(x$1.high - 0, x$1.low - 48));
 			i = i + 1 >> 0;
 		}
-		_tuple$1 = [x, s.substring(i), null], x = _tuple$1[0], rem = _tuple$1[1], err = _tuple$1[2];
+		_tuple$1 = [x, s.substring(i), null]; x = _tuple$1[0]; rem = _tuple$1[1]; err = _tuple$1[2];
 		return [x, rem, err];
 	};
 	Time.Ptr.prototype.After = function(u) {
@@ -5037,7 +5044,7 @@ go$packages["time"] = (function() {
 			if (!(l.cacheZone === (go$ptrType(zone)).nil) && (x$1 = l.cacheStart, (x$1.high < sec.high || (x$1.high === sec.high && x$1.low <= sec.low))) && (x$2 = l.cacheEnd, (sec.high < x$2.high || (sec.high === x$2.high && sec.low < x$2.low)))) {
 				sec = (x$3 = new Go$Int64(0, l.cacheZone.offset), new Go$Int64(sec.high + x$3.high, sec.low + x$3.low));
 			} else {
-				_tuple = l.lookup(sec), offset = _tuple[1];
+				_tuple = l.lookup(sec); offset = _tuple[1];
 				sec = (x$4 = new Go$Int64(0, offset), new Go$Int64(sec.high + x$4.high, sec.low + x$4.low));
 			}
 		}
@@ -5060,7 +5067,7 @@ go$packages["time"] = (function() {
 				name = l.cacheZone.name;
 				offset = l.cacheZone.offset;
 			} else {
-				_tuple = l.lookup(sec), name = _tuple[0], offset = _tuple[1];
+				_tuple = l.lookup(sec); name = _tuple[0]; offset = _tuple[1];
 			}
 			sec = (x$3 = new Go$Int64(0, offset), new Go$Int64(sec.high + x$3.high, sec.low + x$3.low));
 		} else {
@@ -5076,28 +5083,28 @@ go$packages["time"] = (function() {
 		month = 0;
 		day = 0;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
-		_tuple = t.date(true), year = _tuple[0], month = _tuple[1], day = _tuple[2];
+		_tuple = t.date(true); year = _tuple[0]; month = _tuple[1]; day = _tuple[2];
 		return [year, month, day];
 	};
 	Time.prototype.Date = function() { return this.go$val.Date(); };
 	Time.Ptr.prototype.Year = function() {
 		var _struct, t, _tuple, year;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
-		_tuple = t.date(false), year = _tuple[0];
+		_tuple = t.date(false); year = _tuple[0];
 		return year;
 	};
 	Time.prototype.Year = function() { return this.go$val.Year(); };
 	Time.Ptr.prototype.Month = function() {
 		var _struct, t, _tuple, month;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
-		_tuple = t.date(true), month = _tuple[1];
+		_tuple = t.date(true); month = _tuple[1];
 		return month;
 	};
 	Time.prototype.Month = function() { return this.go$val.Month(); };
 	Time.Ptr.prototype.Day = function() {
 		var _struct, t, _tuple, day;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
-		_tuple = t.date(true), day = _tuple[2];
+		_tuple = t.date(true); day = _tuple[2];
 		return day;
 	};
 	Time.prototype.Day = function() { return this.go$val.Day(); };
@@ -5117,7 +5124,7 @@ go$packages["time"] = (function() {
 		year = 0;
 		week = 0;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
-		_tuple = t.date(true), year = _tuple[0], month = _tuple[1], day = _tuple[2], yday = _tuple[3];
+		_tuple = t.date(true); year = _tuple[0]; month = _tuple[1]; day = _tuple[2]; yday = _tuple[3];
 		wday = (_r = ((t.Weekday() + 6 >> 0) >> 0) % 7, _r === _r ? _r : go$throwRuntimeError("integer divide by zero"));
 		week = (_q = (((yday - wday >> 0) + 7 >> 0)) / 7, (_q === _q && _q !== 1/0 && _q !== -1/0) ? _q >> 0 : go$throwRuntimeError("integer divide by zero"));
 		jan1wday = (_r$1 = (((wday - yday >> 0) + 371 >> 0)) % 7, _r$1 === _r$1 ? _r$1 : go$throwRuntimeError("integer divide by zero"));
@@ -5147,7 +5154,7 @@ go$packages["time"] = (function() {
 		min = 0;
 		sec = 0;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
-		_tuple = absClock(t.abs()), hour = _tuple[0], min = _tuple[1], sec = _tuple[2];
+		_tuple = absClock(t.abs()); hour = _tuple[0]; min = _tuple[1]; sec = _tuple[2];
 		return [hour, min, sec];
 	};
 	Time.prototype.Clock = function() { return this.go$val.Clock(); };
@@ -5190,7 +5197,7 @@ go$packages["time"] = (function() {
 	Time.Ptr.prototype.YearDay = function() {
 		var _struct, t, _tuple, yday;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
-		_tuple = t.date(false), yday = _tuple[3];
+		_tuple = t.date(false); yday = _tuple[3];
 		return yday + 1 >> 0;
 	};
 	Time.prototype.YearDay = function() { return this.go$val.YearDay(); };
@@ -5222,12 +5229,12 @@ go$packages["time"] = (function() {
 			w = w - 2 >> 0;
 			buf[w] = unit;
 			buf[w + 1 >> 0] = 115;
-			_tuple = fmtFrac(go$subslice(new (go$sliceType(Go$Uint8))(buf), 0, w), u, prec), w = _tuple[0], u = _tuple[1];
+			_tuple = fmtFrac(go$subslice(new (go$sliceType(Go$Uint8))(buf), 0, w), u, prec); w = _tuple[0]; u = _tuple[1];
 			w = fmtInt(go$subslice(new (go$sliceType(Go$Uint8))(buf), 0, w), u);
 		} else {
 			w = w - 1 >> 0;
 			buf[w] = 115;
-			_tuple$1 = fmtFrac(go$subslice(new (go$sliceType(Go$Uint8))(buf), 0, w), u, 9), w = _tuple$1[0], u = _tuple$1[1];
+			_tuple$1 = fmtFrac(go$subslice(new (go$sliceType(Go$Uint8))(buf), 0, w), u, 9); w = _tuple$1[0]; u = _tuple$1[1];
 			w = fmtInt(go$subslice(new (go$sliceType(Go$Uint8))(buf), 0, w), go$div64(u, new Go$Uint64(0, 60), true));
 			u = go$div64(u, new Go$Uint64(0, 60), false);
 			if ((u.high > 0 || (u.high === 0 && u.low > 0))) {
@@ -5261,16 +5268,16 @@ go$packages["time"] = (function() {
 			print = print || !((digit.high === 0 && digit.low === 0));
 			if (print) {
 				w = w - 1 >> 0;
-				_slice = buf, _index = w, (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = (digit.low << 24 >>> 24) + 48 << 24 >>> 24) : go$throwRuntimeError("index out of range");
+				_slice = buf; _index = w;(_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = (digit.low << 24 >>> 24) + 48 << 24 >>> 24) : go$throwRuntimeError("index out of range");
 			}
 			v = go$div64(v, new Go$Uint64(0, 10), false);
 			i = i + 1 >> 0;
 		}
 		if (print) {
 			w = w - 1 >> 0;
-			_slice$1 = buf, _index$1 = w, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = 46) : go$throwRuntimeError("index out of range");
+			_slice$1 = buf; _index$1 = w;(_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = 46) : go$throwRuntimeError("index out of range");
 		}
-		_tuple = [w, v], nw = _tuple[0], nv = _tuple[1];
+		_tuple = [w, v]; nw = _tuple[0]; nv = _tuple[1];
 		return [nw, nv];
 	};
 	fmtInt = function(buf, v) {
@@ -5278,11 +5285,11 @@ go$packages["time"] = (function() {
 		w = buf.length;
 		if ((v.high === 0 && v.low === 0)) {
 			w = w - 1 >> 0;
-			_slice = buf, _index = w, (_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = 48) : go$throwRuntimeError("index out of range");
+			_slice = buf; _index = w;(_index >= 0 && _index < _slice.length) ? (_slice.array[_slice.offset + _index] = 48) : go$throwRuntimeError("index out of range");
 		} else {
 			while ((v.high > 0 || (v.high === 0 && v.low > 0))) {
 				w = w - 1 >> 0;
-				_slice$1 = buf, _index$1 = w, (_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = (go$div64(v, new Go$Uint64(0, 10), true).low << 24 >>> 24) + 48 << 24 >>> 24) : go$throwRuntimeError("index out of range");
+				_slice$1 = buf; _index$1 = w;(_index$1 >= 0 && _index$1 < _slice$1.length) ? (_slice$1.array[_slice$1.offset + _index$1] = (go$div64(v, new Go$Uint64(0, 10), true).low << 24 >>> 24) + 48 << 24 >>> 24) : go$throwRuntimeError("index out of range");
 				v = go$div64(v, new Go$Uint64(0, 10), false);
 			}
 		}
@@ -5350,8 +5357,8 @@ go$packages["time"] = (function() {
 	Time.Ptr.prototype.AddDate = function(years, months$1, days$1) {
 		var _struct, t, _tuple, year, month, day, _tuple$1, hour, min, sec, _struct$1;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
-		_tuple = t.Date(), year = _tuple[0], month = _tuple[1], day = _tuple[2];
-		_tuple$1 = t.Clock(), hour = _tuple$1[0], min = _tuple$1[1], sec = _tuple$1[2];
+		_tuple = t.Date(); year = _tuple[0]; month = _tuple[1]; day = _tuple[2];
+		_tuple$1 = t.Clock(); hour = _tuple$1[0]; min = _tuple$1[1]; sec = _tuple$1[2];
 		return (_struct$1 = Date(year + years >> 0, month + (months$1 >> 0) >> 0, day + days$1 >> 0, hour, min, sec, (t.nsec >> 0), t.loc), new Time.Ptr(_struct$1.sec, _struct$1.nsec, _struct$1.loc));
 	};
 	Time.prototype.AddDate = function(years, months$1, days$1) { return this.go$val.AddDate(years, months$1, days$1); };
@@ -5362,7 +5369,7 @@ go$packages["time"] = (function() {
 		day = 0;
 		yday = 0;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
-		_tuple = absDate(t.abs(), full), year = _tuple[0], month = _tuple[1], day = _tuple[2], yday = _tuple[3];
+		_tuple = absDate(t.abs(), full); year = _tuple[0]; month = _tuple[1]; day = _tuple[2]; yday = _tuple[3];
 		return [year, month, day, yday];
 	};
 	Time.prototype.date = function(full) { return this.go$val.date(full); };
@@ -5424,7 +5431,7 @@ go$packages["time"] = (function() {
 	now = go$now;
 	Now = go$pkg.Now = function() {
 		var _tuple, sec, nsec;
-		_tuple = now(), sec = _tuple[0], nsec = _tuple[1];
+		_tuple = now(); sec = _tuple[0]; nsec = _tuple[1];
 		return new Time.Ptr(new Go$Int64(sec.high + 14, sec.low + 2006054656), (nsec >>> 0), go$pkg.Local);
 	};
 	Time.Ptr.prototype.UTC = function() {
@@ -5466,7 +5473,7 @@ go$packages["time"] = (function() {
 		name = "";
 		offset = 0;
 		t = (_struct = this, new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
-		_tuple = t.loc.lookup((x = t.sec, new Go$Int64(x.high + -15, x.low + 2288912640))), name = _tuple[0], offset = _tuple[1];
+		_tuple = t.loc.lookup((x = t.sec, new Go$Int64(x.high + -15, x.low + 2288912640))); name = _tuple[0]; offset = _tuple[1];
 		return [name, offset];
 	};
 	Time.prototype.Zone = function() { return this.go$val.Zone(); };
@@ -5489,7 +5496,7 @@ go$packages["time"] = (function() {
 		if (t.Location() === utcLoc) {
 			offsetMin = -1;
 		} else {
-			_tuple = t.Zone(), offset = _tuple[1];
+			_tuple = t.Zone(); offset = _tuple[1];
 			if (!(((_r = offset % 60, _r === _r ? _r : go$throwRuntimeError("integer divide by zero")) === 0))) {
 				return [(go$sliceType(Go$Uint8)).nil, errors.New("Time.MarshalBinary: zone offset has fractional minute")];
 			}
@@ -5504,7 +5511,7 @@ go$packages["time"] = (function() {
 	};
 	Time.prototype.MarshalBinary = function() { return this.go$val.MarshalBinary(); };
 	Time.Ptr.prototype.UnmarshalBinary = function(data$1) {
-		var t, buf, _slice, _index, x, x$1, x$2, x$3, x$4, x$5, x$6, _slice$1, _index$1, x$7, _slice$2, _index$2, x$8, _slice$3, _index$3, x$9, _slice$4, _index$4, x$10, _slice$5, _index$5, x$11, _slice$6, _index$6, x$12, _slice$7, _index$7, x$13, _slice$8, _index$8, _slice$9, _index$9, _slice$10, _index$10, _slice$11, _index$11, _slice$12, _index$12, x$14, _slice$13, _index$13, _slice$14, _index$14, x$15, offset, _tuple, x$16, localoff;
+		var t, buf, _slice, _index, x, x$1, x$2, x$3, x$4, x$5, x$6, _slice$1, _index$1, x$7, _slice$2, _index$2, x$8, _slice$3, _index$3, x$9, _slice$4, _index$4, x$10, _slice$5, _index$5, x$11, _slice$6, _index$6, x$12, _slice$7, _index$7, x$13, _slice$8, _index$8, _slice$9, _index$9, _slice$10, _index$10, _slice$11, _index$11, _slice$12, _index$12, x$14, _slice$13, _index$13, _slice$14, _index$14, offset, _tuple, x$15, localoff;
 		t = this;
 		buf = data$1;
 		if (buf.length === 0) {
@@ -5521,11 +5528,11 @@ go$packages["time"] = (function() {
 		buf = go$subslice(buf, 8);
 		t.nsec = ((((((_slice$9 = buf, _index$9 = 3, (_index$9 >= 0 && _index$9 < _slice$9.length) ? _slice$9.array[_slice$9.offset + _index$9] : go$throwRuntimeError("index out of range")) >> 0) | (((_slice$10 = buf, _index$10 = 2, (_index$10 >= 0 && _index$10 < _slice$10.length) ? _slice$10.array[_slice$10.offset + _index$10] : go$throwRuntimeError("index out of range")) >> 0) << 8 >> 0)) | (((_slice$11 = buf, _index$11 = 1, (_index$11 >= 0 && _index$11 < _slice$11.length) ? _slice$11.array[_slice$11.offset + _index$11] : go$throwRuntimeError("index out of range")) >> 0) << 16 >> 0)) | (((_slice$12 = buf, _index$12 = 0, (_index$12 >= 0 && _index$12 < _slice$12.length) ? _slice$12.array[_slice$12.offset + _index$12] : go$throwRuntimeError("index out of range")) >> 0) << 24 >> 0)) >>> 0);
 		buf = go$subslice(buf, 4);
-		offset = (x$14 = ((((_slice$13 = buf, _index$13 = 1, (_index$13 >= 0 && _index$13 < _slice$13.length) ? _slice$13.array[_slice$13.offset + _index$13] : go$throwRuntimeError("index out of range")) << 16 >> 16) | (((_slice$14 = buf, _index$14 = 0, (_index$14 >= 0 && _index$14 < _slice$14.length) ? _slice$14.array[_slice$14.offset + _index$14] : go$throwRuntimeError("index out of range")) << 16 >> 16) << 8 << 16 >> 16)) >> 0), x$15 = 60, (((x$14 >>> 16 << 16) * x$15 >> 0) + (x$14 << 16 >>> 16) * x$15) >> 0);
+		offset = (x$14 = ((((_slice$13 = buf, _index$13 = 1, (_index$13 >= 0 && _index$13 < _slice$13.length) ? _slice$13.array[_slice$13.offset + _index$13] : go$throwRuntimeError("index out of range")) << 16 >> 16) | (((_slice$14 = buf, _index$14 = 0, (_index$14 >= 0 && _index$14 < _slice$14.length) ? _slice$14.array[_slice$14.offset + _index$14] : go$throwRuntimeError("index out of range")) << 16 >> 16) << 8 << 16 >> 16)) >> 0), (((x$14 >>> 16 << 16) * 60 >> 0) + (x$14 << 16 >>> 16) * 60) >> 0);
 		if (offset === -60) {
 			t.loc = utcLoc;
 		} else {
-			_tuple = go$pkg.Local.lookup((x$16 = t.sec, new Go$Int64(x$16.high + -15, x$16.low + 2288912640))), localoff = _tuple[1];
+			_tuple = go$pkg.Local.lookup((x$15 = t.sec, new Go$Int64(x$15.high + -15, x$15.low + 2288912640))); localoff = _tuple[1];
 			if (offset === localoff) {
 				t.loc = go$pkg.Local;
 			} else {
@@ -5561,7 +5568,7 @@ go$packages["time"] = (function() {
 		var err, t, _tuple, _struct, l, r;
 		err = null;
 		t = this;
-		_tuple = Parse("\"2006-01-02T15:04:05Z07:00\"", go$bytesToString(data$1)), l = t, r = (_struct = _tuple[0], new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc)), l.sec = r.sec, l.nsec = r.nsec, l.loc = r.loc, err = _tuple[1];
+		_tuple = Parse("\"2006-01-02T15:04:05Z07:00\"", go$bytesToString(data$1)); l = t; r = (_struct = _tuple[0], new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc)); l.sec = r.sec; l.nsec = r.nsec; l.loc = r.loc; err = _tuple[1];
 		return err;
 	};
 	Time.prototype.UnmarshalJSON = function(data$1) { return this.go$val.UnmarshalJSON(data$1); };
@@ -5579,7 +5586,7 @@ go$packages["time"] = (function() {
 		var err, t, _tuple, _struct, l, r;
 		err = null;
 		t = this;
-		_tuple = Parse("2006-01-02T15:04:05Z07:00", go$bytesToString(data$1)), l = t, r = (_struct = _tuple[0], new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc)), l.sec = r.sec, l.nsec = r.nsec, l.loc = r.loc, err = _tuple[1];
+		_tuple = Parse("2006-01-02T15:04:05Z07:00", go$bytesToString(data$1)); l = t; r = (_struct = _tuple[0], new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc)); l.sec = r.sec; l.nsec = r.nsec; l.loc = r.loc; err = _tuple[1];
 		return err;
 	};
 	Time.prototype.UnmarshalText = function(data$1) { return this.go$val.UnmarshalText(data$1); };
@@ -5601,7 +5608,7 @@ go$packages["time"] = (function() {
 			hi = hi + (n$1) >> 0;
 			lo = lo - (((((n$1 >>> 16 << 16) * base >> 0) + (n$1 << 16 >>> 16) * base) >> 0)) >> 0;
 		}
-		_tuple = [hi, lo], nhi = _tuple[0], nlo = _tuple[1];
+		_tuple = [hi, lo]; nhi = _tuple[0]; nlo = _tuple[1];
 		return [nhi, nlo];
 	};
 	Date = go$pkg.Date = function(year, month, day, hour, min, sec, nsec, loc) {
@@ -5610,12 +5617,12 @@ go$packages["time"] = (function() {
 			throw go$panic(new Go$String("time: missing Location in call to Date"));
 		}
 		m = (month >> 0) - 1 >> 0;
-		_tuple = norm(year, m, 12), year = _tuple[0], m = _tuple[1];
+		_tuple = norm(year, m, 12); year = _tuple[0]; m = _tuple[1];
 		month = (m >> 0) + 1 >> 0;
-		_tuple$1 = norm(sec, nsec, 1000000000), sec = _tuple$1[0], nsec = _tuple$1[1];
-		_tuple$2 = norm(min, sec, 60), min = _tuple$2[0], sec = _tuple$2[1];
-		_tuple$3 = norm(hour, min, 60), hour = _tuple$3[0], min = _tuple$3[1];
-		_tuple$4 = norm(day, hour, 24), day = _tuple$4[0], hour = _tuple$4[1];
+		_tuple$1 = norm(sec, nsec, 1000000000); sec = _tuple$1[0]; nsec = _tuple$1[1];
+		_tuple$2 = norm(min, sec, 60); min = _tuple$2[0]; sec = _tuple$2[1];
+		_tuple$3 = norm(hour, min, 60); hour = _tuple$3[0]; min = _tuple$3[1];
+		_tuple$4 = norm(day, hour, 24); day = _tuple$4[0]; hour = _tuple$4[1];
 		y = (x = (x$1 = new Go$Int64(0, year), new Go$Int64(x$1.high - -69, x$1.low - 4075721025)), new Go$Uint64(x.high, x.low));
 		n = go$div64(y, new Go$Uint64(0, 400), false);
 		y = (x$2 = go$mul64(new Go$Uint64(0, 400), n), new Go$Uint64(y.high - x$2.high, y.low - x$2.low));
@@ -5636,13 +5643,13 @@ go$packages["time"] = (function() {
 		abs = go$mul64(d, new Go$Uint64(0, 86400));
 		abs = (x$10 = new Go$Uint64(0, ((((((hour >>> 16 << 16) * 3600 >> 0) + (hour << 16 >>> 16) * 3600) >> 0) + ((((min >>> 16 << 16) * 60 >> 0) + (min << 16 >>> 16) * 60) >> 0) >> 0) + sec >> 0)), new Go$Uint64(abs.high + x$10.high, abs.low + x$10.low));
 		unix = (x$11 = new Go$Int64(abs.high, abs.low), new Go$Int64(x$11.high + -2147483647, x$11.low + 3844486912));
-		_tuple$5 = loc.lookup(unix), offset = _tuple$5[1], start = _tuple$5[3], end = _tuple$5[4];
+		_tuple$5 = loc.lookup(unix); offset = _tuple$5[1]; start = _tuple$5[3]; end = _tuple$5[4];
 		if (!((offset === 0))) {
 			utc = (x$12 = new Go$Int64(0, offset), new Go$Int64(unix.high - x$12.high, unix.low - x$12.low));
 			if ((utc.high < start.high || (utc.high === start.high && utc.low < start.low))) {
-				_tuple$6 = loc.lookup(new Go$Int64(start.high - 0, start.low - 1)), offset = _tuple$6[1];
+				_tuple$6 = loc.lookup(new Go$Int64(start.high - 0, start.low - 1)); offset = _tuple$6[1];
 			} else if ((utc.high > end.high || (utc.high === end.high && utc.low >= end.low))) {
-				_tuple$7 = loc.lookup(end), offset = _tuple$7[1];
+				_tuple$7 = loc.lookup(end); offset = _tuple$7[1];
 			}
 			unix = (x$13 = new Go$Int64(0, offset), new Go$Int64(unix.high - x$13.high, unix.low - x$13.low));
 		}
@@ -5654,7 +5661,7 @@ go$packages["time"] = (function() {
 		if ((d.high < 0 || (d.high === 0 && d.low <= 0))) {
 			return (_struct$1 = t, new Time.Ptr(_struct$1.sec, _struct$1.nsec, _struct$1.loc));
 		}
-		_tuple = div((_struct$2 = t, new Time.Ptr(_struct$2.sec, _struct$2.nsec, _struct$2.loc)), d), r = _tuple[1];
+		_tuple = div((_struct$2 = t, new Time.Ptr(_struct$2.sec, _struct$2.nsec, _struct$2.loc)), d); r = _tuple[1];
 		return (_struct$3 = t.Add(new Duration(-r.high, -r.low)), new Time.Ptr(_struct$3.sec, _struct$3.nsec, _struct$3.loc));
 	};
 	Time.prototype.Truncate = function(d) { return this.go$val.Truncate(d); };
@@ -5664,7 +5671,7 @@ go$packages["time"] = (function() {
 		if ((d.high < 0 || (d.high === 0 && d.low <= 0))) {
 			return (_struct$1 = t, new Time.Ptr(_struct$1.sec, _struct$1.nsec, _struct$1.loc));
 		}
-		_tuple = div((_struct$2 = t, new Time.Ptr(_struct$2.sec, _struct$2.nsec, _struct$2.loc)), d), r = _tuple[1];
+		_tuple = div((_struct$2 = t, new Time.Ptr(_struct$2.sec, _struct$2.nsec, _struct$2.loc)), d); r = _tuple[1];
 		if ((x = new Duration(r.high + r.high, r.low + r.low), (x.high < d.high || (x.high === d.high && x.low < d.low)))) {
 			return (_struct$3 = t.Add(new Duration(-r.high, -r.low)), new Time.Ptr(_struct$3.sec, _struct$3.nsec, _struct$3.loc));
 		}
@@ -5699,11 +5706,11 @@ go$packages["time"] = (function() {
 			u1 = go$shiftRightUint64(tmp, 32);
 			u0 = go$shiftLeft64(tmp, 32);
 			tmp = go$mul64(new Go$Uint64(sec.high & 0, (sec.low & 4294967295) >>> 0), new Go$Uint64(0, 1000000000));
-			_tuple = [u0, new Go$Uint64(u0.high + tmp.high, u0.low + tmp.low)], u0x = _tuple[0], u0 = _tuple[1];
+			_tuple = [u0, new Go$Uint64(u0.high + tmp.high, u0.low + tmp.low)]; u0x = _tuple[0]; u0 = _tuple[1];
 			if ((u0.high < u0x.high || (u0.high === u0x.high && u0.low < u0x.low))) {
 				u1 = new Go$Uint64(u1.high + 0, u1.low + 1);
 			}
-			_tuple$1 = [u0, (x$11 = new Go$Uint64(0, nsec), new Go$Uint64(u0.high + x$11.high, u0.low + x$11.low))], u0x = _tuple$1[0], u0 = _tuple$1[1];
+			_tuple$1 = [u0, (x$11 = new Go$Uint64(0, nsec), new Go$Uint64(u0.high + x$11.high, u0.low + x$11.low))]; u0x = _tuple$1[0]; u0 = _tuple$1[1];
 			if ((u0.high < u0x.high || (u0.high === u0x.high && u0.low < u0x.low))) {
 				u1 = new Go$Uint64(u1.high + 0, u1.low + 1);
 			}
@@ -5716,7 +5723,7 @@ go$packages["time"] = (function() {
 				qmod2 = 0;
 				if ((u1.high > d1$1.high || (u1.high === d1$1.high && u1.low > d1$1.low)) || (u1.high === d1$1.high && u1.low === d1$1.low) && (u0.high > d0.high || (u0.high === d0.high && u0.low >= d0.low))) {
 					qmod2 = 1;
-					_tuple$2 = [u0, new Go$Uint64(u0.high - d0.high, u0.low - d0.low)], u0x = _tuple$2[0], u0 = _tuple$2[1];
+					_tuple$2 = [u0, new Go$Uint64(u0.high - d0.high, u0.low - d0.low)]; u0x = _tuple$2[0]; u0 = _tuple$2[1];
 					if ((u0.high > u0x.high || (u0.high === u0x.high && u0.low > u0x.low))) {
 						u1 = new Go$Uint64(u1.high - 0, u1.low - 1);
 					}
@@ -5822,9 +5829,9 @@ go$packages["time"] = (function() {
 			i = _i;
 			zone$1 = (_slice = l.zone, _index = i, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
 			if (zone$1.name === name) {
-				_tuple = l.lookup((x = new Go$Int64(0, zone$1.offset), new Go$Int64(unix.high - x.high, unix.low - x.low))), nam = _tuple[0], offset$1 = _tuple[1], isDST$1 = _tuple[2];
+				_tuple = l.lookup((x = new Go$Int64(0, zone$1.offset), new Go$Int64(unix.high - x.high, unix.low - x.low))); nam = _tuple[0]; offset$1 = _tuple[1]; isDST$1 = _tuple[2];
 				if (nam === zone$1.name) {
-					_tuple$1 = [offset$1, isDST$1, true], offset = _tuple$1[0], isDST = _tuple$1[1], ok = _tuple$1[2];
+					_tuple$1 = [offset$1, isDST$1, true]; offset = _tuple$1[0]; isDST = _tuple$1[1]; ok = _tuple$1[2];
 					return [offset, isDST, ok];
 				}
 			}
@@ -5836,7 +5843,7 @@ go$packages["time"] = (function() {
 			i$1 = _i$1;
 			zone$2 = (_slice$1 = l.zone, _index$1 = i$1, (_index$1 >= 0 && _index$1 < _slice$1.length) ? _slice$1.array[_slice$1.offset + _index$1] : go$throwRuntimeError("index out of range"));
 			if (zone$2.name === name) {
-				_tuple$2 = [zone$2.offset, zone$2.isDST, true], offset = _tuple$2[0], isDST = _tuple$2[1], ok = _tuple$2[2];
+				_tuple$2 = [zone$2.offset, zone$2.isDST, true]; offset = _tuple$2[0]; isDST = _tuple$2[1]; ok = _tuple$2[2];
 				return [offset, isDST, ok];
 			}
 			_i$1++;
@@ -5849,8 +5856,8 @@ go$packages["time"] = (function() {
 		buf = go$makeNativeArray("Uint16", 50, function() { return 0; });
 		typ = 0;
 		n = 100;
-		_tuple = syscall.UTF16PtrFromString(kname), p = _tuple[0];
-		err = syscall.RegQueryValueEx(kh, p, (go$ptrType(Go$Uint32)).nil, new (go$ptrType(Go$Uint32))(function() { return typ; }, function(v) { typ = v; }), go$sliceToArray(new (go$sliceType(Go$Uint8))(buf)), new (go$ptrType(Go$Uint32))(function() { return n; }, function(v$1) { n = v$1; }));
+		_tuple = syscall.UTF16PtrFromString(kname); p = _tuple[0];
+		err = syscall.RegQueryValueEx(kh, p, (go$ptrType(Go$Uint32)).nil, new (go$ptrType(Go$Uint32))(function() { return typ; }, function(v) { typ = v;; }), go$sliceToArray(new (go$sliceType(Go$Uint8))(buf)), new (go$ptrType(Go$Uint32))(function() { return n; }, function(v$1) { n = v$1;; }));
 		if (!(go$interfaceIsEqual(err, null))) {
 			return ["", err];
 		}
@@ -5866,32 +5873,32 @@ go$packages["time"] = (function() {
 		var go$deferred = [];
 		try {
 			h = 0;
-			_tuple = syscall.UTF16PtrFromString(kname), p = _tuple[0];
-			err = syscall.RegOpenKeyEx(zones, p, 0, 131097, new (go$ptrType(syscall.Handle))(function() { return h; }, function(v) { h = v; }));
+			_tuple = syscall.UTF16PtrFromString(kname); p = _tuple[0];
+			err = syscall.RegOpenKeyEx(zones, p, 0, 131097, new (go$ptrType(syscall.Handle))(function() { return h; }, function(v) { h = v;; }));
 			if (!(go$interfaceIsEqual(err, null))) {
-				_tuple$1 = [false, err], matched = _tuple$1[0], err2 = _tuple$1[1];
+				_tuple$1 = [false, err]; matched = _tuple$1[0]; err2 = _tuple$1[1];
 				return [matched, err2];
 			}
 			go$deferred.push({ recv: syscall, method: "RegCloseKey", args: [h] });
-			_tuple$2 = getKeyValue(h, "Std"), s = _tuple$2[0], err$1 = _tuple$2[1];
+			_tuple$2 = getKeyValue(h, "Std"); s = _tuple$2[0]; err$1 = _tuple$2[1];
 			if (!(go$interfaceIsEqual(err$1, null))) {
-				_tuple$3 = [false, err$1], matched = _tuple$3[0], err2 = _tuple$3[1];
+				_tuple$3 = [false, err$1]; matched = _tuple$3[0]; err2 = _tuple$3[1];
 				return [matched, err2];
 			}
 			if (!(s === stdname)) {
-				_tuple$4 = [false, null], matched = _tuple$4[0], err2 = _tuple$4[1];
+				_tuple$4 = [false, null]; matched = _tuple$4[0]; err2 = _tuple$4[1];
 				return [matched, err2];
 			}
-			_tuple$5 = getKeyValue(h, "Dlt"), s = _tuple$5[0], err$1 = _tuple$5[1];
+			_tuple$5 = getKeyValue(h, "Dlt"); s = _tuple$5[0]; err$1 = _tuple$5[1];
 			if (!(go$interfaceIsEqual(err$1, null))) {
-				_tuple$6 = [false, err$1], matched = _tuple$6[0], err2 = _tuple$6[1];
+				_tuple$6 = [false, err$1]; matched = _tuple$6[0]; err2 = _tuple$6[1];
 				return [matched, err2];
 			}
 			if (!(s === dstname)) {
-				_tuple$7 = [false, null], matched = _tuple$7[0], err2 = _tuple$7[1];
+				_tuple$7 = [false, null]; matched = _tuple$7[0]; err2 = _tuple$7[1];
 				return [matched, err2];
 			}
-			_tuple$8 = [true, null], matched = _tuple$8[0], err2 = _tuple$8[1];
+			_tuple$8 = [true, null]; matched = _tuple$8[0]; err2 = _tuple$8[1];
 			return [matched, err2];
 		} catch(go$err) {
 			go$pushErr(go$err);
@@ -5905,14 +5912,14 @@ go$packages["time"] = (function() {
 		var go$deferred = [];
 		try {
 			zones = 0;
-			_tuple = syscall.UTF16PtrFromString("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Time Zones"), p = _tuple[0];
-			err = syscall.RegOpenKeyEx(2147483650, p, 0, 131097, new (go$ptrType(syscall.Handle))(function() { return zones; }, function(v) { zones = v; }));
+			_tuple = syscall.UTF16PtrFromString("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Time Zones"); p = _tuple[0];
+			err = syscall.RegOpenKeyEx(2147483650, p, 0, 131097, new (go$ptrType(syscall.Handle))(function() { return zones; }, function(v) { zones = v;; }));
 			if (!(go$interfaceIsEqual(err, null))) {
 				return ["", err];
 			}
 			go$deferred.push({ recv: syscall, method: "RegCloseKey", args: [zones] });
 			count = 0;
-			err$1 = syscall.RegQueryInfoKey(zones, (go$ptrType(Go$Uint16)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, new (go$ptrType(Go$Uint32))(function() { return count; }, function(v$1) { count = v$1; }), (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(syscall.Filetime)).nil);
+			err$1 = syscall.RegQueryInfoKey(zones, (go$ptrType(Go$Uint16)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, new (go$ptrType(Go$Uint32))(function() { return count; }, function(v$1) { count = v$1;; }), (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(syscall.Filetime)).nil);
 			if (!(go$interfaceIsEqual(err$1, null))) {
 				return ["", err$1];
 			}
@@ -5921,12 +5928,12 @@ go$packages["time"] = (function() {
 			while (i < count) {
 				n = [undefined];
 				n[0] = 50;
-				if (!(go$interfaceIsEqual(syscall.RegEnumKeyEx(zones, i, (function(n) { return new (go$ptrType(Go$Uint16))(function() { return buf[0]; }, function(v$2) { buf[0] = v$2; }); })(n), (function(n) { return new (go$ptrType(Go$Uint32))(function() { return n[0]; }, function(v$3) { n[0] = v$3; }); })(n), (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint16)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(syscall.Filetime)).nil), null))) {
+				if (!(go$interfaceIsEqual(syscall.RegEnumKeyEx(zones, i, (function(n) { return new (go$ptrType(Go$Uint16))(function() { return buf[0]; }, function(v$2) { buf[0] = v$2;; }); })(n), (function(n) { return new (go$ptrType(Go$Uint32))(function() { return n[0]; }, function(v$3) { n[0] = v$3;; }); })(n), (go$ptrType(Go$Uint32)).nil, (go$ptrType(Go$Uint16)).nil, (go$ptrType(Go$Uint32)).nil, (go$ptrType(syscall.Filetime)).nil), null))) {
 					i = i + 1 >>> 0;
 					continue;
 				}
 				kname = syscall.UTF16ToString(new (go$sliceType(Go$Uint16))(buf));
-				_tuple$1 = matchZoneKey(zones, kname, stdname, dstname), matched = _tuple$1[0], err$2 = _tuple$1[1];
+				_tuple$1 = matchZoneKey(zones, kname, stdname, dstname); matched = _tuple$1[0]; err$2 = _tuple$1[1];
 				if (go$interfaceIsEqual(err$2, null) && matched) {
 					return [kname, null];
 				}
@@ -5960,25 +5967,25 @@ go$packages["time"] = (function() {
 		std = "";
 		dst = "";
 		stdName = syscall.UTF16ToString(new (go$sliceType(Go$Uint16))(z.StandardName));
-		_tuple = (_entry = abbrs[stdName], _entry !== undefined ? [_entry.v, true] : [new abbr.Ptr(), false]), a = (_struct = _tuple[0], new abbr.Ptr(_struct.std, _struct.dst)), ok = _tuple[1];
+		_tuple = (_entry = abbrs[stdName], _entry !== undefined ? [_entry.v, true] : [new abbr.Ptr(), false]); a = (_struct = _tuple[0], new abbr.Ptr(_struct.std, _struct.dst)); ok = _tuple[1];
 		if (!ok) {
 			dstName = syscall.UTF16ToString(new (go$sliceType(Go$Uint16))(z.DaylightName));
-			_tuple$1 = toEnglishName(stdName, dstName), englishName = _tuple$1[0], err = _tuple$1[1];
+			_tuple$1 = toEnglishName(stdName, dstName); englishName = _tuple$1[0]; err = _tuple$1[1];
 			if (go$interfaceIsEqual(err, null)) {
-				_tuple$2 = (_entry$1 = abbrs[englishName], _entry$1 !== undefined ? [_entry$1.v, true] : [new abbr.Ptr(), false]), a = (_struct$1 = _tuple$2[0], new abbr.Ptr(_struct$1.std, _struct$1.dst)), ok = _tuple$2[1];
+				_tuple$2 = (_entry$1 = abbrs[englishName], _entry$1 !== undefined ? [_entry$1.v, true] : [new abbr.Ptr(), false]); a = (_struct$1 = _tuple$2[0], new abbr.Ptr(_struct$1.std, _struct$1.dst)); ok = _tuple$2[1];
 				if (ok) {
-					_tuple$3 = [a.std, a.dst], std = _tuple$3[0], dst = _tuple$3[1];
+					_tuple$3 = [a.std, a.dst]; std = _tuple$3[0]; dst = _tuple$3[1];
 					return [std, dst];
 				}
 			}
-			_tuple$4 = [extractCAPS(stdName), extractCAPS(dstName)], std = _tuple$4[0], dst = _tuple$4[1];
+			_tuple$4 = [extractCAPS(stdName), extractCAPS(dstName)]; std = _tuple$4[0]; dst = _tuple$4[1];
 			return [std, dst];
 		}
-		_tuple$5 = [a.std, a.dst], std = _tuple$5[0], dst = _tuple$5[1];
+		_tuple$5 = [a.std, a.dst]; std = _tuple$5[0]; dst = _tuple$5[1];
 		return [std, dst];
 	};
 	pseudoUnix = function(year, d) {
-		var day, _struct, t, i, week, x, x$1, x$2, x$3;
+		var day, _struct, t, i, week, x, x$1, x$2;
 		day = 1;
 		t = (_struct = Date(year, (d.Month >> 0), day, (d.Hour >> 0), (d.Minute >> 0), (d.Second >> 0), 0, go$pkg.UTC), new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
 		i = (d.DayOfWeek >> 0) - (t.Weekday() >> 0) >> 0;
@@ -5988,28 +5995,28 @@ go$packages["time"] = (function() {
 		day = day + (i) >> 0;
 		week = (d.Day >> 0) - 1 >> 0;
 		if (week < 4) {
-			day = day + ((x = 7, (((week >>> 16 << 16) * x >> 0) + (week << 16 >>> 16) * x) >> 0)) >> 0;
+			day = day + (((((week >>> 16 << 16) * 7 >> 0) + (week << 16 >>> 16) * 7) >> 0)) >> 0;
 		} else {
 			day = day + 28 >> 0;
 			if (day > daysIn((d.Month >> 0), year)) {
 				day = day - 7 >> 0;
 			}
 		}
-		return (x$1 = (x$2 = t.sec, x$3 = go$mul64(new Go$Int64(0, (day - 1 >> 0)), new Go$Int64(0, 86400)), new Go$Int64(x$2.high + x$3.high, x$2.low + x$3.low)), new Go$Int64(x$1.high + -15, x$1.low + 2288912640));
+		return (x = (x$1 = t.sec, x$2 = go$mul64(new Go$Int64(0, (day - 1 >> 0)), new Go$Int64(0, 86400)), new Go$Int64(x$1.high + x$2.high, x$1.low + x$2.low)), new Go$Int64(x.high + -15, x.low + 2288912640));
 	};
 	initLocalFromTZI = function(i) {
-		var l, nzone, _tuple, stdname, dstname, _slice, _index, std, x, x$1, _slice$1, _index$1, _slice$2, _index$2, x$2, x$3, _slice$3, _index$3, dst, x$4, x$5, d0, d1, i0, i1, _tuple$1, _tuple$2, _struct, t, year, txi, y, _slice$4, _index$4, tx, x$6, x$7, _slice$5, _index$5, _slice$6, _index$6, x$8, x$9, _slice$7, _index$7;
+		var l, nzone, _tuple, stdname, dstname, _slice, _index, std, x, _slice$1, _index$1, _slice$2, _index$2, x$1, _slice$3, _index$3, dst, x$2, d0, d1, i0, i1, _tuple$1, _tuple$2, _struct, t, year, txi, y, _slice$4, _index$4, tx, x$3, x$4, _slice$5, _index$5, _slice$6, _index$6, x$5, x$6, _slice$7, _index$7;
 		l = localLoc;
 		nzone = 1;
 		if (i.StandardDate.Month > 0) {
 			nzone = nzone + 1 >> 0;
 		}
 		l.zone = (go$sliceType(zone)).make(nzone, 0, function() { return new zone.Ptr(); });
-		_tuple = abbrev(i), stdname = _tuple[0], dstname = _tuple[1];
+		_tuple = abbrev(i); stdname = _tuple[0]; dstname = _tuple[1];
 		std = (_slice = l.zone, _index = 0, (_index >= 0 && _index < _slice.length) ? _slice.array[_slice.offset + _index] : go$throwRuntimeError("index out of range"));
 		std.name = stdname;
 		if (nzone === 1) {
-			std.offset = (x = -(i.Bias >> 0), x$1 = 60, (((x >>> 16 << 16) * x$1 >> 0) + (x << 16 >>> 16) * x$1) >> 0);
+			std.offset = (x = -(i.Bias >> 0), (((x >>> 16 << 16) * 60 >> 0) + (x << 16 >>> 16) * 60) >> 0);
 			l.cacheStart = new Go$Int64(-2147483648, 0);
 			l.cacheEnd = new Go$Int64(2147483647, 4294967295);
 			l.cacheZone = std;
@@ -6018,18 +6025,18 @@ go$packages["time"] = (function() {
 			(_slice$2 = l.tx, _index$2 = 0, (_index$2 >= 0 && _index$2 < _slice$2.length) ? _slice$2.array[_slice$2.offset + _index$2] : go$throwRuntimeError("index out of range")).index = 0;
 			return;
 		}
-		std.offset = (x$2 = -((i.Bias + i.StandardBias >> 0) >> 0), x$3 = 60, (((x$2 >>> 16 << 16) * x$3 >> 0) + (x$2 << 16 >>> 16) * x$3) >> 0);
+		std.offset = (x$1 = -((i.Bias + i.StandardBias >> 0) >> 0), (((x$1 >>> 16 << 16) * 60 >> 0) + (x$1 << 16 >>> 16) * 60) >> 0);
 		dst = (_slice$3 = l.zone, _index$3 = 1, (_index$3 >= 0 && _index$3 < _slice$3.length) ? _slice$3.array[_slice$3.offset + _index$3] : go$throwRuntimeError("index out of range"));
 		dst.name = dstname;
-		dst.offset = (x$4 = -((i.Bias + i.DaylightBias >> 0) >> 0), x$5 = 60, (((x$4 >>> 16 << 16) * x$5 >> 0) + (x$4 << 16 >>> 16) * x$5) >> 0);
+		dst.offset = (x$2 = -((i.Bias + i.DaylightBias >> 0) >> 0), (((x$2 >>> 16 << 16) * 60 >> 0) + (x$2 << 16 >>> 16) * 60) >> 0);
 		dst.isDST = true;
 		d0 = i.StandardDate;
 		d1 = i.DaylightDate;
 		i0 = 0;
 		i1 = 1;
 		if (d0.Month > d1.Month) {
-			_tuple$1 = [d1, d0], d0 = _tuple$1[0], d1 = _tuple$1[1];
-			_tuple$2 = [i1, i0], i0 = _tuple$2[0], i1 = _tuple$2[1];
+			_tuple$1 = [d1, d0]; d0 = _tuple$1[0]; d1 = _tuple$1[1];
+			_tuple$2 = [i1, i0]; i0 = _tuple$2[0]; i1 = _tuple$2[1];
 		}
 		l.tx = (go$sliceType(zoneTrans)).make(400, 0, function() { return new zoneTrans.Ptr(); });
 		t = (_struct = Now().UTC(), new Time.Ptr(_struct.sec, _struct.nsec, _struct.loc));
@@ -6038,11 +6045,11 @@ go$packages["time"] = (function() {
 		y = year - 100 >> 0;
 		while (y < (year + 100 >> 0)) {
 			tx = (_slice$4 = l.tx, _index$4 = txi, (_index$4 >= 0 && _index$4 < _slice$4.length) ? _slice$4.array[_slice$4.offset + _index$4] : go$throwRuntimeError("index out of range"));
-			tx.when = (x$6 = pseudoUnix(y, d0), x$7 = new Go$Int64(0, (_slice$5 = l.zone, _index$5 = i1, (_index$5 >= 0 && _index$5 < _slice$5.length) ? _slice$5.array[_slice$5.offset + _index$5] : go$throwRuntimeError("index out of range")).offset), new Go$Int64(x$6.high - x$7.high, x$6.low - x$7.low));
+			tx.when = (x$3 = pseudoUnix(y, d0), x$4 = new Go$Int64(0, (_slice$5 = l.zone, _index$5 = i1, (_index$5 >= 0 && _index$5 < _slice$5.length) ? _slice$5.array[_slice$5.offset + _index$5] : go$throwRuntimeError("index out of range")).offset), new Go$Int64(x$3.high - x$4.high, x$3.low - x$4.low));
 			tx.index = (i0 << 24 >>> 24);
 			txi = txi + 1 >> 0;
 			tx = (_slice$6 = l.tx, _index$6 = txi, (_index$6 >= 0 && _index$6 < _slice$6.length) ? _slice$6.array[_slice$6.offset + _index$6] : go$throwRuntimeError("index out of range"));
-			tx.when = (x$8 = pseudoUnix(y, d1), x$9 = new Go$Int64(0, (_slice$7 = l.zone, _index$7 = i0, (_index$7 >= 0 && _index$7 < _slice$7.length) ? _slice$7.array[_slice$7.offset + _index$7] : go$throwRuntimeError("index out of range")).offset), new Go$Int64(x$8.high - x$9.high, x$8.low - x$9.low));
+			tx.when = (x$5 = pseudoUnix(y, d1), x$6 = new Go$Int64(0, (_slice$7 = l.zone, _index$7 = i0, (_index$7 >= 0 && _index$7 < _slice$7.length) ? _slice$7.array[_slice$7.offset + _index$7] : go$throwRuntimeError("index out of range")).offset), new Go$Int64(x$5.high - x$6.high, x$5.low - x$6.low));
 			tx.index = (i1 << 24 >>> 24);
 			txi = txi + 1 >> 0;
 			y = y + 1 >> 0;
@@ -6051,7 +6058,7 @@ go$packages["time"] = (function() {
 	initLocal = function() {
 		var i, _tuple, err;
 		i = new syscall.Timezoneinformation.Ptr();
-		_tuple = syscall.GetTimeZoneInformation(i), err = _tuple[1];
+		_tuple = syscall.GetTimeZoneInformation(i); err = _tuple[1];
 		if (!(go$interfaceIsEqual(err, null))) {
 			localLoc.name = "UTC";
 			return;
@@ -6092,7 +6099,7 @@ go$packages["time"] = (function() {
 		go$pkg.UTC = utcLoc;
 		go$pkg.Local = localLoc;
 		var _tuple;
-		_tuple = syscall.Getenv("ZONEINFO"), zoneinfo = _tuple[0];
+		_tuple = syscall.Getenv("ZONEINFO"); zoneinfo = _tuple[0];
 		var _map$1, _key$1;
 		abbrs = (_map$1 = new Go$Map(), _key$1 = "Egypt Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("EET", "EET") }, _key$1 = "Morocco Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("WET", "WEST") }, _key$1 = "South Africa Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("SAST", "SAST") }, _key$1 = "W. Central Africa Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("WAT", "WAT") }, _key$1 = "E. Africa Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("EAT", "EAT") }, _key$1 = "Namibia Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("WAT", "WAST") }, _key$1 = "Alaskan Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("AKST", "AKDT") }, _key$1 = "Paraguay Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("PYT", "PYST") }, _key$1 = "Bahia Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("BRT", "BRST") }, _key$1 = "SA Pacific Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("COT", "COT") }, _key$1 = "Argentina Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("ART", "ART") }, _key$1 = "Venezuela Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("VET", "VET") }, _key$1 = "SA Eastern Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("GFT", "GFT") }, _key$1 = "Central Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("CST", "CDT") }, _key$1 = "Mountain Standard Time (Mexico)", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("MST", "MDT") }, _key$1 = "Central Brazilian Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("AMT", "AMST") }, _key$1 = "Mountain Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("MST", "MDT") }, _key$1 = "Greenland Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("WGT", "WGST") }, _key$1 = "Central America Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("CST", "CST") }, _key$1 = "Atlantic Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("AST", "ADT") }, _key$1 = "US Eastern Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("EST", "EDT") }, _key$1 = "SA Western Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("BOT", "BOT") }, _key$1 = "Pacific Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("PST", "PDT") }, _key$1 = "Central Standard Time (Mexico)", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("CST", "CDT") }, _key$1 = "Montevideo Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("UYT", "UYST") }, _key$1 = "Eastern Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("EST", "EDT") }, _key$1 = "US Mountain Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("MST", "MST") }, _key$1 = "Canada Central Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("CST", "CST") }, _key$1 = "Pacific Standard Time (Mexico)", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("PST", "PDT") }, _key$1 = "Pacific SA Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("CLT", "CLST") }, _key$1 = "E. South America Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("BRT", "BRST") }, _key$1 = "Newfoundland Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("NST", "NDT") }, _key$1 = "Central Asia Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("ALMT", "ALMT") }, _key$1 = "Jordan Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("EET", "EEST") }, _key$1 = "Arabic Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("AST", "AST") }, _key$1 = "Azerbaijan Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("AZT", "AZST") }, _key$1 = "SE Asia Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("ICT", "ICT") }, _key$1 = "Middle East Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("EET", "EEST") }, _key$1 = "India Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("IST", "IST") }, _key$1 = "Sri Lanka Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("IST", "IST") }, _key$1 = "Syria Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("EET", "EEST") }, _key$1 = "Bangladesh Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("BDT", "BDT") }, _key$1 = "Arabian Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("GST", "GST") }, _key$1 = "North Asia East Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("IRKT", "IRKT") }, _key$1 = "Israel Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("IST", "IDT") }, _key$1 = "Afghanistan Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("AFT", "AFT") }, _key$1 = "Pakistan Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("PKT", "PKT") }, _key$1 = "Nepal Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("NPT", "NPT") }, _key$1 = "North Asia Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("KRAT", "KRAT") }, _key$1 = "Magadan Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("MAGT", "MAGT") }, _key$1 = "E. Europe Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("EET", "EEST") }, _key$1 = "N. Central Asia Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("NOVT", "NOVT") }, _key$1 = "Myanmar Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("MMT", "MMT") }, _key$1 = "Arab Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("AST", "AST") }, _key$1 = "Korea Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("KST", "KST") }, _key$1 = "China Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("CST", "CST") }, _key$1 = "Singapore Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("SGT", "SGT") }, _key$1 = "Taipei Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("CST", "CST") }, _key$1 = "West Asia Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("UZT", "UZT") }, _key$1 = "Georgian Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("GET", "GET") }, _key$1 = "Iran Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("IRST", "IRDT") }, _key$1 = "Tokyo Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("JST", "JST") }, _key$1 = "Ulaanbaatar Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("ULAT", "ULAT") }, _key$1 = "Vladivostok Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("VLAT", "VLAT") }, _key$1 = "Yakutsk Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("YAKT", "YAKT") }, _key$1 = "Ekaterinburg Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("YEKT", "YEKT") }, _key$1 = "Caucasus Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("AMT", "AMT") }, _key$1 = "Azores Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("AZOT", "AZOST") }, _key$1 = "Cape Verde Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("CVT", "CVT") }, _key$1 = "Greenwich Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("GMT", "GMT") }, _key$1 = "Cen. Australia Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("CST", "CST") }, _key$1 = "E. Australia Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("EST", "EST") }, _key$1 = "AUS Central Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("CST", "CST") }, _key$1 = "Tasmania Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("EST", "EST") }, _key$1 = "W. Australia Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("WST", "WST") }, _key$1 = "AUS Eastern Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("EST", "EST") }, _key$1 = "UTC", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("GMT", "GMT") }, _key$1 = "UTC-11", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("GMT+11", "GMT+11") }, _key$1 = "Dateline Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("GMT+12", "GMT+12") }, _key$1 = "UTC-02", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("GMT+2", "GMT+2") }, _key$1 = "UTC+12", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("GMT-12", "GMT-12") }, _key$1 = "W. Europe Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("CET", "CEST") }, _key$1 = "GTB Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("EET", "EEST") }, _key$1 = "Central Europe Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("CET", "CEST") }, _key$1 = "Turkey Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("EET", "EEST") }, _key$1 = "Kaliningrad Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("FET", "FET") }, _key$1 = "FLE Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("EET", "EEST") }, _key$1 = "GMT Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("GMT", "BST") }, _key$1 = "Russian Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("MSK", "MSK") }, _key$1 = "Romance Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("CET", "CEST") }, _key$1 = "Central European Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("CET", "CEST") }, _key$1 = "Mauritius Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("MUT", "MUT") }, _key$1 = "Samoa Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("WST", "WST") }, _key$1 = "New Zealand Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("NZST", "NZDT") }, _key$1 = "Fiji Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("FJT", "FJT") }, _key$1 = "Central Pacific Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("SBT", "SBT") }, _key$1 = "Hawaiian Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("HST", "HST") }, _key$1 = "West Pacific Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("PGT", "PGT") }, _key$1 = "Tonga Standard Time", _map$1[_key$1] = { k: _key$1, v: new abbr.Ptr("TOT", "TOT") }, _map$1);
 		badData = errors.New("malformed time zone information");
@@ -6378,7 +6385,7 @@ go$packages["main"] = (function() {
 			});
 			data = (_map = new Go$Map(), _key = "foo", _map[_key] = { k: _key, v: new Go$String("bar") }, _map);
 			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#firstp")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$mapType(Go$String, go$emptyInterface))(data), new (go$funcType([jquery.Event], [], false))(fn)])).Trigger(new (go$sliceType(go$emptyInterface))([new Go$String("click")])).Off(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([jquery.Event], [], false))(fn)]));
-			_tuple = [0, 0], clickCounter = _tuple[0], mouseoverCounter = _tuple[1];
+			_tuple = [0, 0]; clickCounter = _tuple[0]; mouseoverCounter = _tuple[1];
 			handler = (function(ev) {
 				if (go$internalize(ev.Object.type, Go$String) === "click") {
 					clickCounter = clickCounter + 1 >> 0;
@@ -6506,3 +6513,4 @@ go$packages["main"].init();
 go$packages["main"].main();
 
 })();
+//# sourceMappingURL=test.js.map

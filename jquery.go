@@ -865,16 +865,16 @@ func Ajax(options map[string]interface{}) {
 	js.Global.Get(JQ).Call("ajax", options)
 }
 
-func AjaxPrefilter(options map[string]interface{}) {
-	js.Global.Get(JQ).Call("ajaxPrefilter", options)
+func AjaxPrefilter(i ...interface{}) {
+	js.Global.Get(JQ).Call("ajaxPrefilter", i...)
 }
 
 func AjaxSetup(options map[string]interface{}) {
 	js.Global.Get(JQ).Call("ajaxSetup", options)
 }
 
-func AjaxTransport(options map[string]interface{}) {
-	js.Global.Get(JQ).Call("ajaxTransport", options)
+func AjaxTransport(i ...interface{}) {
+	js.Global.Get(JQ).Call("ajaxTransport", i...)
 }
 
 func Get(i ...interface{}) {
