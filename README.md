@@ -62,7 +62,15 @@ func main() {
 Compile welcome.go:
 
     $ gopherjs build welcome.go
-    
+
+
+### Tests 
+
+In the "tests" folder are QUnit Tests, run the server with:
+
+"go run server.go" and open a browser: http://localhost:3000
+
+The relevant QUnit Test cases are defined in the test.go file.
 
 ### Sample Apps ported from Javascript/Coffeescript to GopherJS 
 	
@@ -78,9 +86,5 @@ Look at the Sample Apps to find out what is working and how. Any feedback is wel
 
 The normal DOM Api is in place, still on the Todo List are:
 
-- Ajax API (ongoing)
 - Promises/Deferreds
 - More Docs
-
-
-
