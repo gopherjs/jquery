@@ -5,9 +5,6 @@ var URL         = "http://localhost:3000",
         return $("input[name='console']").is(":checked");
     };
 
-console.log(" in test.js");
-
-
 $("#btnAjaxJs").click(function () {
 	
 	if (showConsole()) 

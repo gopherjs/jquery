@@ -209,7 +209,5 @@ func main() {
 		})
 	})
 
-	//2do: reorg indexhtml: use qunit
-	//2do: use struct for getParam
-
+	//2do: integrate test and ajaxtest folder in one QUnit Test
 }
