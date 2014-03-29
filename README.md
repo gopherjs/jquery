@@ -84,7 +84,7 @@ Look at the Sample Apps to find out what is working and how. Any feedback is wel
 
 ### Status
 
-The normal DOM Api is in place, still on the Todo List are:
+The normal DOM Api and Ajax functions are in place, still on the Todo List are:
 
 - Promises/Deferreds
 - More Docs
