@@ -1423,7 +1423,7 @@ go$packages["github.com/gopherjs/gopherjs/js"] = (function() {
 	return go$pkg;
 })();
 go$packages["github.com/gopherjs/jquery"] = (function() {
-	var go$pkg = {}, js = go$packages["github.com/gopherjs/gopherjs/js"], JQuery, Event, JQueryCoordinates, NewJQuery, Ajax, AjaxPrefilter, AjaxSetup, AjaxTransport, Get, Post, GetJSON, GetScript;
+	var go$pkg = {}, js = go$packages["github.com/gopherjs/gopherjs/js"], JQuery, Event, JQueryCoordinates, NewJQuery, Ajax;
 	JQuery = go$pkg.JQuery = go$newType(0, "Struct", "jquery.JQuery", "JQuery", "github.com/gopherjs/jquery", function(o_, Jquery_, Selector_, Length_, Context_) {
 		this.go$val = this;
 		this.o = o_ !== undefined ? o_ : null;
@@ -2373,33 +2373,6 @@ go$packages["github.com/gopherjs/jquery"] = (function() {
 	Ajax = go$pkg.Ajax = function(options) {
 		go$global.jQuery.ajax(go$externalize(options, (go$mapType(Go$String, go$emptyInterface))));
 	};
-	AjaxPrefilter = go$pkg.AjaxPrefilter = function(i) {
-		var obj;
-		(obj = go$global.jQuery, obj.ajaxPrefilter.apply(obj, go$externalize(i, (go$sliceType(go$emptyInterface)))));
-	};
-	AjaxSetup = go$pkg.AjaxSetup = function(options) {
-		go$global.jQuery.ajaxSetup(go$externalize(options, (go$mapType(Go$String, go$emptyInterface))));
-	};
-	AjaxTransport = go$pkg.AjaxTransport = function(i) {
-		var obj;
-		(obj = go$global.jQuery, obj.ajaxTransport.apply(obj, go$externalize(i, (go$sliceType(go$emptyInterface)))));
-	};
-	Get = go$pkg.Get = function(i) {
-		var obj;
-		(obj = go$global.jQuery, obj.get.apply(obj, go$externalize(i, (go$sliceType(go$emptyInterface)))));
-	};
-	Post = go$pkg.Post = function(i) {
-		var obj;
-		(obj = go$global.jQuery, obj.post.apply(obj, go$externalize(i, (go$sliceType(go$emptyInterface)))));
-	};
-	GetJSON = go$pkg.GetJSON = function(i) {
-		var obj;
-		(obj = go$global.jQuery, obj.getJSON.apply(obj, go$externalize(i, (go$sliceType(go$emptyInterface)))));
-	};
-	GetScript = go$pkg.GetScript = function(i) {
-		var obj;
-		(obj = go$global.jQuery, obj.getScript.apply(obj, go$externalize(i, (go$sliceType(go$emptyInterface)))));
-	};
 	go$pkg.init = function() {
 		JQuery.methods = [["Add", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddBack", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddClass", "", [go$emptyInterface], [JQuery], false, -1], ["After", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Append", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AppendTo", "", [go$emptyInterface], [JQuery], false, -1], ["Attr", "", [Go$String], [Go$String], false, -1], ["Before", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Blur", "", [], [JQuery], false, -1], ["Children", "", [go$emptyInterface], [JQuery], false, -1], ["ClearQueue", "", [Go$String], [JQuery], false, -1], ["Clone", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Closest", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Contents", "", [], [JQuery], false, -1], ["Css", "", [Go$String], [Go$String], false, -1], ["CssArray", "", [(go$sliceType(Go$String))], [(go$mapType(Go$String, go$emptyInterface))], true, -1], ["Data", "", [Go$String], [go$emptyInterface], false, -1], ["Delay", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Dequeue", "", [Go$String], [JQuery], false, -1], ["Detach", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Each", "", [(go$funcType([Go$Int, go$emptyInterface], [go$emptyInterface], false))], [JQuery], false, -1], ["Empty", "", [], [JQuery], false, -1], ["End", "", [], [JQuery], false, -1], ["Eq", "", [Go$Int], [JQuery], false, -1], ["FadeIn", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["FadeOut", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Filter", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Find", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["First", "", [], [JQuery], false, -1], ["Focus", "", [], [JQuery], false, -1], ["Get", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, -1], ["Has", "", [Go$String], [JQuery], false, -1], ["HasClass", "", [Go$String], [Go$Bool], false, -1], ["Height", "", [], [Go$Int], false, -1], ["Hide", "", [], [JQuery], false, -1], ["Html", "", [], [Go$String], false, -1], ["InnerHeight", "", [], [Go$Int], false, -1], ["InnerWidth", "", [], [Go$Int], false, -1], ["InsertAfter", "", [go$emptyInterface], [JQuery], false, -1], ["InsertBefore", "", [go$emptyInterface], [JQuery], false, -1], ["Is", "", [(go$sliceType(go$emptyInterface))], [Go$Bool], true, -1], ["Last", "", [], [JQuery], false, -1], ["Load", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Next", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Not", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Off", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Offset", "", [], [JQueryCoordinates], false, -1], ["OffsetParent", "", [], [JQuery], false, -1], ["On", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["One", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["OuterHeight", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["OuterWidth", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["Parent", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Parents", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ParentsUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Position", "", [], [JQueryCoordinates], false, -1], ["Prepend", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrependTo", "", [go$emptyInterface], [JQuery], false, -1], ["Prev", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Prop", "", [Go$String], [go$emptyInterface], false, -1], ["Ready", "", [(go$funcType([], [], false))], [JQuery], false, -1], ["Remove", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["RemoveAttr", "", [Go$String], [JQuery], false, -1], ["RemoveClass", "", [Go$String], [JQuery], false, -1], ["RemoveData", "", [Go$String], [JQuery], false, -1], ["RemoveProp", "", [Go$String], [JQuery], false, -1], ["ReplaceAll", "", [go$emptyInterface], [JQuery], false, -1], ["ReplaceWith", "", [go$emptyInterface], [JQuery], false, -1], ["Resize", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Scroll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ScrollLeft", "", [], [Go$Int], false, -1], ["ScrollTop", "", [], [Go$Int], false, -1], ["Select", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Serialize", "", [], [Go$String], false, -1], ["SerializeArray", "", [], [js.Object], false, -1], ["SetAttr", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetCss", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetData", "", [Go$String, go$emptyInterface], [JQuery], false, -1], ["SetHeight", "", [Go$String], [JQuery], false, -1], ["SetHtml", "", [go$emptyInterface], [JQuery], false, -1], ["SetOffset", "", [JQueryCoordinates], [JQuery], false, -1], ["SetProp", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetScrollLeft", "", [Go$Int], [JQuery], false, -1], ["SetScrollTop", "", [Go$Int], [JQuery], false, -1], ["SetText", "", [go$emptyInterface], [JQuery], false, -1], ["SetVal", "", [go$emptyInterface], [JQuery], false, -1], ["SetWidth", "", [go$emptyInterface], [JQuery], false, -1], ["Show", "", [], [JQuery], false, -1], ["Siblings", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Slice", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Stop", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Submit", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Text", "", [], [Go$String], false, -1], ["ToArray", "", [], [(go$sliceType(go$emptyInterface))], false, -1], ["Toggle", "", [Go$Bool], [JQuery], false, -1], ["ToggleClass", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Trigger", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Underlying", "", [], [js.Object], false, -1], ["Unwrap", "", [], [JQuery], false, -1], ["Val", "", [], [Go$String], false, -1], ["Width", "", [], [Go$Int], false, -1], ["Wrap", "", [go$emptyInterface], [JQuery], false, -1], ["WrapAll", "", [go$emptyInterface], [JQuery], false, -1], ["WrapInner", "", [go$emptyInterface], [JQuery], false, -1], ["dom1arg", "github.com/gopherjs/jquery", [Go$String, go$emptyInterface], [JQuery], false, -1], ["dom2args", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["events", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["handleEvent", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1]];
 		(go$ptrType(JQuery)).methods = [["Add", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddBack", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AddClass", "", [go$emptyInterface], [JQuery], false, -1], ["After", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Append", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["AppendTo", "", [go$emptyInterface], [JQuery], false, -1], ["Attr", "", [Go$String], [Go$String], false, -1], ["Before", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Blur", "", [], [JQuery], false, -1], ["Children", "", [go$emptyInterface], [JQuery], false, -1], ["ClearQueue", "", [Go$String], [JQuery], false, -1], ["Clone", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Closest", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Contents", "", [], [JQuery], false, -1], ["Css", "", [Go$String], [Go$String], false, -1], ["CssArray", "", [(go$sliceType(Go$String))], [(go$mapType(Go$String, go$emptyInterface))], true, -1], ["Data", "", [Go$String], [go$emptyInterface], false, -1], ["Delay", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Dequeue", "", [Go$String], [JQuery], false, -1], ["Detach", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Each", "", [(go$funcType([Go$Int, go$emptyInterface], [go$emptyInterface], false))], [JQuery], false, -1], ["Empty", "", [], [JQuery], false, -1], ["End", "", [], [JQuery], false, -1], ["Eq", "", [Go$Int], [JQuery], false, -1], ["FadeIn", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["FadeOut", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Filter", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Find", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["First", "", [], [JQuery], false, -1], ["Focus", "", [], [JQuery], false, -1], ["Get", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, -1], ["Has", "", [Go$String], [JQuery], false, -1], ["HasClass", "", [Go$String], [Go$Bool], false, -1], ["Height", "", [], [Go$Int], false, -1], ["Hide", "", [], [JQuery], false, -1], ["Html", "", [], [Go$String], false, -1], ["InnerHeight", "", [], [Go$Int], false, -1], ["InnerWidth", "", [], [Go$Int], false, -1], ["InsertAfter", "", [go$emptyInterface], [JQuery], false, -1], ["InsertBefore", "", [go$emptyInterface], [JQuery], false, -1], ["Is", "", [(go$sliceType(go$emptyInterface))], [Go$Bool], true, -1], ["Last", "", [], [JQuery], false, -1], ["Load", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Next", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["NextUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Not", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Off", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Offset", "", [], [JQueryCoordinates], false, -1], ["OffsetParent", "", [], [JQuery], false, -1], ["On", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["One", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["OuterHeight", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["OuterWidth", "", [(go$sliceType(Go$Bool))], [Go$Int], true, -1], ["Parent", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Parents", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ParentsUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Position", "", [], [JQueryCoordinates], false, -1], ["Prepend", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrependTo", "", [go$emptyInterface], [JQuery], false, -1], ["Prev", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevAll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["PrevUntil", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Prop", "", [Go$String], [go$emptyInterface], false, -1], ["Ready", "", [(go$funcType([], [], false))], [JQuery], false, -1], ["Remove", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["RemoveAttr", "", [Go$String], [JQuery], false, -1], ["RemoveClass", "", [Go$String], [JQuery], false, -1], ["RemoveData", "", [Go$String], [JQuery], false, -1], ["RemoveProp", "", [Go$String], [JQuery], false, -1], ["ReplaceAll", "", [go$emptyInterface], [JQuery], false, -1], ["ReplaceWith", "", [go$emptyInterface], [JQuery], false, -1], ["Resize", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Scroll", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["ScrollLeft", "", [], [Go$Int], false, -1], ["ScrollTop", "", [], [Go$Int], false, -1], ["Select", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Serialize", "", [], [Go$String], false, -1], ["SerializeArray", "", [], [js.Object], false, -1], ["SetAttr", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetCss", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetData", "", [Go$String, go$emptyInterface], [JQuery], false, -1], ["SetHeight", "", [Go$String], [JQuery], false, -1], ["SetHtml", "", [go$emptyInterface], [JQuery], false, -1], ["SetOffset", "", [JQueryCoordinates], [JQuery], false, -1], ["SetProp", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["SetScrollLeft", "", [Go$Int], [JQuery], false, -1], ["SetScrollTop", "", [Go$Int], [JQuery], false, -1], ["SetText", "", [go$emptyInterface], [JQuery], false, -1], ["SetVal", "", [go$emptyInterface], [JQuery], false, -1], ["SetWidth", "", [go$emptyInterface], [JQuery], false, -1], ["Show", "", [], [JQuery], false, -1], ["Siblings", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Slice", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Stop", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Submit", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Text", "", [], [Go$String], false, -1], ["ToArray", "", [], [(go$sliceType(go$emptyInterface))], false, -1], ["Toggle", "", [Go$Bool], [JQuery], false, -1], ["ToggleClass", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Trigger", "", [(go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["Underlying", "", [], [js.Object], false, -1], ["Unwrap", "", [], [JQuery], false, -1], ["Val", "", [], [Go$String], false, -1], ["Width", "", [], [Go$Int], false, -1], ["Wrap", "", [go$emptyInterface], [JQuery], false, -1], ["WrapAll", "", [go$emptyInterface], [JQuery], false, -1], ["WrapInner", "", [go$emptyInterface], [JQuery], false, -1], ["dom1arg", "github.com/gopherjs/jquery", [Go$String, go$emptyInterface], [JQuery], false, -1], ["dom2args", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["events", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1], ["handleEvent", "github.com/gopherjs/jquery", [Go$String, (go$sliceType(go$emptyInterface))], [JQuery], true, -1]];
@@ -2411,172 +2384,147 @@ go$packages["github.com/gopherjs/jquery"] = (function() {
 	}
 	return go$pkg;
 })();
-go$packages["main"] = (function() {
-	var go$pkg = {}, js = go$packages["github.com/gopherjs/gopherjs/js"], jquery = go$packages["github.com/gopherjs/jquery"], Object, showConsole, stringify, main, jQuery;
-	Object = go$pkg.Object = go$newType(0, "Map", "main.Object", "Object", "main", null);
-	showConsole = function() {
-		return jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("input[name='console']")])).Is(new (go$sliceType(go$emptyInterface))([new Go$String(":checked")]));
+go$packages["github.com/rusco/qunit"] = (function() {
+	var go$pkg = {}, js = go$packages["github.com/gopherjs/gopherjs/js"], QUnitAssert, Test, Ok, Start, AsyncTest, Expect, Module;
+	QUnitAssert = go$pkg.QUnitAssert = go$newType(0, "Struct", "qunit.QUnitAssert", "QUnitAssert", "github.com/rusco/qunit", function(Object_) {
+		this.go$val = this;
+		this.Object = Object_ !== undefined ? Object_ : null;
+	});
+	QUnitAssert.Ptr.prototype.DeepEqual = function(actual, expected, message) {
+		var _struct, qa;
+		qa = (_struct = this, new QUnitAssert.Ptr(_struct.Object));
+		return qa.Object.deepEqual(go$externalize(actual, go$emptyInterface), go$externalize(expected, go$emptyInterface), go$externalize(message, Go$String));
 	};
+	QUnitAssert.prototype.DeepEqual = function(actual, expected, message) { return this.go$val.DeepEqual(actual, expected, message); };
+	QUnitAssert.Ptr.prototype.Equal = function(actual, expected, message) {
+		var _struct, qa;
+		qa = (_struct = this, new QUnitAssert.Ptr(_struct.Object));
+		return qa.Object.equal(go$externalize(actual, go$emptyInterface), go$externalize(expected, go$emptyInterface), go$externalize(message, Go$String));
+	};
+	QUnitAssert.prototype.Equal = function(actual, expected, message) { return this.go$val.Equal(actual, expected, message); };
+	QUnitAssert.Ptr.prototype.NotDeepEqual = function(actual, expected, message) {
+		var _struct, qa;
+		qa = (_struct = this, new QUnitAssert.Ptr(_struct.Object));
+		return qa.Object.notDeepEqual(go$externalize(actual, go$emptyInterface), go$externalize(expected, go$emptyInterface), go$externalize(message, Go$String));
+	};
+	QUnitAssert.prototype.NotDeepEqual = function(actual, expected, message) { return this.go$val.NotDeepEqual(actual, expected, message); };
+	QUnitAssert.Ptr.prototype.NotEqual = function(actual, expected, message) {
+		var _struct, qa;
+		qa = (_struct = this, new QUnitAssert.Ptr(_struct.Object));
+		return qa.Object.notEqual(go$externalize(actual, go$emptyInterface), go$externalize(expected, go$emptyInterface), go$externalize(message, Go$String));
+	};
+	QUnitAssert.prototype.NotEqual = function(actual, expected, message) { return this.go$val.NotEqual(actual, expected, message); };
+	QUnitAssert.Ptr.prototype.NotPropEqual = function(actual, expected, message) {
+		var _struct, qa;
+		qa = (_struct = this, new QUnitAssert.Ptr(_struct.Object));
+		return qa.Object.notPropEqual(go$externalize(actual, go$emptyInterface), go$externalize(expected, go$emptyInterface), go$externalize(message, Go$String));
+	};
+	QUnitAssert.prototype.NotPropEqual = function(actual, expected, message) { return this.go$val.NotPropEqual(actual, expected, message); };
+	QUnitAssert.Ptr.prototype.PropEqual = function(actual, expected, message) {
+		var _struct, qa;
+		qa = (_struct = this, new QUnitAssert.Ptr(_struct.Object));
+		return qa.Object.propEqual(go$externalize(actual, go$emptyInterface), go$externalize(expected, go$emptyInterface), go$externalize(message, Go$String));
+	};
+	QUnitAssert.prototype.PropEqual = function(actual, expected, message) { return this.go$val.PropEqual(actual, expected, message); };
+	QUnitAssert.Ptr.prototype.NotStrictEqual = function(actual, expected, message) {
+		var _struct, qa;
+		qa = (_struct = this, new QUnitAssert.Ptr(_struct.Object));
+		return qa.Object.notStrictEqual(go$externalize(actual, go$emptyInterface), go$externalize(expected, go$emptyInterface), go$externalize(message, Go$String));
+	};
+	QUnitAssert.prototype.NotStrictEqual = function(actual, expected, message) { return this.go$val.NotStrictEqual(actual, expected, message); };
+	QUnitAssert.Ptr.prototype.Ok = function(state, message) {
+		var _struct, qa;
+		qa = (_struct = this, new QUnitAssert.Ptr(_struct.Object));
+		return qa.Object.ok(go$externalize(state, go$emptyInterface), go$externalize(message, Go$String));
+	};
+	QUnitAssert.prototype.Ok = function(state, message) { return this.go$val.Ok(state, message); };
+	QUnitAssert.Ptr.prototype.StrictEqual = function(actual, expected, message) {
+		var _struct, qa;
+		qa = (_struct = this, new QUnitAssert.Ptr(_struct.Object));
+		return qa.Object.strictEqual(go$externalize(actual, go$emptyInterface), go$externalize(expected, go$emptyInterface), go$externalize(message, Go$String));
+	};
+	QUnitAssert.prototype.StrictEqual = function(actual, expected, message) { return this.go$val.StrictEqual(actual, expected, message); };
+	QUnitAssert.Ptr.prototype.ThrowsExpected = function(block, expected, message) {
+		var _struct, qa;
+		qa = (_struct = this, new QUnitAssert.Ptr(_struct.Object));
+		return qa.Object.throwsExpected(go$externalize(block, (go$funcType([], [go$emptyInterface], false))), go$externalize(expected, go$emptyInterface), go$externalize(message, Go$String));
+	};
+	QUnitAssert.prototype.ThrowsExpected = function(block, expected, message) { return this.go$val.ThrowsExpected(block, expected, message); };
+	QUnitAssert.Ptr.prototype.Throws = function(block, message) {
+		var _struct, qa;
+		qa = (_struct = this, new QUnitAssert.Ptr(_struct.Object));
+		return qa.Object.throws(go$externalize(block, (go$funcType([], [go$emptyInterface], false))), go$externalize(message, Go$String));
+	};
+	QUnitAssert.prototype.Throws = function(block, message) { return this.go$val.Throws(block, message); };
+	Test = go$pkg.Test = function(name, testFn) {
+		go$global.QUnit.test(go$externalize(name, Go$String), go$externalize((function(e) {
+			testFn(new QUnitAssert.Ptr(e));
+		}), (go$funcType([js.Object], [], false))));
+	};
+	Ok = go$pkg.Ok = function(state, message) {
+		return go$global.QUnit.ok(go$externalize(state, go$emptyInterface), go$externalize(message, Go$String));
+	};
+	Start = go$pkg.Start = function() {
+		return go$global.QUnit.start();
+	};
+	AsyncTest = go$pkg.AsyncTest = function(name, testFn) {
+		var t;
+		t = go$global.QUnit.asyncTest(go$externalize(name, Go$String), go$externalize((function() {
+			testFn();
+		}), (go$funcType([], [], false))));
+		return t;
+	};
+	Expect = go$pkg.Expect = function(amount) {
+		return go$global.QUnit.expect(amount);
+	};
+	Module = go$pkg.Module = function(name) {
+		return go$global.QUnit.module(go$externalize(name, Go$String));
+	};
+	go$pkg.init = function() {
+		QUnitAssert.methods = [["Bool", "", [], [Go$Bool], false, 0], ["Call", "", [Go$String, (go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["DeepEqual", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["Equal", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["Float", "", [], [Go$Float64], false, 0], ["Get", "", [Go$String], [js.Object], false, 0], ["Index", "", [Go$Int], [js.Object], false, 0], ["Int", "", [], [Go$Int], false, 0], ["Interface", "", [], [go$emptyInterface], false, 0], ["Invoke", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["IsNull", "", [], [Go$Bool], false, 0], ["IsUndefined", "", [], [Go$Bool], false, 0], ["Length", "", [], [Go$Int], false, 0], ["New", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["NotDeepEqual", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["NotEqual", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["NotPropEqual", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["NotStrictEqual", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["Ok", "", [go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["PropEqual", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["Set", "", [Go$String, go$emptyInterface], [], false, 0], ["SetIndex", "", [Go$Int, go$emptyInterface], [], false, 0], ["StrictEqual", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["String", "", [], [Go$String], false, 0], ["Throws", "", [(go$funcType([], [go$emptyInterface], false)), Go$String], [go$emptyInterface], false, -1], ["ThrowsExpected", "", [(go$funcType([], [go$emptyInterface], false)), go$emptyInterface, Go$String], [go$emptyInterface], false, -1]];
+		(go$ptrType(QUnitAssert)).methods = [["Bool", "", [], [Go$Bool], false, 0], ["Call", "", [Go$String, (go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["DeepEqual", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["Equal", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["Float", "", [], [Go$Float64], false, 0], ["Get", "", [Go$String], [js.Object], false, 0], ["Index", "", [Go$Int], [js.Object], false, 0], ["Int", "", [], [Go$Int], false, 0], ["Interface", "", [], [go$emptyInterface], false, 0], ["Invoke", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["IsNull", "", [], [Go$Bool], false, 0], ["IsUndefined", "", [], [Go$Bool], false, 0], ["Length", "", [], [Go$Int], false, 0], ["New", "", [(go$sliceType(go$emptyInterface))], [js.Object], true, 0], ["NotDeepEqual", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["NotEqual", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["NotPropEqual", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["NotStrictEqual", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["Ok", "", [go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["PropEqual", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["Set", "", [Go$String, go$emptyInterface], [], false, 0], ["SetIndex", "", [Go$Int, go$emptyInterface], [], false, 0], ["StrictEqual", "", [go$emptyInterface, go$emptyInterface, Go$String], [go$emptyInterface], false, -1], ["String", "", [], [Go$String], false, 0], ["Throws", "", [(go$funcType([], [go$emptyInterface], false)), Go$String], [go$emptyInterface], false, -1], ["ThrowsExpected", "", [(go$funcType([], [go$emptyInterface], false)), go$emptyInterface, Go$String], [go$emptyInterface], false, -1]];
+		QUnitAssert.init([["Object", "", "", js.Object, ""]]);
+	}
+	return go$pkg;
+})();
+go$packages["main"] = (function() {
+	var go$pkg = {}, js = go$packages["github.com/gopherjs/gopherjs/js"], jquery = go$packages["github.com/gopherjs/jquery"], qunit = go$packages["github.com/rusco/qunit"], Object, stringify, main, jQuery;
+	Object = go$pkg.Object = go$newType(0, "Map", "test.Object", "Object", "main", null);
 	stringify = function(i) {
 		return go$internalize(go$global.JSON.stringify(go$externalize(i, go$emptyInterface)), Go$String);
 	};
 	main = go$pkg.main = function() {
-		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnAjaxGopherJs")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
+		qunit.Module("jquery core");
+		qunit.Test("jQuery Properties", (function(assert) {
+			var _struct, jQ2;
+			assert.Equal(new Go$String(go$internalize(jQuery(new (go$sliceType(go$emptyInterface))([])).o.jquery, Go$String)), new Go$String("2.1.0"), "JQuery Version");
+			assert.Equal(new Go$String(go$internalize(jQuery(new (go$sliceType(go$emptyInterface))([])).o.length, Go$String)), new Go$Int(0), "jQuery().Length");
+			jQ2 = (_struct = jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("body")])), new jquery.JQuery.Ptr(_struct.o, _struct.Jquery, _struct.Selector, _struct.Length, _struct.Context));
+			assert.Equal(new Go$String(go$internalize(jQ2.o.selector, Go$String)), new Go$String("body"), "jQ2 := jQuery(\"body\"); jQ2.Selector.Selector");
+			assert.Equal(new Go$String(go$internalize(jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("body")])).o.selector, Go$String)), new Go$String("body"), "jQuery(\"body\").Selector");
+		}));
+		qunit.AsyncTest("Async Dummy Test", (function() {
+			qunit.Expect(1);
+			return go$global.setTimeout(go$externalize((function() {
+				qunit.Ok(new Go$Bool(true), " async ok");
+				qunit.Start();
+			}), (go$funcType([], [], false))), 1000);
+		}));
+		qunit.AsyncTest("Ajax Call", (function() {
 			var _map, _key, ajaxopt;
-			if (showConsole()) {
-				console.log("GoperJS here");
-			}
+			qunit.Expect(1);
 			ajaxopt = (_map = new Go$Map(), _key = "async", _map[_key] = { k: _key, v: new Go$Bool(true) }, _key = "type", _map[_key] = { k: _key, v: new Go$String("POST") }, _key = "url", _map[_key] = { k: _key, v: new Go$String("http://localhost:3000/nestedjson/") }, _key = "contentType", _map[_key] = { k: _key, v: new Go$String("application/json charset=utf-8") }, _key = "dataType", _map[_key] = { k: _key, v: new Go$String("json") }, _key = "data", _map[_key] = { k: _key, v: null }, _key = "beforeSend", _map[_key] = { k: _key, v: new (go$funcType([Object], [], false))((function(data) {
-				if (showConsole()) {
-					console.log(" before:", data);
-				}
 			})) }, _key = "success", _map[_key] = { k: _key, v: new (go$funcType([Object], [], false))((function(data) {
-				var dataStr, _ref, _i, _keys, _entry, v, k, _ref$1, _type;
+				var dataStr, expected;
 				dataStr = stringify(new Object(data));
-				jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#inTextArea")])).SetVal(new Go$String(dataStr));
-				if (showConsole()) {
-					console.log(" success:", data);
-					_ref = data;
-					_i = 0;
-					_keys = go$keys(_ref);
-					while (_i < _keys.length) {
-						_entry = _ref[_keys[_i]];
-						v = _entry.v;
-						k = _entry.k;
-						_ref$1 = v;
-						_type = _ref$1 !== null ? _ref$1.constructor : null;
-						if (_type === Go$Bool) {
-							console.log(k, (v !== null && v.constructor === Go$Bool ? v.go$val : go$typeAssertionFailed(v, Go$Bool)));
-						} else if (_type === Go$String) {
-							console.log(k, (v !== null && v.constructor === Go$String ? v.go$val : go$typeAssertionFailed(v, Go$String)));
-						} else if (_type === Go$Float64) {
-							console.log(k, (v !== null && v.constructor === Go$Float64 ? v.go$val : go$typeAssertionFailed(v, Go$Float64)));
-						} else {
-							console.log("sth. else:", k, v);
-						}
-						_i++;
-					}
-				}
+				expected = "{\"message\":\"Welcome!\",\"nested\":{\"level\":1,\"moresuccess\":true},\"success\":true}";
+				qunit.Ok(new Go$Bool(dataStr === expected), " ajax call did not returns expected result");
+				qunit.Start();
 			})) }, _key = "error", _map[_key] = { k: _key, v: new (go$funcType([go$emptyInterface], [], false))((function(status) {
-				if (showConsole()) {
-					console.log(" error:", status);
-				}
 			})) }, _map);
 			jquery.Ajax(ajaxopt);
-		}))]));
-		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnLoadGopherJS")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
-			jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#result")])).Load(new (go$sliceType(go$emptyInterface))([new Go$String("/load.html"), new (go$funcType([], [], false))((function() {
-				if (showConsole()) {
-					console.log("load was performed");
-				}
-			}))]));
-		}))]));
-		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnGetGopherJS")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
-			jquery.Get(new (go$sliceType(go$emptyInterface))([new Go$String("/get.html"), new (go$funcType([go$emptyInterface, Go$String, go$emptyInterface], [], false))((function(data, status, xhr) {
-				if (showConsole()) {
-					console.log(" data:   ", data);
-					console.log(" status: ", status);
-					console.log(" xhr:    ", xhr);
-				}
-				jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#result")])).SetHtml(data);
-			}))]));
-		}))]));
-		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnPostGopherJS")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
-			jquery.Post(new (go$sliceType(go$emptyInterface))([new Go$String("/gopher"), new (go$funcType([go$emptyInterface, Go$String, go$emptyInterface], [], false))((function(data, status, xhr) {
-				if (showConsole()) {
-					console.log(" data:   ", data);
-					console.log(" status: ", status);
-					console.log(" xhr:    ", xhr);
-				}
-				jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#result")])).SetHtml(data);
-			}))]));
-		}))]));
-		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnJsonGopherJs")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
-			jquery.GetJSON(new (go$sliceType(go$emptyInterface))([new Go$String("/json/1"), new (go$funcType([go$emptyInterface], [], false))((function(data) {
-				var _tuple, _entry, val, ok;
-				_tuple = (_entry = (data !== null && data.constructor === (go$mapType(Go$String, go$emptyInterface)) ? data.go$val : go$typeAssertionFailed(data, (go$mapType(Go$String, go$emptyInterface))))["json"], _entry !== undefined ? [_entry.v, true] : [null, false]); val = _tuple[0]; ok = _tuple[1];
-				if (ok) {
-					jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#inTextArea")])).SetVal(val);
-				}
-			}))]));
-		}))]));
-		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnGetScriptGopherJs")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
-			jquery.GetScript(new (go$sliceType(go$emptyInterface))([new Go$String("/script"), new (go$funcType([go$emptyInterface], [], false))((function(data) {
-				jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#inTextArea")])).SetVal(data);
-			}))]));
-		}))]));
-		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnAjaxsetupGopherJs")])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
-			var _map, _key, ajaxSetupOptions, _map$1, _key$1, ajaxopt;
-			ajaxSetupOptions = (_map = new Go$Map(), _key = "async", _map[_key] = { k: _key, v: new Go$Bool(true) }, _key = "type", _map[_key] = { k: _key, v: new Go$String("POST") }, _key = "url", _map[_key] = { k: _key, v: new Go$String("http://localhost:3000/nestedjson/") }, _key = "contentType", _map[_key] = { k: _key, v: new Go$String("application/json charset=utf-8") }, _map);
-			jquery.AjaxSetup(ajaxSetupOptions);
-			ajaxopt = (_map$1 = new Go$Map(), _key$1 = "dataType", _map$1[_key$1] = { k: _key$1, v: new Go$String("json") }, _key$1 = "data", _map$1[_key$1] = { k: _key$1, v: null }, _key$1 = "beforeSend", _map$1[_key$1] = { k: _key$1, v: new (go$funcType([Object], [], false))((function(data) {
-				if (showConsole()) {
-					console.log(" before:", data);
-				}
-			})) }, _key$1 = "success", _map$1[_key$1] = { k: _key$1, v: new (go$funcType([Object], [], false))((function(data) {
-				var dataStr, _ref, _i, _keys, _entry, v, k, _ref$1, _type;
-				dataStr = stringify(new Object(data));
-				jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#inTextArea")])).SetVal(new Go$String(dataStr));
-				if (showConsole()) {
-					console.log(" success:", data);
-					_ref = data;
-					_i = 0;
-					_keys = go$keys(_ref);
-					while (_i < _keys.length) {
-						_entry = _ref[_keys[_i]];
-						v = _entry.v;
-						k = _entry.k;
-						_ref$1 = v;
-						_type = _ref$1 !== null ? _ref$1.constructor : null;
-						if (_type === Go$Bool) {
-							console.log(k, (v !== null && v.constructor === Go$Bool ? v.go$val : go$typeAssertionFailed(v, Go$Bool)));
-						} else if (_type === Go$String) {
-							console.log(k, (v !== null && v.constructor === Go$String ? v.go$val : go$typeAssertionFailed(v, Go$String)));
-						} else if (_type === Go$Float64) {
-							console.log(k, (v !== null && v.constructor === Go$Float64 ? v.go$val : go$typeAssertionFailed(v, Go$Float64)));
-						} else {
-							console.log("sth. else:", k, v);
-						}
-						_i++;
-					}
-				}
-			})) }, _key$1 = "error", _map$1[_key$1] = { k: _key$1, v: new (go$funcType([go$emptyInterface], [], false))((function(status) {
-				if (showConsole()) {
-					console.log(" error:", status);
-				}
-			})) }, _map$1);
-			jquery.Ajax(ajaxopt);
-		}))]));
-		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnAjaxPrefilterGopherJs")])).One(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
-			jquery.AjaxPrefilter(new (go$sliceType(go$emptyInterface))([new Go$String("+json"), new (go$funcType([go$emptyInterface, Go$String, go$emptyInterface], [], false))((function(options, originalOptions, jqXHR) {
-				if (showConsole()) {
-					console.log(" ajax prefilter options:", options);
-				}
-			}))]));
-		}))])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
-			jquery.GetJSON(new (go$sliceType(go$emptyInterface))([new Go$String("/json/3"), new (go$funcType([go$emptyInterface], [], false))((function(data) {
-				var _tuple, _entry, val, ok;
-				_tuple = (_entry = (data !== null && data.constructor === (go$mapType(Go$String, go$emptyInterface)) ? data.go$val : go$typeAssertionFailed(data, (go$mapType(Go$String, go$emptyInterface))))["json"], _entry !== undefined ? [_entry.v, true] : [null, false]); val = _tuple[0]; ok = _tuple[1];
-				if (ok) {
-					jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#inTextArea")])).SetVal(val);
-				}
-			}))]));
-		}))]));
-		jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#btnAjaxTransportGopherJs")])).One(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
-			jquery.AjaxTransport(new (go$sliceType(go$emptyInterface))([new Go$String("+json"), new (go$funcType([go$emptyInterface, Go$String, go$emptyInterface], [], false))((function(options, originalOptions, jqXHR) {
-				if (showConsole()) {
-					console.log(" ajax transport options:", options);
-				}
-			}))]));
-		}))])).On(new (go$sliceType(go$emptyInterface))([new Go$String("click"), new (go$funcType([], [], false))((function() {
-			jquery.GetJSON(new (go$sliceType(go$emptyInterface))([new Go$String("/json/4"), new (go$funcType([go$emptyInterface], [], false))((function(data) {
-				var _tuple, _entry, val, ok;
-				_tuple = (_entry = (data !== null && data.constructor === (go$mapType(Go$String, go$emptyInterface)) ? data.go$val : go$typeAssertionFailed(data, (go$mapType(Go$String, go$emptyInterface))))["json"], _entry !== undefined ? [_entry.v, true] : [null, false]); val = _tuple[0]; ok = _tuple[1];
-				if (ok) {
-					jQuery(new (go$sliceType(go$emptyInterface))([new Go$String("#inTextArea")])).SetVal(val);
-				}
-			}))]));
-		}))]));
+			return null;
+		}));
 	};
 	go$pkg.init = function() {
 		Object.init(Go$String, go$emptyInterface);
@@ -2585,12 +2533,13 @@ go$packages["main"] = (function() {
 	return go$pkg;
 })();
 go$error.implementedBy = [go$packages["github.com/gopherjs/gopherjs/js"].Error.Ptr, go$packages["runtime"].TypeAssertionError.Ptr, go$packages["runtime"].errorString, go$ptrType(go$packages["runtime"].errorString)];
-go$packages["github.com/gopherjs/gopherjs/js"].Object.implementedBy = [go$packages["github.com/gopherjs/gopherjs/js"].Error, go$packages["github.com/gopherjs/gopherjs/js"].Error.Ptr, go$packages["github.com/gopherjs/jquery"].Event, go$packages["github.com/gopherjs/jquery"].Event.Ptr];
+go$packages["github.com/gopherjs/gopherjs/js"].Object.implementedBy = [go$packages["github.com/gopherjs/gopherjs/js"].Error, go$packages["github.com/gopherjs/gopherjs/js"].Error.Ptr, go$packages["github.com/gopherjs/jquery"].Event, go$packages["github.com/gopherjs/jquery"].Event.Ptr, go$packages["github.com/rusco/qunit"].QUnitAssert, go$packages["github.com/rusco/qunit"].QUnitAssert.Ptr];
 go$packages["runtime"].init();
 go$packages["github.com/gopherjs/gopherjs/js"].init();
 go$packages["github.com/gopherjs/jquery"].init();
+go$packages["github.com/rusco/qunit"].init();
 go$packages["main"].init();
 go$packages["main"].main();
 
 })();
-//# sourceMappingURL=testgo.js.map
+//# sourceMappingURL=ajaxtest.js.map

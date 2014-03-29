@@ -5,9 +5,10 @@ var URL         = "http://localhost:3000",
         return $("input[name='console']").is(":checked");
     };
 
+console.log(" in test.js");
+
 
 $("#btnAjaxJs").click(function () {
-
 	
 	if (showConsole()) 
 		console.log("pure JS here")
@@ -136,12 +137,12 @@ $("#btnAjaxTransportJs").one("click", function() {
     
 }).on("click", function() {
 
-    $.getJSON( "/json/3", function( data ) {
+    $.getJSON( "/json/4", function( data ) {
         if (data.json)
             $("#inTextArea").val(data.json);
     });
 });
 
-//Transform to QUnit
+//Transform to QUnit.js
 
 

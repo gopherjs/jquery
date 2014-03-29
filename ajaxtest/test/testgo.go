@@ -6,6 +6,8 @@ import (
 	"github.com/gopherjs/jquery"
 )
 
+const ROOT = "http://localhost:3000"
+
 type Object map[string]interface{}
 
 var jQuery = jquery.NewJQuery
@@ -29,7 +31,7 @@ func main() {
 		ajaxopt := Object{
 			"async":       true,
 			"type":        "POST",
-			"url":         "http://localhost:3000/nestedjson/",
+			"url":         ROOT + "/nestedjson/",
 			"contentType": "application/json charset=utf-8",
 			"dataType":    "json",
 			"data":        nil,
@@ -128,7 +130,7 @@ func main() {
 		ajaxSetupOptions := Object{
 			"async":       true,
 			"type":        "POST",
-			"url":         "http://localhost:3000/nestedjson/",
+			"url":         ROOT + "/nestedjson/",
 			"contentType": "application/json charset=utf-8",
 		}
 
@@ -183,7 +185,7 @@ func main() {
 
 	}).On("click", func() {
 
-		jquery.GetJSON("/json/2", func(data interface{}) {
+		jquery.GetJSON("/json/3", func(data interface{}) {
 			if val, ok := data.(map[string]interface{})["json"]; ok {
 				jQuery("#inTextArea").SetVal(val)
 			}
@@ -200,7 +202,7 @@ func main() {
 
 	}).On("click", func() {
 
-		jquery.GetJSON("/json/3", func(data interface{}) {
+		jquery.GetJSON("/json/4", func(data interface{}) {
 			if val, ok := data.(map[string]interface{})["json"]; ok {
 				jQuery("#inTextArea").SetVal(val)
 			}
