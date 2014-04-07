@@ -37,7 +37,7 @@ func getDocumentBody() js.Object {
 }
 
 func stringify(i interface{}) string {
-	return js.Global.Get("JSON").Call("stringify", i).String()
+	return js.Global.Get("JSON").Call("stringify", i).Str()
 }
 
 func main() {
@@ -424,7 +424,7 @@ func main() {
 
 			sa := jQuery(evt.Target).SerializeArray()
 			for i := 0; i < sa.Length(); i++ {
-				collectResults += sa.Index(i).Get("name").String()
+				collectResults += sa.Index(i).Get("name").Str()
 			}
 			assert.Equal(collectResults, "abcde", "SerializeArray")
 			evt.PreventDefault()
@@ -513,7 +513,7 @@ func main() {
 			jQuery(FIX).Find("div").Each(func(i int, elem interface{}) interface{} {
 
 				style := jQuery(elem).Get(0).Get("style")
-				if style.Get("color").String() != "blue" {
+				if style.Get("color").Str() != "blue" {
 					style.Set("color", "blue")
 				} else {
 					blueCount += 1

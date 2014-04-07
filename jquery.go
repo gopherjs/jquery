@@ -110,7 +110,7 @@ func NewJQuery(args ...interface{}) JQuery {
 
 //static function
 func Trim(text string) string {
-	return js.Global.Get(JQ).Call("trim", text).String()
+	return js.Global.Get(JQ).Call("trim", text).Str()
 }
 
 //static function
@@ -120,7 +120,7 @@ func GlobalEval(cmd string) {
 
 //static function
 func Type(sth interface{}) string {
-	return js.Global.Get(JQ).Call("type", sth).String()
+	return js.Global.Get(JQ).Call("type", sth).Str()
 }
 
 //static function
@@ -261,7 +261,7 @@ func (j JQuery) AddBack(i ...interface{}) JQuery {
 }
 
 func (j JQuery) Css(name string) string {
-	return j.o.Call("css", name).String()
+	return j.o.Call("css", name).Str()
 }
 
 func (j JQuery) CssArray(arr ...string) map[string]interface{} {
@@ -274,7 +274,7 @@ func (j JQuery) SetCss(i ...interface{}) JQuery {
 }
 
 func (j JQuery) Text() string {
-	return j.o.Call("text").String()
+	return j.o.Call("text").Str()
 }
 
 func (j JQuery) SetText(i interface{}) JQuery {
@@ -290,7 +290,7 @@ func (j JQuery) SetText(i interface{}) JQuery {
 }
 
 func (j JQuery) Val() string {
-	return j.o.Call("val").String()
+	return j.o.Call("val").Str()
 }
 
 func (j JQuery) SetVal(i interface{}) JQuery {
@@ -318,7 +318,7 @@ func (j JQuery) Attr(property string) string {
 	if attr.IsUndefined() {
 		return ""
 	}
-	return attr.String()
+	return attr.Str()
 }
 
 func (j JQuery) SetAttr(i ...interface{}) JQuery {
@@ -421,7 +421,7 @@ func (j JQuery) Contents() JQuery {
 }
 
 func (j JQuery) Html() string {
-	return j.o.Call("html").String()
+	return j.o.Call("html").Str()
 }
 
 func (j JQuery) SetHtml(i interface{}) JQuery {
@@ -854,7 +854,7 @@ func (j JQuery) Load(i ...interface{}) JQuery {
 }
 
 func (j JQuery) Serialize() string {
-	return j.o.Call("serialize").String()
+	return j.o.Call("serialize").Str()
 }
 
 func (j JQuery) SerializeArray() js.Object {
