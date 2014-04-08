@@ -36,7 +36,7 @@ const (
 	TOUCHENTER  = "touchenter"
 	TOUCHLEAVE  = "touchleave"
 	TOUCHCANCEL = "touchcancel"
-	//ajax Events:
+	//ajax Events
 	AJAXSTART    = "ajaxStart"
 	BEFORESEND   = "beforeSend"
 	AJAXSEND     = "ajaxSend"
@@ -52,7 +52,7 @@ const (
 type JQuery struct {
 	o        js.Object
 	Jquery   string `js:"jquery"`
-	Selector string `js:"selector"` //2do: deprecate
+	Selector string `js:"selector"` //deprecated ?
 	Length   string `js:"length"`
 	Context  string `js:"context"`
 }

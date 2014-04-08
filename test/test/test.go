@@ -559,7 +559,9 @@ func main() {
 
 		countFontweight := 0
 		jQuery(FIX).Find("div").Each(func(i int, elem interface{}) interface{} {
-			if jQuery(elem).Css("font-weight") == "bold" {
+
+			fw := jQuery(elem).Css("font-weight")
+			if fw == "bold" || fw == "700" {
 				countFontweight += 1
 			}
 			return nil
