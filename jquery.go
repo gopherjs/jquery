@@ -893,9 +893,74 @@ func GetScript(i ...interface{}) {
 	js.Global.Get(JQ).Call("getScript", i...)
 }
 
-//in progress: ajax api
+type Deferred struct {
+	o js.Object
+}
 
-//2do: promises and deferred api
+// Deferreds
+func NewDeferred() Deferred {
+	return Deferred{o: js.Global.Get(JQ).Call("Deferred")}
+}
+
+func (d Deferred) State() string {
+	return d.o.Call("state").Str()
+}
+
+func (d Deferred) Resolve(i ...interface{}) Deferred {
+	d.o = d.o.Call("resolve", i...)
+	return d
+}
+
+func (d Deferred) Reject(i ...interface{}) Deferred {
+	d.o = d.o.Call("reject", i...)
+	return d
+}
+
+func (d Deferred) Notify(i interface{}) Deferred {
+	d.o = d.o.Call("notify", i)
+	return d
+}
+
+func (d Deferred) Promise() js.Object {
+	//for now plain js.Object
+	return d.o.Call("promise")
+}
+
+func (d Deferred) Then(fn ...interface{}) js.Object {
+	switch len(fn) {
+	case 1:
+		d.o = d.o.Call("then", fn[0])
+	case 2:
+		d.o = d.o.Call("then", fn[0], fn[1])
+	case 3:
+		d.o = d.o.Call("then", fn[0], fn[1], fn[2])
+	}
+	return d.o
+}
+
+func When(d ...interface{}) Deferred {
+	w := js.Global.Get(JQ).Call("when", d...)
+	return Deferred{o: w}
+}
+
+/* ongoing:  promises/deferreds
+deferred.always()
+deferred.done()
+deferred.fail()
+deferred.notify()
+deferred.notifyWith()
+deferred.progress()
+deferred.promise()
+deferred.reject()
+deferred.rejectWith()
+deferred.resolve()
+deferred.resolveWith()
+deferred.state()
+deferred.then()
+jQuery.Deferred()
+jQuery.when()
+*/
+
 //2do: animations api
 //2do: more tests, test return values against "undefined" values
 //2do: more docs
