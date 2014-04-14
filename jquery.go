@@ -861,8 +861,8 @@ func (j JQuery) SerializeArray() js.Object {
 	return j.o.Call("serializeArray")
 }
 
-func Ajax(options map[string]interface{}) {
-	js.Global.Get(JQ).Call("ajax", options)
+func Ajax(options map[string]interface{}) Deferred {
+	return Deferred{js.Global.Get(JQ).Call("ajax", options)}
 }
 
 func AjaxPrefilter(i ...interface{}) {
@@ -877,89 +877,77 @@ func AjaxTransport(i ...interface{}) {
 	js.Global.Get(JQ).Call("ajaxTransport", i...)
 }
 
-func Get(i ...interface{}) {
-	js.Global.Get(JQ).Call("get", i...)
+func Get(i ...interface{}) Deferred {
+	return Deferred{js.Global.Get(JQ).Call("get", i...)}
 }
 
-func Post(i ...interface{}) {
-	js.Global.Get(JQ).Call("post", i...)
+func Post(i ...interface{}) Deferred {
+	return Deferred{js.Global.Get(JQ).Call("post", i...)}
 }
 
-func GetJSON(i ...interface{}) {
-	js.Global.Get(JQ).Call("getJSON", i...)
+func GetJSON(i ...interface{}) Deferred {
+	return Deferred{js.Global.Get(JQ).Call("getJSON", i...)}
 }
 
-func GetScript(i ...interface{}) {
-	js.Global.Get(JQ).Call("getScript", i...)
-}
-
-type Deferred struct {
-	o js.Object
-}
-
-// Deferreds
-func NewDeferred() Deferred {
-	return Deferred{o: js.Global.Get(JQ).Call("Deferred")}
-}
-
-func (d Deferred) State() string {
-	return d.o.Call("state").Str()
-}
-
-func (d Deferred) Resolve(i ...interface{}) Deferred {
-	d.o = d.o.Call("resolve", i...)
-	return d
-}
-
-func (d Deferred) Reject(i ...interface{}) Deferred {
-	d.o = d.o.Call("reject", i...)
-	return d
-}
-
-func (d Deferred) Notify(i interface{}) Deferred {
-	d.o = d.o.Call("notify", i)
-	return d
+func GetScript(i ...interface{}) Deferred {
+	return Deferred{js.Global.Get(JQ).Call("getScript", i...)}
 }
 
 func (d Deferred) Promise() js.Object {
-	//for now plain js.Object
-	return d.o.Call("promise")
+	return d.Call("promise")
 }
 
-func (d Deferred) Then(fn ...interface{}) js.Object {
-	switch len(fn) {
-	case 1:
-		d.o = d.o.Call("then", fn[0])
-	case 2:
-		d.o = d.o.Call("then", fn[0], fn[1])
-	case 3:
-		d.o = d.o.Call("then", fn[0], fn[1], fn[2])
-	}
-	return d.o
+type Deferred struct {
+	//Xhr || Promise || Deferred
+	js.Object
+}
+
+func (d Deferred) Then(fn ...interface{}) Deferred {
+	return Deferred{d.Call("then", fn...)}
+}
+
+func (d Deferred) Always(fn ...interface{}) Deferred {
+	return Deferred{d.Call("always", fn...)}
+}
+
+func (d Deferred) Done(fn ...interface{}) Deferred {
+	return Deferred{d.Call("done", fn...)}
+}
+
+func (d Deferred) Fail(fn ...interface{}) Deferred {
+	return Deferred{d.Call("fail", fn...)}
+}
+
+func (d Deferred) Progress(fn interface{}) Deferred {
+	return Deferred{d.Call("progress", fn)}
+
 }
 
 func When(d ...interface{}) Deferred {
-	w := js.Global.Get(JQ).Call("when", d...)
-	return Deferred{o: w}
+	return Deferred{js.Global.Get(JQ).Call("when", d...)}
 }
 
-/* ongoing:  promises/deferreds
-deferred.always()
-deferred.done()
-deferred.fail()
-deferred.notify()
-deferred.notifyWith()
-deferred.progress()
-deferred.promise()
-deferred.reject()
-deferred.rejectWith()
-deferred.resolve()
-deferred.resolveWith()
-deferred.state()
-deferred.then()
-jQuery.Deferred()
-jQuery.when()
-*/
+func (d Deferred) State() string {
+	return d.Call("state").Str()
+}
+
+func NewDeferred() Deferred {
+	return Deferred{js.Global.Get(JQ).Call("Deferred")}
+}
+
+func (d Deferred) Resolve(i ...interface{}) Deferred {
+	return Deferred{d.Call("resolve", i...)}
+}
+
+func (d Deferred) Reject(i ...interface{}) Deferred {
+	return Deferred{d.Call("reject", i...)}
+
+}
+
+func (d Deferred) Notify(i interface{}) Deferred {
+	return Deferred{d.Call("notify", i)}
+
+}
 
 //2do: animations api
 //2do: more tests, test return values against "undefined" values
