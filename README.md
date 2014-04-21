@@ -70,7 +70,7 @@ In the "tests" folder are QUnit Tests, run the server with:
 
 "go run server.go" and open a browser: http://localhost:3000
 
-The relevant QUnit Test cases are defined in the test.go file.
+The relevant QUnit Test cases are defined in the test/index.go file.
 
 ### Sample Apps ported from Javascript/Coffeescript to GopherJS 
 	
@@ -85,4 +85,4 @@ Look at the Sample Apps to find out what is working and how. Any feedback is wel
 ### Status
 
 The normal DOM / Ajax / Deferreds Api is done and can be considered stable.
-Please look up the test.go file in the test folder to see how it works. 
+Please look up the index.go file in the test folder to see how it works. 
