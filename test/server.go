@@ -30,7 +30,7 @@ func main() {
 	m.Get("/script", func(res http.ResponseWriter, req *http.Request) {
 		res.Header().Set("Content-Type", "application/javascript")
 
-		b, err := ioutil.ReadFile("test/testjs.js")
+		b, err := ioutil.ReadFile("test/resources/some.js")
 		if err != nil {
 			res.WriteHeader(500)
 			return

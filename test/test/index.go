@@ -10,8 +10,8 @@ import (
 )
 
 const (
-	FIX         = "#qunit-fixture"
 	SHOWCONSOLE = false
+	FIX         = "#qunit-fixture"
 	ROOT        = "http://localhost:3000"
 )
 
@@ -40,9 +40,63 @@ func stringify(i interface{}) string {
 	return js.Global.Get("JSON").Call("stringify", i).Str()
 }
 
+func log(i ...interface{}) {
+	js.Global.Get("console").Call("log", i...)
+}
+
+type working struct {
+	jquery.Deferred
+}
+
+func NewWorking(d jquery.Deferred) working {
+	return working{d}
+}
+
+func (w working) notify() {
+	if w.State() == "pending" {
+		w.Notify("working... ")
+		js.Global.Call("setTimeout", w.notify, 500)
+	}
+}
+func (w working) hi(name string) {
+	if name == "John" {
+		countJohn += 1
+	} else if name == "Karl" {
+		countKarl += 1
+	}
+	if SHOWCONSOLE {
+		log("welcome message:", name)
+	}
+}
+
+var (
+	countJohn = 0
+	countKarl = 0
+)
+
+func asyncEvent(accept bool, i int) js.Object {
+
+	dfd := jquery.NewDeferred()
+
+	if accept {
+		js.Global.Call("setTimeout", func() {
+			dfd.Resolve("hurray")
+		}, 200*i)
+	} else {
+		js.Global.Call("setTimeout", func() {
+			dfd.Reject("sorry")
+		}, 210*i)
+	}
+
+	wx := NewWorking(dfd)
+	js.Global.Call("setTimeout", wx.notify, 1)
+
+	return dfd.Promise()
+}
+
 func main() {
 
-	QUnit.Module("jQuery core")
+	QUnit.Module("Core")
 	QUnit.Test("jQuery Properties", func(assert QUnit.QUnitAssert) {
 
 		assert.Equal(jQuery().Jquery, "2.1.0", "JQuery Version")
@@ -169,7 +223,7 @@ func main() {
 		assert.Ok(time <= jquery.Now(), "jquery.Now()")
 	})
 
-	QUnit.Module("dom")
+	QUnit.Module("Dom")
 	QUnit.Test("AddClass,Clone,Add,AppendTo,Find", func(assert QUnit.QUnitAssert) {
 
 		jQuery("p").AddClass("wow").Clone().Add("<span id='dom02'>WhatADay</span>").AppendTo(FIX)
@@ -436,7 +490,7 @@ func main() {
 		jQuery(FIX).Find("form").Trigger("submit")
 	})
 
-	QUnit.ModuleLifecycle("events", EvtScenario{})
+	QUnit.ModuleLifecycle("Events", EvtScenario{})
 	QUnit.Test("On,One,Off,Trigger", func(assert QUnit.QUnitAssert) {
 
 		fn := func(ev jquery.Event) {
@@ -663,7 +717,7 @@ func main() {
 	QUnit.AsyncTest("Load", func() interface{} {
 
 		QUnit.Expect(1)
-		jQuery(FIX).Load("/load.html", func() {
+		jQuery(FIX).Load("/resources/load.html", func() {
 			if SHOWCONSOLE {
 				print(" load got: ", jQuery(FIX).Html() == `<div>load successful!</div>`)
 			}
@@ -676,7 +730,7 @@ func main() {
 	QUnit.AsyncTest("Get", func() interface{} {
 		QUnit.Expect(1)
 
-		jquery.Get("/get.html", func(data interface{}, status string, xhr interface{}) {
+		jquery.Get("/resources/get.html", func(data interface{}, status string, xhr interface{}) {
 			if SHOWCONSOLE {
 				print(" data:   ", data)
 				print(" status: ", status)
@@ -724,7 +778,7 @@ func main() {
 				print("GetScript call returns script of length: ", len(data.(string)))
 			}
 
-			QUnit.Ok(len(data.(string)) == 3373, "GetScript call did not returns expected result")
+			QUnit.Ok(len(data.(string)) == 29, "GetScript call did not returns expected result")
 			QUnit.Start()
 
 		})
@@ -826,4 +880,169 @@ func main() {
 		})
 		return nil
 	})
+
+	QUnit.Module("Deferreds")
+	QUnit.AsyncTest("Deferreds Test 01", func() interface{} {
+
+		QUnit.Expect(1)
+
+		pass, fail, progress := 0, 0, 0
+		for i := 0; i < 10; i++ {
+			jquery.When(asyncEvent(i%2 == 0, i)).Then(
+
+				func(status interface{}) {
+					if SHOWCONSOLE {
+						log(status, "things are going well")
+					}
+					pass += 1
+				},
+				func(status interface{}) {
+					if SHOWCONSOLE {
+						log(status, ", you fail this time")
+					}
+					fail += 1
+				},
+				func(status interface{}) {
+					if SHOWCONSOLE {
+						log("Progress: ", status.(string))
+					}
+					progress += 1
+				},
+			).Done(func() {
+				if SHOWCONSOLE {
+					log(" Done. pass, fail, notify = ", pass, fail, progress)
+				}
+				if pass >= 5 {
+					QUnit.Start()
+					QUnit.Ok(pass >= 5 && fail >= 4 && progress >= 20, "Deferred Test 01 fail")
+				}
+
+			})
+		}
+		return nil
+	})
+
+	QUnit.Test("Deferreds Test 02", func(assert QUnit.QUnitAssert) {
+
+		QUnit.Expect(1)
+
+		o := NewWorking(jquery.NewDeferred())
+		o.Resolve("John")
+
+		o.Done(func(name string) {
+			o.hi(name)
+		}).Done(func(name string) {
+			o.hi("John")
+			if SHOWCONSOLE {
+				log(" test 02 done: ", countJohn /*2*/, countKarl /*0*/)
+			}
+		})
+		o.hi("Karl")
+		if SHOWCONSOLE {
+			log(" test 02 end : ", countJohn /*2*/, countKarl /*1*/)
+		}
+		assert.Ok(countJohn == 2 && countKarl == 1, "Deferred Test 02 fail")
+	})
+
+	QUnit.AsyncTest("Deferreds Test 03", func() interface{} {
+
+		QUnit.Expect(1)
+		jquery.Get("/get.html").Always(func() {
+			if SHOWCONSOLE {
+				log("TEST 03: $.get completed with success or error callback arguments")
+			}
+			QUnit.Start()
+			QUnit.Ok(true, "Deferred Test 03 fail")
+		})
+		return nil
+	})
+
+	QUnit.AsyncTest("Deferreds Test 04", func() interface{} {
+
+		QUnit.Expect(2)
+		jquery.Get("/get.html").Done(func() {
+			QUnit.Ok(true, "Deferred Test 04 fail")
+			if SHOWCONSOLE {
+				log("$.get done:  test 04")
+			}
+		}).Fail(func() {
+			if SHOWCONSOLE {
+				log("$.get fail:  test 04")
+			}
+		})
+		jquery.Get("/shouldnotexist.html").Done(func() {
+			if SHOWCONSOLE {
+				log("$.get done:  test 04 part 2")
+			}
+		}).Fail(func() {
+			if SHOWCONSOLE {
+				log("$.get fail: test 04 part 2")
+			}
+			QUnit.Start()
+			QUnit.Ok(true, "Deferred Test 04 fail")
+		})
+		return nil
+	})
+
+	QUnit.AsyncTest("Deferreds Test 05", func() interface{} {
+
+		QUnit.Expect(2)
+		jquery.Get("/get.html").Then(func() {
+			if SHOWCONSOLE {
+				log("$.get done:  with success, test 05")
+			}
+			QUnit.Ok(true, "Deferred Test 05 fail")
+
+		}, func() {
+			if SHOWCONSOLE {
+				log("$.get fail:  test 05 part 1")
+			}
+		})
+		jquery.Get("/shouldnotexist.html").Then(func() {
+			if SHOWCONSOLE {
+				log("$.get done:  test 05 part 2")
+			}
+
+		}, func() {
+			if SHOWCONSOLE {
+				log("$.get fail:  test 05 part 1")
+			}
+			QUnit.Start()
+			QUnit.Ok(true, "Deferred Test 05, 2nd part, fail")
+		})
+		return nil
+	})
+
+	QUnit.Test("Deferreds Test 06", func(assert QUnit.QUnitAssert) {
+
+		QUnit.Expect(1)
+		o := jquery.NewDeferred()
+
+		filtered := o.Then(func(value int) int {
+			return value * 2
+		})
+		o.Resolve(5)
+		filtered.Done(func(value int) {
+			if SHOWCONSOLE {
+				log("test 06: value is ( 2*5 ) = ", value)
+			}
+			assert.Ok(value == 10, "Deferred Test 06 fail")
+		})
+	})
+
+	QUnit.Test("Deferreds Test 07", func(assert QUnit.QUnitAssert) {
+
+		o := jquery.NewDeferred()
+		filtered := o.Then(nil, func(value int) int {
+			return value * 3
+		})
+		o.Reject(6)
+		filtered.Fail(func(value int) {
+			if SHOWCONSOLE {
+				log("Value is ( 3*6 ) = ", value)
+			}
+			assert.Ok(value == 18, "Deferred Test 07 fail")
+		})
+	})
+
 }

@@ -898,7 +898,6 @@ func (d Deferred) Promise() js.Object {
 }
 
 type Deferred struct {
-	//Xhr || Promise || Deferred
 	js.Object
 }
 
