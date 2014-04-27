@@ -52,7 +52,7 @@ const (
 type JQuery struct {
 	o        js.Object
 	Jquery   string `js:"jquery"`
-	Selector string `js:"selector"` //deprecated ?
+	Selector string `js:"selector"` //deprecated according jquery docs
 	Length   string `js:"length"`
 	Context  string `js:"context"`
 }
