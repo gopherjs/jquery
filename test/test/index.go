@@ -99,7 +99,7 @@ func main() {
 	QUnit.Module("Core")
 	QUnit.Test("jQuery Properties", func(assert QUnit.QUnitAssert) {
 
-		assert.Equal(jQuery().Jquery, "2.1.0", "JQuery Version")
+		assert.Equal(jQuery().Jquery, "2.1.1", "JQuery Version")
 		assert.Equal(jQuery().Length, 0, "jQuery().Length")
 
 		jQ2 := jQuery("body")

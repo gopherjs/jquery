@@ -949,5 +949,5 @@ func (d Deferred) Notify(i interface{}) Deferred {
 }
 
 //2do: animations api
-//2do: more tests, test return values against "undefined" values
+//2do: test values against "undefined" values
 //2do: more docs
