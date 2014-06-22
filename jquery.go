@@ -53,7 +53,7 @@ type JQuery struct {
 	o        js.Object
 	Jquery   string `js:"jquery"`
 	Selector string `js:"selector"` //deprecated according jquery docs
-	Length   string `js:"length"`
+	Length   int    `js:"length"`
 	Context  string `js:"context"`
 }
 
@@ -199,8 +199,10 @@ func Unique(arr js.Object) js.Object {
 }
 
 //methods
-func (j JQuery) Each(fn func(int, interface{}) interface{}) JQuery {
-	j.o = j.o.Call("each", fn)
+func (j JQuery) Each(fn func(int, JQuery)) JQuery {
+	j.o = j.o.Call("each", func(idx int, elem js.Object) {
+		fn(idx, NewJQuery(elem))
+	})
 	return j
 }
 
