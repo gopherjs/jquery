@@ -317,7 +317,7 @@ func (j JQuery) RemoveProp(property string) JQuery {
 
 func (j JQuery) Attr(property string) string {
 	attr := j.o.Call("attr", property)
-	if attr.IsUndefined() {
+	if attr == js.Undefined {
 		return ""
 	}
 	return attr.Str()
@@ -546,7 +546,7 @@ func (j JQuery) SetData(key string, value interface{}) JQuery {
 
 func (j JQuery) Data(key string) interface{} {
 	result := j.o.Call("data", key)
-	if result.IsUndefined() {
+	if result == js.Undefined {
 		return nil
 	}
 	return result.Interface()
