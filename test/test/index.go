@@ -494,7 +494,7 @@ func main() {
 	QUnit.Test("On,One,Off,Trigger", func(assert QUnit.QUnitAssert) {
 
 		fn := func(ev jquery.Event) {
-			assert.Ok(!ev.Data.IsUndefined(), "on() with data, check passed data exists")
+			assert.Ok(!ev.Data == js.Undefined, "on() with data, check passed data exists")
 			assert.Equal(ev.Data.Get("foo"), "bar", "on() with data, Check value of passed data")
 		}
 
