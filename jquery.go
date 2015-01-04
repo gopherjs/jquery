@@ -318,7 +318,6 @@ func (j JQuery) RemoveProp(property string) JQuery {
 func (j JQuery) Attr(property string) string {
 	attr := j.o.Call("attr", property)
 	if attr == js.Undefined {
-#	if attr.IsUndefined() {
 		return ""
 	}
 	return attr.Str()
