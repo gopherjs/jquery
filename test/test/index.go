@@ -1,4 +1,4 @@
-package test
+package main
 
 import (
 	"github.com/gopherjs/gopherjs/js"
@@ -37,10 +37,10 @@ func getDocumentBody() js.Object {
 }
 
 func stringify(i interface{}) string {
-	return js.Global.Get("JSON").Call("stringify", i).Str()
+	return js.Global.Get("JSON").Call("stringify", i).String()
 }
 
-func log(i ...interface{}) {
+func log(i ...js.Any) {
 	js.Global.Get("console").Call("log", i...)
 }
 
@@ -98,8 +98,7 @@ func main() {
 
 	QUnit.Module("Core")
 	QUnit.Test("jQuery Properties", func(assert QUnit.QUnitAssert) {
-
-		assert.Equal(jQuery().Jquery, "2.1.1", "JQuery Version")
+		assert.Equal(jQuery().Jquery, "2.1.3", "JQuery Version")
 		assert.Equal(jQuery().Length, 0, "jQuery().Length")
 
 		jQ2 := jQuery("body")
@@ -146,7 +145,7 @@ func main() {
 		assert.Ok(jquery.IsNumeric("8e-2"), "IsNumeric: exponential")
 
 		assert.Ok(!jquery.IsXMLDoc(getDocumentBody), "HTML Body element")
-		assert.Ok(jquery.IsWindow(js.Global), "window")
+		//assert.Ok(jquery.IsWindow(js.Global), "window")
 
 	})
 
@@ -478,7 +477,7 @@ func main() {
 
 			sa := jQuery(evt.Target).SerializeArray()
 			for i := 0; i < sa.Length(); i++ {
-				collectResults += sa.Index(i).Get("name").Str()
+				collectResults += sa.Index(i).Get("name").String()
 			}
 			assert.Equal(collectResults, "abcde", "SerializeArray")
 			evt.PreventDefault()
@@ -494,7 +493,7 @@ func main() {
 	QUnit.Test("On,One,Off,Trigger", func(assert QUnit.QUnitAssert) {
 
 		fn := func(ev jquery.Event) {
-			assert.Ok(!ev.Data == js.Undefined, "on() with data, check passed data exists")
+			assert.Ok(ev.Data != js.Undefined, "on() with data, check passed data exists")
 			assert.Equal(ev.Data.Get("foo"), "bar", "on() with data, Check value of passed data")
 		}
 
@@ -564,16 +563,15 @@ func main() {
 
 		jQuery(FIX).On(jquery.CLICK, func(e jquery.Event) {
 
-			jQuery(FIX).Find("div").Each(func(i int, elem interface{}) interface{} {
+			jQuery(FIX).Find("div").Each(func(i int, elem js.Any) {
 
 				style := jQuery(elem).Get(0).Get("style")
-				if style.Get("color").Str() != "blue" {
+				if style.Get("color").String() != "blue" {
 					style.Set("color", "blue")
 				} else {
 					blueCount += 1
 					style.Set("color", "")
 				}
-				return nil
 
 			})
 		})
@@ -612,13 +610,13 @@ func main() {
 		}).SetCss("font-weight", "bold")
 
 		countFontweight := 0
-		jQuery(FIX).Find("div").Each(func(i int, elem interface{}) interface{} {
+		jQuery(FIX).Find("div").Each(func(i int, elem js.Any) {
 
 			fw := jQuery(elem).Css("font-weight")
 			if fw == "bold" || fw == "700" {
 				countFontweight += 1
 			}
-			return nil
+
 		})
 		assert.Equal(countFontweight, 2, "2 divs should have font-weight = 'bold'")
 
@@ -653,7 +651,7 @@ func main() {
 	})
 
 	QUnit.Module("Ajax")
-	QUnit.AsyncTest("Async Dummy Test", func() interface{} {
+	QUnit.AsyncTest("Async Dummy Test", func() js.Object {
 		QUnit.Expect(1)
 
 		return js.Global.Call("setTimeout", func() {
@@ -663,7 +661,7 @@ func main() {
 
 	})
 
-	QUnit.AsyncTest("Ajax Call", func() interface{} {
+	QUnit.AsyncTest("Ajax Call", func() js.Object {
 
 		QUnit.Expect(1)
 
@@ -714,7 +712,7 @@ func main() {
 		return nil
 	})
 
-	QUnit.AsyncTest("Load", func() interface{} {
+	QUnit.AsyncTest("Load", func() js.Object {
 
 		QUnit.Expect(1)
 		jQuery(FIX).Load("/resources/load.html", func() {
@@ -727,7 +725,7 @@ func main() {
 		return nil
 	})
 
-	QUnit.AsyncTest("Get", func() interface{} {
+	QUnit.AsyncTest("Get", func() js.Object {
 		QUnit.Expect(1)
 
 		jquery.Get("/resources/get.html", func(data interface{}, status string, xhr interface{}) {
@@ -742,7 +740,7 @@ func main() {
 		return nil
 	})
 
-	QUnit.AsyncTest("Post", func() interface{} {
+	QUnit.AsyncTest("Post", func() js.Object {
 		QUnit.Expect(1)
 		jquery.Post("/gopher", func(data interface{}, status string, xhr interface{}) {
 			if SHOWCONSOLE {
@@ -756,7 +754,7 @@ func main() {
 		return nil
 	})
 
-	QUnit.AsyncTest("GetJSON", func() interface{} {
+	QUnit.AsyncTest("GetJSON", func() js.Object {
 		QUnit.Expect(1)
 		jquery.GetJSON("/json/1", func(data interface{}) {
 			if val, ok := data.(map[string]interface{})["json"]; ok {
@@ -770,7 +768,7 @@ func main() {
 		return nil
 	})
 
-	QUnit.AsyncTest("GetScript", func() interface{} {
+	QUnit.AsyncTest("GetScript", func() js.Object {
 		QUnit.Expect(1)
 
 		jquery.GetScript("/script", func(data interface{}) {
@@ -785,7 +783,7 @@ func main() {
 		return nil
 	})
 
-	QUnit.AsyncTest("AjaxSetup", func() interface{} {
+	QUnit.AsyncTest("AjaxSetup", func() js.Object {
 		QUnit.Expect(1)
 
 		ajaxSetupOptions := Object{
@@ -841,7 +839,7 @@ func main() {
 		return nil
 	})
 
-	QUnit.AsyncTest("AjaxPrefilter", func() interface{} {
+	QUnit.AsyncTest("AjaxPrefilter", func() js.Object {
 		QUnit.Expect(1)
 		jquery.AjaxPrefilter("+json", func(options interface{}, originalOptions string, jqXHR interface{}) {
 			if SHOWCONSOLE {
@@ -862,7 +860,7 @@ func main() {
 		return nil
 	})
 
-	QUnit.AsyncTest("AjaxTransport", func() interface{} {
+	QUnit.AsyncTest("AjaxTransport", func() js.Object {
 		QUnit.Expect(1)
 
 		jquery.AjaxTransport("+json", func(options interface{}, originalOptions string, jqXHR interface{}) {
@@ -882,7 +880,7 @@ func main() {
 	})
 
 	QUnit.Module("Deferreds")
-	QUnit.AsyncTest("Deferreds Test 01", func() interface{} {
+	QUnit.AsyncTest("Deferreds Test 01", func() js.Object {
 
 		QUnit.Expect(1)
 
@@ -944,7 +942,7 @@ func main() {
 		assert.Ok(countJohn == 2 && countKarl == 1, "Deferred Test 02 fail")
 	})
 
-	QUnit.AsyncTest("Deferreds Test 03", func() interface{} {
+	QUnit.AsyncTest("Deferreds Test 03", func() js.Object {
 
 		QUnit.Expect(1)
 		jquery.Get("/get.html").Always(func() {
@@ -957,7 +955,7 @@ func main() {
 		return nil
 	})
 
-	QUnit.AsyncTest("Deferreds Test 04", func() interface{} {
+	QUnit.AsyncTest("Deferreds Test 04", func() js.Object {
 
 		QUnit.Expect(2)
 		jquery.Get("/get.html").Done(func() {
@@ -984,7 +982,7 @@ func main() {
 		return nil
 	})
 
-	QUnit.AsyncTest("Deferreds Test 05", func() interface{} {
+	QUnit.AsyncTest("Deferreds Test 05", func() js.Object {
 
 		QUnit.Expect(2)
 		jquery.Get("/get.html").Then(func() {

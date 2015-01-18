@@ -104,13 +104,13 @@ func (event *Event) StopPropagation() {
 }
 
 //JQuery constructor
-func NewJQuery(args ...interface{}) JQuery {
+func NewJQuery(args ...js.Any) JQuery {
 	return JQuery{o: js.Global.Get(JQ).New(args...)}
 }
 
 //static function
 func Trim(text string) string {
-	return js.Global.Get(JQ).Call("trim", text).Str()
+	return js.Global.Get(JQ).Call("trim", text).String()
 }
 
 //static function
@@ -120,7 +120,7 @@ func GlobalEval(cmd string) {
 
 //static function
 func Type(sth interface{}) string {
-	return js.Global.Get(JQ).Call("type", sth).Str()
+	return js.Global.Get(JQ).Call("type", sth).String()
 }
 
 //static function
@@ -199,7 +199,7 @@ func Unique(arr js.Object) js.Object {
 }
 
 //methods
-func (j JQuery) Each(fn func(int, JQuery)) JQuery {
+func (j JQuery) Each(fn func(int, js.Any)) JQuery {
 	j.o = j.o.Call("each", func(idx int, elem js.Object) {
 		fn(idx, NewJQuery(elem))
 	})
@@ -210,12 +210,13 @@ func (j JQuery) Underlying() js.Object {
 	return j.o
 }
 
-func (j JQuery) Get(i ...interface{}) js.Object {
+func (j JQuery) Get(i ...js.Any) js.Object {
 	return j.o.Call("get", i...)
 }
 
-func (j JQuery) Append(i ...interface{}) JQuery {
-	return j.dom2args("append", i...)
+func (j JQuery) Append(args ...js.Any) JQuery {
+	j.o = j.o.Call("append", args...)
+	return j
 }
 
 func (j JQuery) Empty() JQuery {
@@ -223,7 +224,7 @@ func (j JQuery) Empty() JQuery {
 	return j
 }
 
-func (j JQuery) Detach(i ...interface{}) JQuery {
+func (j JQuery) Detach(i ...js.Any) JQuery {
 	j.o = j.o.Call("detach", i...)
 	return j
 }
@@ -232,12 +233,12 @@ func (j JQuery) Eq(idx int) JQuery {
 	j.o = j.o.Call("eq", idx)
 	return j
 }
-func (j JQuery) FadeIn(i ...interface{}) JQuery {
+func (j JQuery) FadeIn(i ...js.Any) JQuery {
 	j.o = j.o.Call("fadeIn", i...)
 	return j
 }
 
-func (j JQuery) Delay(i ...interface{}) JQuery {
+func (j JQuery) Delay(i ...js.Any) JQuery {
 	j.o = j.o.Call("delay", i...)
 	return j
 }
@@ -247,36 +248,36 @@ func (j JQuery) ToArray() []interface{} {
 	return j.o.Call("toArray").Interface().([]interface{})
 }
 
-func (j JQuery) Remove(i ...interface{}) JQuery {
+func (j JQuery) Remove(i ...js.Any) JQuery {
 	j.o = j.o.Call("remove", i...)
 	return j
 }
 
-func (j JQuery) Stop(i ...interface{}) JQuery {
+func (j JQuery) Stop(i ...js.Any) JQuery {
 	j.o = j.o.Call("stop", i...)
 	return j
 }
 
-func (j JQuery) AddBack(i ...interface{}) JQuery {
+func (j JQuery) AddBack(i ...js.Any) JQuery {
 	j.o = j.o.Call("addBack", i...)
 	return j
 }
 
 func (j JQuery) Css(name string) string {
-	return j.o.Call("css", name).Str()
+	return j.o.Call("css", name).String()
 }
 
 func (j JQuery) CssArray(arr ...string) map[string]interface{} {
 	return j.o.Call("css", arr).Interface().(map[string]interface{})
 }
 
-func (j JQuery) SetCss(i ...interface{}) JQuery {
+func (j JQuery) SetCss(i ...js.Any) JQuery {
 	j.o = j.o.Call("css", i...)
 	return j
 }
 
 func (j JQuery) Text() string {
-	return j.o.Call("text").Str()
+	return j.o.Call("text").String()
 }
 
 func (j JQuery) SetText(i interface{}) JQuery {
@@ -292,7 +293,7 @@ func (j JQuery) SetText(i interface{}) JQuery {
 }
 
 func (j JQuery) Val() string {
-	return j.o.Call("val").Str()
+	return j.o.Call("val").String()
 }
 
 func (j JQuery) SetVal(i interface{}) JQuery {
@@ -305,7 +306,7 @@ func (j JQuery) Prop(property string) interface{} {
 	return j.o.Call("prop", property).Interface()
 }
 
-func (j JQuery) SetProp(i ...interface{}) JQuery {
+func (j JQuery) SetProp(i ...js.Any) JQuery {
 	j.o = j.o.Call("prop", i...)
 	return j
 }
@@ -320,10 +321,10 @@ func (j JQuery) Attr(property string) string {
 	if attr == js.Undefined {
 		return ""
 	}
-	return attr.Str()
+	return attr.String()
 }
 
-func (j JQuery) SetAttr(i ...interface{}) JQuery {
+func (j JQuery) SetAttr(i ...js.Any) JQuery {
 	j.o = j.o.Call("attr", i...)
 	return j
 }
@@ -352,7 +353,7 @@ func (j JQuery) RemoveClass(property string) JQuery {
 	return j
 }
 
-func (j JQuery) ToggleClass(i ...interface{}) JQuery {
+func (j JQuery) ToggleClass(i ...js.Any) JQuery {
 	j.o = j.o.Call("toggleClass", i...)
 	return j
 }
@@ -367,39 +368,59 @@ func (j JQuery) Blur() JQuery {
 	return j
 }
 
-func (j JQuery) ReplaceAll(i interface{}) JQuery {
-	return j.dom1arg("replaceAll", i)
+func (j JQuery) ReplaceAll(arg interface{}) JQuery {
+	//return j.dom1arg("replaceAll", i)
+	j.o = j.o.Call("replaceAll", arg)
+	return j
+
 }
-func (j JQuery) ReplaceWith(i interface{}) JQuery {
-	return j.dom1arg("replaceWith", i)
+func (j JQuery) ReplaceWith(arg interface{}) JQuery {
+	//return j.dom1arg("replaceWith", i)
+	j.o = j.o.Call("replaceWith", arg)
+	return j
 }
 
-func (j JQuery) After(i ...interface{}) JQuery {
-	return j.dom2args("after", i...)
+func (j JQuery) After(args ...js.Any) JQuery {
+	//return j.dom2args("after", i...)
+	j.o = j.o.Call("after", args...)
+	return j
 }
 
-func (j JQuery) Before(i ...interface{}) JQuery {
-	return j.dom2args("before", i...)
+func (j JQuery) Before(args ...js.Any) JQuery {
+	//return j.dom2args("before", i...)
+	j.o = j.o.Call("before", args...)
+	return j
 }
 
-func (j JQuery) Prepend(i ...interface{}) JQuery {
-	return j.dom2args("prepend", i...)
+func (j JQuery) Prepend(args ...js.Any) JQuery {
+	//return j.dom2args("prepend", i...)
+	j.o = j.o.Call("prepend", args...)
+	return j
 }
 
-func (j JQuery) PrependTo(i interface{}) JQuery {
-	return j.dom1arg("prependTo", i)
+func (j JQuery) PrependTo(arg js.Any) JQuery {
+	//return j.dom1arg("prependTo", i)
+	j.o = j.o.Call("prependTo", arg)
+	return j
 }
 
-func (j JQuery) AppendTo(i interface{}) JQuery {
-	return j.dom1arg("appendTo", i)
+func (j JQuery) AppendTo(arg js.Any) JQuery {
+	//return j.dom1arg("appendTo", i)
+	j.o = j.o.Call("appendTo", arg)
+	return j
 }
 
-func (j JQuery) InsertAfter(i interface{}) JQuery {
-	return j.dom1arg("insertAfter", i)
+func (j JQuery) InsertAfter(arg js.Any) JQuery {
+	//return j.dom1arg("insertAfter", i)
+	j.o = j.o.Call("insertAfter", arg)
+	return j
+
 }
 
-func (j JQuery) InsertBefore(i interface{}) JQuery {
-	return j.dom1arg("insertBefore", i)
+func (j JQuery) InsertBefore(arg js.Any) JQuery {
+	//return j.dom1arg("insertBefore", i)
+	j.o = j.o.Call("insertBefore", arg)
+	return j
 }
 
 func (j JQuery) Show() JQuery {
@@ -423,7 +444,7 @@ func (j JQuery) Contents() JQuery {
 }
 
 func (j JQuery) Html() string {
-	return j.o.Call("html").Str()
+	return j.o.Call("html").String()
 }
 
 func (j JQuery) SetHtml(i interface{}) JQuery {
@@ -438,8 +459,9 @@ func (j JQuery) SetHtml(i interface{}) JQuery {
 	return j
 }
 
-func (j JQuery) Closest(i ...interface{}) JQuery {
-	return j.dom2args("closest", i...)
+func (j JQuery) Closest(args ...js.Any) JQuery {
+	j.o = j.o.Call("closest", args...)
+	return j
 }
 
 func (j JQuery) End() JQuery {
@@ -447,11 +469,12 @@ func (j JQuery) End() JQuery {
 	return j
 }
 
-func (j JQuery) Add(i ...interface{}) JQuery {
-	return j.dom2args("add", i...)
+func (j JQuery) Add(args ...js.Any) JQuery {
+	j.o = j.o.Call("add", args...)
+	return j
 }
 
-func (j JQuery) Clone(b ...interface{}) JQuery {
+func (j JQuery) Clone(b ...js.Any) JQuery {
 	j.o = j.o.Call("clone", b...)
 	return j
 }
@@ -567,42 +590,42 @@ func (j JQuery) OffsetParent() JQuery {
 	return j
 }
 
-func (j JQuery) Parent(i ...interface{}) JQuery {
+func (j JQuery) Parent(i ...js.Any) JQuery {
 	j.o = j.o.Call("parent", i...)
 	return j
 }
 
-func (j JQuery) Parents(i ...interface{}) JQuery {
+func (j JQuery) Parents(i ...js.Any) JQuery {
 	j.o = j.o.Call("parents", i...)
 	return j
 }
 
-func (j JQuery) ParentsUntil(i ...interface{}) JQuery {
+func (j JQuery) ParentsUntil(i ...js.Any) JQuery {
 	j.o = j.o.Call("parentsUntil", i...)
 	return j
 }
 
-func (j JQuery) Prev(i ...interface{}) JQuery {
+func (j JQuery) Prev(i ...js.Any) JQuery {
 	j.o = j.o.Call("prev", i...)
 	return j
 }
 
-func (j JQuery) PrevAll(i ...interface{}) JQuery {
+func (j JQuery) PrevAll(i ...js.Any) JQuery {
 	j.o = j.o.Call("prevAll", i...)
 	return j
 }
 
-func (j JQuery) PrevUntil(i ...interface{}) JQuery {
+func (j JQuery) PrevUntil(i ...js.Any) JQuery {
 	j.o = j.o.Call("prevUntil", i...)
 	return j
 }
 
-func (j JQuery) Siblings(i ...interface{}) JQuery {
+func (j JQuery) Siblings(i ...js.Any) JQuery {
 	j.o = j.o.Call("siblings", i...)
 	return j
 }
 
-func (j JQuery) Slice(i ...interface{}) JQuery {
+func (j JQuery) Slice(i ...js.Any) JQuery {
 	j.o = j.o.Call("slice", i...)
 	return j
 }
@@ -622,40 +645,42 @@ func (j JQuery) Wrap(obj interface{}) JQuery {
 	return j
 }
 
-func (j JQuery) WrapAll(i interface{}) JQuery {
-	return j.dom1arg("wrapAll", i)
+func (j JQuery) WrapAll(arg js.Any) JQuery {
+	j.o = j.o.Call("wrapAll", arg)
+	return j
 }
 
-func (j JQuery) WrapInner(i interface{}) JQuery {
-	return j.dom1arg("wrapInner", i)
+func (j JQuery) WrapInner(arg js.Any) JQuery {
+	j.o = j.o.Call("wrapInner", arg)
+	return j
 }
 
-func (j JQuery) Next(i ...interface{}) JQuery {
+func (j JQuery) Next(i ...js.Any) JQuery {
 	j.o = j.o.Call("next", i...)
 	return j
 }
 
-func (j JQuery) NextAll(i ...interface{}) JQuery {
+func (j JQuery) NextAll(i ...js.Any) JQuery {
 	j.o = j.o.Call("nextAll", i...)
 	return j
 }
 
-func (j JQuery) NextUntil(i ...interface{}) JQuery {
+func (j JQuery) NextUntil(i ...js.Any) JQuery {
 	j.o = j.o.Call("nextUntil", i...)
 	return j
 }
 
-func (j JQuery) Not(i ...interface{}) JQuery {
+func (j JQuery) Not(i ...js.Any) JQuery {
 	j.o = j.o.Call("not", i...)
 	return j
 }
 
-func (j JQuery) Filter(i ...interface{}) JQuery {
+func (j JQuery) Filter(i ...js.Any) JQuery {
 	j.o = j.o.Call("filter", i...)
 	return j
 }
 
-func (j JQuery) Find(i ...interface{}) JQuery {
+func (j JQuery) Find(i ...js.Any) JQuery {
 	j.o = j.o.Call("find", i...)
 	return j
 }
@@ -670,7 +695,7 @@ func (j JQuery) Has(selector string) JQuery {
 	return j
 }
 
-func (j JQuery) Is(i ...interface{}) bool {
+func (j JQuery) Is(i ...js.Any) bool {
 	return j.o.Call("is", i...).Bool()
 }
 
@@ -684,164 +709,48 @@ func (j JQuery) Ready(handler func()) JQuery {
 	return j
 }
 
-func (j JQuery) Resize(i ...interface{}) JQuery {
+func (j JQuery) Resize(i ...js.Any) JQuery {
 	j.o = j.o.Call("resize", i...)
 	return j
 }
 
-func (j JQuery) Scroll(i ...interface{}) JQuery {
-	return j.handleEvent("scroll", i...)
+func (j JQuery) Scroll(i ...js.Any) JQuery {
+	j.o = j.o.Call("scroll", i...)
+	return j
 }
 
-func (j JQuery) FadeOut(i ...interface{}) JQuery {
+func (j JQuery) FadeOut(i ...js.Any) JQuery {
 	j.o = j.o.Call("fadeOut", i...)
 	return j
 }
 
-func (j JQuery) Select(i ...interface{}) JQuery {
-	return j.handleEvent("select", i...)
-}
-
-func (j JQuery) Submit(i ...interface{}) JQuery {
-	return j.handleEvent("submit", i...)
-}
-
-func (j JQuery) handleEvent(evt string, i ...interface{}) JQuery {
-
-	switch len(i) {
-	case 0:
-		j.o = j.o.Call(evt)
-	case 1:
-		j.o = j.o.Call(evt, func(e js.Object) {
-			i[0].(func(Event))(Event{Object: e})
-		})
-	case 2:
-		j.o = j.o.Call(evt, i[0].(map[string]interface{}), func(e js.Object) {
-			i[1].(func(Event))(Event{Object: e})
-		})
-	default:
-		print(evt + " event expects 0 to 2 arguments")
-	}
+func (j JQuery) Select(i ...js.Any) JQuery {
+	j.o = j.o.Call("select", i...)
 	return j
 }
 
-func (j JQuery) Trigger(i ...interface{}) JQuery {
+func (j JQuery) Submit(i ...js.Any) JQuery {
+	j.o = j.o.Call("submit", i...)
+	return j
+}
+
+func (j JQuery) Trigger(i ...js.Any) JQuery {
 	j.o = j.o.Call("trigger", i...)
 	return j
 }
 
-func (j JQuery) On(p ...interface{}) JQuery {
-	return j.events("on", p...)
+func (j JQuery) On(p ...js.Any) JQuery {
+	j.o = j.o.Call("on", p...)
+	return j
 }
 
-func (j JQuery) One(p ...interface{}) JQuery {
-	return j.events("one", p...)
+func (j JQuery) One(p ...js.Any) JQuery {
+	j.o = j.o.Call("one", p...)
+	return j
 }
 
-func (j JQuery) Off(p ...interface{}) JQuery {
-	return j.events("off", p...)
-}
-
-func (j JQuery) events(evt string, p ...interface{}) JQuery {
-
-	count := len(p)
-
-	var isEventFunc bool
-	switch p[len(p)-1].(type) {
-	case func(Event):
-		isEventFunc = true
-	default:
-		isEventFunc = false
-	}
-
-	switch count {
-	case 0:
-		j.o = j.o.Call(evt)
-		return j
-	case 1:
-		j.o = j.o.Call(evt, p[0])
-		return j
-	case 2:
-		if isEventFunc {
-			j.o = j.o.Call(evt, p[0], func(e js.Object) {
-				p[1].(func(Event))(Event{Object: e})
-			})
-			return j
-		} else {
-			j.o = j.o.Call(evt, p[0], p[1])
-			return j
-		}
-	case 3:
-		if isEventFunc {
-
-			j.o = j.o.Call(evt, p[0], p[1], func(e js.Object) {
-				p[2].(func(Event))(Event{Object: e})
-			})
-			return j
-
-		} else {
-			j.o = j.o.Call(evt, p[0], p[1], p[2])
-			return j
-		}
-	case 4:
-		if isEventFunc {
-
-			j.o = j.o.Call(evt, p[0], p[1], p[2], func(e js.Object) {
-				p[3].(func(Event))(Event{Object: e})
-			})
-			return j
-
-		} else {
-			j.o = j.o.Call(evt, p[0], p[1], p[2], p[3])
-			return j
-		}
-	default:
-		print(evt + " event should no have more than 4 arguments")
-		j.o = j.o.Call(evt, p...)
-		return j
-	}
-}
-
-func (j JQuery) dom2args(method string, i ...interface{}) JQuery {
-
-	switch len(i) {
-	case 2:
-		selector, selOk := i[0].(JQuery)
-		context, ctxOk := i[1].(JQuery)
-		if !selOk && !ctxOk {
-			j.o = j.o.Call(method, i[0], i[1])
-			return j
-		} else if selOk && !ctxOk {
-			j.o = j.o.Call(method, selector.o, i[1])
-			return j
-		} else if !selOk && ctxOk {
-			j.o = j.o.Call(method, i[0], context.o)
-			return j
-		}
-		j.o = j.o.Call(method, selector.o, context.o)
-		return j
-	case 1:
-		selector, selOk := i[0].(JQuery)
-		if !selOk {
-			j.o = j.o.Call(method, i[0])
-			return j
-		}
-		j.o = j.o.Call(method, selector.o)
-		return j
-	default:
-		print(" only 1 or 2 parameters allowed for method ", method)
-		return j
-	}
-}
-
-func (j JQuery) dom1arg(method string, i interface{}) JQuery {
-
-	selector, selOk := i.(JQuery)
-	if !selOk {
-		j.o = j.o.Call(method, i)
-		return j
-	}
-	j.o = j.o.Call(method, selector.o)
+func (j JQuery) Off(p ...js.Any) JQuery {
+	j.o = j.o.Call("off", p...)
 	return j
 }
 
@@ -850,13 +759,13 @@ func Param(params map[string]interface{}) {
 	js.Global.Get(JQ).Call("param", params)
 }
 
-func (j JQuery) Load(i ...interface{}) JQuery {
+func (j JQuery) Load(i ...js.Any) JQuery {
 	j.o = j.o.Call("load", i...)
 	return j
 }
 
 func (j JQuery) Serialize() string {
-	return j.o.Call("serialize").Str()
+	return j.o.Call("serialize").String()
 }
 
 func (j JQuery) SerializeArray() js.Object {
@@ -867,7 +776,7 @@ func Ajax(options map[string]interface{}) Deferred {
 	return Deferred{js.Global.Get(JQ).Call("ajax", options)}
 }
 
-func AjaxPrefilter(i ...interface{}) {
+func AjaxPrefilter(i ...js.Any) {
 	js.Global.Get(JQ).Call("ajaxPrefilter", i...)
 }
 
@@ -875,23 +784,23 @@ func AjaxSetup(options map[string]interface{}) {
 	js.Global.Get(JQ).Call("ajaxSetup", options)
 }
 
-func AjaxTransport(i ...interface{}) {
+func AjaxTransport(i ...js.Any) {
 	js.Global.Get(JQ).Call("ajaxTransport", i...)
 }
 
-func Get(i ...interface{}) Deferred {
+func Get(i ...js.Any) Deferred {
 	return Deferred{js.Global.Get(JQ).Call("get", i...)}
 }
 
-func Post(i ...interface{}) Deferred {
+func Post(i ...js.Any) Deferred {
 	return Deferred{js.Global.Get(JQ).Call("post", i...)}
 }
 
-func GetJSON(i ...interface{}) Deferred {
+func GetJSON(i ...js.Any) Deferred {
 	return Deferred{js.Global.Get(JQ).Call("getJSON", i...)}
 }
 
-func GetScript(i ...interface{}) Deferred {
+func GetScript(i ...js.Any) Deferred {
 	return Deferred{js.Global.Get(JQ).Call("getScript", i...)}
 }
 
@@ -903,19 +812,19 @@ type Deferred struct {
 	js.Object
 }
 
-func (d Deferred) Then(fn ...interface{}) Deferred {
+func (d Deferred) Then(fn ...js.Any) Deferred {
 	return Deferred{d.Call("then", fn...)}
 }
 
-func (d Deferred) Always(fn ...interface{}) Deferred {
+func (d Deferred) Always(fn ...js.Any) Deferred {
 	return Deferred{d.Call("always", fn...)}
 }
 
-func (d Deferred) Done(fn ...interface{}) Deferred {
+func (d Deferred) Done(fn ...js.Any) Deferred {
 	return Deferred{d.Call("done", fn...)}
 }
 
-func (d Deferred) Fail(fn ...interface{}) Deferred {
+func (d Deferred) Fail(fn ...js.Any) Deferred {
 	return Deferred{d.Call("fail", fn...)}
 }
 
@@ -924,23 +833,23 @@ func (d Deferred) Progress(fn interface{}) Deferred {
 
 }
 
-func When(d ...interface{}) Deferred {
+func When(d ...js.Any) Deferred {
 	return Deferred{js.Global.Get(JQ).Call("when", d...)}
 }
 
 func (d Deferred) State() string {
-	return d.Call("state").Str()
+	return d.Call("state").String()
 }
 
 func NewDeferred() Deferred {
 	return Deferred{js.Global.Get(JQ).Call("Deferred")}
 }
 
-func (d Deferred) Resolve(i ...interface{}) Deferred {
+func (d Deferred) Resolve(i ...js.Any) Deferred {
 	return Deferred{d.Call("resolve", i...)}
 }
 
-func (d Deferred) Reject(i ...interface{}) Deferred {
+func (d Deferred) Reject(i ...js.Any) Deferred {
 	return Deferred{d.Call("reject", i...)}
 
 }
