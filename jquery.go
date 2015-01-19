@@ -110,7 +110,7 @@ func NewJQuery(args ...interface{}) JQuery {
 
 //static function
 func Trim(text string) string {
-	return js.Global.Get(JQ).Call("trim", text).Str()
+	return js.Global.Get(JQ).Call("trim", text).String()
 }
 
 //static function
@@ -120,7 +120,7 @@ func GlobalEval(cmd string) {
 
 //static function
 func Type(sth interface{}) string {
-	return js.Global.Get(JQ).Call("type", sth).Str()
+	return js.Global.Get(JQ).Call("type", sth).String()
 }
 
 //static function
@@ -263,7 +263,7 @@ func (j JQuery) AddBack(i ...interface{}) JQuery {
 }
 
 func (j JQuery) Css(name string) string {
-	return j.o.Call("css", name).Str()
+	return j.o.Call("css", name).String()
 }
 
 func (j JQuery) CssArray(arr ...string) map[string]interface{} {
@@ -276,7 +276,7 @@ func (j JQuery) SetCss(i ...interface{}) JQuery {
 }
 
 func (j JQuery) Text() string {
-	return j.o.Call("text").Str()
+	return j.o.Call("text").String()
 }
 
 func (j JQuery) SetText(i interface{}) JQuery {
@@ -292,7 +292,7 @@ func (j JQuery) SetText(i interface{}) JQuery {
 }
 
 func (j JQuery) Val() string {
-	return j.o.Call("val").Str()
+	return j.o.Call("val").String()
 }
 
 func (j JQuery) SetVal(i interface{}) JQuery {
@@ -320,7 +320,7 @@ func (j JQuery) Attr(property string) string {
 	if attr == js.Undefined {
 		return ""
 	}
-	return attr.Str()
+	return attr.String()
 }
 
 func (j JQuery) SetAttr(i ...interface{}) JQuery {
@@ -423,7 +423,7 @@ func (j JQuery) Contents() JQuery {
 }
 
 func (j JQuery) Html() string {
-	return j.o.Call("html").Str()
+	return j.o.Call("html").String()
 }
 
 func (j JQuery) SetHtml(i interface{}) JQuery {
@@ -856,7 +856,7 @@ func (j JQuery) Load(i ...interface{}) JQuery {
 }
 
 func (j JQuery) Serialize() string {
-	return j.o.Call("serialize").Str()
+	return j.o.Call("serialize").String()
 }
 
 func (j JQuery) SerializeArray() js.Object {
@@ -929,7 +929,7 @@ func When(d ...interface{}) Deferred {
 }
 
 func (d Deferred) State() string {
-	return d.Call("state").Str()
+	return d.Call("state").String()
 }
 
 func NewDeferred() Deferred {
