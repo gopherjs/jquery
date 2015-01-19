@@ -103,6 +103,10 @@ func (event *Event) StopPropagation() {
 	event.Call("stopPropagation")
 }
 
+func log(i ...interface{}) {
+	js.Global.Get("console").Call("log", i...)
+}
+
 //JQuery constructor
 func NewJQuery(args ...interface{}) JQuery {
 	return JQuery{o: js.Global.Get(JQ).New(args...)}
@@ -199,10 +203,8 @@ func Unique(arr js.Object) js.Object {
 }
 
 //methods
-func (j JQuery) Each(fn func(int, JQuery)) JQuery {
-	j.o = j.o.Call("each", func(idx int, elem js.Object) {
-		fn(idx, NewJQuery(elem))
-	})
+func (j JQuery) Each(fn func(int, interface{})) JQuery {
+	j.o = j.o.Call("each", fn)
 	return j
 }
 
@@ -215,7 +217,8 @@ func (j JQuery) Get(i ...interface{}) js.Object {
 }
 
 func (j JQuery) Append(i ...interface{}) JQuery {
-	return j.dom2args("append", i...)
+	j.o = j.o.Call("append", i...)
+	return j
 }
 
 func (j JQuery) Empty() JQuery {
@@ -242,7 +245,6 @@ func (j JQuery) Delay(i ...interface{}) JQuery {
 	return j
 }
 
-//to "range" over selection:
 func (j JQuery) ToArray() []interface{} {
 	return j.o.Call("toArray").Interface().([]interface{})
 }
@@ -286,7 +288,6 @@ func (j JQuery) SetText(i interface{}) JQuery {
 	default:
 		print("SetText Argument should be 'string' or 'func(int, string) string'")
 	}
-
 	j.o = j.o.Call("text", i)
 	return j
 }
@@ -368,38 +369,50 @@ func (j JQuery) Blur() JQuery {
 }
 
 func (j JQuery) ReplaceAll(i interface{}) JQuery {
-	return j.dom1arg("replaceAll", i)
+	j.o = j.o.Call("replaceAll", i)
+	return j
+
 }
 func (j JQuery) ReplaceWith(i interface{}) JQuery {
-	return j.dom1arg("replaceWith", i)
+	j.o = j.o.Call("replaceWith", i)
+	return j
 }
 
 func (j JQuery) After(i ...interface{}) JQuery {
-	return j.dom2args("after", i...)
+	j.o = j.o.Call("after", i)
+	return j
+
 }
 
 func (j JQuery) Before(i ...interface{}) JQuery {
-	return j.dom2args("before", i...)
+	j.o = j.o.Call("before", i...)
+	return j
 }
 
 func (j JQuery) Prepend(i ...interface{}) JQuery {
-	return j.dom2args("prepend", i...)
+	j.o = j.o.Call("prepend", i...)
+	return j
 }
 
 func (j JQuery) PrependTo(i interface{}) JQuery {
-	return j.dom1arg("prependTo", i)
+	j.o = j.o.Call("prependTo", i)
+	return j
 }
 
 func (j JQuery) AppendTo(i interface{}) JQuery {
-	return j.dom1arg("appendTo", i)
+	j.o = j.o.Call("appendTo", i)
+	return j
 }
 
 func (j JQuery) InsertAfter(i interface{}) JQuery {
-	return j.dom1arg("insertAfter", i)
+	j.o = j.o.Call("insertAfter", i)
+	return j
+
 }
 
 func (j JQuery) InsertBefore(i interface{}) JQuery {
-	return j.dom1arg("insertBefore", i)
+	j.o = j.o.Call("insertBefore", i)
+	return j
 }
 
 func (j JQuery) Show() JQuery {
@@ -439,7 +452,8 @@ func (j JQuery) SetHtml(i interface{}) JQuery {
 }
 
 func (j JQuery) Closest(i ...interface{}) JQuery {
-	return j.dom2args("closest", i...)
+	j.o = j.o.Call("closest", i...)
+	return j
 }
 
 func (j JQuery) End() JQuery {
@@ -448,7 +462,8 @@ func (j JQuery) End() JQuery {
 }
 
 func (j JQuery) Add(i ...interface{}) JQuery {
-	return j.dom2args("add", i...)
+	j.o = j.o.Call("add", i...)
+	return j
 }
 
 func (j JQuery) Clone(b ...interface{}) JQuery {
@@ -623,11 +638,13 @@ func (j JQuery) Wrap(obj interface{}) JQuery {
 }
 
 func (j JQuery) WrapAll(i interface{}) JQuery {
-	return j.dom1arg("wrapAll", i)
+	j.o = j.o.Call("wrapAll", i)
+	return j
 }
 
 func (j JQuery) WrapInner(i interface{}) JQuery {
-	return j.dom1arg("wrapInner", i)
+	j.o = j.o.Call("wrapInner", i)
+	return j
 }
 
 func (j JQuery) Next(i ...interface{}) JQuery {
@@ -690,7 +707,8 @@ func (j JQuery) Resize(i ...interface{}) JQuery {
 }
 
 func (j JQuery) Scroll(i ...interface{}) JQuery {
-	return j.handleEvent("scroll", i...)
+	j.o = j.o.Call("scroll", i...)
+	return j
 }
 
 func (j JQuery) FadeOut(i ...interface{}) JQuery {
@@ -699,29 +717,12 @@ func (j JQuery) FadeOut(i ...interface{}) JQuery {
 }
 
 func (j JQuery) Select(i ...interface{}) JQuery {
-	return j.handleEvent("select", i...)
+	j.o = j.o.Call("select", i...)
+	return j
 }
 
 func (j JQuery) Submit(i ...interface{}) JQuery {
-	return j.handleEvent("submit", i...)
-}
-
-func (j JQuery) handleEvent(evt string, i ...interface{}) JQuery {
-
-	switch len(i) {
-	case 0:
-		j.o = j.o.Call(evt)
-	case 1:
-		j.o = j.o.Call(evt, func(e js.Object) {
-			i[0].(func(Event))(Event{Object: e})
-		})
-	case 2:
-		j.o = j.o.Call(evt, i[0].(map[string]interface{}), func(e js.Object) {
-			i[1].(func(Event))(Event{Object: e})
-		})
-	default:
-		print(evt + " event expects 0 to 2 arguments")
-	}
+	j.o = j.o.Call("submit", i...)
 	return j
 }
 
@@ -730,118 +731,18 @@ func (j JQuery) Trigger(i ...interface{}) JQuery {
 	return j
 }
 
-func (j JQuery) On(p ...interface{}) JQuery {
-	return j.events("on", p...)
+func (j JQuery) On(i ...interface{}) JQuery {
+	j.o = j.o.Call("on", i...)
+	return j
 }
 
-func (j JQuery) One(p ...interface{}) JQuery {
-	return j.events("one", p...)
+func (j JQuery) One(i ...interface{}) JQuery {
+	j.o = j.o.Call("one", i...)
+	return j
 }
 
-func (j JQuery) Off(p ...interface{}) JQuery {
-	return j.events("off", p...)
-}
-
-func (j JQuery) events(evt string, p ...interface{}) JQuery {
-
-	count := len(p)
-
-	var isEventFunc bool
-	switch p[len(p)-1].(type) {
-	case func(Event):
-		isEventFunc = true
-	default:
-		isEventFunc = false
-	}
-
-	switch count {
-	case 0:
-		j.o = j.o.Call(evt)
-		return j
-	case 1:
-		j.o = j.o.Call(evt, p[0])
-		return j
-	case 2:
-		if isEventFunc {
-			j.o = j.o.Call(evt, p[0], func(e js.Object) {
-				p[1].(func(Event))(Event{Object: e})
-			})
-			return j
-		} else {
-			j.o = j.o.Call(evt, p[0], p[1])
-			return j
-		}
-	case 3:
-		if isEventFunc {
-
-			j.o = j.o.Call(evt, p[0], p[1], func(e js.Object) {
-				p[2].(func(Event))(Event{Object: e})
-			})
-			return j
-
-		} else {
-			j.o = j.o.Call(evt, p[0], p[1], p[2])
-			return j
-		}
-	case 4:
-		if isEventFunc {
-
-			j.o = j.o.Call(evt, p[0], p[1], p[2], func(e js.Object) {
-				p[3].(func(Event))(Event{Object: e})
-			})
-			return j
-
-		} else {
-			j.o = j.o.Call(evt, p[0], p[1], p[2], p[3])
-			return j
-		}
-	default:
-		print(evt + " event should no have more than 4 arguments")
-		j.o = j.o.Call(evt, p...)
-		return j
-	}
-}
-
-func (j JQuery) dom2args(method string, i ...interface{}) JQuery {
-
-	switch len(i) {
-	case 2:
-		selector, selOk := i[0].(JQuery)
-		context, ctxOk := i[1].(JQuery)
-		if !selOk && !ctxOk {
-			j.o = j.o.Call(method, i[0], i[1])
-			return j
-		} else if selOk && !ctxOk {
-			j.o = j.o.Call(method, selector.o, i[1])
-			return j
-		} else if !selOk && ctxOk {
-			j.o = j.o.Call(method, i[0], context.o)
-			return j
-		}
-		j.o = j.o.Call(method, selector.o, context.o)
-		return j
-	case 1:
-		selector, selOk := i[0].(JQuery)
-		if !selOk {
-			j.o = j.o.Call(method, i[0])
-			return j
-		}
-		j.o = j.o.Call(method, selector.o)
-		return j
-	default:
-		print(" only 1 or 2 parameters allowed for method ", method)
-		return j
-	}
-}
-
-func (j JQuery) dom1arg(method string, i interface{}) JQuery {
-
-	selector, selOk := i.(JQuery)
-	if !selOk {
-		j.o = j.o.Call(method, i)
-		return j
-	}
-	j.o = j.o.Call(method, selector.o)
+func (j JQuery) Off(i ...interface{}) JQuery {
+	j.o = j.o.Call("off", i...)
 	return j
 }
 
