@@ -1,8 +1,8 @@
-package test
+package main
 
 import (
+	"github.com/albrow/jquery"
 	"github.com/gopherjs/gopherjs/js"
-	"github.com/gopherjs/jquery"
 	QUnit "github.com/rusco/qunit"
 	"strconv"
 	"strings"
@@ -32,12 +32,12 @@ func (s EvtScenario) Teardown() {
 
 var jQuery = jquery.NewJQuery //convenience
 
-func getDocumentBody() js.Object {
+func getDocumentBody() *js.Object {
 	return js.Global.Get("document").Get("body")
 }
 
 func stringify(i interface{}) string {
-	return js.Global.Get("JSON").Call("stringify", i).Str()
+	return js.Global.Get("JSON").Call("stringify", i).String()
 }
 
 func log(i ...interface{}) {
@@ -74,7 +74,7 @@ var (
 	countKarl = 0
 )
 
-func asyncEvent(accept bool, i int) js.Object {
+func asyncEvent(accept bool, i int) *js.Object {
 
 	dfd := jquery.NewDeferred()
 
@@ -478,7 +478,7 @@ func main() {
 
 			sa := jQuery(evt.Target).SerializeArray()
 			for i := 0; i < sa.Length(); i++ {
-				collectResults += sa.Index(i).Get("name").Str()
+				collectResults += sa.Index(i).Get("name").String()
 			}
 			assert.Equal(collectResults, "abcde", "SerializeArray")
 			evt.PreventDefault()
@@ -494,7 +494,7 @@ func main() {
 	QUnit.Test("On,One,Off,Trigger", func(assert QUnit.QUnitAssert) {
 
 		fn := func(ev jquery.Event) {
-			assert.Ok(!ev.Data == js.Undefined, "on() with data, check passed data exists")
+			assert.Ok(ev.Data != js.Undefined, "on() with data, check passed data exists")
 			assert.Equal(ev.Data.Get("foo"), "bar", "on() with data, Check value of passed data")
 		}
 
@@ -564,16 +564,16 @@ func main() {
 
 		jQuery(FIX).On(jquery.CLICK, func(e jquery.Event) {
 
-			jQuery(FIX).Find("div").Each(func(i int, elem interface{}) interface{} {
+			//jQuery(FIX).Find("div").Each(func(i int, elem interface{}) interface{} {
+			jQuery(FIX).Find("div").Each(func(i int, elem interface{}) {
 
 				style := jQuery(elem).Get(0).Get("style")
-				if style.Get("color").Str() != "blue" {
+				if style.Get("color").String() != "blue" {
 					style.Set("color", "blue")
 				} else {
 					blueCount += 1
 					style.Set("color", "")
 				}
-				return nil
 
 			})
 		})
@@ -612,13 +612,13 @@ func main() {
 		}).SetCss("font-weight", "bold")
 
 		countFontweight := 0
-		jQuery(FIX).Find("div").Each(func(i int, elem interface{}) interface{} {
+		jQuery(FIX).Find("div").Each(func(i int, elem interface{}) {
 
 			fw := jQuery(elem).Css("font-weight")
 			if fw == "bold" || fw == "700" {
 				countFontweight += 1
 			}
-			return nil
+
 		})
 		assert.Equal(countFontweight, 2, "2 divs should have font-weight = 'bold'")
 

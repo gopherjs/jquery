@@ -50,7 +50,7 @@ const (
 )
 
 type JQuery struct {
-	o        js.Object
+	o        *js.Object
 	Jquery   string `js:"jquery"`
 	Selector string `js:"selector"` //deprecated according jquery docs
 	Length   int    `js:"length"`
@@ -58,20 +58,20 @@ type JQuery struct {
 }
 
 type Event struct {
-	js.Object
-	KeyCode        int       `js:"keyCode"`
-	Target         js.Object `js:"target"`
-	CurrentTarget  js.Object `js:"currentTarget"`
-	DelegateTarget js.Object `js:"delegateTarget"`
-	RelatedTarget  js.Object `js:"relatedTarget"`
-	Data           js.Object `js:"data"`
-	Result         js.Object `js:"result"`
-	Which          int       `js:"which"`
-	Namespace      string    `js:"namespace"`
-	MetaKey        bool      `js:"metaKey"`
-	PageX          int       `js:"pageX"`
-	PageY          int       `js:"pageY"`
-	Type           string    `js:"type"`
+	*js.Object
+	KeyCode        int        `js:"keyCode"`
+	Target         *js.Object `js:"target"`
+	CurrentTarget  *js.Object `js:"currentTarget"`
+	DelegateTarget *js.Object `js:"delegateTarget"`
+	RelatedTarget  *js.Object `js:"relatedTarget"`
+	Data           *js.Object `js:"data"`
+	Result         *js.Object `js:"result"`
+	Which          int        `js:"which"`
+	Namespace      string     `js:"namespace"`
+	MetaKey        bool       `js:"metaKey"`
+	PageX          int        `js:"pageX"`
+	PageY          int        `js:"pageY"`
+	Type           string     `js:"type"`
 }
 
 type JQueryCoordinates struct {
@@ -198,7 +198,7 @@ func Now() float64 {
 }
 
 //static function
-func Unique(arr js.Object) js.Object {
+func Unique(arr *js.Object) *js.Object {
 	return js.Global.Get(JQ).Call("unique", arr)
 }
 
@@ -208,11 +208,11 @@ func (j JQuery) Each(fn func(int, interface{})) JQuery {
 	return j
 }
 
-func (j JQuery) Underlying() js.Object {
+func (j JQuery) Underlying() *js.Object {
 	return j.o
 }
 
-func (j JQuery) Get(i ...interface{}) js.Object {
+func (j JQuery) Get(i ...interface{}) *js.Object {
 	return j.o.Call("get", i...)
 }
 
@@ -760,7 +760,7 @@ func (j JQuery) Serialize() string {
 	return j.o.Call("serialize").String()
 }
 
-func (j JQuery) SerializeArray() js.Object {
+func (j JQuery) SerializeArray() *js.Object {
 	return j.o.Call("serializeArray")
 }
 
@@ -796,12 +796,12 @@ func GetScript(i ...interface{}) Deferred {
 	return Deferred{js.Global.Get(JQ).Call("getScript", i...)}
 }
 
-func (d Deferred) Promise() js.Object {
+func (d Deferred) Promise() *js.Object {
 	return d.Call("promise")
 }
 
 type Deferred struct {
-	js.Object
+	*js.Object
 }
 
 func (d Deferred) Then(fn ...interface{}) Deferred {
