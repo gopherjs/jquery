@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/albrow/jquery"
 	"github.com/gopherjs/gopherjs/js"
+	"github.com/gopherjs/jquery"
 	QUnit "github.com/rusco/qunit"
 	"strconv"
 	"strings"
