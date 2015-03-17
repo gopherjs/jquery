@@ -425,8 +425,8 @@ func (j JQuery) Hide() JQuery {
 	return j
 }
 
-func (j JQuery) Toggle(showOrHide bool) JQuery {
-	j.o = j.o.Call("toggle", showOrHide)
+func (j JQuery) Toggle(i ...interface{}) JQuery {
+	j.o = j.o.Call("toggle", i...)
 	return j
 }
 
