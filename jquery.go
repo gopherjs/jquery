@@ -715,6 +715,23 @@ func (j JQuery) FadeOut(i ...interface{}) JQuery {
 	j.o = j.o.Call("fadeOut", i...)
 	return j
 }
+func (j JQuery) FadeToggle(i ...interface{}) JQuery {
+	j.o = j.o.Call("fadeToggle", i...)
+	return j
+}
+
+func (j JQuery) SlideDown(i ...interface{}) JQuery {
+	j.o = j.o.Call("slideDown", i...)
+	return j
+}
+func (j JQuery) SlideToggle(i ...interface{}) JQuery {
+	j.o = j.o.Call("slideToggle", i...)
+	return j
+}
+func (j JQuery) SlideUp(i ...interface{}) JQuery {
+	j.o = j.o.Call("slideUp", i...)
+	return j
+}
 
 func (j JQuery) Select(i ...interface{}) JQuery {
 	j.o = j.o.Call("select", i...)
