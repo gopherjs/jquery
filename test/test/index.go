@@ -319,10 +319,10 @@ func main() {
 
 		jQuery(htmlsnippet).AppendTo(FIX)
 
-		jQuery(FIX).Find("div").On("click", func() {
+		jQuery(FIX).Find("div").On("click", func(evt jquery.Event) {
 
 			html := []string{"The clicked div has the following styles:"}
-			var styleProps = jQuery(js.This).CssArray("width", "height")
+			var styleProps = jQuery(evt.Target).CssArray("width", "height")
 			for prop, value := range styleProps {
 				html = append(html, prop+": "+value.(string))
 			}
