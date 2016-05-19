@@ -419,13 +419,13 @@ func (j JQuery) InsertBefore(i interface{}) JQuery {
 	return j
 }
 
-func (j JQuery) Show() JQuery {
-	j.o = j.o.Call("show")
+func (j JQuery) Show(i ...interface{}) JQuery {
+	j.o = j.o.Call("show", i...)
 	return j
 }
 
-func (j JQuery) Hide() JQuery {
-	j.o.Call("hide")
+func (j JQuery) Hide(i ...interface{}) JQuery {
+	j.o.Call("hide", i...)
 	return j
 }
 
