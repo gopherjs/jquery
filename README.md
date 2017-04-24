@@ -1,4 +1,4 @@
-##jQuery Bindings for [GopherJS](http://github.com/gopherjs/gopherjs) 
+## jQuery Bindings for [GopherJS](http://github.com/gopherjs/gopherjs) 
 
 ## Install
 
