@@ -69,6 +69,8 @@ type Event struct {
 	Which          int        `js:"which"`
 	Namespace      string     `js:"namespace"`
 	MetaKey        bool       `js:"metaKey"`
+	ShiftKey       bool       `js:"shiftKey"`
+	CtrlKey        bool       `js:"ctrlKey"`
 	PageX          int        `js:"pageX"`
 	PageY          int        `js:"pageY"`
 	Type           string     `js:"type"`
