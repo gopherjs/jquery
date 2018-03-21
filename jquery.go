@@ -502,6 +502,10 @@ func (j JQuery) SetWidth(i interface{}) JQuery {
 	return j
 }
 
+func (j JQuery) Index(i interface{}...) int {
+	return j.o.Call("index", i).Int()
+}
+
 func (j JQuery) InnerHeight() int {
 	return j.o.Call("innerHeight").Int()
 }
