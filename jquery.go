@@ -211,7 +211,7 @@ func (j JQuery) Each(fn func(int, interface{})) JQuery {
 }
 
 func (j JQuery) Call(name string, args ...interface{}) JQuery {
-	return NewJQuery( j.o.Call(name, args...) )
+	return NewJQuery(j.o.Call(name, args...))
 }
 
 func (j JQuery) Underlying() *js.Object {
@@ -502,7 +502,7 @@ func (j JQuery) SetWidth(i interface{}) JQuery {
 	return j
 }
 
-func (j JQuery) Index(i interface{}...) int {
+func (j JQuery) Index(i interface{}) int {
 	return j.o.Call("index", i).Int()
 }
 
